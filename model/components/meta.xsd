@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+
+    <xs:annotation>
+        <xs:documentation xmlns:html="http://wwww.w3.org/1999/xhtml">
+            <div xmlns="http://wwww.w3.org/1999/xhtml">
+                <html>OECD Schemas</html>
+                <h2>Metadata</h2>
+                <p>This is a wrapper element for an arbitrary metadata model.</p>
+            </div>
+        </xs:documentation>
+    </xs:annotation>
+        
+    <xs:include schemaLocation="attributes.xsd"/>
+    
+    <!-- GLOBAL ELEMENTS -->
+    <xs:element name="metadataItem" type="oecdMetadataItemType"/>   
+    <xs:element name="metadata" type="oecdMetadataType"/>
+    
+    <!-- GLOBAL ATTRIBUTE -->
+    <!-- N.B. The metadataRef attribute is defined in attributes.xsd -->
+    
+
+    <!-- TYPES -->
+    
+    
+    <!-- metadata element type -->
+    <xs:attributeGroup name="oecdMetadataTypeAttributes">
+        <xs:annotation>
+            <xs:documentation>
+                <div xmlns="http://www.w3.org/1999/xhtml">
+                    <p>Attributes for metadata. Grouped to allow easy override.</p>
+                </div>
+            </xs:documentation>
+        </xs:annotation>        
+        <xs:attributeGroup ref="oecdCommonAttributes"/>    
+    </xs:attributeGroup>
+    
+    <xs:group name="oecdMetadateTypeContent">
+        <xs:annotation>
+            <xs:documentation>
+                <div xmlns="http://www.w3.org/1999/xhtml">
+                    <p>Content for metadata. Grouped to allow easy override.</p>
+                </div>
+            </xs:documentation>
+        </xs:annotation>
+        <xs:choice>
+            <xs:element ref="metadataItem"/>
+            <xs:element ref="metadata"/>
+        </xs:choice>       
+    </xs:group>
+    
+    <xs:complexType name="oecdMetadataType">
+        <xs:annotation>
+            <xs:documentation>
+                <div xmlns="http://www.w3.org/1999/xhtml">
+                    <p>Metadata container element. Allowed as a child at almost any location in 
+                    a document.</p>
+                </div>
+            </xs:documentation>
+        </xs:annotation>
+        <xs:group ref="oecdMetadateTypeContent" maxOccurs="unbounded"/>
+        <xs:attributeGroup ref="oecdMetadataTypeAttributes"/>        
+    </xs:complexType>
+    
+    <!-- metdata group type. -->
+    <xs:attributeGroup name="oecdMetadataItemTypeAttributes">
+        <xs:annotation>
+            <xs:documentation>
+                <div xmlns="http://www.w3.org/1999/xhtml">
+                    <p>Attributes for metadata items. Grouped to allow easy override.</p>
+                </div>
+            </xs:documentation>
+        </xs:annotation>        
+        <xs:attributeGroup ref="oecdCommonAttributes"/>
+        <xs:attributeGroup ref="oecdLinkingAttributes"/>
+    </xs:attributeGroup>
+    
+    <xs:group name="oecdMetadateItemTypeContent">
+        <xs:annotation>
+            <xs:documentation>
+                <div xmlns="http://www.w3.org/1999/xhtml">
+                    <p>Content for metadata items. Grouped to allow easy override.</p>
+                    <p>The content model for metadata is currently defined as a single
+                        element from any namespace. This is unlikely to be the final model
+                        and simply acts as a placeholder.</p>
+                </div>
+            </xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+            <xs:any namespace="##any"/>
+        </xs:sequence>
+    </xs:group>
+         
+    <xs:complexType name="oecdMetadataItemType">
+        <xs:annotation>
+            <xs:documentation xmlns:html="http://wwww.w3.org/1999/xhtml">
+                <div xmlns="http://wwww.w3.org/1999/xhtml">
+                    <p>The content model for metadata is currently defined as a single
+                    element from any namespace. This is unlikely to be the final model
+                    and simply acts as a placeholder.</p>
+                </div>
+            </xs:documentation>
+        </xs:annotation>
+        <xs:group ref="oecdMetadateItemTypeContent"/>
+        <xs:attributeGroup ref="oecdMetadataItemTypeAttributes"/>
+        
+    </xs:complexType>
+    
+    
+    
+
+</xs:schema>

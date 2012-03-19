@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified"
+    xmlns="http://www.oecd.org/ns/oecd.author/document">
+
+    <xs:annotation>
+        <xs:documentation>
+            <div xmlns="http://wwww.w3.org/1999/xhtml">
+                <h1>OECD.Author</h1>
+                <h2>Master Schema</h2>
+                <table xmlns="http://www.w3.org/1999/xhtml">
+                    <caption>Change Log</caption>
+                    <thead>
+                        <tr>
+                            <th>Version</th>
+                            <th>Date</th>
+                            <th>Author</th>
+                            <th>Changes</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>0.1</td>
+                            <td>2011-12-02</td>
+                            <td><a href="mailto:nicg@corbas.co.uk">Nic Gibson</a></td>
+                            <td>Initial Version</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <p>This module is the wrapper for the top-level generic OECD document model.</p>
+            </div>
+        </xs:documentation>
+    </xs:annotation>
+            
+    
+
+</xs:schema>

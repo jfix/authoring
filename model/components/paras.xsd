@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+   
+
+    <xs:annotation>
+        <xs:documentation>
+            <div xmlns="http://wwww.w3.org/1999/xhtml">
+                <h1>OECD.Author</h1>
+                <h2>Paragraph Schema</h2>
+                <table xmlns="http://www.w3.org/1999/xhtml">
+                    <caption>Change Log</caption>
+                    <thead>
+                        <tr>
+                            <th>Version</th>
+                            <th>Date</th>
+                            <th>Author</th>
+                            <th>Changes</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>0.1</td>
+                            <td>2011-12-02</td>
+                            <td><a href="mailto:nicg@corbas.co.uk">Nic Gibson</a></td>
+                            <td>Initial Version</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <p>This model defines paragraphs and other simple components with equivalent
+                    hierarchical position.</p>
+            </div>
+        </xs:documentation>
+    </xs:annotation>
+    
+    <!-- IMPORTS AND INCLUDES  -->
+    <xs:include schemaLocation="attributes.xsd"/>
+    <xs:include schemaLocation="inlines.xsd"/>
+    <xs:include schemaLocation="titles.xsd"/>
+    <xs:include schemaLocation="meta.xsd"/>
+    
+    <!-- GLOBAL ELEMENTS -->
+    <xs:element name="para" type="oecdParagraphType"/>
+    <xs:element name="formalPara" type="oecdFormalParagraphType"/>
+    <xs:element name="paragraphGroup" type="oecdParagraphGroupType"/>
+    
+     <!-- GLOBAL GROUPS -->
+    <xs:group name="oecdParagraphGroup">
+        <xs:choice>
+            <xs:element ref="para"/>
+            <xs:element ref="formalPara"/>
+            <xs:element ref="paragraphGroup"/>
+        </xs:choice>
+    </xs:group>
+    
+    <!-- GLOBAL TYPES -->
+    
+    <!-- basic paragraph -->
+    <xs:attributeGroup name="oecdParagraphTypeAttributes">
+        <xs:annotation>
+            <xs:documentation>
+                <div xmnls="http://www.w3.org/1999/xhtml">
+                    <p>Attribute group for paragraph elements to allow easy overrides.</p>
+                </div>
+            </xs:documentation>
+        </xs:annotation>        
+        <xs:attributeGroup ref="oecdCommonAttributes"/>
+        <xs:attributeGroup ref="oecdLinkingAttributes"/>
+    </xs:attributeGroup>
+    
+    <xs:group name="oecdParagraphTypeContent">
+        <xs:annotation>
+            <xs:documentation>
+                <div xmnls="http://www.w3.org/1999/xhtml">
+                    <p>Group for paragraph element content to allow easy overrides.</p>
+                </div>
+            </xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+            <xs:element ref="metadata" minOccurs="0"/>
+            <xs:element ref="oecdInline" maxOccurs="unbounded" minOccurs="0"/>
+        </xs:sequence>        
+    </xs:group>
+
+    <xs:complexType name="oecdParagraphType" mixed="true">
+        <xs:annotation>
+            <xs:documentation>
+                <div xmlns="http://wwww.w3.org/1999/xhtml">
+                    <p>Base type for paragraph content.</p>
+                </div>
+            </xs:documentation>
+        </xs:annotation>
+    
+        <xs:group ref="oecdParagraphTypeContent"/>
+        <xs:attributeGroup ref="oecdParagraphTypeAttributes"/>
+
+    </xs:complexType>
+    
+    <!-- formal paragraphs -->
+        
+    <xs:group name="oecdFormalParagraphTypeContent">
+        <xs:annotation>
+            <xs:documentation>
+                <div xmnls="http://www.w3.org/1999/xhtml">
+                    <p>Group for paragraph element content to allow easy overrides.</p>
+                </div>
+            </xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+            <xs:element ref="metadata" minOccurs="0"/>
+            <xs:element ref="title"/>
+            <xs:element ref="para"/>
+        </xs:sequence>        
+    </xs:group>
+    
+    <xs:complexType name="oecdFormalParagraphType" mixed="true">
+        <xs:annotation>
+            <xs:documentation>
+                <div xmlns="http://wwww.w3.org/1999/xhtml">
+                    <p>Formal paragraphs - a paragraph with a title.</p>
+                </div>
+            </xs:documentation>
+        </xs:annotation>
+                
+        <xs:group ref="oecdFormalParagraphTypeContent"/>
+        <xs:attributeGroup ref="oecdParagraphTypeAttributes"/>
+        
+    </xs:complexType>
+    
+    <!-- paragraph groups -->
+    <xs:attributeGroup name="oecdParagraphGroupTypeAttributes">
+        <xs:annotation>
+            <xs:documentation>
+                <div xmnls="http://www.w3.org/1999/xhtml">
+                    <p>Group for paragraph group attributes to allow easy overrides.</p>
+                </div>
+            </xs:documentation>
+        </xs:annotation>
+        <xs:attributeGroup ref="oecdCommonAttributes"/>
+        <xs:attributeGroup ref="oecdLinkingAttributes"/>        
+    </xs:attributeGroup>
+    
+    <xs:group name="oecdParagraphGroupTypeContent">
+        <xs:annotation>
+            <xs:documentation>
+                <div xmnls="http://www.w3.org/1999/xhtml">
+                    <p>Group for paragraph group content to allow easy overrides.</p>
+                </div>
+            </xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+            <xs:element ref="metadata" minOccurs="0"/>
+            <xs:group ref="oecdTitleGroup" minOccurs="0"></xs:group>
+            <xs:choice maxOccurs="unbounded">
+                <xs:element ref="para"/>
+                <xs:element ref="formalPara"/>
+            </xs:choice>        
+        </xs:sequence>
+    </xs:group>
+    
+    <xs:complexType name="oecdParagraphGroupType">
+        <xs:annotation>
+            <xs:documentation>
+                <div xmlns="http://www.w3.org/1999/xhtml">
+                    <p>A group of paragraphs. Functions like a section that cannot have 
+                    any substructure.</p>
+                </div>
+            </xs:documentation>
+        </xs:annotation>
+        <xs:group ref="oecdParagraphGroupTypeContent"/>
+        <xs:attributeGroup ref="oecdParagraphGroupTypeAttributes"/>
+    </xs:complexType>
+
+
+</xs:schema>

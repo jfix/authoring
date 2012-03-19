@@ -1,0 +1,371 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+
+
+    <xs:annotation>
+        <xs:documentation>
+            <div xmlns="http://wwww.w3.org/1999/xhtml">
+                <h1>OECD.Author</h1>
+                <h2>Lists Schema</h2>
+                <table xmlns="http://www.w3.org/1999/xhtml">
+                    <caption>Change Log</caption>
+                    <thead>
+                        <tr>
+                            <th>Version</th>
+                            <th>Date</th>
+                            <th>Author</th>
+                            <th>Changes</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>0.1</td>
+                            <td>2012-01-08</td>
+                            <td><a href="mailto:nicg@corbas.co.uk">Nic Gibson</a></td>
+                            <td>Initial Version</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <p>This model defines lists of various types</p>
+            </div>
+        </xs:documentation>
+    </xs:annotation>
+
+    <!-- IMPORTS AND INCLUDES  -->
+    <xs:include schemaLocation="attributes.xsd"/>
+    <xs:include schemaLocation="inlines.xsd"/>
+    <xs:include schemaLocation="titles.xsd"/>
+    <xs:include schemaLocation="meta.xsd"/>
+    <xs:include schemaLocation="types.xsd"/>
+    <xs:include schemaLocation="notes.xsd"/>
+    <xs:include schemaLocation="blocks.xsd"/>    <!-- NOTE - recursive inclusion -->
+
+
+    <!-- GLOBAL ELEMENTS -->
+    <xs:element name="itemizedList" type="oecdItemizedListType"/>
+    <xs:element name="orderedList" type="oecdOrderedListType"/>
+    <xs:element name="definitionList" type="oecdDefinitionListType"/>
+
+    <!-- GLOBAL GROUPS -->
+    <xs:group name="oecdListGroup">
+        <xs:choice>
+            <xs:element ref="itemizedList"/>
+            <xs:element ref="orderedList"/>
+            <xs:element ref="definitionList"/>
+        </xs:choice>
+    </xs:group>
+
+    <!-- GLOBAL TYPES -->
+
+    <!-- list items -->
+    <xs:attributeGroup name="oecdListItemTypeAttributes">
+        <xs:annotation>
+            <xs:documentation>
+                <div xmnls="http://www.w3.org/1999/xhtml">
+                    <p>Attributes for list items.</p>
+                </div>
+            </xs:documentation>
+        </xs:annotation>
+        <xs:attributeGroup ref="oecdCommonAttributes"/>
+        <xs:attributeGroup ref="oecdLinkingAttributes"/>
+    </xs:attributeGroup>
+
+    <xs:group name="oecdListItemTypeContent">
+        <xs:annotation>
+            <xs:documentation>
+                <div xmnls="http://www.w3.org/1999/xhtml">
+                    <p>Content for list items.</p>
+                </div>
+            </xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+            <xs:element ref="metadata" minOccurs="0"/>
+            <xs:choice maxOccurs="unbounded">
+                <xs:group ref="oecdBlockGroup"/>
+            </xs:choice>
+        </xs:sequence>
+    </xs:group>
+
+    <xs:complexType name="oecdListItemType">
+        <xs:annotation>
+            <xs:documentation>
+                <div xmnls="http://www.w3.org/1999/xhtml">
+                    <p>List items are a shared type used by both itemized and ordered lists. This
+                        type is extended by list specific list items to add attributes appropriate
+                        to the list type.</p>
+                </div>
+            </xs:documentation>
+        </xs:annotation>
+        <xs:group ref="oecdListItemTypeContent" maxOccurs="unbounded"/>
+        <xs:attributeGroup ref="oecdListItemTypeAttributes"/>
+
+    </xs:complexType>
+
+    <!-- Bulleted lists. Bulleted list items extended the base list item by addding a bullet.-->
+    <xs:complexType name="oecdItemizedListItemType">
+        <xs:complexContent>
+            <xs:extension base="oecdListItemType">
+                <xs:attribute ref="marker" use="optional" default="auto"/>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+
+    <xs:attributeGroup name="oecdItemizedListTypeAttributes">
+        <xs:annotation>
+            <xs:documentation>
+                <div xmnls="http://www.w3.org/1999/xhtml">
+                    <p>Attributes for itemized lists.</p>
+                </div>
+            </xs:documentation>
+        </xs:annotation>
+        <xs:attributeGroup ref="oecdCommonAttributes"/>
+        <xs:attributeGroup ref="oecdLinkingAttributes"/>
+        <xs:attribute ref="marker" use="optional" default="auto"/>
+    </xs:attributeGroup>
+
+    <xs:group name="oecdItemizedListTypeContent">
+        <xs:annotation>
+            <xs:documentation>
+                <div xmnls="http://www.w3.org/1999/xhtml">
+                    <p>Content for itemized lists.</p>
+                </div>
+            </xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+            <xs:element name="metadata" minOccurs="0"/>
+            <xs:group ref="oecdTitleGroup" minOccurs="0"/>
+            <xs:element name="listItem" type="oecdItemizedListItemType" maxOccurs="unbounded"/>
+            <xs:element ref="notes" minOccurs="0"/>
+        </xs:sequence>
+    </xs:group>
+
+    <xs:complexType name="oecdItemizedListType">
+        <xs:annotation>
+            <xs:documentation>
+                <div xmlns="http://www.w3.org/1999/xhtml">
+                    <p>Standard itemized lists. These allow the user to choose a default marker at
+                        the level of the list and override it at the item level.</p>
+                </div>
+            </xs:documentation>
+        </xs:annotation>
+        <xs:group ref="oecdItemizedListTypeContent"/>
+        <xs:attributeGroup ref="oecdItemizedListTypeAttributes"/>
+    </xs:complexType>
+
+
+    <!-- ordered lists -->
+    <xs:attributeGroup name="oecdOrderedListTypeAttributes">
+        <xs:annotation>
+            <xs:documentation>
+                <div xmnls="http://www.w3.org/1999/xhtml">
+                    <p>Attributes for itemized lists.</p>
+                </div>
+            </xs:documentation>
+        </xs:annotation>
+        <xs:attributeGroup ref="oecdCommonAttributes"/>
+        <xs:attributeGroup ref="oecdLinkingAttributes"/>
+        <xs:attribute ref="numeration" use="optional"/>
+        <xs:attribute ref="continuation" use="optional"/>
+        <xs:attribute ref="start" use="optional" default="1"/>
+    </xs:attributeGroup>
+
+    <xs:group name="oecdOrderedListTypeContent">
+        <xs:annotation>
+            <xs:documentation>
+                <div xmnls="http://www.w3.org/1999/xhtml">
+                    <p>Content for itemized lists.</p>
+                </div>
+            </xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+            <xs:element name="metadata" minOccurs="0"/>
+            <xs:group ref="oecdTitleGroup" minOccurs="0"/>
+            <xs:element name="listItem" type="oecdListItemType" maxOccurs="unbounded"/>
+            <xs:element ref="notes" minOccurs="0"/>
+        </xs:sequence>
+    </xs:group>
+
+    <xs:complexType name="oecdOrderedListType">
+        <xs:annotation>
+            <xs:documentation>
+                <div xmlns="http://www.w3.org/1999/xhtml">
+                    <p>Standard ordered lists. Lists can have several numeration types which are set
+                        at list level (as changing the numbering system part way through a single
+                        list is unusual). Numbering can continue based on the end of a previous list
+                        or start at a specific number.</p>
+                </div>
+            </xs:documentation>
+        </xs:annotation>
+        <xs:group ref="oecdOrderedListTypeContent"/>
+        <xs:attributeGroup ref="oecdOrderedListTypeAttributes"/>
+    </xs:complexType>
+
+
+    <!-- definition lists -->
+
+    <xs:attributeGroup name="oecdDefinitionListTermTypeAttributes">
+        <xs:annotation>
+            <xs:documentation>
+                <div xmnls="http://www.w3.org/1999/xhtml">
+                    <p>Attributes for terms in definition lists.</p>
+                </div>
+            </xs:documentation>
+        </xs:annotation>
+        <xs:attributeGroup ref="oecdCommonAttributes"/>
+        <xs:attributeGroup ref="oecdLinkingAttributes"/>
+    </xs:attributeGroup>
+
+    <xs:group name="oecdDefinitionListTermTypeContent">
+        <xs:annotation>
+            <xs:documentation>
+                <div xmnls="http://www.w3.org/1999/xhtml">
+                    <p>Content for terms in definition lists.</p>
+                </div>
+            </xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+            <xs:element ref="metadata" minOccurs="0"/> <!-- this is inside a mixed element! -->
+            <xs:element ref="oecdInline" maxOccurs="unbounded" minOccurs="0"/>
+        </xs:sequence>
+    </xs:group>
+
+    <xs:complexType name="oecdDefinitionListTermType" mixed="true">
+        <xs:annotation>
+            <xs:documentation>
+                <div xmnls="http://www.w3.org/1999/xhtml">
+                    <p>The term to be defined in a definition list.</p>
+                </div>
+            </xs:documentation>            
+        </xs:annotation>
+        <xs:group ref="oecdDefinitionListTermTypeContent"/>
+        <xs:attributeGroup ref="oecdDefinitionListTermTypeAttributes"/>
+    </xs:complexType>
+    
+    <xs:attributeGroup name="oecdDefinitionListItemTypeAttributes">
+        <xs:annotation>
+            <xs:documentation>
+                <div xmnls="http://www.w3.org/1999/xhtml">
+                    <p>Attributes for items in definition lists.</p>
+                </div>
+            </xs:documentation>
+        </xs:annotation>
+        <xs:attributeGroup ref="oecdCommonAttributes"/>
+        <xs:attributeGroup ref="oecdLinkingAttributes"/>
+    </xs:attributeGroup>
+    
+    <xs:group name="oecdDefinitionListItemTypeContent">
+        <xs:annotation>
+            <xs:documentation>
+                <div xmnls="http://www.w3.org/1999/xhtml">
+                    <p>Content for items in definition lists.</p>
+                </div>
+            </xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+            <xs:element ref="metadata" minOccurs="0"/>
+            <xs:element name="term" type="oecdDefinitionListTermType"/>
+            <xs:element name="listItem" type="oecdListItemType"/>
+        </xs:sequence>
+    </xs:group>
+    
+    <xs:complexType name="oecdDefinitionListItemType" mixed="true">
+        <xs:annotation>
+            <xs:documentation>
+                <div xmnls="http://www.w3.org/1999/xhtml">
+                    <p>The term to be defined in a definition list.</p>
+                </div>
+            </xs:documentation>            
+        </xs:annotation>
+        <xs:group ref="oecdDefinitionListItemTypeContent"/>
+        <xs:attributeGroup ref="oecdDefinitionListItemTypeAttributes"/>
+    </xs:complexType>
+    
+    
+    <xs:attributeGroup name="oecdDefinitionListTypeAttributes">
+        <xs:annotation>
+            <xs:documentation>
+                <div xmnls="http://www.w3.org/1999/xhtml">
+                    <p>Attributes for definition lists.</p>
+                </div>
+            </xs:documentation>
+        </xs:annotation>
+        <xs:attributeGroup ref="oecdCommonAttributes"/>
+        <xs:attributeGroup ref="oecdLinkingAttributes"/>
+    </xs:attributeGroup>
+    
+    <xs:group name="oecdDefinitionListTypeContent">
+        <xs:annotation>
+            <xs:documentation>
+                <div xmnls="http://www.w3.org/1999/xhtml">
+                    <p>Content for definition lists.</p>
+                </div>
+            </xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+            <xs:element name="metadata" minOccurs="0"/>
+            <xs:group ref="oecdTitleGroup" minOccurs="0"/>
+            <xs:element name="listItem" type="oecdDefinitionListItemType" maxOccurs="unbounded"/>
+            <xs:element ref="notes" minOccurs="0"/>
+            <!-- TODO: insert notes when complete -->
+        </xs:sequence>
+    </xs:group>
+    
+    <xs:complexType name="oecdDefinitionListType" mixed="true">
+        <xs:annotation>
+            <xs:documentation>
+                <div xmnls="http://www.w3.org/1999/xhtml">
+                    <p>Definition lists consist of pairs of terms and definitions. The
+                        definitions are marked up using a term and a list item contained
+                        in a defintion list item.</p>
+                </div>
+            </xs:documentation>            
+        </xs:annotation>
+        <xs:group ref="oecdDefinitionListTypeContent"/>
+        <xs:attributeGroup ref="oecdDefinitionListTypeAttributes"/>
+    </xs:complexType>
+    
+    
+
+    <!-- ATTRIBUTES -->
+    <xs:attribute name="marker" type="oecdListMarker" default="auto">
+        <xs:annotation>
+            <xs:documentation>
+                <div xmnls="http://www.w3.org/1999/xhtml">
+                    <p>List marker for itemized lists. Used at both list and item levels.</p>
+                </div>
+            </xs:documentation>
+        </xs:annotation>
+    </xs:attribute>
+
+    <xs:attribute name="numeration" type="oecdListNumeration" default="arabic">
+        <xs:annotation>
+            <xs:documentation>
+                <div xmnls="http://www.w3.org/1999/xhtml">
+                    <p>List numeration style for bulleted lists.</p>
+                </div>
+            </xs:documentation>
+        </xs:annotation>
+    </xs:attribute>
+
+    <xs:attribute name="continuation" type="oecdListContinuation" default="start">
+        <xs:annotation>
+            <xs:documentation>
+                <div xmnls="http://www.w3.org/1999/xhtml">
+                    <p>List continuation style for ordered lists</p>
+                </div>
+            </xs:documentation>
+        </xs:annotation>
+    </xs:attribute>
+
+    <xs:attribute name="start" type="xs:nonNegativeInteger">
+        <xs:annotation>
+            <xs:documentation>
+                <div xmnls="http://www.w3.org/1999/xhtml">
+                    <p>Starting position for lists which have their continuation style set to
+                        'start'.</p>
+                </div>
+            </xs:documentation>
+        </xs:annotation>
+    </xs:attribute>
+
+</xs:schema>

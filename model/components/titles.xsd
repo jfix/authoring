@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+    
+    <xs:annotation>
+        <xs:documentation xmlns:html="http://wwww.w3.org/1999/xhtml">
+            <html:h1>OECD Schemas</html:h1>
+            <html:h2>Title type components</html:h2>
+            <table xmlns="http://www.w3.org/1999/xhtml">
+                <caption>Change Log</caption>
+                <thead>
+                    <tr>
+                        <th>Version</th>
+                        <th>Date</th>
+                        <th>Author</th>
+                        <th>Changes</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>0.1</td>
+                        <td>2012-02-10</td>
+                        <td><a href="mailto:nicg@corbas.co.uk">Nic Gibson</a></td>
+                        <td>Initial Version</td>
+                        <td>0.2</td>
+                        <td>2012-03-14</td>
+                        <td><a href="mailto:nicg@corbas.co.uk">Nic Gibson</a></td>
+                        <td>Rewrite to use the more structure group/attributeGroup approach used in other components.</td>
+                        
+                    </tr>
+                </tbody>
+            </table>
+            
+        </xs:documentation>
+    </xs:annotation>
+    
+    
+    <!-- IMPORTS AND INCLUDES -->
+    <xs:include schemaLocation="attributes.xsd"/>
+    <xs:include schemaLocation="inlines.xsd"/>
+    
+    
+    <!-- GLOBAL ELEMENTS -->
+    <!-- TODO: determine if these really all should be the same type -->
+    <xs:element name="title" type="oecdTitleType"/>
+    <xs:element name="subTitle" type="oecdTitleType"/>
+    <xs:element name="caption" type="oecdTitleType"/>
+    
+    <!-- GLOBAL GROUPS -->
+    <xs:group name="oecdTitleGroup">
+        <xs:sequence>
+            <xs:element ref="title"/>
+            <xs:element ref="subTitle" minOccurs='0'/>
+        </xs:sequence>
+    </xs:group>
+    
+    <!-- GLOBAL TYPES -->
+    <xs:attributeGroup name="oecdTitleTypeAttributes">
+        <xs:annotation>
+            <xs:documentation>
+                <div xmnls="http://www.w3.org/1999/xhtml">
+                    <p>Attribute group for title type elements to allow easy overrides.</p>
+                </div>
+            </xs:documentation>
+        </xs:annotation>
+        <xs:attributeGroup ref="oecdCommonAttributes"/>
+        <xs:attributeGroup ref="oecdLinkingAttributes"/>
+    </xs:attributeGroup>
+    
+    <xs:group name="oecdTitleTypeContent">
+        <xs:annotation>
+            <xs:documentation>
+                <div xmnls="http://www.w3.org/1999/xhtml">
+                    <p>Content for title type elements to allow easy overrides.</p>
+                </div>
+            </xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+            <xs:element ref="oecdInline" maxOccurs="unbounded" minOccurs="0"/>
+        </xs:sequence>
+    </xs:group>
+    
+    <xs:complexType name="oecdTitleType" mixed="true">
+        <xs:annotation>
+            <xs:documentation>
+                <div xmnls="http://www.w3.org/1999/xhtml">
+                    <p>Title elements (and subtitles) share this type.</p>
+                </div>
+            </xs:documentation>
+        </xs:annotation>       
+        <xs:group ref="oecdTitleTypeContent"/>
+        <xs:attributeGroup ref="oecdTitleTypeAttributes"/>
+    </xs:complexType>
+    
+    <!-- ATTRIBUTES -->
+    
+    
+</xs:schema>

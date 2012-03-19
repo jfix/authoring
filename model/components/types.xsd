@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+
+  <xs:annotation>
+    <xs:documentation>
+      <div xmlns="http://wwww.w3.org/1999/xhtml">
+        <h1>OECD Schemas</h1>
+        <h2>Low Level Data Types</h2> 
+        <table>
+          <caption>Change Log</caption>
+          <thead>
+            <tr>
+              <th>Version</th>
+              <th>Date</th>
+              <th>Author</th>
+              <th>Changes</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>0.1</td>
+              <td>2011-12-02</td>
+              <td><a href="mailto:nicg@corbas.co.uk">Nic Gibson</a></td>
+              <td>Initial Version</td>
+            </tr>
+          </tbody>
+        </table> </div>
+    </xs:documentation>
+  </xs:annotation>
+ 
+  
+
+  <xs:simpleType name="oecdCharacterStyleType">
+    <xs:annotation>
+      <xs:documentation>
+        <div xmlns="http://www.w3.org/1999/xhtml">
+          <p>Simple enumeration of the inline character styles we might see. This is more intended
+            as a demonstration than a model requirement. </p>
+        </div>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="bold"/>
+      <xs:enumeration value="italic"/>
+      <xs:enumeration value="underline"/>
+      <xs:enumeration value="strikethrough"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+
+  <xs:simpleType name="oecdCote">
+    <xs:annotation>
+      <xs:documentation>
+        <div xmlns="http://www.w3.org/1999/xhtml">
+          <p>Placeholder for Cotes.</p>
+        </div>
+      </xs:documentation>      
+    </xs:annotation>
+    <xs:restriction base="xs:string"/>
+  </xs:simpleType>
+  
+  
+  <xs:simpleType name="oecdMediaType">
+    <xs:annotation>
+      <xs:documentation>
+        <div xmlns="http://www.w3.org/1999/xhtml">
+          <p>Placeholder for IETF MIME media types.</p>
+        </div>
+      </xs:documentation>      
+    </xs:annotation>
+    <xs:restriction base="xs:string"/>
+  </xs:simpleType>
+  
+  <xs:simpleType name="oecdListMarker">
+    <xs:annotation>
+      <xs:documentation>
+        <div xmlns="http://www.w3.org/1999/xhtml">
+          <p>Bulleted lists.</p>
+        </div>        
+      </xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="auto"/>
+      <xs:enumeration value="square"/>
+      <xs:enumeration value="solid-square"/>
+      <xs:enumeration value="circle"/>
+      <xs:enumeration value="solid-circle"/>
+      <xs:enumeration value="diamonad"/>
+      <xs:enumeration value="solid-diamonad"/>
+    </xs:restriction>
+  </xs:simpleType>
+  
+  <xs:simpleType name="oecdListNumeration">
+    <xs:annotation>
+      <xs:documentation>
+        <div xmlns="http://www.w3.org/1999/xhtml">
+          <p>This defines numeration styles for numbered lists.</p>
+        </div>        
+      </xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="arabic"/>
+      <xs:enumeration value="lower-roman"/>
+      <xs:enumeration value="upper-roman"/>
+      <xs:enumeration value="lower-alpha"/>
+      <xs:enumeration value="upper-alpha"/>
+    </xs:restriction>    
+  </xs:simpleType>
+  
+  <xs:simpleType name="oecdListContinuation">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="continue"/>
+      <xs:enumeration value="start"/>
+    </xs:restriction>
+  </xs:simpleType>
+  
+</xs:schema>

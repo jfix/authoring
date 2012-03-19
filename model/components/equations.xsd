@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified"> 
+
+    <xs:include schemaLocation="attributes.xsd"/>    
+    <xs:include schemaLocation="types.xsd"/>
+    <xs:include schemaLocation="meta.xsd"/>
+    <xs:include schemaLocation="inlines.xsd"/>
+    <xs:include schemaLocation="graphics.xsd"/>
+    
+
+    <!-- global elements -->
+    <xs:element name="inlineEquation" type="oecdEquationType"/>
+    <xs:element name="equation" type="oecdEquationType"/>
+
+    <!-- equations -->
+    <xs:attributeGroup name="oecdEquationTypeAttributes">
+        <xs:annotation>
+            <xs:documentation>
+                <div xmlns="http://www.w3.org/1999/xhtml">
+                    <p>Attributes for equations. Grouped to allow easy override.</p>
+                </div>
+            </xs:documentation>
+        </xs:annotation>
+        <xs:attributeGroup ref="oecdCommonAttributes"/>
+    </xs:attributeGroup>
+    
+    <xs:group name="oecdEquationTypeContent">
+        <xs:annotation>
+            <xs:documentation>
+                <div xmlns="http://www.w3.org/1999/xhtml">
+                    <p>Content for equations. Grouped to allow easy override.</p>
+                </div>
+            </xs:documentation>
+        </xs:annotation>
+        <xs:choice>
+            <xs:any namespace="http://www.w3.org/1998/Math/MathML"/>
+            <xs:element ref="oecdInline"/>   
+            <xs:element ref="oecdExternalGraphic"/> 
+        </xs:choice>
+    </xs:group>
+    
+    <xs:complexType name="oecdEquationType">
+        <xs:annotation>
+            <xs:documentation>
+                <div xmlns="http://www.w3.org/1999/xhtml">
+                    <p>The equation type is used as the base for both inline and block equations. This model
+                        allows any one of inline text, MathML or an external graphic.</p>
+                </div>
+            </xs:documentation>
+        </xs:annotation>
+        <xs:group ref="oecdEquationTypeContent"/>
+        <xs:attributeGroup ref="oecdEquationTypeAttributes"/>       
+    </xs:complexType>
+    
+
+</xs:schema>

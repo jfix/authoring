@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+    
+    <xs:annotation>
+        <xs:documentation xmlns:html="http://wwww.w3.org/1999/xhtml">
+            <html:h1>OECD Schemas</html:h1>
+            <html:h2>General block components</html:h2>
+            <table xmlns="http://www.w3.org/1999/xhtml">
+                <caption>Change Log</caption>
+                <thead>
+                    <tr>
+                        <th>Version</th>
+                        <th>Date</th>
+                        <th>Author</th>
+                        <th>Changes</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>0.1</td>
+                        <td>2012-02-10</td>
+                        <td><a href="mailto:nicg@corbas.co.uk">Nic Gibson</a></td>
+                        <td>Initial Version</td>
+                    </tr>                    
+                    <tr>
+                        <td>0.2</td>
+                        <td>2012-03-14</td>
+                        <td><a href="mailto:nicg@corbas.co.uk">Nic Gibson</a></td>
+                        <td>Broke down into sub-components.</td>
+                    </tr>                        
+                </tbody>
+            </table>
+            
+        </xs:documentation>
+    </xs:annotation>
+    
+    
+    <!-- IMPORTS AND INCLUDES -->
+    <xs:include schemaLocation="titles.xsd"/>
+    <xs:include schemaLocation="paras.xsd"/>
+    <xs:include schemaLocation="lists.xsd"/>    
+    
+    
+    <!-- GLOBAL GROUPS -->
+    <xs:group name="oecdBlockGroup">
+        <xs:choice>
+            <xs:group ref="oecdParagraphGroup"/>
+            <xs:group ref="oecdListGroup"/>            
+        </xs:choice>
+    </xs:group>
+    
+    
+</xs:schema>
