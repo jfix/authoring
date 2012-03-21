@@ -24,6 +24,12 @@
                             <td><a href="mailto:nicg@corbas.co.uk">Nic Gibson</a></td>
                             <td>Initial Version</td>
                         </tr>
+                        <tr>
+                            <td>0.2</td>
+                            <td>2012-03-21</td>
+                            <td><a href="mailto:nicg@corbas.co.uk">Nic Gibson</a></td>
+                            <td>Added number attribute to ordered list items for overrides</td>
+                        </tr>
                     </tbody>
                 </table>
                 <p>This model defines lists of various types</p>
@@ -167,6 +173,7 @@
         <xs:attribute ref="numeration" use="optional"/>
         <xs:attribute ref="continuation" use="optional"/>
         <xs:attribute ref="start" use="optional" default="1"/>
+        <xs:attribute ref="number" use="optional"/>
     </xs:attributeGroup>
 
     <xs:group name="oecdOrderedListTypeContent">
@@ -306,7 +313,6 @@
             <xs:group ref="oecdTitleGroup" minOccurs="0"/>
             <xs:element name="listItem" type="oecdDefinitionListItemType" maxOccurs="unbounded"/>
             <xs:element ref="notes" minOccurs="0"/>
-            <!-- TODO: insert notes when complete -->
         </xs:sequence>
     </xs:group>
     
@@ -363,6 +369,18 @@
                 <div xmnls="http://www.w3.org/1999/xhtml">
                     <p>Starting position for lists which have their continuation style set to
                         'start'.</p>
+                </div>
+            </xs:documentation>
+        </xs:annotation>
+    </xs:attribute>
+    
+    
+    <xs:attribute name="number" type="xs:nonNegativeInteger">
+        <xs:annotation>
+            <xs:documentation>
+                <div xmnls="http://www.w3.org/1999/xhtml">
+                    <p>Numbering override for list items where the author needs to override
+                        the list numbering completely.</p>
                 </div>
             </xs:documentation>
         </xs:annotation>
