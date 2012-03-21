@@ -36,7 +36,7 @@
         <xs:attributeGroup ref="oecdCommonAttributes"/>    
     </xs:attributeGroup>
     
-    <xs:group name="oecdMetadateTypeContent">
+    <xs:group name="oecdMetadataTypeContent">
         <xs:annotation>
             <xs:documentation>
                 <div xmlns="http://www.w3.org/1999/xhtml">
@@ -59,7 +59,7 @@
                 </div>
             </xs:documentation>
         </xs:annotation>
-        <xs:group ref="oecdMetadateTypeContent" maxOccurs="unbounded"/>
+        <xs:group ref="oecdMetadataTypeContent" maxOccurs="unbounded"/>
         <xs:attributeGroup ref="oecdMetadataTypeAttributes"/>        
     </xs:complexType>
     
