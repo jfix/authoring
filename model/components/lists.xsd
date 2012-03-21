@@ -168,12 +168,54 @@
                 </div>
             </xs:documentation>
         </xs:annotation>
+        
         <xs:attributeGroup ref="oecdCommonAttributes"/>
         <xs:attributeGroup ref="oecdLinkingAttributes"/>
-        <xs:attribute ref="numeration" use="optional"/>
-        <xs:attribute ref="continuation" use="optional"/>
-        <xs:attribute ref="start" use="optional" default="1"/>
-        <xs:attribute ref="number" use="optional"/>
+
+        <xs:attribute name="numeration" type="oecdListNumeration" default="arabic">
+            <xs:annotation>
+                <xs:documentation>
+                    <div xmnls="http://www.w3.org/1999/xhtml">
+                        <p>List numeration style for ordered lists.</p>
+                    </div>
+                </xs:documentation>
+            </xs:annotation>
+        </xs:attribute>
+        
+        <xs:attribute name="continuation" type="oecdListContinuation" default="start">
+            <xs:annotation>
+                <xs:documentation>
+                    <div xmnls="http://www.w3.org/1999/xhtml">
+                        <p>List continuation style for ordered lists</p>
+                    </div>
+                </xs:documentation>
+            </xs:annotation>
+        </xs:attribute>
+        
+        <xs:attribute name="start" type="xs:nonNegativeInteger">
+            <xs:annotation>
+                <xs:documentation>
+                    <div xmnls="http://www.w3.org/1999/xhtml">
+                        <p>Starting position for lists which have their continuation style set to
+                            'start'.</p>
+                    </div>
+                </xs:documentation>
+            </xs:annotation>
+        </xs:attribute>
+        
+        
+        <xs:attribute name="number" type="xs:nonNegativeInteger">
+            <xs:annotation>
+                <xs:documentation>
+                    <div xmnls="http://www.w3.org/1999/xhtml">
+                        <p>Numbering override for list items where the author needs to override
+                            the list numbering completely.</p>
+                    </div>
+                </xs:documentation>
+            </xs:annotation>
+        </xs:attribute>
+        
+
     </xs:attributeGroup>
 
     <xs:group name="oecdOrderedListTypeContent">
@@ -343,47 +385,5 @@
         </xs:annotation>
     </xs:attribute>
 
-    <xs:attribute name="numeration" type="oecdListNumeration" default="arabic">
-        <xs:annotation>
-            <xs:documentation>
-                <div xmnls="http://www.w3.org/1999/xhtml">
-                    <p>List numeration style for bulleted lists.</p>
-                </div>
-            </xs:documentation>
-        </xs:annotation>
-    </xs:attribute>
-
-    <xs:attribute name="continuation" type="oecdListContinuation" default="start">
-        <xs:annotation>
-            <xs:documentation>
-                <div xmnls="http://www.w3.org/1999/xhtml">
-                    <p>List continuation style for ordered lists</p>
-                </div>
-            </xs:documentation>
-        </xs:annotation>
-    </xs:attribute>
-
-    <xs:attribute name="start" type="xs:nonNegativeInteger">
-        <xs:annotation>
-            <xs:documentation>
-                <div xmnls="http://www.w3.org/1999/xhtml">
-                    <p>Starting position for lists which have their continuation style set to
-                        'start'.</p>
-                </div>
-            </xs:documentation>
-        </xs:annotation>
-    </xs:attribute>
-    
-    
-    <xs:attribute name="number" type="xs:nonNegativeInteger">
-        <xs:annotation>
-            <xs:documentation>
-                <div xmnls="http://www.w3.org/1999/xhtml">
-                    <p>Numbering override for list items where the author needs to override
-                        the list numbering completely.</p>
-                </div>
-            </xs:documentation>
-        </xs:annotation>
-    </xs:attribute>
 
 </xs:schema>
