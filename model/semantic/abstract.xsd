@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+    
+    <xs:annotation>
+        <xs:documentation xmlns:html="http://wwww.w3.org/1999/xhtml">
+            <html:h1>OECD Schemas</html:h1>
+            <html:h2>Abstract</html:h2>
+            <html:p>An abstract is a paragraph group.</html:p>
+            <table xmlns="http://www.w3.org/1999/xhtml">
+                <caption>Change Log</caption>
+                <thead>
+                    <tr>
+                        <th>Version</th>
+                        <th>Date</th>
+                        <th>Author</th>
+                        <th>Changes</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>0.1</td>
+                        <td>2012-03-20</td>
+                        <td><a href="mailto:nicg@corbas.co.uk">Nic Gibson</a></td>
+                        <td>Initial Version</td>
+                    </tr>
+                </tbody>
+            </table>
+        </xs:documentation>
+    </xs:annotation>
+    
+    <xs:include schemaLocation="../components/paras.xsd"/>
+    
+    <xs:element name="abstract" type="oecdParagraphGroupType"/>
+    
+    
+</xs:schema>
