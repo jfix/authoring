@@ -63,7 +63,7 @@
         <xs:attribute name="numeration" type="oecdListNumeration">
             <xs:annotation>
                 <xs:documentation>
-                    <div xmnls="http://www.w3.org/1999/xhtml">
+                    <div xmlns="http://www.w3.org/1999/xhtml">
                         <p>List numeration style for sections</p>
                     </div>
                 </xs:documentation>
@@ -73,7 +73,7 @@
         <xs:attribute name="continuation" type="oecdListContinuation">
             <xs:annotation>
                 <xs:documentation>
-                    <div xmnls="http://www.w3.org/1999/xhtml">
+                    <div xmlns="http://www.w3.org/1999/xhtml">
                         <p>Numbering continuation flag for sections</p>
                     </div>
                 </xs:documentation>
@@ -83,7 +83,7 @@
         <xs:attribute name="start" type="xs:nonNegativeInteger">
             <xs:annotation>
                 <xs:documentation>
-                    <div xmnls="http://www.w3.org/1999/xhtml">
+                    <div xmlns="http://www.w3.org/1999/xhtml">
                         <p>Starting count for sections which have their continuation style set to
                             'start'.</p>
                     </div>
@@ -94,7 +94,7 @@
         <xs:attribute name="number" type="xs:nonNegativeInteger">
             <xs:annotation>
                 <xs:documentation>
-                    <div xmnls="http://www.w3.org/1999/xhtml">
+                    <div xmlns="http://www.w3.org/1999/xhtml">
                         <p>Numbering override for sections where the author needs to override
                             the section numbering completely.</p>
                     </div>

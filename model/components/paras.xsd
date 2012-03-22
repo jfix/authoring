@@ -61,7 +61,7 @@
     <xs:attributeGroup name="oecdParagraphTypeAttributes">
         <xs:annotation>
             <xs:documentation>
-                <div xmnls="http://www.w3.org/1999/xhtml">
+                <div xmlns="http://www.w3.org/1999/xhtml">
                     <p>Attribute group for paragraph elements to allow easy overrides.</p>
                 </div>
             </xs:documentation>
@@ -73,7 +73,7 @@
     <xs:group name="oecdParagraphTypeContent">
         <xs:annotation>
             <xs:documentation>
-                <div xmnls="http://www.w3.org/1999/xhtml">
+                <div xmlns="http://www.w3.org/1999/xhtml">
                     <p>Group for paragraph element content to allow easy overrides.</p>
                 </div>
             </xs:documentation>
@@ -103,7 +103,7 @@
     <xs:group name="oecdFormalParagraphTypeContent">
         <xs:annotation>
             <xs:documentation>
-                <div xmnls="http://www.w3.org/1999/xhtml">
+                <div xmlns="http://www.w3.org/1999/xhtml">
                     <p>Group for paragraph element content to allow easy overrides.</p>
                 </div>
             </xs:documentation>
@@ -133,7 +133,7 @@
     <xs:attributeGroup name="oecdParagraphGroupTypeAttributes">
         <xs:annotation>
             <xs:documentation>
-                <div xmnls="http://www.w3.org/1999/xhtml">
+                <div xmlns="http://www.w3.org/1999/xhtml">
                     <p>Group for paragraph group attributes to allow easy overrides.</p>
                 </div>
             </xs:documentation>
@@ -145,7 +145,7 @@
     <xs:group name="oecdParagraphGroupTypeContent">
         <xs:annotation>
             <xs:documentation>
-                <div xmnls="http://www.w3.org/1999/xhtml">
+                <div xmlns="http://www.w3.org/1999/xhtml">
                     <p>Group for paragraph group content to allow easy overrides.</p>
                 </div>
             </xs:documentation>

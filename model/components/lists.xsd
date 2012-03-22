@@ -67,7 +67,7 @@
     <xs:attributeGroup name="oecdListItemTypeAttributes">
         <xs:annotation>
             <xs:documentation>
-                <div xmnls="http://www.w3.org/1999/xhtml">
+                <div xmlns="http://www.w3.org/1999/xhtml">
                     <p>Attributes for list items.</p>
                 </div>
             </xs:documentation>
@@ -79,7 +79,7 @@
     <xs:group name="oecdListItemTypeContent">
         <xs:annotation>
             <xs:documentation>
-                <div xmnls="http://www.w3.org/1999/xhtml">
+                <div xmlns="http://www.w3.org/1999/xhtml">
                     <p>Content for list items.</p>
                 </div>
             </xs:documentation>
@@ -95,7 +95,7 @@
     <xs:complexType name="oecdListItemType">
         <xs:annotation>
             <xs:documentation>
-                <div xmnls="http://www.w3.org/1999/xhtml">
+                <div xmlns="http://www.w3.org/1999/xhtml">
                     <p>List items are a shared type used by both itemized and ordered lists. This
                         type is extended by list specific list items to add attributes appropriate
                         to the list type.</p>
@@ -119,7 +119,7 @@
     <xs:attributeGroup name="oecdItemizedListTypeAttributes">
         <xs:annotation>
             <xs:documentation>
-                <div xmnls="http://www.w3.org/1999/xhtml">
+                <div xmlns="http://www.w3.org/1999/xhtml">
                     <p>Attributes for itemized lists.</p>
                 </div>
             </xs:documentation>
@@ -132,7 +132,7 @@
     <xs:group name="oecdItemizedListTypeContent">
         <xs:annotation>
             <xs:documentation>
-                <div xmnls="http://www.w3.org/1999/xhtml">
+                <div xmlns="http://www.w3.org/1999/xhtml">
                     <p>Content for itemized lists.</p>
                 </div>
             </xs:documentation>
@@ -163,7 +163,7 @@
     <xs:attributeGroup name="oecdOrderedListTypeAttributes">
         <xs:annotation>
             <xs:documentation>
-                <div xmnls="http://www.w3.org/1999/xhtml">
+                <div xmlns="http://www.w3.org/1999/xhtml">
                     <p>Attributes for itemized lists.</p>
                 </div>
             </xs:documentation>
@@ -175,7 +175,7 @@
         <xs:attribute name="numeration" type="oecdListNumeration" default="arabic">
             <xs:annotation>
                 <xs:documentation>
-                    <div xmnls="http://www.w3.org/1999/xhtml">
+                    <div xmlns="http://www.w3.org/1999/xhtml">
                         <p>List numeration style for ordered lists.</p>
                     </div>
                 </xs:documentation>
@@ -185,7 +185,7 @@
         <xs:attribute name="continuation" type="oecdListContinuation" default="start">
             <xs:annotation>
                 <xs:documentation>
-                    <div xmnls="http://www.w3.org/1999/xhtml">
+                    <div xmlns="http://www.w3.org/1999/xhtml">
                         <p>List continuation style for ordered lists</p>
                     </div>
                 </xs:documentation>
@@ -195,7 +195,7 @@
         <xs:attribute name="start" type="xs:nonNegativeInteger">
             <xs:annotation>
                 <xs:documentation>
-                    <div xmnls="http://www.w3.org/1999/xhtml">
+                    <div xmlns="http://www.w3.org/1999/xhtml">
                         <p>Starting position for lists which have their continuation style set to
                             'start'.</p>
                     </div>
@@ -207,7 +207,7 @@
         <xs:attribute name="number" type="xs:nonNegativeInteger">
             <xs:annotation>
                 <xs:documentation>
-                    <div xmnls="http://www.w3.org/1999/xhtml">
+                    <div xmlns="http://www.w3.org/1999/xhtml">
                         <p>Numbering override for list items where the author needs to override
                             the list numbering completely.</p>
                     </div>
@@ -221,7 +221,7 @@
     <xs:group name="oecdOrderedListTypeContent">
         <xs:annotation>
             <xs:documentation>
-                <div xmnls="http://www.w3.org/1999/xhtml">
+                <div xmlns="http://www.w3.org/1999/xhtml">
                     <p>Content for itemized lists.</p>
                 </div>
             </xs:documentation>
@@ -255,7 +255,7 @@
     <xs:attributeGroup name="oecdDefinitionListTermTypeAttributes">
         <xs:annotation>
             <xs:documentation>
-                <div xmnls="http://www.w3.org/1999/xhtml">
+                <div xmlns="http://www.w3.org/1999/xhtml">
                     <p>Attributes for terms in definition lists.</p>
                 </div>
             </xs:documentation>
@@ -267,7 +267,7 @@
     <xs:group name="oecdDefinitionListTermTypeContent">
         <xs:annotation>
             <xs:documentation>
-                <div xmnls="http://www.w3.org/1999/xhtml">
+                <div xmlns="http://www.w3.org/1999/xhtml">
                     <p>Content for terms in definition lists.</p>
                 </div>
             </xs:documentation>
@@ -281,7 +281,7 @@
     <xs:complexType name="oecdDefinitionListTermType" mixed="true">
         <xs:annotation>
             <xs:documentation>
-                <div xmnls="http://www.w3.org/1999/xhtml">
+                <div xmlns="http://www.w3.org/1999/xhtml">
                     <p>The term to be defined in a definition list.</p>
                 </div>
             </xs:documentation>            
@@ -293,7 +293,7 @@
     <xs:attributeGroup name="oecdDefinitionListItemTypeAttributes">
         <xs:annotation>
             <xs:documentation>
-                <div xmnls="http://www.w3.org/1999/xhtml">
+                <div xmlns="http://www.w3.org/1999/xhtml">
                     <p>Attributes for items in definition lists.</p>
                 </div>
             </xs:documentation>
@@ -305,7 +305,7 @@
     <xs:group name="oecdDefinitionListItemTypeContent">
         <xs:annotation>
             <xs:documentation>
-                <div xmnls="http://www.w3.org/1999/xhtml">
+                <div xmlns="http://www.w3.org/1999/xhtml">
                     <p>Content for items in definition lists.</p>
                 </div>
             </xs:documentation>
@@ -320,7 +320,7 @@
     <xs:complexType name="oecdDefinitionListItemType" mixed="true">
         <xs:annotation>
             <xs:documentation>
-                <div xmnls="http://www.w3.org/1999/xhtml">
+                <div xmlns="http://www.w3.org/1999/xhtml">
                     <p>The term to be defined in a definition list.</p>
                 </div>
             </xs:documentation>            
@@ -333,7 +333,7 @@
     <xs:attributeGroup name="oecdDefinitionListTypeAttributes">
         <xs:annotation>
             <xs:documentation>
-                <div xmnls="http://www.w3.org/1999/xhtml">
+                <div xmlns="http://www.w3.org/1999/xhtml">
                     <p>Attributes for definition lists.</p>
                 </div>
             </xs:documentation>
@@ -345,7 +345,7 @@
     <xs:group name="oecdDefinitionListTypeContent">
         <xs:annotation>
             <xs:documentation>
-                <div xmnls="http://www.w3.org/1999/xhtml">
+                <div xmlns="http://www.w3.org/1999/xhtml">
                     <p>Content for definition lists.</p>
                 </div>
             </xs:documentation>
@@ -361,7 +361,7 @@
     <xs:complexType name="oecdDefinitionListType" mixed="true">
         <xs:annotation>
             <xs:documentation>
-                <div xmnls="http://www.w3.org/1999/xhtml">
+                <div xmlns="http://www.w3.org/1999/xhtml">
                     <p>Definition lists consist of pairs of terms and definitions. The
                         definitions are marked up using a term and a list item contained
                         in a defintion list item.</p>
@@ -378,7 +378,7 @@
     <xs:attribute name="marker" type="oecdListMarker" default="auto">
         <xs:annotation>
             <xs:documentation>
-                <div xmnls="http://www.w3.org/1999/xhtml">
+                <div xmlns="http://www.w3.org/1999/xhtml">
                     <p>List marker for itemized lists. Used at both list and item levels.</p>
                 </div>
             </xs:documentation>

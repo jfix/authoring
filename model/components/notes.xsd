@@ -52,7 +52,7 @@
     <xs:attributeGroup name="oecdNoteTypeAttributes">
         <xs:annotation>
             <xs:documentation>
-                <div xmnls="http://www.w3.org/1999/xhtml">
+                <div xmlns="http://www.w3.org/1999/xhtml">
                     <p>Attributes for individual notes. Grouped for easy redefinition.</p>
                 </div>
             </xs:documentation>
@@ -64,7 +64,7 @@
     <xs:group name="oecdNoteTypeContent">
         <xs:annotation>
             <xs:documentation>
-                <div xmnls="http://www.w3.org/1999/xhtml">
+                <div xmlns="http://www.w3.org/1999/xhtml">
                     <p>Content for individual notes. Grouped for easy redefinition.</p>
                 </div>
             </xs:documentation>
@@ -80,7 +80,7 @@
     <xs:complexType name="oecdNoteType">
         <xs:annotation>
             <xs:documentation>
-                <div xmnls="http://www.w3.org/1999/xhtml">
+                <div xmlns="http://www.w3.org/1999/xhtml">
                     <p>Individual note. This is not a footnote. Notes are contained within
                     certain block types (lists, tables, figures) and explain aspects of the 
                     content. Each note is a block in itself. </p>
@@ -98,7 +98,7 @@
     <xs:attributeGroup name="oecdNotesTypeAttributes">
         <xs:annotation>
             <xs:documentation>
-                <div xmnls="http://www.w3.org/1999/xhtml">
+                <div xmlns="http://www.w3.org/1999/xhtml">
                     <p>Attributes for set of notes. Grouped for easy redefinition.</p>
                 </div>
             </xs:documentation>
@@ -110,7 +110,7 @@
     <xs:group name="oecdNotesTypeContent">
         <xs:annotation>
             <xs:documentation>
-                <div xmnls="http://www.w3.org/1999/xhtml">
+                <div xmlns="http://www.w3.org/1999/xhtml">
                     <p>Content for set of notes. Grouped for easy redefinition.</p>
                 </div>
             </xs:documentation>
@@ -125,7 +125,7 @@
     <xs:complexType name="oecdNotesType">
         <xs:annotation>
             <xs:documentation>
-                <div xmnls="http://www.w3.org/1999/xhtml">
+                <div xmlns="http://www.w3.org/1999/xhtml">
                     <p>Set of notes. This is a wrapper for a set of notes relating to 
                     a particular component.</p>
                 </div>

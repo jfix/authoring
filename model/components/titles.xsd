@@ -59,7 +59,7 @@
     <xs:attributeGroup name="oecdTitleTypeAttributes">
         <xs:annotation>
             <xs:documentation>
-                <div xmnls="http://www.w3.org/1999/xhtml">
+                <div xmlns="http://www.w3.org/1999/xhtml">
                     <p>Attribute group for title type elements to allow easy overrides.</p>
                 </div>
             </xs:documentation>
@@ -71,7 +71,7 @@
     <xs:group name="oecdTitleTypeContent">
         <xs:annotation>
             <xs:documentation>
-                <div xmnls="http://www.w3.org/1999/xhtml">
+                <div xmlns="http://www.w3.org/1999/xhtml">
                     <p>Content for title type elements to allow easy overrides.</p>
                 </div>
             </xs:documentation>
@@ -84,7 +84,7 @@
     <xs:complexType name="oecdTitleType" mixed="true">
         <xs:annotation>
             <xs:documentation>
-                <div xmnls="http://www.w3.org/1999/xhtml">
+                <div xmlns="http://www.w3.org/1999/xhtml">
                     <p>Title elements (and subtitles) share this type.</p>
                 </div>
             </xs:documentation>
@@ -97,7 +97,7 @@
     <xs:attributeGroup name="oecdShortTitleTypeAttributes">
         <xs:annotation>
             <xs:documentation>
-                <div xmnls="http://www.w3.org/1999/xhtml">
+                <div xmlns="http://www.w3.org/1999/xhtml">
                     <p>Attribute group for short title type elements to allow easy overrides.</p>
                 </div>
             </xs:documentation>
@@ -109,7 +109,7 @@
     <xs:complexType name="oecdShortTitleType">
         <xs:annotation>
             <xs:documentation>
-                <div xmnls="http://www.w3.org/1999/xhtml">
+                <div xmlns="http://www.w3.org/1999/xhtml">
                     <p>Short title type. This element holds a text only abbreviated title</p>
                 </div>
             </xs:documentation>

@@ -39,7 +39,7 @@
     <xs:attributeGroup name="oecdXmlAttributes">
         <xs:annotation>
             <xs:documentation>
-                <div xmnls="http://www.w3.org/1999/xhtml">
+                <div xmlns="http://www.w3.org/1999/xhtml">
                     <p>Attribute group to grandfather in the XML Special Attributes.</p>
                 </div>
             </xs:documentation>
@@ -51,7 +51,7 @@
     <xs:attributeGroup name="oecdLinkingAttributes">
         <xs:annotation>
             <xs:documentation>
-                <div xmnls="http://www.w3.org/1999/xhtml">
+                <div xmlns="http://www.w3.org/1999/xhtml">
                     <p>Attribute group to grandfather in the XLink Attribute Set.</p>
                 </div>
             </xs:documentation>
@@ -63,7 +63,7 @@
     <xs:attributeGroup name="oecdRequiredLinkingAttributes">
         <xs:annotation>
             <xs:documentation>
-                <div xmnls="http://www.w3.org/1999/xhtml">
+                <div xmlns="http://www.w3.org/1999/xhtml">
                     <p>Attribute group to grandfather in the XLink Attribute Set with a required external link.</p>
                 </div>
             </xs:documentation>
@@ -80,7 +80,7 @@
     <xs:attributeGroup name="oecdCommonAttributes">
         <xs:annotation>
             <xs:documentation>
-                <div xmnls="http://www.w3.org/1999/xhtml">
+                <div xmlns="http://www.w3.org/1999/xhtml">
                     <p>Defines a set of attributes available to almost any element in the schema.
                     </p>
                 </div>
@@ -96,7 +96,7 @@
     <xs:attribute name="metadataRef" type="xs:IDREF">
         <xs:annotation>
             <xs:documentation>
-                <div xmnls="http://www.w3.org/1999/xhtml">
+                <div xmlns="http://www.w3.org/1999/xhtml">
                     <p>Defines a metadata reference. Metadata may be embedded in the element
                     it describes or held separately in the document level, documentMeta element.
                     If held in the documentMeta element it can be referenced via this attribute.
@@ -109,7 +109,7 @@
     <xs:attribute name="noteRef" type="xs:IDREF">
         <xs:annotation>
             <xs:documentation>
-                <div xmnls="http://www.w3.org/1999/xhtml">
+                <div xmlns="http://www.w3.org/1999/xhtml">
                     <p>Defines a note reference. Notes may be included in the content
                      model of various block components (lists, tables, figures, boxes, etc).
                     Note references are available in the common attribute set but are constrained
@@ -122,7 +122,7 @@
     <xs:attribute name="href" type="xs:anyURI">
         <xs:annotation>
             <xs:documentation>
-                <div xmnls="http://www.w3.org/1999/xhtml">
+                <div xmlns="http://www.w3.org/1999/xhtml">
                     <p>Defines a reference to external content via a URI.</p>
                 </div>
             </xs:documentation>
@@ -132,7 +132,7 @@
     <xs:attribute name="mediaType" type="oecdMediaType">
         <xs:annotation>
             <xs:documentation>
-                <div xmnls="http://www.w3.org/1999/xhtml">
+                <div xmlns="http://www.w3.org/1999/xhtml">
                     <p>Defines a reference to external content via a URI.</p>
                 </div>
             </xs:documentation>            
@@ -142,7 +142,7 @@
     <xs:attribute name="useWhen" type="xs:string">
         <xs:annotation>
             <xs:documentation>
-                <div xmnls="http://www.w3.org/1999/xhtml">
+                <div xmlns="http://www.w3.org/1999/xhtml">
                     <p>Defines processing references for conditional output. NOT intended for use 
                     with multilingual alternatives.</p>
                 </div>
@@ -153,7 +153,7 @@
     <xs:attribute name="xref" type="xs:IDREF">
         <xs:annotation>
             <xs:documentation>
-                <div xmnls="http://www.w3.org/1999/xhtml">
+                <div xmlns="http://www.w3.org/1999/xhtml">
                     <p>Attribute used to reference content elsewhere in the same XML document.</p>
                 </div>
             </xs:documentation>            
