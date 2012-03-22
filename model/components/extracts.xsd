@@ -2,7 +2,7 @@
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
 
     <xs:annotation>
-        <xs:documentation xmlns:html="http://wwww.w3.org/1999/xhtml">
+        <xs:documentation xmlns:html="http://www.w3.org/1999/xhtml">
             <html:h1>OECD Schemas</html:h1>
             <html:h2>Extract Models</html:h2>
             <table xmlns="http://www.w3.org/1999/xhtml">
@@ -47,7 +47,7 @@
     <xs:attributeGroup name="oecdBlockQuoteTypeAttributes">
         <xs:annotation>
             <xs:documentation>
-                <div xmlns="http://wwww.w3.org/1999/xhtml">
+                <div xmlns="http://www.w3.org/1999/xhtml">
                     <p>Blockquote attributes, grouped for easy overrides and reuse.</p>
                 </div>
             </xs:documentation>
@@ -62,7 +62,7 @@
     <xs:group name="oecdBlockQuoteTypeContent">
         <xs:annotation>
             <xs:documentation>
-                <div xmlns="http://wwww.w3.org/1999/xhtml">
+                <div xmlns="http://www.w3.org/1999/xhtml">
                     <p>Blockquote content, grouped for easy overrides and reuse.</p>
                 </div>
             </xs:documentation>
@@ -93,7 +93,7 @@
     <xs:attributeGroup name="oecdExternalContentReferenceTypeAttributes">
         <xs:annotation>
             <xs:documentation>
-                <div xmlns="http://wwww.w3.org/1999/xhtml">
+                <div xmlns="http://www.w3.org/1999/xhtml">
                     <p>External content reference attributes, grouped for easy overrides and reuse.</p>
                 </div>
             </xs:documentation>
@@ -108,7 +108,7 @@
     <xs:group name="oecdExternalContentReferenceTypeContent">
         <xs:annotation>
             <xs:documentation>
-                <div xmlns="http://wwww.w3.org/1999/xhtml">
+                <div xmlns="http://www.w3.org/1999/xhtml">
                     <p>External content reference content, grouped for easy overrides and reuse.</p>
                 </div>
             </xs:documentation>
@@ -138,7 +138,7 @@
     <xs:attributeGroup name="oecdEmbeddedContentTypeAttributes">
         <xs:annotation>
             <xs:documentation>
-                <div xmlns="http://wwww.w3.org/1999/xhtml">
+                <div xmlns="http://www.w3.org/1999/xhtml">
                     <p>Embedded attributes, grouped for easy overrides and reuse.</p>
                 </div>
             </xs:documentation>
@@ -153,7 +153,7 @@
     <xs:group name="oecdEmbeddedContentTypeContent">
         <xs:annotation>
             <xs:documentation>
-                <div xmlns="http://wwww.w3.org/1999/xhtml">
+                <div xmlns="http://www.w3.org/1999/xhtml">
                     <p>embedded content content, grouped for easy overrides and reuse.</p>
                 </div>
             </xs:documentation>
@@ -184,7 +184,7 @@
     <xs:attributeGroup name="oecdExtractTypeAttributes">
         <xs:annotation>
             <xs:documentation>
-                <div xmlns="http://wwww.w3.org/1999/xhtml">
+                <div xmlns="http://www.w3.org/1999/xhtml">
                     <p>Extract attributes, grouped for easy overrides and reuse.</p>
                 </div>
             </xs:documentation>
@@ -198,7 +198,7 @@
     <xs:group name="oecdExtractTypeContent">
         <xs:annotation>
             <xs:documentation>
-                <div xmlns="http://wwww.w3.org/1999/xhtml">
+                <div xmlns="http://www.w3.org/1999/xhtml">
                     <p>Extract content, grouped for easy overrides and reuse.</p>
                 </div>
             </xs:documentation>

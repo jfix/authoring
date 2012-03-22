@@ -2,7 +2,7 @@
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified"> 
 
     <xs:annotation>
-        <xs:documentation xmlns:html="http://wwww.w3.org/1999/xhtml">
+        <xs:documentation xmlns:html="http://www.w3.org/1999/xhtml">
             <html:h1>OECD Schemas</html:h1>
             <html:h2>Attribution Component</html:h2>
             <table xmlns="http://www.w3.org/1999/xhtml">
@@ -44,7 +44,7 @@
     <xs:attributeGroup name="oecdAttributionTypeAttributes">
         <xs:annotation>
             <xs:documentation>
-                <div xmlns="http://wwww.w3.org/1999/xhtml">
+                <div xmlns="http://www.w3.org/1999/xhtml">
                     <p>Attribution attributes, grouped for easy overrides and reuse.</p>
                 </div>
             </xs:documentation>
@@ -59,7 +59,7 @@
     <xs:group name="oecdAttributionTypeContent">
         <xs:annotation>
             <xs:documentation>
-                <div xmlns="http://wwww.w3.org/1999/xhtml">
+                <div xmlns="http://www.w3.org/1999/xhtml">
                     <p>Attribution content, grouped for easy overrides and reuse.</p>
                 </div>
             </xs:documentation>
@@ -74,7 +74,7 @@
     <xs:complexType name="oecdAttributionType">
         <xs:annotation>
             <xs:documentation>
-                <div xmlns="http://wwww.w3.org/1999/xhtml">
+                <div xmlns="http://www.w3.org/1999/xhtml">
                     <p>Attribution content, grouped for easy overrides and reuse.</p>
                 </div>
             </xs:documentation>

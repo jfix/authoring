@@ -2,8 +2,8 @@
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
 
     <xs:annotation>
-        <xs:documentation xmlns:html="http://wwww.w3.org/1999/xhtml">
-            <div xmlns="http://wwww.w3.org/1999/xhtml">
+        <xs:documentation xmlns:html="http://www.w3.org/1999/xhtml">
+            <div xmlns="http://www.w3.org/1999/xhtml">
                 <html>OECD Schemas</html>
                 <h2>Metadata</h2>
                 <p>This is a wrapper element for an arbitrary metadata model.</p>
@@ -94,8 +94,8 @@
          
     <xs:complexType name="oecdMetadataItemType">
         <xs:annotation>
-            <xs:documentation xmlns:html="http://wwww.w3.org/1999/xhtml">
-                <div xmlns="http://wwww.w3.org/1999/xhtml">
+            <xs:documentation xmlns:html="http://www.w3.org/1999/xhtml">
+                <div xmlns="http://www.w3.org/1999/xhtml">
                     <p>The content model for metadata is currently defined as a single
                     element from any namespace. This is unlikely to be the final model
                     and simply acts as a placeholder.</p>

@@ -2,7 +2,7 @@
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified"> 
 
     <xs:annotation>
-        <xs:documentation xmlns:html="http://wwww.w3.org/1999/xhtml">
+        <xs:documentation xmlns:html="http://www.w3.org/1999/xhtml">
             <html:h1>OECD Schemas</html:h1>
             <html:h2>Inline Model Group</html:h2>
             <html:p>This module simply wraps several sources of inline material

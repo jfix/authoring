@@ -2,7 +2,7 @@
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
     
     <xs:annotation>
-        <xs:documentation xmlns:html="http://wwww.w3.org/1999/xhtml">
+        <xs:documentation xmlns:html="http://www.w3.org/1999/xhtml">
             <html:h1>OECD Schemas</html:h1>
             <html:h2>General inline models</html:h2>
             
@@ -61,7 +61,7 @@
     <xs:attributeGroup name="oecdInlineTypeAttributes">
         <xs:annotation>
             <xs:documentation>
-                <div xmlns="http://wwww.w3.org/1999/xhtml">
+                <div xmlns="http://www.w3.org/1999/xhtml">
                     <p>Inline element base attributes grouped for easy override and reuse.</p>
                 </div>
             </xs:documentation>
@@ -73,7 +73,7 @@
     <xs:group name="oecdInlineTypeContent">
         <xs:annotation>
             <xs:documentation>
-                <div xmlns="http://wwww.w3.org/1999/xhtml">
+                <div xmlns="http://www.w3.org/1999/xhtml">
                     <p>Inline element content grouped for easy override and reuse.</p>
                 </div>
             </xs:documentation>
@@ -103,7 +103,7 @@
     <xs:attributeGroup name="oecdEmphasisTypeAttributes">
         <xs:annotation>
             <xs:documentation>
-                <div xmlns="http://wwww.w3.org/1999/xhtml">
+                <div xmlns="http://www.w3.org/1999/xhtml">
                     <p>Emphasis type attributes grouped for easy override and reuse.</p>
                 </div>
             </xs:documentation>
@@ -123,7 +123,7 @@
     <xs:attributeGroup name="oecdFootNoteTypeAttributes">
         <xs:annotation>
             <xs:documentation>
-                <div xmlns="http://wwww.w3.org/1999/xhtml">
+                <div xmlns="http://www.w3.org/1999/xhtml">
                     <p>Footnote type attributes grouped for easy override and reuse.</p>
                 </div>
             </xs:documentation>
@@ -133,7 +133,7 @@
     <xs:group name="oecdFootNoteTypeContent">
         <xs:annotation>
             <xs:documentation>
-                <div xmlns="http://wwww.w3.org/1999/xhtml">
+                <div xmlns="http://www.w3.org/1999/xhtml">
                     <p>Footnote type attributes grouped for easy override and reuse.</p>
                 </div>
             </xs:documentation>
