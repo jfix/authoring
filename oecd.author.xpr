@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="13.2">
+    <meta>
+        <filters directoryPatterns="" filePatterns="" positiveFilePatterns="" showHiddenFiles="false"/>
+        <options>
+            <serialized version="13.2" xml:space="preserve">
+                <map>
+                    <entry>
+                        <String>catalog.verbose.level</String>
+                        <Integer>2</Integer>
+                    </entry>
+                    <entry>
+                        <String>catalogs.v5</String>
+                        <String-array>
+                            <String>${pdu}/tools/catalog.xml</String>
+                            <String>${frameworks}/catalog.xml</String>
+                        </String-array>
+                    </entry>
+                    <entry>
+                        <String>key.xml.catalog.option.pane</String>
+                        <Boolean>true</Boolean>
+                    </entry>
+                    <entry>
+                        <String>process.namespaces.through.uri.mapping.for.xml.schema</String>
+                        <Boolean>true</Boolean>
+                    </entry>
+                    <entry>
+                        <String>use.default.catalog</String>
+                        <Boolean>false</Boolean>
+                    </entry>
+                </map>
+            </serialized>
+        </options>
+    </meta>
+    <projectTree name="oecd.author.xpr">
+        <folder path="documents/"/>
+        <folder path="model/"/>
+        <folder path="tools/"/>
+    </projectTree>
+</project>
