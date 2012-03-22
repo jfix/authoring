@@ -3,7 +3,7 @@
     xmlns:xlink="http://www.w3.org/1999/xlink">
 
     <xs:annotation>
-        <xs:documentation xmlns:html="http://wwww.w3.org/1999/xhtml">
+        <xs:documentation xmlns:html="http://www.w3.org/1999/xhtml">
             <html:h1>OECD Schemas</html:h1>
             <html:h2>Attribute Models</html:h2>
             <table xmlns="http://www.w3.org/1999/xhtml">
@@ -56,13 +56,7 @@
                 </div>
             </xs:documentation>
         </xs:annotation>
-        <xs:attribute ref="xlink:href"/>
-        <xs:attribute ref="xlink:type"/>
-        <xs:attribute ref="xlink:role"/>
-        <xs:attribute ref="xlink:arcrole"/>
-        <xs:attribute ref="xlink:title"/>
-        <xs:attribute ref="xlink:show"/>
-        <xs:attribute ref="xlink:actuate"/>
+        <xs:attributeGroup ref="xlink:simpleLink"/>
         <xs:attribute ref="xref"/>
     </xs:attributeGroup>
     
@@ -75,7 +69,7 @@
             </xs:documentation>
         </xs:annotation>
         <xs:attribute ref="xlink:href" use="required"/>
-        <xs:attribute ref="xlink:type"/>
+        <xs:attribute name="type" type="xs:string" form="qualified" />
         <xs:attribute ref="xlink:role"/>
         <xs:attribute ref="xlink:arcrole"/>
         <xs:attribute ref="xlink:title"/>

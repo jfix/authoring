@@ -43,6 +43,7 @@
     <!-- TODO: determine if these really all should be the same type -->
     <xs:element name="title" type="oecdTitleType"/>
     <xs:element name="subTitle" type="oecdTitleType"/>
+    <xs:element name="shortTitle" type="oecdShortTitleType"/>
     <xs:element name="caption" type="oecdTitleType"/>
     
     <!-- GLOBAL GROUPS -->
@@ -50,6 +51,7 @@
         <xs:sequence>
             <xs:element ref="title"/>
             <xs:element ref="subTitle" minOccurs='0'/>
+            <xs:element ref="shortTitle"/>
         </xs:sequence>
     </xs:group>
     
@@ -75,7 +77,7 @@
             </xs:documentation>
         </xs:annotation>
         <xs:sequence>
-            <xs:element ref="oecdInline" maxOccurs="unbounded" minOccurs="0"/>
+            <xs:group ref="oecdInlineGroup" maxOccurs="unbounded" minOccurs="0"/>
         </xs:sequence>
     </xs:group>
     
@@ -91,7 +93,38 @@
         <xs:attributeGroup ref="oecdTitleTypeAttributes"/>
     </xs:complexType>
     
-    <!-- ATTRIBUTES -->
+    <!-- abbreviated title -->
+    <xs:attributeGroup name="oecdShortTitleTypeAttributes">
+        <xs:annotation>
+            <xs:documentation>
+                <div xmnls="http://www.w3.org/1999/xhtml">
+                    <p>Attribute group for short title type elements to allow easy overrides.</p>
+                </div>
+            </xs:documentation>
+        </xs:annotation>
+        <xs:attributeGroup ref="oecdCommonAttributes"/>
+        <xs:attributeGroup ref="oecdLinkingAttributes"/>
+    </xs:attributeGroup>
+    
+    <xs:complexType name="oecdShortTitleType">
+        <xs:annotation>
+            <xs:documentation>
+                <div xmnls="http://www.w3.org/1999/xhtml">
+                    <p>Short title type. This element holds a text only abbreviated title</p>
+                </div>
+            </xs:documentation>
+        </xs:annotation>
+        
+        <xs:simpleContent>
+            <xs:extension base="xs:string">
+                <xs:attributeGroup ref="oecdShortTitleTypeAttributes"/>
+            </xs:extension>
+        </xs:simpleContent>
+ 
+    </xs:complexType>
+    
+    
+    <!-- SIMPLE TYPES -->
     
     
 </xs:schema>

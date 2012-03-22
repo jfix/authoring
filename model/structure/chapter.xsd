@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+
+    <xs:annotation>
+        <xs:documentation xmlns:html="http://wwww.w3.org/1999/xhtml">
+            <html:h1>OECD Schemas</html:h1>
+            <html:h2>Chapter Model</html:h2>
+            <table xmlns="http://www.w3.org/1999/xhtml">
+                <caption>Change Log</caption>
+                <thead>
+                    <tr>
+                        <th>Version</th>
+                        <th>Date</th>
+                        <th>Author</th>
+                        <th>Changes</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>0.1</td>
+                        <td>2011-12-02</td>
+                        <td><a href="mailto:nicg@corbas.co.uk">Nic Gibson</a></td>
+                        <td>Initial Version</td>
+                    </tr>
+                    <tr>
+                        <td>0.2</td>
+                        <td>2012-03-21</td>
+                        <td><a href="mailto:nicg@corbas.co.uk">Nic Gibson</a></td>
+                        <td>Broke into multiple types so that appendix and preface can derive from it.</td>
+                    </tr>
+                    
+                </tbody>
+            </table>
+            <p>A chapter is a high level structural element. It has been modelled as a separate component
+            to a section as it does not have quite the same structure (a chapter has additional content). 
+            The content model is split into a chapterBaseType and a chapterType because components such as preface
+            share a great deal of the same content model.</p>
+            
+            <p>Related models such as appendix and preface are also defined here.</p>
+        </xs:documentation>
+    </xs:annotation>
+    
+    <!-- IMPORTS AND INCLUDES -->
+    
+    <xs:include schemaLocation="section.xsd"/>
+    <xs:include schemaLocation="../semantic/abstract.xsd"/>
+    
+    <!-- GLOBAL ELEMENTS -->
+    
+    <xs:element name="chapter" type="oecdChapterType"/>
+    <xs:element name="appendix" type="oecdChapterType"/>
+    <xs:element name="introduction" type="oecdChapterType"/>
+    
+    <!-- GLOBAL TYPES -->
+    <xs:attributeGroup name="oecdChapterTypeAttributes">
+        <xs:annotation>
+            <xs:documentation>
+                <div xmlns="http://www.w3.org/1999/xhtml">
+                    <p>Chapter type attributes grouped for easy overrides.</p>
+                </div>
+            </xs:documentation>
+        </xs:annotation>
+        
+    </xs:attributeGroup>
+    
+    <xs:group name="oecdChapterBaseTypeContent">
+        <xs:annotation>
+            <xs:documentation>
+                <div xmlns="http://www.w3.org/1999/xhtml">
+                    <p>Chapter base content. Modelled as a separate group as it is also used by (eg) preface elements. </p>
+                </div>
+            </xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+            <xs:choice>
+                <xs:sequence>
+                    <xs:group ref="oecdBlockGroup" maxOccurs="1"/>
+                    <xs:element ref="section" minOccurs="0" maxOccurs="unbounded"/>
+                </xs:sequence>
+                <xs:element ref="section" minOccurs="1" maxOccurs="unbounded"/>
+            </xs:choice>      
+        </xs:sequence>
+    </xs:group>
+    
+    <xs:group name="oecdChapterTypeContent">
+        <xs:annotation>
+            <xs:documentation>
+                <div xmlns="http://www.w3.org/1999/xhtml">
+                    <p>Extends the base chapter type to add those components which are not allowed in a preface, etc.
+                        Modelled as a separate group as it is also used by (eg) preface elements. </p>
+                </div>
+            </xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+            <xs:element ref="metadata" minOccurs="0"/>
+            <xs:group ref="oecdTitleGroup"/>
+            <xs:element ref="abstract" minOccurs="0"></xs:element>
+        </xs:sequence>
+    </xs:group>
+    
+     <xs:complexType name="oecdChapterType">
+        <xs:annotation>
+            <xs:documentation>
+                <div xmlns="http://www.w3.org/1999/xhtml">
+                    <p>The chapter type is directly derived from a section with no
+                        modifications. However, other section types are more naturally
+                    modelled as chapters so we create a type for chapters.</p>
+                </div>
+            </xs:documentation>
+        </xs:annotation>
+    
+        <xs:complexContent>
+            <xs:extension base="oecdSectionType">
+                <xs:attributeGroup ref="oecdChapterTypeAttributes"/>
+            </xs:extension>
+        </xs:complexContent>
+
+    </xs:complexType>
+    
+
+</xs:schema>

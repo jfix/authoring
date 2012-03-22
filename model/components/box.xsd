@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+    
+    <xs:annotation>
+        <xs:documentation xmlns:html="http://wwww.w3.org/1999/xhtml">
+            <html:h1>OECD Schemas</html:h1>
+            <html:h2>Box Model</html:h2>
+            <table xmlns="http://www.w3.org/1999/xhtml">
+                <caption>Change Log</caption>
+                <thead>
+                    <tr>
+                        <th>Version</th>
+                        <th>Date</th>
+                        <th>Author</th>
+                        <th>Changes</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>0.1</td>
+                        <td>2012-03-21</td>
+                        <td><a href="mailto:nicg@corbas.co.uk">Nic Gibson</a></td>
+                        <td>Initial version.</td>
+                    </tr>
+                    
+                </tbody>
+            </table>
+            
+        </xs:documentation>
+    </xs:annotation>
+    
+    <!-- IMPORTS AND INCLUDES -->
+    
+    <xs:include schemaLocation="../structure/section.xsd"/>
+    <xs:include schemaLocation="notes.xsd"/>
+    
+    <!-- GLOBAL ELEMENTS -->
+    
+    <xs:element name="box" type="oecdSectionType"/>
+    
+    <!-- GLOBAL TYPES -->
+    <xs:complexType name="oecdBoxType">
+        <xs:annotation>
+            <xs:documentation>
+                <div xmlns="http://www.w3.org/1999/xhtml">
+                    <p>An box occupies the same structural position as block content and is treated as a block.
+                    However, the content model of a block is that of a section with an optional notes element
+                    appended.</p>
+                </div>
+            </xs:documentation>
+        </xs:annotation>
+        <xs:complexContent>
+            <xs:extension base="oecdSectionType">
+                <xs:sequence>
+                    <xs:element ref="notes" minOccurs="0"/>
+                </xs:sequence>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+    
+</xs:schema>

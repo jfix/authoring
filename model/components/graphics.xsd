@@ -43,6 +43,11 @@
     <xs:element name="externalGraphic" type="oecdExternalGraphicType"/>
     <xs:element name="svgGraphic" type="oecdSvgGraphicType"/>
     
+    <xs:element name="inlineGraphic" type="oecdInlineGraphicType"/>
+    <xs:element name="graphic" type="oecdBlockGraphicType"/>
+    
+    <xs:element name="figure" type='oecdFigureType'/>
+    
     <!-- GLOBAL GROUPS -->
     <xs:group name="oecdGraphicsGroup">
         <xs:choice>
@@ -187,6 +192,90 @@
         <xs:group ref="oecdBlockGraphicTypeContent"/>
         <xs:attributeGroup ref="oecdBlockGraphicTypeAttributes"/>
     </xs:complexType>
+    
+    <!-- inline graphics -->
+    
+    <xs:attributeGroup name="oecdInlineGraphicTypeAttributes">
+        <xs:annotation>
+            <xs:documentation>
+                <div xmlns="http://www.w3.org/1999/xhtml">
+                    <p>Attributes for inline graphics. Grouped to allow easy override.</p>
+                </div>
+            </xs:documentation>
+        </xs:annotation>    
+        <xs:attributeGroup ref="oecdCommonAttributes"/>
+        <xs:attributeGroup ref="oecdLinkingAttributes"/>        
+    </xs:attributeGroup>
+    
+    <xs:group name="oecdInlineGraphicTypeContent">
+        <xs:annotation>
+            <xs:documentation>
+                <div xmlns="http://www.w3.org/1999/xhtml">
+                    <p>Content for inline graphics. Grouped to allow easy override.</p>
+                </div>
+            </xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+            <xs:element ref="metadata" minOccurs="0"/>
+            <xs:element ref="attribution" minOccurs="0"/>         
+            <xs:group ref="oecdGraphicsGroup"/>
+        </xs:sequence>
+    </xs:group>
+    
+    <xs:complexType name="oecdInlineGraphicType">
+        <xs:annotation>
+            <xs:documentation>
+                <div xmlns="http://www.w3.org/1999/xhtml">
+                    <p>Block graphic type. This has a considerably more restricted model than a block graphic.</p>
+                </div>
+            </xs:documentation>
+        </xs:annotation>
+        <xs:group ref="oecdInlineGraphicTypeContent"/>
+        <xs:attributeGroup ref="oecdInlineGraphicTypeAttributes"/>
+    </xs:complexType>   
+    
+    <!-- figures -->
+    
+    <xs:attributeGroup name="oecdFigureTypeAttributes">
+        <xs:annotation>
+            <xs:documentation>
+                <div xmlns="http://www.w3.org/1999/xhtml">
+                    <p>Attributes for figures. Grouped to allow easy override.</p>
+                </div>
+            </xs:documentation>
+        </xs:annotation>    
+        <xs:attributeGroup ref="oecdCommonAttributes"/>
+        <xs:attributeGroup ref="oecdLinkingAttributes"/>        
+    </xs:attributeGroup>
+    
+    <xs:group name="oecdFigureTypeContent">
+        <xs:annotation>
+            <xs:documentation>
+                <div xmlns="http://www.w3.org/1999/xhtml">
+                    <p>Content for figures. Grouped to allow easy override.</p>
+                </div>
+            </xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+            <xs:element ref="metadata" minOccurs="0"/>
+            <xs:group ref="oecdTitleGroup" minOccurs="0"/>
+            <xs:element ref="graphic"/>
+            <xs:element ref="notes" minOccurs="0"></xs:element>
+        </xs:sequence>
+    </xs:group>
+    
+    <xs:complexType name="oecdFigureType">
+        <xs:annotation>
+            <xs:documentation>
+                <div xmlns="http://www.w3.org/1999/xhtml">
+                    <p>Figure Type. Figures are essentially wrappers around block graphics
+                    allowing titles and notes to be added.</p>
+                </div>
+            </xs:documentation>
+        </xs:annotation>
+        <xs:group ref="oecdFigureTypeContent"/>
+        <xs:attributeGroup ref="oecdFigureTypeAttributes"/>
+    </xs:complexType>   
     
 
 </xs:schema>

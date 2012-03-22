@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified"> 
 
-
     <xs:annotation>
-        <xs:documentation xmlns:html="http://wwww.w3.org/1999/xhtml">
+        <xs:documentation xmlns:html="http://www.w3.org/1999/xhtml">
             <html:h1>OECD Schemas</html:h1>
-            <html:h2>Executive Summary</html:h2>           
+            <html:h2>Simple Structual Components</html:h2>
             <table xmlns="http://www.w3.org/1999/xhtml">
                 <caption>Change Log</caption>
                 <thead>
@@ -19,38 +18,47 @@
                 <tbody>
                     <tr>
                         <td>0.1</td>
-                        <td>2012-03-05</td>
-                        <td><a href="mailto:nicg@corbas.co.uk">Nic Gibson</a></td>
-                        <td>Initial Version</td>
-                    </tr>
-                    <tr>
-                        <td>0.2</td>
                         <td>2012-03-21</td>
                         <td><a href="mailto:nicg@corbas.co.uk">Nic Gibson</a></td>
-                        <td><ul><li>Updated to best practices.</li>
-                        <li>Modified content model to be a series of blocks (excluding boxes).</li></ul></td>
+                        <td>Initial Version</td>
                     </tr>
                     
                 </tbody>
             </table>
+            <p></p>
+            
+            <p>Bibliographic models. There are two distinct bibliographic models. Firstly, 
+            we have an application driven process which uses bibliographic tools. In this
+            case it is only necessary to indicate where the bibliography should be rendered.
+            Secondly, we have reference material or additional reading where the bibliography
+            should be generated as section type content inline allowing authors to enter their
+            bibliographic material directly.</p>
+                       
         </xs:documentation>
     </xs:annotation>
     
     <!-- IMPORTS AND INCLUDES -->
-    
     <xs:include schemaLocation="../components/blocks.xsd"/>
+    <xs:import  schemaLocation="../external/mods.xsd"  namespace="http://www.loc.gov/mods/v3"/>
+    
     
     <!-- GLOBAL ELEMENTS -->
-        
-    <xs:element name="executiveSummary" type="oecdBlockGroupType"/>
     
     <!-- GLOBAL GROUPS -->
-    
+   
     <!-- COMPLEX TYPES -->
+   
+    <xs:attributeGroup name="oecdBibliographicTypeAttributes">
+        <xs:annotation>
+            <xs:documentation>
+                
+            </xs:documentation>
+        </xs:annotation>
+    </xs:attributeGroup>
     
- 
+    <!-- SIMPLE TYPES -->
     
-        
+    
     
 
 </xs:schema>

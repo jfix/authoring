@@ -34,9 +34,12 @@
     
     <!-- IMPORTS AND INCLUDES  -->
     <xs:include schemaLocation="attributes.xsd"/>
-    <xs:include schemaLocation="inlines.xsd"/>
+    <xs:include schemaLocation="inline-group.xsd"/>
     <xs:include schemaLocation="titles.xsd"/>
     <xs:include schemaLocation="meta.xsd"/>
+    
+    <xs:include schemaLocation="graphics.xsd"/>
+    <xs:include schemaLocation="equations.xsd"/>
     
     <!-- GLOBAL ELEMENTS -->
     <xs:element name="para" type="oecdParagraphType"/>
@@ -77,7 +80,7 @@
         </xs:annotation>
         <xs:sequence>
             <xs:element ref="metadata" minOccurs="0"/>
-            <xs:element ref="oecdInline" maxOccurs="unbounded" minOccurs="0"/>
+            <xs:group ref="oecdInlineGroup" minOccurs="0" maxOccurs="unbounded"/>
         </xs:sequence>        
     </xs:group>
 

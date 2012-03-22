@@ -27,7 +27,14 @@
                         <td>2012-03-14</td>
                         <td><a href="mailto:nicg@corbas.co.uk">Nic Gibson</a></td>
                         <td>Broke down into sub-components.</td>
+                    </tr>
+                    <tr>
+                        <td>0.3</td>
+                        <td>2012-03-2</td>
+                        <td><a href="mailto:nicg@corbas.co.uk">Nic Gibson</a></td>
+                        <td>Added equations, boxex and graphics</td>
                     </tr>                        
+                    
                 </tbody>
             </table>
             
@@ -38,16 +45,88 @@
     <!-- IMPORTS AND INCLUDES -->
     <xs:include schemaLocation="titles.xsd"/>
     <xs:include schemaLocation="paras.xsd"/>
-    <xs:include schemaLocation="lists.xsd"/>    
-    
+    <xs:include schemaLocation="lists.xsd"/>   
+    <xs:include schemaLocation="equations.xsd"/>
+    <xs:include schemaLocation="box.xsd"/>
+    <xs:include schemaLocation="graphics.xsd"/>
     
     <!-- GLOBAL GROUPS -->
     <xs:group name="oecdBlockGroup">
+        <xs:annotation>
+            <xs:documentation>
+                <div xmlns="http://www.w3.org/1999/xhtml">
+                    <p>The oecdBlockGroup group allows other models to simply reuse all the available block components.</p>
+                </div>
+            </xs:documentation>
+        </xs:annotation>
         <xs:choice>
-            <xs:group ref="oecdParagraphGroup"/>
-            <xs:group ref="oecdListGroup"/>            
+            <xs:group ref="oecdSimpleBlockGroup"/>
+            <xs:element ref="box"/>
         </xs:choice>
     </xs:group>
+    
+    <xs:group name="oecdSimpleBlockGroup">
+        <xs:annotation>
+            <xs:documentation>
+                <div xmlns="http://www.w3.org/1999/xhtml">
+                    <p>The oecdSimpleBlockGroup group allows other models to simply reuse all the available bar those with rarely
+                        used content models such as boxes.</p>
+                </div>
+            </xs:documentation>
+        </xs:annotation>
+        <xs:choice>
+            <xs:group ref="oecdParagraphGroup"/>
+            <xs:group ref="oecdListGroup"/>  
+            <xs:element ref="equation"/>   
+            <xs:element ref="graphic"/>
+            <xs:element ref="figure"/>
+        </xs:choice>        
+    </xs:group>
+    
+    <!-- groups of blocks. Used a base for other types -->
+    
+    <xs:attributeGroup name="oecdBlockGroupTypeAttributes">
+        <xs:annotation>
+            <xs:documentation>
+                <div xmlns="http://www.w3.org/1999/xhtml">
+                    <p>Block group attributes grouped for easier reuse and customisation</p>
+                </div>
+            </xs:documentation>
+        </xs:annotation>
+        <xs:attributeGroup ref="oecdCommonAttributes"/>
+        <xs:attributeGroup ref="oecdLinkingAttributes"/>
+    </xs:attributeGroup>
+    
+    <xs:group name="oecdBlockGroupTypeContent">
+        <xs:annotation>
+            <xs:documentation>
+                <div xmlns="http://www.w3.org/1999/xhtml">
+                    <p>Block group content grouped for easier reuse and customisation</p>
+                </div>
+            </xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+            <xs:element ref="metadata" minOccurs="0"/>
+            <xs:group ref="oecdTitleGroup"/>
+            <xs:group ref="oecdBlockGroup" maxOccurs="unbounded"></xs:group>
+        </xs:sequence>
+    </xs:group>
+    
+    <xs:complexType name="oecdBlockGroupType">
+        <xs:annotation>
+            <xs:documentation>
+                <div xmlns="http://www.w3.org/1999/xhtml">
+                    <p>Some semantic models consist of a group of blocks with no 
+                    further structure. This is intended to be used as the type
+                    for those models.</p>
+                </div>
+            </xs:documentation>
+        </xs:annotation>
+        <xs:group ref="oecdBlockGroupTypeContent"/>
+        <xs:attributeGroup ref="oecdBlockGroupTypeAttributes"/>
+    </xs:complexType>
+    
+    
     
     
 </xs:schema>

@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified"> 
-
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
 
     <xs:annotation>
         <xs:documentation xmlns:html="http://wwww.w3.org/1999/xhtml">
             <html:h1>OECD Schemas</html:h1>
-            <html:h2>Executive Summary</html:h2>           
+            <html:h2>Appendix Model</html:h2>
             <table xmlns="http://www.w3.org/1999/xhtml">
                 <caption>Change Log</caption>
                 <thead>
@@ -19,7 +18,7 @@
                 <tbody>
                     <tr>
                         <td>0.1</td>
-                        <td>2012-03-05</td>
+                        <td>2011-12-02</td>
                         <td><a href="mailto:nicg@corbas.co.uk">Nic Gibson</a></td>
                         <td>Initial Version</td>
                     </tr>
@@ -27,30 +26,21 @@
                         <td>0.2</td>
                         <td>2012-03-21</td>
                         <td><a href="mailto:nicg@corbas.co.uk">Nic Gibson</a></td>
-                        <td><ul><li>Updated to best practices.</li>
-                        <li>Modified content model to be a series of blocks (excluding boxes).</li></ul></td>
+                        <td>Restructured to separate file from section.</td>
                     </tr>
                     
                 </tbody>
             </table>
+            <p>An appendix is a section</p>
         </xs:documentation>
     </xs:annotation>
     
     <!-- IMPORTS AND INCLUDES -->
     
-    <xs:include schemaLocation="../components/blocks.xsd"/>
+    <xs:include schemaLocation="../structure/section.xsd"/>
     
     <!-- GLOBAL ELEMENTS -->
-        
-    <xs:element name="executiveSummary" type="oecdBlockGroupType"/>
     
-    <!-- GLOBAL GROUPS -->
-    
-    <!-- COMPLEX TYPES -->
-    
- 
-    
-        
-    
+    <xs:element name="appendix" type="oecdSectionType"/>
 
 </xs:schema>

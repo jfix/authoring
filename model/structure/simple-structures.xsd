@@ -5,7 +5,7 @@
     <xs:annotation>
         <xs:documentation xmlns:html="http://wwww.w3.org/1999/xhtml">
             <html:h1>OECD Schemas</html:h1>
-            <html:h2>Executive Summary</html:h2>           
+            <html:h2>Simple Structual Components</html:h2>
             <table xmlns="http://www.w3.org/1999/xhtml">
                 <caption>Change Log</caption>
                 <thead>
@@ -19,38 +19,18 @@
                 <tbody>
                     <tr>
                         <td>0.1</td>
-                        <td>2012-03-05</td>
-                        <td><a href="mailto:nicg@corbas.co.uk">Nic Gibson</a></td>
-                        <td>Initial Version</td>
-                    </tr>
-                    <tr>
-                        <td>0.2</td>
                         <td>2012-03-21</td>
                         <td><a href="mailto:nicg@corbas.co.uk">Nic Gibson</a></td>
-                        <td><ul><li>Updated to best practices.</li>
-                        <li>Modified content model to be a series of blocks (excluding boxes).</li></ul></td>
+                        <td>Initial Version</td>
                     </tr>
                     
                 </tbody>
             </table>
+            <p></p>
+            
+            <p>Related models such as appendix and preface are also defined here.</p>
         </xs:documentation>
     </xs:annotation>
     
-    <!-- IMPORTS AND INCLUDES -->
     
-    <xs:include schemaLocation="../components/blocks.xsd"/>
-    
-    <!-- GLOBAL ELEMENTS -->
-        
-    <xs:element name="executiveSummary" type="oecdBlockGroupType"/>
-    
-    <!-- GLOBAL GROUPS -->
-    
-    <!-- COMPLEX TYPES -->
-    
- 
-    
-        
-    
-
 </xs:schema>

@@ -23,23 +23,67 @@
                         <td><a href="mailto:nicg@corbas.co.uk">Nic Gibson</a></td>
                         <td>Initial Version</td>
                     </tr>
+                    <tr>
+                        <td>0.2</td>
+                        <td>2012-03-21</td>
+                        <td><a href="mailto:nicg@corbas.co.uk">Nic Gibson</a></td>
+                        <td><ul><li>Transferred other elements from older files.</li>
+                            <li>Upated base type to current standards.</li>
+                        </ul></td>
+                    </tr>
                 </tbody>
             </table>
+            
+            <p><strong>Note:</strong> the inline graphic component is defined in graphics.</p>
+            
             
         </xs:documentation>
     </xs:annotation>
     
+    <!-- IMPORTS AND INCLUDES -->
+    
     <xs:include schemaLocation="attributes.xsd"/>    
     <xs:include schemaLocation="types.xsd"/>
     <xs:include schemaLocation="meta.xsd"/>
-    
-    <!-- Global elements -->
-    <xs:element name="oecdInline" type="oecdInlineType"/>
+    <xs:include schemaLocation="blocks.xsd"/>
     
     
-    <!-- Complex types -->
+    
+    <!-- GLOBAL ELEMENTS -->
+    <xs:element name="oecdInline" type="oecdInlineType"/> <!-- different name to all other elements as it is abstract -->
+    <xs:element name="emphasis" type="oecdEmphasisType"  substitutionGroup="oecdInline"/>
+    <xs:element name="footnote" type="oecdFootnoteType"/>
+          
+    <!-- COMPLEX TYPES -->
+    
+    <!-- abstract inline elements -->
+    
+    <xs:attributeGroup name="oecdInlineTypeAttributes">
+        <xs:annotation>
+            <xs:documentation>
+                <div xmlns="http://wwww.w3.org/1999/xhtml">
+                    <p>Inline element base attributes grouped for easy override and reuse.</p>
+                </div>
+            </xs:documentation>
+        </xs:annotation>
+        <xs:attributeGroup ref="oecdCommonAttributes"/>
+        <xs:attributeGroup ref="oecdLinkingAttributes"/>
+    </xs:attributeGroup>
+    
+    <xs:group name="oecdInlineTypeContent">
+        <xs:annotation>
+            <xs:documentation>
+                <div xmlns="http://wwww.w3.org/1999/xhtml">
+                    <p>Inline element content grouped for easy override and reuse.</p>
+                </div>
+            </xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+            <xs:element ref="oecdInline" maxOccurs="unbounded" minOccurs='0'/>
+        </xs:sequence>
+    </xs:group>
 
-    <xs:complexType name="oecdInlineType" abstract="true">
+    <xs:complexType name="oecdInlineType" abstract="true" mixed="true">
         <xs:annotation>
             <xs:documentation>
                 <div xmlns="http://www.w3.org/1999/xhtml">
@@ -49,9 +93,91 @@
                 </div>
             </xs:documentation>
         </xs:annotation>
+        <xs:group ref="oecdInlineTypeContent" maxOccurs="unbounded" minOccurs="0"/>
+        <xs:attributeGroup ref="oecdInlineTypeAttributes"/>
     </xs:complexType>
     
+ 
+    <!-- emphasis -->
+        
+    <xs:attributeGroup name="oecdEmphasisTypeAttributes">
+        <xs:annotation>
+            <xs:documentation>
+                <div xmlns="http://wwww.w3.org/1999/xhtml">
+                    <p>Emphasis type attributes grouped for easy override and reuse.</p>
+                </div>
+            </xs:documentation>
+        </xs:annotation>
+        <xs:attribute name="style" type="oecdStyleAttributeType" use="required"/>
+    </xs:attributeGroup>
+        
+    <xs:complexType name="oecdEmphasisType" mixed="true">
+        <xs:complexContent>
+            <xs:extension base="oecdInlineType">
+                <xs:attributeGroup ref="oecdEmphasisTypeAttributes"/>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
     
+    <!-- footnotes -->
+    <xs:attributeGroup name="oecdFootNoteTypeAttributes">
+        <xs:annotation>
+            <xs:documentation>
+                <div xmlns="http://wwww.w3.org/1999/xhtml">
+                    <p>Footnote type attributes grouped for easy override and reuse.</p>
+                </div>
+            </xs:documentation>
+        </xs:annotation>
+    </xs:attributeGroup>
     
+    <xs:group name="oecdFootNoteTypeContent">
+        <xs:annotation>
+            <xs:documentation>
+                <div xmlns="http://wwww.w3.org/1999/xhtml">
+                    <p>Footnote type attributes grouped for easy override and reuse.</p>
+                </div>
+            </xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+            <xs:element ref="metadata" minOccurs="0"/>
+            <xs:group ref="oecdSimpleBlockGroup" maxOccurs="unbounded"/>
+        </xs:sequence>       
+    </xs:group>
+    
+    <xs:complexType name="oecdFootnoteType">
+        <xs:annotation>
+            <xs:documentation>
+                <div xmlns="http://www.w3.org/1999/xhtml">
+                    <p>Footnote element. This element acts as an inline but has block
+                    content. Therefore, it is not derived from oecdInline.</p>
+                </div>
+            </xs:documentation>
+        </xs:annotation>
+        
+    </xs:complexType>
+    
+    <!-- SIMPLE TYPES -->
+       
+    
+    <!-- emphasis style values -->
+    
+    <xs:simpleType name="oecdStyleAttributeType">
+        <xs:annotation>
+            <xs:documentation>
+                <p xmlns="http://www.w3.org/1999/xhtml">Enumerated data type to hold the possible
+                    values for emphasis elements' style attribute. This is neither proscriptive nor exhaustive!</p>
+            </xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="bold"/>
+            <xs:enumeration value="italic"/>
+            <xs:enumeration value="underline"/>
+            <xs:enumeration value="strikethrough"/>
+            <xs:enumeration value="double-strikethrough"/>
+            <xs:enumeration value="small-caps"/>
+            <xs:enumeration value="subscript"/>
+            <xs:enumeration value="supersript"/>
+        </xs:restriction>
+    </xs:simpleType>
 
 </xs:schema>
