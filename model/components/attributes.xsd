@@ -1,31 +1,22 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified"
-    xmlns:xlink="http://www.w3.org/1999/xlink">
+<?xml version="1.0" encoding="UTF-8"?><xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xlink="http://www.w3.org/1999/xlink" elementFormDefault="qualified">
 
     <xs:annotation>
-        <xs:documentation xmlns:html="http://www.w3.org/1999/xhtml">
-            <html:h1>OECD Schemas</html:h1>
-            <html:h2>Attribute Models</html:h2>
-            <table xmlns="http://www.w3.org/1999/xhtml">
-                <caption>Change Log</caption>
-                <thead>
-                    <tr>
-                        <th>Version</th>
-                        <th>Date</th>
-                        <th>Author</th>
-                        <th>Changes</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>0.1</td>
-                        <td>2011-12-02</td>
-                        <td><a href="mailto:nicg@corbas.co.uk">Nic Gibson</a></td>
-                        <td>Initial Version</td>
-                    </tr>
-                </tbody>
-            </table>
-        </xs:documentation>
+        <xs:documentation><section xmlns="http://docbook.org/ns/docbook">
+            <title>OECD Schemas</title>
+            <subtitle>Attribute Models</subtitle>
+            <revhistory>
+                <title>Change Log</title>
+                
+                
+                    <revision>
+                        <revnumber>0.1</revnumber>
+                        <date>2011-12-02</date>
+                        <author><email>nicg@corbas.co.uk</email><personname>Nic Gibson</personname></author>
+                        <revremark>Initial Version</revremark>
+                    </revision>
+                
+            </revhistory>
+        </section></xs:documentation>
     </xs:annotation>
     
     <!-- IMPORTS AND INCLUDES -->
@@ -39,9 +30,9 @@
     <xs:attributeGroup name="oecdXmlAttributes">
         <xs:annotation>
             <xs:documentation>
-                <div xmlns="http://www.w3.org/1999/xhtml">
-                    <p>Attribute group to grandfather in the XML Special Attributes.</p>
-                </div>
+                <section xmlns="http://docbook.org/ns/docbook">
+                    <para>Attribute group to grandfather in the XML Special Attributes.</para>
+                </section>
             </xs:documentation>
         </xs:annotation>
         <xs:attributeGroup ref="xml:specialAttrs"/>
@@ -51,9 +42,9 @@
     <xs:attributeGroup name="oecdLinkingAttributes">
         <xs:annotation>
             <xs:documentation>
-                <div xmlns="http://www.w3.org/1999/xhtml">
-                    <p>Attribute group to grandfather in the XLink Attribute Set.</p>
-                </div>
+                <section xmlns="http://docbook.org/ns/docbook">
+                    <para>Attribute group to grandfather in the XLink Attribute Set.</para>
+                </section>
             </xs:documentation>
         </xs:annotation>
         <xs:attributeGroup ref="xlink:simpleLink"/>
@@ -63,13 +54,13 @@
     <xs:attributeGroup name="oecdRequiredLinkingAttributes">
         <xs:annotation>
             <xs:documentation>
-                <div xmlns="http://www.w3.org/1999/xhtml">
-                    <p>Attribute group to grandfather in the XLink Attribute Set with a required external link.</p>
-                </div>
+                <section xmlns="http://docbook.org/ns/docbook">
+                    <para>Attribute group to grandfather in the XLink Attribute Set with a required external link.</para>
+                </section>
             </xs:documentation>
         </xs:annotation>
         <xs:attribute ref="xlink:href" use="required"/>
-        <xs:attribute name="type" type="xs:string" form="qualified" />
+        <xs:attribute name="type" type="xs:string" form="qualified"/>
         <xs:attribute ref="xlink:role"/>
         <xs:attribute ref="xlink:arcrole"/>
         <xs:attribute ref="xlink:title"/>
@@ -80,10 +71,10 @@
     <xs:attributeGroup name="oecdCommonAttributes">
         <xs:annotation>
             <xs:documentation>
-                <div xmlns="http://www.w3.org/1999/xhtml">
-                    <p>Defines a set of attributes available to almost any element in the schema.
-                    </p>
-                </div>
+                <section xmlns="http://docbook.org/ns/docbook">
+                    <para>Defines a set of attributes available to almost any element in the schema.
+                    </para>
+                </section>
             </xs:documentation>
         </xs:annotation>
         <xs:attributeGroup ref="oecdXmlAttributes"/>
@@ -96,12 +87,12 @@
     <xs:attribute name="metadataRef" type="xs:IDREF">
         <xs:annotation>
             <xs:documentation>
-                <div xmlns="http://www.w3.org/1999/xhtml">
-                    <p>Defines a metadata reference. Metadata may be embedded in the element
+                <section xmlns="http://docbook.org/ns/docbook">
+                    <para>Defines a metadata reference. Metadata may be embedded in the element
                     it describes or held separately in the document level, documentMeta element.
                     If held in the documentMeta element it can be referenced via this attribute.
-                    More than one element may reference the same metadata.</p>
-                </div>
+                    More than one element may reference the same metadata.</para>
+                </section>
             </xs:documentation>
         </xs:annotation>
     </xs:attribute>
@@ -109,12 +100,12 @@
     <xs:attribute name="noteRef" type="xs:IDREF">
         <xs:annotation>
             <xs:documentation>
-                <div xmlns="http://www.w3.org/1999/xhtml">
-                    <p>Defines a note reference. Notes may be included in the content
+                <section xmlns="http://docbook.org/ns/docbook">
+                    <para>Defines a note reference. Notes may be included in the content
                      model of various block components (lists, tables, figures, boxes, etc).
                     Note references are available in the common attribute set but are constrained
-                    via Schematron to only those elements which can contain notes.</p>
-                </div>
+                    via Schematron to only those elements which can contain notes.</para>
+                </section>
             </xs:documentation>
         </xs:annotation>
     </xs:attribute>
@@ -122,9 +113,9 @@
     <xs:attribute name="href" type="xs:anyURI">
         <xs:annotation>
             <xs:documentation>
-                <div xmlns="http://www.w3.org/1999/xhtml">
-                    <p>Defines a reference to external content via a URI.</p>
-                </div>
+                <section xmlns="http://docbook.org/ns/docbook">
+                    <para>Defines a reference to external content via a URI.</para>
+                </section>
             </xs:documentation>
         </xs:annotation>
     </xs:attribute>
@@ -132,9 +123,9 @@
     <xs:attribute name="mediaType" type="oecdMediaType">
         <xs:annotation>
             <xs:documentation>
-                <div xmlns="http://www.w3.org/1999/xhtml">
-                    <p>Defines a reference to external content via a URI.</p>
-                </div>
+                <section xmlns="http://docbook.org/ns/docbook">
+                    <para>Defines a reference to external content via a URI.</para>
+                </section>
             </xs:documentation>            
         </xs:annotation>
     </xs:attribute>
@@ -142,10 +133,10 @@
     <xs:attribute name="useWhen" type="xs:string">
         <xs:annotation>
             <xs:documentation>
-                <div xmlns="http://www.w3.org/1999/xhtml">
-                    <p>Defines processing references for conditional output. NOT intended for use 
-                    with multilingual alternatives.</p>
-                </div>
+                <section xmlns="http://docbook.org/ns/docbook">
+                    <para>Defines processing references for conditional output. NOT intended for use 
+                    with multilingual alternatives.</para>
+                </section>
             </xs:documentation>            
         </xs:annotation>      
     </xs:attribute>
@@ -153,9 +144,9 @@
     <xs:attribute name="xref" type="xs:IDREF">
         <xs:annotation>
             <xs:documentation>
-                <div xmlns="http://www.w3.org/1999/xhtml">
-                    <p>Attribute used to reference content elsewhere in the same XML document.</p>
-                </div>
+                <section xmlns="http://docbook.org/ns/docbook">
+                    <para>Attribute used to reference content elsewhere in the same XML document.</para>
+                </section>
             </xs:documentation>            
         </xs:annotation>              
     </xs:attribute>

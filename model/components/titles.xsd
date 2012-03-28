@@ -1,36 +1,30 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+<?xml version="1.0" encoding="UTF-8"?><xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
     
     <xs:annotation>
-        <xs:documentation xmlns:html="http://www.w3.org/1999/xhtml">
-            <html:h1>OECD Schemas</html:h1>
-            <html:h2>Title type components</html:h2>
-            <table xmlns="http://www.w3.org/1999/xhtml">
-                <caption>Change Log</caption>
-                <thead>
-                    <tr>
-                        <th>Version</th>
-                        <th>Date</th>
-                        <th>Author</th>
-                        <th>Changes</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>0.1</td>
-                        <td>2012-02-10</td>
-                        <td><a href="mailto:nicg@corbas.co.uk">Nic Gibson</a></td>
-                        <td>Initial Version</td>
-                        <td>0.2</td>
-                        <td>2012-03-14</td>
-                        <td><a href="mailto:nicg@corbas.co.uk">Nic Gibson</a></td>
-                        <td>Rewrite to use the more structure group/attributeGroup approach used in other components.</td>
+        <xs:documentation><section xmlns="http://docbook.org/ns/docbook">
+            <title>OECD Schemas</title>
+            <subtitle>Title type components</subtitle>
+            <revhistory>
+                <title>Change Log</title>
+                
+                
+                    <revision>
+                        <revnumber>0.1</revnumber>
+                        <date>2012-02-10</date>
+                        <author><email>nicg@corbas.co.uk</email><personname>Nic Gibson</personname></author>
+                        <revremark>Initial Version</revremark>
+                    </revision>
+                    <revision>
+                        <revnumber>0.2</revnumber>
+                        <date>2012-03-14</date>
+                        <author><email>nicg@corbas.co.uk</email><personname>Nic Gibson</personname></author>
+                        <revremark>Rewrite to use the more structure group/attributeGroup approach used in other components.</revremark>
                         
-                    </tr>
-                </tbody>
-            </table>
+                    </revision>
+                
+            </revhistory>
             
-        </xs:documentation>
+        </section></xs:documentation>
     </xs:annotation>
     
     
@@ -50,7 +44,7 @@
     <xs:group name="oecdTitleGroup">
         <xs:sequence>
             <xs:element ref="title"/>
-            <xs:element ref="subTitle" minOccurs='0'/>
+            <xs:element ref="subTitle" minOccurs="0"/>
             <xs:element ref="shortTitle"/>
         </xs:sequence>
     </xs:group>
@@ -59,9 +53,9 @@
     <xs:attributeGroup name="oecdTitleTypeAttributes">
         <xs:annotation>
             <xs:documentation>
-                <div xmlns="http://www.w3.org/1999/xhtml">
-                    <p>Attribute group for title type elements to allow easy overrides.</p>
-                </div>
+                <section xmlns="http://docbook.org/ns/docbook">
+                    <para>Attribute group for title type elements to allow easy overrides.</para>
+                </section>
             </xs:documentation>
         </xs:annotation>
         <xs:attributeGroup ref="oecdCommonAttributes"/>
@@ -71,9 +65,9 @@
     <xs:group name="oecdTitleTypeContent">
         <xs:annotation>
             <xs:documentation>
-                <div xmlns="http://www.w3.org/1999/xhtml">
-                    <p>Content for title type elements to allow easy overrides.</p>
-                </div>
+                <section xmlns="http://docbook.org/ns/docbook">
+                    <para>Content for title type elements to allow easy overrides.</para>
+                </section>
             </xs:documentation>
         </xs:annotation>
         <xs:sequence>
@@ -84,9 +78,9 @@
     <xs:complexType name="oecdTitleType" mixed="true">
         <xs:annotation>
             <xs:documentation>
-                <div xmlns="http://www.w3.org/1999/xhtml">
-                    <p>Title elements (and subtitles) share this type.</p>
-                </div>
+                <section xmlns="http://docbook.org/ns/docbook">
+                    <para>Title elements (and subtitles) share this type.</para>
+                </section>
             </xs:documentation>
         </xs:annotation>       
         <xs:group ref="oecdTitleTypeContent"/>
@@ -97,9 +91,9 @@
     <xs:attributeGroup name="oecdShortTitleTypeAttributes">
         <xs:annotation>
             <xs:documentation>
-                <div xmlns="http://www.w3.org/1999/xhtml">
-                    <p>Attribute group for short title type elements to allow easy overrides.</p>
-                </div>
+                <section xmlns="http://docbook.org/ns/docbook">
+                    <para>Attribute group for short title type elements to allow easy overrides.</para>
+                </section>
             </xs:documentation>
         </xs:annotation>
         <xs:attributeGroup ref="oecdCommonAttributes"/>
@@ -109,9 +103,9 @@
     <xs:complexType name="oecdShortTitleType">
         <xs:annotation>
             <xs:documentation>
-                <div xmlns="http://www.w3.org/1999/xhtml">
-                    <p>Short title type. This element holds a text only abbreviated title</p>
-                </div>
+                <section xmlns="http://docbook.org/ns/docbook">
+                    <para>Short title type. This element holds a text only abbreviated title</para>
+                </section>
             </xs:documentation>
         </xs:annotation>
         

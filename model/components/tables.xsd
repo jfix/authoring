@@ -1,40 +1,32 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+<?xml version="1.0" encoding="UTF-8"?><xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
 
     <xs:annotation>
-        <xs:documentation xmlns:html="http://www.w3.org/1999/xhtml">
-            <html:h1>OECD Schemas</html:h1>
-            <html:h2>Table Model</html:h2>
-            <html:p>Redefinition of CALS interchange model, written to OECD schema guidelines.
+        <xs:documentation><section xmlns="http://docbook.org/ns/docbook">
+            <title>OECD Schemas</title>
+            <subtitle>Table Model</subtitle>
+            <para>Redefinition of CALS interchange model, written to OECD schema guidelines.
             The only noticeable incompatiblity is the redefinition of titles to allow
-            subtitles.</html:p>
-            <table xmlns="http://www.w3.org/1999/xhtml">
-                <caption>Change Log</caption>
-                <thead>
-                    <tr>
-                        <th>Version</th>
-                        <th>Date</th>
-                        <th>Author</th>
-                        <th>Changes</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>0.1</td>
-                        <td>2012-02-10</td>
-                        <td><a href="mailto:nicg@corbas.co.uk">Nic Gibson</a></td>
-                        <td>Initial Version</td>
-                    </tr>
-                </tbody>
-            </table>
-        </xs:documentation>
+            subtitles.</para>
+            <revhistory>
+                <title>Change Log</title>
+                
+                
+                    <revision>
+                        <revnumber>0.1</revnumber>
+                        <date>2012-02-10</date>
+                        <author><email>nicg@corbas.co.uk</email><personname>Nic Gibson</personname></author>
+                        <revremark>Initial Version</revremark>
+                    </revision>
+                
+            </revhistory>
+        </section></xs:documentation>
     </xs:annotation>
 
     <xs:include schemaLocation="blocks.xsd"/>
     
     <xs:simpleType name="yesorno">
         <xs:restriction base="xs:string">
-            <xs:pattern value="((Y|y)(e|E)(s|S))|((N|n)(o|O))"></xs:pattern>
+            <xs:pattern value="((Y|y)(e|E)(s|S))|((N|n)(o|O))"/>
         </xs:restriction>        
     </xs:simpleType>
     
@@ -42,9 +34,9 @@
     <xs:group name="oecdTableTitleGroup">
         <xs:annotation>
             <xs:documentation>
-                <div xmlns="http://www.w3.org/1999/xhtml">
-                    <p>Group for table titles. We reuse the block titles group by default.</p>
-                </div>
+                <section xmlns="http://docbook.org/ns/docbook">
+                    <para>Group for table titles. We reuse the block titles group by default.</para>
+                </section>
             </xs:documentation>
         </xs:annotation>
         

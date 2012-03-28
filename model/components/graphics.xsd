@@ -1,32 +1,23 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified"
-    xmlns:svg="http://www.w3.org/2000/svg">
+<?xml version="1.0" encoding="UTF-8"?><xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:svg="http://www.w3.org/2000/svg" elementFormDefault="qualified">
     
     
     <xs:annotation>
-        <xs:documentation xmlns:html="http://www.w3.org/1999/xhtml">
-            <html:h1>OECD Schemas</html:h1>
-            <html:h2>Graphic Models</html:h2>
-            <table xmlns="http://www.w3.org/1999/xhtml">
-                <caption>Change Log</caption>
-                <thead>
-                    <tr>
-                        <th>Version</th>
-                        <th>Date</th>
-                        <th>Author</th>
-                        <th>Changes</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>0.1</td>
-                        <td>2011-12-02</td>
-                        <td><a href="mailto:nicg@corbas.co.uk">Nic Gibson</a></td>
-                        <td>Initial Version</td>
-                    </tr>
-                </tbody>
-            </table>
-        </xs:documentation>
+        <xs:documentation><section xmlns="http://docbook.org/ns/docbook">
+            <title>OECD Schemas</title>
+            <subtitle>Graphic Models</subtitle>
+            <revhistory>
+                <title>Change Log</title>
+                
+                
+                    <revision>
+                        <revnumber>0.1</revnumber>
+                        <date>2011-12-02</date>
+                        <author><email>nicg@corbas.co.uk</email><personname>Nic Gibson</personname></author>
+                        <revremark>Initial Version</revremark>
+                    </revision>
+                
+            </revhistory>
+        </section></xs:documentation>
     </xs:annotation>
     
     <!-- INCLUDES AND IMPORTS -->
@@ -46,7 +37,7 @@
     <xs:element name="inlineGraphic" type="oecdInlineGraphicType"/>
     <xs:element name="graphic" type="oecdBlockGraphicType"/>
     
-    <xs:element name="figure" type='oecdFigureType'/>
+    <xs:element name="figure" type="oecdFigureType"/>
     
     <!-- GLOBAL GROUPS -->
     <xs:group name="oecdGraphicsGroup">
@@ -58,7 +49,7 @@
        
 
     <!-- Graphic Object -->
-    <xs:complexType name="oecdGraphicType" >
+    <xs:complexType name="oecdGraphicType">
         <xs:sequence>
             <xs:element ref="metadata" minOccurs="0"/>            
         </xs:sequence>
@@ -69,15 +60,15 @@
     <xs:attributeGroup name="oecdExternalGraphicTypeAttributes">
         <xs:annotation>
             <xs:documentation>
-                <div xmlns="http://www.w3.org/1999/xhtml">
-                    <p>Attributes for external graphics. Grouped to allow easy override.</p>
-                </div>
+                <section xmlns="http://docbook.org/ns/docbook">
+                    <para>Attributes for external graphics. Grouped to allow easy override.</para>
+                </section>
             </xs:documentation>
             <xs:documentation>
-                <div xmlns="http://www.w3.org/1999/xhtml">
-                    <h3>TODO</h3>
-                    <p>Schematron required to ensure that at least one appropriate attribute is set.</p>
-                </div>                
+                <section xmlns="http://docbook.org/ns/docbook">
+                    <title>TODO</title>
+                    <para>Schematron required to ensure that at least one appropriate attribute is set.</para>
+                </section>                
             </xs:documentation>
         </xs:annotation>    
         <xs:attributeGroup ref="oecdCommonAttributes"/>
@@ -88,9 +79,9 @@
     <xs:group name="oecdExternalGraphicTypeContent">
         <xs:annotation>
             <xs:documentation>
-                <div xmlns="http://www.w3.org/1999/xhtml">
-                    <p>Content for external graphics. Grouped to allow easy override.</p>
-                </div>
+                <section xmlns="http://docbook.org/ns/docbook">
+                    <para>Content for external graphics. Grouped to allow easy override.</para>
+                </section>
             </xs:documentation>
           </xs:annotation>
         <xs:sequence>
@@ -102,10 +93,10 @@
     <xs:complexType name="oecdExternalGraphicType">
         <xs:annotation>
             <xs:documentation>
-                <div xmlns="http://www.w3.org/1999/xhtml">
-                    <p>External graphic reference. The graphic reference is an attribute. 
-                    Only metadata content is allowed.</p>
-                </div>
+                <section xmlns="http://docbook.org/ns/docbook">
+                    <para>External graphic reference. The graphic reference is an attribute. 
+                    Only metadata content is allowed.</para>
+                </section>
             </xs:documentation>
         </xs:annotation>
         <xs:group ref="oecdExternalGraphicTypeContent"/>
@@ -116,9 +107,9 @@
     <xs:attributeGroup name="oecdSvgGraphicTypeAttributes">
         <xs:annotation>
             <xs:documentation>
-                <div xmlns="http://www.w3.org/1999/xhtml">
-                    <p>Attributes for SVG graphics. Grouped to allow easy override.</p>
-                </div>
+                <section xmlns="http://docbook.org/ns/docbook">
+                    <para>Attributes for SVG graphics. Grouped to allow easy override.</para>
+                </section>
             </xs:documentation>
         </xs:annotation>    
         <xs:attributeGroup ref="oecdCommonAttributes"/>
@@ -128,9 +119,9 @@
     <xs:group name="oecdSvgGraphicTypeContent">
         <xs:annotation>
             <xs:documentation>
-                <div xmlns="http://www.w3.org/1999/xhtml">
-                    <p>Content for SVG graphics. Grouped to allow easy override.</p>
-                </div>
+                <section xmlns="http://docbook.org/ns/docbook">
+                    <para>Content for SVG graphics. Grouped to allow easy override.</para>
+                </section>
             </xs:documentation>
         </xs:annotation>       
         <xs:sequence>
@@ -141,9 +132,9 @@
     <xs:complexType name="oecdSvgGraphicType">
         <xs:annotation>
             <xs:documentation>            
-                <div xmlns="http://www.w3.org/1999/xhtml">
-                <p>Wrapper for SVG graphics.</p>
-            </div>
+                <section xmlns="http://docbook.org/ns/docbook">
+                <para>Wrapper for SVG graphics.</para>
+            </section>
             </xs:documentation>        
         </xs:annotation>
         <xs:group ref="oecdSvgGraphicTypeContent"/>
@@ -154,9 +145,9 @@
     <xs:attributeGroup name="oecdBlockGraphicTypeAttributes">
         <xs:annotation>
             <xs:documentation>
-                <div xmlns="http://www.w3.org/1999/xhtml">
-                    <p>Attributes for block graphics. Grouped to allow easy override.</p>
-                </div>
+                <section xmlns="http://docbook.org/ns/docbook">
+                    <para>Attributes for block graphics. Grouped to allow easy override.</para>
+                </section>
             </xs:documentation>
         </xs:annotation>    
         <xs:attributeGroup ref="oecdCommonAttributes"/>
@@ -166,9 +157,9 @@
     <xs:group name="oecdBlockGraphicTypeContent">
         <xs:annotation>
             <xs:documentation>
-                <div xmlns="http://www.w3.org/1999/xhtml">
-                    <p>Content for block graphics. Grouped to allow easy override.</p>
-                </div>
+                <section xmlns="http://docbook.org/ns/docbook">
+                    <para>Content for block graphics. Grouped to allow easy override.</para>
+                </section>
             </xs:documentation>
         </xs:annotation>
         <xs:sequence>
@@ -177,16 +168,16 @@
             <xs:element ref="caption" minOccurs="0"/>
             <xs:element ref="attribution" minOccurs="0"/>         
             <xs:group ref="oecdGraphicsGroup"/>
-            <xs:element ref="notes" minOccurs="0"></xs:element>
+            <xs:element ref="notes" minOccurs="0"/>
         </xs:sequence>
     </xs:group>
     
     <xs:complexType name="oecdBlockGraphicType">
         <xs:annotation>
             <xs:documentation>
-                <div xmlns="http://www.w3.org/1999/xhtml">
-                    <p>Block graphic type.</p>
-                </div>
+                <section xmlns="http://docbook.org/ns/docbook">
+                    <para>Block graphic type.</para>
+                </section>
             </xs:documentation>
         </xs:annotation>
         <xs:group ref="oecdBlockGraphicTypeContent"/>
@@ -198,9 +189,9 @@
     <xs:attributeGroup name="oecdInlineGraphicTypeAttributes">
         <xs:annotation>
             <xs:documentation>
-                <div xmlns="http://www.w3.org/1999/xhtml">
-                    <p>Attributes for inline graphics. Grouped to allow easy override.</p>
-                </div>
+                <section xmlns="http://docbook.org/ns/docbook">
+                    <para>Attributes for inline graphics. Grouped to allow easy override.</para>
+                </section>
             </xs:documentation>
         </xs:annotation>    
         <xs:attributeGroup ref="oecdCommonAttributes"/>
@@ -210,9 +201,9 @@
     <xs:group name="oecdInlineGraphicTypeContent">
         <xs:annotation>
             <xs:documentation>
-                <div xmlns="http://www.w3.org/1999/xhtml">
-                    <p>Content for inline graphics. Grouped to allow easy override.</p>
-                </div>
+                <section xmlns="http://docbook.org/ns/docbook">
+                    <para>Content for inline graphics. Grouped to allow easy override.</para>
+                </section>
             </xs:documentation>
         </xs:annotation>
         <xs:sequence>
@@ -225,9 +216,9 @@
     <xs:complexType name="oecdInlineGraphicType">
         <xs:annotation>
             <xs:documentation>
-                <div xmlns="http://www.w3.org/1999/xhtml">
-                    <p>Block graphic type. This has a considerably more restricted model than a block graphic.</p>
-                </div>
+                <section xmlns="http://docbook.org/ns/docbook">
+                    <para>Block graphic type. This has a considerably more restricted model than a block graphic.</para>
+                </section>
             </xs:documentation>
         </xs:annotation>
         <xs:group ref="oecdInlineGraphicTypeContent"/>
@@ -239,9 +230,9 @@
     <xs:attributeGroup name="oecdFigureTypeAttributes">
         <xs:annotation>
             <xs:documentation>
-                <div xmlns="http://www.w3.org/1999/xhtml">
-                    <p>Attributes for figures. Grouped to allow easy override.</p>
-                </div>
+                <section xmlns="http://docbook.org/ns/docbook">
+                    <para>Attributes for figures. Grouped to allow easy override.</para>
+                </section>
             </xs:documentation>
         </xs:annotation>    
         <xs:attributeGroup ref="oecdCommonAttributes"/>
@@ -251,26 +242,26 @@
     <xs:group name="oecdFigureTypeContent">
         <xs:annotation>
             <xs:documentation>
-                <div xmlns="http://www.w3.org/1999/xhtml">
-                    <p>Content for figures. Grouped to allow easy override.</p>
-                </div>
+                <section xmlns="http://docbook.org/ns/docbook">
+                    <para>Content for figures. Grouped to allow easy override.</para>
+                </section>
             </xs:documentation>
         </xs:annotation>
         <xs:sequence>
             <xs:element ref="metadata" minOccurs="0"/>
             <xs:group ref="oecdTitleGroup" minOccurs="0"/>
             <xs:element ref="graphic"/>
-            <xs:element ref="notes" minOccurs="0"></xs:element>
+            <xs:element ref="notes" minOccurs="0"/>
         </xs:sequence>
     </xs:group>
     
     <xs:complexType name="oecdFigureType">
         <xs:annotation>
             <xs:documentation>
-                <div xmlns="http://www.w3.org/1999/xhtml">
-                    <p>Figure Type. Figures are essentially wrappers around block graphics
-                    allowing titles and notes to be added.</p>
-                </div>
+                <section xmlns="http://docbook.org/ns/docbook">
+                    <para>Figure Type. Figures are essentially wrappers around block graphics
+                    allowing titles and notes to be added.</para>
+                </section>
             </xs:documentation>
         </xs:annotation>
         <xs:group ref="oecdFigureTypeContent"/>

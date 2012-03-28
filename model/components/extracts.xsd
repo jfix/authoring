@@ -1,30 +1,22 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+<?xml version="1.0" encoding="UTF-8"?><xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
 
     <xs:annotation>
-        <xs:documentation xmlns:html="http://www.w3.org/1999/xhtml">
-            <html:h1>OECD Schemas</html:h1>
-            <html:h2>Extract Models</html:h2>
-            <table xmlns="http://www.w3.org/1999/xhtml">
-                <caption>Change Log</caption>
-                <thead>
-                    <tr>
-                        <th>Version</th>
-                        <th>Date</th>
-                        <th>Author</th>
-                        <th>Changes</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>0.1</td>
-                        <td>2012-01-08</td>
-                        <td><a href="mailto:nicg@corbas.co.uk">Nic Gibson</a></td>
-                        <td>Initial Version</td>
-                    </tr>
-                </tbody>
-            </table>
-        </xs:documentation>
+        <xs:documentation><section xmlns="http://docbook.org/ns/docbook">
+            <title>OECD Schemas</title>
+            <subtitle>Extract Models</subtitle>
+            <revhistory>
+                <title>Change Log</title>
+                
+                
+                    <revision>
+                        <revnumber>0.1</revnumber>
+                        <date>2012-01-08</date>
+                        <author><email>nicg@corbas.co.uk</email><personname>Nic Gibson</personname></author>
+                        <revremark>Initial Version</revremark>
+                    </revision>
+                
+            </revhistory>
+        </section></xs:documentation>
     </xs:annotation>
     
     <!-- INCLUDES AND IMPORTS -->
@@ -47,9 +39,9 @@
     <xs:attributeGroup name="oecdBlockQuoteTypeAttributes">
         <xs:annotation>
             <xs:documentation>
-                <div xmlns="http://www.w3.org/1999/xhtml">
-                    <p>Blockquote attributes, grouped for easy overrides and reuse.</p>
-                </div>
+                <section xmlns="http://docbook.org/ns/docbook">
+                    <para>Blockquote attributes, grouped for easy overrides and reuse.</para>
+                </section>
             </xs:documentation>
         </xs:annotation>
         
@@ -62,9 +54,9 @@
     <xs:group name="oecdBlockQuoteTypeContent">
         <xs:annotation>
             <xs:documentation>
-                <div xmlns="http://www.w3.org/1999/xhtml">
-                    <p>Blockquote content, grouped for easy overrides and reuse.</p>
-                </div>
+                <section xmlns="http://docbook.org/ns/docbook">
+                    <para>Blockquote content, grouped for easy overrides and reuse.</para>
+                </section>
             </xs:documentation>
         </xs:annotation>
         <xs:choice>
@@ -77,11 +69,11 @@
     <xs:complexType name="oecdBlockQuoteType">
         <xs:annotation>
             <xs:documentation>
-                <div xmlns="http://www.w3.org/1999/xhtml">
-                    <p>Blockquote elements are intended for transcribed text from
+                <section xmlns="http://docbook.org/ns/docbook">
+                    <para>Blockquote elements are intended for transcribed text from
                     external sources. A blockquote has essential metadata stored
-                    in the attribution element.</p>   
-                </div>
+                    in the attribution element.</para>   
+                </section>
             </xs:documentation>
         </xs:annotation>
         <xs:group ref="oecdBlockQuoteTypeContent"/>
@@ -93,9 +85,9 @@
     <xs:attributeGroup name="oecdExternalContentReferenceTypeAttributes">
         <xs:annotation>
             <xs:documentation>
-                <div xmlns="http://www.w3.org/1999/xhtml">
-                    <p>External content reference attributes, grouped for easy overrides and reuse.</p>
-                </div>
+                <section xmlns="http://docbook.org/ns/docbook">
+                    <para>External content reference attributes, grouped for easy overrides and reuse.</para>
+                </section>
             </xs:documentation>
         </xs:annotation>
         
@@ -108,9 +100,9 @@
     <xs:group name="oecdExternalContentReferenceTypeContent">
         <xs:annotation>
             <xs:documentation>
-                <div xmlns="http://www.w3.org/1999/xhtml">
-                    <p>External content reference content, grouped for easy overrides and reuse.</p>
-                </div>
+                <section xmlns="http://docbook.org/ns/docbook">
+                    <para>External content reference content, grouped for easy overrides and reuse.</para>
+                </section>
             </xs:documentation>
         </xs:annotation>
         <xs:choice>
@@ -122,11 +114,11 @@
     <xs:complexType name="oecdExternalContentReferenceType">
         <xs:annotation>
             <xs:documentation>
-                <div xmlns="http://www.w3.org/1999/xhtml">
-                    <p>External Content references allow content to be referenced from
+                <section xmlns="http://docbook.org/ns/docbook">
+                    <para>External Content references allow content to be referenced from
                         a document without the content being present. The content must
-                        be referenceable using a URI.</p>   
-                </div>
+                        be referenceable using a URI.</para>   
+                </section>
             </xs:documentation>
         </xs:annotation>
         <xs:group ref="oecdExternalContentReferenceTypeContent"/>
@@ -138,9 +130,9 @@
     <xs:attributeGroup name="oecdEmbeddedContentTypeAttributes">
         <xs:annotation>
             <xs:documentation>
-                <div xmlns="http://www.w3.org/1999/xhtml">
-                    <p>Embedded attributes, grouped for easy overrides and reuse.</p>
-                </div>
+                <section xmlns="http://docbook.org/ns/docbook">
+                    <para>Embedded attributes, grouped for easy overrides and reuse.</para>
+                </section>
             </xs:documentation>
         </xs:annotation>
         
@@ -153,9 +145,9 @@
     <xs:group name="oecdEmbeddedContentTypeContent">
         <xs:annotation>
             <xs:documentation>
-                <div xmlns="http://www.w3.org/1999/xhtml">
-                    <p>embedded content content, grouped for easy overrides and reuse.</p>
-                </div>
+                <section xmlns="http://docbook.org/ns/docbook">
+                    <para>embedded content content, grouped for easy overrides and reuse.</para>
+                </section>
             </xs:documentation>
         </xs:annotation>
         <xs:choice>
@@ -168,10 +160,10 @@
     <xs:complexType name="oecdEmbeddedContentType">
         <xs:annotation>
             <xs:documentation>
-                <div xmlns="http://www.w3.org/1999/xhtml">
-                    <p>Embedded Content. This elements allows external content to be referenced
-                    within the XML.</p>   
-                </div>
+                <section xmlns="http://docbook.org/ns/docbook">
+                    <para>Embedded Content. This elements allows external content to be referenced
+                    within the XML.</para>   
+                </section>
             </xs:documentation>
         </xs:annotation>
         <xs:group ref="oecdEmbeddedContentTypeContent"/>
@@ -184,9 +176,9 @@
     <xs:attributeGroup name="oecdExtractTypeAttributes">
         <xs:annotation>
             <xs:documentation>
-                <div xmlns="http://www.w3.org/1999/xhtml">
-                    <p>Extract attributes, grouped for easy overrides and reuse.</p>
-                </div>
+                <section xmlns="http://docbook.org/ns/docbook">
+                    <para>Extract attributes, grouped for easy overrides and reuse.</para>
+                </section>
             </xs:documentation>
         </xs:annotation>
         
@@ -198,9 +190,9 @@
     <xs:group name="oecdExtractTypeContent">
         <xs:annotation>
             <xs:documentation>
-                <div xmlns="http://www.w3.org/1999/xhtml">
-                    <p>Extract content, grouped for easy overrides and reuse.</p>
-                </div>
+                <section xmlns="http://docbook.org/ns/docbook">
+                    <para>Extract content, grouped for easy overrides and reuse.</para>
+                </section>
             </xs:documentation>
         </xs:annotation>
         <xs:sequence>
@@ -219,16 +211,16 @@
     <xs:complexType name="oecdExtractType">
         <xs:annotation>
             <xs:documentation>
-                <div xmlns="http://www.w3.org/1999/xhtml">
-                    <p>Extracts are a way to include content from other sources. An extract 
-                    many consist of content in one of four forms:</p>
-                    <ul>
-                        <li>referenced content - via a URI</li>
-                        <li>embedded XML content</li>
-                        <li>transcribed quotes</li>
-                        <li>scanned images</li>
-                    </ul>
-                </div>
+                <section xmlns="http://docbook.org/ns/docbook">
+                    <para>Extracts are a way to include content from other sources. An extract 
+                    many consist of content in one of four forms:</para>
+                    <itemizedlist>
+                        <listitem xmlns="http://docbook.org/ns/docbook"><para>referenced content - via a URI</para></listitem>
+                        <listitem xmlns="http://docbook.org/ns/docbook"><para>embedded XML content</para></listitem>
+                        <listitem xmlns="http://docbook.org/ns/docbook"><para>transcribed quotes</para></listitem>
+                        <listitem xmlns="http://docbook.org/ns/docbook"><para>scanned images</para></listitem>
+                    </itemizedlist>
+                </section>
             </xs:documentation>
         </xs:annotation>
     </xs:complexType>

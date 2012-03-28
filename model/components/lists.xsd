@@ -1,40 +1,32 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+<?xml version="1.0" encoding="UTF-8"?><xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
 
 
     <xs:annotation>
-        <xs:documentation>
-            <div xmlns="http://www.w3.org/1999/xhtml">
-                <h1>OECD.Author</h1>
-                <h2>Lists Schema</h2>
-                <table xmlns="http://www.w3.org/1999/xhtml">
-                    <caption>Change Log</caption>
-                    <thead>
-                        <tr>
-                            <th>Version</th>
-                            <th>Date</th>
-                            <th>Author</th>
-                            <th>Changes</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>0.1</td>
-                            <td>2012-01-08</td>
-                            <td><a href="mailto:nicg@corbas.co.uk">Nic Gibson</a></td>
-                            <td>Initial Version</td>
-                        </tr>
-                        <tr>
-                            <td>0.2</td>
-                            <td>2012-03-21</td>
-                            <td><a href="mailto:nicg@corbas.co.uk">Nic Gibson</a></td>
-                            <td>Added number attribute to ordered list items for overrides</td>
-                        </tr>
-                    </tbody>
-                </table>
-                <p>This model defines lists of various types</p>
-            </div>
-        </xs:documentation>
+        <xs:documentation><section xmlns="http://docbook.org/ns/docbook">
+            <section>
+                <title>OECD.Author</title>
+                <subtitle>Lists Schema</subtitle>
+                <revhistory>
+                    <title>Change Log</title>
+                    
+                    
+                        <revision>
+                            <revnumber>0.1</revnumber>
+                            <date>2012-01-08</date>
+                            <author><email>nicg@corbas.co.uk</email><personname>Nic Gibson</personname></author>
+                            <revremark>Initial Version</revremark>
+                        </revision>
+                        <revision>
+                            <revnumber>0.2</revnumber>
+                            <date>2012-03-21</date>
+                            <author><email>nicg@corbas.co.uk</email><personname>Nic Gibson</personname></author>
+                            <revremark>Added number attribute to ordered list items for overrides</revremark>
+                        </revision>
+                    
+                </revhistory>
+                <para>This model defines lists of various types</para>
+            </section>
+        </section></xs:documentation>
     </xs:annotation>
 
     <!-- IMPORTS AND INCLUDES  -->
@@ -67,9 +59,9 @@
     <xs:attributeGroup name="oecdListItemTypeAttributes">
         <xs:annotation>
             <xs:documentation>
-                <div xmlns="http://www.w3.org/1999/xhtml">
-                    <p>Attributes for list items.</p>
-                </div>
+                <section xmlns="http://docbook.org/ns/docbook">
+                    <para>Attributes for list items.</para>
+                </section>
             </xs:documentation>
         </xs:annotation>
         <xs:attributeGroup ref="oecdCommonAttributes"/>
@@ -79,9 +71,9 @@
     <xs:group name="oecdListItemTypeContent">
         <xs:annotation>
             <xs:documentation>
-                <div xmlns="http://www.w3.org/1999/xhtml">
-                    <p>Content for list items.</p>
-                </div>
+                <section xmlns="http://docbook.org/ns/docbook">
+                    <para>Content for list items.</para>
+                </section>
             </xs:documentation>
         </xs:annotation>
         <xs:sequence>
@@ -95,11 +87,11 @@
     <xs:complexType name="oecdListItemType">
         <xs:annotation>
             <xs:documentation>
-                <div xmlns="http://www.w3.org/1999/xhtml">
-                    <p>List items are a shared type used by both itemized and ordered lists. This
+                <section xmlns="http://docbook.org/ns/docbook">
+                    <para>List items are a shared type used by both itemized and ordered lists. This
                         type is extended by list specific list items to add attributes appropriate
-                        to the list type.</p>
-                </div>
+                        to the list type.</para>
+                </section>
             </xs:documentation>
         </xs:annotation>
         <xs:group ref="oecdListItemTypeContent" maxOccurs="unbounded"/>
@@ -119,9 +111,9 @@
     <xs:attributeGroup name="oecdItemizedListTypeAttributes">
         <xs:annotation>
             <xs:documentation>
-                <div xmlns="http://www.w3.org/1999/xhtml">
-                    <p>Attributes for itemized lists.</p>
-                </div>
+                <section xmlns="http://docbook.org/ns/docbook">
+                    <para>Attributes for itemized lists.</para>
+                </section>
             </xs:documentation>
         </xs:annotation>
         <xs:attributeGroup ref="oecdCommonAttributes"/>
@@ -132,9 +124,9 @@
     <xs:group name="oecdItemizedListTypeContent">
         <xs:annotation>
             <xs:documentation>
-                <div xmlns="http://www.w3.org/1999/xhtml">
-                    <p>Content for itemized lists.</p>
-                </div>
+                <section xmlns="http://docbook.org/ns/docbook">
+                    <para>Content for itemized lists.</para>
+                </section>
             </xs:documentation>
         </xs:annotation>
         <xs:sequence>
@@ -148,10 +140,10 @@
     <xs:complexType name="oecdItemizedListType">
         <xs:annotation>
             <xs:documentation>
-                <div xmlns="http://www.w3.org/1999/xhtml">
-                    <p>Standard itemized lists. These allow the user to choose a default marker at
-                        the level of the list and override it at the item level.</p>
-                </div>
+                <section xmlns="http://docbook.org/ns/docbook">
+                    <para>Standard itemized lists. These allow the user to choose a default marker at
+                        the level of the list and override it at the item level.</para>
+                </section>
             </xs:documentation>
         </xs:annotation>
         <xs:group ref="oecdItemizedListTypeContent"/>
@@ -163,9 +155,9 @@
     <xs:attributeGroup name="oecdOrderedListTypeAttributes">
         <xs:annotation>
             <xs:documentation>
-                <div xmlns="http://www.w3.org/1999/xhtml">
-                    <p>Attributes for itemized lists.</p>
-                </div>
+                <section xmlns="http://docbook.org/ns/docbook">
+                    <para>Attributes for itemized lists.</para>
+                </section>
             </xs:documentation>
         </xs:annotation>
         
@@ -175,9 +167,9 @@
         <xs:attribute name="numeration" type="oecdListNumeration" default="arabic">
             <xs:annotation>
                 <xs:documentation>
-                    <div xmlns="http://www.w3.org/1999/xhtml">
-                        <p>List numeration style for ordered lists.</p>
-                    </div>
+                    <section xmlns="http://docbook.org/ns/docbook">
+                        <para>List numeration style for ordered lists.</para>
+                    </section>
                 </xs:documentation>
             </xs:annotation>
         </xs:attribute>
@@ -185,9 +177,9 @@
         <xs:attribute name="continuation" type="oecdListContinuation" default="start">
             <xs:annotation>
                 <xs:documentation>
-                    <div xmlns="http://www.w3.org/1999/xhtml">
-                        <p>List continuation style for ordered lists</p>
-                    </div>
+                    <section xmlns="http://docbook.org/ns/docbook">
+                        <para>List continuation style for ordered lists</para>
+                    </section>
                 </xs:documentation>
             </xs:annotation>
         </xs:attribute>
@@ -195,10 +187,10 @@
         <xs:attribute name="start" type="xs:nonNegativeInteger">
             <xs:annotation>
                 <xs:documentation>
-                    <div xmlns="http://www.w3.org/1999/xhtml">
-                        <p>Starting position for lists which have their continuation style set to
-                            'start'.</p>
-                    </div>
+                    <section xmlns="http://docbook.org/ns/docbook">
+                        <para>Starting position for lists which have their continuation style set to
+                            'start'.</para>
+                    </section>
                 </xs:documentation>
             </xs:annotation>
         </xs:attribute>
@@ -207,10 +199,10 @@
         <xs:attribute name="number" type="xs:nonNegativeInteger">
             <xs:annotation>
                 <xs:documentation>
-                    <div xmlns="http://www.w3.org/1999/xhtml">
-                        <p>Numbering override for list items where the author needs to override
-                            the list numbering completely.</p>
-                    </div>
+                    <section xmlns="http://docbook.org/ns/docbook">
+                        <para>Numbering override for list items where the author needs to override
+                            the list numbering completely.</para>
+                    </section>
                 </xs:documentation>
             </xs:annotation>
         </xs:attribute>
@@ -221,9 +213,9 @@
     <xs:group name="oecdOrderedListTypeContent">
         <xs:annotation>
             <xs:documentation>
-                <div xmlns="http://www.w3.org/1999/xhtml">
-                    <p>Content for itemized lists.</p>
-                </div>
+                <section xmlns="http://docbook.org/ns/docbook">
+                    <para>Content for itemized lists.</para>
+                </section>
             </xs:documentation>
         </xs:annotation>
         <xs:sequence>
@@ -237,12 +229,12 @@
     <xs:complexType name="oecdOrderedListType">
         <xs:annotation>
             <xs:documentation>
-                <div xmlns="http://www.w3.org/1999/xhtml">
-                    <p>Standard ordered lists. Lists can have several numeration types which are set
+                <section xmlns="http://docbook.org/ns/docbook">
+                    <para>Standard ordered lists. Lists can have several numeration types which are set
                         at list level (as changing the numbering system part way through a single
                         list is unusual). Numbering can continue based on the end of a previous list
-                        or start at a specific number.</p>
-                </div>
+                        or start at a specific number.</para>
+                </section>
             </xs:documentation>
         </xs:annotation>
         <xs:group ref="oecdOrderedListTypeContent"/>
@@ -255,9 +247,9 @@
     <xs:attributeGroup name="oecdDefinitionListTermTypeAttributes">
         <xs:annotation>
             <xs:documentation>
-                <div xmlns="http://www.w3.org/1999/xhtml">
-                    <p>Attributes for terms in definition lists.</p>
-                </div>
+                <section xmlns="http://docbook.org/ns/docbook">
+                    <para>Attributes for terms in definition lists.</para>
+                </section>
             </xs:documentation>
         </xs:annotation>
         <xs:attributeGroup ref="oecdCommonAttributes"/>
@@ -267,9 +259,9 @@
     <xs:group name="oecdDefinitionListTermTypeContent">
         <xs:annotation>
             <xs:documentation>
-                <div xmlns="http://www.w3.org/1999/xhtml">
-                    <p>Content for terms in definition lists.</p>
-                </div>
+                <section xmlns="http://docbook.org/ns/docbook">
+                    <para>Content for terms in definition lists.</para>
+                </section>
             </xs:documentation>
         </xs:annotation>
         <xs:sequence>
@@ -281,9 +273,9 @@
     <xs:complexType name="oecdDefinitionListTermType" mixed="true">
         <xs:annotation>
             <xs:documentation>
-                <div xmlns="http://www.w3.org/1999/xhtml">
-                    <p>The term to be defined in a definition list.</p>
-                </div>
+                <section xmlns="http://docbook.org/ns/docbook">
+                    <para>The term to be defined in a definition list.</para>
+                </section>
             </xs:documentation>            
         </xs:annotation>
         <xs:group ref="oecdDefinitionListTermTypeContent"/>
@@ -293,9 +285,9 @@
     <xs:attributeGroup name="oecdDefinitionListItemTypeAttributes">
         <xs:annotation>
             <xs:documentation>
-                <div xmlns="http://www.w3.org/1999/xhtml">
-                    <p>Attributes for items in definition lists.</p>
-                </div>
+                <section xmlns="http://docbook.org/ns/docbook">
+                    <para>Attributes for items in definition lists.</para>
+                </section>
             </xs:documentation>
         </xs:annotation>
         <xs:attributeGroup ref="oecdCommonAttributes"/>
@@ -305,9 +297,9 @@
     <xs:group name="oecdDefinitionListItemTypeContent">
         <xs:annotation>
             <xs:documentation>
-                <div xmlns="http://www.w3.org/1999/xhtml">
-                    <p>Content for items in definition lists.</p>
-                </div>
+                <section xmlns="http://docbook.org/ns/docbook">
+                    <para>Content for items in definition lists.</para>
+                </section>
             </xs:documentation>
         </xs:annotation>
         <xs:sequence>
@@ -320,9 +312,9 @@
     <xs:complexType name="oecdDefinitionListItemType" mixed="true">
         <xs:annotation>
             <xs:documentation>
-                <div xmlns="http://www.w3.org/1999/xhtml">
-                    <p>The term to be defined in a definition list.</p>
-                </div>
+                <section xmlns="http://docbook.org/ns/docbook">
+                    <para>The term to be defined in a definition list.</para>
+                </section>
             </xs:documentation>            
         </xs:annotation>
         <xs:group ref="oecdDefinitionListItemTypeContent"/>
@@ -333,9 +325,9 @@
     <xs:attributeGroup name="oecdDefinitionListTypeAttributes">
         <xs:annotation>
             <xs:documentation>
-                <div xmlns="http://www.w3.org/1999/xhtml">
-                    <p>Attributes for definition lists.</p>
-                </div>
+                <section xmlns="http://docbook.org/ns/docbook">
+                    <para>Attributes for definition lists.</para>
+                </section>
             </xs:documentation>
         </xs:annotation>
         <xs:attributeGroup ref="oecdCommonAttributes"/>
@@ -345,9 +337,9 @@
     <xs:group name="oecdDefinitionListTypeContent">
         <xs:annotation>
             <xs:documentation>
-                <div xmlns="http://www.w3.org/1999/xhtml">
-                    <p>Content for definition lists.</p>
-                </div>
+                <section xmlns="http://docbook.org/ns/docbook">
+                    <para>Content for definition lists.</para>
+                </section>
             </xs:documentation>
         </xs:annotation>
         <xs:sequence>
@@ -361,11 +353,11 @@
     <xs:complexType name="oecdDefinitionListType" mixed="true">
         <xs:annotation>
             <xs:documentation>
-                <div xmlns="http://www.w3.org/1999/xhtml">
-                    <p>Definition lists consist of pairs of terms and definitions. The
+                <section xmlns="http://docbook.org/ns/docbook">
+                    <para>Definition lists consist of pairs of terms and definitions. The
                         definitions are marked up using a term and a list item contained
-                        in a defintion list item.</p>
-                </div>
+                        in a defintion list item.</para>
+                </section>
             </xs:documentation>            
         </xs:annotation>
         <xs:group ref="oecdDefinitionListTypeContent"/>
@@ -378,9 +370,9 @@
     <xs:attribute name="marker" type="oecdListMarker" default="auto">
         <xs:annotation>
             <xs:documentation>
-                <div xmlns="http://www.w3.org/1999/xhtml">
-                    <p>List marker for itemized lists. Used at both list and item levels.</p>
-                </div>
+                <section xmlns="http://docbook.org/ns/docbook">
+                    <para>List marker for itemized lists. Used at both list and item levels.</para>
+                </section>
             </xs:documentation>
         </xs:annotation>
     </xs:attribute>

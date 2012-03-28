@@ -1,37 +1,29 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified"> 
+<?xml version="1.0" encoding="UTF-8"?><xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified"> 
 
     <xs:annotation>
-        <xs:documentation xmlns:html="http://www.w3.org/1999/xhtml">
-            <html:h1>OECD Schemas</html:h1>
-            <html:h2>Notes</html:h2>
-            <table xmlns="http://www.w3.org/1999/xhtml">
-                <caption>Change Log</caption>
-                <thead>
-                    <tr>
-                        <th>Version</th>
-                        <th>Date</th>
-                        <th>Author</th>
-                        <th>Changes</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>0.1</td>
-                        <td>2012-02-10</td>
-                        <td><a href="mailto:nicg@corbas.co.uk">Nic Gibson</a></td>
-                        <td>Initial Version</td>                        
-                    </tr>
-                    <tr>
-                        <td>0.2</td>
-                        <td>2012-03-15</td>
-                        <td><a href="mailt:nicg@corbas.co.uK">Nic Gibson</a></td>
-                        <td>Refactored for better practices in design.</td>
-                    </tr>
-                </tbody>
-            </table>
+        <xs:documentation><section xmlns="http://docbook.org/ns/docbook">
+            <title>OECD Schemas</title>
+            <subtitle>Notes</subtitle>
+            <revhistory>
+                <title>Change Log</title>
+                
+                
+                    <revision>
+                        <revnumber>0.1</revnumber>
+                        <date>2012-02-10</date>
+                        <author><email>nicg@corbas.co.uk</email><personname>Nic Gibson</personname></author>
+                        <revremark>Initial Version</revremark>                        
+                    </revision>
+                    <revision>
+                        <revnumber>0.2</revnumber>
+                        <date>2012-03-15</date>
+                        <author><email/><personname>Nic Gibson</personname></author>
+                        <revremark>Refactored for better practices in design.</revremark>
+                    </revision>
+                
+            </revhistory>
             
-        </xs:documentation>
+        </section></xs:documentation>
     </xs:annotation>
     
     
@@ -52,9 +44,9 @@
     <xs:attributeGroup name="oecdNoteTypeAttributes">
         <xs:annotation>
             <xs:documentation>
-                <div xmlns="http://www.w3.org/1999/xhtml">
-                    <p>Attributes for individual notes. Grouped for easy redefinition.</p>
-                </div>
+                <section xmlns="http://docbook.org/ns/docbook">
+                    <para>Attributes for individual notes. Grouped for easy redefinition.</para>
+                </section>
             </xs:documentation>
         </xs:annotation>
         <xs:attributeGroup ref="oecdCommonAttributes"/>
@@ -64,9 +56,9 @@
     <xs:group name="oecdNoteTypeContent">
         <xs:annotation>
             <xs:documentation>
-                <div xmlns="http://www.w3.org/1999/xhtml">
-                    <p>Content for individual notes. Grouped for easy redefinition.</p>
-                </div>
+                <section xmlns="http://docbook.org/ns/docbook">
+                    <para>Content for individual notes. Grouped for easy redefinition.</para>
+                </section>
             </xs:documentation>
         </xs:annotation>
         <xs:sequence>
@@ -80,13 +72,13 @@
     <xs:complexType name="oecdNoteType">
         <xs:annotation>
             <xs:documentation>
-                <div xmlns="http://www.w3.org/1999/xhtml">
-                    <p>Individual note. This is not a footnote. Notes are contained within
+                <section xmlns="http://docbook.org/ns/docbook">
+                    <para>Individual note. This is not a footnote. Notes are contained within
                     certain block types (lists, tables, figures) and explain aspects of the 
-                    content. Each note is a block in itself. </p>
-                    <p>The existence of notes on a component does not preclude the existence
-                    of footnotes.</p>
-                </div>
+                    content. Each note is a block in itself. </para>
+                    <para>The existence of notes on a component does not preclude the existence
+                    of footnotes.</para>
+                </section>
             </xs:documentation>
         </xs:annotation>
         <xs:group ref="oecdNoteTypeContent"/>
@@ -98,9 +90,9 @@
     <xs:attributeGroup name="oecdNotesTypeAttributes">
         <xs:annotation>
             <xs:documentation>
-                <div xmlns="http://www.w3.org/1999/xhtml">
-                    <p>Attributes for set of notes. Grouped for easy redefinition.</p>
-                </div>
+                <section xmlns="http://docbook.org/ns/docbook">
+                    <para>Attributes for set of notes. Grouped for easy redefinition.</para>
+                </section>
             </xs:documentation>
         </xs:annotation>
         <xs:attributeGroup ref="oecdCommonAttributes"/>
@@ -110,9 +102,9 @@
     <xs:group name="oecdNotesTypeContent">
         <xs:annotation>
             <xs:documentation>
-                <div xmlns="http://www.w3.org/1999/xhtml">
-                    <p>Content for set of notes. Grouped for easy redefinition.</p>
-                </div>
+                <section xmlns="http://docbook.org/ns/docbook">
+                    <para>Content for set of notes. Grouped for easy redefinition.</para>
+                </section>
             </xs:documentation>
         </xs:annotation>
         <xs:sequence>
@@ -125,10 +117,10 @@
     <xs:complexType name="oecdNotesType">
         <xs:annotation>
             <xs:documentation>
-                <div xmlns="http://www.w3.org/1999/xhtml">
-                    <p>Set of notes. This is a wrapper for a set of notes relating to 
-                    a particular component.</p>
-                </div>
+                <section xmlns="http://docbook.org/ns/docbook">
+                    <para>Set of notes. This is a wrapper for a set of notes relating to 
+                    a particular component.</para>
+                </section>
             </xs:documentation>
         </xs:annotation>
         <xs:group ref="oecdNotesTypeContent"/>

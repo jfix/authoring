@@ -1,43 +1,35 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+<?xml version="1.0" encoding="UTF-8"?><xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
     
     <xs:annotation>
-        <xs:documentation xmlns:html="http://www.w3.org/1999/xhtml">
-            <html:h1>OECD Schemas</html:h1>
-            <html:h2>General inline models</html:h2>
+        <xs:documentation><section xmlns="http://docbook.org/ns/docbook">
+            <title>OECD Schemas</title>
+            <subtitle>General inline models</subtitle>
             
-            <table xmlns="http://www.w3.org/1999/xhtml">
-                <caption>Change Log</caption>
-                <thead>
-                    <tr>
-                        <th>Version</th>
-                        <th>Date</th>
-                        <th>Author</th>
-                        <th>Changes</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>0.1</td>
-                        <td>2011-12-02</td>
-                        <td><a href="mailto:nicg@corbas.co.uk">Nic Gibson</a></td>
-                        <td>Initial Version</td>
-                    </tr>
-                    <tr>
-                        <td>0.2</td>
-                        <td>2012-03-21</td>
-                        <td><a href="mailto:nicg@corbas.co.uk">Nic Gibson</a></td>
-                        <td><ul><li>Transferred other elements from older files.</li>
-                            <li>Upated base type to current standards.</li>
-                        </ul></td>
-                    </tr>
-                </tbody>
-            </table>
+            <revhistory>
+                <title>Change Log</title>
+                
+                
+                    <revision>
+                        <revnumber>0.1</revnumber>
+                        <date>2011-12-02</date>
+                        <author><email>nicg@corbas.co.uk</email><personname>Nic Gibson</personname></author>
+                        <revremark>Initial Version</revremark>
+                    </revision>
+                    <revision>
+                        <revnumber>0.2</revnumber>
+                        <date>2012-03-21</date>
+                        <author><email>nicg@corbas.co.uk</email><personname>Nic Gibson</personname></author>
+                        <revdescription xmlns="http://docbook.org/ns/docbook"><itemizedlist xmlns="http://docbook.org/ns/docbook"><listitem xmlns="http://docbook.org/ns/docbook"><para>Transferred other elements from older files.</para></listitem>
+                            <listitem xmlns="http://docbook.org/ns/docbook"><para>Upated base type to current standards.</para></listitem>
+                        </itemizedlist></revdescription>
+                    </revision>
+                
+            </revhistory>
             
-            <p><strong>Note:</strong> the inline graphic component is defined in graphics.</p>
+            <para xmlns="http://docbook.org/ns/docbook">Note: the inline graphic component is defined in graphics.</para>
             
             
-        </xs:documentation>
+        </section></xs:documentation>
     </xs:annotation>
     
     <!-- IMPORTS AND INCLUDES -->
@@ -51,7 +43,7 @@
     
     <!-- GLOBAL ELEMENTS -->
     <xs:element name="oecdInline" type="oecdInlineType"/> <!-- different name to all other elements as it is abstract -->
-    <xs:element name="emphasis" type="oecdEmphasisType"  substitutionGroup="oecdInline"/>
+    <xs:element name="emphasis" type="oecdEmphasisType" substitutionGroup="oecdInline"/>
     <xs:element name="footnote" type="oecdFootnoteType"/>
           
     <!-- COMPLEX TYPES -->
@@ -61,9 +53,9 @@
     <xs:attributeGroup name="oecdInlineTypeAttributes">
         <xs:annotation>
             <xs:documentation>
-                <div xmlns="http://www.w3.org/1999/xhtml">
-                    <p>Inline element base attributes grouped for easy override and reuse.</p>
-                </div>
+                <section xmlns="http://docbook.org/ns/docbook">
+                    <para>Inline element base attributes grouped for easy override and reuse.</para>
+                </section>
             </xs:documentation>
         </xs:annotation>
         <xs:attributeGroup ref="oecdCommonAttributes"/>
@@ -73,24 +65,24 @@
     <xs:group name="oecdInlineTypeContent">
         <xs:annotation>
             <xs:documentation>
-                <div xmlns="http://www.w3.org/1999/xhtml">
-                    <p>Inline element content grouped for easy override and reuse.</p>
-                </div>
+                <section xmlns="http://docbook.org/ns/docbook">
+                    <para>Inline element content grouped for easy override and reuse.</para>
+                </section>
             </xs:documentation>
         </xs:annotation>
         <xs:sequence>
-            <xs:element ref="oecdInline" maxOccurs="unbounded" minOccurs='0'/>
+            <xs:element ref="oecdInline" maxOccurs="unbounded" minOccurs="0"/>
         </xs:sequence>
     </xs:group>
 
     <xs:complexType name="oecdInlineType" abstract="true" mixed="true">
         <xs:annotation>
             <xs:documentation>
-                <div xmlns="http://www.w3.org/1999/xhtml">
-                    <p>The oecdInline type is the base class of almost all inline components. The components
+                <section xmlns="http://docbook.org/ns/docbook">
+                    <para>The oecdInline type is the base class of almost all inline components. The components
                     may only contain text or other elements in general. The purpose of the type is to ensure
-                    that all the inlines share a type.</p>
-                </div>
+                    that all the inlines share a type.</para>
+                </section>
             </xs:documentation>
         </xs:annotation>
         <xs:group ref="oecdInlineTypeContent" maxOccurs="unbounded" minOccurs="0"/>
@@ -103,9 +95,9 @@
     <xs:attributeGroup name="oecdEmphasisTypeAttributes">
         <xs:annotation>
             <xs:documentation>
-                <div xmlns="http://www.w3.org/1999/xhtml">
-                    <p>Emphasis type attributes grouped for easy override and reuse.</p>
-                </div>
+                <section xmlns="http://docbook.org/ns/docbook">
+                    <para>Emphasis type attributes grouped for easy override and reuse.</para>
+                </section>
             </xs:documentation>
         </xs:annotation>
         <xs:attribute name="style" type="oecdStyleAttributeType" use="required"/>
@@ -123,9 +115,9 @@
     <xs:attributeGroup name="oecdFootNoteTypeAttributes">
         <xs:annotation>
             <xs:documentation>
-                <div xmlns="http://www.w3.org/1999/xhtml">
-                    <p>Footnote type attributes grouped for easy override and reuse.</p>
-                </div>
+                <section xmlns="http://docbook.org/ns/docbook">
+                    <para>Footnote type attributes grouped for easy override and reuse.</para>
+                </section>
             </xs:documentation>
         </xs:annotation>
     </xs:attributeGroup>
@@ -133,9 +125,9 @@
     <xs:group name="oecdFootNoteTypeContent">
         <xs:annotation>
             <xs:documentation>
-                <div xmlns="http://www.w3.org/1999/xhtml">
-                    <p>Footnote type attributes grouped for easy override and reuse.</p>
-                </div>
+                <section xmlns="http://docbook.org/ns/docbook">
+                    <para>Footnote type attributes grouped for easy override and reuse.</para>
+                </section>
             </xs:documentation>
         </xs:annotation>
         <xs:sequence>
@@ -147,10 +139,10 @@
     <xs:complexType name="oecdFootnoteType">
         <xs:annotation>
             <xs:documentation>
-                <div xmlns="http://www.w3.org/1999/xhtml">
-                    <p>Footnote element. This element acts as an inline but has block
-                    content. Therefore, it is not derived from oecdInline.</p>
-                </div>
+                <section xmlns="http://docbook.org/ns/docbook">
+                    <para>Footnote element. This element acts as an inline but has block
+                    content. Therefore, it is not derived from oecdInline.</para>
+                </section>
             </xs:documentation>
         </xs:annotation>
         
@@ -164,8 +156,8 @@
     <xs:simpleType name="oecdStyleAttributeType">
         <xs:annotation>
             <xs:documentation>
-                <p xmlns="http://www.w3.org/1999/xhtml">Enumerated data type to hold the possible
-                    values for emphasis elements' style attribute. This is neither proscriptive nor exhaustive!</p>
+                <para xmlns="http://docbook.org/ns/docbook">Enumerated data type to hold the possible
+                    values for emphasis elements' style attribute. This is neither proscriptive nor exhaustive!</para>
             </xs:documentation>
         </xs:annotation>
         <xs:restriction base="xs:string">

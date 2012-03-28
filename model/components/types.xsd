@@ -1,31 +1,23 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+<?xml version="1.0" encoding="UTF-8"?><xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
 
   <xs:annotation>
-    <xs:documentation>
-      <div xmlns="http://www.w3.org/1999/xhtml">
-        <h1>OECD Schemas</h1>
-        <h2>Low Level Data Types</h2> 
-        <table>
-          <caption>Change Log</caption>
-          <thead>
-            <tr>
-              <th>Version</th>
-              <th>Date</th>
-              <th>Author</th>
-              <th>Changes</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>0.1</td>
-              <td>2011-12-02</td>
-              <td><a href="mailto:nicg@corbas.co.uk">Nic Gibson</a></td>
-              <td>Initial Version</td>
-            </tr>
-          </tbody>
-        </table> </div>
-    </xs:documentation>
+    <xs:documentation><section xmlns="http://docbook.org/ns/docbook">
+      <section>
+        <title>OECD Schemas</title>
+        <subtitle>Low Level Data Types</subtitle> 
+        <revhistory>
+          <title>Change Log</title>
+          
+          
+            <revision>
+              <revnumber>0.1</revnumber>
+              <date>2011-12-02</date>
+              <author><email>nicg@corbas.co.uk</email><personname>Nic Gibson</personname></author>
+              <revremark>Initial Version</revremark>
+            </revision>
+          
+        </revhistory> </section>
+    </section></xs:documentation>
   </xs:annotation>
  
   
@@ -33,10 +25,10 @@
   <xs:simpleType name="oecdCharacterStyleType">
     <xs:annotation>
       <xs:documentation>
-        <div xmlns="http://www.w3.org/1999/xhtml">
-          <p>Simple enumeration of the inline character styles we might see. This is more intended
-            as a demonstration than a model requirement. </p>
-        </div>
+        <section xmlns="http://docbook.org/ns/docbook">
+          <para>Simple enumeration of the inline character styles we might see. This is more intended
+            as a demonstration than a model requirement. </para>
+        </section>
       </xs:documentation>
     </xs:annotation>
     <xs:restriction base="xs:string">
@@ -51,9 +43,9 @@
   <xs:simpleType name="oecdCote">
     <xs:annotation>
       <xs:documentation>
-        <div xmlns="http://www.w3.org/1999/xhtml">
-          <p>Placeholder for Cotes.</p>
-        </div>
+        <section xmlns="http://docbook.org/ns/docbook">
+          <para>Placeholder for Cotes.</para>
+        </section>
       </xs:documentation>      
     </xs:annotation>
     <xs:restriction base="xs:string"/>
@@ -63,9 +55,9 @@
   <xs:simpleType name="oecdMediaType">
     <xs:annotation>
       <xs:documentation>
-        <div xmlns="http://www.w3.org/1999/xhtml">
-          <p>Placeholder for IETF MIME media types.</p>
-        </div>
+        <section xmlns="http://docbook.org/ns/docbook">
+          <para>Placeholder for IETF MIME media types.</para>
+        </section>
       </xs:documentation>      
     </xs:annotation>
     <xs:restriction base="xs:string"/>
@@ -74,9 +66,9 @@
   <xs:simpleType name="oecdListMarker">
     <xs:annotation>
       <xs:documentation>
-        <div xmlns="http://www.w3.org/1999/xhtml">
-          <p>Bulleted lists.</p>
-        </div>        
+        <section xmlns="http://docbook.org/ns/docbook">
+          <para>Bulleted lists.</para>
+        </section>        
       </xs:documentation>
     </xs:annotation>
     <xs:restriction base="xs:string">
@@ -93,9 +85,9 @@
   <xs:simpleType name="oecdListNumeration">
     <xs:annotation>
       <xs:documentation>
-        <div xmlns="http://www.w3.org/1999/xhtml">
-          <p>This defines numeration styles for numbered lists.</p>
-        </div>        
+        <section xmlns="http://docbook.org/ns/docbook">
+          <para>This defines numeration styles for numbered lists.</para>
+        </section>        
       </xs:documentation>
     </xs:annotation>
     <xs:restriction base="xs:string">

@@ -1,14 +1,13 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+<?xml version="1.0" encoding="UTF-8"?><xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
 
     <xs:annotation>
-        <xs:documentation xmlns:html="http://www.w3.org/1999/xhtml">
-            <div xmlns="http://www.w3.org/1999/xhtml">
-                <html>OECD Schemas</html>
-                <h2>Metadata</h2>
-                <p>This is a wrapper element for an arbitrary metadata model.</p>
-            </div>
-        </xs:documentation>
+        <xs:documentation><section xmlns="http://docbook.org/ns/docbook">
+            <section>
+                <title>OECD Schemas</title>
+                <subtitle>Metadata</subtitle>
+                <para>This is a wrapper element for an arbitrary metadata model.</para>
+            </section>
+        </section></xs:documentation>
     </xs:annotation>
         
     <xs:include schemaLocation="attributes.xsd"/>
@@ -28,9 +27,9 @@
     <xs:attributeGroup name="oecdMetadataTypeAttributes">
         <xs:annotation>
             <xs:documentation>
-                <div xmlns="http://www.w3.org/1999/xhtml">
-                    <p>Attributes for metadata. Grouped to allow easy override.</p>
-                </div>
+                <section xmlns="http://docbook.org/ns/docbook">
+                    <para>Attributes for metadata. Grouped to allow easy override.</para>
+                </section>
             </xs:documentation>
         </xs:annotation>        
         <xs:attributeGroup ref="oecdCommonAttributes"/>    
@@ -39,9 +38,9 @@
     <xs:group name="oecdMetadataTypeContent">
         <xs:annotation>
             <xs:documentation>
-                <div xmlns="http://www.w3.org/1999/xhtml">
-                    <p>Content for metadata. Grouped to allow easy override.</p>
-                </div>
+                <section xmlns="http://docbook.org/ns/docbook">
+                    <para>Content for metadata. Grouped to allow easy override.</para>
+                </section>
             </xs:documentation>
         </xs:annotation>
         <xs:choice>
@@ -53,10 +52,10 @@
     <xs:complexType name="oecdMetadataType">
         <xs:annotation>
             <xs:documentation>
-                <div xmlns="http://www.w3.org/1999/xhtml">
-                    <p>Metadata container element. Allowed as a child at almost any location in 
-                    a document.</p>
-                </div>
+                <section xmlns="http://docbook.org/ns/docbook">
+                    <para>Metadata container element. Allowed as a child at almost any location in 
+                    a document.</para>
+                </section>
             </xs:documentation>
         </xs:annotation>
         <xs:group ref="oecdMetadataTypeContent" maxOccurs="unbounded"/>
@@ -67,9 +66,9 @@
     <xs:attributeGroup name="oecdMetadataItemTypeAttributes">
         <xs:annotation>
             <xs:documentation>
-                <div xmlns="http://www.w3.org/1999/xhtml">
-                    <p>Attributes for metadata items. Grouped to allow easy override.</p>
-                </div>
+                <section xmlns="http://docbook.org/ns/docbook">
+                    <para>Attributes for metadata items. Grouped to allow easy override.</para>
+                </section>
             </xs:documentation>
         </xs:annotation>        
         <xs:attributeGroup ref="oecdCommonAttributes"/>
@@ -79,12 +78,12 @@
     <xs:group name="oecdMetadateItemTypeContent">
         <xs:annotation>
             <xs:documentation>
-                <div xmlns="http://www.w3.org/1999/xhtml">
-                    <p>Content for metadata items. Grouped to allow easy override.</p>
-                    <p>The content model for metadata is currently defined as a single
+                <section xmlns="http://docbook.org/ns/docbook">
+                    <para>Content for metadata items. Grouped to allow easy override.</para>
+                    <para>The content model for metadata is currently defined as a single
                         element from any namespace. This is unlikely to be the final model
-                        and simply acts as a placeholder.</p>
-                </div>
+                        and simply acts as a placeholder.</para>
+                </section>
             </xs:documentation>
         </xs:annotation>
         <xs:sequence>
@@ -95,11 +94,11 @@
     <xs:complexType name="oecdMetadataItemType">
         <xs:annotation>
             <xs:documentation xmlns:html="http://www.w3.org/1999/xhtml">
-                <div xmlns="http://www.w3.org/1999/xhtml">
-                    <p>The content model for metadata is currently defined as a single
+                <section xmlns="http://docbook.org/ns/docbook">
+                    <para>The content model for metadata is currently defined as a single
                     element from any namespace. This is unlikely to be the final model
-                    and simply acts as a placeholder.</p>
-                </div>
+                    and simply acts as a placeholder.</para>
+                </section>
             </xs:documentation>
         </xs:annotation>
         <xs:group ref="oecdMetadateItemTypeContent"/>

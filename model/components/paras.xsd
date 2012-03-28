@@ -1,35 +1,27 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+<?xml version="1.0" encoding="UTF-8"?><xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
    
 
     <xs:annotation>
-        <xs:documentation>
-            <div xmlns="http://www.w3.org/1999/xhtml">
-                <h1>OECD.Author</h1>
-                <h2>Paragraph Schema</h2>
-                <table xmlns="http://www.w3.org/1999/xhtml">
-                    <caption>Change Log</caption>
-                    <thead>
-                        <tr>
-                            <th>Version</th>
-                            <th>Date</th>
-                            <th>Author</th>
-                            <th>Changes</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>0.1</td>
-                            <td>2011-12-02</td>
-                            <td><a href="mailto:nicg@corbas.co.uk">Nic Gibson</a></td>
-                            <td>Initial Version</td>
-                        </tr>
-                    </tbody>
-                </table>
-                <p>This model defines paragraphs and other simple components with equivalent
-                    hierarchical position.</p>
-            </div>
-        </xs:documentation>
+        <xs:documentation><section xmlns="http://docbook.org/ns/docbook">
+            <section>
+                <title>OECD.Author</title>
+                <subtitle>Paragraph Schema</subtitle>
+                <revhistory>
+                    <title>Change Log</title>
+                    
+                    
+                        <revision>
+                            <revnumber>0.1</revnumber>
+                            <date>2011-12-02</date>
+                            <author><email>nicg@corbas.co.uk</email><personname>Nic Gibson</personname></author>
+                            <revremark>Initial Version</revremark>
+                        </revision>
+                    
+                </revhistory>
+                <para>This model defines paragraphs and other simple components with equivalent
+                    hierarchical position.</para>
+            </section>
+        </section></xs:documentation>
     </xs:annotation>
     
     <!-- IMPORTS AND INCLUDES  -->
@@ -61,9 +53,9 @@
     <xs:attributeGroup name="oecdParagraphTypeAttributes">
         <xs:annotation>
             <xs:documentation>
-                <div xmlns="http://www.w3.org/1999/xhtml">
-                    <p>Attribute group for paragraph elements to allow easy overrides.</p>
-                </div>
+                <section xmlns="http://docbook.org/ns/docbook">
+                    <para>Attribute group for paragraph elements to allow easy overrides.</para>
+                </section>
             </xs:documentation>
         </xs:annotation>        
         <xs:attributeGroup ref="oecdCommonAttributes"/>
@@ -73,9 +65,9 @@
     <xs:group name="oecdParagraphTypeContent">
         <xs:annotation>
             <xs:documentation>
-                <div xmlns="http://www.w3.org/1999/xhtml">
-                    <p>Group for paragraph element content to allow easy overrides.</p>
-                </div>
+                <section xmlns="http://docbook.org/ns/docbook">
+                    <para>Group for paragraph element content to allow easy overrides.</para>
+                </section>
             </xs:documentation>
         </xs:annotation>
         <xs:sequence>
@@ -87,9 +79,9 @@
     <xs:complexType name="oecdParagraphType" mixed="true">
         <xs:annotation>
             <xs:documentation>
-                <div xmlns="http://www.w3.org/1999/xhtml">
-                    <p>Base type for paragraph content.</p>
-                </div>
+                <section xmlns="http://docbook.org/ns/docbook">
+                    <para>Base type for paragraph content.</para>
+                </section>
             </xs:documentation>
         </xs:annotation>
     
@@ -103,9 +95,9 @@
     <xs:group name="oecdFormalParagraphTypeContent">
         <xs:annotation>
             <xs:documentation>
-                <div xmlns="http://www.w3.org/1999/xhtml">
-                    <p>Group for paragraph element content to allow easy overrides.</p>
-                </div>
+                <section xmlns="http://docbook.org/ns/docbook">
+                    <para>Group for paragraph element content to allow easy overrides.</para>
+                </section>
             </xs:documentation>
         </xs:annotation>
         <xs:sequence>
@@ -118,9 +110,9 @@
     <xs:complexType name="oecdFormalParagraphType" mixed="true">
         <xs:annotation>
             <xs:documentation>
-                <div xmlns="http://www.w3.org/1999/xhtml">
-                    <p>Formal paragraphs - a paragraph with a title.</p>
-                </div>
+                <section xmlns="http://docbook.org/ns/docbook">
+                    <para>Formal paragraphs - a paragraph with a title.</para>
+                </section>
             </xs:documentation>
         </xs:annotation>
                 
@@ -133,9 +125,9 @@
     <xs:attributeGroup name="oecdParagraphGroupTypeAttributes">
         <xs:annotation>
             <xs:documentation>
-                <div xmlns="http://www.w3.org/1999/xhtml">
-                    <p>Group for paragraph group attributes to allow easy overrides.</p>
-                </div>
+                <section xmlns="http://docbook.org/ns/docbook">
+                    <para>Group for paragraph group attributes to allow easy overrides.</para>
+                </section>
             </xs:documentation>
         </xs:annotation>
         <xs:attributeGroup ref="oecdCommonAttributes"/>
@@ -145,14 +137,14 @@
     <xs:group name="oecdParagraphGroupTypeContent">
         <xs:annotation>
             <xs:documentation>
-                <div xmlns="http://www.w3.org/1999/xhtml">
-                    <p>Group for paragraph group content to allow easy overrides.</p>
-                </div>
+                <section xmlns="http://docbook.org/ns/docbook">
+                    <para>Group for paragraph group content to allow easy overrides.</para>
+                </section>
             </xs:documentation>
         </xs:annotation>
         <xs:sequence>
             <xs:element ref="metadata" minOccurs="0"/>
-            <xs:group ref="oecdTitleGroup" minOccurs="0"></xs:group>
+            <xs:group ref="oecdTitleGroup" minOccurs="0"/>
             <xs:choice maxOccurs="unbounded">
                 <xs:element ref="para"/>
                 <xs:element ref="formalPara"/>
@@ -163,10 +155,10 @@
     <xs:complexType name="oecdParagraphGroupType">
         <xs:annotation>
             <xs:documentation>
-                <div xmlns="http://www.w3.org/1999/xhtml">
-                    <p>A group of paragraphs. Functions like a section that cannot have 
-                    any substructure.</p>
-                </div>
+                <section xmlns="http://docbook.org/ns/docbook">
+                    <para>A group of paragraphs. Functions like a section that cannot have 
+                    any substructure.</para>
+                </section>
             </xs:documentation>
         </xs:annotation>
         <xs:group ref="oecdParagraphGroupTypeContent"/>

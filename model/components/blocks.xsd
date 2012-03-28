@@ -1,44 +1,36 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+<?xml version="1.0" encoding="UTF-8"?><xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
     
     <xs:annotation>
-        <xs:documentation xmlns:html="http://www.w3.org/1999/xhtml">
-            <html:h1>OECD Schemas</html:h1>
-            <html:h2>General block components</html:h2>
-            <table xmlns="http://www.w3.org/1999/xhtml">
-                <caption>Change Log</caption>
-                <thead>
-                    <tr>
-                        <th>Version</th>
-                        <th>Date</th>
-                        <th>Author</th>
-                        <th>Changes</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>0.1</td>
-                        <td>2012-02-10</td>
-                        <td><a href="mailto:nicg@corbas.co.uk">Nic Gibson</a></td>
-                        <td>Initial Version</td>
-                    </tr>                    
-                    <tr>
-                        <td>0.2</td>
-                        <td>2012-03-14</td>
-                        <td><a href="mailto:nicg@corbas.co.uk">Nic Gibson</a></td>
-                        <td>Broke down into sub-components.</td>
-                    </tr>
-                    <tr>
-                        <td>0.3</td>
-                        <td>2012-03-2</td>
-                        <td><a href="mailto:nicg@corbas.co.uk">Nic Gibson</a></td>
-                        <td>Added equations, boxex and graphics</td>
-                    </tr>                        
+        <xs:documentation><section xmlns="http://docbook.org/ns/docbook">
+            <title>OECD Schemas</title>
+            <subtitle>General block components</subtitle>
+            <revhistory>
+                <title>Change Log</title>
+                
+                
+                    <revision>
+                        <revnumber>0.1</revnumber>
+                        <date>2012-02-10</date>
+                        <author><email>nicg@corbas.co.uk</email><personname>Nic Gibson</personname></author>
+                        <revremark>Initial Version</revremark>
+                    </revision>                    
+                    <revision>
+                        <revnumber>0.2</revnumber>
+                        <date>2012-03-14</date>
+                        <author><email>nicg@corbas.co.uk</email><personname>Nic Gibson</personname></author>
+                        <revremark>Broke down into sub-components.</revremark>
+                    </revision>
+                    <revision>
+                        <revnumber>0.3</revnumber>
+                        <date>2012-03-2</date>
+                        <author><email>nicg@corbas.co.uk</email><personname>Nic Gibson</personname></author>
+                        <revremark>Added equations, boxex and graphics</revremark>
+                    </revision>                        
                     
-                </tbody>
-            </table>
+                
+            </revhistory>
             
-        </xs:documentation>
+        </section></xs:documentation>
     </xs:annotation>
     
     
@@ -54,9 +46,9 @@
     <xs:group name="oecdBlockGroup">
         <xs:annotation>
             <xs:documentation>
-                <div xmlns="http://www.w3.org/1999/xhtml">
-                    <p>The oecdBlockGroup group allows other models to simply reuse all the available block components.</p>
-                </div>
+                <section xmlns="http://docbook.org/ns/docbook">
+                    <para>The oecdBlockGroup group allows other models to simply reuse all the available block components.</para>
+                </section>
             </xs:documentation>
         </xs:annotation>
         <xs:choice>
@@ -68,10 +60,10 @@
     <xs:group name="oecdSimpleBlockGroup">
         <xs:annotation>
             <xs:documentation>
-                <div xmlns="http://www.w3.org/1999/xhtml">
-                    <p>The oecdSimpleBlockGroup group allows other models to simply reuse all the available bar those with rarely
-                        used content models such as boxes.</p>
-                </div>
+                <section xmlns="http://docbook.org/ns/docbook">
+                    <para>The oecdSimpleBlockGroup group allows other models to simply reuse all the available bar those with rarely
+                        used content models such as boxes.</para>
+                </section>
             </xs:documentation>
         </xs:annotation>
         <xs:choice>
@@ -88,9 +80,9 @@
     <xs:attributeGroup name="oecdBlockGroupTypeAttributes">
         <xs:annotation>
             <xs:documentation>
-                <div xmlns="http://www.w3.org/1999/xhtml">
-                    <p>Block group attributes grouped for easier reuse and customisation</p>
-                </div>
+                <section xmlns="http://docbook.org/ns/docbook">
+                    <para>Block group attributes grouped for easier reuse and customisation</para>
+                </section>
             </xs:documentation>
         </xs:annotation>
         <xs:attributeGroup ref="oecdCommonAttributes"/>
@@ -100,26 +92,26 @@
     <xs:group name="oecdBlockGroupTypeContent">
         <xs:annotation>
             <xs:documentation>
-                <div xmlns="http://www.w3.org/1999/xhtml">
-                    <p>Block group content grouped for easier reuse and customisation</p>
-                </div>
+                <section xmlns="http://docbook.org/ns/docbook">
+                    <para>Block group content grouped for easier reuse and customisation</para>
+                </section>
             </xs:documentation>
         </xs:annotation>
         <xs:sequence>
             <xs:element ref="metadata" minOccurs="0"/>
             <xs:group ref="oecdTitleGroup"/>
-            <xs:group ref="oecdBlockGroup" maxOccurs="unbounded"></xs:group>
+            <xs:group ref="oecdBlockGroup" maxOccurs="unbounded"/>
         </xs:sequence>
     </xs:group>
     
     <xs:complexType name="oecdBlockGroupType">
         <xs:annotation>
             <xs:documentation>
-                <div xmlns="http://www.w3.org/1999/xhtml">
-                    <p>Some semantic models consist of a group of blocks with no 
+                <section xmlns="http://docbook.org/ns/docbook">
+                    <para>Some semantic models consist of a group of blocks with no 
                     further structure. This is intended to be used as the type
-                    for those models.</p>
-                </div>
+                    for those models.</para>
+                </section>
             </xs:documentation>
         </xs:annotation>
         <xs:group ref="oecdBlockGroupTypeContent"/>
