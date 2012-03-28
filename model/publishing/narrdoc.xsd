@@ -45,6 +45,39 @@
   @root narr-doc
 -->
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+  
+  <xs:annotation xmlns:ctrl="http://nwalsh.com/xmlns/schema-control/"
+    xmlns:xd="http://www.oecd.org/ns/schema/xdocs"
+    xmlns:db="http://docbook.org/ns/docbook"
+    xmlns:s="http://www.ascc.net/xml/schematron"
+    xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"
+    xmlns:xlink="http://www.w3.org/1999/xlink"
+    xmlns:svg="http://www.w3.org/2000/svg"
+    xmlns="http://www.oecd.org/ns/model"
+    xmlns:rng="http://relaxng.org/ns/structure/1.0"
+    xmlns:mml="http://www.w3.org/1998/Math/MathML"
+    xmlns:html="http://www.w3.org/1999/xhtml">
+    <xs:appinfo>
+      <xd:name>narrdoc</xd:name>
+      <xd:root>narr-doc</xd:root>
+    </xs:appinfo>
+    <xs:documentation>
+      <xd:p>Narrdoc is Document Type Definition used by OECD Prepress depertment for typeset publications)
+        
+        the components used in narrative
+        models for capturing official OECD documents and publications. To date,
+        "pars" supports all documents and camera-ready and typset
+        publications.</xd:p>
+    </xs:documentation>
+  </xs:annotation>
+  
+  <!-- 
+    
+    http://publications.oecd.org/documentation/Projects/ID0191/MOSCA4/Nomenclature.xml
+  
+  -->
+  
+  
   <xs:attributeGroup name="metadatatype">
     <xs:attribute name="metadatatype">
       <xs:simpleType>
@@ -54,9 +87,11 @@
       </xs:simpleType>
     </xs:attribute>
   </xs:attributeGroup>
+  
   <xs:attributeGroup name="id">
     <xs:attribute name="id" use="required" type="xs:ID"/>
   </xs:attributeGroup>
+  
   <xs:attributeGroup name="instlang">
     <xs:attribute name="instlang">
       <xs:simpleType>
@@ -70,6 +105,7 @@
       </xs:simpleType>
     </xs:attribute>
   </xs:attributeGroup>
+  
   <xs:attributeGroup name="geocontainer">
     <xs:attribute name="geocontainer" default="false">
       <xs:simpleType>
@@ -80,6 +116,7 @@
       </xs:simpleType>
     </xs:attribute>
   </xs:attributeGroup>
+  
   <xs:attributeGroup name="statisticalannex">
     <xs:attribute name="statisticalannex" default="false">
       <xs:simpleType>
