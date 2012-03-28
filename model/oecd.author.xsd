@@ -4,42 +4,6 @@
     targetNamespace="http://www.oecd.org/ns/oecd.author/document"
     xmlns:xd="http://www.oecd.org/ns/schema/xdocs">
 
-    <!--    <xs:annotation>
-        <xs:documentation>
-            <div xmlns="http://www.w3.org/1999/xhtml">
-                <h1>OECD.Author</h1>
-                <h2>Master Schema</h2>
-                <table xmlns="http://www.w3.org/1999/xhtml">
-                    <caption>Change Log</caption>
-                    <thead>
-                        <tr>
-                            <th>Version</th>
-                            <th>Date</th>
-                            <th>Author</th>
-                            <th>Changes</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>0.1</td>
-                            <td>2011-12-02</td>
-                            <td><a href="mailto:nicg@corbas.co.uk">Nic Gibson</a></td>
-                            <td>Initial Version</td>
-                        </tr>
-                        
-                        <tr>
-                            <td>0.2</td>
-                            <td>2012-03-28</td>
-                            <td><a href="mailto:joseph.crowther@oecd.org">JWC</a></td>
-                            <td>Added hooks for documentation, and created document element and oecdDocument type.</td>
-                        </tr>
-                        
-                    </tbody>
-                </table>
-                <p>This module is the wrapper for the top-level generic OECD document model.</p>
-            </div>
-        </xs:documentation>
-    </xs:annotation>-->
 
     <xs:annotation>
         <xs:appinfo>
@@ -50,8 +14,6 @@
             <xd:p>This model is used by authors to create official OECD documents and publications.</xd:p>
         </xs:documentation>
     </xs:annotation>
-
-
 
     <xs:include schemaLocation="components/attributes.xsd"/>
     <xs:include schemaLocation="structure/chapter.xsd"/>
