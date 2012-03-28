@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified"
-    xmlns="http://www.oecd.org/ns/oecd.author/document">
+    xmlns="http://www.oecd.org/ns/oecd.author/document"
+    targetNamespace="http://www.oecd.org/ns/oecd.author/document"
+    xmlns:xd="http://www.oecd.org/ns/schema/xdocs">
 
-    <xs:annotation>
+    <!--    <xs:annotation>
         <xs:documentation>
             <div xmlns="http://www.w3.org/1999/xhtml">
                 <h1>OECD.Author</h1>
@@ -24,13 +26,69 @@
                             <td><a href="mailto:nicg@corbas.co.uk">Nic Gibson</a></td>
                             <td>Initial Version</td>
                         </tr>
+                        
+                        <tr>
+                            <td>0.2</td>
+                            <td>2012-03-28</td>
+                            <td><a href="mailto:joseph.crowther@oecd.org">JWC</a></td>
+                            <td>Added hooks for documentation, and created document element and oecdDocument type.</td>
+                        </tr>
+                        
                     </tbody>
                 </table>
                 <p>This module is the wrapper for the top-level generic OECD document model.</p>
             </div>
         </xs:documentation>
+    </xs:annotation>-->
+
+    <xs:annotation>
+        <xs:appinfo>
+            <xd:name>official-document</xd:name>
+            <xd:root>document</xd:root>
+        </xs:appinfo>
+        <xs:documentation>
+            <xd:p>This model is used by authors to create official OECD documents and publications.</xd:p>
+        </xs:documentation>
     </xs:annotation>
-            
-    
+
+
+
+    <xs:include schemaLocation="components/attributes.xsd"/>
+    <xs:include schemaLocation="structure/chapter.xsd"/>
+    <xs:include schemaLocation="components/extracts.xsd"/>
+    <xs:include schemaLocation="components/paras.xsd"/>
+    <xs:include schemaLocation="structure/section.xsd"/>
+    <xs:include schemaLocation="components/tables.xsd"/>
+    <xs:include schemaLocation="components/titles.xsd"/>
+
+
+    <xs:element name="document" type="oecdDocument"/>
+
+    <xs:complexType name="oecdDocument">
+        <xs:annotation>
+            <xs:documentation>
+                <xd:section>
+                    <xd:title>Usage</xd:title>
+                    <xd:p>Root element for a document representing the concept of a chapter,
+                        section, appendix for a piece of official OECD contant or equivalent.</xd:p>
+                </xd:section>
+                <xd:section>
+                    <xd:title>Examples</xd:title>
+                    <xd:p>The opening of a document, representing an official document.</xd:p>
+                </xd:section>
+            </xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+            <xs:element name="title" type="oecdTitleType"/>
+            <xs:choice maxOccurs="unbounded">
+                <xs:element name="chapter" type="oecdChapterType"/>
+                <xs:element name="extract" type="oecdExtractType"/>
+                <xs:element name="paragraph" type="oecdParagraphGroupType"/>
+                <xs:element name="section" type="oecdSectionType"/>
+                <xs:element name="table"/>
+            </xs:choice>
+        </xs:sequence>
+        <xs:attributeGroup ref="oecdCommonAttributes"/>
+    </xs:complexType>
 
 </xs:schema>
