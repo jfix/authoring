@@ -1,8 +1,36 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified"
-    xmlns="http://www.oecd.org/ns/oecd.author/document"
-    targetNamespace="http://www.oecd.org/ns/oecd.author/document"
-    xmlns:xd="http://www.oecd.org/ns/schema/xdocs">
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" xmlns="http://www.oecd.org/ns/oecd.author/document" targetNamespace="http://www.oecd.org/ns/oecd.author/document" xmlns:xd="http://www.oecd.org/ns/schema/xdocs">
+
+
+    <xs:annotation>
+        <xs:documentation>
+            <section xmlns="http://docbook.org/ns/docbook">
+                <title>OECD Schemas</title>
+                <subtitle>Master Schema</subtitle>
+                <revhistory>
+                    <title>Change Log</title>
+                    <revision>
+                        <revnumber>0.1</revnumber>
+                        <date>2011-12-02</date>
+                        <author>
+                            <email>nicg@corbas.co.uk</email>
+                            <personname>Nic Gibson</personname>
+                        </author>
+                        <revremark>Initial Version</revremark>
+                    </revision>
+                    <revision>
+                        <revnumber>0.2</revnumber>
+                        <date>2012-03-28</date>
+                        <author>
+                            <email>joseph.crowther@oecd.org</email>
+                            <authorinitials>JWC</authorinitials>
+                        </author>
+                        <revremark>Added hooks for documentation, and created document element and oecdDocument type.</revremark>
+                    </revision>
+                </revhistory>
+            </section>
+        </xs:documentation>
+    </xs:annotation>
 
 
     <xs:annotation>
@@ -31,8 +59,7 @@
             <xs:documentation>
                 <xd:section>
                     <xd:title>Usage</xd:title>
-                    <xd:p>Root element for a document representing the concept of a chapter,
-                        section, appendix for a piece of official OECD contant or equivalent.</xd:p>
+                    <xd:p>Root element for a document representing the concept of a chapter, section, appendix for a piece of official OECD contant or equivalent.</xd:p>
                 </xd:section>
                 <xd:section>
                     <xd:title>Examples</xd:title>
