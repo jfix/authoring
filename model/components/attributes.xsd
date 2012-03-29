@@ -15,6 +15,12 @@
                         <revremark>Initial Version</revremark>
                     </revision>
                 
+                    <revision>
+                        <revnumber>0.2</revnumber>
+                        <date>2012-03-29</date>
+                        <revremark>Added <link linkend="label">label</link> attribute, inserted it into <link linkend="oecdCommonAttributes">commonAttributes</link></revremark>
+                    </revision>
+                
             </revhistory>
         </section></xs:documentation>
     </xs:annotation>
@@ -72,6 +78,13 @@
         <xs:annotation>
             <xs:documentation>
                 <section xmlns="http://docbook.org/ns/docbook">
+                    <revision>
+                        <revnumber>0.2</revnumber>
+                        <date>2011-12-29</date>
+                        <author><email>nicg@corbas.co.uk</email><personname>Nic Gibson</personname></author>
+                        <revremark>Added <link linkend="label">label</link> attribute.</revremark>
+                    </revision>
+                    
                     <para>Defines a set of attributes available to almost any element in the schema.
                     </para>
                 </section>
@@ -80,6 +93,7 @@
         <xs:attributeGroup ref="oecdXmlAttributes"/>
         <xs:attribute ref="metadataRef" use="optional"/>
         <xs:attribute ref="noteRef" use="optional"/>
+        <xs:attribute ref="label" use="optional"/>
     </xs:attributeGroup>
     
     <!-- attributes -->
@@ -151,5 +165,22 @@
         </xs:annotation>              
     </xs:attribute>
     
+    
+    <xs:attribute name="label" type="xs:string" id="label">
+        <xs:annotation>
+            <xs:documentation>
+                <section xmlns="http://docbook.org/ns/docbook">
+                    <revision>
+                        <revnumber>0.2</revnumber>
+                        <date>2011-12-29</date>
+                        <author><email>nicg@corbas.co.uk</email><personname>Nic Gibson</personname></author>
+                        <revremark>Initial Version</revremark>
+                    </revision>
+                    <para>Labelling attribute. This can be used to override the presentation of
+                    reference to an element.</para>
+                </section>
+            </xs:documentation>            
+        </xs:annotation>              
+    </xs:attribute>
 
 </xs:schema>
