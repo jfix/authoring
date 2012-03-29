@@ -26,7 +26,12 @@
                         <author><email>nicg@corbas.co.uk</email><personname>Nic Gibson</personname></author>
                         <revremark>Added equations, boxex and graphics</revremark>
                     </revision>                        
-                    
+                <revision>
+                    <revnumber>0.4</revnumber>
+                    <date>2012-03-29</date>
+                    <author><email>nicg@corbas.co.uk</email><personname>Nic Gibson</personname></author>
+                    <revremark>Added chemical structures</revremark>
+                </revision>                      
                 
             </revhistory>
             
@@ -41,6 +46,7 @@
     <xs:include schemaLocation="equations.xsd"/>
     <xs:include schemaLocation="box.xsd"/>
     <xs:include schemaLocation="graphics.xsd"/>
+    <xs:include schemaLocation="chemicals.xsd"/>
     
     <!-- GLOBAL GROUPS -->
     <xs:group name="oecdBlockGroup">
@@ -70,6 +76,7 @@
             <xs:group ref="oecdParagraphGroup"/>
             <xs:group ref="oecdListGroup"/>  
             <xs:element ref="equation"/>   
+            <xs:element ref="chemicalStructure"/>
             <xs:element ref="graphic"/>
             <xs:element ref="figure"/>
         </xs:choice>        
