@@ -1,42 +1,34 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+<?xml version="1.0" encoding="UTF-8"?><xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
 
     <xs:annotation>
-        <xs:documentation xmlns:html="http://www.w3.org/1999/xhtml">
-            <html:h1>OECD Schemas</html:h1>
-            <html:h2>Chapter Model</html:h2>
-            <table xmlns="http://www.w3.org/1999/xhtml">
-                <caption>Change Log</caption>
-                <thead>
-                    <tr>
-                        <th>Version</th>
-                        <th>Date</th>
-                        <th>Author</th>
-                        <th>Changes</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>0.1</td>
-                        <td>2011-12-02</td>
-                        <td><a href="mailto:nicg@corbas.co.uk">Nic Gibson</a></td>
-                        <td>Initial Version</td>
-                    </tr>
-                    <tr>
-                        <td>0.2</td>
-                        <td>2012-03-21</td>
-                        <td><a href="mailto:nicg@corbas.co.uk">Nic Gibson</a></td>
-                        <td>Broke into multiple types so that appendix and preface can derive from it.</td>
-                    </tr>
+        <xs:documentation><section xmlns="http://docbook.org/ns/docbook">
+            <title>OECD Schemas</title>
+            <subtitle>Chapter Model</subtitle>
+            <revhistory>
+                <title>Change Log</title>
+                
+                
+                    <revision>
+                        <revnumber>0.1</revnumber>
+                        <date>2011-12-02</date>
+                        <author><email>nicg@corbas.co.uk</email><personname>Nic Gibson</personname></author>
+                        <revremark>Initial Version</revremark>
+                    </revision>
+                    <revision>
+                        <revnumber>0.2</revnumber>
+                        <date>2012-03-21</date>
+                        <author><email>nicg@corbas.co.uk</email><personname>Nic Gibson</personname></author>
+                        <revremark>Broke into multiple types so that appendix and preface can derive from it.</revremark>
+                    </revision>
                     
-                </tbody>
-            </table>
-            <p>A chapter is a high level structural element. It has been modelled as a separate component
+                
+            </revhistory>
+            <para>A chapter is a high level structural element. It has been modelled as a separate component
             to a section as it does not have quite the same structure (a chapter has additional content). 
-            The content model is split into a chapterBaseType and a chapterType because components such as preface
-            share a great deal of the same content model.</p>
+            The content model for a chapter contains the content model for a section.</para>
             
-            <p>Related models such as appendix and preface are also defined here.</p>
+          
+        </section>
         </xs:documentation>
     </xs:annotation>
     
@@ -44,20 +36,21 @@
     
     <xs:include schemaLocation="section.xsd"/>
     <xs:include schemaLocation="../semantic/abstract.xsd"/>
+    <xs:include schemaLocation="../semantic/biblio.xsd"/>
     
     <!-- GLOBAL ELEMENTS -->
     
     <xs:element name="chapter" type="oecdChapterType"/>
-    <xs:element name="appendix" type="oecdChapterType"/>
+    <xs:element name="appendix" type="oecdAppendixType"/>
     <xs:element name="introduction" type="oecdChapterType"/>
     
     <!-- GLOBAL TYPES -->
     <xs:attributeGroup name="oecdChapterTypeAttributes">
         <xs:annotation>
             <xs:documentation>
-                <div xmlns="http://www.w3.org/1999/xhtml">
-                    <p>Chapter type attributes grouped for easy overrides.</p>
-                </div>
+                <section xmlns="http://docbook.org/ns/docbook">
+                    <para>Chapter type attributes grouped for easy overrides.</para>
+                </section>
             </xs:documentation>
         </xs:annotation>
         
@@ -66,55 +59,69 @@
     <xs:group name="oecdChapterBaseTypeContent">
         <xs:annotation>
             <xs:documentation>
-                <div xmlns="http://www.w3.org/1999/xhtml">
-                    <p>Chapter base content. Modelled as a separate group as it is also used by (eg) preface elements. </p>
-                </div>
-            </xs:documentation>
-        </xs:annotation>
-        <xs:sequence>
-            <xs:choice>
-                <xs:sequence>
-                    <xs:group ref="oecdBlockGroup" maxOccurs="1"/>
-                    <xs:element ref="section" minOccurs="0" maxOccurs="unbounded"/>
-                </xs:sequence>
-                <xs:element ref="section" minOccurs="1" maxOccurs="unbounded"/>
-            </xs:choice>      
-        </xs:sequence>
-    </xs:group>
-    
-    <xs:group name="oecdChapterTypeContent">
-        <xs:annotation>
-            <xs:documentation>
-                <div xmlns="http://www.w3.org/1999/xhtml">
-                    <p>Extends the base chapter type to add those components which are not allowed in a preface, etc.
-                        Modelled as a separate group as it is also used by (eg) preface elements. </p>
-                </div>
+                <section xmlns="http://docbook.org/ns/docbook">
+                    <para>Uses the base section content type to add those components which are not allowed in a preface, etc.
+                        Note that a chapter appendix is basically a section whilst a standalone appendix is almost a chapter.
+                        Therefore, the chapter model extends this but the appendix one doesn't.
+                    </para>
+                </section>
             </xs:documentation>
         </xs:annotation>
         <xs:sequence>
             <xs:element ref="metadata" minOccurs="0"/>
             <xs:group ref="oecdTitleGroup"/>
-            <xs:element ref="abstract" minOccurs="0"></xs:element>
-        </xs:sequence>
+            <xs:element ref="abstract" minOccurs="0"/>
+            <xs:group ref="oecdSectionTypeContent"/>
+            <xs:element ref="bibliography" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>    
+    </xs:group>
+
+    
+    <xs:group name="oecdChapterTypeContent">
+        <xs:annotation>
+            <xs:documentation>
+                <section xmlns="http://docbook.org/ns/docbook">
+                    <para>Uses the base section content type to add those components which are not allowed in a preface, etc.
+                        Note that a chapter appendix is basically a section whilst a standalone appendix is almost a chapter.
+                        </para>
+                </section>
+            </xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+            <xs:group ref="oecdChapterBaseTypeContent"/>
+            <xs:element name="appendix" type="oecdSectionType" minOccurs="0" maxOccurs="unbounded"/>
+         </xs:sequence>
     </xs:group>
     
      <xs:complexType name="oecdChapterType">
         <xs:annotation>
             <xs:documentation>
-                <div xmlns="http://www.w3.org/1999/xhtml">
-                    <p>The chapter type is directly derived from a section with no
-                        modifications. However, other section types are more naturally
-                    modelled as chapters so we create a type for chapters.</p>
-                </div>
+                <section xmlns="http://docbook.org/ns/docbook">
+                    <para>The chapter type is not directly derived from a section
+                    as the content model is too different.</para>
+                </section>
             </xs:documentation>
         </xs:annotation>
-    
-        <xs:complexContent>
-            <xs:extension base="oecdSectionType">
-                <xs:attributeGroup ref="oecdChapterTypeAttributes"/>
-            </xs:extension>
-        </xs:complexContent>
 
+        <xs:group ref="oecdChapterTypeContent"/>
+        <xs:attributeGroup ref="oecdChapterTypeAttributes"/>
+
+    </xs:complexType>
+    
+    <!-- appendix -->
+    <xs:complexType name="oecdAppendixType">
+        <xs:annotation>
+            <xs:documentation>
+                <section xmlns="http://docbook.org/ns/docbook">
+                    <para>The chapter type is not directly derived from a section
+                        as the content model is too different.</para>
+                </section>
+            </xs:documentation>
+        </xs:annotation>
+        
+        <xs:group ref="oecdChapterBaseTypeContent"/>
+        <xs:attributeGroup ref="oecdChapterTypeAttributes"/>
+        
     </xs:complexType>
     
 

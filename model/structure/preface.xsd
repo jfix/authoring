@@ -1,46 +1,38 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+<?xml version="1.0" encoding="UTF-8"?><xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
 
     <xs:annotation>
-        <xs:documentation xmlns:html="http://www.w3.org/1999/xhtml">
-            <html:h1>OECD Schemas</html:h1>
-            <html:h2>Preface Model</html:h2>
-            <table xmlns="http://www.w3.org/1999/xhtml">
-                <caption>Change Log</caption>
-                <thead>
-                    <tr>
-                        <th>Version</th>
-                        <th>Date</th>
-                        <th>Author</th>
-                        <th>Changes</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>0.1</td>
-                        <td>2011-12-02</td>
-                        <td><a href="mailto:nicg@corbas.co.uk">Nic Gibson</a></td>
-                        <td>Initial Version</td>
-                    </tr>
-                    <tr>
-                        <td>0.2</td>
-                        <td>2012-03-21</td>
-                        <td><a href="mailto:nicg@corbas.co.uk">Nic Gibson</a></td>
-                        <td>Restructured to separate file from section.</td>
-                    </tr>
+        <xs:documentation><section xmlns="http://docbook.org/ns/docbook">
+            <title>OECD Schemas</title>
+            <subtitle>Preface Model</subtitle>
+            <revhistory>
+                <title>Change Log</title>
+                
+                
+                    <revision>
+                        <revnumber>0.1</revnumber>
+                        <date>2011-12-02</date>
+                        <author><email>nicg@corbas.co.uk</email><personname>Nic Gibson</personname></author>
+                        <revremark>Initial Version</revremark>
+                    </revision>
+                    <revision>
+                        <revnumber>0.2</revnumber>
+                        <date>2012-03-21</date>
+                        <author><email>nicg@corbas.co.uk</email><personname>Nic Gibson</personname></author>
+                        <revremark>Restructured to separate file from section.</revremark>
+                    </revision>
                     
-                </tbody>
-            </table>
-            <p>An appendix is a chapter</p>
-        </xs:documentation>
+                
+            </revhistory>
+            <para>An appendix is a section</para>
+        </section></xs:documentation>
     </xs:annotation>
     
     <!-- IMPORTS AND INCLUDES -->
     
-    <xs:include schemaLocation="chapter.xsd"/>
+    <xs:include schemaLocation="section.xsd"/>
     
     <!-- GLOBAL ELEMENTS -->
     
-    <xs:element name="preface" type="oecdChapterType"/>
+    <xs:element name="preface" type="oecdSectionType"/>
 
 </xs:schema>

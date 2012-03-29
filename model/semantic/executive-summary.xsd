@@ -1,39 +1,31 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified"> 
+<?xml version="1.0" encoding="UTF-8"?><xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified"> 
 
 
     <xs:annotation>
-        <xs:documentation xmlns:html="http://www.w3.org/1999/xhtml">
-            <html:h1>OECD Schemas</html:h1>
-            <html:h2>Executive Summary</html:h2>           
-            <table xmlns="http://www.w3.org/1999/xhtml">
-                <caption>Change Log</caption>
-                <thead>
-                    <tr>
-                        <th>Version</th>
-                        <th>Date</th>
-                        <th>Author</th>
-                        <th>Changes</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>0.1</td>
-                        <td>2012-03-05</td>
-                        <td><a href="mailto:nicg@corbas.co.uk">Nic Gibson</a></td>
-                        <td>Initial Version</td>
-                    </tr>
-                    <tr>
-                        <td>0.2</td>
-                        <td>2012-03-21</td>
-                        <td><a href="mailto:nicg@corbas.co.uk">Nic Gibson</a></td>
-                        <td><ul><li>Updated to best practices.</li>
-                        <li>Modified content model to be a series of blocks (excluding boxes).</li></ul></td>
-                    </tr>
+        <xs:documentation><section xmlns="http://docbook.org/ns/docbook">
+            <title>OECD Schemas</title>
+            <subtitle>Executive Summary</subtitle>           
+            <revhistory>
+                <title>Change Log</title>
+                
+                
+                    <revision>
+                        <revnumber>0.1</revnumber>
+                        <date>2012-03-05</date>
+                        <author><email>nicg@corbas.co.uk</email><personname>Nic Gibson</personname></author>
+                        <revremark>Initial Version</revremark>
+                    </revision>
+                    <revision>
+                        <revnumber>0.2</revnumber>
+                        <date>2012-03-21</date>
+                        <author><email>nicg@corbas.co.uk</email><personname>Nic Gibson</personname></author>
+                        <revdescription xmlns="http://docbook.org/ns/docbook"><itemizedlist xmlns="http://docbook.org/ns/docbook"><listitem xmlns="http://docbook.org/ns/docbook"><para>Updated to best practices.</para></listitem>
+                        <listitem xmlns="http://docbook.org/ns/docbook"><para>Modified content model to be a series of blocks (excluding boxes).</para></listitem></itemizedlist></revdescription>
+                    </revision>
                     
-                </tbody>
-            </table>
-        </xs:documentation>
+                
+            </revhistory>
+        </section></xs:documentation>
     </xs:annotation>
     
     <!-- IMPORTS AND INCLUDES -->

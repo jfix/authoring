@@ -1,38 +1,30 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+<?xml version="1.0" encoding="UTF-8"?><xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
 
 
     <xs:annotation>
-        <xs:documentation xmlns:html="http://www.w3.org/1999/xhtml">
-            <html:h1>OECD Schemas</html:h1>
-            <html:h2>Section Model</html:h2>
-            <table xmlns="http://www.w3.org/1999/xhtml">
-                <caption>Change Log</caption>
-                <thead>
-                    <tr>
-                        <th>Version</th>
-                        <th>Date</th>
-                        <th>Author</th>
-                        <th>Changes</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>0.1</td>
-                        <td>2011-12-02</td>
-                        <td><a href="mailto:nicg@corbas.co.uk">Nic Gibson</a></td>
-                        <td>Initial Version</td>
-                    </tr>
-                    <tr>
-                        <td>0.2</td>
-                        <td>2012-03-21</td>
-                        <td><a href="mailto:nicg@corbas.co.uk">Nic Gibson</a></td>
-                        <td>Updated to best practices guide.</td>
-                    </tr>
+        <xs:documentation><section xmlns="http://docbook.org/ns/docbook">
+            <title>OECD Schemas</title>
+            <subtitle>Section Model</subtitle>
+            <revhistory>
+                <title>Change Log</title>
+                
+                
+                    <revision>
+                        <revnumber>0.1</revnumber>
+                        <date>2011-12-02</date>
+                        <author><email>nicg@corbas.co.uk</email><personname>Nic Gibson</personname></author>
+                        <revremark>Initial Version</revremark>
+                    </revision>
+                    <revision>
+                        <revnumber>0.2</revnumber>
+                        <date>2012-03-21</date>
+                        <author><email>nicg@corbas.co.uk</email><personname>Nic Gibson</personname></author>
+                        <revremark>Updated to best practices guide.</revremark>
+                    </revision>
                     
-                </tbody>
-            </table>
-        </xs:documentation>
+                
+            </revhistory>
+        </section></xs:documentation>
     </xs:annotation>
     
     <!-- IMPORTS AND INCLUDES -->
@@ -54,18 +46,18 @@
         
         <xs:annotation>
             <xs:documentation>
-                <div xmlns="http://www.w3.org/1999/xhtml">
-                    <p>Attributes for sections as a group for easy overrides and reuse.</p>
-                </div>
+                <section xmlns="http://docbook.org/ns/docbook">
+                    <para>Attributes for sections as a group for easy overrides and reuse.</para>
+                </section>
             </xs:documentation>
         </xs:annotation>
         
         <xs:attribute name="numeration" type="oecdListNumeration">
             <xs:annotation>
                 <xs:documentation>
-                    <div xmlns="http://www.w3.org/1999/xhtml">
-                        <p>List numeration style for sections</p>
-                    </div>
+                    <section xmlns="http://docbook.org/ns/docbook">
+                        <para>List numeration style for sections</para>
+                    </section>
                 </xs:documentation>
             </xs:annotation>
         </xs:attribute>
@@ -73,9 +65,9 @@
         <xs:attribute name="continuation" type="oecdListContinuation">
             <xs:annotation>
                 <xs:documentation>
-                    <div xmlns="http://www.w3.org/1999/xhtml">
-                        <p>Numbering continuation flag for sections</p>
-                    </div>
+                    <section xmlns="http://docbook.org/ns/docbook">
+                        <para>Numbering continuation flag for sections</para>
+                    </section>
                 </xs:documentation>
             </xs:annotation>
         </xs:attribute>
@@ -83,10 +75,10 @@
         <xs:attribute name="start" type="xs:nonNegativeInteger">
             <xs:annotation>
                 <xs:documentation>
-                    <div xmlns="http://www.w3.org/1999/xhtml">
-                        <p>Starting count for sections which have their continuation style set to
-                            'start'.</p>
-                    </div>
+                    <section xmlns="http://docbook.org/ns/docbook">
+                        <para>Starting count for sections which have their continuation style set to
+                            'start'.</para>
+                    </section>
                 </xs:documentation>
             </xs:annotation>
         </xs:attribute>    
@@ -94,10 +86,10 @@
         <xs:attribute name="number" type="xs:nonNegativeInteger">
             <xs:annotation>
                 <xs:documentation>
-                    <div xmlns="http://www.w3.org/1999/xhtml">
-                        <p>Numbering override for sections where the author needs to override
-                            the section numbering completely.</p>
-                    </div>
+                    <section xmlns="http://docbook.org/ns/docbook">
+                        <para>Numbering override for sections where the author needs to override
+                            the section numbering completely.</para>
+                    </section>
                 </xs:documentation>
             </xs:annotation>
         </xs:attribute>
@@ -109,9 +101,9 @@
         
         <xs:annotation>
             <xs:documentation>
-                <div xmlns="http://www.w3.org/1999/xhtml">
-                    <p>Content for sections as a group for easy overrides and reuse.</p>
-                </div>
+                <section xmlns="http://docbook.org/ns/docbook">
+                    <para>Content for sections as a group for easy overrides and reuse.</para>
+                </section>
             </xs:documentation>
         </xs:annotation>
         
@@ -132,10 +124,10 @@
     <xs:complexType name="oecdSectionType">
         <xs:annotation>
             <xs:documentation>
-                <div xmlns="http://www.w3.org/1999/xhtml">
-                    <p>Sections are the major recursive structural component of documents. Each section consists of
-                        titles, optional introductory blocks and then optional sections. Sections and blocks cannot be interspersed.</p>
-                </div>
+                <section xmlns="http://docbook.org/ns/docbook">
+                    <para>Sections are the major recursive structural component of documents. Each section consists of
+                        titles, optional introductory blocks and then optional sections. Sections and blocks cannot be interspersed.</para>
+                </section>
             </xs:documentation>
         </xs:annotation>
         
