@@ -20,6 +20,12 @@
                         <author><email>nicg@corbas.co.uk</email><personname>Nic Gibson</personname></author>
                         <revremark>Broke into multiple types so that appendix and preface can derive from it.</revremark>
                     </revision>
+                    <revision>
+                        <revnumber>0.3</revnumber>
+                        <date>2012-03-29</date>
+                        <author><email>nicg@corbas.co.uk</email><personname>Nic Gibson</personname></author>
+                        <revremark>Added notes to chapter model.</revremark>
+                    </revision>
                     
                 
             </revhistory>
@@ -37,6 +43,7 @@
     <xs:include schemaLocation="section.xsd"/>
     <xs:include schemaLocation="../semantic/abstract.xsd"/>
     <xs:include schemaLocation="../semantic/biblio.xsd"/>
+    <xs:include schemaLocation="../components/notes.xsd"/>
     
     <!-- GLOBAL ELEMENTS -->
     
@@ -60,6 +67,18 @@
         <xs:annotation>
             <xs:documentation>
                 <section xmlns="http://docbook.org/ns/docbook">
+                    <revhistory>
+                        <title>Change Log</title>
+                        
+                        
+                        <revision>
+                            <revnumber>0.3</revnumber>
+                            <date>2012-03-29</date>
+                            <author><email>nicg@corbas.co.uk</email><personname>Nic Gibson</personname></author>
+                            <revremark>Added notes element</revremark>
+                        </revision>
+                    </revhistory>
+                        
                     <para>Uses the base section content type to add those components which are not allowed in a preface, etc.
                         Note that a chapter appendix is basically a section whilst a standalone appendix is almost a chapter.
                         Therefore, the chapter model extends this but the appendix one doesn't.
@@ -72,7 +91,11 @@
             <xs:group ref="oecdTitleGroup"/>
             <xs:element ref="abstract" minOccurs="0"/>
             <xs:group ref="oecdSectionTypeContent"/>
+            
+            <!-- note - forcing sequence here is not ideal but there is no sensible way to model it in XSD -->
             <xs:element ref="bibliography" minOccurs="0" maxOccurs="unbounded"/>
+            <xs:element ref="notes" minOccurs="0" maxOccurs="unbounded"/>
+            
         </xs:sequence>    
     </xs:group>
 
