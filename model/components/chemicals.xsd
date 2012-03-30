@@ -14,6 +14,12 @@
                         <author><email>nicg@corbas.co.uk</email><personname>Nic Gibson</personname></author>
                         <revremark>Initial Version</revremark>
                     </revision>
+                <revision>
+                    <revnumber>0.2</revnumber>
+                    <date>2012-03-03</date>
+                    <author><email>nicg@corbas.co.uk</email><personname>Nic Gibson</personname></author>
+                    <revremark>Modified oecdChemicalStructureTypeContent to replace 'oecdInline' with 'text'.</revremark>
+                </revision>
             </revhistory>
         </section></xs:documentation>
         
@@ -49,6 +55,12 @@
     <xs:group name="oecdChemicalStructureTypeContent">
         <xs:annotation>
             <xs:documentation>
+                <revision>
+                    <revnumber>0.2</revnumber>
+                    <date>2012-03-03</date>
+                    <author><email>nicg@corbas.co.uk</email><personname>Nic Gibson</personname></author>
+                    <revremark>Modified to replace 'oecdInline' with 'text'.</revremark>
+                </revision>
                 <section xmlns="http://docbook.org/ns/docbook">
                     <para>Content for chemical structures. Grouped to allow easy override.</para>
                 </section>
@@ -56,7 +68,7 @@
         </xs:annotation>
         <xs:choice>
             <xs:any namespace="http://www.xml-cml.org/schema"/>
-            <xs:element ref="oecdInline"/>   
+            <xs:element ref="text"/>   
             <xs:group ref="oecdGraphicsGroup"/> 
         </xs:choice>
     </xs:group>

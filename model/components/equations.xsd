@@ -25,6 +25,14 @@
                         </itemizedlist></revdescription>
                     </revision>
                 
+                <revision>
+                    <revnumber>0.3</revnumber>
+                    <date>2012-03-03</date>
+                    <author><email>nicg@corbas.co.uk</email><personname>Nic Gibson</personname></author>
+                    <revremark>Modified oecdEquationTypeContent to replace 'oecdInline' with 'text'.</revremark>
+                </revision>
+                
+                
             </revhistory>
         </section></xs:documentation>
     </xs:annotation>
@@ -59,6 +67,12 @@
     <xs:group name="oecdEquationTypeContent">
         <xs:annotation>
             <xs:documentation>
+                <revision>
+                    <revnumber>0.3</revnumber>
+                    <date>2012-03-03</date>
+                    <author><email>nicg@corbas.co.uk</email><personname>Nic Gibson</personname></author>
+                    <revremark>Modified to replace 'oecdInline' with 'text'.</revremark>
+                </revision>
                 <section xmlns="http://docbook.org/ns/docbook">
                     <para>Content for equations. Grouped to allow easy override.</para>
                 </section>
@@ -66,7 +80,7 @@
         </xs:annotation>
         <xs:choice>
             <xs:any namespace="http://www.w3.org/1998/Math/MathML"/>
-            <xs:element ref="oecdInline"/>   
+            <xs:element ref="text"/>   
             <xs:group ref="oecdGraphicsGroup"/> 
         </xs:choice>
     </xs:group>

@@ -23,6 +23,14 @@
                             <revremark>Added number attribute to ordered list items for overrides</revremark>
                         </revision>
                     
+                    <revision>
+                        <revnumber>0.3</revnumber>
+                        <date>2012-03-03</date>
+                        <author><email>nicg@corbas.co.uk</email><personname>Nic Gibson</personname></author>
+                        <revremark>Replaced include of inlines.xsd with inline-group.xsd.</revremark>
+                    </revision>
+                    
+                    
                 </revhistory>
                 <para>This model defines lists of various types</para>
             </section>
@@ -31,7 +39,7 @@
 
     <!-- IMPORTS AND INCLUDES  -->
     <xs:include schemaLocation="attributes.xsd"/>
-    <xs:include schemaLocation="inlines.xsd"/>
+    <xs:include schemaLocation="inline-group.xsd"/>
     <xs:include schemaLocation="titles.xsd"/>
     <xs:include schemaLocation="meta.xsd"/>
     <xs:include schemaLocation="types.xsd"/>

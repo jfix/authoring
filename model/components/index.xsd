@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+    
+    <xs:annotation>
+        <xs:documentation><section xmlns="http://docbook.org/ns/docbook">
+            <title>OECD Schemas</title>
+            <subtitle>Index Components</subtitle>
+            <revhistory>
+                <title>Change Log</title>
+                
+                
+                <revision>
+                    <revnumber>0.1</revnumber>
+                    <date>2012-03-29</date>
+                    <author><email>nicg@corbas.co.uk</email><personname>Nic Gibson</personname></author>
+                    <revremark>Initial Version</revremark>
+                </revision>
+                
+            </revhistory>
+        </section>
+        </xs:documentation>
+    </xs:annotation>
+    
+    <!-- INCLUDES AND IMPORTS -->
+    <xs:include schemaLocation="meta.xsd"/>
+    <xs:include schemaLocation="attributes.xsd"/>
+    
+    <!-- GLOBAL ELEMENTS -->
+    <xs:element name="indexTerm" type="oecdIndexTermType"/>
+    <!-- GLOBAL GROUPS -->
+    
+    <!-- COMPLEX TYPES -->
+    
+    <xs:attributeGroup name="oecdIndexTermLevelsTypeAttributes">
+        <xs:annotation>
+            <xs:documentation>
+                <section xmlns="http://docbook.org/ns/docbook">
+                    <para>Attributes for the children of the index term.</para>
+                </section>
+            </xs:documentation>
+        </xs:annotation>
+        <xs:attributeGroup ref="oecdCommonAttributes"/>
+        <xs:attributeGroup ref="oecdLinkingAttributes"/>
+    </xs:attributeGroup>
+
+    <xs:complexType name="oecdIndexTermLevelsType">
+        <xs:annotation>
+            <xs:documentation>
+                <section xmlns="http://docbook.org/ns/docbook">
+                    <para>Shared model for all the children of an index term. They
+                        are all text only with attributes.</para>
+                </section>
+            </xs:documentation>
+        </xs:annotation>      
+
+        <xs:simpleContent>
+            <xs:extension base="xs:string">
+                <xs:attributeGroup ref="oecdIndexTermLevelsTypeAttributes"/>
+            </xs:extension>
+        </xs:simpleContent>
+
+    </xs:complexType>
+    
+    
+    <xs:attributeGroup name="oecdIndexTermTypeAttributes">
+        <xs:annotation>
+            <xs:documentation>
+                <section xmlns="http://www.docbook.org/ns/docbook">
+                    <para>Attributes for the index term type. Grouped for easy overrides.</para>
+                </section>
+            </xs:documentation>
+        </xs:annotation>
+        <xs:attributeGroup ref="oecdCommonAttributes"/>
+        <xs:attributeGroup ref="oecdLinkingAttributes"/>
+        <xs:attribute name="type" type="xs:string">
+            <xs:annotation>
+                <xs:documentation>
+                    <section xmlns="http://docbook.org/ns/docbook">
+                        <para>Multiple indexes can be created by grouping index terms with
+                        the type attribute. When an index is rendered it must render all
+                        index terms with the same type as that on the index element itself.</para>
+                    </section>
+                </xs:documentation>
+            </xs:annotation>
+        </xs:attribute>
+    </xs:attributeGroup>
+    
+    <xs:group name="oecdIndexTermTypeContent">
+        <xs:annotation>
+            <xs:documentation>
+                <section xmlns="http://docbook.org/ns/docbook">
+                    <para>Content for the index term type. Grouped for easy overrides.</para>
+                </section>
+            </xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+            <xs:element name="primary" type="oecdIndexTermLevelsType"/>
+            <xs:choice minOccurs="0">
+                <xs:sequence>
+                    <xs:element name="secondary" type="oecdIndexTermLevelsType"/>
+                    <xs:choice minOccurs="0">
+                        <xs:sequence>
+                            <xs:element name="tertiary" type="oecdIndexTermLevelsType"/>
+                            <xs:choice minOccurs="0">
+                                <xs:element name="see" type="oecdIndexTermLevelsType"/>
+                                <xs:element name="seeAlso" type="oecdIndexTermLevelsType" maxOccurs="unbounded"/>
+                            </xs:choice>                          
+                        </xs:sequence>
+                        <xs:element name="see" type="oecdIndexTermLevelsType"/>
+                        <xs:element name="seeAlso" type="oecdIndexTermLevelsType" maxOccurs="unbounded"/>
+                    </xs:choice>
+                </xs:sequence>
+                <xs:element name="see" type="oecdIndexTermLevelsType"/>
+                <xs:element name="seeAlso" type="oecdIndexTermLevelsType" maxOccurs="unbounded"/>
+            </xs:choice>
+        </xs:sequence>
+    </xs:group>
+    
+    <xs:complexType name="oecdIndexTermType">
+        <xs:annotation>
+            <xs:documentation>
+                <section xmlns="http://docbook.org/ns/docbook">
+                    <para>An indexterm is used to create one or more indexes (the type attribute shared by the
+                    index element and one or more index terms creates a distinct index). Each term consists
+                    of a primary phrase followed by optional secondary and tertiary phrases. 'seeAlso' elements
+                    can be used to direct the reader to additional index entries. Additional a 'see' element
+                    may be used to direct the user to an alternative index entry.</para>    
+                </section>
+            </xs:documentation>
+        </xs:annotation>
+        <xs:group ref="oecdIndexTermTypeContent"/>
+        <xs:attributeGroup ref="oecdIndexTermTypeAttributes"/>
+    </xs:complexType>
+    
+    <!-- simple types -->
+    <xs:simpleType name="primary">
+        <xs:restriction base="xs:string">
+            <xs:minLength value="1"/>
+        </xs:restriction>
+    </xs:simpleType>
+    
+    <xs:simpleType name="secondary">
+        <xs:restriction base="xs:string">
+            <xs:minLength value="1"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="tertiary">
+        <xs:restriction base="xs:string">
+            <xs:minLength value="1"/>
+        </xs:restriction>
+    </xs:simpleType>
+    
+    <xs:simpleType name="oecdSeeTypee">
+        <xs:restriction base="xs:string">
+            <xs:minLength value="1"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="oecdSeeAlsoType">
+        <xs:restriction base="xs:string">
+            <xs:minLength value="1"/>
+        </xs:restriction>
+    </xs:simpleType>
+    
+    
+</xs:schema>

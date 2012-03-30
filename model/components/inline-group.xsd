@@ -25,6 +25,14 @@
                     <revremark>Added chemical structures</revremark>
                 </revision>
                 
+                <revision>
+                    <revnumber>0.2</revnumber>
+                    <date>2012-03-29</date>
+                    <author><email>nicg@corbas.co.uk</email><personname>Nic Gibson</personname></author>
+                    <revremark>Added index terms</revremark>
+                </revision>
+                
+                
                 
             </revhistory>
             
@@ -36,6 +44,7 @@
     <xs:include schemaLocation="graphics.xsd"/>
     <xs:include schemaLocation="equations.xsd"/>
     <xs:include schemaLocation="chemicals.xsd"/>
+    <xs:include schemaLocation="index.xsd"/>
 
     <!-- GLOBAL GROUPS -->
     <xs:group name="oecdInlineGroup">
@@ -54,6 +63,7 @@
             <xs:element ref="inlineChemicalStructure" maxOccurs="unbounded" minOccurs="0"/>
             <xs:element ref="inlineGraphic" maxOccurs="unbounded" minOccurs="0"/>
             <xs:element ref="footnote" minOccurs="0" maxOccurs="unbounded"/>
+            <xs:element ref="indexTerm" minOccurs="0"  maxOccurs="unbounded"/>
         </xs:choice>
     </xs:group>
     

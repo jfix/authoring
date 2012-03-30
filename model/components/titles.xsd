@@ -22,6 +22,15 @@
                         
                     </revision>
                 
+                
+                <revision>
+                    <revnumber>0.3</revnumber>
+                    <date>2012-03-03</date>
+                    <author><email>nicg@corbas.co.uk</email><personname>Nic Gibson</personname></author>
+                    <revremark>Replaced include of inlines.xsd with inline-group.xsd.</revremark>
+                </revision>
+                
+                
             </revhistory>
             
         </section></xs:documentation>
@@ -30,7 +39,7 @@
     
     <!-- IMPORTS AND INCLUDES -->
     <xs:include schemaLocation="attributes.xsd"/>
-    <xs:include schemaLocation="inlines.xsd"/>
+    <xs:include schemaLocation="inline-group.xsd"/>
     
     
     <!-- GLOBAL ELEMENTS -->
