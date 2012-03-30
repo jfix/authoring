@@ -16,6 +16,14 @@
                     <revremark>Initial Version</revremark>
                 </revision>
                 
+                <revision>
+                    <revnumber>0.2</revnumber>
+                    <date>2012-03-30</date>
+                    <author><email>nicg@corbas.co.uk</email><personname>Nic Gibson</personname></author>
+                    <revremark>Deleted simple types left in from beta version by accident. Added index element.</revremark>
+                </revision>
+                
+                
             </revhistory>
         </section>
         </xs:documentation>
@@ -27,6 +35,8 @@
     
     <!-- GLOBAL ELEMENTS -->
     <xs:element name="indexTerm" type="oecdIndexTermType"/>
+    <xs:element name="index" type="oecdIndexType"/>
+    
     <!-- GLOBAL GROUPS -->
     
     <!-- COMPLEX TYPES -->
@@ -132,36 +142,52 @@
         <xs:attributeGroup ref="oecdIndexTermTypeAttributes"/>
     </xs:complexType>
     
-    <!-- simple types -->
-    <xs:simpleType name="primary">
-        <xs:restriction base="xs:string">
-            <xs:minLength value="1"/>
-        </xs:restriction>
-    </xs:simpleType>
     
-    <xs:simpleType name="secondary">
-        <xs:restriction base="xs:string">
-            <xs:minLength value="1"/>
-        </xs:restriction>
-    </xs:simpleType>
+    <!-- index -->
+    <xs:attributeGroup name="oecdIndexTypeAttributes">
+        
+        <xs:annotation>
+            <xs:documentation>
+                <section xmlns="http://www.docbook.org/ns/docbook">
+                    <para>Attributes for the index term type. Grouped for easy overrides.</para>
+                </section>
+            </xs:documentation>
+        </xs:annotation>
+        <xs:attributeGroup ref="oecdCommonAttributes"/>
+        <xs:attributeGroup ref="oecdLinkingAttributes"/>
+        <xs:attribute name="type" type="xs:string">
+            <xs:annotation>
+                <xs:documentation>
+                    <section xmlns="http://docbook.org/ns/docbook">
+                        <para>Multiple indexes can be created by grouping index terms with
+                            the type attribute. When an index is rendered it must render all
+                            index terms with the same type as that on the index element itself.</para>
+                    </section>
+                </xs:documentation>
+            </xs:annotation>
+        </xs:attribute>
+        
+    </xs:attributeGroup>
+        
+    <xs:complexType name="oecdIndexType">
+        
+        <xs:annotation>
+            <xs:documentation>
+                <revision>
+                    <revnumber>0.2</revnumber>
+                    <date>2012-03-30</date>
+                    <author><email>nicg@corbas.co.uk</email><personname>Nic Gibson</personname></author>
+                    <revremark>Initial version</revremark>
+                </revision>
+                <section xmlns="http://www.docbook.org/ns/docbook">
+                    <para>Content for the index term type. Grouped for easy overrides. This an empty type.</para>
+                </section>
+            </xs:documentation>
+        </xs:annotation>
+        
+        <xs:attributeGroup ref="oecdIndexTypeAttributes"/>
+        
+    </xs:complexType>
 
-    <xs:simpleType name="tertiary">
-        <xs:restriction base="xs:string">
-            <xs:minLength value="1"/>
-        </xs:restriction>
-    </xs:simpleType>
-    
-    <xs:simpleType name="oecdSeeTypee">
-        <xs:restriction base="xs:string">
-            <xs:minLength value="1"/>
-        </xs:restriction>
-    </xs:simpleType>
-
-    <xs:simpleType name="oecdSeeAlsoType">
-        <xs:restriction base="xs:string">
-            <xs:minLength value="1"/>
-        </xs:restriction>
-    </xs:simpleType>
-    
     
 </xs:schema>
