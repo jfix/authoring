@@ -138,7 +138,7 @@
             </xs:documentation>
         </xs:annotation>
         <xs:sequence>
-            <xs:element name="metadata" minOccurs="0"/>
+            <xs:element ref="metadata" minOccurs="0"/>
             <xs:group ref="oecdTitleGroup" minOccurs="0"/>
             <xs:element name="listItem" type="oecdItemizedListItemType" maxOccurs="unbounded"/>
             <xs:element ref="notes" minOccurs="0"/>
@@ -227,7 +227,7 @@
             </xs:documentation>
         </xs:annotation>
         <xs:sequence>
-            <xs:element name="metadata" minOccurs="0"/>
+            <xs:element ref="metadata" minOccurs="0"/>
             <xs:group ref="oecdTitleGroup" minOccurs="0"/>
             <xs:element name="listItem" type="oecdListItemType" maxOccurs="unbounded"/>
             <xs:element ref="notes" minOccurs="0"/>
@@ -351,7 +351,7 @@
             </xs:documentation>
         </xs:annotation>
         <xs:sequence>
-            <xs:element name="metadata" minOccurs="0"/>
+            <xs:element ref="metadata" minOccurs="0"/>
             <xs:group ref="oecdTitleGroup" minOccurs="0"/>
             <xs:element name="listItem" type="oecdDefinitionListItemType" maxOccurs="unbounded"/>
             <xs:element ref="notes" minOccurs="0"/>
