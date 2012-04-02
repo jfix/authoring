@@ -12,21 +12,21 @@
                 
                 
                     <revision>
-                        <revnumber>0.1</revnumber>
+                        <revnumber>1</revnumber>
                         <date>2012-03-21</date>
                         <author><email>nicg@corbas.co.uk</email><personname>Nic Gibson</personname></author>
                         <revremark>Initial Version</revremark>
                     </revision>
 
                 <revision>
-                    <revnumber>0.2</revnumber>
+                    <revnumber>2</revnumber>
                     <date>2012-03-29</date>
                     <author><email>nicg@corbas.co.uk</email><personname>Nic Gibson</personname></author>
                     <revremark>Added chemical structures</revremark>
                 </revision>
                 
                 <revision>
-                    <revnumber>0.2</revnumber>
+                    <revnumber>2</revnumber>
                     <date>2012-03-29</date>
                     <author><email>nicg@corbas.co.uk</email><personname>Nic Gibson</personname></author>
                     <revremark>Added index terms</revremark>
