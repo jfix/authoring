@@ -54,6 +54,7 @@
     <xs:include schemaLocation="graphics.xsd"/>
     <xs:include schemaLocation="chemicals.xsd"/>
     <xs:include schemaLocation="tables.xsd"/>
+    <xs:include schemaLocation="extracts.xsd"/>
     
     <!-- GLOBAL GROUPS -->
     <xs:group name="oecdBlockGroup" id="oecdBlockGroup">
@@ -87,6 +88,7 @@
             <xs:element ref="graphic"/>
             <xs:element ref="figure"/>
             <xs:element ref="table"/>
+            <xs:group ref="oecdExtractsGroup"/>
         </xs:choice>        
     </xs:group>
     
