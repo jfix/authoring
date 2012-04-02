@@ -1,8 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" xmlns="http://www.oecd.org/ns/oecd.author/document" targetNamespace="http://www.oecd.org/ns/oecd.author/document" xmlns:xd="http://www.oecd.org/ns/schema/xdocs">
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" 
+    xmlns="urn:oecd:names:xmlns:authoring:document" targetNamespace="urn:oecd:names:xmlns:authoring:document" xmlns:xd="http://www.oecd.org/ns/schema/xdocs">
 
 
     <xs:annotation>
+        <xs:appinfo>
+            <xd:name>official-document</xd:name>
+            <xd:root>document</xd:root>
+        </xs:appinfo>
         <xs:documentation>
             <section xmlns="http://docbook.org/ns/docbook">
                 <title>OECD Schemas</title>
@@ -26,58 +31,37 @@
                             <authorinitials>JWC</authorinitials>
                         </author>
                         <revremark>Added hooks for documentation, and created document element and oecdDocument type.</revremark>
+                    </revision>                   
+                    <revision>
+                        <revnumber>0.3</revnumber>
+                        <date>2012-03-31</date>
+                        <author>
+                            <email>nicg@corbas.co.uk</email>
+                            <authorinitials>NG</authorinitials>
+                        </author>
+                        <revremark>Modified JWC's update to match final oecdBaseDocument type.</revremark>
                     </revision>
+                    
                 </revhistory>
             </section>
         </xs:documentation>
     </xs:annotation>
+    
+    <!-- IMPORTS AND INCLUDES -->
+    <xs:include schemaLocation="structure/document.xsd"/>
+        
+    <!-- GLOBAL ELEMENTS -->
 
 
     <xs:annotation>
-        <xs:appinfo>
-            <xd:name>official-document</xd:name>
-            <xd:root>document</xd:root>
-        </xs:appinfo>
         <xs:documentation>
-            <xd:p>This model is used by authors to create official OECD documents and publications.</xd:p>
+            <section xmlns="http://docbook.org/ns/docbook">
+                <para>This model is used by authors to create official OECD documents and publications.</para>                
+            </section>
+            
         </xs:documentation>
     </xs:annotation>
 
-    <xs:include schemaLocation="components/attributes.xsd"/>
-    <xs:include schemaLocation="structure/chapter.xsd"/>
-    <xs:include schemaLocation="components/extracts.xsd"/>
-    <xs:include schemaLocation="components/paras.xsd"/>
-    <xs:include schemaLocation="structure/section.xsd"/>
-    <xs:include schemaLocation="components/tables.xsd"/>
-    <xs:include schemaLocation="components/titles.xsd"/>
-
-
-    <xs:element name="document" type="oecdDocument"/>
-
-    <xs:complexType name="oecdDocument">
-        <xs:annotation>
-            <xs:documentation>
-                <xd:section>
-                    <xd:title>Usage</xd:title>
-                    <xd:p>Root element for a document representing the concept of a chapter, section, appendix for a piece of official OECD contant or equivalent.</xd:p>
-                </xd:section>
-                <xd:section>
-                    <xd:title>Examples</xd:title>
-                    <xd:p>The opening of a document, representing an official document.</xd:p>
-                </xd:section>
-            </xs:documentation>
-        </xs:annotation>
-        <xs:sequence>
-            <xs:element name="title" type="oecdTitleType"/>
-            <xs:choice maxOccurs="unbounded">
-                <xs:element name="chapter" type="oecdChapterType"/>
-                <xs:element name="extract" type="oecdExtractType"/>
-                <xs:element name="paragraph" type="oecdParagraphGroupType"/>
-                <xs:element name="section" type="oecdSectionType"/>
-                <xs:element name="table"/>
-            </xs:choice>
-        </xs:sequence>
-        <xs:attributeGroup ref="oecdCommonAttributes"/>
-    </xs:complexType>
+    <xs:element name="document" type="oecdBaseDocumentType"/>
 
 </xs:schema>

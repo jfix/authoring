@@ -26,7 +26,12 @@
                         <author><email>nicg@corbas.co.uk</email><personname>Nic Gibson</personname></author>
                         <revremark>Added notes to chapter model.</revremark>
                     </revision>
-                    
+                <revision>
+                    <revnumber>0.3</revnumber>
+                    <date>2012-03-30</date>
+                    <author><email>nicg@corbas.co.uk</email><personname>Nic Gibson</personname></author>
+                    <revremark>Added acknowledgements to chapter model.</revremark>
+                </revision>                    
                 
             </revhistory>
             <para>A chapter is a high level structural element. It has been modelled as a separate component
@@ -44,6 +49,7 @@
     <xs:include schemaLocation="../semantic/abstract.xsd"/>
     <xs:include schemaLocation="../semantic/biblio.xsd"/>
     <xs:include schemaLocation="../components/notes.xsd"/>
+    <xs:include schemaLocation="../semantic/acknowledgements.xsd"/>
     
     <!-- GLOBAL ELEMENTS -->
     
@@ -90,6 +96,7 @@
             <xs:element ref="metadata" minOccurs="0"/>
             <xs:group ref="oecdTitleGroup"/>
             <xs:element ref="abstract" minOccurs="0"/>
+            <xs:element ref="acknowledgements" minOccurs="0"></xs:element>
             <xs:group ref="oecdSectionTypeContent"/>
             
             <!-- note - forcing sequence here is not ideal but there is no sensible way to model it in XSD -->

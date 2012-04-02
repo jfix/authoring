@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+
+
+    <xs:annotation>
+        <xs:documentation><section xmlns="http://docbook.org/ns/docbook">
+                <title>OECD Schemas</title>
+                <subtitle>Volume Component</subtitle>
+                <revhistory>
+                    <title>Change Log</title>
+                    <revision>
+                        <revnumber>0.1</revnumber>
+                        <date>2012-03-30</date>
+                        <author><email>nicg@corbas.co.uk</email><personname>Nic
+                            Gibson</personname></author>
+                        <revremark>Initial Version</revremark>
+                    </revision>
+                    <para>A volume is a publishing structural element. A volume contains multiple
+                        parts of multiple documents. Volumes may stand alone. </para>
+                </revhistory>
+            </section>
+        </xs:documentation>
+    </xs:annotation>
+
+    <!-- IMPORTS AND INCLUDES -->
+    
+    <xs:include schemaLocation="part.xsd"/>
+    <xs:include schemaLocation="volume.xsd"/>
+    <xs:include schemaLocation="../components/document-meta.xsd"/>
+    
+    <!-- GLOBAL ELEMENTS -->
+    
+    <!-- GLOBAL GROUPS -->
+    
+    <!-- COMPLEX TYPES -->
+    
+    <!-- volume -->
+    
+    <xs:attributeGroup name="oecdVolumeTypeAttributes">
+        
+        <xs:annotation>
+            <xs:documentation>
+                <section xmlns="http://docbook.org/ns/docbook">
+                    <para>Attributes for volume type grouped for easy override.</para>
+                </section>
+            </xs:documentation>
+            
+        </xs:annotation>        
+        
+        <xs:attributeGroup ref="oecdCommonAttributes"/>
+        <xs:attributeGroup ref="oecdLinkingAttributes"/>
+        
+    </xs:attributeGroup>
+    
+    <xs:group name="oecdVolumeTypeContent">
+        
+        <xs:annotation>
+            <xs:documentation>
+                <section xmlns="http://docbook.org/ns/docbook">
+                    <para>Content for volume type grouped for easy override</para>
+                </section>
+            </xs:documentation>
+        </xs:annotation>        
+        
+        <xs:sequence>
+            
+            <xs:element name="documentMetadata" type="oecdDocumentMetadataType" minOccurs="0"/>
+            <xs:element ref="metadata"/> <!-- not optional here! -->
+            <xs:group ref="oecdTitleGroup"/>
+                        
+            <xs:element ref="metadata" minOccurs="0"/>
+            <xs:group ref="oecdTitleGroup"/>
+            
+            <xs:element ref="preface" minOccurs="0"/>
+            
+            <xs:element ref="introduction" minOccurs="0"/>
+            
+            <xs:choice>
+                <xs:element ref="part" maxOccurs="unbounded"/>
+                <xs:element ref="chapter" maxOccurs="unbounded"/>
+            </xs:choice>
+            <!-- note - forcing sequence here is not ideal but there is no sensible way to model it in XSD -->
+            <xs:element ref="bibliography" minOccurs="0" maxOccurs="unbounded"/>
+            <xs:element ref="appendix" minOccurs="0" maxOccurs="unbounded"/>
+            
+        </xs:sequence>
+        
+    </xs:group>
+    
+    <xs:complexType name="oecdVolumeType">
+        
+        <xs:annotation>
+            <xs:documentation>
+                <section xmlns="http://docbook.org/ns/docbook">
+                    <para>The volume type describes a structure that wraps containers such as chapters
+                        and parts into a standalone entity that is (effectively) a specialised type
+                        of book.</para>
+                </section>
+            </xs:documentation>
+        </xs:annotation>
+        
+        <xs:group ref="oecdVolumeTypeContent"/>
+        <xs:attributeGroup ref="oecdVolumeTypeAttributes"/>
+        
+    </xs:complexType>
+    
+    
+    <!-- SIMPLE TYPES -->
+    
+    
+
+
+</xs:schema>

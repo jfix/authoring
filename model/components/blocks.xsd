@@ -33,6 +33,12 @@
                     <revremark>Added chemical structures</revremark>
                 </revision>                      
                 
+                <revision>
+                    <revnumber>0.5</revnumber>
+                    <date>2012-03-30</date>
+                    <author><email>nicg@corbas.co.uk</email><personname>Nic Gibson</personname></author>
+                    <revremark>Added tables</revremark>
+                </revision>   
             </revhistory>
             
         </section></xs:documentation>
@@ -47,6 +53,7 @@
     <xs:include schemaLocation="box.xsd"/>
     <xs:include schemaLocation="graphics.xsd"/>
     <xs:include schemaLocation="chemicals.xsd"/>
+    <xs:include schemaLocation="tables.xsd"/>
     
     <!-- GLOBAL GROUPS -->
     <xs:group name="oecdBlockGroup">
@@ -79,6 +86,7 @@
             <xs:element ref="chemicalStructure"/>
             <xs:element ref="graphic"/>
             <xs:element ref="figure"/>
+            <xs:element ref="table"/>
         </xs:choice>        
     </xs:group>
     
