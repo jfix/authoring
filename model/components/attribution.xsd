@@ -26,14 +26,14 @@
     <xs:include schemaLocation="meta.xsd"/>    
     
     <!-- GLOBAL ELEMENTS -->
-    <xs:element name="attribution" type="oecdAttributionType"/>
+    <xs:element name="attribution" type="oecdAttributionType" id="attribution"/>
     
     <!-- GLOBAL GROUPS -->
     
     <!-- GLOBAL TYPES -->
     
     <!-- sources -->
-    <xs:attributeGroup name="oecdAttributionTypeAttributes">
+    <xs:attributeGroup name="oecdAttributionTypeAttributes" id="oecdAttributionTypeAttributes">
         <xs:annotation>
             <xs:documentation>
                 <section xmlns="http://docbook.org/ns/docbook">
@@ -48,7 +48,7 @@
     </xs:attributeGroup>
     
     
-    <xs:group name="oecdAttributionTypeContent">
+    <xs:group name="oecdAttributionTypeContent" id="oecdAttributionTypeContent">
         <xs:annotation>
             <xs:documentation>
                 <section xmlns="http://docbook.org/ns/docbook">
@@ -63,7 +63,7 @@
         
     </xs:group>
     
-    <xs:complexType name="oecdAttributionType">
+    <xs:complexType name="oecdAttributionType" id="oecdAttributionType">
         <xs:annotation>
             <xs:documentation>
                 <section xmlns="http://docbook.org/ns/docbook">

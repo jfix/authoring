@@ -44,13 +44,13 @@
     
     <!-- GLOBAL ELEMENTS -->
     <!-- TODO: determine if these really all should be the same type -->
-    <xs:element name="title" type="oecdTitleType"/>
-    <xs:element name="subTitle" type="oecdTitleType"/>
-    <xs:element name="shortTitle" type="oecdShortTitleType"/>
-    <xs:element name="caption" type="oecdTitleType"/>
+    <xs:element name="title" type="oecdTitleType" id="title"/>
+    <xs:element name="subTitle" type="oecdTitleType" id="subTitle"/>
+    <xs:element name="shortTitle" type="oecdShortTitleType" id="shortTitle"/>
+    <xs:element name="caption" type="oecdTitleType" id="caption"/>
     
     <!-- GLOBAL GROUPS -->
-    <xs:group name="oecdTitleGroup">
+    <xs:group name="oecdTitleGroup" id="oecdTitleGroup">
         <xs:sequence>
             <xs:element ref="title"/>
             <xs:element ref="subTitle" minOccurs="0"/>
@@ -59,7 +59,7 @@
     </xs:group>
     
     <!-- GLOBAL TYPES -->
-    <xs:attributeGroup name="oecdTitleTypeAttributes">
+    <xs:attributeGroup name="oecdTitleTypeAttributes" id="oecdTitleTypeAttributes">
         <xs:annotation>
             <xs:documentation>
                 <section xmlns="http://docbook.org/ns/docbook">
@@ -71,7 +71,7 @@
         <xs:attributeGroup ref="oecdLinkingAttributes"/>
     </xs:attributeGroup>
     
-    <xs:group name="oecdTitleTypeContent">
+    <xs:group name="oecdTitleTypeContent" id="oecdTitleTypeContent">
         <xs:annotation>
             <xs:documentation>
                 <section xmlns="http://docbook.org/ns/docbook">
@@ -84,7 +84,7 @@
         </xs:sequence>
     </xs:group>
     
-    <xs:complexType name="oecdTitleType" mixed="true">
+    <xs:complexType name="oecdTitleType" mixed="true" id="oecdTitleType">
         <xs:annotation>
             <xs:documentation>
                 <section xmlns="http://docbook.org/ns/docbook">
@@ -97,7 +97,7 @@
     </xs:complexType>
     
     <!-- abbreviated title -->
-    <xs:attributeGroup name="oecdShortTitleTypeAttributes">
+    <xs:attributeGroup name="oecdShortTitleTypeAttributes" id="oecdShortTitleTypeAttributes">
         <xs:annotation>
             <xs:documentation>
                 <section xmlns="http://docbook.org/ns/docbook">
@@ -109,7 +109,7 @@
         <xs:attributeGroup ref="oecdLinkingAttributes"/>
     </xs:attributeGroup>
     
-    <xs:complexType name="oecdShortTitleType">
+    <xs:complexType name="oecdShortTitleType" id="oecdShortTitleType">
         <xs:annotation>
             <xs:documentation>
                 <section xmlns="http://docbook.org/ns/docbook">

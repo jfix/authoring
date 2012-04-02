@@ -33,7 +33,7 @@
     
     <!-- GLOBAL ELEMENTS -->
     
-    <xs:element name="notes" type="oecdNotesType"/>
+    <xs:element name="notes" type="oecdNotesType" id="notes"/>
     
     <!-- GLOBAL GROUPS -->
     
@@ -41,7 +41,7 @@
     
     <!-- note -->
     
-    <xs:attributeGroup name="oecdNoteTypeAttributes">
+    <xs:attributeGroup name="oecdNoteTypeAttributes" id="oecdNoteTypeAttributes">
         <xs:annotation>
             <xs:documentation>
                 <section xmlns="http://docbook.org/ns/docbook">
@@ -53,7 +53,7 @@
         <xs:attributeGroup ref="oecdLinkingAttributes"/>
     </xs:attributeGroup>
 
-    <xs:group name="oecdNoteTypeContent">
+    <xs:group name="oecdNoteTypeContent" id="oecdNoteTypeContent">
         <xs:annotation>
             <xs:documentation>
                 <section xmlns="http://docbook.org/ns/docbook">
@@ -69,7 +69,7 @@
         </xs:sequence>
     </xs:group>    
     
-    <xs:complexType name="oecdNoteType">
+    <xs:complexType name="oecdNoteType" id="oecdNoteType">
         <xs:annotation>
             <xs:documentation>
                 <section xmlns="http://docbook.org/ns/docbook">
@@ -87,7 +87,7 @@
     
     <!-- notes -->
     
-    <xs:attributeGroup name="oecdNotesTypeAttributes">
+    <xs:attributeGroup name="oecdNotesTypeAttributes" id="oecdNotesTypeAttributes">
         <xs:annotation>
             <xs:documentation>
                 <section xmlns="http://docbook.org/ns/docbook">
@@ -99,7 +99,7 @@
         <xs:attributeGroup ref="oecdLinkingAttributes"/>
     </xs:attributeGroup>
     
-    <xs:group name="oecdNotesTypeContent">
+    <xs:group name="oecdNotesTypeContent" id="oecdNotesTypeContent">
         <xs:annotation>
             <xs:documentation>
                 <section xmlns="http://docbook.org/ns/docbook">
@@ -114,7 +114,7 @@
         </xs:sequence>
     </xs:group>    
     
-    <xs:complexType name="oecdNotesType">
+    <xs:complexType name="oecdNotesType" id="oecdNotesType">
         <xs:annotation>
             <xs:documentation>
                 <section xmlns="http://docbook.org/ns/docbook">

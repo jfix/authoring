@@ -33,6 +33,6 @@
     
     <!-- GLOBAL ELEMENTS -->
     
-    <xs:element name="preface" type="oecdSectionType"/>
+    <xs:element name="preface" type="oecdSectionType" id="preface"/>
 
 </xs:schema>

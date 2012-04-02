@@ -33,7 +33,7 @@
     
     <!-- Groups -->
 
-    <xs:attributeGroup name="oecdXmlAttributes">
+    <xs:attributeGroup name="oecdXmlAttributes" id="oecdXmlAttributes">
         <xs:annotation>
             <xs:documentation>
                 <section xmlns="http://docbook.org/ns/docbook">
@@ -45,7 +45,7 @@
     </xs:attributeGroup>
     
     
-    <xs:attributeGroup name="oecdLinkingAttributes">
+    <xs:attributeGroup name="oecdLinkingAttributes" id="oecdLinkingAttributes">
         <xs:annotation>
             <xs:documentation>
                 <section xmlns="http://docbook.org/ns/docbook">
@@ -57,7 +57,7 @@
         <xs:attribute ref="xref"/>
     </xs:attributeGroup>
     
-    <xs:attributeGroup name="oecdRequiredLinkingAttributes">
+    <xs:attributeGroup name="oecdRequiredLinkingAttributes" id="oecdRequiredLinkingAttributes">
         <xs:annotation>
             <xs:documentation>
                 <section xmlns="http://docbook.org/ns/docbook">
@@ -66,7 +66,7 @@
             </xs:documentation>
         </xs:annotation>
         <xs:attribute ref="xlink:href" use="required"/>
-        <xs:attribute name="type" type="xs:string" form="qualified"/>
+        <xs:attribute name="type" type="xs:string" form="qualified" id="type"/>
         <xs:attribute ref="xlink:role"/>
         <xs:attribute ref="xlink:arcrole"/>
         <xs:attribute ref="xlink:title"/>
@@ -74,7 +74,7 @@
         <xs:attribute ref="xlink:actuate"/>        
     </xs:attributeGroup>
     
-    <xs:attributeGroup name="oecdCommonAttributes">
+    <xs:attributeGroup name="oecdCommonAttributes" id="oecdCommonAttributes">
         <xs:annotation>
             <xs:documentation>
                 <section xmlns="http://docbook.org/ns/docbook">
@@ -98,7 +98,7 @@
     
     <!-- attributes -->
 
-    <xs:attribute name="metadataRef" type="xs:IDREF">
+    <xs:attribute name="metadataRef" type="xs:IDREF" id="metadataRef">
         <xs:annotation>
             <xs:documentation>
                 <section xmlns="http://docbook.org/ns/docbook">
@@ -111,7 +111,7 @@
         </xs:annotation>
     </xs:attribute>
     
-    <xs:attribute name="noteRef" type="xs:IDREF">
+    <xs:attribute name="noteRef" type="xs:IDREF" id="noteRef">
         <xs:annotation>
             <xs:documentation>
                 <section xmlns="http://docbook.org/ns/docbook">
@@ -124,7 +124,7 @@
         </xs:annotation>
     </xs:attribute>
     
-    <xs:attribute name="href" type="xs:anyURI">
+    <xs:attribute name="href" type="xs:anyURI" id="href">
         <xs:annotation>
             <xs:documentation>
                 <section xmlns="http://docbook.org/ns/docbook">
@@ -134,7 +134,7 @@
         </xs:annotation>
     </xs:attribute>
     
-    <xs:attribute name="mediaType" type="oecdMediaType">
+    <xs:attribute name="mediaType" type="oecdMediaType" id="mediaType">
         <xs:annotation>
             <xs:documentation>
                 <section xmlns="http://docbook.org/ns/docbook">
@@ -144,7 +144,7 @@
         </xs:annotation>
     </xs:attribute>
     
-    <xs:attribute name="useWhen" type="xs:string">
+    <xs:attribute name="useWhen" type="xs:string" id="useWhen">
         <xs:annotation>
             <xs:documentation>
                 <section xmlns="http://docbook.org/ns/docbook">
@@ -155,7 +155,7 @@
         </xs:annotation>      
     </xs:attribute>
     
-    <xs:attribute name="xref" type="xs:IDREF">
+    <xs:attribute name="xref" type="xs:IDREF" id="xref">
         <xs:annotation>
             <xs:documentation>
                 <section xmlns="http://docbook.org/ns/docbook">

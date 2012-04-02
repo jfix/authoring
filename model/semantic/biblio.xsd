@@ -1,6 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified"
-    xmlns:mods="http://www.loc.gov/mods/v3">
+<?xml version="1.0" encoding="UTF-8"?><xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:mods="http://www.loc.gov/mods/v3" elementFormDefault="qualified">
 
     <xs:annotation>
         <xs:documentation><section xmlns="http://docbook.org/ns/docbook">
@@ -30,14 +28,14 @@
 
 
     <!-- GLOBAL ELEMENTS -->
-    <xs:element name="bibliography" type="oecdBibliographyType"/>
+    <xs:element name="bibliography" type="oecdBibliographyType" id="bibliography"/>
 
     <!-- GLOBAL GROUPS -->
 
     <!-- COMPLEX TYPES -->
 
     <!-- bibliographic section -->
-    <xs:attributeGroup name="oecdBiblioSectionTypeAttributes">
+    <xs:attributeGroup name="oecdBiblioSectionTypeAttributes" id="oecdBiblioSectionTypeAttributes">
         <xs:annotation>
             <xs:documentation>
                 <section xmlns="http://docbook.org/ns/docbook">
@@ -49,7 +47,7 @@
         <xs:attributeGroup ref="oecdLinkingAttributes"/>
     </xs:attributeGroup>
 
-    <xs:group name="oecdBiblioSectionTypeContent">
+    <xs:group name="oecdBiblioSectionTypeContent" id="oecdBiblioSectionTypeContent">
         <xs:annotation>
             <xs:documentation>
                 <section xmlns="http://docbook.org/ns/docbook">
@@ -70,7 +68,7 @@
         </xs:sequence>
     </xs:group>
 
-    <xs:complexType name="oecdBiblioSectionType">
+    <xs:complexType name="oecdBiblioSectionType" id="oecdBiblioSectionType">
         <xs:annotation>
             <xs:documentation>
                 <section xmlns="http://docbook.org/ns/docbook">
@@ -86,7 +84,7 @@
 
     <!-- Bibliographies -->
 
-    <xs:attributeGroup name="oecdBibliographyTypeAttributes">
+    <xs:attributeGroup name="oecdBibliographyTypeAttributes" id="oecdBibliographyTypeAttributes">
         <xs:annotation>
             <xs:documentation>
                 <section xmlns="http://docbook.org/ns/docbook">
@@ -95,7 +93,7 @@
             </xs:documentation>
         </xs:annotation>
 
-        <xs:attribute name="type" type="xs:string">
+        <xs:attribute name="type" type="xs:string" id="type">
             <xs:annotation>
                 <xs:documentation>
                     <section xmlns="http://docbook.org/ns/docbook">
@@ -109,7 +107,7 @@
     </xs:attributeGroup>
 
     
-    <xs:group name="oecdBibliographyTypeContent">
+    <xs:group name="oecdBibliographyTypeContent" id="oecdBibliographyTypeContent">
         <xs:annotation>
             <xs:documentation>
                 <section xmlns="http://docbook.org/ns/docbook">
@@ -124,7 +122,7 @@
         <xs:sequence>
             <xs:element ref="metadata" minOccurs="0"/>
             <xs:group ref="oecdTitleGroup" minOccurs="0"/>
-            <xs:choice minOccurs='0'>
+            <xs:choice minOccurs="0">
                 <xs:element ref="mods:mods" maxOccurs="unbounded"/>
                 <xs:element name="biblioSection" maxOccurs="unbounded"/>
             </xs:choice>
@@ -132,7 +130,7 @@
 
     </xs:group>
 
-    <xs:complexType name="oecdBibliographyType">
+    <xs:complexType name="oecdBibliographyType" id="oecdBibliographyType">
         <xs:annotation>
             <xs:documentation>
                 <section xmlns="http://docbook.org/ns/docbook">

@@ -53,12 +53,12 @@
     
     <!-- GLOBAL ELEMENTS -->
     
-    <xs:element name="chapter" type="oecdChapterType"/>
-    <xs:element name="appendix" type="oecdAppendixType"/>
-    <xs:element name="introduction" type="oecdChapterType"/>
+    <xs:element name="chapter" type="oecdChapterType" id="chapter"/>
+    <xs:element name="appendix" type="oecdAppendixType" id="appendix"/>
+    <xs:element name="introduction" type="oecdChapterType" id="introduction"/>
     
     <!-- GLOBAL TYPES -->
-    <xs:attributeGroup name="oecdChapterTypeAttributes">
+    <xs:attributeGroup name="oecdChapterTypeAttributes" id="oecdChapterTypeAttributes">
         <xs:annotation>
             <xs:documentation>
                 <section xmlns="http://docbook.org/ns/docbook">
@@ -69,7 +69,7 @@
         
     </xs:attributeGroup>
     
-    <xs:group name="oecdChapterBaseTypeContent">
+    <xs:group name="oecdChapterBaseTypeContent" id="oecdChapterBaseTypeContent">
         <xs:annotation>
             <xs:documentation>
                 <section xmlns="http://docbook.org/ns/docbook">
@@ -96,7 +96,7 @@
             <xs:element ref="metadata" minOccurs="0"/>
             <xs:group ref="oecdTitleGroup"/>
             <xs:element ref="abstract" minOccurs="0"/>
-            <xs:element ref="acknowledgements" minOccurs="0"></xs:element>
+            <xs:element ref="acknowledgements" minOccurs="0"/>
             <xs:group ref="oecdSectionTypeContent"/>
             
             <!-- note - forcing sequence here is not ideal but there is no sensible way to model it in XSD -->
@@ -107,7 +107,7 @@
     </xs:group>
 
     
-    <xs:group name="oecdChapterTypeContent">
+    <xs:group name="oecdChapterTypeContent" id="oecdChapterTypeContent">
         <xs:annotation>
             <xs:documentation>
                 <section xmlns="http://docbook.org/ns/docbook">
@@ -123,7 +123,7 @@
          </xs:sequence>
     </xs:group>
     
-     <xs:complexType name="oecdChapterType">
+     <xs:complexType name="oecdChapterType" id="oecdChapterType">
         <xs:annotation>
             <xs:documentation>
                 <section xmlns="http://docbook.org/ns/docbook">
@@ -139,7 +139,7 @@
     </xs:complexType>
     
     <!-- appendix -->
-    <xs:complexType name="oecdAppendixType">
+    <xs:complexType name="oecdAppendixType" id="oecdAppendixType">
         <xs:annotation>
             <xs:documentation>
                 <section xmlns="http://docbook.org/ns/docbook">

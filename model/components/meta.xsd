@@ -13,8 +13,8 @@
     <xs:include schemaLocation="attributes.xsd"/>
     
     <!-- GLOBAL ELEMENTS -->
-    <xs:element name="metadataItem" type="oecdMetadataItemType"/>   
-    <xs:element name="metadata" type="oecdMetadataType"/>
+    <xs:element name="metadataItem" type="oecdMetadataItemType" id="metadataItem"/>   
+    <xs:element name="metadata" type="oecdMetadataType" id="metadata"/>
     
     <!-- GLOBAL ATTRIBUTE -->
     <!-- N.B. The metadataRef attribute is defined in attributes.xsd -->
@@ -24,7 +24,7 @@
     
     
     <!-- metadata element type -->
-    <xs:attributeGroup name="oecdMetadataTypeAttributes">
+    <xs:attributeGroup name="oecdMetadataTypeAttributes" id="oecdMetadataTypeAttributes">
         <xs:annotation>
             <xs:documentation>
                 <section xmlns="http://docbook.org/ns/docbook">
@@ -35,7 +35,7 @@
         <xs:attributeGroup ref="oecdCommonAttributes"/>    
     </xs:attributeGroup>
     
-    <xs:group name="oecdMetadataTypeContent">
+    <xs:group name="oecdMetadataTypeContent" id="oecdMetadataTypeContent">
         <xs:annotation>
             <xs:documentation>
                 <section xmlns="http://docbook.org/ns/docbook">
@@ -49,7 +49,7 @@
         </xs:choice>       
     </xs:group>
     
-    <xs:complexType name="oecdMetadataType">
+    <xs:complexType name="oecdMetadataType" id="oecdMetadataType">
         <xs:annotation>
             <xs:documentation>
                 <section xmlns="http://docbook.org/ns/docbook">
@@ -63,7 +63,7 @@
     </xs:complexType>
     
     <!-- metdata group type. -->
-    <xs:attributeGroup name="oecdMetadataItemTypeAttributes">
+    <xs:attributeGroup name="oecdMetadataItemTypeAttributes" id="oecdMetadataItemTypeAttributes">
         <xs:annotation>
             <xs:documentation>
                 <section xmlns="http://docbook.org/ns/docbook">
@@ -75,7 +75,7 @@
         <xs:attributeGroup ref="oecdLinkingAttributes"/>
     </xs:attributeGroup>
     
-    <xs:group name="oecdMetadateItemTypeContent">
+    <xs:group name="oecdMetadateItemTypeContent" id="oecdMetadateItemTypeContent">
         <xs:annotation>
             <xs:documentation>
                 <section xmlns="http://docbook.org/ns/docbook">
@@ -91,7 +91,7 @@
         </xs:sequence>
     </xs:group>
          
-    <xs:complexType name="oecdMetadataItemType">
+    <xs:complexType name="oecdMetadataItemType" id="oecdMetadataItemType">
         <xs:annotation>
             <xs:documentation xmlns:html="http://www.w3.org/1999/xhtml">
                 <section xmlns="http://docbook.org/ns/docbook">

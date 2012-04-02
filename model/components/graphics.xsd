@@ -31,16 +31,16 @@
     
         
     <!-- GLOBAL ELEMENTS -->
-    <xs:element name="externalGraphic" type="oecdExternalGraphicType"/>
-    <xs:element name="svgGraphic" type="oecdSvgGraphicType"/>
+    <xs:element name="externalGraphic" type="oecdExternalGraphicType" id="externalGraphic"/>
+    <xs:element name="svgGraphic" type="oecdSvgGraphicType" id="svgGraphic"/>
     
-    <xs:element name="inlineGraphic" type="oecdInlineGraphicType"/>
-    <xs:element name="graphic" type="oecdBlockGraphicType"/>
+    <xs:element name="inlineGraphic" type="oecdInlineGraphicType" id="inlineGraphic"/>
+    <xs:element name="graphic" type="oecdBlockGraphicType" id="graphic"/>
     
-    <xs:element name="figure" type="oecdFigureType"/>
+    <xs:element name="figure" type="oecdFigureType" id="figure"/>
     
     <!-- GLOBAL GROUPS -->
-    <xs:group name="oecdGraphicsGroup">
+    <xs:group name="oecdGraphicsGroup" id="oecdGraphicsGroup">
         <xs:choice>
             <xs:element ref="externalGraphic"/>
             <xs:element ref="svgGraphic"/>
@@ -49,7 +49,7 @@
        
 
     <!-- Graphic Object -->
-    <xs:complexType name="oecdGraphicType">
+    <xs:complexType name="oecdGraphicType" id="oecdGraphicType">
         <xs:sequence>
             <xs:element ref="metadata" minOccurs="0"/>            
         </xs:sequence>
@@ -57,7 +57,7 @@
     
     <!-- External Graphic References -->
     
-    <xs:attributeGroup name="oecdExternalGraphicTypeAttributes">
+    <xs:attributeGroup name="oecdExternalGraphicTypeAttributes" id="oecdExternalGraphicTypeAttributes">
         <xs:annotation>
             <xs:documentation>
                 <section xmlns="http://docbook.org/ns/docbook">
@@ -76,7 +76,7 @@
         <xs:attribute ref="mediaType"/>
     </xs:attributeGroup>
     
-    <xs:group name="oecdExternalGraphicTypeContent">
+    <xs:group name="oecdExternalGraphicTypeContent" id="oecdExternalGraphicTypeContent">
         <xs:annotation>
             <xs:documentation>
                 <section xmlns="http://docbook.org/ns/docbook">
@@ -90,7 +90,7 @@
     </xs:group>
     
         
-    <xs:complexType name="oecdExternalGraphicType">
+    <xs:complexType name="oecdExternalGraphicType" id="oecdExternalGraphicType">
         <xs:annotation>
             <xs:documentation>
                 <section xmlns="http://docbook.org/ns/docbook">
@@ -104,7 +104,7 @@
     </xs:complexType>
     
     <!-- svg graphic -->
-    <xs:attributeGroup name="oecdSvgGraphicTypeAttributes">
+    <xs:attributeGroup name="oecdSvgGraphicTypeAttributes" id="oecdSvgGraphicTypeAttributes">
         <xs:annotation>
             <xs:documentation>
                 <section xmlns="http://docbook.org/ns/docbook">
@@ -116,7 +116,7 @@
         <xs:attributeGroup ref="oecdLinkingAttributes"/>        
     </xs:attributeGroup>
     
-    <xs:group name="oecdSvgGraphicTypeContent">
+    <xs:group name="oecdSvgGraphicTypeContent" id="oecdSvgGraphicTypeContent">
         <xs:annotation>
             <xs:documentation>
                 <section xmlns="http://docbook.org/ns/docbook">
@@ -129,7 +129,7 @@
         </xs:sequence>
     </xs:group>
     
-    <xs:complexType name="oecdSvgGraphicType">
+    <xs:complexType name="oecdSvgGraphicType" id="oecdSvgGraphicType">
         <xs:annotation>
             <xs:documentation>            
                 <section xmlns="http://docbook.org/ns/docbook">
@@ -142,7 +142,7 @@
     </xs:complexType>
     
     <!-- block graphics -->
-    <xs:attributeGroup name="oecdBlockGraphicTypeAttributes">
+    <xs:attributeGroup name="oecdBlockGraphicTypeAttributes" id="oecdBlockGraphicTypeAttributes">
         <xs:annotation>
             <xs:documentation>
                 <section xmlns="http://docbook.org/ns/docbook">
@@ -154,7 +154,7 @@
         <xs:attributeGroup ref="oecdLinkingAttributes"/>        
     </xs:attributeGroup>
     
-    <xs:group name="oecdBlockGraphicTypeContent">
+    <xs:group name="oecdBlockGraphicTypeContent" id="oecdBlockGraphicTypeContent">
         <xs:annotation>
             <xs:documentation>
                 <section xmlns="http://docbook.org/ns/docbook">
@@ -172,7 +172,7 @@
         </xs:sequence>
     </xs:group>
     
-    <xs:complexType name="oecdBlockGraphicType">
+    <xs:complexType name="oecdBlockGraphicType" id="oecdBlockGraphicType">
         <xs:annotation>
             <xs:documentation>
                 <section xmlns="http://docbook.org/ns/docbook">
@@ -186,7 +186,7 @@
     
     <!-- inline graphics -->
     
-    <xs:attributeGroup name="oecdInlineGraphicTypeAttributes">
+    <xs:attributeGroup name="oecdInlineGraphicTypeAttributes" id="oecdInlineGraphicTypeAttributes">
         <xs:annotation>
             <xs:documentation>
                 <section xmlns="http://docbook.org/ns/docbook">
@@ -198,7 +198,7 @@
         <xs:attributeGroup ref="oecdLinkingAttributes"/>        
     </xs:attributeGroup>
     
-    <xs:group name="oecdInlineGraphicTypeContent">
+    <xs:group name="oecdInlineGraphicTypeContent" id="oecdInlineGraphicTypeContent">
         <xs:annotation>
             <xs:documentation>
                 <section xmlns="http://docbook.org/ns/docbook">
@@ -213,7 +213,7 @@
         </xs:sequence>
     </xs:group>
     
-    <xs:complexType name="oecdInlineGraphicType">
+    <xs:complexType name="oecdInlineGraphicType" id="oecdInlineGraphicType">
         <xs:annotation>
             <xs:documentation>
                 <section xmlns="http://docbook.org/ns/docbook">
@@ -227,7 +227,7 @@
     
     <!-- figures -->
     
-    <xs:attributeGroup name="oecdFigureTypeAttributes">
+    <xs:attributeGroup name="oecdFigureTypeAttributes" id="oecdFigureTypeAttributes">
         <xs:annotation>
             <xs:documentation>
                 <section xmlns="http://docbook.org/ns/docbook">
@@ -239,7 +239,7 @@
         <xs:attributeGroup ref="oecdLinkingAttributes"/>        
     </xs:attributeGroup>
     
-    <xs:group name="oecdFigureTypeContent">
+    <xs:group name="oecdFigureTypeContent" id="oecdFigureTypeContent">
         <xs:annotation>
             <xs:documentation>
                 <section xmlns="http://docbook.org/ns/docbook">
@@ -255,7 +255,7 @@
         </xs:sequence>
     </xs:group>
     
-    <xs:complexType name="oecdFigureType">
+    <xs:complexType name="oecdFigureType" id="oecdFigureType">
         <xs:annotation>
             <xs:documentation>
                 <section xmlns="http://docbook.org/ns/docbook">

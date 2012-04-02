@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+<?xml version="1.0" encoding="UTF-8"?><xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
 
     <xs:annotation>
         <xs:documentation><section xmlns="http://docbook.org/ns/docbook">
@@ -26,9 +25,9 @@
             </section></xs:documentation>
     </xs:annotation>
 
-    <xs:element name="table" type="oecdTableType"/>
+    <xs:element name="table" type="oecdTableType" id="table"/>
 
-    <xs:complexType name="oecdTableType"> </xs:complexType>
+    <xs:complexType name="oecdTableType" id="oecdTableType"> </xs:complexType>
 
 
 </xs:schema>

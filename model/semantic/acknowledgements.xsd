@@ -22,7 +22,7 @@
     
     <xs:include schemaLocation="../components/paras.xsd"/>
     
-    <xs:element name="acknowledgements" type="oecdParagraphGroupType"/>
+    <xs:element name="acknowledgements" type="oecdParagraphGroupType" id="acknowledgements"/>
     
     
 </xs:schema>

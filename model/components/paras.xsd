@@ -34,12 +34,12 @@
     <xs:include schemaLocation="equations.xsd"/>
     
     <!-- GLOBAL ELEMENTS -->
-    <xs:element name="para" type="oecdParagraphType"/>
-    <xs:element name="formalPara" type="oecdFormalParagraphType"/>
-    <xs:element name="paragraphGroup" type="oecdParagraphGroupType"/>
+    <xs:element name="para" type="oecdParagraphType" id="para"/>
+    <xs:element name="formalPara" type="oecdFormalParagraphType" id="formalPara"/>
+    <xs:element name="paragraphGroup" type="oecdParagraphGroupType" id="paragraphGroup"/>
     
      <!-- GLOBAL GROUPS -->
-    <xs:group name="oecdParagraphGroup">
+    <xs:group name="oecdParagraphGroup" id="oecdParagraphGroup">
         <xs:choice>
             <xs:element ref="para"/>
             <xs:element ref="formalPara"/>
@@ -50,7 +50,7 @@
     <!-- GLOBAL TYPES -->
     
     <!-- basic paragraph -->
-    <xs:attributeGroup name="oecdParagraphTypeAttributes">
+    <xs:attributeGroup name="oecdParagraphTypeAttributes" id="oecdParagraphTypeAttributes">
         <xs:annotation>
             <xs:documentation>
                 <section xmlns="http://docbook.org/ns/docbook">
@@ -62,7 +62,7 @@
         <xs:attributeGroup ref="oecdLinkingAttributes"/>
     </xs:attributeGroup>
     
-    <xs:group name="oecdParagraphTypeContent">
+    <xs:group name="oecdParagraphTypeContent" id="oecdParagraphTypeContent">
         <xs:annotation>
             <xs:documentation>
                 <section xmlns="http://docbook.org/ns/docbook">
@@ -76,7 +76,7 @@
         </xs:sequence>        
     </xs:group>
 
-    <xs:complexType name="oecdParagraphType" mixed="true">
+    <xs:complexType name="oecdParagraphType" mixed="true" id="oecdParagraphType">
         <xs:annotation>
             <xs:documentation>
                 <section xmlns="http://docbook.org/ns/docbook">
@@ -92,7 +92,7 @@
     
     <!-- formal paragraphs -->
         
-    <xs:group name="oecdFormalParagraphTypeContent">
+    <xs:group name="oecdFormalParagraphTypeContent" id="oecdFormalParagraphTypeContent">
         <xs:annotation>
             <xs:documentation>
                 <section xmlns="http://docbook.org/ns/docbook">
@@ -107,7 +107,7 @@
         </xs:sequence>        
     </xs:group>
     
-    <xs:complexType name="oecdFormalParagraphType" mixed="true">
+    <xs:complexType name="oecdFormalParagraphType" mixed="true" id="oecdFormalParagraphType">
         <xs:annotation>
             <xs:documentation>
                 <section xmlns="http://docbook.org/ns/docbook">
@@ -122,7 +122,7 @@
     </xs:complexType>
     
     <!-- paragraph groups -->
-    <xs:attributeGroup name="oecdParagraphGroupTypeAttributes">
+    <xs:attributeGroup name="oecdParagraphGroupTypeAttributes" id="oecdParagraphGroupTypeAttributes">
         <xs:annotation>
             <xs:documentation>
                 <section xmlns="http://docbook.org/ns/docbook">
@@ -134,7 +134,7 @@
         <xs:attributeGroup ref="oecdLinkingAttributes"/>        
     </xs:attributeGroup>
     
-    <xs:group name="oecdParagraphGroupTypeContent">
+    <xs:group name="oecdParagraphGroupTypeContent" id="oecdParagraphGroupTypeContent">
         <xs:annotation>
             <xs:documentation>
                 <section xmlns="http://docbook.org/ns/docbook">
@@ -152,7 +152,7 @@
         </xs:sequence>
     </xs:group>
     
-    <xs:complexType name="oecdParagraphGroupType">
+    <xs:complexType name="oecdParagraphGroupType" id="oecdParagraphGroupType">
         <xs:annotation>
             <xs:documentation>
                 <section xmlns="http://docbook.org/ns/docbook">

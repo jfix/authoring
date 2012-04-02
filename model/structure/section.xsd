@@ -33,7 +33,7 @@
     <xs:include schemaLocation="../components/titles.xsd"/>
     
     <!-- GLOBAL ELEMENTS -->
-    <xs:element name="section" type="oecdSectionType"/>
+    <xs:element name="section" type="oecdSectionType" id="section"/>
     
     <!-- GLOBAL GROUPS -->
     
@@ -42,7 +42,7 @@
     
     <!-- section -->
     
-    <xs:attributeGroup name="oecdSectionTypeAttributes">
+    <xs:attributeGroup name="oecdSectionTypeAttributes" id="oecdSectionTypeAttributes">
         
         <xs:annotation>
             <xs:documentation>
@@ -52,7 +52,7 @@
             </xs:documentation>
         </xs:annotation>
         
-        <xs:attribute name="numeration" type="oecdListNumeration">
+        <xs:attribute name="numeration" type="oecdListNumeration" id="numeration">
             <xs:annotation>
                 <xs:documentation>
                     <section xmlns="http://docbook.org/ns/docbook">
@@ -62,7 +62,7 @@
             </xs:annotation>
         </xs:attribute>
         
-        <xs:attribute name="continuation" type="oecdListContinuation">
+        <xs:attribute name="continuation" type="oecdListContinuation" id="continuation">
             <xs:annotation>
                 <xs:documentation>
                     <section xmlns="http://docbook.org/ns/docbook">
@@ -72,7 +72,7 @@
             </xs:annotation>
         </xs:attribute>
         
-        <xs:attribute name="start" type="xs:nonNegativeInteger">
+        <xs:attribute name="start" type="xs:nonNegativeInteger" id="start">
             <xs:annotation>
                 <xs:documentation>
                     <section xmlns="http://docbook.org/ns/docbook">
@@ -83,7 +83,7 @@
             </xs:annotation>
         </xs:attribute>    
         
-        <xs:attribute name="number" type="xs:nonNegativeInteger">
+        <xs:attribute name="number" type="xs:nonNegativeInteger" id="number">
             <xs:annotation>
                 <xs:documentation>
                     <section xmlns="http://docbook.org/ns/docbook">
@@ -97,7 +97,7 @@
         
     </xs:attributeGroup>
     
-    <xs:group name="oecdSectionTypeContent">
+    <xs:group name="oecdSectionTypeContent" id="oecdSectionTypeContent">
         
         <xs:annotation>
             <xs:documentation>
@@ -121,7 +121,7 @@
         
     </xs:group>
     
-    <xs:complexType name="oecdSectionType">
+    <xs:complexType name="oecdSectionType" id="oecdSectionType">
         <xs:annotation>
             <xs:documentation>
                 <section xmlns="http://docbook.org/ns/docbook">

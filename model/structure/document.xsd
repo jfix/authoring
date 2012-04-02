@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+<?xml version="1.0" encoding="UTF-8"?><xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
     
     
     <xs:annotation>
@@ -36,7 +35,7 @@
     
     <!-- document base -->
     
-    <xs:attributeGroup name="oecdBaseDocumentTypeAttributes">
+    <xs:attributeGroup name="oecdBaseDocumentTypeAttributes" id="oecdBaseDocumentTypeAttributes">
         
         <xs:annotation>
             <xs:documentation>
@@ -52,7 +51,7 @@
         
     </xs:attributeGroup>
     
-    <xs:group name="oecdBaseDocumentTypeContent">
+    <xs:group name="oecdBaseDocumentTypeContent" id="oecdBaseDocumentTypeContent">
         
         <xs:annotation>
             <xs:documentation>
@@ -103,7 +102,7 @@
         
     </xs:group>
     
-    <xs:complexType name="oecdBaseDocumentType">
+    <xs:complexType name="oecdBaseDocumentType" id="oecdBaseDocumentType">
         
         <xs:annotation>
             <xs:documentation>

@@ -19,8 +19,8 @@
                         <revnumber>0.2</revnumber>
                         <date>2012-03-21</date>
                         <author><email>nicg@corbas.co.uk</email><personname>Nic Gibson</personname></author>
-                        <revdescription xmlns="http://docbook.org/ns/docbook"><itemizedlist xmlns="http://docbook.org/ns/docbook"><listitem xmlns="http://docbook.org/ns/docbook"><para>Transferred other elements from older files.</para></listitem>
-                            <listitem xmlns="http://docbook.org/ns/docbook"><para>Upated base type to current standards.</para></listitem>
+                        <revdescription><itemizedlist><listitem><para>Transferred other elements from older files.</para></listitem>
+                            <listitem><para>Upated base type to current standards.</para></listitem>
                         </itemizedlist></revdescription>
                     </revision>
                 <revision>
@@ -32,7 +32,7 @@
                 
             </revhistory>
             
-            <para xmlns="http://docbook.org/ns/docbook">Note: the inline graphic component is defined in graphics.</para>
+            <para>Note: the inline graphic component is defined in graphics.</para>
             
             
         </section></xs:documentation>
@@ -48,16 +48,16 @@
     
     
     <!-- GLOBAL ELEMENTS -->
-    <xs:element name="oecdInline" type="oecdInlineType"/> <!-- different name to all other elements as it is abstract -->
-    <xs:element name="emphasis" type="oecdEmphasisType" substitutionGroup="oecdInline"/>
-    <xs:element name="footnote" type="oecdFootnoteType"/>
-    <xs:element name="text" type="oecdTextType"/>
+    <xs:element name="oecdInline" type="oecdInlineType" id="oecdInline"/> <!-- different name to all other elements as it is abstract -->
+    <xs:element name="emphasis" type="oecdEmphasisType" substitutionGroup="oecdInline" id="emphasis"/>
+    <xs:element name="footnote" type="oecdFootnoteType" id="footnote"/>
+    <xs:element name="text" type="oecdTextType" id="text"/>
           
     <!-- COMPLEX TYPES -->
     
     <!-- abstract inline elements -->
     
-    <xs:attributeGroup name="oecdInlineTypeAttributes">
+    <xs:attributeGroup name="oecdInlineTypeAttributes" id="oecdInlineTypeAttributes">
         <xs:annotation>
             <xs:documentation>
                 <section xmlns="http://docbook.org/ns/docbook">
@@ -69,7 +69,7 @@
         <xs:attributeGroup ref="oecdLinkingAttributes"/>
     </xs:attributeGroup>
     
-    <xs:group name="oecdInlineTypeContent">
+    <xs:group name="oecdInlineTypeContent" id="oecdInlineTypeContent">
         <xs:annotation>
             <xs:documentation>
                 <section xmlns="http://docbook.org/ns/docbook">
@@ -82,7 +82,7 @@
         </xs:sequence>
     </xs:group>
 
-    <xs:complexType name="oecdInlineType" abstract="true" mixed="true">
+    <xs:complexType name="oecdInlineType" abstract="true" mixed="true" id="oecdInlineType">
         <xs:annotation>
             <xs:documentation>
                 <section xmlns="http://docbook.org/ns/docbook">
@@ -99,7 +99,7 @@
  
     <!-- emphasis -->
         
-    <xs:attributeGroup name="oecdEmphasisTypeAttributes">
+    <xs:attributeGroup name="oecdEmphasisTypeAttributes" id="oecdEmphasisTypeAttributes">
         <xs:annotation>
             <xs:documentation>
                 <section xmlns="http://docbook.org/ns/docbook">
@@ -107,10 +107,10 @@
                 </section>
             </xs:documentation>
         </xs:annotation>
-        <xs:attribute name="style" type="oecdStyleAttributeType" use="required"/>
+        <xs:attribute name="style" type="oecdStyleAttributeType" use="required" id="style"/>
     </xs:attributeGroup>
         
-    <xs:complexType name="oecdEmphasisType" mixed="true">
+    <xs:complexType name="oecdEmphasisType" mixed="true" id="oecdEmphasisType">
         <xs:complexContent>
             <xs:extension base="oecdInlineType">
                 <xs:attributeGroup ref="oecdEmphasisTypeAttributes"/>
@@ -119,7 +119,7 @@
     </xs:complexType>
     
     <!-- footnotes -->
-    <xs:attributeGroup name="oecdFootNoteTypeAttributes">
+    <xs:attributeGroup name="oecdFootNoteTypeAttributes" id="oecdFootNoteTypeAttributes">
         <xs:annotation>
             <xs:documentation>
                 <section xmlns="http://docbook.org/ns/docbook">
@@ -129,7 +129,7 @@
         </xs:annotation>
     </xs:attributeGroup>
     
-    <xs:group name="oecdFootNoteTypeContent">
+    <xs:group name="oecdFootNoteTypeContent" id="oecdFootNoteTypeContent">
         <xs:annotation>
             <xs:documentation>
                 <section xmlns="http://docbook.org/ns/docbook">
@@ -143,7 +143,7 @@
         </xs:sequence>       
     </xs:group>
     
-    <xs:complexType name="oecdFootnoteType">
+    <xs:complexType name="oecdFootnoteType" id="oecdFootnoteType">
         <xs:annotation>
             <xs:documentation>
                 <section xmlns="http://docbook.org/ns/docbook">
@@ -155,7 +155,7 @@
         
     </xs:complexType>
     
-    <xs:complexType name="oecdTextType">
+    <xs:complexType name="oecdTextType" id="oecdTextType">
         <xs:annotation>
             <xs:documentation>
                 <revision>
@@ -183,7 +183,7 @@
     
     <!-- emphasis style values -->
     
-    <xs:simpleType name="oecdStyleAttributeType">
+    <xs:simpleType name="oecdStyleAttributeType" id="oecdStyleAttributeType">
         <xs:annotation>
             <xs:documentation>
                 <para xmlns="http://docbook.org/ns/docbook">Enumerated data type to hold the possible

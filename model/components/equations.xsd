@@ -19,9 +19,9 @@
                         <revnumber>0.2</revnumber>
                         <date>2012-03-21</date>
                         <author><email>nicg@corbas.co.uk</email><personname>Nic Gibson</personname></author>
-                        <revdescription xmlns="http://docbook.org/ns/docbook"><itemizedlist xmlns="http://docbook.org/ns/docbook">
-                            <listitem xmlns="http://docbook.org/ns/docbook"><para>Updated to best practices guidelines</para></listitem>
-                            <listitem xmlns="http://docbook.org/ns/docbook"><para>Modified oecdEquation type to allow any external graphic type not just raster graphics.</para></listitem>
+                        <revdescription><itemizedlist>
+                            <listitem><para>Updated to best practices guidelines</para></listitem>
+                            <listitem><para>Modified oecdEquation type to allow any external graphic type not just raster graphics.</para></listitem>
                         </itemizedlist></revdescription>
                     </revision>
                 
@@ -47,13 +47,13 @@
     
 
     <!-- GLOBAL ELEMENTS -->
-    <xs:element name="inlineEquation" type="oecdEquationType"/>
-    <xs:element name="equation" type="oecdEquationType"/>
+    <xs:element name="inlineEquation" type="oecdEquationType" id="inlineEquation"/>
+    <xs:element name="equation" type="oecdEquationType" id="equation"/>
     
     <!-- COMPLEX TYPES -->
 
     <!-- equation types-->
-    <xs:attributeGroup name="oecdEquationTypeAttributes">
+    <xs:attributeGroup name="oecdEquationTypeAttributes" id="oecdEquationTypeAttributes">
         <xs:annotation>
             <xs:documentation>
                 <section xmlns="http://docbook.org/ns/docbook">
@@ -64,7 +64,7 @@
         <xs:attributeGroup ref="oecdCommonAttributes"/>
     </xs:attributeGroup>
     
-    <xs:group name="oecdEquationTypeContent">
+    <xs:group name="oecdEquationTypeContent" id="oecdEquationTypeContent">
         <xs:annotation>
             <xs:documentation>
                 <revision>
@@ -85,7 +85,7 @@
         </xs:choice>
     </xs:group>
     
-    <xs:complexType name="oecdEquationType">
+    <xs:complexType name="oecdEquationType" id="oecdEquationType">
         <xs:annotation>
             <xs:documentation>
                 <section xmlns="http://docbook.org/ns/docbook">

@@ -56,7 +56,7 @@
     <xs:include schemaLocation="tables.xsd"/>
     
     <!-- GLOBAL GROUPS -->
-    <xs:group name="oecdBlockGroup">
+    <xs:group name="oecdBlockGroup" id="oecdBlockGroup">
         <xs:annotation>
             <xs:documentation>
                 <section xmlns="http://docbook.org/ns/docbook">
@@ -70,7 +70,7 @@
         </xs:choice>
     </xs:group>
     
-    <xs:group name="oecdSimpleBlockGroup">
+    <xs:group name="oecdSimpleBlockGroup" id="oecdSimpleBlockGroup">
         <xs:annotation>
             <xs:documentation>
                 <section xmlns="http://docbook.org/ns/docbook">
@@ -92,7 +92,7 @@
     
     <!-- groups of blocks. Used a base for other types -->
     
-    <xs:attributeGroup name="oecdBlockGroupTypeAttributes">
+    <xs:attributeGroup name="oecdBlockGroupTypeAttributes" id="oecdBlockGroupTypeAttributes">
         <xs:annotation>
             <xs:documentation>
                 <section xmlns="http://docbook.org/ns/docbook">
@@ -104,7 +104,7 @@
         <xs:attributeGroup ref="oecdLinkingAttributes"/>
     </xs:attributeGroup>
     
-    <xs:group name="oecdBlockGroupTypeContent">
+    <xs:group name="oecdBlockGroupTypeContent" id="oecdBlockGroupTypeContent">
         <xs:annotation>
             <xs:documentation>
                 <section xmlns="http://docbook.org/ns/docbook">
@@ -119,7 +119,7 @@
         </xs:sequence>
     </xs:group>
     
-    <xs:complexType name="oecdBlockGroupType">
+    <xs:complexType name="oecdBlockGroupType" id="oecdBlockGroupType">
         <xs:annotation>
             <xs:documentation>
                 <section xmlns="http://docbook.org/ns/docbook">

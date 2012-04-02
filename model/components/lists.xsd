@@ -48,12 +48,12 @@
 
 
     <!-- GLOBAL ELEMENTS -->
-    <xs:element name="itemizedList" type="oecdItemizedListType"/>
-    <xs:element name="orderedList" type="oecdOrderedListType"/>
-    <xs:element name="definitionList" type="oecdDefinitionListType"/>
+    <xs:element name="itemizedList" type="oecdItemizedListType" id="itemizedList"/>
+    <xs:element name="orderedList" type="oecdOrderedListType" id="orderedList"/>
+    <xs:element name="definitionList" type="oecdDefinitionListType" id="definitionList"/>
 
     <!-- GLOBAL GROUPS -->
-    <xs:group name="oecdListGroup">
+    <xs:group name="oecdListGroup" id="oecdListGroup">
         <xs:choice>
             <xs:element ref="itemizedList"/>
             <xs:element ref="orderedList"/>
@@ -64,7 +64,7 @@
     <!-- GLOBAL TYPES -->
 
     <!-- list items -->
-    <xs:attributeGroup name="oecdListItemTypeAttributes">
+    <xs:attributeGroup name="oecdListItemTypeAttributes" id="oecdListItemTypeAttributes">
         <xs:annotation>
             <xs:documentation>
                 <section xmlns="http://docbook.org/ns/docbook">
@@ -76,7 +76,7 @@
         <xs:attributeGroup ref="oecdLinkingAttributes"/>
     </xs:attributeGroup>
 
-    <xs:group name="oecdListItemTypeContent">
+    <xs:group name="oecdListItemTypeContent" id="oecdListItemTypeContent">
         <xs:annotation>
             <xs:documentation>
                 <section xmlns="http://docbook.org/ns/docbook">
@@ -92,7 +92,7 @@
         </xs:sequence>
     </xs:group>
 
-    <xs:complexType name="oecdListItemType">
+    <xs:complexType name="oecdListItemType" id="oecdListItemType">
         <xs:annotation>
             <xs:documentation>
                 <section xmlns="http://docbook.org/ns/docbook">
@@ -108,7 +108,7 @@
     </xs:complexType>
 
     <!-- Bulleted lists. Bulleted list items extended the base list item by addding a bullet.-->
-    <xs:complexType name="oecdItemizedListItemType">
+    <xs:complexType name="oecdItemizedListItemType" id="oecdItemizedListItemType">
         <xs:complexContent>
             <xs:extension base="oecdListItemType">
                 <xs:attribute ref="marker" use="optional" default="auto"/>
@@ -116,7 +116,7 @@
         </xs:complexContent>
     </xs:complexType>
 
-    <xs:attributeGroup name="oecdItemizedListTypeAttributes">
+    <xs:attributeGroup name="oecdItemizedListTypeAttributes" id="oecdItemizedListTypeAttributes">
         <xs:annotation>
             <xs:documentation>
                 <section xmlns="http://docbook.org/ns/docbook">
@@ -129,7 +129,7 @@
         <xs:attribute ref="marker" use="optional" default="auto"/>
     </xs:attributeGroup>
 
-    <xs:group name="oecdItemizedListTypeContent">
+    <xs:group name="oecdItemizedListTypeContent" id="oecdItemizedListTypeContent">
         <xs:annotation>
             <xs:documentation>
                 <section xmlns="http://docbook.org/ns/docbook">
@@ -145,7 +145,7 @@
         </xs:sequence>
     </xs:group>
 
-    <xs:complexType name="oecdItemizedListType">
+    <xs:complexType name="oecdItemizedListType" id="oecdItemizedListType">
         <xs:annotation>
             <xs:documentation>
                 <section xmlns="http://docbook.org/ns/docbook">
@@ -160,7 +160,7 @@
 
 
     <!-- ordered lists -->
-    <xs:attributeGroup name="oecdOrderedListTypeAttributes">
+    <xs:attributeGroup name="oecdOrderedListTypeAttributes" id="oecdOrderedListTypeAttributes">
         <xs:annotation>
             <xs:documentation>
                 <section xmlns="http://docbook.org/ns/docbook">
@@ -172,7 +172,7 @@
         <xs:attributeGroup ref="oecdCommonAttributes"/>
         <xs:attributeGroup ref="oecdLinkingAttributes"/>
 
-        <xs:attribute name="numeration" type="oecdListNumeration" default="arabic">
+        <xs:attribute name="numeration" type="oecdListNumeration" default="arabic" id="numeration">
             <xs:annotation>
                 <xs:documentation>
                     <section xmlns="http://docbook.org/ns/docbook">
@@ -182,7 +182,7 @@
             </xs:annotation>
         </xs:attribute>
         
-        <xs:attribute name="continuation" type="oecdListContinuation" default="start">
+        <xs:attribute name="continuation" type="oecdListContinuation" default="start" id="continuation">
             <xs:annotation>
                 <xs:documentation>
                     <section xmlns="http://docbook.org/ns/docbook">
@@ -192,7 +192,7 @@
             </xs:annotation>
         </xs:attribute>
         
-        <xs:attribute name="start" type="xs:nonNegativeInteger">
+        <xs:attribute name="start" type="xs:nonNegativeInteger" id="start">
             <xs:annotation>
                 <xs:documentation>
                     <section xmlns="http://docbook.org/ns/docbook">
@@ -204,7 +204,7 @@
         </xs:attribute>
         
         
-        <xs:attribute name="number" type="xs:nonNegativeInteger">
+        <xs:attribute name="number" type="xs:nonNegativeInteger" id="number">
             <xs:annotation>
                 <xs:documentation>
                     <section xmlns="http://docbook.org/ns/docbook">
@@ -218,7 +218,7 @@
 
     </xs:attributeGroup>
 
-    <xs:group name="oecdOrderedListTypeContent">
+    <xs:group name="oecdOrderedListTypeContent" id="oecdOrderedListTypeContent">
         <xs:annotation>
             <xs:documentation>
                 <section xmlns="http://docbook.org/ns/docbook">
@@ -234,7 +234,7 @@
         </xs:sequence>
     </xs:group>
 
-    <xs:complexType name="oecdOrderedListType">
+    <xs:complexType name="oecdOrderedListType" id="oecdOrderedListType">
         <xs:annotation>
             <xs:documentation>
                 <section xmlns="http://docbook.org/ns/docbook">
@@ -252,7 +252,7 @@
 
     <!-- definition lists -->
 
-    <xs:attributeGroup name="oecdDefinitionListTermTypeAttributes">
+    <xs:attributeGroup name="oecdDefinitionListTermTypeAttributes" id="oecdDefinitionListTermTypeAttributes">
         <xs:annotation>
             <xs:documentation>
                 <section xmlns="http://docbook.org/ns/docbook">
@@ -264,7 +264,7 @@
         <xs:attributeGroup ref="oecdLinkingAttributes"/>
     </xs:attributeGroup>
 
-    <xs:group name="oecdDefinitionListTermTypeContent">
+    <xs:group name="oecdDefinitionListTermTypeContent" id="oecdDefinitionListTermTypeContent">
         <xs:annotation>
             <xs:documentation>
                 <section xmlns="http://docbook.org/ns/docbook">
@@ -278,7 +278,7 @@
         </xs:sequence>
     </xs:group>
 
-    <xs:complexType name="oecdDefinitionListTermType" mixed="true">
+    <xs:complexType name="oecdDefinitionListTermType" mixed="true" id="oecdDefinitionListTermType">
         <xs:annotation>
             <xs:documentation>
                 <section xmlns="http://docbook.org/ns/docbook">
@@ -290,7 +290,7 @@
         <xs:attributeGroup ref="oecdDefinitionListTermTypeAttributes"/>
     </xs:complexType>
     
-    <xs:attributeGroup name="oecdDefinitionListItemTypeAttributes">
+    <xs:attributeGroup name="oecdDefinitionListItemTypeAttributes" id="oecdDefinitionListItemTypeAttributes">
         <xs:annotation>
             <xs:documentation>
                 <section xmlns="http://docbook.org/ns/docbook">
@@ -302,7 +302,7 @@
         <xs:attributeGroup ref="oecdLinkingAttributes"/>
     </xs:attributeGroup>
     
-    <xs:group name="oecdDefinitionListItemTypeContent">
+    <xs:group name="oecdDefinitionListItemTypeContent" id="oecdDefinitionListItemTypeContent">
         <xs:annotation>
             <xs:documentation>
                 <section xmlns="http://docbook.org/ns/docbook">
@@ -317,7 +317,7 @@
         </xs:sequence>
     </xs:group>
     
-    <xs:complexType name="oecdDefinitionListItemType" mixed="true">
+    <xs:complexType name="oecdDefinitionListItemType" mixed="true" id="oecdDefinitionListItemType">
         <xs:annotation>
             <xs:documentation>
                 <section xmlns="http://docbook.org/ns/docbook">
@@ -330,7 +330,7 @@
     </xs:complexType>
     
     
-    <xs:attributeGroup name="oecdDefinitionListTypeAttributes">
+    <xs:attributeGroup name="oecdDefinitionListTypeAttributes" id="oecdDefinitionListTypeAttributes">
         <xs:annotation>
             <xs:documentation>
                 <section xmlns="http://docbook.org/ns/docbook">
@@ -342,7 +342,7 @@
         <xs:attributeGroup ref="oecdLinkingAttributes"/>
     </xs:attributeGroup>
     
-    <xs:group name="oecdDefinitionListTypeContent">
+    <xs:group name="oecdDefinitionListTypeContent" id="oecdDefinitionListTypeContent">
         <xs:annotation>
             <xs:documentation>
                 <section xmlns="http://docbook.org/ns/docbook">
@@ -358,7 +358,7 @@
         </xs:sequence>
     </xs:group>
     
-    <xs:complexType name="oecdDefinitionListType" mixed="true">
+    <xs:complexType name="oecdDefinitionListType" mixed="true" id="oecdDefinitionListType">
         <xs:annotation>
             <xs:documentation>
                 <section xmlns="http://docbook.org/ns/docbook">
@@ -375,7 +375,7 @@
     
 
     <!-- ATTRIBUTES -->
-    <xs:attribute name="marker" type="oecdListMarker" default="auto">
+    <xs:attribute name="marker" type="oecdListMarker" default="auto" id="marker">
         <xs:annotation>
             <xs:documentation>
                 <section xmlns="http://docbook.org/ns/docbook">

@@ -26,9 +26,9 @@
     <xs:include schemaLocation="graphics.xsd"/>
     
     <!-- GLOBAL ELEMENTS -->
-    <xs:element name="blockQuote" type="oecdBlockQuoteType"/>   
-    <xs:element name="externalContentReference" type="oecdExternalContentReferenceType"/>
-    <xs:element name="embeddedContent" type="oecdEmbeddedContentType"/>
+    <xs:element name="blockQuote" type="oecdBlockQuoteType" id="blockQuote"/>   
+    <xs:element name="externalContentReference" type="oecdExternalContentReferenceType" id="externalContentReference"/>
+    <xs:element name="embeddedContent" type="oecdEmbeddedContentType" id="embeddedContent"/>
     
     <!-- GLOBAL GROUPS -->
     
@@ -36,7 +36,7 @@
     
      
     <!-- block quotes -->
-    <xs:attributeGroup name="oecdBlockQuoteTypeAttributes">
+    <xs:attributeGroup name="oecdBlockQuoteTypeAttributes" id="oecdBlockQuoteTypeAttributes">
         <xs:annotation>
             <xs:documentation>
                 <section xmlns="http://docbook.org/ns/docbook">
@@ -51,7 +51,7 @@
     </xs:attributeGroup>
     
     
-    <xs:group name="oecdBlockQuoteTypeContent">
+    <xs:group name="oecdBlockQuoteTypeContent" id="oecdBlockQuoteTypeContent">
         <xs:annotation>
             <xs:documentation>
                 <section xmlns="http://docbook.org/ns/docbook">
@@ -66,7 +66,7 @@
         </xs:choice>
     </xs:group>
     
-    <xs:complexType name="oecdBlockQuoteType">
+    <xs:complexType name="oecdBlockQuoteType" id="oecdBlockQuoteType">
         <xs:annotation>
             <xs:documentation>
                 <section xmlns="http://docbook.org/ns/docbook">
@@ -82,7 +82,7 @@
     
     
     <!-- external references -->
-    <xs:attributeGroup name="oecdExternalContentReferenceTypeAttributes">
+    <xs:attributeGroup name="oecdExternalContentReferenceTypeAttributes" id="oecdExternalContentReferenceTypeAttributes">
         <xs:annotation>
             <xs:documentation>
                 <section xmlns="http://docbook.org/ns/docbook">
@@ -97,7 +97,7 @@
     </xs:attributeGroup>
     
     
-    <xs:group name="oecdExternalContentReferenceTypeContent">
+    <xs:group name="oecdExternalContentReferenceTypeContent" id="oecdExternalContentReferenceTypeContent">
         <xs:annotation>
             <xs:documentation>
                 <section xmlns="http://docbook.org/ns/docbook">
@@ -111,7 +111,7 @@
         </xs:choice>
     </xs:group>
     
-    <xs:complexType name="oecdExternalContentReferenceType">
+    <xs:complexType name="oecdExternalContentReferenceType" id="oecdExternalContentReferenceType">
         <xs:annotation>
             <xs:documentation>
                 <section xmlns="http://docbook.org/ns/docbook">
@@ -127,7 +127,7 @@
 
     <!-- embedded xml references -->
     
-    <xs:attributeGroup name="oecdEmbeddedContentTypeAttributes">
+    <xs:attributeGroup name="oecdEmbeddedContentTypeAttributes" id="oecdEmbeddedContentTypeAttributes">
         <xs:annotation>
             <xs:documentation>
                 <section xmlns="http://docbook.org/ns/docbook">
@@ -142,7 +142,7 @@
     </xs:attributeGroup>
     
     
-    <xs:group name="oecdEmbeddedContentTypeContent">
+    <xs:group name="oecdEmbeddedContentTypeContent" id="oecdEmbeddedContentTypeContent">
         <xs:annotation>
             <xs:documentation>
                 <section xmlns="http://docbook.org/ns/docbook">
@@ -157,7 +157,7 @@
         </xs:choice>
     </xs:group>
     
-    <xs:complexType name="oecdEmbeddedContentType">
+    <xs:complexType name="oecdEmbeddedContentType" id="oecdEmbeddedContentType">
         <xs:annotation>
             <xs:documentation>
                 <section xmlns="http://docbook.org/ns/docbook">
@@ -173,7 +173,7 @@
     
     <!-- extracts -->
     
-    <xs:attributeGroup name="oecdExtractTypeAttributes">
+    <xs:attributeGroup name="oecdExtractTypeAttributes" id="oecdExtractTypeAttributes">
         <xs:annotation>
             <xs:documentation>
                 <section xmlns="http://docbook.org/ns/docbook">
@@ -187,7 +187,7 @@
         
     </xs:attributeGroup>
     
-    <xs:group name="oecdExtractTypeContent">
+    <xs:group name="oecdExtractTypeContent" id="oecdExtractTypeContent">
         <xs:annotation>
             <xs:documentation>
                 <section xmlns="http://docbook.org/ns/docbook">
@@ -208,17 +208,17 @@
         </xs:sequence>    
     </xs:group>
     
-    <xs:complexType name="oecdExtractType">
+    <xs:complexType name="oecdExtractType" id="oecdExtractType">
         <xs:annotation>
             <xs:documentation>
                 <section xmlns="http://docbook.org/ns/docbook">
                     <para>Extracts are a way to include content from other sources. An extract 
                     many consist of content in one of four forms:</para>
                     <itemizedlist>
-                        <listitem xmlns="http://docbook.org/ns/docbook"><para>referenced content - via a URI</para></listitem>
-                        <listitem xmlns="http://docbook.org/ns/docbook"><para>embedded XML content</para></listitem>
-                        <listitem xmlns="http://docbook.org/ns/docbook"><para>transcribed quotes</para></listitem>
-                        <listitem xmlns="http://docbook.org/ns/docbook"><para>scanned images</para></listitem>
+                        <listitem><para>referenced content - via a URI</para></listitem>
+                        <listitem><para>embedded XML content</para></listitem>
+                        <listitem><para>transcribed quotes</para></listitem>
+                        <listitem><para>scanned images</para></listitem>
                     </itemizedlist>
                 </section>
             </xs:documentation>

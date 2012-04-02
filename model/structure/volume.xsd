@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+<?xml version="1.0" encoding="UTF-8"?><xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
 
 
     <xs:annotation>
@@ -36,7 +35,7 @@
     
     <!-- volume -->
     
-    <xs:attributeGroup name="oecdVolumeTypeAttributes">
+    <xs:attributeGroup name="oecdVolumeTypeAttributes" id="oecdVolumeTypeAttributes">
         
         <xs:annotation>
             <xs:documentation>
@@ -52,7 +51,7 @@
         
     </xs:attributeGroup>
     
-    <xs:group name="oecdVolumeTypeContent">
+    <xs:group name="oecdVolumeTypeContent" id="oecdVolumeTypeContent">
         
         <xs:annotation>
             <xs:documentation>
@@ -87,7 +86,7 @@
         
     </xs:group>
     
-    <xs:complexType name="oecdVolumeType">
+    <xs:complexType name="oecdVolumeType" id="oecdVolumeType">
         
         <xs:annotation>
             <xs:documentation>

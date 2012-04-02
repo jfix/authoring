@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+<?xml version="1.0" encoding="UTF-8"?><xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
     
     <xs:annotation>
         <xs:documentation><section xmlns="http://docbook.org/ns/docbook">
@@ -34,14 +33,14 @@
     <xs:include schemaLocation="attributes.xsd"/>
     
     <!-- GLOBAL ELEMENTS -->
-    <xs:element name="indexTerm" type="oecdIndexTermType"/>
-    <xs:element name="index" type="oecdIndexType"/>
+    <xs:element name="indexTerm" type="oecdIndexTermType" id="indexTerm"/>
+    <xs:element name="index" type="oecdIndexType" id="index"/>
     
     <!-- GLOBAL GROUPS -->
     
     <!-- COMPLEX TYPES -->
     
-    <xs:attributeGroup name="oecdIndexTermLevelsTypeAttributes">
+    <xs:attributeGroup name="oecdIndexTermLevelsTypeAttributes" id="oecdIndexTermLevelsTypeAttributes">
         <xs:annotation>
             <xs:documentation>
                 <section xmlns="http://docbook.org/ns/docbook">
@@ -53,7 +52,7 @@
         <xs:attributeGroup ref="oecdLinkingAttributes"/>
     </xs:attributeGroup>
 
-    <xs:complexType name="oecdIndexTermLevelsType">
+    <xs:complexType name="oecdIndexTermLevelsType" id="oecdIndexTermLevelsType">
         <xs:annotation>
             <xs:documentation>
                 <section xmlns="http://docbook.org/ns/docbook">
@@ -72,7 +71,7 @@
     </xs:complexType>
     
     
-    <xs:attributeGroup name="oecdIndexTermTypeAttributes">
+    <xs:attributeGroup name="oecdIndexTermTypeAttributes" id="oecdIndexTermTypeAttributes">
         <xs:annotation>
             <xs:documentation>
                 <section xmlns="http://www.docbook.org/ns/docbook">
@@ -82,7 +81,7 @@
         </xs:annotation>
         <xs:attributeGroup ref="oecdCommonAttributes"/>
         <xs:attributeGroup ref="oecdLinkingAttributes"/>
-        <xs:attribute name="type" type="xs:string">
+        <xs:attribute name="type" type="xs:string" id="indexItemtype">
             <xs:annotation>
                 <xs:documentation>
                     <section xmlns="http://docbook.org/ns/docbook">
@@ -95,7 +94,7 @@
         </xs:attribute>
     </xs:attributeGroup>
     
-    <xs:group name="oecdIndexTermTypeContent">
+    <xs:group name="oecdIndexTermTypeContent" id="oecdIndexTermTypeContent">
         <xs:annotation>
             <xs:documentation>
                 <section xmlns="http://docbook.org/ns/docbook">
@@ -126,7 +125,7 @@
         </xs:sequence>
     </xs:group>
     
-    <xs:complexType name="oecdIndexTermType">
+    <xs:complexType name="oecdIndexTermType" id="oecdIndexTermType">
         <xs:annotation>
             <xs:documentation>
                 <section xmlns="http://docbook.org/ns/docbook">
@@ -144,7 +143,7 @@
     
     
     <!-- index -->
-    <xs:attributeGroup name="oecdIndexTypeAttributes">
+    <xs:attributeGroup name="oecdIndexTypeAttributes" id="oecdIndexTypeAttributes">
         
         <xs:annotation>
             <xs:documentation>
@@ -155,7 +154,7 @@
         </xs:annotation>
         <xs:attributeGroup ref="oecdCommonAttributes"/>
         <xs:attributeGroup ref="oecdLinkingAttributes"/>
-        <xs:attribute name="type" type="xs:string">
+        <xs:attribute name="type" type="xs:string" id="indexType">
             <xs:annotation>
                 <xs:documentation>
                     <section xmlns="http://docbook.org/ns/docbook">
@@ -169,7 +168,7 @@
         
     </xs:attributeGroup>
         
-    <xs:complexType name="oecdIndexType">
+    <xs:complexType name="oecdIndexType" id="oecdIndexType">
         
         <xs:annotation>
             <xs:documentation>

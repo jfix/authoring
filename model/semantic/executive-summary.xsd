@@ -19,8 +19,8 @@
                         <revnumber>0.2</revnumber>
                         <date>2012-03-21</date>
                         <author><email>nicg@corbas.co.uk</email><personname>Nic Gibson</personname></author>
-                        <revdescription xmlns="http://docbook.org/ns/docbook"><itemizedlist xmlns="http://docbook.org/ns/docbook"><listitem xmlns="http://docbook.org/ns/docbook"><para>Updated to best practices.</para></listitem>
-                        <listitem xmlns="http://docbook.org/ns/docbook"><para>Modified content model to be a series of blocks (excluding boxes).</para></listitem></itemizedlist></revdescription>
+                        <revdescription><itemizedlist><listitem><para>Updated to best practices.</para></listitem>
+                        <listitem><para>Modified content model to be a series of blocks (excluding boxes).</para></listitem></itemizedlist></revdescription>
                     </revision>
                     
                 
@@ -34,7 +34,7 @@
     
     <!-- GLOBAL ELEMENTS -->
         
-    <xs:element name="executiveSummary" type="oecdBlockGroupType"/>
+    <xs:element name="executiveSummary" type="oecdBlockGroupType" id="executiveSummary"/>
     
     <!-- GLOBAL GROUPS -->
     

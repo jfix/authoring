@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified"> 
+<?xml version="1.0" encoding="UTF-8"?><xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified"> 
 
     <xs:annotation>
         <xs:documentation><section xmlns="http://docbook.org/ns/docbook">
@@ -24,7 +23,7 @@
     <xs:include schemaLocation="attributes.xsd"/>
     
     <!-- GLOBAL ELEMENTS -->
-    <xs:element name="documentMetadata" type="oecdDocumentMetadataType"/>
+    <xs:element name="documentMetadata" type="oecdDocumentMetadataType" id="documentMetadata"/>
     
     <!-- GLOBAL GROUPS -->
     
@@ -32,7 +31,7 @@
     
     <!-- document metadata store -->
     
-    <xs:attributeGroup name="oecdDocumentMetadataTypeAttributes">
+    <xs:attributeGroup name="oecdDocumentMetadataTypeAttributes" id="oecdDocumentMetadataTypeAttributes">
         <xs:annotation>
             <xs:documentation>
                 <section xmlns="http://docbook.org/ns/docbook">
@@ -44,7 +43,7 @@
         <xs:attributeGroup ref="oecdLinkingAttributes"/>
     </xs:attributeGroup>
     
-    <xs:group name="oecdDocumentMetadataTypeContent">
+    <xs:group name="oecdDocumentMetadataTypeContent" id="oecdDocumentMetadataTypeContent">
         <xs:annotation>
             <xs:documentation>
                 <section xmlns="http://docbook.org/ns/docbook">
@@ -59,7 +58,7 @@
         
     </xs:group>
     
-    <xs:complexType name="oecdDocumentMetadataType">
+    <xs:complexType name="oecdDocumentMetadataType" id="oecdDocumentMetadataType">
         <xs:annotation>
             <xs:documentation>
                 <section xmlns="http://docbook.org/ns/docbook">
