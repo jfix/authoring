@@ -1,0 +1,1275 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+        Project: OECD.Author
+        Module: $RCSfile: pars.xsd,v $
+        Version: $Revision: 1.00 $
+        Date: $Date: 2012/03/07 14:31:41 $
+        Description: Defines all components allowed in official documents and publications.
+        Programmer: J.W Crowther
+        Language: W3C Schema
+        Date started: 20120307
+        Copyright: © OECD 2012
+        Currently supports:
+        - official documents
+        - publications
+        Notes:
+        *Initial Release*
+        JWC20120307 Added.
+        --><xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+   <xs:annotation xmlns:ctrl="http://nwalsh.com/xmlns/schema-control/"
+                  xmlns:db="http://docbook.org/ns/docbook"
+                  xmlns:xd="http://www.oecd.org/ns/schema/xdocs"
+                  xmlns:s="http://www.ascc.net/xml/schematron"
+                  xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"
+                  xmlns:xlink="http://www.w3.org/1999/xlink"
+                  xmlns:svg="http://www.w3.org/2000/svg"
+                  xmlns="http://www.corbas.co.uk/ns/model"
+                  xmlns:rng="http://relaxng.org/ns/structure/1.0"
+                  xmlns:mml="http://www.w3.org/1998/Math/MathML"
+                  xmlns:html="http://www.w3.org/1999/xhtml">
+      <xs:appinfo>
+         <xd:name>temp</xd:name>
+         <xd:root>document</xd:root>
+      </xs:appinfo>
+      <xs:documentation>
+         <xd:p>Pars is a comprehensive catalogue of all the components used in narrative
+                        models for capturing official OECD documents and publications. To date,
+                        "pars" supports all documents and camera-ready and typset
+                        publications.</xd:p>
+      </xs:documentation>
+   </xs:annotation>
+   <xs:element name="document" type="document"/>
+   <xs:complexType name="volume">
+      <xs:annotation>
+         <xs:documentation>
+            <xd:section xmlns:xd="http://www.oecd.org/ns/schema/xdocs">
+               <xd:title>Categories</xd:title>
+               <xd:p>publishing</xd:p>
+            </xd:section>
+            <xd:section xmlns:xd="http://www.oecd.org/ns/schema/xdocs">
+               <xd:title>Definition</xd:title>
+            </xd:section>
+         </xs:documentation>
+      </xs:annotation>
+      <xs:sequence>
+         <xs:choice maxOccurs="unbounded">
+            <xs:element name="title" type="title"/>
+            <xs:element name="grp-para" type="grp-para"/>
+            <xs:element name="agenda-item" type="agenda-item"/>
+         </xs:choice>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="simple-agenda">
+      <xs:annotation>
+         <xs:documentation>
+            <xd:section xmlns:xd="http://www.oecd.org/ns/schema/xdocs">
+               <xd:title>Categories</xd:title>
+               <xd:p>semantic</xd:p>
+            </xd:section>
+            <xd:section xmlns:xd="http://www.oecd.org/ns/schema/xdocs">
+               <xd:title>Definition</xd:title>
+            </xd:section>
+         </xs:documentation>
+      </xs:annotation>
+      <xs:sequence>
+         <xs:choice maxOccurs="unbounded">
+            <xs:element name="title" type="title"/>
+            <xs:element name="simple-para" type="simple-para"/>
+            <xs:element name="agenda-item" type="agenda-item"/>
+         </xs:choice>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="advanced-agenda">
+      <xs:annotation>
+         <xs:documentation>
+            <xd:section xmlns:xd="http://www.oecd.org/ns/schema/xdocs">
+               <xd:title>Categories</xd:title>
+               <xd:p>semantic</xd:p>
+            </xd:section>
+            <xd:section xmlns:xd="http://www.oecd.org/ns/schema/xdocs">
+               <xd:title>Definition</xd:title>
+            </xd:section>
+         </xs:documentation>
+      </xs:annotation>
+      <xs:sequence>
+         <xs:choice maxOccurs="unbounded">
+            <xs:element name="title" type="title"/>
+            <xs:element name="simple-para" type="simple-para"/>
+            <xs:element name="agenda-session" type="agenda-session"/>
+         </xs:choice>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="article">
+      <xs:annotation>
+         <xs:documentation>
+            <xd:section xmlns:xd="http://www.oecd.org/ns/schema/xdocs">
+               <xd:title>Categories</xd:title>
+               <xd:p>document</xd:p>
+            </xd:section>
+            <xd:section xmlns:xd="http://www.oecd.org/ns/schema/xdocs">
+               <xd:title>Definition</xd:title>
+            </xd:section>
+         </xs:documentation>
+      </xs:annotation>
+      <xs:sequence>
+         <xs:choice maxOccurs="unbounded">
+            <xs:element name="section" type="section"/>
+            <xs:element name="abstract" type="abstract"/>
+            <xs:element name="metadata-group" type="metadata-group"/>
+            <xs:element name="bibliography" type="bibliography"/>
+            <xs:element name="annex" type="annex"/>
+         </xs:choice>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="document">
+      <xs:annotation>
+         <xs:documentation>
+            <xd:section xmlns:xd="http://www.oecd.org/ns/schema/xdocs">
+               <xd:title>Categories</xd:title>
+               <xd:p>document</xd:p>
+            </xd:section>
+            <xd:section xmlns:xd="http://www.oecd.org/ns/schema/xdocs">
+               <xd:title>Definition</xd:title>
+            </xd:section>
+         </xs:documentation>
+      </xs:annotation>
+      <xs:sequence>
+         <xs:choice maxOccurs="unbounded">
+            <xs:element name="section" type="section"/>
+            <xs:element name="preface" type="preface"/>
+            <xs:element name="glossary" type="glossary"/>
+            <xs:element name="abstract" type="abstract"/>
+            <xs:element name="chapter" type="chapter"/>
+            <xs:element name="executive-summary" type="executive-summary"/>
+            <xs:element name="abbreviation-list" type="abbreviation-list"/>
+            <xs:element name="part" type="part"/>
+            <xs:element name="recommendation" type="recommendation"/>
+            <xs:element name="mandate" type="mandate"/>
+            <xs:element name="metadata-group" type="metadata-group"/>
+            <xs:element name="bibliography" type="bibliography"/>
+            <xs:element name="annex" type="annex"/>
+         </xs:choice>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="chapter">
+      <xs:annotation>
+         <xs:documentation>
+            <xd:section xmlns:xd="http://www.oecd.org/ns/schema/xdocs">
+               <xd:title>Categories</xd:title>
+               <xd:p>semantic, publishing</xd:p>
+            </xd:section>
+            <xd:section xmlns:xd="http://www.oecd.org/ns/schema/xdocs">
+               <xd:title>Definition</xd:title>
+            </xd:section>
+         </xs:documentation>
+      </xs:annotation>
+      <xs:sequence>
+         <xs:choice maxOccurs="unbounded">
+            <xs:element name="section" type="section"/>
+         </xs:choice>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="part">
+      <xs:annotation>
+         <xs:documentation>
+            <xd:section xmlns:xd="http://www.oecd.org/ns/schema/xdocs">
+               <xd:title>Categories</xd:title>
+               <xd:p>semantic, publishing</xd:p>
+            </xd:section>
+            <xd:section xmlns:xd="http://www.oecd.org/ns/schema/xdocs">
+               <xd:title>Definition</xd:title>
+            </xd:section>
+         </xs:documentation>
+      </xs:annotation>
+      <xs:sequence>
+         <xs:choice maxOccurs="unbounded">
+            <xs:element name="section" type="section"/>
+         </xs:choice>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="mandate">
+      <xs:annotation>
+         <xs:documentation>
+            <xd:section xmlns:xd="http://www.oecd.org/ns/schema/xdocs">
+               <xd:title>Categories</xd:title>
+               <xd:p>semantic</xd:p>
+            </xd:section>
+            <xd:section xmlns:xd="http://www.oecd.org/ns/schema/xdocs">
+               <xd:title>Definition</xd:title>
+            </xd:section>
+         </xs:documentation>
+      </xs:annotation>
+      <xs:sequence>
+         <xs:choice maxOccurs="unbounded">
+            <xs:element name="section" type="section"/>
+         </xs:choice>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="recommendation">
+      <xs:annotation>
+         <xs:documentation>
+            <xd:section xmlns:xd="http://www.oecd.org/ns/schema/xdocs">
+               <xd:title>Categories</xd:title>
+               <xd:p>semantic</xd:p>
+            </xd:section>
+            <xd:section xmlns:xd="http://www.oecd.org/ns/schema/xdocs">
+               <xd:title>Definition</xd:title>
+            </xd:section>
+         </xs:documentation>
+      </xs:annotation>
+      <xs:sequence>
+         <xs:choice maxOccurs="unbounded">
+            <xs:element name="extract" type="extract"/>
+         </xs:choice>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="annex">
+      <xs:annotation>
+         <xs:documentation>
+            <xd:section xmlns:xd="http://www.oecd.org/ns/schema/xdocs">
+               <xd:title>Categories</xd:title>
+               <xd:p>semantic</xd:p>
+            </xd:section>
+            <xd:section xmlns:xd="http://www.oecd.org/ns/schema/xdocs">
+               <xd:title>Definition</xd:title>
+            </xd:section>
+         </xs:documentation>
+      </xs:annotation>
+      <xs:sequence>
+         <xs:choice maxOccurs="unbounded">
+            <xs:element name="section" type="section"/>
+         </xs:choice>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="extract">
+      <xs:annotation>
+         <xs:documentation>
+            <xd:section xmlns:xd="http://www.oecd.org/ns/schema/xdocs">
+               <xd:title>Categories</xd:title>
+               <xd:p>structural, block</xd:p>
+            </xd:section>
+            <xd:section xmlns:xd="http://www.oecd.org/ns/schema/xdocs">
+               <xd:title>Definition</xd:title>
+            </xd:section>
+         </xs:documentation>
+      </xs:annotation>
+      <xs:sequence>
+         <xs:choice maxOccurs="unbounded">
+            <xs:element name="metadata-group" type="metadata-group"/>
+            <xs:element name="linked-content" type="linked-content"/>
+            <xs:element name="foreign-content" type="foreign-content"/>
+            <xs:element name="blockquote" type="blockquote"/>
+         </xs:choice>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="abstract">
+      <xs:annotation>
+         <xs:documentation>
+            <xd:section xmlns:xd="http://www.oecd.org/ns/schema/xdocs">
+               <xd:title>Categories</xd:title>
+               <xd:p>semantic</xd:p>
+            </xd:section>
+            <xd:section xmlns:xd="http://www.oecd.org/ns/schema/xdocs">
+               <xd:title>Definition</xd:title>
+            </xd:section>
+         </xs:documentation>
+      </xs:annotation>
+      <xs:sequence>
+         <xs:choice maxOccurs="unbounded">
+            <xs:element name="section" type="section"/>
+         </xs:choice>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="executive-summary">
+      <xs:annotation>
+         <xs:documentation>
+            <xd:section xmlns:xd="http://www.oecd.org/ns/schema/xdocs">
+               <xd:title>Categories</xd:title>
+               <xd:p>semantic</xd:p>
+            </xd:section>
+            <xd:section xmlns:xd="http://www.oecd.org/ns/schema/xdocs">
+               <xd:title>Definition</xd:title>
+            </xd:section>
+         </xs:documentation>
+      </xs:annotation>
+      <xs:sequence>
+         <xs:choice maxOccurs="unbounded">
+            <xs:element name="section" type="section"/>
+         </xs:choice>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="preface">
+      <xs:annotation>
+         <xs:documentation>
+            <xd:section xmlns:xd="http://www.oecd.org/ns/schema/xdocs">
+               <xd:title>Categories</xd:title>
+               <xd:p>semantic</xd:p>
+            </xd:section>
+            <xd:section xmlns:xd="http://www.oecd.org/ns/schema/xdocs">
+               <xd:title>Definition</xd:title>
+            </xd:section>
+         </xs:documentation>
+      </xs:annotation>
+      <xs:sequence>
+         <xs:choice maxOccurs="unbounded">
+            <xs:element name="section" type="section"/>
+         </xs:choice>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="glossary">
+      <xs:annotation>
+         <xs:documentation>
+            <xd:section xmlns:xd="http://www.oecd.org/ns/schema/xdocs">
+               <xd:title>Categories</xd:title>
+               <xd:p>semantic, structural</xd:p>
+            </xd:section>
+            <xd:section xmlns:xd="http://www.oecd.org/ns/schema/xdocs">
+               <xd:title>Definition</xd:title>
+            </xd:section>
+         </xs:documentation>
+      </xs:annotation>
+      <xs:sequence>
+         <xs:choice maxOccurs="unbounded">
+            <xs:element name="section" type="section"/>
+         </xs:choice>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="abbreviation-list">
+      <xs:annotation>
+         <xs:documentation>
+            <xd:section xmlns:xd="http://www.oecd.org/ns/schema/xdocs">
+               <xd:title>Categories</xd:title>
+               <xd:p>semantic</xd:p>
+            </xd:section>
+            <xd:section xmlns:xd="http://www.oecd.org/ns/schema/xdocs">
+               <xd:title>Definition</xd:title>
+            </xd:section>
+         </xs:documentation>
+      </xs:annotation>
+      <xs:sequence>
+         <xs:choice maxOccurs="unbounded">
+            <xs:element name="glossary" type="glossary"/>
+         </xs:choice>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="bibliography">
+      <xs:annotation>
+         <xs:documentation>
+            <xd:section xmlns:xd="http://www.oecd.org/ns/schema/xdocs">
+               <xd:title>Categories</xd:title>
+               <xd:p>semantic</xd:p>
+            </xd:section>
+            <xd:section xmlns:xd="http://www.oecd.org/ns/schema/xdocs">
+               <xd:title>Definition</xd:title>
+            </xd:section>
+         </xs:documentation>
+      </xs:annotation>
+      <xs:sequence>
+         <xs:choice maxOccurs="unbounded">
+            <xs:element name="section" type="section"/>
+         </xs:choice>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="further-reading">
+      <xs:annotation>
+         <xs:documentation>
+            <xd:section xmlns:xd="http://www.oecd.org/ns/schema/xdocs">
+               <xd:title>Categories</xd:title>
+               <xd:p>semantic</xd:p>
+            </xd:section>
+            <xd:section xmlns:xd="http://www.oecd.org/ns/schema/xdocs">
+               <xd:title>Definition</xd:title>
+            </xd:section>
+         </xs:documentation>
+      </xs:annotation>
+      <xs:sequence>
+         <xs:choice maxOccurs="unbounded">
+            <xs:element name="bibliographic-entry" type="bibliographic-entry"/>
+            <xs:element name="bibliography" type="bibliography"/>
+         </xs:choice>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="bibliographic-entry">
+      <xs:annotation>
+         <xs:documentation>
+            <xd:section xmlns:xd="http://www.oecd.org/ns/schema/xdocs">
+               <xd:title>Categories</xd:title>
+               <xd:p>semantic</xd:p>
+            </xd:section>
+            <xd:section xmlns:xd="http://www.oecd.org/ns/schema/xdocs">
+               <xd:title>Definition</xd:title>
+            </xd:section>
+         </xs:documentation>
+      </xs:annotation>
+      <xs:sequence>
+         <xs:choice maxOccurs="unbounded">
+            <xs:element name="foreign-content" type="foreign-content"/>
+         </xs:choice>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="chemical-formula">
+      <xs:annotation>
+         <xs:documentation>
+            <xd:section xmlns:xd="http://www.oecd.org/ns/schema/xdocs">
+               <xd:title>Categories</xd:title>
+               <xd:p>semantic, inline, block</xd:p>
+            </xd:section>
+            <xd:section xmlns:xd="http://www.oecd.org/ns/schema/xdocs">
+               <xd:title>Definition</xd:title>
+            </xd:section>
+         </xs:documentation>
+      </xs:annotation>
+      <xs:sequence>
+         <xs:choice maxOccurs="unbounded">
+            <xs:element name="metadata-group" type="metadata-group"/>
+            <xs:element name="index-term" type="index-term"/>
+            <xs:element name="graphic" type="graphic"/>
+            <xs:element name="foreign-content" type="foreign-content"/>
+         </xs:choice>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="equation">
+      <xs:annotation>
+         <xs:documentation>
+            <xd:section xmlns:xd="http://www.oecd.org/ns/schema/xdocs">
+               <xd:title>Categories</xd:title>
+               <xd:p>semantic, inline, block</xd:p>
+            </xd:section>
+            <xd:section xmlns:xd="http://www.oecd.org/ns/schema/xdocs">
+               <xd:title>Definition</xd:title>
+            </xd:section>
+         </xs:documentation>
+      </xs:annotation>
+      <xs:sequence>
+         <xs:choice maxOccurs="unbounded">
+            <xs:element name="metadata-group" type="metadata-group"/>
+            <xs:element name="index-term" type="index-term"/>
+            <xs:element name="graphic" type="graphic"/>
+            <xs:element name="foreign-content" type="foreign-content"/>
+         </xs:choice>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="table">
+      <xs:annotation>
+         <xs:documentation>
+            <xd:section xmlns:xd="http://www.oecd.org/ns/schema/xdocs">
+               <xd:title>Categories</xd:title>
+               <xd:p>block</xd:p>
+            </xd:section>
+            <xd:section xmlns:xd="http://www.oecd.org/ns/schema/xdocs">
+               <xd:title>Definition</xd:title>
+            </xd:section>
+         </xs:documentation>
+      </xs:annotation>
+      <xs:sequence>
+         <xs:choice maxOccurs="unbounded">
+            <xs:element name="title" type="title"/>
+            <xs:element name="table-head" type="table-head"/>
+            <xs:element name="table-body" type="table-body"/>
+            <xs:element name="table-foot" type="table-foot"/>
+            <xs:element name="notes" type="notes"/>
+            <xs:element name="annotation" type="annotation"/>
+            <xs:element name="metadata-group" type="metadata-group"/>
+            <xs:element name="index-term" type="index-term"/>
+         </xs:choice>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="table-head">
+      <xs:annotation>
+         <xs:documentation>
+            <xd:section xmlns:xd="http://www.oecd.org/ns/schema/xdocs">
+               <xd:title>Categories</xd:title>
+               <xd:p>block</xd:p>
+            </xd:section>
+            <xd:section xmlns:xd="http://www.oecd.org/ns/schema/xdocs">
+               <xd:title>Definition</xd:title>
+            </xd:section>
+         </xs:documentation>
+      </xs:annotation>
+      <xs:sequence>
+         <xs:choice maxOccurs="unbounded">
+            <xs:element name="table-rows" type="table-rows"/>
+         </xs:choice>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="table-body">
+      <xs:annotation>
+         <xs:documentation>
+            <xd:section xmlns:xd="http://www.oecd.org/ns/schema/xdocs">
+               <xd:title>Categories</xd:title>
+               <xd:p>block</xd:p>
+            </xd:section>
+            <xd:section xmlns:xd="http://www.oecd.org/ns/schema/xdocs">
+               <xd:title>Definition</xd:title>
+            </xd:section>
+         </xs:documentation>
+      </xs:annotation>
+      <xs:sequence>
+         <xs:choice maxOccurs="unbounded">
+            <xs:element name="table-rows" type="table-rows"/>
+         </xs:choice>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="table-foot">
+      <xs:annotation>
+         <xs:documentation>
+            <xd:section xmlns:xd="http://www.oecd.org/ns/schema/xdocs">
+               <xd:title>Categories</xd:title>
+               <xd:p>block</xd:p>
+            </xd:section>
+            <xd:section xmlns:xd="http://www.oecd.org/ns/schema/xdocs">
+               <xd:title>Definition</xd:title>
+            </xd:section>
+         </xs:documentation>
+      </xs:annotation>
+      <xs:sequence>
+         <xs:choice maxOccurs="unbounded">
+            <xs:element name="table-rows" type="table-rows"/>
+         </xs:choice>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="table-rows">
+      <xs:annotation>
+         <xs:documentation>
+            <xd:section xmlns:xd="http://www.oecd.org/ns/schema/xdocs">
+               <xd:title>Categories</xd:title>
+               <xd:p>block</xd:p>
+            </xd:section>
+            <xd:section xmlns:xd="http://www.oecd.org/ns/schema/xdocs">
+               <xd:title>Definition</xd:title>
+            </xd:section>
+         </xs:documentation>
+      </xs:annotation>
+      <xs:sequence>
+         <xs:choice maxOccurs="unbounded">
+            <xs:element name="table-data" type="table-data"/>
+         </xs:choice>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="table-data">
+      <xs:annotation>
+         <xs:documentation>
+            <xd:section xmlns:xd="http://www.oecd.org/ns/schema/xdocs">
+               <xd:title>Categories</xd:title>
+               <xd:p>block</xd:p>
+            </xd:section>
+            <xd:section xmlns:xd="http://www.oecd.org/ns/schema/xdocs">
+               <xd:title>Definition</xd:title>
+            </xd:section>
+         </xs:documentation>
+      </xs:annotation>
+      <xs:sequence>
+         <xs:choice maxOccurs="unbounded">
+            <xs:element name="grp-simple-blocks" type="grp-simple-blocks"/>
+         </xs:choice>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="notes">
+      <xs:annotation>
+         <xs:documentation>
+            <xd:section xmlns:xd="http://www.oecd.org/ns/schema/xdocs">
+               <xd:title>Categories</xd:title>
+               <xd:p>block</xd:p>
+            </xd:section>
+            <xd:section xmlns:xd="http://www.oecd.org/ns/schema/xdocs">
+               <xd:title>Definition</xd:title>
+            </xd:section>
+         </xs:documentation>
+      </xs:annotation>
+      <xs:sequence>
+         <xs:choice maxOccurs="unbounded">
+            <xs:element name="simple-para" type="simple-para"/>
+            <xs:element name="metadata-group" type="metadata-group"/>
+         </xs:choice>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="section">
+      <xs:annotation>
+         <xs:documentation>
+            <xd:section xmlns:xd="http://www.oecd.org/ns/schema/xdocs">
+               <xd:title>Categories</xd:title>
+               <xd:p>structural, publishing</xd:p>
+            </xd:section>
+            <xd:section xmlns:xd="http://www.oecd.org/ns/schema/xdocs">
+               <xd:title>Definition</xd:title>
+            </xd:section>
+         </xs:documentation>
+      </xs:annotation>
+      <xs:sequence>
+         <xs:choice maxOccurs="unbounded">
+            <xs:element name="title" type="title"/>
+            <xs:element name="grp-nested-blocks" type="grp-nested-blocks"/>
+            <xs:element name="sidebar" type="sidebar"/>
+            <xs:element name="index-term" type="index-term"/>
+            <xs:element name="metadata-group" type="metadata-group"/>
+         </xs:choice>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="sidebar">
+      <xs:annotation>
+         <xs:documentation>
+            <xd:section xmlns:xd="http://www.oecd.org/ns/schema/xdocs">
+               <xd:title>Categories</xd:title>
+               <xd:p>structural</xd:p>
+            </xd:section>
+            <xd:section xmlns:xd="http://www.oecd.org/ns/schema/xdocs">
+               <xd:title>Definition</xd:title>
+            </xd:section>
+         </xs:documentation>
+      </xs:annotation>
+      <xs:sequence>
+         <xs:choice maxOccurs="unbounded">
+            <xs:element name="grp-simple-blocks" type="grp-simple-blocks"/>
+            <xs:element name="metadata-group" type="metadata-group"/>
+         </xs:choice>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="annotation">
+      <xs:annotation>
+         <xs:documentation>
+            <xd:section xmlns:xd="http://www.oecd.org/ns/schema/xdocs">
+               <xd:title>Categories</xd:title>
+               <xd:p>structural</xd:p>
+            </xd:section>
+            <xd:section xmlns:xd="http://www.oecd.org/ns/schema/xdocs">
+               <xd:title>Definition</xd:title>
+            </xd:section>
+         </xs:documentation>
+      </xs:annotation>
+      <xs:sequence>
+         <xs:choice maxOccurs="unbounded">
+            <xs:element name="simple-para" type="simple-para"/>
+            <xs:element name="metadata-group" type="metadata-group"/>
+         </xs:choice>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="box">
+      <xs:annotation>
+         <xs:documentation>
+            <xd:section xmlns:xd="http://www.oecd.org/ns/schema/xdocs">
+               <xd:title>Categories</xd:title>
+               <xd:p>structural</xd:p>
+            </xd:section>
+            <xd:section xmlns:xd="http://www.oecd.org/ns/schema/xdocs">
+               <xd:title>Definition</xd:title>
+            </xd:section>
+         </xs:documentation>
+      </xs:annotation>
+      <xs:sequence>
+         <xs:choice maxOccurs="unbounded">
+            <xs:element name="grp-nested-blocks" type="grp-nested-blocks"/>
+            <xs:element name="metadata-group" type="metadata-group"/>
+            <xs:element name="index-term" type="index-term"/>
+         </xs:choice>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="title">
+      <xs:annotation>
+         <xs:documentation>
+            <xd:section xmlns:xd="http://www.oecd.org/ns/schema/xdocs">
+               <xd:title>Categories</xd:title>
+               <xd:p>block</xd:p>
+            </xd:section>
+            <xd:section xmlns:xd="http://www.oecd.org/ns/schema/xdocs">
+               <xd:title>Definition</xd:title>
+            </xd:section>
+         </xs:documentation>
+      </xs:annotation>
+      <xs:sequence>
+         <xs:choice maxOccurs="unbounded">
+            <xs:element name="grp-simple-inlines" type="grp-simple-inlines"/>
+         </xs:choice>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="semantic-tag">
+      <xs:annotation>
+         <xs:documentation>
+            <xd:section xmlns:xd="http://www.oecd.org/ns/schema/xdocs">
+               <xd:title>Categories</xd:title>
+               <xd:p>inline</xd:p>
+            </xd:section>
+            <xd:section xmlns:xd="http://www.oecd.org/ns/schema/xdocs">
+               <xd:title>Definition</xd:title>
+            </xd:section>
+         </xs:documentation>
+      </xs:annotation>
+      <xs:sequence>
+         <xs:choice maxOccurs="unbounded">
+            <xs:element name="grp-simple-inlines" type="grp-simple-inlines"/>
+         </xs:choice>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="formatting-tag">
+      <xs:annotation>
+         <xs:documentation>
+            <xd:section xmlns:xd="http://www.oecd.org/ns/schema/xdocs">
+               <xd:title>Categories</xd:title>
+               <xd:p>inline</xd:p>
+            </xd:section>
+            <xd:section xmlns:xd="http://www.oecd.org/ns/schema/xdocs">
+               <xd:title>Definition</xd:title>
+            </xd:section>
+         </xs:documentation>
+      </xs:annotation>
+      <xs:sequence>
+         <xs:choice maxOccurs="unbounded">
+            <xs:element name="grp-simple-inlines" type="grp-simple-inlines"/>
+         </xs:choice>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="index-term">
+      <xs:annotation>
+         <xs:documentation>
+            <xd:section xmlns:xd="http://www.oecd.org/ns/schema/xdocs">
+               <xd:title>Categories</xd:title>
+               <xd:p>inline, semantic</xd:p>
+            </xd:section>
+            <xd:section xmlns:xd="http://www.oecd.org/ns/schema/xdocs">
+               <xd:title>Definition</xd:title>
+            </xd:section>
+         </xs:documentation>
+      </xs:annotation>
+      <xs:sequence>
+         <xs:choice maxOccurs="unbounded">
+            <xs:element name="grp-simple-inlines" type="grp-simple-inlines"/>
+         </xs:choice>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="citation">
+      <xs:annotation>
+         <xs:documentation>
+            <xd:section xmlns:xd="http://www.oecd.org/ns/schema/xdocs">
+               <xd:title>Categories</xd:title>
+               <xd:p>inline, semantic</xd:p>
+            </xd:section>
+            <xd:section xmlns:xd="http://www.oecd.org/ns/schema/xdocs">
+               <xd:title>Definition</xd:title>
+            </xd:section>
+         </xs:documentation>
+      </xs:annotation>
+      <xs:sequence>
+         <xs:choice maxOccurs="unbounded"/>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="footnote">
+      <xs:annotation>
+         <xs:documentation>
+            <xd:section xmlns:xd="http://www.oecd.org/ns/schema/xdocs">
+               <xd:title>Categories</xd:title>
+               <xd:p>inline, semantic</xd:p>
+            </xd:section>
+            <xd:section xmlns:xd="http://www.oecd.org/ns/schema/xdocs">
+               <xd:title>Definition</xd:title>
+            </xd:section>
+         </xs:documentation>
+      </xs:annotation>
+      <xs:sequence>
+         <xs:choice maxOccurs="unbounded">
+            <xs:element name="simple-para" type="simple-para"/>
+         </xs:choice>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="link">
+      <xs:annotation>
+         <xs:documentation>
+            <xd:section xmlns:xd="http://www.oecd.org/ns/schema/xdocs">
+               <xd:title>Categories</xd:title>
+               <xd:p>inline, semantic</xd:p>
+            </xd:section>
+            <xd:section xmlns:xd="http://www.oecd.org/ns/schema/xdocs">
+               <xd:title>Definition</xd:title>
+            </xd:section>
+         </xs:documentation>
+      </xs:annotation>
+      <xs:sequence>
+         <xs:choice maxOccurs="unbounded">
+            <xs:element name="grp-simple-inlines" type="grp-simple-inlines"/>
+         </xs:choice>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="simple-para">
+      <xs:annotation>
+         <xs:documentation>
+            <xd:section xmlns:xd="http://www.oecd.org/ns/schema/xdocs">
+               <xd:title>Categories</xd:title>
+               <xd:p>block</xd:p>
+            </xd:section>
+            <xd:section xmlns:xd="http://www.oecd.org/ns/schema/xdocs">
+               <xd:title>Definition</xd:title>
+            </xd:section>
+         </xs:documentation>
+      </xs:annotation>
+      <xs:sequence>
+         <xs:choice maxOccurs="unbounded">
+            <xs:element name="grp-simple-inlines" type="grp-simple-inlines"/>
+            <xs:element name="annotation" type="annotation"/>
+            <xs:element name="metadata-group" type="metadata-group"/>
+         </xs:choice>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="blockquote">
+      <xs:annotation>
+         <xs:documentation>
+            <xd:section xmlns:xd="http://www.oecd.org/ns/schema/xdocs">
+               <xd:title>Categories</xd:title>
+               <xd:p>block</xd:p>
+            </xd:section>
+            <xd:section xmlns:xd="http://www.oecd.org/ns/schema/xdocs">
+               <xd:title>Definition</xd:title>
+            </xd:section>
+         </xs:documentation>
+      </xs:annotation>
+      <xs:sequence>
+         <xs:choice maxOccurs="unbounded">
+            <xs:element name="grp-simple-blocks" type="grp-simple-blocks"/>
+         </xs:choice>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="itemized-list">
+      <xs:annotation>
+         <xs:documentation>
+            <xd:section xmlns:xd="http://www.oecd.org/ns/schema/xdocs">
+               <xd:title>Categories</xd:title>
+               <xd:p>block</xd:p>
+            </xd:section>
+            <xd:section xmlns:xd="http://www.oecd.org/ns/schema/xdocs">
+               <xd:title>Definition</xd:title>
+            </xd:section>
+         </xs:documentation>
+      </xs:annotation>
+      <xs:sequence>
+         <xs:choice maxOccurs="unbounded">
+            <xs:element name="title" type="title"/>
+            <xs:element name="list-item" type="list-item"/>
+         </xs:choice>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="ordered-list">
+      <xs:annotation>
+         <xs:documentation>
+            <xd:section xmlns:xd="http://www.oecd.org/ns/schema/xdocs">
+               <xd:title>Categories</xd:title>
+               <xd:p>block</xd:p>
+            </xd:section>
+            <xd:section xmlns:xd="http://www.oecd.org/ns/schema/xdocs">
+               <xd:title>Definition</xd:title>
+            </xd:section>
+         </xs:documentation>
+      </xs:annotation>
+      <xs:sequence>
+         <xs:choice maxOccurs="unbounded">
+            <xs:element name="title" type="title"/>
+            <xs:element name="list-item" type="list-item"/>
+         </xs:choice>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="list-item">
+      <xs:annotation>
+         <xs:documentation>
+            <xd:section xmlns:xd="http://www.oecd.org/ns/schema/xdocs">
+               <xd:title>Categories</xd:title>
+               <xd:p>block</xd:p>
+            </xd:section>
+            <xd:section xmlns:xd="http://www.oecd.org/ns/schema/xdocs">
+               <xd:title>Definition</xd:title>
+            </xd:section>
+         </xs:documentation>
+      </xs:annotation>
+      <xs:sequence>
+         <xs:choice maxOccurs="unbounded">
+            <xs:element name="title" type="title"/>
+            <xs:element name="grp-simple-blocks" type="grp-simple-blocks"/>
+            <xs:element name="annotation" type="annotation"/>
+            <xs:element name="metadata-group" type="metadata-group"/>
+            <xs:element name="index-term" type="index-term"/>
+         </xs:choice>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="figure">
+      <xs:annotation>
+         <xs:documentation>
+            <xd:section xmlns:xd="http://www.oecd.org/ns/schema/xdocs">
+               <xd:title>Categories</xd:title>
+               <xd:p>block</xd:p>
+            </xd:section>
+            <xd:section xmlns:xd="http://www.oecd.org/ns/schema/xdocs">
+               <xd:title>Definition</xd:title>
+            </xd:section>
+         </xs:documentation>
+      </xs:annotation>
+      <xs:sequence>
+         <xs:choice maxOccurs="unbounded">
+            <xs:element name="title" type="title"/>
+            <xs:element name="graphic" type="graphic"/>
+            <xs:element name="notes" type="notes"/>
+            <xs:element name="annotation" type="annotation"/>
+            <xs:element name="metadata-group" type="metadata-group"/>
+            <xs:element name="index-term" type="index-term"/>
+         </xs:choice>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="graphic">
+      <xs:annotation>
+         <xs:documentation>
+            <xd:section xmlns:xd="http://www.oecd.org/ns/schema/xdocs">
+               <xd:title>Categories</xd:title>
+               <xd:p>block, inline</xd:p>
+            </xd:section>
+            <xd:section xmlns:xd="http://www.oecd.org/ns/schema/xdocs">
+               <xd:title>Definition</xd:title>
+            </xd:section>
+         </xs:documentation>
+      </xs:annotation>
+      <xs:sequence>
+         <xs:choice maxOccurs="unbounded">
+            <xs:element name="metadata-group" type="metadata-group"/>
+            <xs:element name="foreign-content" type="foreign-content"/>
+         </xs:choice>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="document-list">
+      <xs:annotation>
+         <xs:documentation>
+            <xd:section xmlns:xd="http://www.oecd.org/ns/schema/xdocs">
+               <xd:title>Categories</xd:title>
+               <xd:p>semantic</xd:p>
+            </xd:section>
+            <xd:section xmlns:xd="http://www.oecd.org/ns/schema/xdocs">
+               <xd:title>Definition</xd:title>
+            </xd:section>
+         </xs:documentation>
+      </xs:annotation>
+      <xs:sequence>
+         <xs:choice maxOccurs="unbounded">
+            <xs:element name="document-reference" type="document-reference"/>
+         </xs:choice>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="document-reference">
+      <xs:annotation>
+         <xs:documentation>
+            <xd:section xmlns:xd="http://www.oecd.org/ns/schema/xdocs">
+               <xd:title>Categories</xd:title>
+               <xd:p>semantic</xd:p>
+            </xd:section>
+            <xd:section xmlns:xd="http://www.oecd.org/ns/schema/xdocs">
+               <xd:title>Definition</xd:title>
+            </xd:section>
+         </xs:documentation>
+      </xs:annotation>
+      <xs:sequence>
+         <xs:choice maxOccurs="unbounded">
+            <xs:element name="linked-content" type="linked-content"/>
+            <xs:element name="cote" type="cote"/>
+         </xs:choice>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="cote">
+      <xs:annotation>
+         <xs:documentation>
+            <xd:section xmlns:xd="http://www.oecd.org/ns/schema/xdocs">
+               <xd:title>Categories</xd:title>
+               <xd:p>semantic</xd:p>
+            </xd:section>
+            <xd:section xmlns:xd="http://www.oecd.org/ns/schema/xdocs">
+               <xd:title>Definition</xd:title>
+            </xd:section>
+         </xs:documentation>
+      </xs:annotation>
+      <xs:sequence>
+         <xs:choice maxOccurs="unbounded">
+            <xs:element name="metadata-item" type="metadata-item"/>
+         </xs:choice>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="metadata-group">
+      <xs:annotation>
+         <xs:documentation>
+            <xd:section xmlns:xd="http://www.oecd.org/ns/schema/xdocs">
+               <xd:title>Categories</xd:title>
+               <xd:p>semantic</xd:p>
+            </xd:section>
+            <xd:section xmlns:xd="http://www.oecd.org/ns/schema/xdocs">
+               <xd:title>Definition</xd:title>
+            </xd:section>
+         </xs:documentation>
+      </xs:annotation>
+      <xs:sequence>
+         <xs:choice maxOccurs="unbounded">
+            <xs:element name="metadata-item" type="metadata-item"/>
+         </xs:choice>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="metadata-item">
+      <xs:annotation>
+         <xs:documentation>
+            <xd:section xmlns:xd="http://www.oecd.org/ns/schema/xdocs">
+               <xd:title>Categories</xd:title>
+               <xd:p>semantic</xd:p>
+            </xd:section>
+            <xd:section xmlns:xd="http://www.oecd.org/ns/schema/xdocs">
+               <xd:title>Definition</xd:title>
+            </xd:section>
+         </xs:documentation>
+      </xs:annotation>
+      <xs:sequence>
+         <xs:choice maxOccurs="unbounded"/>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="duration">
+      <xs:annotation>
+         <xs:documentation>
+            <xd:section xmlns:xd="http://www.oecd.org/ns/schema/xdocs">
+               <xd:title>Categories</xd:title>
+               <xd:p>semantic</xd:p>
+            </xd:section>
+            <xd:section xmlns:xd="http://www.oecd.org/ns/schema/xdocs">
+               <xd:title>Definition</xd:title>
+            </xd:section>
+         </xs:documentation>
+      </xs:annotation>
+      <xs:sequence>
+         <xs:choice maxOccurs="unbounded">
+            <xs:element name="metadata-item" type="metadata-item"/>
+         </xs:choice>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="schedule">
+      <xs:annotation>
+         <xs:documentation>
+            <xd:section xmlns:xd="http://www.oecd.org/ns/schema/xdocs">
+               <xd:title>Categories</xd:title>
+               <xd:p>semantic</xd:p>
+            </xd:section>
+            <xd:section xmlns:xd="http://www.oecd.org/ns/schema/xdocs">
+               <xd:title>Definition</xd:title>
+            </xd:section>
+         </xs:documentation>
+      </xs:annotation>
+      <xs:sequence>
+         <xs:choice maxOccurs="unbounded">
+            <xs:element name="metadata-item" type="metadata-item"/>
+         </xs:choice>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="agenda-item-type">
+      <xs:annotation>
+         <xs:documentation>
+            <xd:section xmlns:xd="http://www.oecd.org/ns/schema/xdocs">
+               <xd:title>Categories</xd:title>
+               <xd:p>semantic</xd:p>
+            </xd:section>
+            <xd:section xmlns:xd="http://www.oecd.org/ns/schema/xdocs">
+               <xd:title>Definition</xd:title>
+            </xd:section>
+         </xs:documentation>
+      </xs:annotation>
+      <xs:sequence>
+         <xs:choice maxOccurs="unbounded">
+            <xs:element name="metadata-item" type="metadata-item"/>
+         </xs:choice>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="foreign-content">
+      <xs:annotation>
+         <xs:documentation>
+            <xd:section xmlns:xd="http://www.oecd.org/ns/schema/xdocs">
+               <xd:title>Categories</xd:title>
+               <xd:p>semantic</xd:p>
+            </xd:section>
+            <xd:section xmlns:xd="http://www.oecd.org/ns/schema/xdocs">
+               <xd:title>Definition</xd:title>
+            </xd:section>
+         </xs:documentation>
+      </xs:annotation>
+      <xs:sequence>
+         <xs:choice maxOccurs="unbounded"/>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="linked-content">
+      <xs:annotation>
+         <xs:documentation>
+            <xd:section xmlns:xd="http://www.oecd.org/ns/schema/xdocs">
+               <xd:title>Categories</xd:title>
+               <xd:p>semantic</xd:p>
+            </xd:section>
+            <xd:section xmlns:xd="http://www.oecd.org/ns/schema/xdocs">
+               <xd:title>Definition</xd:title>
+            </xd:section>
+         </xs:documentation>
+      </xs:annotation>
+      <xs:sequence>
+         <xs:choice maxOccurs="unbounded"/>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="grp-nested-blocks">
+      <xs:annotation>
+         <xs:documentation>
+            <xd:section xmlns:xd="http://www.oecd.org/ns/schema/xdocs">
+               <xd:title>Categories</xd:title>
+               <xd:p/>
+            </xd:section>
+            <xd:section xmlns:xd="http://www.oecd.org/ns/schema/xdocs">
+               <xd:title>Definition</xd:title>
+            </xd:section>
+         </xs:documentation>
+      </xs:annotation>
+      <xs:sequence>
+         <xs:choice maxOccurs="unbounded">
+            <xs:element name="grp-simple-blocks" type="grp-simple-blocks"/>
+            <xs:element name="table" type="table"/>
+            <xs:element name="section" type="section"/>
+            <xs:element name="box" type="box"/>
+         </xs:choice>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="grp-para">
+      <xs:annotation>
+         <xs:documentation>
+            <xd:section xmlns:xd="http://www.oecd.org/ns/schema/xdocs">
+               <xd:title>Categories</xd:title>
+               <xd:p/>
+            </xd:section>
+            <xd:section xmlns:xd="http://www.oecd.org/ns/schema/xdocs">
+               <xd:title>Definition</xd:title>
+            </xd:section>
+         </xs:documentation>
+      </xs:annotation>
+      <xs:sequence>
+         <xs:choice maxOccurs="unbounded">
+            <xs:element name="title" type="title"/>
+            <xs:element name="simple-para" type="simple-para"/>
+         </xs:choice>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="grp-simple-blocks">
+      <xs:annotation>
+         <xs:documentation>
+            <xd:section xmlns:xd="http://www.oecd.org/ns/schema/xdocs">
+               <xd:title>Categories</xd:title>
+               <xd:p/>
+            </xd:section>
+            <xd:section xmlns:xd="http://www.oecd.org/ns/schema/xdocs">
+               <xd:title>Definition</xd:title>
+            </xd:section>
+         </xs:documentation>
+      </xs:annotation>
+      <xs:sequence>
+         <xs:choice maxOccurs="unbounded">
+            <xs:element name="simple-para" type="simple-para"/>
+            <xs:element name="ordered-list" type="ordered-list"/>
+            <xs:element name="itemized-list" type="itemized-list"/>
+            <xs:element name="figure" type="figure"/>
+            <xs:element name="graphic" type="graphic"/>
+            <xs:element name="extract" type="extract"/>
+         </xs:choice>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="grp-simple-inlines">
+      <xs:annotation>
+         <xs:documentation>
+            <xd:section xmlns:xd="http://www.oecd.org/ns/schema/xdocs">
+               <xd:title>Categories</xd:title>
+               <xd:p/>
+            </xd:section>
+            <xd:section xmlns:xd="http://www.oecd.org/ns/schema/xdocs">
+               <xd:title>Definition</xd:title>
+            </xd:section>
+         </xs:documentation>
+      </xs:annotation>
+      <xs:sequence>
+         <xs:choice maxOccurs="unbounded">
+            <xs:element name="chemical-formula" type="chemical-formula"/>
+            <xs:element name="equation" type="equation"/>
+            <xs:element name="semantic-tag" type="semantic-tag"/>
+            <xs:element name="formatting-tag" type="formatting-tag"/>
+            <xs:element name="index-term" type="index-term"/>
+            <xs:element name="footnote" type="footnote"/>
+            <xs:element name="citation" type="citation"/>
+            <xs:element name="link" type="link"/>
+         </xs:choice>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="agenda-item">
+      <xs:annotation>
+         <xs:documentation>
+            <xd:section xmlns:xd="http://www.oecd.org/ns/schema/xdocs">
+               <xd:title>Categories</xd:title>
+               <xd:p>semantic</xd:p>
+            </xd:section>
+            <xd:section xmlns:xd="http://www.oecd.org/ns/schema/xdocs">
+               <xd:title>Definition</xd:title>
+            </xd:section>
+         </xs:documentation>
+      </xs:annotation>
+      <xs:sequence>
+         <xs:choice maxOccurs="unbounded">
+            <xs:element name="agenda-item-metadata" type="agenda-item-metadata"/>
+            <xs:element name="title" type="title"/>
+            <xs:element name="simple-para" type="simple-para"/>
+            <xs:element name="document-list" type="document-list"/>
+         </xs:choice>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="agenda-item-metadata">
+      <xs:annotation>
+         <xs:documentation>
+            <xd:section xmlns:xd="http://www.oecd.org/ns/schema/xdocs">
+               <xd:title>Categories</xd:title>
+               <xd:p>semantic</xd:p>
+            </xd:section>
+            <xd:section xmlns:xd="http://www.oecd.org/ns/schema/xdocs">
+               <xd:title>Definition</xd:title>
+            </xd:section>
+         </xs:documentation>
+      </xs:annotation>
+      <xs:sequence>
+         <xs:choice maxOccurs="unbounded">
+            <xs:element name="duration" type="duration"/>
+            <xs:element name="agenda-item-type" type="agenda-item-type"/>
+            <xs:element name="metadata-group" type="metadata-group"/>
+         </xs:choice>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="agenda-session-metadata">
+      <xs:annotation>
+         <xs:documentation>
+            <xd:section xmlns:xd="http://www.oecd.org/ns/schema/xdocs">
+               <xd:title>Categories</xd:title>
+               <xd:p>semantic</xd:p>
+            </xd:section>
+            <xd:section xmlns:xd="http://www.oecd.org/ns/schema/xdocs">
+               <xd:title>Definition</xd:title>
+            </xd:section>
+         </xs:documentation>
+      </xs:annotation>
+      <xs:sequence>
+         <xs:choice maxOccurs="unbounded">
+            <xs:element name="agenda-item-type" type="agenda-item-type"/>
+            <xs:element name="schedule" type="schedule"/>
+            <xs:element name="duration" type="duration"/>
+            <xs:element name="metadata-group" type="metadata-group"/>
+         </xs:choice>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="agenda-session">
+      <xs:annotation>
+         <xs:documentation>
+            <xd:section xmlns:xd="http://www.oecd.org/ns/schema/xdocs">
+               <xd:title>Categories</xd:title>
+               <xd:p>semantic</xd:p>
+            </xd:section>
+            <xd:section xmlns:xd="http://www.oecd.org/ns/schema/xdocs">
+               <xd:title>Definition</xd:title>
+            </xd:section>
+         </xs:documentation>
+      </xs:annotation>
+      <xs:sequence>
+         <xs:choice maxOccurs="unbounded">
+            <xs:element name="title" type="title"/>
+            <xs:element name="agenda-session-metadata" type="agenda-session-metadata"/>
+            <xs:element name="agenda-item" type="agenda-item"/>
+         </xs:choice>
+      </xs:sequence>
+   </xs:complexType>
+</xs:schema>
