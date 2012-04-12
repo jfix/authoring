@@ -53,8 +53,6 @@
 <!ENTITY % statisticalannex "statisticalannex (true | false) 'false'" >
 
 <!-- 
-	NIC Model equivalent for abbrtitl element : ??
-	
     Container used to store the abbreviated title (text only). 
 -->
 <!ELEMENT abbrtitl (#PCDATA)>
@@ -65,10 +63,6 @@
 %id;>
 
 <!-- 
-	NIC Model equivalent for abstract element : ??
-	NIC Model equivalent for id attribute : ??
-	NIC Model equivalent for instlang attribute : ??
-	
     Container used to store the text converted from the Word style abstract. The text is a short description introducing the parent element listed above.  
 -->
 <!ELEMENT abstract ((p | citation | deflist | randlist | seqlist)+ | figure | tablegrp | textbox)*>
@@ -85,9 +79,6 @@
 %instlang;>
 
 <!--
-	NIC Model equivalent for acknowledgement element : ??
-	NIC Model equivalent for id attribute : ??
-	
     Container used to begin a acknoledgement section. It store the text converted from the Word style Acknowledgement Heading.<br>
     acknowledgement element can be used in the following sections:
         <ul><li>frontmatter</li>
@@ -99,8 +90,6 @@
 %id;>
 
 <!--
-	NIC Model equivalent for acronym element : ??
-	NIC Model equivalent for id attribute : ??
 	
     Container used to store the text of an acronym.
     acronym element is used in glossary-acronyms section.
@@ -118,12 +107,6 @@
 %id;>
 
 <!--
-	NIC Model equivalent for annex element : ??
-	NIC Model equivalent for id attribute : ??
-	NIC Model equivalent for label attribute : ??
-	NIC Model equivalent for number attribute : ??
-	NIC Model equivalent for numbering attribute : ??
-	
     Container used to begin a annex section. It store the text converted from the Word style Annex Heading.<br>
         annex element can be used in the following sections:
         <ul><li>backtmatter</li>
@@ -150,11 +133,6 @@ reference CDATA #IMPLIED
 >
 
 <!--
-	NIC Model equivalent for appendix element : ??
-	NIC Model equivalent for id attribute : ??
-	NIC Model equivalent for label attribute : ??
-	NIC Model equivalent for number attribute : ??
-	NIC Model equivalent for numbering attribute : ??
 	
     Container used to begin a appendix section. It store the text converted from the Word style Appendix Heading.<br>
         appendix element can be used in the following sections:
@@ -190,7 +168,6 @@ reference CDATA #IMPLIED
 <!ELEMENT arttitle (#PCDATA)>
 
 <!--
-	NIC Model equivalent for author element : ??
 	
     Container used to store the data of an author as following:<br>
     <ul><li>name</li>
@@ -202,15 +179,12 @@ reference CDATA #IMPLIED
 <!ELEMENT author (name, position?, telephone?, email?, fax?)>
 
 <!--
-	NIC Model equivalent for authorlist element : ??
 	
     Container introducing an author element. Converted from the Word style Author.
 -->
 <!ELEMENT authorlist (author+)>
 
 <!--
-	NIC Model equivalent for backmatter element : ??
-	NIC Model equivalent for instlang attribute : ??
 	
     The backmatter element is used to store all the elements at the end of a document, after the last part or chapter. For exemple, an annex in the backmatter is refering to the entire document. It can contains:<br>
     <ul><li>conclusion</li>
@@ -233,8 +207,6 @@ reference CDATA #IMPLIED
 %instlang;>
 
 <!--
-	NIC Model equivalent for bibinfo element : ??
-	NIC Model equivalent for id attribute : ??
 	
     The bibinfo element is used to store all the metadata of a document.
 -->
@@ -244,11 +216,6 @@ reference CDATA #IMPLIED
 type (agenda | mtg-sum | narr-doc) #IMPLIED>
 
 <!-- 
-	NIC Model equivalent for biblio element : ??
-	NIC Model equivalent for label attribute : ??
-	NIC Model equivalent for number attribute : ??
-	NIC Model equivalent for numbering attribute : ??
-	
     Container used to store the bibliographical data. Converted form Word style Bibliography Heading.
 -->
 <!ELEMENT biblio ((heading?, subheading*, section*, randlist*), (p | indvpub | instpub | oecd-doc | article | periodcl)*)>
@@ -271,8 +238,6 @@ format CDATA #IMPLIED
 capital (yes | no) "yes">
 
 <!--
-	NIC Model equivalent for body element : ??
-	
     The body element is used to store all the elements like parts and chapter of a document. Il can contains:<br>
     <ul><li>part</li>
     <li>chapter</li>
@@ -294,8 +259,6 @@ paranum CDATA "1">
 %id;>-->
 
 <!--
-	NIC Model equivalent for boxnote element : ??
-	NIC Model equivalent for id attribute : ??
 	
     Container used to store the notes of a text box. Converted from the Word style Box Note.
 -->
@@ -321,7 +284,6 @@ paranum CDATA "1">
 type (alpha | number | note | notes | .. | hyphen | e | n.a. | n.c. | n.d. | none | p | ast) "number">
 
 <!--
-	NIC Model equivalent for boxnoteref element : ??
 
     Cross-reference of a boxnote element.
 -->
@@ -337,12 +299,6 @@ type (alpha | number | note | notes | .. | hyphen | e | n.a. | n.c. | n.d. | non
  srcfile CDATA #IMPLIED>
 
 <!--
-	NIC Model equivalent for boxsection element : ??
-	NIC Model equivalent for id attribute : ??
-	NIC Model equivalent for label attribute : ??
-	NIC Model equivalent for number attribute : ??
-	NIC Model equivalent for numbering attribute : ??
-	NIC Model equivalent for instlang attribute : ??
 
     Container used to store the title(s) of a text box. Converted from Word style Box Heading, Box Heading 2, Box Heading 3. Three levels can be imbricated.
 -->
@@ -382,12 +338,7 @@ type (dist | olis) #REQUIRED>
 <!ELEMENT chapno (#PCDATA)>
 
 <!-- 
-	NIC Model equivalent for chapter element : ??
-	NIC Model equivalent for id attribute : ??
-	NIC Model equivalent for label attribute : ??
-	NIC Model equivalent for number attribute : ??
-	NIC Model equivalent for numbering attribute : ??
-	NIC Model equivalent for instlang attribute : ??
+
 
     Container used to begin a chapter section. Converted frow Word style Heading 1.
 -->
@@ -422,7 +373,6 @@ reference CDATA #IMPLIED
 >
 
 <!-- 
-	NIC Model equivalent for citation element : ??
 
     Container used to store a citation paragraph. Converted from Word style Citation.
 -->
@@ -434,14 +384,6 @@ reference CDATA #IMPLIED
 citationsource CDATA #IMPLIED>
 
 <!--
-	NIC Model equivalent for colspec element : ??
-	NIC Model equivalent for colnum attribute : ??
-	NIC Model equivalent for colname attribute : ??
-	NIC Model equivalent for align attribute : ??
-	NIC Model equivalent for char attribute : ??
-	NIC Model equivalent for colwidth attribute : ??
-	NIC Model equivalent for colsep attribute : ??
-	NIC Model equivalent for rowsep attribute : ??
 
     Element used to specify the columns specification of a table. 
 -->
@@ -477,8 +419,6 @@ citationsource CDATA #IMPLIED>
 <!ELEMENT committee (#PCDATA)>
 
 <!-- 
-	NIC Model equivalent for conclusion element : ??
-	NIC Model equivalent for id attribute : ??
 
     Container used to begin a conclusion section.
 -->
@@ -493,8 +433,6 @@ citationsource CDATA #IMPLIED>
 <!ELEMENT date (#PCDATA)>
 
 <!-- 
-	NIC Model equivalent for def element : ??
-
     container used in acronym definition.
 -->
 <!ELEMENT def (di+)>
@@ -506,8 +444,6 @@ citationsource CDATA #IMPLIED>
 <!ELEMENT destinat (#PCDATA)>
 
 <!--
-	NIC Model equivalent for di element : ??
-
     container used to store de definition of an acronym. Only p element is used in our documents.
 -->
 <!ELEMENT di (p | citation | deflist | randlist | seqlist)+>
@@ -528,7 +464,6 @@ citationsource CDATA #IMPLIED>
 <!ELEMENT dochist (p | citation | deflist | randlist | seqlist)+>
 
 <!-- 
-	NIC Model equivalent for doi element : ??
 
     Container used to store the doi of a document.
 -->
@@ -544,16 +479,13 @@ citationsource CDATA #IMPLIED>
 <!ELEMENT editor (#PCDATA)>
 
 <!--
-	NIC Model equivalent for email element : ??
+
 
     Container used to store the email of an author.
 -->
 <!ELEMENT email (#PCDATA)>
 
 <!--
-	NIC Model equivalent for emphasis element : ??
-	NIC Model equivalent for emph attribute : ??
-
     Inline element used to change the display of the text within emphasis tag. 
 -->
 <!ELEMENT emphasis (#PCDATA | indexword | specchar | noteref | note | boxnoteref | xref | shortcitation)*>
@@ -575,19 +507,6 @@ emph (bold | italic | bolditalic | underline | strikeout | smallcaps | caps | no
 <!ELEMENT enddate (#PCDATA)>
 
 <!--
-	NIC Model equivalent for entry element : ??
-	NIC Model equivalent for colname attribute : ??
-	NIC Model equivalent for namest attribute : ??
-	NIC Model equivalent for nameend attribute : ??
-	NIC Model equivalent for spanname attribute : ??
-	NIC Model equivalent for hspan attribute : ??
-	NIC Model equivalent for morerows attribute : ??
-	NIC Model equivalent for colsep attribute : ??
-	NIC Model equivalent for rowsep attribute : ??
-	NIC Model equivalent for valign attribute : ??
-	NIC Model equivalent for charoff attribute : ??
-	NIC Model equivalent for char attribute : ??
-
     Element used to define the cell of a table.
 -->
 <!ELEMENT entry (p | citation | deflist | randlist | seqlist)+>
@@ -632,9 +551,6 @@ position (0 | 0.5 | 1 | 1.5 | 2 | 2.5 | 3 | 3.5 | 4 | 4.5 | 5) #IMPLIED
 char CDATA #IMPLIED>
 
 <!--
-	NIC Model equivalent for equation element : ??
-	NIC Model equivalent for id attribute : ??
-
     Container used to store Word equation (Microsoft Equation 3.0 editor).
 -->
 <!ELEMENT equation (#PCDATA)>
@@ -648,9 +564,6 @@ graphic CDATA #IMPLIED
 %id;>
 
 <!--
-	NIC Model equivalent for execsumm element : ??
-	NIC Model equivalent for id attribute : ??
-
     Container used to begin a executive summary section. It store the text converted from the Word style Executive Summary Heading.<br>
     execsumm element can be used in frontmatter.
 -->
@@ -659,8 +572,6 @@ graphic CDATA #IMPLIED
 id ID #IMPLIED>
 
 <!--
-	NIC Model equivalent for fax element : ??
-
     Container used to store the fax number of an author.
 --><!ELEMENT fax (#PCDATA)>
 
@@ -670,10 +581,6 @@ id ID #IMPLIED>
 %id;>-->
 
 <!--
-	NIC Model equivalent for fignote element : ??
-	NIC Model equivalent for id attribute : ??
-	NIC Model equivalent for type attribute : ??
-
     Container used to store the notes of a figure. Converted from the Word style Figure Note.
 -->
 <!ELEMENT fignote (p | citation | deflist | randlist | seqlist)+>
@@ -698,8 +605,6 @@ id ID #IMPLIED>
 type (alpha | number | note | notes | .. | hyphen | e | n.a. | n.c. | n.d. | none | p | ast) "number">
 
 <!--
-	NIC Model equivalent for fignoteref element : ??
-
     Cross-reference of a fignote element.
 -->
 <!ELEMENT fignoteref EMPTY>
@@ -714,13 +619,6 @@ format CDATA #IMPLIED
 srcfile CDATA #IMPLIED>
 
 <!--
-	NIC Model equivalent for figure element : ??
-	NIC Model equivalent for id attribute : ??
-	NIC Model equivalent for instlang attribute : ??
-	NIC Model equivalent for label attribute : ??
-	NIC Model equivalent for number attribute : ??
-	NIC Model equivalent for numbering attribute : ??
-
     A figure defines the presentation of a picture in the text.
 -->
 <!ELEMENT figure (figureheading?, figuresubheading*, legend*, graphic?, (hyperlink | fignote | source | legend)*)>
@@ -763,16 +661,11 @@ reference CDATA #IMPLIED
 type (figure | chart | diagram | map) "figure">
 
 <!--
-	NIC Model equivalent for figureheading element : ??
-
     Container used to store the title of a figure. Converted from the Word style Figure Title.
 -->
 <!ELEMENT figureheading (figuremainhead, tochead?)>
 
 <!-- 
-	NIC Model equivalent for figuremainhead element : ??
-	NIC Model equivalent for id attribute : ??
-
     Container used to define the tile and subtitle of a figure. The text is stored in the figureheading and figuresubheading elements. 
 -->
 <!ELEMENT figuremainhead (#PCDATA | shortcitation | comment | emphasis | equation | specchar | indexword | fignoteref)*>
@@ -780,23 +673,16 @@ type (figure | chart | diagram | map) "figure">
 %id;>
 
 <!--
-	NIC Model equivalent for figuresubheading element : ??
-
     Container used to store the subtitle of a figure. Converted from the Word style Figure Sub-title.
 -->
 <!ELEMENT figuresubheading (figuremainhead, tochead?)>
 
 <!--
-	NIC Model equivalent for firstname element : ??
-
-    Container used to display the firstname of an author.
+   Container used to display the firstname of an author.
 -->
 <!ELEMENT firstname (#PCDATA)>
 
 <!--
-	NIC Model equivalent for fnote element : ??
-	NIC Model equivalent for id attribute : ??
-
     This element creates the notes at the bottom of the page of a document.
 -->
 <!ELEMENT fnote (p | citation | deflist | randlist | seqlist | tablegrp)+>
@@ -804,9 +690,6 @@ type (figure | chart | diagram | map) "figure">
 %id;>
 
 <!--
-	NIC Model equivalent for foreword element : ??
-	NIC Model equivalent for id attribute : ??
-
     Container used to begin a foreword section. It store the text converted from the Word style Foreword Heading.<br>
     foreword element can be used in the following sections:
         <ul><li>frontmatter</li>
@@ -817,9 +700,6 @@ type (figure | chart | diagram | map) "figure">
 %id;>
 
 <!--
-	NIC Model equivalent for frontmatter element : ??
-	NIC Model equivalent for instlang attribute : ??
-
     The frontmatter element is used to store all the elements at the beginning of a document, before the first part or chapter. It can contains:<br>
     <ul><li>bibinfo</li>
     <li>authorlist</li>
@@ -844,12 +724,6 @@ type (figure | chart | diagram | map) "figure">
 %instlang;>
 
 <!--
-	NIC Model equivalent for glossary-acronyms element : ??
-	NIC Model equivalent for id attribute : ??
-	NIC Model equivalent for label attribute : ??
-	NIC Model equivalent for number attribute : ??
-	NIC Model equivalent for numbering attribute : ??
-
     Container used to begin a glossary section. It store the text converted from the Word style Glossary Heading.<br>
 -->
 <!ELEMENT glossary-acronyms ((heading?, subheading*), ((acronym | (term, acronym?)), gov-ref?, def)+)>
@@ -868,9 +742,6 @@ numbering (y | n) "n">
 <!ELEMENT gov-ref (#PCDATA)>
 
 <!--
-	NIC Model equivalent for graphic element : ??
-	NIC Model equivalent for id attribute : ??
-
     The graphic that has to be display.
 -->
 <!ELEMENT graphic EMPTY>
@@ -884,8 +755,6 @@ id ID #IMPLIED
 type (equation | graphic) "graphic">
 
 <!--
-	NIC Model equivalent for heading element : ??
-
     Container used to store the text of the different heading element listed above.
 -->
 <!ELEMENT heading (mainhead, tochead?)>
@@ -897,10 +766,6 @@ type (equation | graphic) "graphic">
 <!ELEMENT hosttitl (#PCDATA)>
 
 <!--
-	NIC Model equivalent for hyperlink element : ??
-	NIC Model equivalent for url attribute : ??
-	NIC Model equivalent for target attribute : ??
-
     Container used to store the internal or external reference to a document. 
 -->
 <!ELEMENT hyperlink (#PCDATA | specchar)*>
@@ -916,9 +781,6 @@ url CDATA #REQUIRED
 target (webpage | statlink | document) "webpage">
 
 <!--
-	NIC Model equivalent for indexword element : ??
-	NIC Model equivalent for id attribute : ??
-	NIC Model equivalent for text attribute : ??
 
     Some keywords "defining" the document. Used by search engines to build their index.
 -->
@@ -951,8 +813,6 @@ text CDATA #IMPLIED>
 %id;>
 
 <!--
-	NIC Model equivalent for introduction element : ??
-
     Container used to begin a introduction section. It store the text converted from the Word style Introduction Heading.<br>
     introduction element can be used in the following sections:
         <ul><li>frontmatter</li>
@@ -961,15 +821,11 @@ text CDATA #IMPLIED>
 <!ELEMENT introduction ((heading?, subheading*), authorlist?, highlight?, abstract?, ((p | citation | deflist | randlist | seqlist)+ | figure | tablegrp | textbox)*, section*, chapconcl?)>
 
 <!--
-	NIC Model equivalent for isbn element : ??
-
     Container used to store the ISBN data. 
 -->
 <!ELEMENT isbn (#PCDATA)>
 
 <!--
-	NIC Model equivalent for issn element : ??
-
     Container used to store the ISSN data. 
 -->
 <!ELEMENT issn (#PCDATA)>
@@ -993,9 +849,6 @@ oecdcode CDATA #REQUIRED>
 <!ELEMENT keyword (#PCDATA)>
 
 <!--
-	NIC Model equivalent for langinfo element : ??
-	NIC Model equivalent for origlang attribute : ??
-	NIC Model equivalent for instlang attribute : ??
 
     Container used to store the language of a document.
 -->
@@ -1022,9 +875,6 @@ instlang (i-eng | i-fr | i-de | i-bi-ling | i-other) #REQUIRED>
 <!ELEMENT legend (deflist | p+)>
 
 <!-- 
-	NIC Model equivalent for li element : ??
-	NIC Model equivalent for id attribute : ??
-
     Container used to store the text to be displayed in a list. Converted from possible Word style:
     <ul><li>List Bullet for a bulleted list</li>
     <li>List Number for a numbered list</li>
@@ -1053,9 +903,6 @@ numbering (y | n) "n">
 <!ELEMENT location (#PCDATA)>
 
 <!--
-	NIC Model equivalent for mainhead element : ??
-	NIC Model equivalent for id attribute : ??
-
     Container used to store the text of the titles to be displayed.
 -->
 <!ELEMENT mainhead (#PCDATA | bibref | boxnoteref | comment | emphasis | equation | indexword | note | noteref | shortcitation | specchar | xref | fnote | graphic | hyperlink)*>
@@ -1071,15 +918,11 @@ numbering (y | n) "n">
 <!ELEMENT mtginfo (p | citation | deflist | randlist | seqlist)+>
 
 <!-- 
-	NIC Model equivalent for name element : ??
-
     Container used to store firstname and surname of an author.
 -->
 <!ELEMENT name (title?, firstname, surname)>
 
 <!--
-	NIC Model equivalent for narr-doc element : ??
-
     The narr-doc element is the root element of the document.
 -->
 <!ELEMENT narr-doc (frontmatter?, body?, backmatter?)>
@@ -1111,9 +954,6 @@ sectioning (book | chapter | part) "chapter"
 <!ELEMENT no-vols (#PCDATA)>
 
 <!-- 
-	NIC Model equivalent for note element : ??
-	NIC Model equivalent for id attribute : ??
-
     Container used to store the notes of the document.
 -->
 <!ELEMENT note (p | citation | deflist | randlist | seqlist | tablegrp)+>
@@ -1121,8 +961,6 @@ sectioning (book | chapter | part) "chapter"
 %id;>
 
 <!--
-	NIC Model equivalent for noteref element : ??
-
     Cross-reference of a note element.
 -->
 <!ELEMENT noteref EMPTY>
@@ -1155,11 +993,6 @@ type (full | partial | unavail | complete) #REQUIRED>-->
 type (secretar | chairman | delegatn | consult | extbody | secgen | other) "secretar">
 
 <!-- 
-	NIC Model equivalent for p element : ??
-	NIC Model equivalent for id attribute : ??
-	NIC Model equivalent for instlang attribute : ??
-	NIC Model equivalent for indent attribute : ??
-
     Container used to store the text of all the elements that are not heading. For exemple, p can be parent of li (list), entry (cell), ... 
 -->
 <!ELEMENT p (#PCDATA | bibref | boxnoteref | comment | emphasis | equation | fnote | graphic | hyperlink | indexword | note | noteref | shortcitation | specchar | tabnoteref | xref)*>
@@ -1188,12 +1021,6 @@ numbering (y | n) "n">
 <!ELEMENT pararef (#PCDATA)>
 
 <!-- 
-	NIC Model equivalent for part element : ??
-	NIC Model equivalent for id attribute : ??
-	NIC Model equivalent for label attribute : ??
-	NIC Model equivalent for number attribute : ??
-	NIC Model equivalent for numbering attribute : ??
-
     Container used to begin a part section. Converted frow Word style Part Heading.
 -->
 <!ELEMENT part (bibinfo?, (heading?, subheading*), authorlist?, foreword?, acknowledgement?, highlight?, abstract?, introduction?, chapter+, conclusion?, glossary-acronyms?, biblio?, appendix*, annex*, info?)>
@@ -1235,15 +1062,11 @@ id ID #IMPLIED>
 <!ELEMENT pgnos (#PCDATA)>
 
 <!--
-	NIC Model equivalent for position element : ??
-
     Container used to display the position of an author.
 -->
 <!ELEMENT position (#PCDATA)>
 
 <!--
-	NIC Model equivalent for preface element : ??
-	NIC Model equivalent for id attribute : ??
 
     Container used to begin a preface section.<br>
     preface element can be used in the frontmatter element
@@ -1265,9 +1088,6 @@ id ID #IMPLIED>
 <!ELEMENT quote (p | citation | deflist | randlist | seqlist)+>
 
 <!-- 
-	NIC Model equivalent for randlist element : ??
-	NIC Model equivalent for type attribute : ??
-
     Element used to define a random list (for exemple, bulleted list). 
 -->
 <!ELEMENT randlist (li+)>
@@ -1281,9 +1101,6 @@ id ID #IMPLIED>
 type (bullet | hyphen | zapf) "bullet">
 
 <!-- 
-	NIC Model equivalent for row element : ??
-	NIC Model equivalent for rowsep attribute : ??
-
     Container used for all the cells in a table row.
 -->
 <!ELEMENT row (entry+)>
@@ -1297,38 +1114,26 @@ type (bullet | hyphen | zapf) "bullet">
 <!ELEMENT secrespn (#PCDATA)>
 
 <!-- 
-	NIC Model equivalent for section element : ??
-	NIC Model equivalent for id attribute : ??
-	NIC Model equivalent for label attribute : ??
-	NIC Model equivalent for number attribute : ??
-	NIC Model equivalent for numbering attribute : ??
 
     Container used to store the subtitles in chapter, for exemple.
-    NIC Model equivalent : ??
 
 -->
 <!ELEMENT section (bibinfo?, (heading?, subheading*), highlight?, abstract?, ((p | citation | deflist | randlist | seqlist)+ | quote | figure | tablegrp | textbox | section | biblio)*)>
 <!--
     @attr label is used to store the numbering to be displayed.
-    NIC Model equivalent : ??
 
     @attr number is used to store the numbering to be displayed.
-    NIC Model equivalent : ??
 
     @attr numbering is used to activate the numbering. Possible values are <i>y</i> (yes) or <i>n</i> (no).
-    NIC Model equivalent : ??
 
     @attr content. Possible values are:
     <ul><li>default</li>
     <li>indicator</li></ul>
     @attr geocontainer is requested for metadata loader. Possible values are <i>false</i> or <i>true</i>.
-    NIC Model equivalent : ??
 
     @attr statisticalannex is requested for metadata loader. Possible values are <i>false</i> or <i>true</i>.
-    NIC Model equivalent : ??
 
     @attr metadatatype is requested for metadata loader to re-define the section as a section. The value is <i>section</i>.
-    NIC Model equivalent : ??
 
 
 -->
@@ -1344,8 +1149,6 @@ content (default | indicator) "default"
 >
 
 <!--
-	NIC Model equivalent for seqlist element : ??
-	NIC Model equivalent for type attribute : ??
 
     Element used to define a sequantial list (for exemple, numbered list). 
 -->
@@ -1369,7 +1172,6 @@ type (arabic | lalpha | ualpha | lroman | uroman | hardcoded) "arabic">
 <!ELEMENT sertitle (#PCDATA)>
 
 <!--
-	NIC Model equivalent for shortcitation element : ??
 
     container used to store the text to be displayed between quotes.
 -->
@@ -1383,8 +1185,6 @@ citationsource CDATA #IMPLIED>
 size CDATA #IMPLIED>-->
 
 <!-- 
-	NIC Model equivalent for source element : ??
-
     Container used to store the text of the source for the box, figure and table. 
 -->
 <!ELEMENT source (p | citation | deflist | randlist | seqlist)+>
@@ -1397,14 +1197,6 @@ size CDATA #IMPLIED>-->
 type (sing | plu) "sing">
 
 <!--
-	NIC Model equivalent for spanspec element : ??
-	NIC Model equivalent for spanname attribute : ??
-	NIC Model equivalent for namest attribute : ??
-	NIC Model equivalent for nameend attribute : ??
-	NIC Model equivalent for align attribute : ??
-	NIC Model equivalent for colsep attribute : ??
-	NIC Model equivalent for rowsep attribute : ??
-
     The span element defines each rowspan in the table and assigns it a name and which columns it spans.
 -->
 <!ELEMENT spanspec EMPTY>
@@ -1435,9 +1227,6 @@ rowsep CDATA #IMPLIED
 >
 
 <!--
-	NIC Model equivalent for specchar element : ??
-	NIC Model equivalent for font attribute : ??
-	NIC Model equivalent for position attribute : ??
 
     Inline element used to change the display of the text within specchar tag. 
 -->
@@ -1464,7 +1253,6 @@ position (sup | sub | regular) "regular">
 <!ELEMENT strtdate (#PCDATA)>
 
 <!--
-	NIC Model equivalent for subheading element : ??
 
     Container used to store the text of the different heading element listed above.
 -->
@@ -1474,17 +1262,11 @@ position (sup | sub | regular) "regular">
 <!ELEMENT subtitle (#PCDATA)>
 
 <!-- 
-	NIC Model equivalent for surname element : ??
-
     Container used to display the surname of an author.
 -->
 <!ELEMENT surname (#PCDATA)>
 
 <!--
-	NIC Model equivalent for table element : ??
-	NIC Model equivalent for colsep attribute : ??
-	NIC Model equivalent for rowsep attribute : ??
-
     Element that identifies a table.
 -->
 <!ELEMENT table (tgroup+)>
@@ -1510,13 +1292,6 @@ pgwide CDATA #IMPLIED
 >
 
 <!--
-	NIC Model equivalent for tablegrp element : ??
-	NIC Model equivalent for id attribute : ??
-	NIC Model equivalent for instlang attribute : ??
-	NIC Model equivalent for label attribute : ??
-	NIC Model equivalent for number attribute : ??
-	NIC Model equivalent for numbering attribute : ??
-
     Container used to store the heading and subheading of a table.
 -->
 <!ELEMENT tablegrp (tableheading?, tablesubheading*, (table | graphic)*, (hyperlink | tabnote | source)*)>
@@ -1549,16 +1324,11 @@ reference CDATA #IMPLIED
 dynamic-graph (y | n) #IMPLIED>
 
 <!--
-	NIC Model equivalent for tableheading element : ??
-
     container used to store the heading of a table.
 -->
 <!ELEMENT tableheading (tablemainhead, tochead?)>
 
 <!-- 
-	NIC Model equivalent for tablemainhead element : ??
-	NIC Model equivalent for id attribute : ??
-
     Container used to display the text of a table heading or table subheading.
 -->
 <!ELEMENT tablemainhead (#PCDATA | shortcitation | comment | emphasis | equation | specchar | indexword | tabnoteref)*>
@@ -1566,8 +1336,6 @@ dynamic-graph (y | n) #IMPLIED>
 %id;>
 
 <!--
-	NIC Model equivalent for tablesubheading element : ??
-
     container used to store the subheading of a table.
 -->
 <!ELEMENT tablesubheading (tablemainhead, tochead?)>
@@ -1578,11 +1346,7 @@ dynamic-graph (y | n) #IMPLIED>
 id ID #IMPLIED>-->
 
 <!--
-	NIC Model equivalent for tabnote element : ??
-	NIC Model equivalent for id attribute : ??
-	NIC Model equivalent for type attribute : ??
-
-    Container used to store the notes of a table. Converted from the Word style Table Note.
+   Container used to store the notes of a table. Converted from the Word style Table Note.
 -->
 <!ELEMENT tabnote (p | citation | deflist | randlist | seqlist)+>
 <!--
@@ -1606,8 +1370,6 @@ id ID #IMPLIED>-->
 type (alpha | number | note | notes | .. | hyphen | e | n.a. | n.c. | n.d. | none | p | ast) "number">
 
 <!--
-	NIC Model equivalent for tabnoteref element : ??
-
     Cross-reference of a tabnote element.
 -->
 <!ELEMENT tabnoteref EMPTY>
@@ -1622,8 +1384,6 @@ format CDATA #IMPLIED
 srcfile CDATA #IMPLIED>
 
 <!--
-	NIC Model equivalent for tbody element : ??
-
     Element that identifies the body of a tgroup. 
 -->
 <!ELEMENT tbody (row+)>
@@ -1637,23 +1397,16 @@ srcfile CDATA #IMPLIED>
 valign (top | middle | bottom) "top">
 
 <!--
-	NIC Model equivalent for telephone element : ??
-
     Container used to display the telephone of an author.
 -->
 <!ELEMENT telephone (#PCDATA)>
 
 <!-- 
-	NIC Model equivalent for term element : ??
-
     Container used to store the term of a glossary.
 -->
 <!ELEMENT term (p | citation | deflist | randlist | seqlist)+>
 
 <!-- 
-	NIC Model equivalent for textbox element : ??
-	NIC Model equivalent for id attribute : ??
-
    Container used to begin a box section. It store the text converted from the Word style box Heading.<br>
 -->
 <!ELEMENT textbox (boxsection)>
@@ -1661,17 +1414,6 @@ valign (top | middle | bottom) "top">
 %id;>
 
 <!--
-	NIC Model equivalent for tgroup element : ??
-	NIC Model equivalent for align attribute : ??
-	NIC Model equivalent for cols attribute : ??
-	NIC Model equivalent for colsep attribute : ??
-	NIC Model equivalent for rowsep attribute : ??
-	NIC Model equivalent for char attribute : ??
-	NIC Model equivalent for type attribute : ??
-	NIC Model equivalent for label attribute : ??
-	NIC Model equivalent for number attribute : ??
-	NIC Model equivalent for numbering attribute : ??
-
     Each tgroup effectively identifies a new portion of a table.
 -->
 <!ELEMENT tgroup (colspec*, spanspec*, thead?, tbody)>
@@ -1704,8 +1446,6 @@ reference CDATA #IMPLIED
 numbering (y | n) "n">
 
 <!--
-	NIC Model equivalent for thead element : ??
-
     Container that identifies the heading row of a tgroup. 
 -->
 <!ELEMENT thead (colspec*, row+)>
@@ -1737,8 +1477,6 @@ valign (top | middle | bottom) #IMPLIED>
 <!ELEMENT work-id (#PCDATA)>
 
 <!--
-	NIC Model equivalent for xref element : ??
-
     Inline element used to display the text of an internal reference. 
 -->
 <!ELEMENT xref EMPTY>
