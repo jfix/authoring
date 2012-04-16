@@ -36,7 +36,16 @@
                                     Gibson</personname></author>
                             <revremark>Added annotations attribute to lists and list
                                 items. Restructured definition list to make it useable for glossaries too.</revremark>
-                        </revision> </revhistory>
+                        </revision> 
+                    
+                        <revision>
+                            <revnumber>5</revnumber>
+                            <date>2012-04-16</date>
+                            <authorinitials>NG</authorinitials>
+                            <revremark>Removed accidental mixed content models.</revremark>
+                        </revision>
+                    
+                    </revhistory>
                     <para>This model defines lists of various types</para>
                 </section>
             </section></xs:documentation>
@@ -290,7 +299,7 @@
         </xs:sequence>
     </xs:group>
 
-    <xs:complexType name="oecdDefinitionListTermType" mixed="true" id="oecdDefinitionListTermType">
+    <xs:complexType name="oecdDefinitionListTermType"  id="oecdDefinitionListTermType">
         <xs:annotation>
             <xs:documentation>
                 <section xmlns="http://docbook.org/ns/docbook">
@@ -330,7 +339,7 @@
         </xs:sequence>
     </xs:group>
 
-    <xs:complexType name="oecdDefinitionListDefinitionType" mixed="true"
+    <xs:complexType name="oecdDefinitionListDefinitionType" 
         id="oecdDefinitionListDefinitionType">
         <xs:annotation>
             <xs:documentation>
@@ -372,7 +381,7 @@
         </xs:sequence>
     </xs:group>
 
-    <xs:complexType name="oecdDefinitionListItemType" mixed="true" id="oecdDefinitionListItemType">
+    <xs:complexType name="oecdDefinitionListItemType"  id="oecdDefinitionListItemType">
         <xs:annotation>
             <xs:documentation>
                 <section xmlns="http://docbook.org/ns/docbook">
@@ -414,7 +423,7 @@
         </xs:sequence>
     </xs:group>
 
-    <xs:complexType name="oecdDefinitionListType" mixed="true" id="oecdDefinitionListType">
+    <xs:complexType name="oecdDefinitionListType"  id="oecdDefinitionListType">
         <xs:annotation>
             <xs:documentation>
                 <section xmlns="http://docbook.org/ns/docbook">
