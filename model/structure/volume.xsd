@@ -14,6 +14,13 @@
                             Gibson</personname></author>
                         <revremark>Initial Version</revremark>
                     </revision>
+                    <revision>
+                        <revnumber>2</revnumber>
+                        <date>2012-04-16</date>
+                        <author><email>nicg@corbas.co.uk</email><personname>Nic
+                            Gibson</personname></author>
+                        <revremark>Added missing global element</revremark>
+                    </revision>
                     <para>A volume is a publishing structural element. A volume contains multiple
                         parts of multiple documents. Volumes may stand alone. </para>
                 </revhistory>
@@ -24,10 +31,10 @@
     <!-- IMPORTS AND INCLUDES -->
     
     <xs:include schemaLocation="part.xsd"/>
-    <xs:include schemaLocation="volume.xsd"/>
     <xs:include schemaLocation="../components/document-meta.xsd"/>
     
     <!-- GLOBAL ELEMENTS -->
+    <xs:element name="volume" type="oecdVolumeType"/>
     
     <!-- GLOBAL GROUPS -->
     
