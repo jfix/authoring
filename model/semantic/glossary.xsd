@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?><xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:mods="http://www.loc.gov/mods/v3" elementFormDefault="qualified">
+
+    <xs:annotation>
+        <xs:documentation><section xmlns="http://docbook.org/ns/docbook">
+                <title>OECD Schemas</title>
+                <subtitle>Glossary Components</subtitle>
+                <revhistory>
+                    <title>Change Log</title> <revision>
+                        <revnumber>1</revnumber>
+                        <date>2012-04-13</date>
+                        <author><email>nicg@corbas.co.uk</email><personname>Nic
+                            Gibson</personname></author>
+                        <revremark>Initial Version</revremark>
+                    </revision> </revhistory>
+            
+            <para>A glossary is virtually identical in structure to a definition list and uses
+            elements from it.</para>
+            </section></xs:documentation>
+    </xs:annotation>
+
+    <!-- IMPORTS AND INCLUDES -->
+    <xs:include schemaLocation="../components/lists.xsd"/>
+    
+    <!-- GLOBAL ELEMENTS -->
+    <xs:element name='glossary' type="oecdGlossary"/>
+    
+    <!-- COMPLEX TYPES -->
+    
+    <xs:attributeGroup name="oecdGlossaryItemTypeAttributes"
+        id="oecdGlossaryItemTypeAttributes">
+        <xs:annotation>
+            <xs:documentation>
+                <section xmlns="http://docbook.org/ns/docbook">
+                    <para>Attributes for entries is a glossary.</para>
+                </section>
+            </xs:documentation>
+        </xs:annotation>
+        <xs:attributeGroup ref="oecdCommonAttributes"/>
+        <xs:attributeGroup ref="oecdLinkingAttributes"/>
+        <xs:attribute ref="annotations"/>
+    </xs:attributeGroup>
+    
+    <xs:group name="oecdGlossaryItemTypeContent" id="oecdGlossaryItemTypeContent">
+        <xs:annotation>
+            <xs:documentation>
+                <section xmlns="http://docbook.org/ns/docbook">
+                    <para>Content for entries in glossaries.</para>
+                </section>
+            </xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+            <xs:element ref="metadata" minOccurs="0"/>
+            <xs:element name="term" type="oecdDefinitionListTermType"/>
+            <xs:element name="definition" type="oecdDefinitionListDefinitionType"/>
+        </xs:sequence>
+    </xs:group>
+    
+    <xs:complexType name="oecdGlossaryItemType"  id="oecdGlossaryItemType">
+        <xs:annotation>
+            <xs:documentation>
+                <section xmlns="http://docbook.org/ns/docbook">
+                    <para>A term/definition pair in a definition list.</para>
+                </section>
+            </xs:documentation>
+        </xs:annotation>
+        <xs:group ref="oecdGlossaryItemTypeContent"/>
+        <xs:attributeGroup ref="oecdGlossaryItemTypeAttributes"/>
+    </xs:complexType>
+    
+    
+    <xs:attributeGroup name="oecdGlossaryAttributes" id="oecdGlossaryAttributes">
+        <xs:annotation>
+            <xs:documentation>
+                <section xmlns="http://docbook.org/ns/docbook">
+                    <para>Attributes for definition lists.</para>
+                </section>
+            </xs:documentation>
+        </xs:annotation>
+        <xs:attributeGroup ref="oecdCommonAttributes"/>
+        <xs:attributeGroup ref="oecdLinkingAttributes"/>
+        <xs:attribute ref="annotations"/>
+    </xs:attributeGroup>
+    
+    <xs:group name="oecdGlossaryContent" id="oecdGlossaryContent">
+        <xs:annotation>
+            <xs:documentation>
+                <section xmlns="http://docbook.org/ns/docbook">
+                    <para>Content for definition lists.</para>
+                </section>
+            </xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+            <xs:element ref="metadata" minOccurs="0"/>
+            <xs:group ref="oecdTitleGroup" minOccurs="0"/>
+            <xs:element name="glossItem" type="oecdGlossaryItemType" maxOccurs="unbounded"/>
+            <xs:element ref="notes" minOccurs="0"/>
+        </xs:sequence>
+    </xs:group>
+    
+    <xs:complexType name="oecdGlossary"  id="oecdGlossary">
+        <xs:annotation>
+            <xs:documentation>
+                <section xmlns="http://docbook.org/ns/docbook">
+                    <para>Glossaries consist of pairs of terms and definitions. The
+                        definitions are marked up using a term and a list item contained in a
+                        glossary item. They are basically the same as a definition list with 
+                    a different structural role.</para>
+                </section>
+            </xs:documentation>
+        </xs:annotation>
+        <xs:group ref="oecdGlossaryContent"/>
+        <xs:attributeGroup ref="oecdGlossaryAttributes"/>
+    </xs:complexType>
+    
+</xs:schema>
