@@ -20,6 +20,14 @@
                     <author><email>nicg@corbas.co.uk</email><personname>Nic Gibson</personname></author>
                     <revremark>Modified oecdChemicalStructureTypeContent to replace 'oecdInline' with 'text'.</revremark>
                 </revision>
+                
+                <revision>
+                    <revnumber>3</revnumber>
+                    <date>2012-04-15</date>
+                    <author><email>nicg@corbas.co.uk</email><personname>Nic Gibson</personname></author>
+                    <revremark>Created oecdBlockChemicalStructureType derived from oecdChemicalStructureType in order
+                    to add annotations as it only makes sense to annotate blocks.</revremark>
+                </revision>
             </revhistory>
         </section></xs:documentation>
         
@@ -36,7 +44,7 @@
 
     <!-- GLOBAL ELEMENTS -->
     <xs:element name="inlineChemicalStructure" type="oecdChemicalStructureType" id="inlineChemicalStructure"/>
-    <xs:element name="chemicalStructure" type="oecdChemicalStructureType" id="chemicalStructure"/>
+    <xs:element name="chemicalStructure" type="oecdBlockChemicalStructureType" id="chemicalStructure"/>
     
     <!-- COMPLEX TYPES -->
 
@@ -50,6 +58,23 @@
             </xs:documentation>
         </xs:annotation>
         <xs:attributeGroup ref="oecdCommonAttributes"/>
+    </xs:attributeGroup>
+    
+    <xs:attributeGroup name="oecdBlockChemicalStructureTypeAttributes" id="oecdBlockChemicalStructureTypeAttributes">
+        <xs:annotation>
+            <xs:documentation>
+                <section xmlns="http://docbook.org/ns/docbook">
+                    <revision>
+                        <revnumber>3</revnumber>
+                        <date>2012-04-15</date>
+                        <author><email>nicg@corbas.co.uk</email><personname>Nic Gibson</personname></author>
+                        <revremark>Initial version.</revremark>
+                    </revision>
+                    <para>Attributes for block chemical structures. Grouped to allow easy override.</para>
+                </section>
+            </xs:documentation>
+        </xs:annotation>
+        <xs:attribute ref="annotations"/>
     </xs:attributeGroup>
     
     <xs:group name="oecdChemicalStructureTypeContent" id="oecdChemicalStructureTypeContent">
@@ -84,6 +109,27 @@
         </xs:annotation>
         <xs:group ref="oecdChemicalStructureTypeContent"/>
         <xs:attributeGroup ref="oecdChemicalStructureTypeAttributes"/>       
+    </xs:complexType>
+    
+    <xs:complexType name="oecdBlockChemicalStructureType" id="oecdBlockChemicalStructureType">
+        <xs:annotation>
+            <xs:documentation>
+                <section xmlns="http://docbook.org/ns/docbook">
+                    <revision>
+                        <revnumber>3</revnumber>
+                        <date>2012-04-15</date>
+                        <author><email>nicg@corbas.co.uk</email><personname>Nic Gibson</personname></author>
+                        <revremark>Initial version.</revremark>
+                    </revision>
+                    <para>Block checmical structures may have annotations unlike inlines.</para>
+                </section>
+            </xs:documentation>
+        </xs:annotation>
+        <xs:complexContent>
+            <xs:extension base="oecdChemicalStructureType">
+                <xs:attributeGroup ref="oecdBlockChemicalStructureTypeAttributes"/>
+            </xs:extension>
+        </xs:complexContent>
     </xs:complexType>
     
 

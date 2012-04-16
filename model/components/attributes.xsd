@@ -18,8 +18,16 @@
                     <revision>
                         <revnumber>2</revnumber>
                         <date>2012-03-29</date>
+                        <authorinitials>NG</authorinitials>
                         <revremark>Added <link linkend="label">label</link> attribute, inserted it into <link linkend="oecdCommonAttributes">commonAttributes</link></revremark>
                     </revision>
+
+                <revision>
+                    <revnumber>3</revnumber>
+                    <date>2012-04-13</date>
+                    <authorinitials>NG</authorinitials>
+                    <revremark>Added <link linkend="annotations">annotations</link> attribute.</revremark>
+                </revision>
                 
             </revhistory>
         </section></xs:documentation>
@@ -181,6 +189,23 @@
                 </section>
             </xs:documentation>            
         </xs:annotation>              
+    </xs:attribute>
+    
+    <xs:attribute name="annotations" type="xs:IDREFS" id="annotations">
+        <xs:annotation>
+            <xs:documentation>
+                <section xmlns="http://docbook.org/ns/docbook">
+                    <revision>
+                        <revnumber>3</revnumber>
+                        <date>2011-12-29</date>
+                        <author><email>nicg@corbas.co.uk</email><personname>Nic Gibson</personname></author>
+                        <revremark>Initial Version</revremark>
+                    </revision>
+                    <para>Annotations attribute. This contains a space separated list of the ids of annotation
+                        elements which apply to the current element.</para>
+                </section>
+            </xs:documentation>     
+        </xs:annotation>            
     </xs:attribute>
 
 </xs:schema>

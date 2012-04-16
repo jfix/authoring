@@ -1,5 +1,4 @@
 <?xml version="1.0" encoding="UTF-8"?><xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
-    
     <xs:annotation>
         <xs:documentation><section xmlns="http://docbook.org/ns/docbook">
             <title>OECD Schemas</title>
@@ -15,6 +14,7 @@
                         <author><email>nicg@corbas.co.uk</email><personname>Nic Gibson</personname></author>
                         <revremark>Initial Version</revremark>
                     </revision>
+                
                     <revision>
                         <revnumber>2</revnumber>
                         <date>2012-03-21</date>
@@ -23,13 +23,19 @@
                             <listitem><para>Upated base type to current standards.</para></listitem>
                         </itemizedlist></revdescription>
                     </revision>
+
                 <revision>
                     <revnumber>3</revnumber>
                     <date>2012-03-30</date>
-                    <author><email>nicg@corbas.co.uk</email><personname>Nic Gibson</personname></author>
+                    <author><email>nicg@coras.co.uk</email><personname>Nic Gibson</personname></author>
                     <revremark>Added the oecdTexType and 'text' element. </revremark>
                 </revision>
-                
+                <revision>
+                    <revnumber>4</revnumber>
+                    <date>2012-04-15</date>
+                    <authorinitials>NG</authorinitials>
+                    <revremark>Added sub, sup. phrase and quote and completed footnote</revremark>
+                </revision>
             </revhistory>
             
             <para>Note: the inline graphic component is defined in graphics.</para>
@@ -52,6 +58,9 @@
     <xs:element name="emphasis" type="oecdEmphasisType" substitutionGroup="oecdInline" id="emphasis"/>
     <xs:element name="footnote" type="oecdFootnoteType" id="footnote"/>
     <xs:element name="text" type="oecdTextType" id="text"/>
+    <xs:element name="sub" type="oecdSubscriptType"/>
+    <xs:element name="sup" type="oecdSuperscriptType"/>
+    <xs:element name="quote" type="oecdQuoteType"/>
           
     <!-- COMPLEX TYPES -->
     
@@ -118,6 +127,107 @@
         </xs:complexContent>
     </xs:complexType>
     
+    <!-- superscript -->
+    <xs:attributeGroup name="oecdSuperscriptTypeAttributes" id="oecdSuperScriptTypeAttributes">
+        <xs:annotation>
+            <xs:documentation>
+                <section xmlns="http://docbook.org/ns/docbook">
+                    <para>Superscript type attributes grouped for easy override and reuse.</para>
+                </section>
+            </xs:documentation>
+        </xs:annotation>
+    </xs:attributeGroup>
+    
+    <xs:complexType name="oecdSuperscriptType" mixed="true" id="oecdSuperscriptType">
+        <xs:annotation>
+            <xs:documentation>
+                <div xmlns="http://docbook.org/ns/docbook">
+                    <revision>
+                        <revnumber>4</revnumber>
+                        <date>2012-04-15</date>
+                        <authorinitials>NG</authorinitials>
+                        <revremark>Initial version</revremark>
+                    </revision>
+                    <para>Simple superscripted text type</para>
+                </div>
+            </xs:documentation>
+        </xs:annotation>
+        <xs:complexContent>
+            <xs:extension base="oecdInlineType">
+                <xs:attributeGroup ref="oecdSuperscriptTypeAttributes"/>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+    
+    <!-- subscript -->
+    <xs:attributeGroup name="oecdSubscriptTypeAttributes" id="oecdSubscriptTypeAttributes">
+        <xs:annotation>
+            <xs:documentation>
+                <section xmlns="http://docbook.org/ns/docbook">
+                    <para>Subscript type attributes grouped for easy override and reuse.</para>
+                </section>
+            </xs:documentation>
+        </xs:annotation>
+    </xs:attributeGroup>
+    
+    <xs:complexType name="oecdSubscriptType" mixed="true" id="oecdSubscriptType">
+        
+        <xs:annotation>
+            <xs:documentation>
+                <div xmlns="http://docbook.org/ns/docbook">
+                    <revision>
+                        <revnumber>4</revnumber>
+                        <date>2012-04-15</date>
+                        <authorinitials>NG</authorinitials>
+                        <revremark>Initial version</revremark>
+                    </revision>
+                    <para>Simple subscripted text type</para>
+                </div>
+            </xs:documentation>
+        </xs:annotation>
+        
+        <xs:complexContent>
+            <xs:extension base="oecdInlineType">
+                <xs:attributeGroup ref="oecdSubscriptTypeAttributes"/>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+    
+    <!-- quote -->
+    <xs:attributeGroup name="oecdQuoteTypeAttributes" id="oecdQuoteTypeAttributes">
+        <xs:annotation>
+            <xs:documentation>
+                <section xmlns="http://docbook.org/ns/docbook">
+                    <para>Quote type attributes grouped for easy override and reuse.</para>
+                </section>
+            </xs:documentation>
+        </xs:annotation>
+    </xs:attributeGroup>
+    
+    <xs:complexType name="oecdQuoteType" mixed="true" id="oecdQuoteType">
+        
+        <xs:annotation>
+            <xs:documentation>
+                <div xmlns="http://docbook.org/ns/docbook">
+                    <revision>
+                        <revnumber>4</revnumber>
+                        <date>2012-04-15</date>
+                        <authorinitials>NG</authorinitials>
+                        <revremark>Initial version</revremark>
+                    </revision>
+                    <para>Simple quoted text type</para>
+                </div>
+            </xs:documentation>
+        </xs:annotation>
+        
+        <xs:complexContent>
+            <xs:extension base="oecdInlineType">
+                <xs:attributeGroup ref="oecdQuoteTypeAttributes"/>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+    
+    
     <!-- footnotes -->
     <xs:attributeGroup name="oecdFootNoteTypeAttributes" id="oecdFootNoteTypeAttributes">
         <xs:annotation>
@@ -133,7 +243,7 @@
         <xs:annotation>
             <xs:documentation>
                 <section xmlns="http://docbook.org/ns/docbook">
-                    <para>Footnote type attributes grouped for easy override and reuse.</para>
+                    <para>Footnote type content grouped for easy override and reuse.</para>
                 </section>
             </xs:documentation>
         </xs:annotation>
@@ -147,13 +257,23 @@
         <xs:annotation>
             <xs:documentation>
                 <section xmlns="http://docbook.org/ns/docbook">
+                    <revision>
+                        <revnumber>4</revnumber>
+                        <date>2012-04-15</date>
+                        <authorinitials>NG</authorinitials>
+                        <revremark>Initial version</revremark>
+                    </revision>
                     <para>Footnote element. This element acts as an inline but has block
                     content. Therefore, it is not derived from oecdInline.</para>
                 </section>
             </xs:documentation>
         </xs:annotation>
+        <xs:group ref="oecdFootNoteTypeContent"/>
+        <xs:attributeGroup ref="oecdFootNoteTypeAttributes"/>
         
     </xs:complexType>
+    
+    <!-- text -->
     
     <xs:complexType name="oecdTextType" id="oecdTextType">
         <xs:annotation>
@@ -178,8 +298,60 @@
         </xs:simpleContent>
     </xs:complexType>
     
+    <!-- phrase -->
+    
+    <xs:attributeGroup name="oecdPhraseTypeAttributes" id="oecdPhraseTypeAttributes">
+        <xs:annotation>
+            <xs:documentation>
+                <section xmlns="http://docbook.org/ns/docbook">
+                    <para>Phrase type attributes grouped for easy override and reuse.</para>
+                </section>
+            </xs:documentation>
+        </xs:annotation>
+        
+        <xs:attribute name="metadataRefs" type="xs:IDREFS" id="phraseMetadataRefs" use="required">
+            <xs:annotation>
+                <xs:documentation>
+                    <section xmlns="http://docbook.org/ns/docbook">
+                        <para>Defines a metadata reference. Metadata must be referencd via
+                            the documentMeta element in this element. The phrase element allows
+                            for multiple metadata references on a single piece of text.
+                            </para>
+                        <para></para>
+                    </section>
+                </xs:documentation>
+            </xs:annotation>
+        </xs:attribute>
+        
+    </xs:attributeGroup>
+    
+    <xs:complexType name="oecdPhraseType" mixed="true" id="oecdPhraseType">
+        
+        <xs:annotation>
+            <xs:documentation>
+                <div xmlns="http://docbook.org/ns/docbook">
+                    <revision>
+                        <revnumber>4</revnumber>
+                        <date>2012-04-15</date>
+                        <authorinitials>NG</authorinitials>
+                        <revremark>Initial version</revremark>
+                    </revision>
+                    <para>This element is  used for semantic tagging. It allows an arbitrary number 
+                    of metadata elements to be referenced.</para>
+                </div>
+            </xs:documentation>
+        </xs:annotation>
+        
+        <xs:complexContent>
+            <xs:extension base="oecdInlineType">
+                <xs:attributeGroup ref="oecdPhraseTypeAttributes"/>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+    
+    
     <!-- SIMPLE TYPES -->
-       
+    
     
     <!-- emphasis style values -->
     

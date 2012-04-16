@@ -15,12 +15,20 @@
                         <author><email>nicg@corbas.co.uk</email><personname>Nic Gibson</personname></author>
                         <revremark>Initial Version</revremark>
                     </revision>
-                    <revision>
-                        <revnumber>2</revnumber>
-                        <date>2012-03-21</date>
-                        <author><email>nicg@corbas.co.uk</email><personname>Nic Gibson</personname></author>
-                        <revremark>Updated to best practices guide.</revremark>
-                    </revision>
+                <revision>
+                    <revnumber>2</revnumber>
+                    <date>2012-03-21</date>
+                    <author><email>nicg@corbas.co.uk</email><personname>Nic Gibson</personname></author>
+                    <revremark>Updated to best practices guide.</revremark>
+                </revision>
+                <revision>
+                    <revnumber>3</revnumber>
+                    <date>2012-04-15</date>
+                    <author><email>nicg@corbas.co.uk</email><personname>Nic Gibson</personname></author>
+                    <revremark>Added annotations attribute and annotation element to content model.</revremark>
+                </revision>
+                
+                
                     
                 
             </revhistory>
@@ -31,6 +39,7 @@
     <xs:include schemaLocation="../components/attributes.xsd"/>
     <xs:include schemaLocation="../components/blocks.xsd"/>
     <xs:include schemaLocation="../components/titles.xsd"/>
+    <xs:include  schemaLocation="../components/annotation.xsd"/>
     
     <!-- GLOBAL ELEMENTS -->
     <xs:element name="section" type="oecdSectionType" id="section"/>
@@ -94,6 +103,8 @@
             </xs:annotation>
         </xs:attribute>
         
+        <xs:attribute ref="annotations" use="optional"/>
+        
         
     </xs:attributeGroup>
     
@@ -117,6 +128,7 @@
                 </xs:sequence>
                 <xs:element ref="section" minOccurs="1" maxOccurs="unbounded"/>
             </xs:choice>
+            <xs:element ref="annotation" minOccurs="0" maxOccurs="unbounded"/>
         </xs:sequence>
         
     </xs:group>

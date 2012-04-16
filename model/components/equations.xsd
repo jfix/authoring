@@ -25,14 +25,22 @@
                         </itemizedlist></revdescription>
                     </revision>
                 
+                
+                
                 <revision>
                     <revnumber>3</revnumber>
                     <date>2012-03-03</date>
                     <author><email>nicg@corbas.co.uk</email><personname>Nic Gibson</personname></author>
                     <revremark>Modified oecdEquationTypeContent to replace 'oecdInline' with 'text'.</revremark>
                 </revision>
-                
-                
+
+                <revision>
+                    <revnumber>4</revnumber>
+                    <date>2012-04-15</date>
+                    <author><email>nicg@corbas.co.uk</email><personname>Nic Gibson</personname></author>
+                    <revremark>Created oecdBlockEquationType derived from oecdEquationType in order
+                        to add annotations as it only makes sense to annotate blocks.</revremark>
+                </revision>
             </revhistory>
         </section></xs:documentation>
     </xs:annotation>
@@ -48,7 +56,7 @@
 
     <!-- GLOBAL ELEMENTS -->
     <xs:element name="inlineEquation" type="oecdEquationType" id="inlineEquation"/>
-    <xs:element name="equation" type="oecdEquationType" id="equation"/>
+    <xs:element name="equation" type="oecdBlockEquationType" id="equation"/>
     
     <!-- COMPLEX TYPES -->
 
@@ -62,6 +70,17 @@
             </xs:documentation>
         </xs:annotation>
         <xs:attributeGroup ref="oecdCommonAttributes"/>
+    </xs:attributeGroup>
+    
+    <xs:attributeGroup name="oecdBlockEquationTypeAttributes" id="oecdBlockEquationTypeAttributes">
+        <xs:annotation>
+            <xs:documentation>
+                <section xmlns="http://docbook.org/ns/docbook">
+                    <para>Attributes for block equations. Grouped to allow easy override.</para>
+                </section>
+            </xs:documentation>
+        </xs:annotation>
+        <xs:attribute ref="annotations"/>
     </xs:attributeGroup>
     
     <xs:group name="oecdEquationTypeContent" id="oecdEquationTypeContent">
@@ -97,6 +116,29 @@
         <xs:group ref="oecdEquationTypeContent"/>
         <xs:attributeGroup ref="oecdEquationTypeAttributes"/>       
     </xs:complexType>
-    
+  
+
+        <xs:complexType name="oecdBlockEquationType" id="oecdBlockEquationType">
+            <xs:annotation>
+                <xs:documentation>
+                    <section xmlns="http://docbook.org/ns/docbook">
+                        <revision>
+                            <revnumber>4</revnumber>
+                            <date>2012-04-15</date>
+                            <author><email>nicg@corbas.co.uk</email><personname>Nic Gibson</personname></author>
+                            <revremark>Initial version.</revremark>
+                        </revision>
+                        <para>The block equation type extends the base equation type to add
+                            annotation attribures.</para>
+                    </section>
+                </xs:documentation>
+            </xs:annotation>
+            <xs:complexContent>
+                <xs:extension base="oecdEquationType">
+                    <xs:attributeGroup ref="oecdBlockEquationTypeAttributes"/>
+                </xs:extension>
+            </xs:complexContent>
+        </xs:complexType>
+
 
 </xs:schema>

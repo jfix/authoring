@@ -6,7 +6,8 @@
             <title>OECD Schemas</title>
             <subtitle>Inline Model Group</subtitle>
             <para>This module simply wraps several sources of inline material
-            in a simple group for ease of use.</para>
+            in a simple group for ease of use. In most cases, this should be used instead
+            of inlines.xsd.</para>
             
             <revhistory>
                 <title>Change Log</title>
@@ -33,13 +34,13 @@
                     <revremark>Added index terms</revremark>
                 </revision>
                 
-                <revidsion>
+                <revision>
                     <revnumber>3</revnumber>
                     <date>2012-04-13</date>
                     <author><email>nicg@corbas.co.uk</email><personname>Nic Gibson</personname></author>
                     <revremark>Added citations (mods element)</revremark>
                   
-                </revidsion>
+                </revision>
                 
                 
             </revhistory>

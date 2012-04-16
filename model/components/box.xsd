@@ -1,4 +1,6 @@
-<?xml version="1.0" encoding="UTF-8"?><xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+<?xml version="1.0" encoding="UTF-8"?><xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+    xmlns:sch="http://purl.oclc.org/dsdl/schematron"
+    elementFormDefault="qualified">
     
     <xs:annotation>
         <xs:documentation><section xmlns="http://docbook.org/ns/docbook">
@@ -14,8 +16,14 @@
                         <author><email>nicg@corbas.co.uk</email><personname>Nic Gibson</personname></author>
                         <revremark>Initial version.</revremark>
                     </revision>
-                    
-                
+             
+                <revision>
+                    <revnumber>2</revnumber>
+                    <date>2012-04-16</date>
+                    <author><email>nicg@corbas.co.uk</email><personname>Nic Gibson</personname></author>
+                    <revremark>Added assertion to constrain boxes to not contain boxes.</revremark>
+                </revision>
+               
             </revhistory>
             
         </section></xs:documentation>
@@ -40,7 +48,11 @@
                     appended.</para>
                 </section>
             </xs:documentation>
+            <xs:appinfo>
+                <sch:assert role="error" test="not(descendant::box)">Boxes must not contain boxes.</sch:assert>
+            </xs:appinfo>
         </xs:annotation>
+        
         <xs:complexContent>
             <xs:extension base="oecdSectionType">
                 <xs:sequence>
