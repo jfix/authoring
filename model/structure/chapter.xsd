@@ -33,6 +33,13 @@
                     <revremark>Added acknowledgements to chapter model.</revremark>
                 </revision>                    
                 
+                <revision>
+                    <revnumber>4</revnumber>
+                    <date>2012-04-16</date>
+                    <author><email>nicg@corbas.co.uk</email><personname>Nic Gibson</personname></author>
+                    <revremark>Added glossary to chapter model.</revremark>
+                </revision>        
+                
             </revhistory>
             <para>A chapter is a high level structural element. It has been modelled as a separate component
             to a section as it does not have quite the same structure (a chapter has additional content). 
@@ -48,6 +55,7 @@
     <xs:include schemaLocation="section.xsd"/>
     <xs:include schemaLocation="../semantic/abstract.xsd"/>
     <xs:include schemaLocation="../semantic/biblio.xsd"/>
+    <xs:include schemaLocation="../semantic/glossary.xsd"/>
     <xs:include schemaLocation="../components/notes.xsd"/>
     <xs:include schemaLocation="../semantic/acknowledgements.xsd"/>
     
@@ -83,6 +91,13 @@
                             <author><email>nicg@corbas.co.uk</email><personname>Nic Gibson</personname></author>
                             <revremark>Added notes element</revremark>
                         </revision>
+                        
+                        <revision>
+                            <revnumber>4</revnumber>
+                            <date>2012-04-16</date>
+                            <author><email>nicg@corbas.co.uk</email><personname>Nic Gibson</personname></author>
+                            <revremark>Added glossary element.</revremark>
+                        </revision>   
                     </revhistory>
                         
                     <para>Uses the base section content type to add those components which are not allowed in a preface, etc.
@@ -97,7 +112,11 @@
             <xs:group ref="oecdTitleGroup"/>
             <xs:element ref="abstract" minOccurs="0"/>
             <xs:element ref="acknowledgements" minOccurs="0"/>
-            <xs:group ref="oecdSectionTypeContent"/>
+            <xs:choice maxOccurs="unbounded">
+                <xs:group ref="oecdSectionTypeContent"/>
+                <xs:element ref="glossary"/>
+            </xs:choice>
+            
             
             <!-- note - forcing sequence here is not ideal but there is no sensible way to model it in XSD -->
             <xs:element ref="bibliography" minOccurs="0" maxOccurs="unbounded"/>
