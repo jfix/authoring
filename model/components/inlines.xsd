@@ -36,6 +36,13 @@
                     <authorinitials>NG</authorinitials>
                     <revremark>Added sub, sup. phrase and quote and completed footnote</revremark>
                 </revision>
+                <revision>
+                    <revnumber>5</revnumber>
+                    <date>2012-04-17</date>
+                    <authorinitials>jc</authorinitials>
+                    <revremark>Added phrase element definition.</revremark>
+                </revision>
+                
             </revhistory>
             
             <para>Note: the inline graphic component is defined in graphics.</para>
@@ -61,6 +68,7 @@
     <xs:element name="sub" type="oecdSubscriptType"/>
     <xs:element name="sup" type="oecdSuperscriptType"/>
     <xs:element name="quote" type="oecdQuoteType"/>
+    <xs:element name="phrase" type="oecdPhraseType" substitutionGroup="oecdInline" id="phrase"/>
           
     <!-- COMPLEX TYPES -->
     
