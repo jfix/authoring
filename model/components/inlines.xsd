@@ -43,6 +43,15 @@
                     <revremark>Added phrase element definition.</revremark>
                 </revision>
                 
+                <revision>
+                    <revnumber>6</revnumber>
+                    <date>2012-04-18</date>
+                    <authorinitials>ng</authorinitials>
+                    <revremark>Adding missing substitutionGroup attributes.</revremark>
+                </revision>
+                
+               
+                
             </revhistory>
             
             <para>Note: the inline graphic component is defined in graphics.</para>
@@ -63,11 +72,11 @@
     <!-- GLOBAL ELEMENTS -->
     <xs:element name="oecdInline" type="oecdInlineType" id="oecdInline"/> <!-- different name to all other elements as it is abstract -->
     <xs:element name="emphasis" type="oecdEmphasisType" substitutionGroup="oecdInline" id="emphasis"/>
-    <xs:element name="footnote" type="oecdFootnoteType" id="footnote"/>
-    <xs:element name="text" type="oecdTextType" id="text"/>
-    <xs:element name="sub" type="oecdSubscriptType"/>
-    <xs:element name="sup" type="oecdSuperscriptType"/>
-    <xs:element name="quote" type="oecdQuoteType"/>
+    <xs:element name="footnote" type="oecdFootnoteType" id="footnote" />
+    <xs:element name="text" type="oecdTextType" id="text" />
+    <xs:element name="sub" type="oecdSubscriptType" substitutionGroup="oecdInline" id="sub"/>
+    <xs:element name="sup" type="oecdSuperscriptType" substitutionGroup="oecdInline" id="sup"/>
+    <xs:element name="quote" type="oecdQuoteType" substitutionGroup="oecdInline" id="quote"/>
     <xs:element name="phrase" type="oecdPhraseType" substitutionGroup="oecdInline" id="phrase"/>
           
     <!-- COMPLEX TYPES -->
