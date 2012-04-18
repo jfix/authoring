@@ -22,6 +22,13 @@
                             Gibson</personname></author>
                         <revremark>Separated document and article, added glossary</revremark>
                     </revision>
+                    <revision>
+                        <revnumber>3</revnumber>
+                        <date>2012-04-18</date>
+                        <authorinitials>jc</authorinitials>
+                        <revremark>added include to conclusion.xsd.</revremark>
+                        <revremark>updated oecdBaseDocumentTypeContent to allow conclusion.</revremark>
+                    </revision>
                     <para>A document is the standard top-level structural element. </para>
                 </revhistory>
             </section>
@@ -38,6 +45,7 @@
     <xs:include schemaLocation="../semantic/glossary.xsd"/>
     <xs:include schemaLocation="../semantic/acknowledgements.xsd"/>
     <xs:include schemaLocation="../semantic/executive-summary.xsd"/>
+    <xs:include schemaLocation="../semantic/conclusion.xsd"/>
     <xs:include schemaLocation="../components/document-meta.xsd"/>
 
     <!-- GLOBAL GROUPS -->
@@ -95,6 +103,7 @@
                     </xs:choice>
                     
                     <!-- note - forcing sequence here is not ideal but there is no sensible way to model it in XSD -->
+                    <xs:element ref="conclusion" minOccurs="0" maxOccurs="unbounded"/>
                     <xs:element ref="bibliography" minOccurs="0" maxOccurs="unbounded"/>
                     <xs:element ref="appendix" minOccurs="0" maxOccurs="unbounded"/>
                     
