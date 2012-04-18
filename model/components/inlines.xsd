@@ -48,7 +48,7 @@
                         <revnumber></revnumber>
                         <date>2012-04-18</date>
                         <authorinitials>jc</authorinitials>
-                        <revremark>Adding content model for abbrev.</revremark>
+                        <revremark>Added content model for abbrev.</revremark>
                     </revision>
                 </revhistory>
                 <para>Note: the inline graphic component is defined in graphics.</para>
