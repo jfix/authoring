@@ -62,7 +62,7 @@
             <xs:documentation>
                 <section xmlns="http://docbook.org/ns/docbook">
                     <para>the oecdInlineGroup provides simple access to inlines defined in this module
-                        whether or not they </para>
+                        whether or not they are derived from oecdInline </para>
                 </section>
             </xs:documentation>
             
