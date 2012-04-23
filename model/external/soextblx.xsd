@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--  
+  JWC removed @bodyatt as no need for for backward compatibility with the SGML model)
+  JWC removed tbl.tgroup.att
+  JWC removed tbl.colspec.att
+  JWC removed tbl.head.att
+  JWC removed tbl.tbody.att
+  JWC removed tbl.row.att
+  jwc added <xs:attribute name="heading" type="Table.Heading"/>
+  jwc Table.Title removed min 0 <xs:choice minOccurs="0"/>
+  jwc Table.Title changed from choice to seq
+  jwc Table.Title removed mixed content model
+  jwc renamed title element titles
+  
+-->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:db="http://www.oasis-open.org/docbook/xmlschema/4.1.2"
+	xmlns:xd="http://www.oecd.org/ns/schema/xdocs" elementFormDefault="qualified" attributeFormDefault="unqualified" id="soextblx">
+
+	<xs:complexType name="Table">
+		<xs:sequence>
+			<xs:element name="titles" type="Table.Title" minOccurs="0"/>
+			<xs:element name="tgroup" type="Table.Tgroup" maxOccurs="unbounded"/>
+		</xs:sequence>
+
+		<xs:attribute name="colsep" type="Table.Colsep"/>
+		<xs:attribute name="rowsep" type="Table.Rowsep"/>
+		<xs:attribute name="frame" type="Table.Frame"/>
+		<xs:attribute name="pgwide" type="Table.Pgwide"/>
+
+	</xs:complexType>
+
+	<xs:complexType name="Table.Title">
+		<xs:sequence/>
+	</xs:complexType>
+
+	<xs:complexType name="Table.Tgroup">
+		<xs:sequence>
+			<xs:element name="colspec" type="Table.Colspec" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element name="thead" type="Table.Thead" minOccurs="0"/>
+			<xs:element name="tbody" type="Table.Tbody"/>
+		</xs:sequence>
+		<xs:attribute name="cols" type="Table.Cols" use="required"/>
+		<xs:attribute name="colsep" type="Table.Colsep"/>
+		<xs:attribute name="rowsep" type="Table.Rowsep"/>
+		<xs:attribute name="align" type="Table.Align"/>
+	</xs:complexType>
+
+	<xs:complexType name="Table.Colspec">
+		<xs:attribute name="colnum" type="Table.Colnum"/>
+		<xs:attribute name="colname" type="Table.Colname"/>
+		<xs:attribute name="colwidth" type="Table.Colwidth"/>
+		<xs:attribute name="colsep" type="Table.Colsep"/>
+		<xs:attribute name="rowsep" type="Table.Rowsep"/>
+		<xs:attribute name="align" type="Table.Align"/>
+		<xs:attribute name="char" type="Table.Char"/>
+		<xs:attribute name="charoff" type="Table.Charoff"/>
+	</xs:complexType>
+
+	<xs:complexType name="Table.Thead">
+		<xs:sequence>
+			<xs:element name="row" type="Table.Row" maxOccurs="unbounded"/>
+		</xs:sequence>
+		<xs:attribute name="valign" type="Table.Valign"/>
+	</xs:complexType>
+
+	<xs:complexType name="Table.Tbody">
+		<xs:sequence>
+			<xs:element name="row" type="Table.Row" maxOccurs="unbounded"/>
+		</xs:sequence>
+		<xs:attribute name="valign" type="Table.Valign"/>
+	</xs:complexType>
+
+	<xs:complexType name="Table.Row">
+		<xs:sequence>
+			<xs:element name="entry" type="Table.Entry" maxOccurs="unbounded"/>
+		</xs:sequence>
+		<xs:attribute name="rowsep" type="Table.Rowsep"/>
+		<xs:attribute name="valign" type="Table.Valign"/>
+	</xs:complexType>
+
+	<xs:complexType name="Table.Entry">
+		<xs:choice/>
+		<xs:attribute name="colname" type="Table.Colname"/>
+		<xs:attribute name="namest" type="Table.Namest"/>
+		<xs:attribute name="nameend" type="Table.Nameend"/>
+		<xs:attribute name="morerows" type="Table.Morerows"/>
+		<xs:attribute name="colsep" type="Table.Colsep"/>
+		<xs:attribute name="rowsep" type="Table.Rowsep"/>
+		<xs:attribute name="align" type="Table.Align"/>
+		<xs:attribute name="char" type="Table.Char"/>
+		<xs:attribute name="charoff" type="Table.Charoff"/>
+		<xs:attribute name="valign" type="Table.Valign"/>
+		<xs:attribute name="heading" type="Table.Heading"/>
+	</xs:complexType>
+
+	<xs:simpleType name="Table.Colnum">
+		<xs:restriction base="xs:NMTOKEN"/>
+	</xs:simpleType>
+
+	<xs:simpleType name="Table.Colname">
+		<xs:restriction base="xs:NMTOKEN"/>
+	</xs:simpleType>
+
+	<xs:simpleType name="Table.Colwidth">
+		<xs:restriction base="xs:string"/>
+	</xs:simpleType>
+	
+	<xs:simpleType name="Table.Colsep">
+		<xs:restriction base="xs:NMTOKEN"/>
+	</xs:simpleType>
+	
+	<xs:simpleType name="Table.Rowsep">
+		<xs:restriction base="xs:NMTOKEN"/>
+	</xs:simpleType>
+	
+	<xs:simpleType name="Table.Align">
+		<xs:restriction base="xs:NMTOKEN">
+			<xs:enumeration value="left"/>
+			<xs:enumeration value="right"/>
+			<xs:enumeration value="center"/>
+			<xs:enumeration value="justify"/>
+			<xs:enumeration value="char"/>
+		</xs:restriction>
+	</xs:simpleType>
+	
+	<xs:simpleType name="Table.Char">
+		<xs:restriction base="xs:NMTOKEN"/>
+	</xs:simpleType>
+	
+	<xs:simpleType name="Table.Charoff">
+		<xs:restriction base="xs:NMTOKEN"/>
+	</xs:simpleType>
+	
+	<xs:simpleType name="Table.Namest">
+		<xs:restriction base="xs:NMTOKEN"/>
+	</xs:simpleType>
+	
+	<xs:simpleType name="Table.Nameend">
+		<xs:restriction base="xs:NMTOKEN"/>
+	</xs:simpleType>
+	
+	<xs:simpleType name="Table.Morerows">
+		<xs:restriction base="xs:NMTOKEN"/>
+	</xs:simpleType>
+	
+	<xs:simpleType name="Table.Valign">
+		<xs:restriction base="xs:NMTOKEN">
+			<xs:enumeration value="top"/>
+			<xs:enumeration value="middle"/>
+			<xs:enumeration value="bottom"/>
+		</xs:restriction>
+	</xs:simpleType>
+
+	<xs:simpleType name="Table.Frame">
+		<xs:restriction base="xs:NMTOKEN">
+			<xs:enumeration value="top"/>
+			<xs:enumeration value="bottom"/>
+			<xs:enumeration value="topbot"/>
+			<xs:enumeration value="all"/>
+			<xs:enumeration value="sides"/>
+			<xs:enumeration value="none"/>
+		</xs:restriction>
+	</xs:simpleType>
+
+	<xs:simpleType name="Table.Pgwide">
+		<xs:restriction base="xs:NMTOKEN"/>
+	</xs:simpleType>
+
+	<xs:simpleType name="Table.Cols">
+		<xs:restriction base="xs:NMTOKEN"/>
+	</xs:simpleType>
+
+	<xs:simpleType name="Table.Heading">
+		<xs:restriction base="xs:boolean"/>
+	</xs:simpleType>
+</xs:schema>
