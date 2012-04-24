@@ -1,32 +1,51 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!--  
-  JWC removed @bodyatt as no need for for backward compatibility with the SGML model)
-  JWC removed tbl.tgroup.att
-  JWC removed tbl.colspec.att
-  JWC removed tbl.head.att
-  JWC removed tbl.tbody.att
-  JWC removed tbl.row.att
-  jwc added <xs:attribute name="heading" type="Table.Heading"/>
-  jwc Table.Title removed min 0 <xs:choice minOccurs="0"/>
-  jwc Table.Title changed from choice to seq
-  jwc Table.Title removed mixed content model
-  jwc renamed title element titles
-  
--->
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:db="http://www.oasis-open.org/docbook/xmlschema/4.1.2"
 	xmlns:xd="http://www.oecd.org/ns/schema/xdocs" elementFormDefault="qualified" attributeFormDefault="unqualified" id="soextblx">
+
+	<xs:annotation>
+		<xs:documentation><section xmlns="http://docbook.org/ns/docbook">
+				<title>OECD Schemas</title>
+				<subtitle>OASIS Open Exchange Table Model</subtitle>
+				<info>An up-to-date implementation by the OECD</info>
+				<revhistory>
+					<title>Change Log</title>
+					<revision>
+						<revnumber>1</revnumber>
+						<date>2012-04-23</date>
+						<authorinitials>JC</authorinitials>
+						<revremark>Initial Version.</revremark>
+					</revision>
+					<revision>
+						<revnumber>2</revnumber>
+						<date>2012-04-23</date>
+						<authorinitials>JC</authorinitials>
+						<remark>
+							<remark>removed @bodyatt as no need for for backward compatibility with the SGML model</remark>
+							<remark>removed tbl.tgroup.att</remark>
+							<remark>removed tbl.colspec.att</remark>
+							<remark>removed tbl.head.att</remark>
+							<remark>removed tbl.tbody.att</remark>
+							<remark>removed tbl.row.att</remark>
+							<remark>added attribute heading to entry</remark>
+							<remark>Table.Title removed min 0</remark>
+							<remark>Table.Title changed from choice to seq</remark>
+							<remark>Table.Title removed mixed content model</remark>
+							<remark>renamed title element titles to allow extension</remark>
+						</remark>
+					</revision>
+				</revhistory>
+			</section></xs:documentation>
+	</xs:annotation>
 
 	<xs:complexType name="Table">
 		<xs:sequence>
 			<xs:element name="titles" type="Table.Title" minOccurs="0"/>
 			<xs:element name="tgroup" type="Table.Tgroup" maxOccurs="unbounded"/>
 		</xs:sequence>
-
 		<xs:attribute name="colsep" type="Table.Colsep"/>
 		<xs:attribute name="rowsep" type="Table.Rowsep"/>
 		<xs:attribute name="frame" type="Table.Frame"/>
 		<xs:attribute name="pgwide" type="Table.Pgwide"/>
-
 	</xs:complexType>
 
 	<xs:complexType name="Table.Title">
@@ -104,15 +123,15 @@
 	<xs:simpleType name="Table.Colwidth">
 		<xs:restriction base="xs:string"/>
 	</xs:simpleType>
-	
+
 	<xs:simpleType name="Table.Colsep">
 		<xs:restriction base="xs:NMTOKEN"/>
 	</xs:simpleType>
-	
+
 	<xs:simpleType name="Table.Rowsep">
 		<xs:restriction base="xs:NMTOKEN"/>
 	</xs:simpleType>
-	
+
 	<xs:simpleType name="Table.Align">
 		<xs:restriction base="xs:NMTOKEN">
 			<xs:enumeration value="left"/>
@@ -122,27 +141,27 @@
 			<xs:enumeration value="char"/>
 		</xs:restriction>
 	</xs:simpleType>
-	
+
 	<xs:simpleType name="Table.Char">
 		<xs:restriction base="xs:NMTOKEN"/>
 	</xs:simpleType>
-	
+
 	<xs:simpleType name="Table.Charoff">
 		<xs:restriction base="xs:NMTOKEN"/>
 	</xs:simpleType>
-	
+
 	<xs:simpleType name="Table.Namest">
 		<xs:restriction base="xs:NMTOKEN"/>
 	</xs:simpleType>
-	
+
 	<xs:simpleType name="Table.Nameend">
 		<xs:restriction base="xs:NMTOKEN"/>
 	</xs:simpleType>
-	
+
 	<xs:simpleType name="Table.Morerows">
 		<xs:restriction base="xs:NMTOKEN"/>
 	</xs:simpleType>
-	
+
 	<xs:simpleType name="Table.Valign">
 		<xs:restriction base="xs:NMTOKEN">
 			<xs:enumeration value="top"/>
