@@ -1,4 +1,5 @@
-<?xml version="1.0" encoding="UTF-8"?><xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+<?xml version="1.0" encoding="UTF-8"?><xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+    xmlns:xlink="http://www.w3.org/1999/xlink" elementFormDefault="qualified">
     
     <xs:annotation>
         <xs:documentation><section xmlns="http://docbook.org/ns/docbook">
@@ -30,6 +31,14 @@
                     <revremark>Replaced include of inlines.xsd with inline-group.xsd.</revremark>
                 </revision>
                 
+                <revision>
+                    <revnumber>4</revnumber>
+                    <date>2012-05-25</date>
+                    <authorinitials>NG</authorinitials>
+                    <revremark>Modified <link xlink:href="oecdTitleGroup">oecdTitleGroup</link>. @minOccurs of 'shortTitle' accidentally set to
+                    1. Changed to 0.</revremark>
+                </revision>
+                
                 
             </revhistory>
             
@@ -51,10 +60,28 @@
     
     <!-- GLOBAL GROUPS -->
     <xs:group name="oecdTitleGroup" id="oecdTitleGroup">
+        <xs:annotation>
+            <xs:documentation>
+                <section xmlns="http://docbook.org/ns/docbook">
+                    
+                    <title>Change Log</title>
+                    
+                    <revhistory>
+                        <revision>
+                            <revnumber>4</revnumber>
+                            <date>2012-05-25</date>
+                            <authorinitials>NG</authorinitials>
+                            <revremark>Modified -  @minOccurs of 'shortTitle' accidentally set to
+                                1. Changed to 0.</revremark>
+                        </revision>
+                    </revhistory>
+                </section>                
+            </xs:documentation>
+        </xs:annotation>
         <xs:sequence>
             <xs:element ref="title"/>
             <xs:element ref="subTitle" minOccurs="0"/>
-            <xs:element ref="shortTitle"/>
+            <xs:element ref="shortTitle" minOccurs="0"/>
         </xs:sequence>
     </xs:group>
     

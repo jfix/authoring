@@ -1,4 +1,5 @@
-<?xml version="1.0" encoding="UTF-8"?><xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+<?xml version="1.0" encoding="UTF-8"?><xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" 
+    elementFormDefault="qualified">
 
 
     <xs:annotation>
@@ -28,6 +29,13 @@
                     <revremark>Added annotations attribute and annotation element to content model.</revremark>
                 </revision>
                 
+                <revision>
+                    <revnumber>4</revnumber>
+                    <date>2012-05-25</date>
+                    <author><email>nicg@corbas.co.uk</email><personname>Nic Gibson</personname></author>
+                    <revremark>Modified <link linkend="oecdSectionTypeContent">oecdSectionTypeContent</link> to correct
+                    error in occurence count for blocks</revremark>
+                </revision>
                 
                     
                 
@@ -114,7 +122,18 @@
             <xs:documentation>
                 <section xmlns="http://docbook.org/ns/docbook">
                     <para>Content for sections as a group for easy overrides and reuse.</para>
+                    <revhistory>
+                        <title>Change Log</title>
+                        <revision>
+                            <revnumber>4</revnumber>
+                            <date>2012-05-25</date>
+                            <author><email>nicg@corbas.co.uk</email><personname>Nic Gibson</personname></author>
+                            <revremark>Modified to correct error in occurence count for blocks. Was set to one and 
+                            should be set to unbounded.</revremark>
+                        </revision>
+                    </revhistory>
                 </section>
+                
             </xs:documentation>
         </xs:annotation>
         
@@ -123,7 +142,7 @@
             <xs:group ref="oecdTitleGroup"/>
             <xs:choice>
                 <xs:sequence>
-                    <xs:group ref="oecdBlockGroup" maxOccurs="1"/>
+                    <xs:group ref="oecdBlockGroup" maxOccurs="unbounded"/>
                     <xs:element ref="section" minOccurs="0" maxOccurs="unbounded"/>
                 </xs:sequence>
                 <xs:element ref="section" minOccurs="1" maxOccurs="unbounded"/>
