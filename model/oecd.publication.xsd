@@ -23,6 +23,15 @@
                         </author>
                         <revremark>Initial Version</revremark>
                     </revision>
+                    <revision>
+                        <revnumber>2</revnumber>
+                        <date>2012-05-25</date>
+                        <author>
+                            <email>nicg@corbas.co.uk</email>
+                            <personname>Nic Gibson</personname>
+                        </author>
+                        <revremark>Corrected element type for <link linkend="publication">publication.</link>from oecdBaseDocumenType to oecdPublicationType</revremark>
+                    </revision>
                 </revhistory>
             </section>
         </xs:documentation>
@@ -72,8 +81,26 @@
         <xs:attributeGroup ref="oecdBaseDocumentTypeAttributes"/>
     </xs:complexType>
 
-    <xs:element name="publication" type="oecdBaseDocumentType">
-        
+    <xs:element name="publication" id="publication" type="oecdPublicationType">
+        <xs:annotation>
+            <xs:documentation>
+                <section xmlns="http://docbook.org/ns/docbook">
+                    <title>Change Log</title>
+                    <revhistory>
+                        
+                        <revision>
+                            <revnumber>2</revnumber>
+                            <date>2012-05-25</date>
+                            <author>
+                                <email>nicg@corbas.co.uk</email>
+                                <personname>Nic Gibson</personname>
+                            </author>
+                            <revremark>Corrected element from oecdBaseDocumenType to oecdPublicationType</revremark>
+                        </revision>
+                    </revhistory>
+                </section>
+            </xs:documentation>
+        </xs:annotation>
     </xs:element>
     
 
