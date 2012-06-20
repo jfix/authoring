@@ -1,0 +1,1801 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- 
+     @title narrdoc v1.7.3
+     @doctype PUBLIC "-//OECD//DTD Narrdoc 1.7 light//EN" "P:/Production/Software/Compo/Dev/Converter/word2xmlsvn/Tests/model/narrdoc1_7light.dtd"
+     @hidden Author: 
+        Marc Regnier
+        Simplified DTD of the 1.5 version (used by OECD/PrePress for typeset publications).
+        Used with XML files from the output of the UpCast Converter.
+        Version: 1.7.3
+        History:
+        V0.1: 28.02.2011
+        Add attribute ROWSEP in ROW element
+        Delete COTE element in BIBINFO
+        Change element BODY optional in NARR-DOC element
+        V0.2: 29.06.2011
+        Re-order the elements in <frontmatter> and <name>
+        Persmission for a <shortcitation> in a <shortcitation>
+        jfix: added the attribute @metadatatype@ for the part, chapter and 
+        section elements (see #2698), for the metadata loader program (again!)
+        only one possible value at this time: @section@.
+        V0.3: 07.02.2012
+        jfix: added a parameter entity for a geocontainer attribute
+        see #2494 and #2449, requested for metadata loader
+        rcouronne: added a parameter entity for a statisticalannex attribute
+        see #2903, requested for metadata loader
+        Add the attributes reference, goecontainer and statisticalannex in annex and appendix elements
+        Change the numbering value from "n" to "y" in annex and appendix elements
+        Add reference attribute in boxsection element
+        Add the attributes reference, goecontainer, statisticalannex and metadatatype in chapter element
+        Change the numbering value from "n" to "y" in chapter element
+        Allow shortcitation element in emphasis element
+        Add the attribute reference in figure element
+        Re-order the frontmatter element to allow any element in any order
+        Re-order name element
+        Re-order nar-rdoc element
+        Change the content model in oecd-doc element
+        Add the attributes reference, goecontainer, statisticalannex and metadatatype in part element
+        Change the numbering value from "n" to "y" in part element
+        Add rowsep attribute in row element
+        Allow shortcitation element in shortcitation element
+        Add reference attribute in tablegrp element
+        Add reference attribute in tgroup element
+        V0.4: 22.02.12
+        Changed element frontmatter: now element authorlist may only occur directly after bibinfo
+     @root narr-doc
+-->
+
+<!ENTITY % metadatatype "metadatatype (section) #IMPLIED" >
+<!ENTITY % id          "id ID #REQUIRED" >
+<!ENTITY % instlang     "instlang (i-eng | i-fr | i-bi-ling | i-de | i-other) #IMPLIED" >
+<!ENTITY % geocontainer "geocontainer (true | false) 'false'" >
+<!ENTITY % statisticalannex "statisticalannex (true | false) 'false'" >
+
+<!-- 
+	NIC Model equivalent for abbrtitl element : ??
+	
+    Container used to store the abbreviated title (text only). 
+-->
+<!ELEMENT abbrtitl (#PCDATA)>
+
+<!-- Element not used -->
+<!ELEMENT about ((heading?, subheading*), authorlist?, highlight?, abstract?, ((p | citation | deflist | randlist | seqlist)+ | figure | tablegrp | textbox)*, section*, chapconcl?)>
+<!ATTLIST about
+%id;>
+
+<!-- 
+	NIC Model equivalent for abstract element : ??
+	NIC Model equivalent for id attribute : ??
+	NIC Model equivalent for instlang attribute : ??
+	
+    Container used to store the text converted from the Word style abstract. The text is a short description introducing the parent element listed above.  
+-->
+<!ELEMENT abstract ((p | citation | deflist | randlist | seqlist)+ | figure | tablegrp | textbox)*>
+<!-- 
+        @attr instlang define the document language. It can have the following values:
+        <ul><li>i-eng for english</li>
+        <li>i-fr for french</li>
+        <li>i-de for deutsch</li>
+        <li>i-bi-ling for bilingual</li>
+        <li>i-other for other language</li></ul>
+-->
+<!ATTLIST abstract
+%id;
+%instlang;>
+
+<!--
+	NIC Model equivalent for acknowledgement element : ??
+	NIC Model equivalent for id attribute : ??
+	
+    Container used to begin a acknoledgement section. It store the text converted from the Word style Acknowledgement Heading.<br>
+    acknowledgement element can be used in the following sections:
+        <ul><li>frontmatter</li>
+        <li>part</li></ul>
+-->
+<!ELEMENT acknowledgement ((heading?, subheading*), authorlist?, highlight?, abstract?, ((p | citation | deflist | randlist | seqlist)+ | figure | tablegrp | textbox)*, section*, chapconcl?)>
+
+<!ATTLIST acknowledgement 
+%id;>
+
+<!--
+	NIC Model equivalent for acronym element : ??
+	NIC Model equivalent for id attribute : ??
+	
+    Container used to store the text of an acronym.
+    acronym element is used in glossary-acronyms section.
+    Could contain text and special character (subscript/superscript for exemple).
+-->
+<!ELEMENT acronym (#PCDATA | specchar)*>
+
+
+<!ATTLIST acronym 
+%id;>
+
+<!-- Element not used -->
+<!ELEMENT action ((p | citation | deflist | randlist | seqlist)+ | figure | tablegrp | textbox)*>
+<!ATTLIST action 
+%id;>
+
+<!--
+	NIC Model equivalent for annex element : ??
+	NIC Model equivalent for id attribute : ??
+	NIC Model equivalent for label attribute : ??
+	NIC Model equivalent for number attribute : ??
+	NIC Model equivalent for numbering attribute : ??
+	
+    Container used to begin a annex section. It store the text converted from the Word style Annex Heading.<br>
+        annex element can be used in the following sections:
+        <ul><li>backtmatter</li>
+        <li>chapter</li>
+        <li>part</li></ul>
+-->
+<!ELEMENT annex ((heading?, subheading*), authorlist?, highlight?, abstract?, ((p | citation | deflist | randlist | seqlist)+ | figure | tablegrp | textbox)*, section*, chapconcl?, biblio?)>
+<!--
+    @attr label is used to store the numbering to be displayed.
+    @attr number is used to store the numbering to be displayed.
+    @attr numbering is used to activate the numbering. Possible values are <i>y</i> (yes) or <i>n</i> (no).
+    @attr reference is used to store the numbering to be displayed.
+    @attr geocontainer is requested for metadata loader. Possible values are <i>false</i> or <i>true</i>.
+    @attr statisticalannex is requested for metadata loader. Possible values are <i>false</i> or <i>true</i>.
+-->
+<!ATTLIST annex
+%id;
+label CDATA #IMPLIED
+number CDATA #IMPLIED
+numbering (y | n) "y"
+reference CDATA #IMPLIED
+%geocontainer;
+%statisticalannex;
+>
+
+<!--
+	NIC Model equivalent for appendix element : ??
+	NIC Model equivalent for id attribute : ??
+	NIC Model equivalent for label attribute : ??
+	NIC Model equivalent for number attribute : ??
+	NIC Model equivalent for numbering attribute : ??
+	
+    Container used to begin a appendix section. It store the text converted from the Word style Appendix Heading.<br>
+        appendix element can be used in the following sections:
+        <ul><li>backtmatter</li>
+        <li>chapter</li>
+        <li>part</li></ul>
+-->
+<!ELEMENT appendix ((heading?, subheading*), authorlist?, highlight?, abstract?, ((p | citation | deflist | randlist | seqlist)+ | figure | tablegrp | textbox)*, section*, chapconcl?, biblio?)>
+<!--
+    @attr label is used to store the numbering to be displayed.
+    @attr number is used to store the numbering to be displayed.
+    @attr numbering is used to activate the numbering. Possible values are <i>y</i> (yes) or <i>n</i> (no).
+    @attr reference is used to store the numbering to be displayed.
+    @attr geocontainer is requested for metadata loader. Possible values are <i>false</i> or <i>true</i>.
+    @attr statisticalannex is requested for metadata loader. Possible values are <i>false</i> or <i>true</i>.
+-->
+<!ATTLIST appendix 
+%id;
+label CDATA #IMPLIED
+number CDATA #IMPLIED
+numbering (y | n) "y"
+reference CDATA #IMPLIED
+%geocontainer;
+%statisticalannex;
+>
+
+<!-- Element not used -->
+<!ELEMENT article (name+, arttitle, editor?, hosttitl, location?, publishr?, date, work-id?, volno?, issueno?, pgnos?)>
+<!ATTLIST article 
+%id;>
+
+<!-- Element not used -->
+<!ELEMENT arttitle (#PCDATA)>
+
+<!--
+	NIC Model equivalent for author element : ??
+	
+    Container used to store the data of an author as following:<br>
+    <ul><li>name</li>
+    <li>position</li>
+    <li>telephone</li>
+    <li>email</li>
+    <li>fax</li>
+-->
+<!ELEMENT author (name, position?, telephone?, email?, fax?)>
+
+<!--
+	NIC Model equivalent for authorlist element : ??
+	
+    Container introducing an author element. Converted from the Word style Author.
+-->
+<!ELEMENT authorlist (author+)>
+
+<!--
+	NIC Model equivalent for backmatter element : ??
+	NIC Model equivalent for instlang attribute : ??
+	
+    The backmatter element is used to store all the elements at the end of a document, after the last part or chapter. For exemple, an annex in the backmatter is refering to the entire document. It can contains:<br>
+    <ul><li>conclusion</li>
+    <li>glossary-acronyms</li>
+    <li>biblio</li>
+    <li>appendix</li>
+    <li>annex</li>
+    <li>info</li></ul>
+-->
+<!ELEMENT backmatter (conclusion | glossary-acronyms | biblio | appendix | annex+ | info)*>
+<!--
+        @attr instlang define the document language. It can have the following values:
+        <ul><li>i-eng for english</li>
+        <li>i-fr for french</li>
+        <li>i-de for deutsch</li>
+        <li>i-bi-ling for bilingual</li>
+        <li>i-other for other language</li></ul>
+-->
+<!ATTLIST backmatter 
+%instlang;>
+
+<!--
+	NIC Model equivalent for bibinfo element : ??
+	NIC Model equivalent for id attribute : ??
+	
+    The bibinfo element is used to store all the metadata of a document.
+-->
+<!ELEMENT bibinfo (contact*, directorate*, committee*, cancel?, destinat?, docdates?, langinfo?, pubyear?, serinfo?, maintitl?, subtitle*, abbrtitl?, originatingbody*, disclmr?, mtginfo?, comment?, jobno?, traninfo?, keywdgrp*, dochist?, abstract?, action?, isbn?, doi?)>
+<!ATTLIST bibinfo
+%id;
+type (agenda | mtg-sum | narr-doc) #IMPLIED>
+
+<!-- 
+	NIC Model equivalent for biblio element : ??
+	NIC Model equivalent for label attribute : ??
+	NIC Model equivalent for number attribute : ??
+	NIC Model equivalent for numbering attribute : ??
+	
+    Container used to store the bibliographical data. Converted form Word style Bibliography Heading.
+-->
+<!ELEMENT biblio ((heading?, subheading*, section*, randlist*), (p | indvpub | instpub | oecd-doc | article | periodcl)*)>
+<!--
+    @attr label is used to store the numbering to be displayed.
+    @attr number is used to store the numbering to be displayed.
+    @attr numbering is used to activate the numbering. Possible values are <i>y</i> (yes) or <i>n</i> (no).
+-->
+<!ATTLIST biblio
+%id;
+label CDATA #IMPLIED
+number CDATA #IMPLIED
+numbering (y | n) "n">
+
+<!-- Element not used -->
+<!ELEMENT bibref (#PCDATA)>
+<!ATTLIST bibref
+refid IDREF #REQUIRED
+format CDATA #IMPLIED
+capital (yes | no) "yes">
+
+<!--
+	NIC Model equivalent for body element : ??
+	
+    The body element is used to store all the elements like parts and chapter of a document. Il can contains:<br>
+    <ul><li>part</li>
+    <li>chapter</li>
+    <li>section</li></ul>
+-->
+<!ELEMENT body (part+ | chapter+ | section+)+>
+<!ATTLIST body
+chapnum CDATA "1"
+partnum CDATA "1"
+sectnum CDATA "1"
+paranum CDATA "1">
+
+<!-- Element not used -->
+<!ELEMENT boxhighlight (p | citation | deflist | randlist | seqlist | figure | tablegrp)*>
+
+<!-- DELETED 16-07-2010
+<!ELEMENT boxlist EMPTY>
+<!ATTLIST boxlist
+%id;>-->
+
+<!--
+	NIC Model equivalent for boxnote element : ??
+	NIC Model equivalent for id attribute : ??
+	
+    Container used to store the notes of a text box. Converted from the Word style Box Note.
+-->
+<!ELEMENT boxnote (p | citation | deflist | randlist | seqlist)+>
+<!--
+    @attr type define the text to be displayed. The possible values are:<br>
+    <ul><li>alpha for lower alpha ordered list</li>
+    <li>number for arabic number ordered list</li>
+    <li>note to display the word <i>note</i></li>
+    <li>notes to display the word <i>notes</i></li>
+    <li>.. to display ".." (two dots). Means nil or negligeable</li>
+    <li>hyphen to display "-"</li>
+    <li>e for estimation</li>
+    <li>n.a. for not available</li>
+    <li>n.c. for non communiqué (in french)</li>
+    <li>n.d. for non disponible (in french)</li>
+    <li>none to display nothing</li>
+    <li>p for provisionnal</li>
+    <li>ast for "*"</li></ul>
+-->
+<!ATTLIST boxnote
+%id;
+type (alpha | number | note | notes | .. | hyphen | e | n.a. | n.c. | n.d. | none | p | ast) "number">
+
+<!--
+	NIC Model equivalent for boxnoteref element : ??
+
+    Cross-reference of a boxnote element.
+-->
+<!ELEMENT boxnoteref EMPTY>
+<!--
+    @att refid is the reference to the corresponding boxnote element. 
+    @att format 
+    @att srcfile
+-->
+<!ATTLIST boxnoteref 
+ refid IDREF #REQUIRED
+ format CDATA #IMPLIED
+ srcfile CDATA #IMPLIED>
+
+<!--
+	NIC Model equivalent for boxsection element : ??
+	NIC Model equivalent for id attribute : ??
+	NIC Model equivalent for label attribute : ??
+	NIC Model equivalent for number attribute : ??
+	NIC Model equivalent for numbering attribute : ??
+	NIC Model equivalent for instlang attribute : ??
+
+    Container used to store the title(s) of a text box. Converted from Word style Box Heading, Box Heading 2, Box Heading 3. Three levels can be imbricated.
+-->
+<!ELEMENT boxsection ((heading?, subheading*), boxhighlight?, boxsummary?, abstract?, highlight?, (p | citation | deflist | randlist | seqlist | figure | tablegrp)*, boxsection*, boxnote*, source*)>
+<!--
+    @attr label is used to store the numbering to be displayed.
+    @attr number is used to store the numbering to be displayed.
+    @attr numbering is used to activate the numbering. Possible values are <i>y</i> (yes) or <i>n</i> (no).
+    @attr reference is used to store the numbering to be displayed.
+    @attr instlang define the document language. It can have the following values:
+        <ul><li>i-eng for english</li>
+        <li>i-fr for french</li>
+        <li>i-de for deutsch</li>
+        <li>i-bi-ling for bilingual</li>
+        <li>i-other for other language</li></ul>
+-->
+<!ATTLIST boxsection 
+ %id;
+ label CDATA #IMPLIED
+ number CDATA #IMPLIED
+ numbering (y | n) "y"
+ reference CDATA #IMPLIED
+%instlang;>
+
+<!-- Element not used -->
+<!ELEMENT boxsummary (p | citation | deflist | randlist | seqlist | figure | tablegrp)*>
+
+<!-- Element not used -->
+<!ELEMENT cancel (#PCDATA)>
+<!ATTLIST cancel
+type (dist | olis) #REQUIRED>
+
+<!-- Element not used -->
+<!ELEMENT chapconcl ((heading?, subheading*), highlight?, abstract?, ((p | citation | deflist | randlist | seqlist)+ | figure | tablegrp | textbox)*, section*)>
+
+<!-- Element not used -->
+<!ELEMENT chapno (#PCDATA)>
+
+<!-- 
+	NIC Model equivalent for chapter element : ??
+	NIC Model equivalent for id attribute : ??
+	NIC Model equivalent for label attribute : ??
+	NIC Model equivalent for number attribute : ??
+	NIC Model equivalent for numbering attribute : ??
+	NIC Model equivalent for instlang attribute : ??
+
+    Container used to begin a chapter section. Converted frow Word style Heading 1.
+-->
+<!ELEMENT chapter (bibinfo?, (heading?, subheading*), authorlist?, highlight?, abstract?, ((p | citation | deflist | randlist | seqlist)+ | figure | tablegrp | textbox | section)*, chapconcl?, conclusion?, glossary-acronyms?, biblio?, appendix*, annex*, info?)>
+<!--
+    @attr label is used to store the numbering to be displayed.
+    @attr number is used to store the numbering to be displayed.
+    @attr numbering is used to activate the numbering. Possible values are <i>y</i> (yes) or <i>n</i> (no).
+    @attr mode
+    @attr instlang define the document language. It can have the following values:
+        <ul><li>i-eng for english</li>
+        <li>i-fr for french</li>
+        <li>i-de for deutsch</li>
+        <li>i-bi-ling for bilingual</li>
+        <li>i-other for other language</li></ul>
+    @attr reference is used to store the numbering to be displayed.
+    @attr geocontainer is requested for metadata loader. Possible values are <i>false</i> or <i>true</i>.
+    @attr statisticalannex is requested for metadata loader. Possible values are <i>false</i> or <i>true</i>.
+    @attr metadatatype is requested for metadata loader to re-define the chapter as a section. The value is <i>section</i>.
+-->
+<!ATTLIST chapter
+%id;
+label CDATA #IMPLIED
+number CDATA #IMPLIED
+numbering (y | n) "y"
+mode (standard) "standard"
+reference CDATA #IMPLIED
+%instlang;
+%geocontainer;
+%statisticalannex;
+%metadatatype;
+>
+
+<!-- 
+	NIC Model equivalent for citation element : ??
+
+    Container used to store a citation paragraph. Converted from Word style Citation.
+-->
+<!ELEMENT citation (p | citation | deflist | randlist | seqlist)+>
+<!--
+    @attr citationsource
+-->
+<!ATTLIST citation
+citationsource CDATA #IMPLIED>
+
+<!--
+	NIC Model equivalent for colspec element : ??
+	NIC Model equivalent for colnum attribute : ??
+	NIC Model equivalent for colname attribute : ??
+	NIC Model equivalent for align attribute : ??
+	NIC Model equivalent for char attribute : ??
+	NIC Model equivalent for colwidth attribute : ??
+	NIC Model equivalent for colsep attribute : ??
+	NIC Model equivalent for rowsep attribute : ??
+
+    Element used to specify the columns specification of a table. 
+-->
+<!ELEMENT colspec EMPTY>
+<!--
+    @attr colnum is the number of the column.
+    @attr colname is the name of the column.
+    @attr align is the horizontal alignment for the text inside the column. The possible values are:
+        <ul><li>left</li>
+        <li>right</li>
+        <li>center</li>
+        <li>justify</li>
+        <li>char</li></ul>
+    @attr char is the character to be used in horizontal text alignment inside the column, for example a decimal point “.” 
+    @attr colwidth specifies the width for a column.
+    @attr colsep is used to indicate if a rule have to be placed to the right of a column.
+    @attr rowsep is used to indicate if a rule have to be placed below a row.
+-->
+<!ATTLIST colspec
+	colnum CDATA #IMPLIED
+	colname CDATA #IMPLIED
+	align (left | right | center | justify | char) #IMPLIED
+	char CDATA #IMPLIED
+	colwidth CDATA #IMPLIED
+	colsep CDATA #IMPLIED
+	rowsep CDATA #IMPLIED
+>
+
+<!-- Element not used -->
+<!ELEMENT comment (#PCDATA | shortcitation | comment | emphasis | equation | specchar | indexword)*>
+
+<!-- Element not used -->
+<!ELEMENT committee (#PCDATA)>
+
+<!-- 
+	NIC Model equivalent for conclusion element : ??
+	NIC Model equivalent for id attribute : ??
+
+    Container used to begin a conclusion section.
+-->
+<!ELEMENT conclusion ((heading?, subheading*), authorlist?, highlight?, abstract?, ((p | citation | deflist | randlist | seqlist)+ | figure | tablegrp | textbox)*, section*, chapconcl?)>
+<!ATTLIST conclusion
+%id;>
+
+<!-- Element not used -->
+<!ELEMENT contact (name, position?, telephone?, email?, fax?)>
+
+<!-- Element not used -->
+<!ELEMENT date (#PCDATA)>
+
+<!-- 
+	NIC Model equivalent for def element : ??
+
+    container used in acronym definition.
+-->
+<!ELEMENT def (di+)>
+
+<!-- Element not used -->
+<!ELEMENT deflist (term, def)+>
+
+<!-- Element not used -->
+<!ELEMENT destinat (#PCDATA)>
+
+<!--
+	NIC Model equivalent for di element : ??
+
+    container used to store de definition of an acronym. Only p element is used in our documents.
+-->
+<!ELEMENT di (p | citation | deflist | randlist | seqlist)+>
+
+<!-- Element not used -->
+<!ELEMENT directorate (#PCDATA)>
+
+<!-- Element not used -->
+<!ELEMENT disclmr ((heading?, subheading*), (p | citation | deflist | randlist | seqlist)+)>
+
+<!-- Element not used -->
+<!ELEMENT distdate EMPTY>
+
+<!-- Element not used -->
+<!ELEMENT docdates (location?, drafdate, distdate)>
+
+<!-- Element not used -->
+<!ELEMENT dochist (p | citation | deflist | randlist | seqlist)+>
+
+<!-- 
+	NIC Model equivalent for doi element : ??
+
+    Container used to store the doi of a document.
+-->
+<!ELEMENT doi (#PCDATA)>
+
+<!-- Element not used -->
+<!ELEMENT drafdate (#PCDATA)>
+
+<!-- Element not used -->
+<!ELEMENT edition (#PCDATA)>
+
+<!-- Element not used -->
+<!ELEMENT editor (#PCDATA)>
+
+<!--
+	NIC Model equivalent for email element : ??
+
+    Container used to store the email of an author.
+-->
+<!ELEMENT email (#PCDATA)>
+
+<!--
+	NIC Model equivalent for emphasis element : ??
+	NIC Model equivalent for emph attribute : ??
+
+    Inline element used to change the display of the text within emphasis tag. 
+-->
+<!ELEMENT emphasis (#PCDATA | indexword | specchar | noteref | note | boxnoteref | xref | shortcitation)*>
+<!--
+    @att emph is the possible values of the font to change the text to be display:
+    <ul><li>bold</li>
+    <li>italic</li>
+    <li>bolditalic</li>
+    <li>underline</li>
+    <li>strikeout</li>
+    <li>smallcaps</li>
+    <li>caps</li>
+    <li>normal</li></ul>
+-->
+<!ATTLIST emphasis
+emph (bold | italic | bolditalic | underline | strikeout | smallcaps | caps | normal) #REQUIRED>
+
+<!-- Element not used -->
+<!ELEMENT enddate (#PCDATA)>
+
+<!--
+	NIC Model equivalent for entry element : ??
+	NIC Model equivalent for colname attribute : ??
+	NIC Model equivalent for namest attribute : ??
+	NIC Model equivalent for nameend attribute : ??
+	NIC Model equivalent for spanname attribute : ??
+	NIC Model equivalent for hspan attribute : ??
+	NIC Model equivalent for morerows attribute : ??
+	NIC Model equivalent for colsep attribute : ??
+	NIC Model equivalent for rowsep attribute : ??
+	NIC Model equivalent for valign attribute : ??
+	NIC Model equivalent for charoff attribute : ??
+	NIC Model equivalent for char attribute : ??
+
+    Element used to define the cell of a table.
+-->
+<!ELEMENT entry (p | citation | deflist | randlist | seqlist)+>
+<!--
+    @att colname is the name of one of the columns of a table, used to identify it for column assignment and column spanning.
+    @att namest is the name of leftmost column of span. Name must refer to some colname in a colspec .
+    @att nameend is the name of rightmost column of span. Name must refer to some colname in a colspec.
+    @att spanname is the name of the horizontal span.
+    @att hspan 
+    @att morerows is the number of additional rows in a vertical straddle.
+    @attr colsep is used to indicate if a rule have to be placed to the right of a column.
+    @attr rowsep is used to indicate if a rule have to be placed below a row.
+    @att rotate is the orientation of the table.
+    @att valign is the specification of the vertical position of the data. Posible values are:
+        <ul><li>top</li>
+        <li>bottom</li>
+        <li>middle</li></ul>
+    @att align is the specification of the horizontal alignment of the data. Posible values are:
+        <ul><li>left</li>
+        <li>right</li>
+        <li>center</li>
+        <li>justify</li>
+        <li>char</li></ul>
+    @att charoff is the horizontal offset from the alignment character specified by the char attribute.
+    @att position is the vertical additional space of the top cell margin. 
+    @att char is the character to be used in horizontal text alignment.
+-->
+<!ATTLIST entry
+colname CDATA #IMPLIED
+namest CDATA #IMPLIED
+nameend CDATA #IMPLIED
+spanname CDATA #IMPLIED
+hspan CDATA #IMPLIED
+morerows CDATA "0"
+colsep CDATA #IMPLIED
+rowsep CDATA #IMPLIED
+rotate CDATA "0"
+valign (top | bottom | middle) "top"
+align (left | right | center | justify | char) #IMPLIED
+charoff CDATA "0"
+position (0 | 0.5 | 1 | 1.5 | 2 | 2.5 | 3 | 3.5 | 4 | 4.5 | 5) #IMPLIED
+char CDATA #IMPLIED>
+
+<!--
+	NIC Model equivalent for equation element : ??
+	NIC Model equivalent for id attribute : ??
+
+    Container used to store Word equation (Microsoft Equation 3.0 editor).
+-->
+<!ELEMENT equation (#PCDATA)>
+<!--
+    @att type of the equation. Possible values are display (????) of inline (equation is displayed inside the current paragraph).
+    @att graphic is the source file.
+-->
+<!ATTLIST equation
+type (display | inline) "inline"
+graphic CDATA #IMPLIED
+%id;>
+
+<!--
+	NIC Model equivalent for execsumm element : ??
+	NIC Model equivalent for id attribute : ??
+
+    Container used to begin a executive summary section. It store the text converted from the Word style Executive Summary Heading.<br>
+    execsumm element can be used in frontmatter.
+-->
+<!ELEMENT execsumm ((heading?, subheading*), highlight?, abstract?, ((p | citation | deflist | randlist | seqlist)+ | figure | tablegrp | textbox)*, section*)>
+<!ATTLIST execsumm
+id ID #IMPLIED>
+
+<!--
+	NIC Model equivalent for fax element : ??
+
+    Container used to store the fax number of an author.
+--><!ELEMENT fax (#PCDATA)>
+
+<!-- DELETED 16-07-2010
+<!ELEMENT figlist EMPTY>
+<!ATTLIST figlist
+%id;>-->
+
+<!--
+	NIC Model equivalent for fignote element : ??
+	NIC Model equivalent for id attribute : ??
+	NIC Model equivalent for type attribute : ??
+
+    Container used to store the notes of a figure. Converted from the Word style Figure Note.
+-->
+<!ELEMENT fignote (p | citation | deflist | randlist | seqlist)+>
+<!--
+    @attr type define the text to be displayed. The possible values are:<br>
+    <ul><li>alpha for lower alpha ordered list</li>
+    <li>number for arabic number ordered list</li>
+    <li>note to display the word <i>note</i></li>
+    <li>notes to display the word <i>notes</i></li>
+    <li>.. to display ".." (two dots). Means nil or negligeable</li>
+    <li>hyphen to display "-"</li>
+    <li>e for estimation</li>
+    <li>n.a. for not available</li>
+    <li>n.c. for non communiqué (in french)</li>
+    <li>n.d. for non disponible (in french)</li>
+    <li>none to display nothing</li>
+    <li>p for provisionnal</li>
+    <li>ast for "*"</li></ul>
+-->
+<!ATTLIST fignote
+%id;
+type (alpha | number | note | notes | .. | hyphen | e | n.a. | n.c. | n.d. | none | p | ast) "number">
+
+<!--
+	NIC Model equivalent for fignoteref element : ??
+
+    Cross-reference of a fignote element.
+-->
+<!ELEMENT fignoteref EMPTY>
+<!--
+    @att refid is the reference to the corresponding fignote element. 
+    @att format 
+    @att srcfile
+-->
+<!ATTLIST fignoteref 
+refid IDREF #REQUIRED
+format CDATA #IMPLIED
+srcfile CDATA #IMPLIED>
+
+<!--
+	NIC Model equivalent for figure element : ??
+	NIC Model equivalent for id attribute : ??
+	NIC Model equivalent for instlang attribute : ??
+	NIC Model equivalent for label attribute : ??
+	NIC Model equivalent for number attribute : ??
+	NIC Model equivalent for numbering attribute : ??
+
+    A figure defines the presentation of a picture in the text.
+-->
+<!ELEMENT figure (figureheading?, figuresubheading*, legend*, graphic?, (hyperlink | fignote | source | legend)*)>
+<!--
+    @att width is the width of the figure.
+    @att depth is the depth of the figure.
+    @att place
+    @att instlang define the document language. It can have the following values:
+        <ul><li>i-eng for english</li>
+        <li>i-fr for french</li>
+        <li>i-de for deutsch</li>
+        <li>i-bi-ling for bilingual</li>
+        <li>i-other for other language</li></ul>
+    @att float define if the figure is floating or not. Possible values are <i>y</i> (yes) or <i>n</i> (no).
+    @orient is the orientation of the figure. the possible values are:
+        <ul><li>land for landscape</li>
+        <Li>port for portrait</li></ul>
+    @attr number is used to store the numbering to be displayed.
+    @attr numbering is used to activate the numbering. Possible values are <i>y</i> (yes) or <i>n</i> (no).
+    @attr label is used to store the numbering to be displayed.
+    @attr reference is used to store the numbering to be displayed.
+    @attr type is the type of the figure. The possible values are:
+        <ul><li>figure</li>
+        <li>chart</li>
+        <li>diagram</li>
+        <li>map</li></ul>
+-->
+<!ATTLIST figure
+%id;
+width CDATA #IMPLIED
+depth CDATA #IMPLIED
+place CDATA #IMPLIED
+%instlang;
+float (y | n) "y"
+orient (land | port) "port"
+label CDATA #IMPLIED
+number CDATA #IMPLIED
+numbering (y | n) "y"
+reference CDATA #IMPLIED
+type (figure | chart | diagram | map) "figure">
+
+<!--
+	NIC Model equivalent for figureheading element : ??
+
+    Container used to store the title of a figure. Converted from the Word style Figure Title.
+-->
+<!ELEMENT figureheading (figuremainhead, tochead?)>
+
+<!-- 
+	NIC Model equivalent for figuremainhead element : ??
+	NIC Model equivalent for id attribute : ??
+
+    Container used to define the tile and subtitle of a figure. The text is stored in the figureheading and figuresubheading elements. 
+-->
+<!ELEMENT figuremainhead (#PCDATA | shortcitation | comment | emphasis | equation | specchar | indexword | fignoteref)*>
+<!ATTLIST figuremainhead 
+%id;>
+
+<!--
+	NIC Model equivalent for figuresubheading element : ??
+
+    Container used to store the subtitle of a figure. Converted from the Word style Figure Sub-title.
+-->
+<!ELEMENT figuresubheading (figuremainhead, tochead?)>
+
+<!--
+	NIC Model equivalent for firstname element : ??
+
+    Container used to display the firstname of an author.
+-->
+<!ELEMENT firstname (#PCDATA)>
+
+<!--
+	NIC Model equivalent for fnote element : ??
+	NIC Model equivalent for id attribute : ??
+
+    This element creates the notes at the bottom of the page of a document.
+-->
+<!ELEMENT fnote (p | citation | deflist | randlist | seqlist | tablegrp)+>
+<!ATTLIST fnote
+%id;>
+
+<!--
+	NIC Model equivalent for foreword element : ??
+	NIC Model equivalent for id attribute : ??
+
+    Container used to begin a foreword section. It store the text converted from the Word style Foreword Heading.<br>
+    foreword element can be used in the following sections:
+        <ul><li>frontmatter</li>
+        <li>part</li></ul>
+-->
+<!ELEMENT foreword ((heading?, subheading*), authorlist?, highlight?, abstract?, ((p | citation | deflist | randlist | seqlist)+ | figure | tablegrp | textbox)*, section*, chapconcl?)>
+<!ATTLIST foreword
+%id;>
+
+<!--
+	NIC Model equivalent for frontmatter element : ??
+	NIC Model equivalent for instlang attribute : ??
+
+    The frontmatter element is used to store all the elements at the beginning of a document, before the first part or chapter. It can contains:<br>
+    <ul><li>bibinfo</li>
+    <li>authorlist</li>
+    <li>foreword</li>
+    <li>preface</li>
+    <li>about</li>
+    <li>acknowledgement</li>
+    <li>glossary-acronyms</li>
+    <li>execsumm</li>
+    <li>introduction</li></ul>
+-->
+<!ELEMENT frontmatter (bibinfo, authorlist?, (foreword | preface | about | acknowledgement | glossary-acronyms | execsumm | introduction)*)>
+<!-- 
+    @attr instlang define the document language. It can have the following values:
+        <ul><li>i-eng for english</li>
+        <li>i-fr for french</li>
+        <li>i-de for deutsch</li>
+        <li>i-bi-ling for bilingual</li>
+        <li>i-other for other language</li></ul>
+-->
+<!ATTLIST frontmatter 
+%instlang;>
+
+<!--
+	NIC Model equivalent for glossary-acronyms element : ??
+	NIC Model equivalent for id attribute : ??
+	NIC Model equivalent for label attribute : ??
+	NIC Model equivalent for number attribute : ??
+	NIC Model equivalent for numbering attribute : ??
+
+    Container used to begin a glossary section. It store the text converted from the Word style Glossary Heading.<br>
+-->
+<!ELEMENT glossary-acronyms ((heading?, subheading*), ((acronym | (term, acronym?)), gov-ref?, def)+)>
+<!--
+    @attr label is used to store the numbering to be displayed.
+    @attr number is used to store the numbering to be displayed.
+    @attr numbering is used to activate the numbering. Possible values are <i>y</i> (yes) or <i>n</i> (no).
+-->
+<!ATTLIST glossary-acronyms 
+%id;
+label CDATA #IMPLIED
+number CDATA #IMPLIED
+numbering (y | n) "n">
+
+<!-- Element not used -->
+<!ELEMENT gov-ref (#PCDATA)>
+
+<!--
+	NIC Model equivalent for graphic element : ??
+	NIC Model equivalent for id attribute : ??
+
+    The graphic that has to be display.
+-->
+<!ELEMENT graphic EMPTY>
+<!-- 
+    @att type is the type of the graphic. Possible values are equation or graphic.
+    @att graphic is the source file.
+<-->
+<!ATTLIST graphic
+graphic CDATA #IMPLIED
+id ID #IMPLIED
+type (equation | graphic) "graphic">
+
+<!--
+	NIC Model equivalent for heading element : ??
+
+    Container used to store the text of the different heading element listed above.
+-->
+<!ELEMENT heading (mainhead, tochead?)>
+
+<!-- Element not used -->
+<!ELEMENT highlight ((p | citation | deflist | randlist | seqlist)+ | figure | tablegrp | textbox)*>
+
+<!-- Element not used -->
+<!ELEMENT hosttitl (#PCDATA)>
+
+<!--
+	NIC Model equivalent for hyperlink element : ??
+	NIC Model equivalent for url attribute : ??
+	NIC Model equivalent for target attribute : ??
+
+    Container used to store the internal or external reference to a document. 
+-->
+<!ELEMENT hyperlink (#PCDATA | specchar)*>
+<!--
+    @attr url is the wab address of the link. For exemple, http://www.oecd.org
+    @attr target is type of the target. The possible values are:
+    <ul><li>webpage</li>
+    <li>statlink</li>
+    <li>document</li></ul>
+-->
+<!ATTLIST hyperlink
+url CDATA #REQUIRED
+target (webpage | statlink | document) "webpage">
+
+<!--
+	NIC Model equivalent for indexword element : ??
+	NIC Model equivalent for id attribute : ??
+	NIC Model equivalent for text attribute : ??
+
+    Some keywords "defining" the document. Used by search engines to build their index.
+-->
+<!ELEMENT indexword (#PCDATA | noteref)*>
+<!--
+    @attr refid
+    @attr type
+    @attr text is the text to be displayed.
+-->
+<!ATTLIST indexword
+%id;
+refid IDREF #IMPLIED
+type CDATA #IMPLIED
+text CDATA #IMPLIED>
+
+<!-- Element not used -->
+<!ELEMENT indvpub (name+, (pubtitle, secrespn?, edition?, no-vols?, location?, publishr?, date, work-id?, volno?, issueno?, chapno?, pgnos?, sertitle?, translat?, isbn?, issn?))>
+<!ATTLIST indvpub
+%id;>
+
+<!-- Element not used -->
+<!ELEMENT info ((heading?, subheading*), (p | citation | deflist | randlist | seqlist)+)>
+
+<!-- Element not used -->
+<!ELEMENT institut (#PCDATA)>
+
+<!-- Element not used -->
+<!ELEMENT instpub (institut, (pubtitle, secrespn?, edition?, no-vols?, location?, publishr?, date, work-id?, volno?, issueno?, chapno?, pgnos?, sertitle?, translat?, isbn?, issn?))>
+<!ATTLIST instpub
+%id;>
+
+<!--
+	NIC Model equivalent for introduction element : ??
+
+    Container used to begin a introduction section. It store the text converted from the Word style Introduction Heading.<br>
+    introduction element can be used in the following sections:
+        <ul><li>frontmatter</li>
+        <li>part</li></ul>
+-->
+<!ELEMENT introduction ((heading?, subheading*), authorlist?, highlight?, abstract?, ((p | citation | deflist | randlist | seqlist)+ | figure | tablegrp | textbox)*, section*, chapconcl?)>
+
+<!--
+	NIC Model equivalent for isbn element : ??
+
+    Container used to store the ISBN data. 
+-->
+<!ELEMENT isbn (#PCDATA)>
+
+<!--
+	NIC Model equivalent for issn element : ??
+
+    Container used to store the ISSN data. 
+-->
+<!ELEMENT issn (#PCDATA)>
+
+<!-- Element not used -->
+<!ELEMENT issueno (#PCDATA)>
+
+<!-- Element not used -->
+<!ELEMENT jobno EMPTY>
+<!ATTLIST jobno
+jobnumber CDATA #REQUIRED
+oecdcode CDATA #REQUIRED>
+
+<!-- Element not used -->
+<!ELEMENT journal (#PCDATA)>
+
+<!-- Element not used -->
+<!ELEMENT keywdgrp (keyword+)>
+
+<!-- Element not used -->
+<!ELEMENT keyword (#PCDATA)>
+
+<!--
+	NIC Model equivalent for langinfo element : ??
+	NIC Model equivalent for origlang attribute : ??
+	NIC Model equivalent for instlang attribute : ??
+
+    Container used to store the language of a document.
+-->
+<!ELEMENT langinfo EMPTY>
+<!-- 
+    @attr origlang define the original language of the document language. It can have the following values:
+        <ul><li>o-eng for english</li>
+        <li>o-fr for french</li>
+        <li>o-de for deutsch</li>
+        <li>o-bi-ling for bilingual</li>
+        <li>o-other for other language</li></ul>
+    @attr instlang define the language used in the document language. It can have the following values:
+        <ul><li>i-eng for english</li>
+        <li>i-fr for french</li>
+        <li>i-de for deutsch</li>
+        <li>i-bi-ling for bilingual</li>
+        <li>i-other for other language</li></ul>
+-->
+<!ATTLIST langinfo
+origlang (o-eng | o-fr | o-de | o-bi-ling | o-other) #IMPLIED
+instlang (i-eng | i-fr | i-de | i-bi-ling | i-other) #REQUIRED>
+
+<!-- Element not used -->
+<!ELEMENT legend (deflist | p+)>
+
+<!-- 
+	NIC Model equivalent for li element : ??
+	NIC Model equivalent for id attribute : ??
+
+    Container used to store the text to be displayed in a list. Converted from possible Word style:
+    <ul><li>List Bullet for a bulleted list</li>
+    <li>List Number for a numbered list</li>
+    <li>List Continue for a second entry in a list item</li>
+    For the nested levels, the possible Word style are:
+    <ul><li>List Bullet 2, for second level</li>
+    <li>List Bullet 3, for third level</li>
+    <li>List Number 2, for second level</li>
+    <li>List Number 3, for third level</li>
+    <li>List Continue 2, for second level</li>
+    <li>List Continue 3, for third level</li></ul>
+-->
+<!ELEMENT li (p | citation | deflist | randlist | seqlist)+>
+<!--
+    @attr label is used to store the numbering to be displayed.
+    @attr number is used to store the numbering to be displayed.
+    @attr numbering is used to activate the numbering. Possible values are <i>y</i> (yes) or <i>n</i> (no).
+-->
+<!ATTLIST li
+id ID #IMPLIED
+label CDATA #IMPLIED
+number CDATA #IMPLIED
+numbering (y | n) "n">
+
+<!-- Element not used -->
+<!ELEMENT location (#PCDATA)>
+
+<!--
+	NIC Model equivalent for mainhead element : ??
+	NIC Model equivalent for id attribute : ??
+
+    Container used to store the text of the titles to be displayed.
+-->
+<!ELEMENT mainhead (#PCDATA | bibref | boxnoteref | comment | emphasis | equation | indexword | note | noteref | shortcitation | specchar | xref | fnote | graphic | hyperlink)*>
+<!ATTLIST mainhead
+%id;>
+
+<!-- Element not used -->
+<!ELEMENT maintitl (#PCDATA)>
+<!ATTLIST maintitl
+%id;>
+
+<!-- Element not used -->
+<!ELEMENT mtginfo (p | citation | deflist | randlist | seqlist)+>
+
+<!-- 
+	NIC Model equivalent for name element : ??
+
+    Container used to store firstname and surname of an author.
+-->
+<!ELEMENT name (title?, firstname, surname)>
+
+<!--
+	NIC Model equivalent for narr-doc element : ??
+
+    The narr-doc element is the root element of the document.
+-->
+<!ELEMENT narr-doc (frontmatter?, body?, backmatter?)>
+<!--
+    @attr status is the status of the document. The possible values are draft or final.
+    @attr notestyle is where the notes will be placed in the document. the possible values are:
+    <ol><li>book to place the notes at the end of the document, in the backmatter element</li>
+    <li>chapter to place the notes at the end of the chapter, in the chapter element</li>
+    <li>page to place the notes at the bottom of the pages, in the element fnote</li>
+    <li>part to place the note at the end of the part, in the element part</li></ol>
+    @attr classification is in which category the document has to be classified. Possible values are:
+    <ol><li>official</li>
+    <li>publication</li>
+    <li>confidential</li>
+    <li>unclassified</li></ol>
+    @attr sectioning is used to determined how the XML instance have to be sectioning:
+    <ol><li><i>book</i> to keep the instance in one file</li>
+    <li><i>chapter</i> to separate the instance by chapter</li>
+    <li><i>part</li> to separate the instance by part</li></ol>
+-->
+<!ATTLIST narr-doc
+status (draft | final) #IMPLIED
+notestyle (book | chapter | page | part) "chapter"
+classification (official | publication | confidential | unclassified) "publication"
+sectioning (book | chapter | part) "chapter"
+>
+
+<!-- Element not used -->
+<!ELEMENT no-vols (#PCDATA)>
+
+<!-- 
+	NIC Model equivalent for note element : ??
+	NIC Model equivalent for id attribute : ??
+
+    Container used to store the notes of the document.
+-->
+<!ELEMENT note (p | citation | deflist | randlist | seqlist | tablegrp)+>
+<!ATTLIST note
+%id;>
+
+<!--
+	NIC Model equivalent for noteref element : ??
+
+    Cross-reference of a note element.
+-->
+<!ELEMENT noteref EMPTY>
+<!--
+    @att refid is the reference to the corresponding note element. 
+    @att format 
+    @att srcfile
+-->
+<!ATTLIST noteref
+refid IDREF #REQUIRED
+format CDATA #IMPLIED
+srcfile CDATA #IMPLIED>
+
+<!-- Element not used -->
+<!ELEMENT oecd-doc (maintitl?, pararef?)>
+<!ATTLIST oecd-doc
+%id;>
+
+<!-- DELETED 16-07-2010
+<!ELEMENT olisavlb EMPTY>
+<!ATTLIST olisavlb
+type (full | partial | unavail | complete) #REQUIRED>-->
+
+<!-- DELETED 16-07-2010
+<!ELEMENT olisdate EMPTY>-->
+
+<!-- Element not used -->
+<!ELEMENT originatingbody (p | citation | deflist | randlist | seqlist)+>
+<!ATTLIST originatingbody 
+type (secretar | chairman | delegatn | consult | extbody | secgen | other) "secretar">
+
+<!-- 
+	NIC Model equivalent for p element : ??
+	NIC Model equivalent for id attribute : ??
+	NIC Model equivalent for instlang attribute : ??
+	NIC Model equivalent for indent attribute : ??
+
+    Container used to store the text of all the elements that are not heading. For exemple, p can be parent of li (list), entry (cell), ... 
+-->
+<!ELEMENT p (#PCDATA | bibref | boxnoteref | comment | emphasis | equation | fnote | graphic | hyperlink | indexword | note | noteref | shortcitation | specchar | tabnoteref | xref)*>
+<!--
+    @attr indent is used to indent the first line of a paragraph. Possible values are <i>y</i> (yes) or <i>n</i> (no).
+    
+    @attr label is used to store the numbering to be displayed.
+    @attr number is used to store the numbering to be displayed.
+    @attr numbering is used to activate the numbering. Possible values are <i>y</i> (yes) or <i>n</i> (no).
+    @attr instlang define the language used in the document language. It can have the following values:
+        <ul><li>i-eng for english</li>
+        <li>i-fr for french</li>
+        <li>i-de for deutsch</li>
+        <li>i-bi-ling for bilingual</li>
+        <li>i-other for other language</li></ul>
+-->
+<!ATTLIST p
+%id;
+indent (y | n) "y"
+%instlang;
+label CDATA #IMPLIED
+number CDATA #IMPLIED
+numbering (y | n) "n">
+
+<!-- Element not used -->
+<!ELEMENT pararef (#PCDATA)>
+
+<!-- 
+	NIC Model equivalent for part element : ??
+	NIC Model equivalent for id attribute : ??
+	NIC Model equivalent for label attribute : ??
+	NIC Model equivalent for number attribute : ??
+	NIC Model equivalent for numbering attribute : ??
+
+    Container used to begin a part section. Converted frow Word style Part Heading.
+-->
+<!ELEMENT part (bibinfo?, (heading?, subheading*), authorlist?, foreword?, acknowledgement?, highlight?, abstract?, introduction?, chapter+, conclusion?, glossary-acronyms?, biblio?, appendix*, annex*, info?)>
+<!--
+    @attr label is used to store the numbering to be displayed.
+    @attr number is used to store the numbering to be displayed.
+    @attr numbering is used to activate the numbering. Possible values are <i>y</i> (yes) or <i>n</i> (no).
+    @attr mode
+    @attr instlang define the document language. It can have the following values:
+        <ul><li>i-eng for english</li>
+        <li>i-fr for french</li>
+        <li>i-de for deutsch</li>
+        <li>i-bi-ling for bilingual</li>
+        <li>i-other for other language</li></ul>
+    @attr reference is used to store the numbering to be displayed.
+    @attr geocontainer is requested for metadata loader. Possible values are <i>false</i> or <i>true</i>.
+    @attr statisticalannex is requested for metadata loader. Possible values are <i>false</i> or <i>true</i>.
+    @attr metadatatype is requested for metadata loader to re-define the part as a section. The value is <i>section</i>.
+-->
+<!ATTLIST part
+%id;
+label CDATA #IMPLIED
+number CDATA #IMPLIED
+numbering (y | n) "n"
+mode (standard) "standard"
+reference CDATA #IMPLIED
+%instlang;
+%geocontainer;
+%statisticalannex;
+%metadatatype;
+>
+
+<!-- Element not used -->
+<!ELEMENT periodcl (journal, location, date, volno?, issueno?, pgnos?)>
+<!ATTLIST periodcl
+id ID #IMPLIED>
+
+<!-- Element not used -->
+<!ELEMENT pgnos (#PCDATA)>
+
+<!--
+	NIC Model equivalent for position element : ??
+
+    Container used to display the position of an author.
+-->
+<!ELEMENT position (#PCDATA)>
+
+<!--
+	NIC Model equivalent for preface element : ??
+	NIC Model equivalent for id attribute : ??
+
+    Container used to begin a preface section.<br>
+    preface element can be used in the frontmatter element
+-->
+<!ELEMENT preface ((heading?, subheading*), authorlist?, highlight?, abstract?, ((p | citation | deflist | randlist | seqlist)+ | figure | tablegrp | textbox)*, section*, chapconcl?)>
+<!ATTLIST preface
+%id;>
+
+<!-- Element not used -->
+<!ELEMENT publishr (#PCDATA)>
+
+<!-- Element not used -->
+<!ELEMENT pubtitle (#PCDATA)>
+
+<!-- Element not used -->
+<!ELEMENT pubyear (#PCDATA)>
+
+<!-- Element not used -->
+<!ELEMENT quote (p | citation | deflist | randlist | seqlist)+>
+
+<!-- 
+	NIC Model equivalent for randlist element : ??
+	NIC Model equivalent for type attribute : ??
+
+    Element used to define a random list (for exemple, bulleted list). 
+-->
+<!ELEMENT randlist (li+)>
+<!-- 
+    @attr type is used to define the type of the list. The possible values are:
+    <ul><li>bullet for bulleted list corresponding to first level</li>
+    <li>zapf for the list beginning with character in zapf font. Corresponding to second level</li> 
+    <li>hyphen for hyphen list corresponding to third level</li>
+-->
+<!ATTLIST randlist
+type (bullet | hyphen | zapf) "bullet">
+
+<!-- 
+	NIC Model equivalent for row element : ??
+	NIC Model equivalent for rowsep attribute : ??
+
+    Container used for all the cells in a table row.
+-->
+<!ELEMENT row (entry+)>
+<!--
+    @attr rowsep indicates whether a rule be placed below a row.
+-->
+<!ATTLIST row
+	rowsep CDATA #IMPLIED>
+
+<!-- Element not used -->
+<!ELEMENT secrespn (#PCDATA)>
+
+<!-- 
+	NIC Model equivalent for section element : ??
+	NIC Model equivalent for id attribute : ??
+	NIC Model equivalent for label attribute : ??
+	NIC Model equivalent for number attribute : ??
+	NIC Model equivalent for numbering attribute : ??
+
+    Container used to store the subtitles in chapter, for exemple.
+    NIC Model equivalent : ??
+
+-->
+<!ELEMENT section (bibinfo?, (heading?, subheading*), highlight?, abstract?, ((p | citation | deflist | randlist | seqlist)+ | quote | figure | tablegrp | textbox | section | biblio)*)>
+<!--
+    @attr label is used to store the numbering to be displayed.
+    NIC Model equivalent : ??
+
+    @attr number is used to store the numbering to be displayed.
+    NIC Model equivalent : ??
+
+    @attr numbering is used to activate the numbering. Possible values are <i>y</i> (yes) or <i>n</i> (no).
+    NIC Model equivalent : ??
+
+    @attr content. Possible values are:
+    <ul><li>default</li>
+    <li>indicator</li></ul>
+    @attr geocontainer is requested for metadata loader. Possible values are <i>false</i> or <i>true</i>.
+    NIC Model equivalent : ??
+
+    @attr statisticalannex is requested for metadata loader. Possible values are <i>false</i> or <i>true</i>.
+    NIC Model equivalent : ??
+
+    @attr metadatatype is requested for metadata loader to re-define the section as a section. The value is <i>section</i>.
+    NIC Model equivalent : ??
+
+
+-->
+<!ATTLIST section
+%id;
+label CDATA #IMPLIED
+number CDATA #IMPLIED
+numbering (y | n) "n"
+content (default | indicator) "default"
+%geocontainer;
+%statisticalannex;
+%metadatatype;
+>
+
+<!--
+	NIC Model equivalent for seqlist element : ??
+	NIC Model equivalent for type attribute : ??
+
+    Element used to define a sequantial list (for exemple, numbered list). 
+-->
+<!ELEMENT seqlist (li+)>
+<!-- 
+    @attr type is used to define the type of the list. The possible values are:
+    <ul><li>arabic for the numbered list</li>
+    <li>lalpha for lower alpha list</li> 
+    <li>ualpha for upper alpha list</li>
+    <li>lroman for lower roman list</li> 
+    <li>uroman for upper roman list</li>
+    <li>hardcoded is the text to be displayed</li></ul>
+-->
+<!ATTLIST seqlist
+type (arabic | lalpha | ualpha | lroman | uroman | hardcoded) "arabic">
+
+<!-- Element not used -->
+<!ELEMENT serinfo (sertitle, issueno?)>
+
+<!-- Element not used -->
+<!ELEMENT sertitle (#PCDATA)>
+
+<!--
+	NIC Model equivalent for shortcitation element : ??
+
+    container used to store the text to be displayed between quotes.
+-->
+<!ELEMENT shortcitation (#PCDATA | emphasis | specchar | noteref | note | indexword | shortcitation)*>
+<!ATTLIST shortcitation
+citationsource CDATA #IMPLIED>
+
+<!-- DELETED 16-07-2010
+<!ELEMENT size EMPTY>
+<!ATTLIST size
+size CDATA #IMPLIED>-->
+
+<!-- 
+	NIC Model equivalent for source element : ??
+
+    Container used to store the text of the source for the box, figure and table. 
+-->
+<!ELEMENT source (p | citation | deflist | randlist | seqlist)+>
+<!-- 
+    @attr type is to define if the word "source" is singular or plural. The possible values are:
+    <ul><li>sing for singular</li>
+    <li>plural</li></ul>
+-->
+<!ATTLIST source
+type (sing | plu) "sing">
+
+<!--
+	NIC Model equivalent for spanspec element : ??
+	NIC Model equivalent for spanname attribute : ??
+	NIC Model equivalent for namest attribute : ??
+	NIC Model equivalent for nameend attribute : ??
+	NIC Model equivalent for align attribute : ??
+	NIC Model equivalent for colsep attribute : ??
+	NIC Model equivalent for rowsep attribute : ??
+
+    The span element defines each rowspan in the table and assigns it a name and which columns it spans.
+-->
+<!ELEMENT spanspec EMPTY>
+<!-- 
+    @attr spanname is the name of the span.
+    @attr namest is the column number where the span start.
+    @attr nameend is the column number where the span end.
+    @attr align is the alignment in the cell. Possible values are:
+        <ul><li>left</li>
+        <li>right</li>
+        <li>center</li>
+        <li>justify</li>
+        <li>char</li></ul>
+    @attr charoff
+    @attr char is the character to be used in horizontal text alignment inside the column, for example a decimal point “.” 
+    @attr colsep is used to indicate if a rule have to be placed to the right of a column.
+    @attr rowsep is used to indicate if a rule have to be placed below a row.
+-->
+<!ATTLIST spanspec
+spanname CDATA #REQUIRED
+namest CDATA #REQUIRED
+nameend CDATA #REQUIRED
+align (left | right | center | justify | char) "center"
+charoff CDATA #IMPLIED
+char CDATA #IMPLIED
+colsep CDATA #IMPLIED
+rowsep CDATA #IMPLIED
+>
+
+<!--
+	NIC Model equivalent for specchar element : ??
+	NIC Model equivalent for font attribute : ??
+	NIC Model equivalent for position attribute : ??
+
+    Inline element used to change the display of the text within specchar tag. 
+-->
+<!ELEMENT specchar (#PCDATA)>
+
+<!--
+    @attr font is the font to use. The possible values are:
+        <ul><li>euro</li>
+        <li>zapfdingbats</li>
+        <li>symbol</li>
+        <li>timesce</li>
+        <li>timescyr</li>
+        <li>default</li></ul>
+    @attr position is the vertical position of the characters. The posssible values are:
+        <ul><li>sup</li>
+        <li>sub</li>
+        <li>regular</li></ul>
+-->
+<!ATTLIST specchar
+font (euro | zapfdingbats | symbol | timesce | timescyr | default) "default"
+position (sup | sub | regular) "regular">
+
+<!-- Element not used -->
+<!ELEMENT strtdate (#PCDATA)>
+
+<!--
+	NIC Model equivalent for subheading element : ??
+
+    Container used to store the text of the different heading element listed above.
+-->
+<!ELEMENT subheading (mainhead, tochead?)>
+
+<!-- Element not used -->
+<!ELEMENT subtitle (#PCDATA)>
+
+<!-- 
+	NIC Model equivalent for surname element : ??
+
+    Container used to display the surname of an author.
+-->
+<!ELEMENT surname (#PCDATA)>
+
+<!--
+	NIC Model equivalent for table element : ??
+	NIC Model equivalent for colsep attribute : ??
+	NIC Model equivalent for rowsep attribute : ??
+
+    Element that identifies a table.
+-->
+<!ELEMENT table (tgroup+)>
+<!-- 
+    @attr frame describes position of outer rulings. Possible values are:
+        <ul><li>top</li>
+        <li>bottom</li>
+        <li>topbot</li>
+        <li>all</li>
+        <li>sides</li>
+        <li>none</li></ul>
+    @attr colsep is the default for all tgroup in this table.
+    @attr rowsep is the default for all tgroup in this table.
+    @attr orient Orientation of the entire table.
+    @attr pgwide
+-->
+<!ATTLIST table
+frame (top | bottom | topbot | all | sides | none) #IMPLIED
+colsep CDATA #IMPLIED
+rowsep CDATA #IMPLIED
+orient (port | land) #IMPLIED
+pgwide CDATA #IMPLIED
+>
+
+<!--
+	NIC Model equivalent for tablegrp element : ??
+	NIC Model equivalent for id attribute : ??
+	NIC Model equivalent for instlang attribute : ??
+	NIC Model equivalent for label attribute : ??
+	NIC Model equivalent for number attribute : ??
+	NIC Model equivalent for numbering attribute : ??
+
+    Container used to store the heading and subheading of a table.
+-->
+<!ELEMENT tablegrp (tableheading?, tablesubheading*, (table | graphic)*, (hyperlink | tabnote | source)*)>
+<!--
+    @attr instlang define the document language. It can have the following values:
+        <ul><li>i-eng for english</li>
+        <li>i-fr for french</li>
+        <li>i-de for deutsch</li>
+        <li>i-bi-ling for bilingual</li>
+        <li>i-other for other language</li></ul>
+    @attr orient Orientation of the entire table.
+    @attr label is used to store the numbering to be displayed.
+    @attr reference is used to store the numbering to be displayed.
+    @attr name
+    @attr number is used to store the numbering to be displayed.
+    @attr numbering is used to activate the numbering. Possible values are <i>y</i> (yes) or <i>n</i> (no).
+    @attr type is the type of the table. Possible values are <i>table</i> of <i>exhibit</i>.
+    @attr dynamic-graph
+-->
+<!ATTLIST tablegrp
+%id;
+%instlang;
+orient (land | port) "port"
+label CDATA #IMPLIED
+name CDATA #IMPLIED
+number CDATA #IMPLIED
+numbering (y | n) "y"
+type (table | exhibit) "table"
+reference CDATA #IMPLIED
+dynamic-graph (y | n) #IMPLIED>
+
+<!--
+	NIC Model equivalent for tableheading element : ??
+
+    container used to store the heading of a table.
+-->
+<!ELEMENT tableheading (tablemainhead, tochead?)>
+
+<!-- 
+	NIC Model equivalent for tablemainhead element : ??
+	NIC Model equivalent for id attribute : ??
+
+    Container used to display the text of a table heading or table subheading.
+-->
+<!ELEMENT tablemainhead (#PCDATA | shortcitation | comment | emphasis | equation | specchar | indexword | tabnoteref)*>
+<!ATTLIST tablemainhead 
+%id;>
+
+<!--
+	NIC Model equivalent for tablesubheading element : ??
+
+    container used to store the subheading of a table.
+-->
+<!ELEMENT tablesubheading (tablemainhead, tochead?)>
+
+<!-- DELETED 16-07-2010
+<!ELEMENT tablist EMPTY>
+<!ATTLIST tablist
+id ID #IMPLIED>-->
+
+<!--
+	NIC Model equivalent for tabnote element : ??
+	NIC Model equivalent for id attribute : ??
+	NIC Model equivalent for type attribute : ??
+
+    Container used to store the notes of a table. Converted from the Word style Table Note.
+-->
+<!ELEMENT tabnote (p | citation | deflist | randlist | seqlist)+>
+<!--
+    @attr type define the text to be displayed. The possible values are:<br>
+    <ul><li>alpha for lower alpha ordered list</li>
+    <li>number for arabic number ordered list</li>
+    <li>note to display the word <i>note</i></li>
+    <li>notes to display the word <i>notes</i></li>
+    <li>.. to display ".." (two dots). Means nil or negligeable</li>
+    <li>hyphen to display "-"</li>
+    <li>e for estimation</li>
+    <li>n.a. for not available</li>
+    <li>n.c. for non communiqué (in french)</li>
+    <li>n.d. for non disponible (in french)</li>
+    <li>none to display nothing</li>
+    <li>p for provisionnal</li>
+    <li>ast for "*"</li></ul>
+-->
+<!ATTLIST tabnote
+%id;
+type (alpha | number | note | notes | .. | hyphen | e | n.a. | n.c. | n.d. | none | p | ast) "number">
+
+<!--
+	NIC Model equivalent for tabnoteref element : ??
+
+    Cross-reference of a tabnote element.
+-->
+<!ELEMENT tabnoteref EMPTY>
+<!--
+    @att refid is the reference to the corresponding tabnote element. 
+    @att format 
+    @att srcfile
+-->
+<!ATTLIST tabnoteref 
+refid IDREF #REQUIRED
+format CDATA #IMPLIED
+srcfile CDATA #IMPLIED>
+
+<!--
+	NIC Model equivalent for tbody element : ??
+
+    Element that identifies the body of a tgroup. 
+-->
+<!ELEMENT tbody (row+)>
+<!--
+    @attr valign is the default text vertical positioning within the entry. Possible values are:
+        <ul><li>top</li>
+        <li>middle</li>
+        <li>bottom</li></ul>
+-->
+<!ATTLIST tbody
+valign (top | middle | bottom) "top">
+
+<!--
+	NIC Model equivalent for telephone element : ??
+
+    Container used to display the telephone of an author.
+-->
+<!ELEMENT telephone (#PCDATA)>
+
+<!-- 
+	NIC Model equivalent for term element : ??
+
+    Container used to store the term of a glossary.
+-->
+<!ELEMENT term (p | citation | deflist | randlist | seqlist)+>
+
+<!-- 
+	NIC Model equivalent for textbox element : ??
+	NIC Model equivalent for id attribute : ??
+
+   Container used to begin a box section. It store the text converted from the Word style box Heading.<br>
+-->
+<!ELEMENT textbox (boxsection)>
+<!ATTLIST textbox
+%id;>
+
+<!--
+	NIC Model equivalent for tgroup element : ??
+	NIC Model equivalent for align attribute : ??
+	NIC Model equivalent for cols attribute : ??
+	NIC Model equivalent for colsep attribute : ??
+	NIC Model equivalent for rowsep attribute : ??
+	NIC Model equivalent for char attribute : ??
+	NIC Model equivalent for type attribute : ??
+	NIC Model equivalent for label attribute : ??
+	NIC Model equivalent for number attribute : ??
+	NIC Model equivalent for numbering attribute : ??
+
+    Each tgroup effectively identifies a new portion of a table.
+-->
+<!ELEMENT tgroup (colspec*, spanspec*, thead?, tbody)>
+<!--
+    @attr align is the horizontal alignment for the text inside the column. The possible values are:
+    @attr cols is the number of columns in the tgroup.
+    @attr colsep is used to indicate if a rule have to be placed to the right of a column.
+    @attr rowsep is used to indicate if a rule have to be placed below a row.
+    @attr charoff
+    @attr char is the character to be used in horizontal text alignment inside the column, for example a decimal point “.” 
+    @attr type the type of the values containing in the cell. Possible values are <i>txt</i> or <i>num</i>.
+    @attr status is the status of the table. Possible values are <i>user</i>, <i>ok</li> or <i>check</i>.
+    @attr label is used to store the numbering to be displayed.
+    @attr number is used to store the numbering to be displayed.
+    @attr numbering is used to activate the numbering. Possible values are <i>y</i> (yes) or <i>n</i> (no).
+    @attr reference is used to store the numbering to be displayed.
+-->
+<!ATTLIST tgroup
+align (left | right | center | justify | char) "left"
+cols CDATA #REQUIRED
+colsep CDATA #IMPLIED
+rowsep CDATA #IMPLIED
+charoff CDATA "0"
+char CDATA #IMPLIED
+type (txt | num) "num"
+status (user | ok | check) #IMPLIED
+label CDATA #IMPLIED
+number CDATA #IMPLIED
+reference CDATA #IMPLIED
+numbering (y | n) "n">
+
+<!--
+	NIC Model equivalent for thead element : ??
+
+    Container that identifies the heading row of a tgroup. 
+-->
+<!ELEMENT thead (colspec*, row+)>
+<!--
+    @attr valign is the default text vertical positioning within the entry.
+-->
+<!ATTLIST thead
+valign (top | middle | bottom) #IMPLIED>
+
+<!-- Element not used -->
+<!ELEMENT title (#PCDATA)>
+
+<!-- Element not used -->
+<!ELEMENT tochead (#PCDATA)>
+
+<!-- Element not used -->
+<!ELEMENT traninfo (transno, strtdate, enddate)>
+
+<!-- Element not used -->
+<!ELEMENT translat (#PCDATA)>
+
+<!-- Element not used -->
+<!ELEMENT transno (#PCDATA)>
+
+<!-- Element not used -->
+<!ELEMENT volno (#PCDATA)>
+
+<!-- Element not used -->
+<!ELEMENT work-id (#PCDATA)>
+
+<!--
+	NIC Model equivalent for xref element : ??
+
+    Inline element used to display the text of an internal reference. 
+-->
+<!ELEMENT xref EMPTY>
+<!--
+    @attr refid
+    @attr capital
+    @attr display
+    @attr object is the text to be display. Possible values are:
+        <ul><li>annex</li>
+        <li>box</li>
+        <li>chapter</li>
+        <li>cote</li>
+        <li>figure</li>
+        <li>part</li>
+        <li>section</li>
+        <li>table</li>
+        <li>mainhead</li>
+    @attr type is to define if the word "source" is singular or plural. The possible values are:
+    <ul><li>sing for singular</li>
+    <li>plural</li></ul>
+    @attr cont
+    @attr format
+    @attr srcfile
+-->
+<!ATTLIST xref
+refid IDREF #REQUIRED
+capital (no | yes) "no"
+display CDATA #IMPLIED
+object (annex | box | chapter | cote | figure | part | section | table | mainhead) "table"
+type (plu | sing) "sing"
+cont (none | and | to | no) "none"
+format CDATA #IMPLIED
+srcfile CDATA #IMPLIED>
+
+<!NOTATION ascii SYSTEM "ascii">
+<!NOTATION cgm SYSTEM "cgm">
+<!NOTATION eps SYSTEM "eps">
+<!NOTATION tiff SYSTEM "tiff">
+<!NOTATION wk1 SYSTEM "wk1">
+<!ENTITY % ISOtech PUBLIC "ISO 9573-13:1991//ENTITIES General Technical//EN"						"entities/iso-tech.ent">
+%ISOtech;
+<!ENTITY % ISOpub PUBLIC "ISO 8879-1986//ENTITIES Publishing//EN"												"entities/iso-pub.ent">
+%ISOpub;
+<!ENTITY % ISOnum PUBLIC "ISO 8879-1986//ENTITIES Numeric and Special Graphic//EN"			"entities/iso-num.ent">
+%ISOnum;
+<!ENTITY % ISOlat1 PUBLIC "ISO 8879-1986//ENTITIES Added Latin 1//EN"										"entities/iso-lat1.ent">
+%ISOlat1;
+<!ENTITY % ISOlat2 PUBLIC "ISO 8879-1986//ENTITIES Added Latin 2//EN"										"entities/iso-lat2.ent">
+%ISOlat2;
+<!ENTITY % ISOgrk1 PUBLIC "ISO 8879-1986//ENTITIES Greek Letters//EN"										"entities/iso-grk1.ent">
+%ISOgrk1;
+<!ENTITY lsquof "[lsquof]">
+<!ENTITY rsquof "[rsquof]">
+<!ENTITY lsquoe "[lsquoe]">
+<!ENTITY rsquoe "[rsquoe]">
+<!ENTITY ldquoe "[ldquoe]">
+<!ENTITY rdquoe "[rdquoe]">
+<!ENTITY ldquof "[ldquof]">
+<!ENTITY rdquof "[rdquof]">
+<!ENTITY euro "[euro] ">

@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8"?><xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:mods="http://www.loc.gov/mods/v3" elementFormDefault="qualified">
+
+    <xs:annotation>
+        <xs:documentation><section xmlns="http://docbook.org/ns/docbook">
+                <title>OECD Schemas</title>
+                <subtitle>Simple Structual Components</subtitle>
+                <revhistory>
+                    <title>Change Log</title> <revision>
+                        <revnumber>1</revnumber>
+                        <date>2012-03-21</date>
+                        <author><email>nicg@corbas.co.uk</email><personname>Nic
+                            Gibson</personname></author>
+                        <revremark>Initial Version</revremark>
+                    </revision> </revhistory>
+                <para>Bibliographic models. There are two distinct bibliographic models. Firstly, we
+                    have an application driven process which uses bibliographic tools. In this case
+                    it is only necessary to indicate where the bibliography should be rendered.
+                    Secondly, we have reference material or additional reading where the
+                    bibliography should be generated as section type content inline allowing authors
+                    to enter their bibliographic material directly.</para>
+            </section></xs:documentation>
+    </xs:annotation>
+
+    <!-- IMPORTS AND INCLUDES -->
+    <xs:include schemaLocation="../components/meta.xsd"/>
+    <xs:include schemaLocation="../components/blocks.xsd"/>
+    <xs:import schemaLocation="../external/mods.xsd" namespace="http://www.loc.gov/mods/v3"/>
+
+
+    <!-- GLOBAL ELEMENTS -->
+    <xs:element name="bibliography" type="oecdBibliographyType" id="bibliography"/>
+
+    <!-- GLOBAL GROUPS -->
+
+    <!-- COMPLEX TYPES -->
+
+    <!-- bibliographic section -->
+    <xs:attributeGroup name="oecdBiblioSectionTypeAttributes" id="oecdBiblioSectionTypeAttributes">
+        <xs:annotation>
+            <xs:documentation>
+                <section xmlns="http://docbook.org/ns/docbook">
+                    <para>Bibliographic section attributes for easy override</para>
+                </section>
+            </xs:documentation>
+        </xs:annotation>
+        <xs:attributeGroup ref="oecdCommonAttributes"/>
+        <xs:attributeGroup ref="oecdLinkingAttributes"/>
+    </xs:attributeGroup>
+
+    <xs:group name="oecdBiblioSectionTypeContent" id="oecdBiblioSectionTypeContent">
+        <xs:annotation>
+            <xs:documentation>
+                <section xmlns="http://docbook.org/ns/docbook">
+                    <para>Bibliographic section content for easy override</para>
+                </section>
+            </xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+            <xs:element ref="metadata" minOccurs="0"/>
+            <xs:group ref="oecdTitleGroup"/>
+            <xs:choice>
+                <xs:sequence>
+                    <xs:element ref="mods:mods" maxOccurs="unbounded"/>
+                    <xs:element name="biblioSection" type="oecdBiblioSectionType" minOccurs="0" maxOccurs="unbounded"/>
+                </xs:sequence>
+                <xs:element name="biblioSection" type="oecdBiblioSectionType" maxOccurs="unbounded"/>
+            </xs:choice>
+        </xs:sequence>
+    </xs:group>
+
+    <xs:complexType name="oecdBiblioSectionType" id="oecdBiblioSectionType">
+        <xs:annotation>
+            <xs:documentation>
+                <section xmlns="http://docbook.org/ns/docbook">
+                    <para>Bibliographic section type. Allows bibliographic entries (mods elements)
+                        and/or further structure.</para>
+                </section>
+            </xs:documentation>
+        </xs:annotation>
+        <xs:group ref="oecdBiblioSectionTypeContent"/>
+        <xs:attributeGroup ref="oecdBiblioSectionTypeAttributes"/>
+    </xs:complexType>
+
+
+    <!-- Bibliographies -->
+
+    <xs:attributeGroup name="oecdBibliographyTypeAttributes" id="oecdBibliographyTypeAttributes">
+        <xs:annotation>
+            <xs:documentation>
+                <section xmlns="http://docbook.org/ns/docbook">
+                    <para>Bibliographic type attributes for later override.</para>
+                </section>
+            </xs:documentation>
+        </xs:annotation>
+
+        <xs:attribute name="type" type="xs:string" id="type">
+            <xs:annotation>
+                <xs:documentation>
+                    <section xmlns="http://docbook.org/ns/docbook">
+                        <para>Type attribute. Bibliographic references (citations) may be typed to
+                            create multiple bibliographies or reference sections.</para>
+                    </section>
+                </xs:documentation>
+            </xs:annotation>
+        </xs:attribute>
+
+    </xs:attributeGroup>
+
+    
+    <xs:group name="oecdBibliographyTypeContent" id="oecdBibliographyTypeContent">
+        <xs:annotation>
+            <xs:documentation>
+                <section xmlns="http://docbook.org/ns/docbook">
+                    <para>Bibliography content model. Bibliographies may 
+                    be empty (automatically populated from citations) or they
+                    may be a list of citations, or they may have some sort 
+                    of structure and contain citations.</para>
+                </section>
+            </xs:documentation>
+        </xs:annotation>
+
+        <xs:sequence>
+            <xs:element ref="metadata" minOccurs="0"/>
+            <xs:group ref="oecdTitleGroup" minOccurs="0"/>
+            <xs:choice minOccurs="0">
+                <xs:element ref="mods:mods" maxOccurs="unbounded"/>
+                <xs:element name="biblioSection" maxOccurs="unbounded"/>
+            </xs:choice>
+        </xs:sequence>
+
+    </xs:group>
+
+    <xs:complexType name="oecdBibliographyType" id="oecdBibliographyType">
+        <xs:annotation>
+            <xs:documentation>
+                <section xmlns="http://docbook.org/ns/docbook">
+                    <para>A bibliography; see the content model for a description.</para>
+                </section>
+            </xs:documentation>
+        </xs:annotation>
+        <xs:group ref="oecdBibliographyTypeContent"/>
+        <xs:attributeGroup ref="oecdBibliographyTypeAttributes"/>
+    </xs:complexType>
+
+
+    <!-- SIMPLE TYPES -->
+    
+    
+</xs:schema>

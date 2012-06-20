@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+
+    <xs:annotation>
+        <xs:documentation><section xmlns="http://docbook.org/ns/docbook">
+                <title>OECD Schemas</title>
+                <subtitle>Conclusion</subtitle>
+                <para>A conclusion is a section with the additional semantics of location and content specific to conclusions.</para>
+                <revhistory>
+                    <title>Change Log</title>
+                    <revision>
+                        <revnumber>1</revnumber>
+                        <date>2012-04-15</date>
+                        <author><email>nicg@corbas.co.uk</email><personname>Nic Gibson</personname></author>
+                        <revremark>Initial Version</revremark>
+                    </revision>
+                    <revision>
+                        <revnumber>2</revnumber>
+                        <date>2012-04-18</date>
+                        <authorinitials>jc</authorinitials>
+                        <revremark>renamed abstract to conclusion.</revremark>
+                    </revision>
+                </revhistory>
+            </section></xs:documentation>
+    </xs:annotation>
+
+    <xs:include schemaLocation="../structure/section.xsd"/>
+
+    <xs:element name="conclusion" type="oecdSectionType" id="conclusion"/>
+
+
+</xs:schema>

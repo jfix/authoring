@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:mods="http://www.loc.gov/mods/v3" elementFormDefault="qualified">
+
+    <xs:annotation>
+        <xs:documentation><section xmlns="http://docbook.org/ns/docbook">
+                <title>OECD Schemas</title>
+                <subtitle>Table Model</subtitle>
+                <para>Redefinition of CALS interchange model, written independently. The only noticeable incompatiblity is the redefinition of titles
+                    to allow subtitles.</para>
+                <revhistory>
+                    <title>Change Log</title>
+                    <revision>
+                        <revnumber>1</revnumber>
+                        <date>2012-02-10</date>
+                        <author><email>nicg@corbas.co.uk</email><personname>Nic Gibson</personname></author>
+                        <revremark>Initial Version</revremark>
+                    </revision>
+                    <revision>
+                        <revnumber>2</revnumber>
+                        <date>2012-03-30</date>
+                        <author><email>nicg@corbas.co.uk</email><personname>Nic Gibson</personname></author>
+                        <revremark>Converted to placeholder for right now.</revremark>
+                    </revision>
+                    <revision>
+                        <revnumber>3</revnumber>
+                        <date>2012-04-23</date>
+                        <authorinitials>JC</authorinitials>
+                        <revremark>Removed oecdTableType.</revremark>
+                        <revremark>Redefined model using soextblx baseType.</revremark>
+                    </revision>
+                </revhistory>
+            </section></xs:documentation>
+    </xs:annotation>
+
+    <xs:include schemaLocation="paras.xsd"/>
+    <xs:include schemaLocation="lists.xsd"/>
+    <xs:include schemaLocation="titles.xsd"/>
+    <xs:include schemaLocation="notes.xsd"/>
+    <xs:include schemaLocation="sources.xsd"/>
+    <xs:import schemaLocation="../external/mods.xsd" namespace="http://www.loc.gov/mods/v3"/>
+
+    <xs:redefine schemaLocation="../external/soextblx.xsd">
+        <xs:complexType name="Table">
+            <xs:complexContent>
+                <xs:extension base="Table">
+                    <xs:sequence>
+                        <xs:element name="tfoot" type="Table-Foot" maxOccurs="unbounded"/>
+                    </xs:sequence>
+                    <xs:attribute name="orientation" type="xs:string"/>
+                </xs:extension>
+            </xs:complexContent>
+        </xs:complexType>
+    </xs:redefine>
+
+    <xs:redefine schemaLocation="../external/soextblx.xsd">
+        <xs:complexType name="Table.Entry">
+            <xs:complexContent>
+                <xs:extension base="Table.Entry">
+                    <xs:choice>
+                        <xs:element ref="para" maxOccurs="unbounded"/>
+                        <xs:element ref="itemizedList" maxOccurs="unbounded"/>
+                        <xs:element ref="definitionList" maxOccurs="unbounded"/>
+                        <xs:element ref="orderedList"/>
+                        <xs:element ref="mods:mods" maxOccurs="unbounded"/>
+                    </xs:choice>
+                </xs:extension>
+            </xs:complexContent>
+        </xs:complexType>
+    </xs:redefine>
+
+    <xs:redefine schemaLocation="../external/soextblx.xsd">
+        <xs:complexType name="Table.Title">
+            <xs:complexContent>
+                <xs:extension base="Table.Title">
+                    <xs:sequence>
+                        <xs:group ref="oecdTitleGroup"/>
+                    </xs:sequence>
+                </xs:extension>
+            </xs:complexContent>
+        </xs:complexType>
+    </xs:redefine>
+
+    <xs:complexType name="Table-Foot">
+        <xs:sequence>
+            <!--The table footer contains notes and sources. [maximum 1 per table] -->
+            <xs:element ref="notes" minOccurs="0" maxOccurs="1"/>
+            <!-- A note to a table, appearing at the foot. -->
+            <xs:element name="footnotes" type="Table-Footnotes" minOccurs="0"/>
+            <xs:element ref="sources" minOccurs="0" maxOccurs="1"/>
+        </xs:sequence>
+
+    </xs:complexType>
+
+    <xs:complexType name="Table-Footnotes">
+
+        <xs:sequence>
+            <xs:element ref="footnote" maxOccurs="unbounded"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:element name="table" type="Table" id="table"/>
+
+
+</xs:schema>

@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="UTF-8"?><xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" 
+    elementFormDefault="qualified">
+
+
+    <xs:annotation>
+        <xs:documentation><section xmlns="http://docbook.org/ns/docbook">
+            <title>OECD Schemas</title>
+            <subtitle>Section Model</subtitle>
+            <revhistory>
+                <title>Change Log</title>
+                
+                
+                    <revision>
+                        <revnumber>1</revnumber>
+                        <date>2011-12-02</date>
+                        <author><email>nicg@corbas.co.uk</email><personname>Nic Gibson</personname></author>
+                        <revremark>Initial Version</revremark>
+                    </revision>
+                <revision>
+                    <revnumber>2</revnumber>
+                    <date>2012-03-21</date>
+                    <author><email>nicg@corbas.co.uk</email><personname>Nic Gibson</personname></author>
+                    <revremark>Updated to best practices guide.</revremark>
+                </revision>
+                <revision>
+                    <revnumber>3</revnumber>
+                    <date>2012-04-15</date>
+                    <author><email>nicg@corbas.co.uk</email><personname>Nic Gibson</personname></author>
+                    <revremark>Added annotations attribute and annotation element to content model.</revremark>
+                </revision>
+                
+                <revision>
+                    <revnumber>4</revnumber>
+                    <date>2012-05-25</date>
+                    <author><email>nicg@corbas.co.uk</email><personname>Nic Gibson</personname></author>
+                    <revremark>Modified <link linkend="oecdSectionTypeContent">oecdSectionTypeContent</link> to correct
+                    error in occurence count for blocks</revremark>
+                </revision>
+                
+                    
+                
+            </revhistory>
+        </section></xs:documentation>
+    </xs:annotation>
+    
+    <!-- IMPORTS AND INCLUDES -->
+    <xs:include schemaLocation="../components/attributes.xsd"/>
+    <xs:include schemaLocation="../components/blocks.xsd"/>
+    <xs:include schemaLocation="../components/titles.xsd"/>
+    <xs:include  schemaLocation="../components/annotation.xsd"/>
+    
+    <!-- GLOBAL ELEMENTS -->
+    <xs:element name="section" type="oecdSectionType" id="section"/>
+    
+    <!-- GLOBAL GROUPS -->
+    
+    
+    <!-- COMPLEX TYPES -->
+    
+    <!-- section -->
+    
+    <xs:attributeGroup name="oecdSectionTypeAttributes" id="oecdSectionTypeAttributes">
+        
+        <xs:annotation>
+            <xs:documentation>
+                <section xmlns="http://docbook.org/ns/docbook">
+                    <para>Attributes for sections as a group for easy overrides and reuse.</para>
+                </section>
+            </xs:documentation>
+        </xs:annotation>
+        
+        <xs:attribute name="numeration" type="oecdListNumeration" id="numeration">
+            <xs:annotation>
+                <xs:documentation>
+                    <section xmlns="http://docbook.org/ns/docbook">
+                        <para>List numeration style for sections</para>
+                    </section>
+                </xs:documentation>
+            </xs:annotation>
+        </xs:attribute>
+        
+        <xs:attribute name="continuation" type="oecdListContinuation" id="continuation">
+            <xs:annotation>
+                <xs:documentation>
+                    <section xmlns="http://docbook.org/ns/docbook">
+                        <para>Numbering continuation flag for sections</para>
+                    </section>
+                </xs:documentation>
+            </xs:annotation>
+        </xs:attribute>
+        
+        <xs:attribute name="start" type="xs:nonNegativeInteger" id="start">
+            <xs:annotation>
+                <xs:documentation>
+                    <section xmlns="http://docbook.org/ns/docbook">
+                        <para>Starting count for sections which have their continuation style set to
+                            'start'.</para>
+                    </section>
+                </xs:documentation>
+            </xs:annotation>
+        </xs:attribute>    
+        
+        <xs:attribute name="number" type="xs:nonNegativeInteger" id="number">
+            <xs:annotation>
+                <xs:documentation>
+                    <section xmlns="http://docbook.org/ns/docbook">
+                        <para>Numbering override for sections where the author needs to override
+                            the section numbering completely.</para>
+                    </section>
+                </xs:documentation>
+            </xs:annotation>
+        </xs:attribute>
+        
+        <xs:attribute ref="annotations" use="optional"/>
+        
+        
+    </xs:attributeGroup>
+    
+    <xs:group name="oecdSectionTypeContent" id="oecdSectionTypeContent">
+        
+        <xs:annotation>
+            <xs:documentation>
+                <section xmlns="http://docbook.org/ns/docbook">
+                    <para>Content for sections as a group for easy overrides and reuse.</para>
+                    <revhistory>
+                        <title>Change Log</title>
+                        <revision>
+                            <revnumber>4</revnumber>
+                            <date>2012-05-25</date>
+                            <author><email>nicg@corbas.co.uk</email><personname>Nic Gibson</personname></author>
+                            <revremark>Modified to correct error in occurence count for blocks. Was set to one and 
+                            should be set to unbounded.</revremark>
+                        </revision>
+                    </revhistory>
+                </section>
+                
+            </xs:documentation>
+        </xs:annotation>
+        
+        <xs:sequence>
+            <xs:element ref="metadata" minOccurs="0"/>
+            <xs:group ref="oecdTitleGroup"/>
+            <xs:choice>
+                <xs:sequence>
+                    <xs:group ref="oecdBlockGroup" maxOccurs="unbounded"/>
+                    <xs:element ref="section" minOccurs="0" maxOccurs="unbounded"/>
+                </xs:sequence>
+                <xs:element ref="section" minOccurs="1" maxOccurs="unbounded"/>
+            </xs:choice>
+            <xs:element ref="annotation" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+        
+    </xs:group>
+    
+    <xs:complexType name="oecdSectionType" id="oecdSectionType">
+        <xs:annotation>
+            <xs:documentation>
+                <section xmlns="http://docbook.org/ns/docbook">
+                    <para>Sections are the major recursive structural component of documents. Each section consists of
+                        titles, optional introductory blocks and then optional sections. Sections and blocks cannot be interspersed.</para>
+                </section>
+            </xs:documentation>
+        </xs:annotation>
+        
+        <xs:group ref="oecdSectionTypeContent"/>
+        <xs:attributeGroup ref="oecdSectionTypeAttributes"/>
+        
+    </xs:complexType>
+
+</xs:schema>

@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?><xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+
+  <xs:annotation>
+    <xs:documentation><section xmlns="http://docbook.org/ns/docbook">
+      <section>
+        <title>OECD Schemas</title>
+        <subtitle>Low Level Data Types</subtitle> 
+        <revhistory>
+          <title>Change Log</title>
+          
+          
+            <revision>
+              <revnumber>1</revnumber>
+              <date>2011-12-02</date>
+              <author><email>nicg@corbas.co.uk</email><personname>Nic Gibson</personname></author>
+              <revremark>Initial Version</revremark>
+            </revision>
+          
+        </revhistory> </section>
+    </section></xs:documentation>
+  </xs:annotation>
+ 
+  
+
+  <xs:simpleType name="oecdCharacterStyleType" id="oecdCharacterStyleType">
+    <xs:annotation>
+      <xs:documentation>
+        <section xmlns="http://docbook.org/ns/docbook">
+          <para>Simple enumeration of the inline character styles we might see. This is more intended
+            as a demonstration than a model requirement. </para>
+        </section>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="bold"/>
+      <xs:enumeration value="italic"/>
+      <xs:enumeration value="underline"/>
+      <xs:enumeration value="strikethrough"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+
+  <xs:simpleType name="oecdCote" id="oecdCote">
+    <xs:annotation>
+      <xs:documentation>
+        <section xmlns="http://docbook.org/ns/docbook">
+          <para>Placeholder for Cotes.</para>
+        </section>
+      </xs:documentation>      
+    </xs:annotation>
+    <xs:restriction base="xs:string"/>
+  </xs:simpleType>
+  
+  
+  <xs:simpleType name="oecdMediaType" id="oecdMediaType">
+    <xs:annotation>
+      <xs:documentation>
+        <section xmlns="http://docbook.org/ns/docbook">
+          <para>Placeholder for IETF MIME media types.</para>
+        </section>
+      </xs:documentation>      
+    </xs:annotation>
+    <xs:restriction base="xs:string"/>
+  </xs:simpleType>
+  
+  <xs:simpleType name="oecdListMarker" id="oecdListMarker">
+    <xs:annotation>
+      <xs:documentation>
+        <section xmlns="http://docbook.org/ns/docbook">
+          <para>Bulleted lists.</para>
+        </section>        
+      </xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="auto"/>
+      <xs:enumeration value="square"/>
+      <xs:enumeration value="solid-square"/>
+      <xs:enumeration value="circle"/>
+      <xs:enumeration value="solid-circle"/>
+      <xs:enumeration value="diamonad"/>
+      <xs:enumeration value="solid-diamonad"/>
+    </xs:restriction>
+  </xs:simpleType>
+  
+  <xs:simpleType name="oecdListNumeration" id="oecdListNumeration">
+    <xs:annotation>
+      <xs:documentation>
+        <section xmlns="http://docbook.org/ns/docbook">
+          <para>This defines numeration styles for numbered lists.</para>
+        </section>        
+      </xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="arabic"/>
+      <xs:enumeration value="lower-roman"/>
+      <xs:enumeration value="upper-roman"/>
+      <xs:enumeration value="lower-alpha"/>
+      <xs:enumeration value="upper-alpha"/>
+    </xs:restriction>    
+  </xs:simpleType>
+  
+  <xs:simpleType name="oecdListContinuation" id="oecdListContinuation">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="continue"/>
+      <xs:enumeration value="start"/>
+    </xs:restriction>
+  </xs:simpleType>
+  
+</xs:schema>

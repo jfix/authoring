@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?><xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified"> 
+
+    <xs:annotation>
+        <xs:documentation><section xmlns="http://docbook.org/ns/docbook">
+            <title>OECD Schemas</title>
+            <subtitle>Attribution Component</subtitle>
+            <revhistory>
+                <title>Change Log</title>
+                
+                
+                    <revision>
+                        <revnumber>1</revnumber>
+                        <date>2012-03-16</date>
+                        <author><email>nicg@corbas.co.uk</email><personname>Nic Gibson</personname></author>
+                        <revremark>Initial Version, extracted from extracts.xsd so it can be available
+                        independently.</revremark>
+                    </revision>
+                
+            </revhistory>
+        </section></xs:documentation>
+    </xs:annotation>
+    
+    <!-- INCLUDES AND IMPORTS -->
+       
+    <xs:include schemaLocation="attributes.xsd"/>
+    <xs:include schemaLocation="meta.xsd"/>    
+    
+    <!-- GLOBAL ELEMENTS -->
+    <xs:element name="attribution" type="oecdAttributionType" id="attribution"/>
+    
+    <!-- GLOBAL GROUPS -->
+    
+    <!-- GLOBAL TYPES -->
+    
+    <!-- sources -->
+    <xs:attributeGroup name="oecdAttributionTypeAttributes" id="oecdAttributionTypeAttributes">
+        <xs:annotation>
+            <xs:documentation>
+                <section xmlns="http://docbook.org/ns/docbook">
+                    <para>Attribution attributes, grouped for easy overrides and reuse.</para>
+                </section>
+            </xs:documentation>
+        </xs:annotation>
+        
+        <xs:attributeGroup ref="oecdCommonAttributes"/>
+        <xs:attributeGroup ref="oecdLinkingAttributes"/>
+        
+    </xs:attributeGroup>
+    
+    
+    <xs:group name="oecdAttributionTypeContent" id="oecdAttributionTypeContent">
+        <xs:annotation>
+            <xs:documentation>
+                <section xmlns="http://docbook.org/ns/docbook">
+                    <para>Attribution content, grouped for easy overrides and reuse.</para>
+                </section>
+            </xs:documentation>
+        </xs:annotation>
+        
+        <xs:sequence>
+            <xs:element ref="metadata"/>
+        </xs:sequence>
+        
+    </xs:group>
+    
+    <xs:complexType name="oecdAttributionType" id="oecdAttributionType">
+        <xs:annotation>
+            <xs:documentation>
+                <section xmlns="http://docbook.org/ns/docbook">
+                    <para>Attribution content, grouped for easy overrides and reuse.</para>
+                </section>
+            </xs:documentation>
+        </xs:annotation>
+        <xs:group ref="oecdAttributionTypeContent"/>
+        <xs:attributeGroup ref="oecdAttributionTypeAttributes"/>
+    </xs:complexType>
+    
+</xs:schema>

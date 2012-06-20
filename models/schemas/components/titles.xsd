@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="UTF-8"?><xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+    xmlns:xlink="http://www.w3.org/1999/xlink" elementFormDefault="qualified">
+    
+    <xs:annotation>
+        <xs:documentation><section xmlns="http://docbook.org/ns/docbook">
+            <title>OECD Schemas</title>
+            <subtitle>Title type components</subtitle>
+            <revhistory>
+                <title>Change Log</title>
+                
+                
+                    <revision>
+                        <revnumber>1</revnumber>
+                        <date>2012-02-10</date>
+                        <author><email>nicg@corbas.co.uk</email><personname>Nic Gibson</personname></author>
+                        <revremark>Initial Version</revremark>
+                    </revision>
+                    <revision>
+                        <revnumber>2</revnumber>
+                        <date>2012-03-14</date>
+                        <author><email>nicg@corbas.co.uk</email><personname>Nic Gibson</personname></author>
+                        <revremark>Rewrite to use the more structure group/attributeGroup approach used in other components.</revremark>
+                        
+                    </revision>
+                
+                
+                <revision>
+                    <revnumber>3</revnumber>
+                    <date>2012-03-03</date>
+                    <author><email>nicg@corbas.co.uk</email><personname>Nic Gibson</personname></author>
+                    <revremark>Replaced include of inlines.xsd with inline-group.xsd.</revremark>
+                </revision>
+                
+                <revision>
+                    <revnumber>4</revnumber>
+                    <date>2012-05-25</date>
+                    <authorinitials>NG</authorinitials>
+                    <revremark>Modified <link xlink:href="oecdTitleGroup">oecdTitleGroup</link>. @minOccurs of 'shortTitle' accidentally set to
+                    1. Changed to 0.</revremark>
+                </revision>
+                
+                
+            </revhistory>
+            
+        </section></xs:documentation>
+    </xs:annotation>
+    
+    
+    <!-- IMPORTS AND INCLUDES -->
+    <xs:include schemaLocation="attributes.xsd"/>
+    <xs:include schemaLocation="inline-group.xsd"/>
+    
+    
+    <!-- GLOBAL ELEMENTS -->
+    <!-- TODO: determine if these really all should be the same type -->
+    <xs:element name="title" type="oecdTitleType" id="title"/>
+    <xs:element name="subTitle" type="oecdTitleType" id="subTitle"/>
+    <xs:element name="shortTitle" type="oecdShortTitleType" id="shortTitle"/>
+    <xs:element name="caption" type="oecdTitleType" id="caption"/>
+    
+    <!-- GLOBAL GROUPS -->
+    <xs:group name="oecdTitleGroup" id="oecdTitleGroup">
+        <xs:annotation>
+            <xs:documentation>
+                <section xmlns="http://docbook.org/ns/docbook">
+                    
+                    <title>Change Log</title>
+                    
+                    <revhistory>
+                        <revision>
+                            <revnumber>4</revnumber>
+                            <date>2012-05-25</date>
+                            <authorinitials>NG</authorinitials>
+                            <revremark>Modified -  @minOccurs of 'shortTitle' accidentally set to
+                                1. Changed to 0.</revremark>
+                        </revision>
+                    </revhistory>
+                </section>                
+            </xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+            <xs:element ref="title"/>
+            <xs:element ref="subTitle" minOccurs="0"/>
+            <xs:element ref="shortTitle" minOccurs="0"/>
+        </xs:sequence>
+    </xs:group>
+    
+    <!-- GLOBAL TYPES -->
+    <xs:attributeGroup name="oecdTitleTypeAttributes" id="oecdTitleTypeAttributes">
+        <xs:annotation>
+            <xs:documentation>
+                <section xmlns="http://docbook.org/ns/docbook">
+                    <para>Attribute group for title type elements to allow easy overrides.</para>
+                </section>
+            </xs:documentation>
+        </xs:annotation>
+        <xs:attributeGroup ref="oecdCommonAttributes"/>
+        <xs:attributeGroup ref="oecdLinkingAttributes"/>
+    </xs:attributeGroup>
+    
+    <xs:group name="oecdTitleTypeContent" id="oecdTitleTypeContent">
+        <xs:annotation>
+            <xs:documentation>
+                <section xmlns="http://docbook.org/ns/docbook">
+                    <para>Content for title type elements to allow easy overrides.</para>
+                </section>
+            </xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+            <xs:group ref="oecdInlineGroup" maxOccurs="unbounded" minOccurs="0"/>
+        </xs:sequence>
+    </xs:group>
+    
+    <xs:complexType name="oecdTitleType" mixed="true" id="oecdTitleType">
+        <xs:annotation>
+            <xs:documentation>
+                <section xmlns="http://docbook.org/ns/docbook">
+                    <para>Title elements (and subtitles) share this type.</para>
+                </section>
+            </xs:documentation>
+        </xs:annotation>       
+        <xs:group ref="oecdTitleTypeContent"/>
+        <xs:attributeGroup ref="oecdTitleTypeAttributes"/>
+    </xs:complexType>
+    
+    <!-- abbreviated title -->
+    <xs:attributeGroup name="oecdShortTitleTypeAttributes" id="oecdShortTitleTypeAttributes">
+        <xs:annotation>
+            <xs:documentation>
+                <section xmlns="http://docbook.org/ns/docbook">
+                    <para>Attribute group for short title type elements to allow easy overrides.</para>
+                </section>
+            </xs:documentation>
+        </xs:annotation>
+        <xs:attributeGroup ref="oecdCommonAttributes"/>
+        <xs:attributeGroup ref="oecdLinkingAttributes"/>
+    </xs:attributeGroup>
+    
+    <xs:complexType name="oecdShortTitleType" id="oecdShortTitleType">
+        <xs:annotation>
+            <xs:documentation>
+                <section xmlns="http://docbook.org/ns/docbook">
+                    <para>Short title type. This element holds a text only abbreviated title</para>
+                </section>
+            </xs:documentation>
+        </xs:annotation>
+        
+        <xs:simpleContent>
+            <xs:extension base="xs:string">
+                <xs:attributeGroup ref="oecdShortTitleTypeAttributes"/>
+            </xs:extension>
+        </xs:simpleContent>
+ 
+    </xs:complexType>
+    
+    
+    <!-- SIMPLE TYPES -->
+    
+    
+</xs:schema>

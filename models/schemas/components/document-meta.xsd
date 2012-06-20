@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?><xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified"> 
+
+    <xs:annotation>
+        <xs:documentation><section xmlns="http://docbook.org/ns/docbook">
+            <title>OECD Schemas</title>
+            <subtitle>Document Metadata Component</subtitle>
+            <revhistory>
+                <title>Change Log</title> <revision>
+                    <revnumber>1</revnumber>
+                    <date>2012-03-30</date>
+                    <author><email>nicg@corbas.co.uk</email><personname>Nic
+                        Gibson</personname></author>
+                    <revremark>Initial Version</revremark>
+                </revision>
+                <para>Document metadata is used as a store for metadata content that is referenced
+                from elsewhere in a document.</para>
+            </revhistory> </section>
+        </xs:documentation>
+    </xs:annotation>
+    
+    <!-- IMPORTS AND INCLUDES -->
+    <xs:include schemaLocation="meta.xsd"/>
+    <xs:include schemaLocation="attributes.xsd"/>
+    
+    <!-- GLOBAL ELEMENTS -->
+    <xs:element name="documentMetadata" type="oecdDocumentMetadataType" id="documentMetadata"/>
+    
+    <!-- GLOBAL GROUPS -->
+    
+    <!-- COMPLEX TYPES -->
+    
+    <!-- document metadata store -->
+    
+    <xs:attributeGroup name="oecdDocumentMetadataTypeAttributes" id="oecdDocumentMetadataTypeAttributes">
+        <xs:annotation>
+            <xs:documentation>
+                <section xmlns="http://docbook.org/ns/docbook">
+                    <para>Attributes for document metadata type.</para>
+                </section>
+            </xs:documentation>
+        </xs:annotation>        
+        <xs:attributeGroup ref="oecdCommonAttributes"/>
+        <xs:attributeGroup ref="oecdLinkingAttributes"/>
+    </xs:attributeGroup>
+    
+    <xs:group name="oecdDocumentMetadataTypeContent" id="oecdDocumentMetadataTypeContent">
+        <xs:annotation>
+            <xs:documentation>
+                <section xmlns="http://docbook.org/ns/docbook">
+                    <para>Content for document metadata type.</para>
+                </section>
+            </xs:documentation>
+        </xs:annotation>
+        
+        <xs:sequence>
+            <xs:element ref="metadata" maxOccurs="unbounded"/>
+        </xs:sequence>       
+        
+    </xs:group>
+    
+    <xs:complexType name="oecdDocumentMetadataType" id="oecdDocumentMetadataType">
+        <xs:annotation>
+            <xs:documentation>
+                <section xmlns="http://docbook.org/ns/docbook">
+                    <para>Document metadata is simply a storage location where metadata elements
+                        can be placed and referenced from elsewhere in the document via the metadataRef
+                        attribute on most elements.</para>
+                </section>
+            </xs:documentation>
+        </xs:annotation>
+        <xs:group ref="oecdDocumentMetadataTypeContent"/>
+        <xs:attributeGroup ref="oecdDocumentMetadataTypeAttributes"/>
+    </xs:complexType>
+    
+    <!-- SIMPLE TYPES -->
+    
+    
+</xs:schema>

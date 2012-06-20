@@ -1,0 +1,3551 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  @title narrdoc v1.7.3
+  @doctype PUBLIC "-//OECD//DTD Narrdoc 1.7 light//EN" "P:/Production/Software/Compo/Dev/Converter/word2xmlsvn/Tests/model/narrdoc1_7light.dtd"
+  @hidden Author: 
+     Marc Regnier
+     Simplified DTD of the 1.5 version (used by OECD/PrePress for typeset publications).
+     Used with XML files from the output of the UpCast Converter.
+     Version: 1.7.3
+     History:
+     V0.1: 28.02.2011
+     Add attribute ROWSEP in ROW element
+     Delete COTE element in BIBINFO
+     Change element BODY optional in NARR-DOC element
+     V0.2: 29.06.2011
+     Re-order the elements in <frontmatter> and <name>
+     Persmission for a <shortcitation> in a <shortcitation>
+     jfix: added the attribute @metadatatype@ for the part, chapter and 
+     section elements (see #2698), for the metadata loader program (again!)
+     only one possible value at this time: @section@.
+     V0.3: 07.02.2012
+     jfix: added a parameter entity for a geocontainer attribute
+     see #2494 and #2449, requested for metadata loader
+     rcouronne: added a parameter entity for a statisticalannex attribute
+     see #2903, requested for metadata loader
+     Add the attributes reference, goecontainer and statisticalannex in annex and appendix elements
+     Change the numbering value from "n" to "y" in annex and appendix elements
+     Add reference attribute in boxsection element
+     Add the attributes reference, goecontainer, statisticalannex and metadatatype in chapter element
+     Change the numbering value from "n" to "y" in chapter element
+     Allow shortcitation element in emphasis element
+     Add the attribute reference in figure element
+     Re-order the frontmatter element to allow any element in any order
+     Re-order name element
+     Re-order nar-rdoc element
+     Change the content model in oecd-doc element
+     Add the attributes reference, goecontainer, statisticalannex and metadatatype in part element
+     Change the numbering value from "n" to "y" in part element
+     Add rowsep attribute in row element
+     Allow shortcitation element in shortcitation element
+     Add reference attribute in tablegrp element
+     Add reference attribute in tgroup element
+     V0.4: 22.02.12
+     Changed element frontmatter: now element authorlist may only occur directly after bibinfo
+  @root narr-doc
+-->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+  
+  <xs:annotation xmlns:ctrl="http://nwalsh.com/xmlns/schema-control/"
+    xmlns:xd="http://www.oecd.org/ns/schema/xdocs"
+    xmlns:db="http://docbook.org/ns/docbook"
+    xmlns:s="http://www.ascc.net/xml/schematron"
+    xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"
+    xmlns:xlink="http://www.w3.org/1999/xlink"
+    xmlns:svg="http://www.w3.org/2000/svg"
+    xmlns="http://www.oecd.org/ns/model"
+    xmlns:rng="http://relaxng.org/ns/structure/1.0"
+    xmlns:mml="http://www.w3.org/1998/Math/MathML"
+    xmlns:html="http://www.w3.org/1999/xhtml">
+    <xs:appinfo>
+      <xd:name>narrdoc</xd:name>
+      <xd:root>narr-doc</xd:root>
+    </xs:appinfo>
+    <xs:documentation>
+      <xd:p>Narrdoc is Document Type Definition used by OECD Prepress depertment for typeset publications)
+        
+        the components used in narrative
+        models for capturing official OECD documents and publications. To date,
+        "pars" supports all documents and camera-ready and typset
+        publications.</xd:p>
+    </xs:documentation>
+  </xs:annotation>
+  
+  <!-- 
+    
+    http://publications.oecd.org/documentation/Projects/ID0191/MOSCA4/Nomenclature.xml
+  
+  -->
+  
+  
+  <xs:attributeGroup name="metadatatype">
+    <xs:attribute name="metadatatype">
+      <xs:simpleType>
+        <xs:restriction base="xs:token">
+          <xs:enumeration value="section"/>
+        </xs:restriction>
+      </xs:simpleType>
+    </xs:attribute>
+  </xs:attributeGroup>
+  
+  <xs:attributeGroup name="id">
+    <xs:attribute name="id" use="required" type="xs:ID"/>
+  </xs:attributeGroup>
+  
+  <xs:attributeGroup name="instlang">
+    <xs:attribute name="instlang">
+      <xs:simpleType>
+        <xs:restriction base="xs:token">
+          <xs:enumeration value="i-eng"/>
+          <xs:enumeration value="i-fr"/>
+          <xs:enumeration value="i-bi-ling"/>
+          <xs:enumeration value="i-de"/>
+          <xs:enumeration value="i-other"/>
+        </xs:restriction>
+      </xs:simpleType>
+    </xs:attribute>
+  </xs:attributeGroup>
+  
+  <xs:attributeGroup name="geocontainer">
+    <xs:attribute name="geocontainer" default="false">
+      <xs:simpleType>
+        <xs:restriction base="xs:token">
+          <xs:enumeration value="true"/>
+          <xs:enumeration value="false"/>
+        </xs:restriction>
+      </xs:simpleType>
+    </xs:attribute>
+  </xs:attributeGroup>
+  
+  <xs:attributeGroup name="statisticalannex">
+    <xs:attribute name="statisticalannex" default="false">
+      <xs:simpleType>
+        <xs:restriction base="xs:token">
+          <xs:enumeration value="true"/>
+          <xs:enumeration value="false"/>
+        </xs:restriction>
+      </xs:simpleType>
+    </xs:attribute>
+  </xs:attributeGroup>
+  <!--
+        NIC Model equivalent for abbrtitl element : ??
+    
+    Container used to store the abbreviated title (text only). 
+  -->
+  <xs:element name="abbrtitl" type="xs:string"/>
+  <!-- Element not used -->
+  <xs:element name="about">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:sequence>
+          <xs:element minOccurs="0" ref="heading"/>
+          <xs:element minOccurs="0" maxOccurs="unbounded" ref="subheading"/>
+        </xs:sequence>
+        <xs:element minOccurs="0" ref="authorlist"/>
+        <xs:element minOccurs="0" ref="highlight"/>
+        <xs:element minOccurs="0" ref="abstract"/>
+        <xs:choice minOccurs="0" maxOccurs="unbounded">
+          <xs:choice maxOccurs="unbounded">
+            <xs:element ref="p"/>
+            <xs:element ref="citation"/>
+            <xs:element ref="deflist"/>
+            <xs:element ref="randlist"/>
+            <xs:element ref="seqlist"/>
+          </xs:choice>
+          <xs:element ref="figure"/>
+          <xs:element ref="tablegrp"/>
+          <xs:element ref="textbox"/>
+        </xs:choice>
+        <xs:element minOccurs="0" maxOccurs="unbounded" ref="section"/>
+        <xs:element minOccurs="0" ref="chapconcl"/>
+      </xs:sequence>
+      <xs:attributeGroup ref="attlist.about"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:attributeGroup name="attlist.about">
+    <xs:attributeGroup ref="id"/>
+  </xs:attributeGroup>
+  <!--
+        NIC Model equivalent for abstract element : ??
+        NIC Model equivalent for id attribute : ??
+        NIC Model equivalent for instlang attribute : ??
+    
+    Container used to store the text converted from the Word style abstract. The text is a short description introducing the parent element listed above.  
+  -->
+  <xs:element name="abstract">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:choice maxOccurs="unbounded">
+          <xs:element ref="p"/>
+          <xs:element ref="citation"/>
+          <xs:element ref="deflist"/>
+          <xs:element ref="randlist"/>
+          <xs:element ref="seqlist"/>
+        </xs:choice>
+        <xs:element ref="figure"/>
+        <xs:element ref="tablegrp"/>
+        <xs:element ref="textbox"/>
+      </xs:choice>
+      <xs:attributeGroup ref="attlist.abstract"/>
+    </xs:complexType>
+  </xs:element>
+  <!--
+    @attr instlang define the document language. It can have the following values:
+    <ul><li>i-eng for english</li>
+    <li>i-fr for french</li>
+    <li>i-de for deutsch</li>
+    <li>i-bi-ling for bilingual</li>
+    <li>i-other for other language</li></ul>
+  -->
+  <xs:attributeGroup name="attlist.abstract">
+    <xs:attributeGroup ref="id"/>
+    <xs:attributeGroup ref="instlang"/>
+  </xs:attributeGroup>
+  <!--
+        NIC Model equivalent for acknowledgement element : ??
+        NIC Model equivalent for id attribute : ??
+    
+    Container used to begin a acknoledgement section. It store the text converted from the Word style Acknowledgement Heading.<br>
+    acknowledgement element can be used in the following sections:
+        <ul><li>frontmatter</li>
+        <li>part</li></ul>
+  -->
+  <xs:element name="acknowledgement">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:sequence>
+          <xs:element minOccurs="0" ref="heading"/>
+          <xs:element minOccurs="0" maxOccurs="unbounded" ref="subheading"/>
+        </xs:sequence>
+        <xs:element minOccurs="0" ref="authorlist"/>
+        <xs:element minOccurs="0" ref="highlight"/>
+        <xs:element minOccurs="0" ref="abstract"/>
+        <xs:choice minOccurs="0" maxOccurs="unbounded">
+          <xs:choice maxOccurs="unbounded">
+            <xs:element ref="p"/>
+            <xs:element ref="citation"/>
+            <xs:element ref="deflist"/>
+            <xs:element ref="randlist"/>
+            <xs:element ref="seqlist"/>
+          </xs:choice>
+          <xs:element ref="figure"/>
+          <xs:element ref="tablegrp"/>
+          <xs:element ref="textbox"/>
+        </xs:choice>
+        <xs:element minOccurs="0" maxOccurs="unbounded" ref="section"/>
+        <xs:element minOccurs="0" ref="chapconcl"/>
+      </xs:sequence>
+      <xs:attributeGroup ref="attlist.acknowledgement"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:attributeGroup name="attlist.acknowledgement">
+    <xs:attributeGroup ref="id"/>
+  </xs:attributeGroup>
+  <!--
+        NIC Model equivalent for acronym element : ??
+        NIC Model equivalent for id attribute : ??
+    
+    Container used to store the text of an acronym.
+    acronym element is used in glossary-acronyms section.
+    Could contain text and special character (subscript/superscript for exemple).
+  -->
+  <xs:element name="acronym">
+    <xs:complexType mixed="true">
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="unbounded" ref="specchar"/>
+      </xs:sequence>
+      <xs:attributeGroup ref="attlist.acronym"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:attributeGroup name="attlist.acronym">
+    <xs:attributeGroup ref="id"/>
+  </xs:attributeGroup>
+  <!-- Element not used -->
+  <xs:element name="action">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:choice maxOccurs="unbounded">
+          <xs:element ref="p"/>
+          <xs:element ref="citation"/>
+          <xs:element ref="deflist"/>
+          <xs:element ref="randlist"/>
+          <xs:element ref="seqlist"/>
+        </xs:choice>
+        <xs:element ref="figure"/>
+        <xs:element ref="tablegrp"/>
+        <xs:element ref="textbox"/>
+      </xs:choice>
+      <xs:attributeGroup ref="attlist.action"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:attributeGroup name="attlist.action">
+    <xs:attributeGroup ref="id"/>
+  </xs:attributeGroup>
+  <!--
+        NIC Model equivalent for annex element : ??
+        NIC Model equivalent for id attribute : ??
+        NIC Model equivalent for label attribute : ??
+        NIC Model equivalent for number attribute : ??
+        NIC Model equivalent for numbering attribute : ??
+    
+    Container used to begin a annex section. It store the text converted from the Word style Annex Heading.<br>
+        annex element can be used in the following sections:
+        <ul><li>backtmatter</li>
+        <li>chapter</li>
+        <li>part</li></ul>
+  -->
+  <xs:element name="annex">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:sequence>
+          <xs:element minOccurs="0" ref="heading"/>
+          <xs:element minOccurs="0" maxOccurs="unbounded" ref="subheading"/>
+        </xs:sequence>
+        <xs:element minOccurs="0" ref="authorlist"/>
+        <xs:element minOccurs="0" ref="highlight"/>
+        <xs:element minOccurs="0" ref="abstract"/>
+        <xs:choice minOccurs="0" maxOccurs="unbounded">
+          <xs:choice maxOccurs="unbounded">
+            <xs:element ref="p"/>
+            <xs:element ref="citation"/>
+            <xs:element ref="deflist"/>
+            <xs:element ref="randlist"/>
+            <xs:element ref="seqlist"/>
+          </xs:choice>
+          <xs:element ref="figure"/>
+          <xs:element ref="tablegrp"/>
+          <xs:element ref="textbox"/>
+        </xs:choice>
+        <xs:element minOccurs="0" maxOccurs="unbounded" ref="section"/>
+        <xs:element minOccurs="0" ref="chapconcl"/>
+        <xs:element minOccurs="0" ref="biblio"/>
+      </xs:sequence>
+      <xs:attributeGroup ref="attlist.annex"/>
+    </xs:complexType>
+  </xs:element>
+  <!--
+    @attr label is used to store the numbering to be displayed.
+    @attr number is used to store the numbering to be displayed.
+    @attr numbering is used to activate the numbering. Possible values are <i>y</i> (yes) or <i>n</i> (no).
+    @attr reference is used to store the numbering to be displayed.
+    @attr geocontainer is requested for metadata loader. Possible values are <i>false</i> or <i>true</i>.
+    @attr statisticalannex is requested for metadata loader. Possible values are <i>false</i> or <i>true</i>.
+  -->
+  <xs:attributeGroup name="attlist.annex">
+    <xs:attributeGroup ref="id"/>
+    <xs:attribute name="label"/>
+    <xs:attribute name="number"/>
+    <xs:attribute name="numbering" default="y">
+      <xs:simpleType>
+        <xs:restriction base="xs:token">
+          <xs:enumeration value="y"/>
+          <xs:enumeration value="n"/>
+        </xs:restriction>
+      </xs:simpleType>
+    </xs:attribute>
+    <xs:attribute name="reference"/>
+    <xs:attributeGroup ref="geocontainer"/>
+    <xs:attributeGroup ref="statisticalannex"/>
+  </xs:attributeGroup>
+  <!--
+        NIC Model equivalent for appendix element : ??
+        NIC Model equivalent for id attribute : ??
+        NIC Model equivalent for label attribute : ??
+        NIC Model equivalent for number attribute : ??
+        NIC Model equivalent for numbering attribute : ??
+    
+    Container used to begin a appendix section. It store the text converted from the Word style Appendix Heading.<br>
+        appendix element can be used in the following sections:
+        <ul><li>backtmatter</li>
+        <li>chapter</li>
+        <li>part</li></ul>
+  -->
+  <xs:element name="appendix">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:sequence>
+          <xs:element minOccurs="0" ref="heading"/>
+          <xs:element minOccurs="0" maxOccurs="unbounded" ref="subheading"/>
+        </xs:sequence>
+        <xs:element minOccurs="0" ref="authorlist"/>
+        <xs:element minOccurs="0" ref="highlight"/>
+        <xs:element minOccurs="0" ref="abstract"/>
+        <xs:choice minOccurs="0" maxOccurs="unbounded">
+          <xs:choice maxOccurs="unbounded">
+            <xs:element ref="p"/>
+            <xs:element ref="citation"/>
+            <xs:element ref="deflist"/>
+            <xs:element ref="randlist"/>
+            <xs:element ref="seqlist"/>
+          </xs:choice>
+          <xs:element ref="figure"/>
+          <xs:element ref="tablegrp"/>
+          <xs:element ref="textbox"/>
+        </xs:choice>
+        <xs:element minOccurs="0" maxOccurs="unbounded" ref="section"/>
+        <xs:element minOccurs="0" ref="chapconcl"/>
+        <xs:element minOccurs="0" ref="biblio"/>
+      </xs:sequence>
+      <xs:attributeGroup ref="attlist.appendix"/>
+    </xs:complexType>
+  </xs:element>
+  <!--
+    @attr label is used to store the numbering to be displayed.
+    @attr number is used to store the numbering to be displayed.
+    @attr numbering is used to activate the numbering. Possible values are <i>y</i> (yes) or <i>n</i> (no).
+    @attr reference is used to store the numbering to be displayed.
+    @attr geocontainer is requested for metadata loader. Possible values are <i>false</i> or <i>true</i>.
+    @attr statisticalannex is requested for metadata loader. Possible values are <i>false</i> or <i>true</i>.
+  -->
+  <xs:attributeGroup name="attlist.appendix">
+    <xs:attributeGroup ref="id"/>
+    <xs:attribute name="label"/>
+    <xs:attribute name="number"/>
+    <xs:attribute name="numbering" default="y">
+      <xs:simpleType>
+        <xs:restriction base="xs:token">
+          <xs:enumeration value="y"/>
+          <xs:enumeration value="n"/>
+        </xs:restriction>
+      </xs:simpleType>
+    </xs:attribute>
+    <xs:attribute name="reference"/>
+    <xs:attributeGroup ref="geocontainer"/>
+    <xs:attributeGroup ref="statisticalannex"/>
+  </xs:attributeGroup>
+  <!-- Element not used -->
+  <xs:element name="article">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element maxOccurs="unbounded" ref="name"/>
+        <xs:element ref="arttitle"/>
+        <xs:element minOccurs="0" ref="editor"/>
+        <xs:element ref="hosttitl"/>
+        <xs:element minOccurs="0" ref="location"/>
+        <xs:element minOccurs="0" ref="publishr"/>
+        <xs:element ref="date"/>
+        <xs:element minOccurs="0" ref="work-id"/>
+        <xs:element minOccurs="0" ref="volno"/>
+        <xs:element minOccurs="0" ref="issueno"/>
+        <xs:element minOccurs="0" ref="pgnos"/>
+      </xs:sequence>
+      <xs:attributeGroup ref="attlist.article"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:attributeGroup name="attlist.article">
+    <xs:attributeGroup ref="id"/>
+  </xs:attributeGroup>
+  <!-- Element not used -->
+  <xs:element name="arttitle" type="xs:string"/>
+  <!--
+        NIC Model equivalent for author element : ??
+    
+    Container used to store the data of an author as following:<br>
+    <ul><li>name</li>
+    <li>position</li>
+    <li>telephone</li>
+    <li>email</li>
+    <li>fax</li>
+  -->
+  <xs:element name="author">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="name"/>
+        <xs:element minOccurs="0" ref="position"/>
+        <xs:element minOccurs="0" ref="telephone"/>
+        <xs:element minOccurs="0" ref="email"/>
+        <xs:element minOccurs="0" ref="fax"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <!--
+        NIC Model equivalent for authorlist element : ??
+    
+    Container introducing an author element. Converted from the Word style Author.
+  -->
+  <xs:element name="authorlist">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element maxOccurs="unbounded" ref="author"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <!--
+        NIC Model equivalent for backmatter element : ??
+        NIC Model equivalent for instlang attribute : ??
+    
+    The backmatter element is used to store all the elements at the end of a document, after the last part or chapter. For exemple, an annex in the backmatter is refering to the entire document. It can contains:<br>
+    <ul><li>conclusion</li>
+    <li>glossary-acronyms</li>
+    <li>biblio</li>
+    <li>appendix</li>
+    <li>annex</li>
+    <li>info</li></ul>
+  -->
+  <xs:element name="backmatter">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element ref="conclusion"/>
+        <xs:element ref="glossary-acronyms"/>
+        <xs:element ref="biblio"/>
+        <xs:element ref="appendix"/>
+        <xs:element maxOccurs="unbounded" ref="annex"/>
+        <xs:element ref="info"/>
+      </xs:choice>
+      <xs:attributeGroup ref="attlist.backmatter"/>
+    </xs:complexType>
+  </xs:element>
+  <!--
+    @attr instlang define the document language. It can have the following values:
+    <ul><li>i-eng for english</li>
+    <li>i-fr for french</li>
+    <li>i-de for deutsch</li>
+    <li>i-bi-ling for bilingual</li>
+    <li>i-other for other language</li></ul>
+  -->
+  <xs:attributeGroup name="attlist.backmatter">
+    <xs:attributeGroup ref="instlang"/>
+  </xs:attributeGroup>
+  <!--
+        NIC Model equivalent for bibinfo element : ??
+        NIC Model equivalent for id attribute : ??
+    
+    The bibinfo element is used to store all the metadata of a document.
+  -->
+  <xs:element name="bibinfo">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="unbounded" ref="contact"/>
+        <xs:element minOccurs="0" maxOccurs="unbounded" ref="directorate"/>
+        <xs:element minOccurs="0" maxOccurs="unbounded" ref="committee"/>
+        <xs:element minOccurs="0" ref="cancel"/>
+        <xs:element minOccurs="0" ref="destinat"/>
+        <xs:element minOccurs="0" ref="docdates"/>
+        <xs:element minOccurs="0" ref="langinfo"/>
+        <xs:element minOccurs="0" ref="pubyear"/>
+        <xs:element minOccurs="0" ref="serinfo"/>
+        <xs:element minOccurs="0" ref="maintitl"/>
+        <xs:element minOccurs="0" maxOccurs="unbounded" ref="subtitle"/>
+        <xs:element minOccurs="0" ref="abbrtitl"/>
+        <xs:element minOccurs="0" maxOccurs="unbounded" ref="originatingbody"/>
+        <xs:element minOccurs="0" ref="disclmr"/>
+        <xs:element minOccurs="0" ref="mtginfo"/>
+        <xs:element minOccurs="0" ref="comment"/>
+        <xs:element minOccurs="0" ref="jobno"/>
+        <xs:element minOccurs="0" ref="traninfo"/>
+        <xs:element minOccurs="0" maxOccurs="unbounded" ref="keywdgrp"/>
+        <xs:element minOccurs="0" ref="dochist"/>
+        <xs:element minOccurs="0" ref="abstract"/>
+        <xs:element minOccurs="0" ref="action"/>
+        <xs:element minOccurs="0" ref="isbn"/>
+        <xs:element minOccurs="0" ref="doi"/>
+      </xs:sequence>
+      <xs:attributeGroup ref="attlist.bibinfo"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:attributeGroup name="attlist.bibinfo">
+    <xs:attributeGroup ref="id"/>
+    <xs:attribute name="type">
+      <xs:simpleType>
+        <xs:restriction base="xs:token">
+          <xs:enumeration value="agenda"/>
+          <xs:enumeration value="mtg-sum"/>
+          <xs:enumeration value="narr-doc"/>
+        </xs:restriction>
+      </xs:simpleType>
+    </xs:attribute>
+  </xs:attributeGroup>
+  <!--
+        NIC Model equivalent for biblio element : ??
+        NIC Model equivalent for label attribute : ??
+        NIC Model equivalent for number attribute : ??
+        NIC Model equivalent for numbering attribute : ??
+    
+    Container used to store the bibliographical data. Converted form Word style Bibliography Heading.
+  -->
+  <xs:element name="biblio">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:sequence>
+          <xs:element minOccurs="0" ref="heading"/>
+          <xs:element minOccurs="0" maxOccurs="unbounded" ref="subheading"/>
+          <xs:element minOccurs="0" maxOccurs="unbounded" ref="section"/>
+          <xs:element minOccurs="0" maxOccurs="unbounded" ref="randlist"/>
+        </xs:sequence>
+        <xs:choice minOccurs="0" maxOccurs="unbounded">
+          <xs:element ref="p"/>
+          <xs:element ref="indvpub"/>
+          <xs:element ref="instpub"/>
+          <xs:element ref="oecd-doc"/>
+          <xs:element ref="article"/>
+          <xs:element ref="periodcl"/>
+        </xs:choice>
+      </xs:sequence>
+      <xs:attributeGroup ref="attlist.biblio"/>
+    </xs:complexType>
+  </xs:element>
+  <!--
+    @attr label is used to store the numbering to be displayed.
+    @attr number is used to store the numbering to be displayed.
+    @attr numbering is used to activate the numbering. Possible values are <i>y</i> (yes) or <i>n</i> (no).
+  -->
+  <xs:attributeGroup name="attlist.biblio">
+    <xs:attributeGroup ref="id"/>
+    <xs:attribute name="label"/>
+    <xs:attribute name="number"/>
+    <xs:attribute name="numbering" default="n">
+      <xs:simpleType>
+        <xs:restriction base="xs:token">
+          <xs:enumeration value="y"/>
+          <xs:enumeration value="n"/>
+        </xs:restriction>
+      </xs:simpleType>
+    </xs:attribute>
+  </xs:attributeGroup>
+  <!-- Element not used -->
+  <xs:element name="bibref">
+    <xs:complexType mixed="true">
+      <xs:attributeGroup ref="attlist.bibref"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:attributeGroup name="attlist.bibref">
+    <xs:attribute name="refid" use="required" type="xs:IDREF"/>
+    <xs:attribute name="format"/>
+    <xs:attribute name="capital" default="yes">
+      <xs:simpleType>
+        <xs:restriction base="xs:token">
+          <xs:enumeration value="yes"/>
+          <xs:enumeration value="no"/>
+        </xs:restriction>
+      </xs:simpleType>
+    </xs:attribute>
+  </xs:attributeGroup>
+  <!--
+        NIC Model equivalent for body element : ??
+    
+    The body element is used to store all the elements like parts and chapter of a document. Il can contains:<br>
+    <ul><li>part</li>
+    <li>chapter</li>
+    <li>section</li></ul>
+  -->
+  <xs:element name="body">
+    <xs:complexType>
+      <xs:choice maxOccurs="unbounded">
+        <xs:element maxOccurs="unbounded" ref="part"/>
+        <xs:element maxOccurs="unbounded" ref="chapter"/>
+        <xs:element maxOccurs="unbounded" ref="section"/>
+      </xs:choice>
+      <xs:attributeGroup ref="attlist.body"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:attributeGroup name="attlist.body">
+    <xs:attribute name="chapnum" default="1"/>
+    <xs:attribute name="partnum" default="1"/>
+    <xs:attribute name="sectnum" default="1"/>
+    <xs:attribute name="paranum" default="1"/>
+  </xs:attributeGroup>
+  <!-- Element not used -->
+  <xs:element name="boxhighlight">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element ref="p"/>
+        <xs:element ref="citation"/>
+        <xs:element ref="deflist"/>
+        <xs:element ref="randlist"/>
+        <xs:element ref="seqlist"/>
+        <xs:element ref="figure"/>
+        <xs:element ref="tablegrp"/>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+  <!--
+     DELETED 16-07-2010
+    <!ELEMENT boxlist EMPTY>
+    <!ATTLIST boxlist
+    %id;>
+  -->
+  <!--
+        NIC Model equivalent for boxnote element : ??
+        NIC Model equivalent for id attribute : ??
+    
+    Container used to store the notes of a text box. Converted from the Word style Box Note.
+  -->
+  <xs:element name="boxnote">
+    <xs:complexType>
+      <xs:choice maxOccurs="unbounded">
+        <xs:element ref="p"/>
+        <xs:element ref="citation"/>
+        <xs:element ref="deflist"/>
+        <xs:element ref="randlist"/>
+        <xs:element ref="seqlist"/>
+      </xs:choice>
+      <xs:attributeGroup ref="attlist.boxnote"/>
+    </xs:complexType>
+  </xs:element>
+  <!--
+    @attr type define the text to be displayed. The possible values are:<br>
+    <ul><li>alpha for lower alpha ordered list</li>
+    <li>number for arabic number ordered list</li>
+    <li>note to display the word <i>note</i></li>
+    <li>notes to display the word <i>notes</i></li>
+    <li>.. to display ".." (two dots). Means nil or negligeable</li>
+    <li>hyphen to display "-"</li>
+    <li>e for estimation</li>
+    <li>n.a. for not available</li>
+    <li>n.c. for non communiqué (in french)</li>
+    <li>n.d. for non disponible (in french)</li>
+    <li>none to display nothing</li>
+    <li>p for provisionnal</li>
+    <li>ast for "*"</li></ul>
+  -->
+  <xs:attributeGroup name="attlist.boxnote">
+    <xs:attributeGroup ref="id"/>
+    <xs:attribute name="type" default="number">
+      <xs:simpleType>
+        <xs:restriction base="xs:token">
+          <xs:enumeration value="alpha"/>
+          <xs:enumeration value="number"/>
+          <xs:enumeration value="note"/>
+          <xs:enumeration value="notes"/>
+          <xs:enumeration value=".."/>
+          <xs:enumeration value="hyphen"/>
+          <xs:enumeration value="e"/>
+          <xs:enumeration value="n.a."/>
+          <xs:enumeration value="n.c."/>
+          <xs:enumeration value="n.d."/>
+          <xs:enumeration value="none"/>
+          <xs:enumeration value="p"/>
+          <xs:enumeration value="ast"/>
+        </xs:restriction>
+      </xs:simpleType>
+    </xs:attribute>
+  </xs:attributeGroup>
+  <!--
+        NIC Model equivalent for boxnoteref element : ??
+    
+    Cross-reference of a boxnote element.
+  -->
+  <xs:element name="boxnoteref">
+    <xs:complexType>
+      <xs:attributeGroup ref="attlist.boxnoteref"/>
+    </xs:complexType>
+  </xs:element>
+  <!--
+    @att refid is the reference to the corresponding boxnote element. 
+    @att format 
+    @att srcfile
+  -->
+  <xs:attributeGroup name="attlist.boxnoteref">
+    <xs:attribute name="refid" use="required" type="xs:IDREF"/>
+    <xs:attribute name="format"/>
+    <xs:attribute name="srcfile"/>
+  </xs:attributeGroup>
+  <!--
+        NIC Model equivalent for boxsection element : ??
+        NIC Model equivalent for id attribute : ??
+        NIC Model equivalent for label attribute : ??
+        NIC Model equivalent for number attribute : ??
+        NIC Model equivalent for numbering attribute : ??
+        NIC Model equivalent for instlang attribute : ??
+    
+    Container used to store the title(s) of a text box. Converted from Word style Box Heading, Box Heading 2, Box Heading 3. Three levels can be imbricated.
+  -->
+  <xs:element name="boxsection">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:sequence>
+          <xs:element minOccurs="0" ref="heading"/>
+          <xs:element minOccurs="0" maxOccurs="unbounded" ref="subheading"/>
+        </xs:sequence>
+        <xs:element minOccurs="0" ref="boxhighlight"/>
+        <xs:element minOccurs="0" ref="boxsummary"/>
+        <xs:element minOccurs="0" ref="abstract"/>
+        <xs:element minOccurs="0" ref="highlight"/>
+        <xs:choice minOccurs="0" maxOccurs="unbounded">
+          <xs:element ref="p"/>
+          <xs:element ref="citation"/>
+          <xs:element ref="deflist"/>
+          <xs:element ref="randlist"/>
+          <xs:element ref="seqlist"/>
+          <xs:element ref="figure"/>
+          <xs:element ref="tablegrp"/>
+        </xs:choice>
+        <xs:element minOccurs="0" maxOccurs="unbounded" ref="boxsection"/>
+        <xs:element minOccurs="0" maxOccurs="unbounded" ref="boxnote"/>
+        <xs:element minOccurs="0" maxOccurs="unbounded" ref="source"/>
+      </xs:sequence>
+      <xs:attributeGroup ref="attlist.boxsection"/>
+    </xs:complexType>
+  </xs:element>
+  <!--
+    @attr label is used to store the numbering to be displayed.
+    @attr number is used to store the numbering to be displayed.
+    @attr numbering is used to activate the numbering. Possible values are <i>y</i> (yes) or <i>n</i> (no).
+    @attr reference is used to store the numbering to be displayed.
+    @attr instlang define the document language. It can have the following values:
+        <ul><li>i-eng for english</li>
+        <li>i-fr for french</li>
+        <li>i-de for deutsch</li>
+        <li>i-bi-ling for bilingual</li>
+        <li>i-other for other language</li></ul>
+  -->
+  <xs:attributeGroup name="attlist.boxsection">
+    <xs:attributeGroup ref="id"/>
+    <xs:attribute name="label"/>
+    <xs:attribute name="number"/>
+    <xs:attribute name="numbering" default="y">
+      <xs:simpleType>
+        <xs:restriction base="xs:token">
+          <xs:enumeration value="y"/>
+          <xs:enumeration value="n"/>
+        </xs:restriction>
+      </xs:simpleType>
+    </xs:attribute>
+    <xs:attribute name="reference"/>
+    <xs:attributeGroup ref="instlang"/>
+  </xs:attributeGroup>
+  <!-- Element not used -->
+  <xs:element name="boxsummary">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element ref="p"/>
+        <xs:element ref="citation"/>
+        <xs:element ref="deflist"/>
+        <xs:element ref="randlist"/>
+        <xs:element ref="seqlist"/>
+        <xs:element ref="figure"/>
+        <xs:element ref="tablegrp"/>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+  <!-- Element not used -->
+  <xs:element name="cancel">
+    <xs:complexType mixed="true">
+      <xs:attributeGroup ref="attlist.cancel"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:attributeGroup name="attlist.cancel">
+    <xs:attribute name="type" use="required">
+      <xs:simpleType>
+        <xs:restriction base="xs:token">
+          <xs:enumeration value="dist"/>
+          <xs:enumeration value="olis"/>
+        </xs:restriction>
+      </xs:simpleType>
+    </xs:attribute>
+  </xs:attributeGroup>
+  <!-- Element not used -->
+  <xs:element name="chapconcl">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:sequence>
+          <xs:element minOccurs="0" ref="heading"/>
+          <xs:element minOccurs="0" maxOccurs="unbounded" ref="subheading"/>
+        </xs:sequence>
+        <xs:element minOccurs="0" ref="highlight"/>
+        <xs:element minOccurs="0" ref="abstract"/>
+        <xs:choice minOccurs="0" maxOccurs="unbounded">
+          <xs:choice maxOccurs="unbounded">
+            <xs:element ref="p"/>
+            <xs:element ref="citation"/>
+            <xs:element ref="deflist"/>
+            <xs:element ref="randlist"/>
+            <xs:element ref="seqlist"/>
+          </xs:choice>
+          <xs:element ref="figure"/>
+          <xs:element ref="tablegrp"/>
+          <xs:element ref="textbox"/>
+        </xs:choice>
+        <xs:element minOccurs="0" maxOccurs="unbounded" ref="section"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <!-- Element not used -->
+  <xs:element name="chapno" type="xs:string"/>
+  <!--
+        NIC Model equivalent for chapter element : ??
+        NIC Model equivalent for id attribute : ??
+        NIC Model equivalent for label attribute : ??
+        NIC Model equivalent for number attribute : ??
+        NIC Model equivalent for numbering attribute : ??
+        NIC Model equivalent for instlang attribute : ??
+    
+    Container used to begin a chapter section. Converted frow Word style Heading 1.
+  -->
+  <xs:element name="chapter">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" ref="bibinfo"/>
+        <xs:sequence>
+          <xs:element minOccurs="0" ref="heading"/>
+          <xs:element minOccurs="0" maxOccurs="unbounded" ref="subheading"/>
+        </xs:sequence>
+        <xs:element minOccurs="0" ref="authorlist"/>
+        <xs:element minOccurs="0" ref="highlight"/>
+        <xs:element minOccurs="0" ref="abstract"/>
+        <xs:choice minOccurs="0" maxOccurs="unbounded">
+          <xs:choice maxOccurs="unbounded">
+            <xs:element ref="p"/>
+            <xs:element ref="citation"/>
+            <xs:element ref="deflist"/>
+            <xs:element ref="randlist"/>
+            <xs:element ref="seqlist"/>
+          </xs:choice>
+          <xs:element ref="figure"/>
+          <xs:element ref="tablegrp"/>
+          <xs:element ref="textbox"/>
+          <xs:element ref="section"/>
+        </xs:choice>
+        <xs:element minOccurs="0" ref="chapconcl"/>
+        <xs:element minOccurs="0" ref="conclusion"/>
+        <xs:element minOccurs="0" ref="glossary-acronyms"/>
+        <xs:element minOccurs="0" ref="biblio"/>
+        <xs:element minOccurs="0" maxOccurs="unbounded" ref="appendix"/>
+        <xs:element minOccurs="0" maxOccurs="unbounded" ref="annex"/>
+        <xs:element minOccurs="0" ref="info"/>
+      </xs:sequence>
+      <xs:attributeGroup ref="attlist.chapter"/>
+    </xs:complexType>
+  </xs:element>
+  <!--
+    @attr label is used to store the numbering to be displayed.
+    @attr number is used to store the numbering to be displayed.
+    @attr numbering is used to activate the numbering. Possible values are <i>y</i> (yes) or <i>n</i> (no).
+    @attr mode
+    @attr instlang define the document language. It can have the following values:
+        <ul><li>i-eng for english</li>
+        <li>i-fr for french</li>
+        <li>i-de for deutsch</li>
+        <li>i-bi-ling for bilingual</li>
+        <li>i-other for other language</li></ul>
+    @attr reference is used to store the numbering to be displayed.
+    @attr geocontainer is requested for metadata loader. Possible values are <i>false</i> or <i>true</i>.
+    @attr statisticalannex is requested for metadata loader. Possible values are <i>false</i> or <i>true</i>.
+    @attr metadatatype is requested for metadata loader to re-define the chapter as a section. The value is <i>section</i>.
+  -->
+  <xs:attributeGroup name="attlist.chapter">
+    <xs:attributeGroup ref="id"/>
+    <xs:attribute name="label"/>
+    <xs:attribute name="number"/>
+    <xs:attribute name="numbering" default="y">
+      <xs:simpleType>
+        <xs:restriction base="xs:token">
+          <xs:enumeration value="y"/>
+          <xs:enumeration value="n"/>
+        </xs:restriction>
+      </xs:simpleType>
+    </xs:attribute>
+    <xs:attribute name="mode" default="standard">
+      <xs:simpleType>
+        <xs:restriction base="xs:token">
+          <xs:enumeration value="standard"/>
+        </xs:restriction>
+      </xs:simpleType>
+    </xs:attribute>
+    <xs:attribute name="reference"/>
+    <xs:attributeGroup ref="instlang"/>
+    <xs:attributeGroup ref="geocontainer"/>
+    <xs:attributeGroup ref="statisticalannex"/>
+    <xs:attributeGroup ref="metadatatype"/>
+  </xs:attributeGroup>
+  <!--
+        NIC Model equivalent for citation element : ??
+    
+    Container used to store a citation paragraph. Converted from Word style Citation.
+  -->
+  <xs:element name="citation">
+    <xs:complexType>
+      <xs:choice maxOccurs="unbounded">
+        <xs:element ref="p"/>
+        <xs:element ref="citation"/>
+        <xs:element ref="deflist"/>
+        <xs:element ref="randlist"/>
+        <xs:element ref="seqlist"/>
+      </xs:choice>
+      <xs:attributeGroup ref="attlist.citation"/>
+    </xs:complexType>
+  </xs:element>
+  <!-- @attr citationsource -->
+  <xs:attributeGroup name="attlist.citation">
+    <xs:attribute name="citationsource"/>
+  </xs:attributeGroup>
+  <!--
+        NIC Model equivalent for colspec element : ??
+        NIC Model equivalent for colnum attribute : ??
+        NIC Model equivalent for colname attribute : ??
+        NIC Model equivalent for align attribute : ??
+        NIC Model equivalent for char attribute : ??
+        NIC Model equivalent for colwidth attribute : ??
+        NIC Model equivalent for colsep attribute : ??
+        NIC Model equivalent for rowsep attribute : ??
+    
+    Element used to specify the columns specification of a table. 
+  -->
+  <xs:element name="colspec">
+    <xs:complexType>
+      <xs:attributeGroup ref="attlist.colspec"/>
+    </xs:complexType>
+  </xs:element>
+  <!--
+    @attr colnum is the number of the column.
+    @attr colname is the name of the column.
+    @attr align is the horizontal alignment for the text inside the column. The possible values are:
+        <ul><li>left</li>
+        <li>right</li>
+        <li>center</li>
+        <li>justify</li>
+        <li>char</li></ul>
+    @attr char is the character to be used in horizontal text alignment inside the column, for example a decimal point “.” 
+    @attr colwidth specifies the width for a column.
+    @attr colsep is used to indicate if a rule have to be placed to the right of a column.
+    @attr rowsep is used to indicate if a rule have to be placed below a row.
+  -->
+  <xs:attributeGroup name="attlist.colspec">
+    <xs:attribute name="colnum"/>
+    <xs:attribute name="colname"/>
+    <xs:attribute name="align">
+      <xs:simpleType>
+        <xs:restriction base="xs:token">
+          <xs:enumeration value="left"/>
+          <xs:enumeration value="right"/>
+          <xs:enumeration value="center"/>
+          <xs:enumeration value="justify"/>
+          <xs:enumeration value="char"/>
+        </xs:restriction>
+      </xs:simpleType>
+    </xs:attribute>
+    <xs:attribute name="char"/>
+    <xs:attribute name="colwidth"/>
+    <xs:attribute name="colsep"/>
+    <xs:attribute name="rowsep"/>
+  </xs:attributeGroup>
+  <!-- Element not used -->
+  <xs:element name="comment">
+    <xs:complexType mixed="true">
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element ref="shortcitation"/>
+        <xs:element ref="comment"/>
+        <xs:element ref="emphasis"/>
+        <xs:element ref="equation"/>
+        <xs:element ref="specchar"/>
+        <xs:element ref="indexword"/>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+  <!-- Element not used -->
+  <xs:element name="committee" type="xs:string"/>
+  <!--
+        NIC Model equivalent for conclusion element : ??
+        NIC Model equivalent for id attribute : ??
+    
+    Container used to begin a conclusion section.
+  -->
+  <xs:element name="conclusion">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:sequence>
+          <xs:element minOccurs="0" ref="heading"/>
+          <xs:element minOccurs="0" maxOccurs="unbounded" ref="subheading"/>
+        </xs:sequence>
+        <xs:element minOccurs="0" ref="authorlist"/>
+        <xs:element minOccurs="0" ref="highlight"/>
+        <xs:element minOccurs="0" ref="abstract"/>
+        <xs:choice minOccurs="0" maxOccurs="unbounded">
+          <xs:choice maxOccurs="unbounded">
+            <xs:element ref="p"/>
+            <xs:element ref="citation"/>
+            <xs:element ref="deflist"/>
+            <xs:element ref="randlist"/>
+            <xs:element ref="seqlist"/>
+          </xs:choice>
+          <xs:element ref="figure"/>
+          <xs:element ref="tablegrp"/>
+          <xs:element ref="textbox"/>
+        </xs:choice>
+        <xs:element minOccurs="0" maxOccurs="unbounded" ref="section"/>
+        <xs:element minOccurs="0" ref="chapconcl"/>
+      </xs:sequence>
+      <xs:attributeGroup ref="attlist.conclusion"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:attributeGroup name="attlist.conclusion">
+    <xs:attributeGroup ref="id"/>
+  </xs:attributeGroup>
+  <!-- Element not used -->
+  <xs:element name="contact">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="name"/>
+        <xs:element minOccurs="0" ref="position"/>
+        <xs:element minOccurs="0" ref="telephone"/>
+        <xs:element minOccurs="0" ref="email"/>
+        <xs:element minOccurs="0" ref="fax"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <!-- Element not used -->
+  <xs:element name="date" type="xs:string"/>
+  <!--
+        NIC Model equivalent for def element : ??
+    
+    container used in acronym definition.
+  -->
+  <xs:element name="def">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element maxOccurs="unbounded" ref="di"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <!-- Element not used -->
+  <xs:element name="deflist">
+    <xs:complexType>
+      <xs:sequence maxOccurs="unbounded">
+        <xs:element ref="term"/>
+        <xs:element ref="def"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <!-- Element not used -->
+  <xs:element name="destinat" type="xs:string"/>
+  <!--
+        NIC Model equivalent for di element : ??
+    
+    container used to store de definition of an acronym. Only p element is used in our documents.
+  -->
+  <xs:element name="di">
+    <xs:complexType>
+      <xs:choice maxOccurs="unbounded">
+        <xs:element ref="p"/>
+        <xs:element ref="citation"/>
+        <xs:element ref="deflist"/>
+        <xs:element ref="randlist"/>
+        <xs:element ref="seqlist"/>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+  <!-- Element not used -->
+  <xs:element name="directorate" type="xs:string"/>
+  <!-- Element not used -->
+  <xs:element name="disclmr">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:sequence>
+          <xs:element minOccurs="0" ref="heading"/>
+          <xs:element minOccurs="0" maxOccurs="unbounded" ref="subheading"/>
+        </xs:sequence>
+        <xs:choice maxOccurs="unbounded">
+          <xs:element ref="p"/>
+          <xs:element ref="citation"/>
+          <xs:element ref="deflist"/>
+          <xs:element ref="randlist"/>
+          <xs:element ref="seqlist"/>
+        </xs:choice>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <!-- Element not used -->
+  <xs:element name="distdate">
+    <xs:complexType/>
+  </xs:element>
+  <!-- Element not used -->
+  <xs:element name="docdates">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" ref="location"/>
+        <xs:element ref="drafdate"/>
+        <xs:element ref="distdate"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <!-- Element not used -->
+  <xs:element name="dochist">
+    <xs:complexType>
+      <xs:choice maxOccurs="unbounded">
+        <xs:element ref="p"/>
+        <xs:element ref="citation"/>
+        <xs:element ref="deflist"/>
+        <xs:element ref="randlist"/>
+        <xs:element ref="seqlist"/>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+  <!--
+        NIC Model equivalent for doi element : ??
+    
+    Container used to store the doi of a document.
+  -->
+  <xs:element name="doi" type="xs:string"/>
+  <!-- Element not used -->
+  <xs:element name="drafdate" type="xs:string"/>
+  <!-- Element not used -->
+  <xs:element name="edition" type="xs:string"/>
+  <!-- Element not used -->
+  <xs:element name="editor" type="xs:string"/>
+  <!--
+        NIC Model equivalent for email element : ??
+    
+    Container used to store the email of an author.
+  -->
+  <xs:element name="email" type="xs:string"/>
+  <!--
+        NIC Model equivalent for emphasis element : ??
+        NIC Model equivalent for emph attribute : ??
+    
+    Inline element used to change the display of the text within emphasis tag. 
+  -->
+  <xs:element name="emphasis">
+    <xs:complexType mixed="true">
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element ref="indexword"/>
+        <xs:element ref="specchar"/>
+        <xs:element ref="noteref"/>
+        <xs:element ref="note"/>
+        <xs:element ref="boxnoteref"/>
+        <xs:element ref="xref"/>
+        <xs:element ref="shortcitation"/>
+      </xs:choice>
+      <xs:attributeGroup ref="attlist.emphasis"/>
+    </xs:complexType>
+  </xs:element>
+  <!--
+    @att emph is the possible values of the font to change the text to be display:
+    <ul><li>bold</li>
+    <li>italic</li>
+    <li>bolditalic</li>
+    <li>underline</li>
+    <li>strikeout</li>
+    <li>smallcaps</li>
+    <li>caps</li>
+    <li>normal</li></ul>
+  -->
+  <xs:attributeGroup name="attlist.emphasis">
+    <xs:attribute name="emph" use="required">
+      <xs:simpleType>
+        <xs:restriction base="xs:token">
+          <xs:enumeration value="bold"/>
+          <xs:enumeration value="italic"/>
+          <xs:enumeration value="bolditalic"/>
+          <xs:enumeration value="underline"/>
+          <xs:enumeration value="strikeout"/>
+          <xs:enumeration value="smallcaps"/>
+          <xs:enumeration value="caps"/>
+          <xs:enumeration value="normal"/>
+        </xs:restriction>
+      </xs:simpleType>
+    </xs:attribute>
+  </xs:attributeGroup>
+  <!-- Element not used -->
+  <xs:element name="enddate" type="xs:string"/>
+  <!--
+        NIC Model equivalent for entry element : ??
+        NIC Model equivalent for colname attribute : ??
+        NIC Model equivalent for namest attribute : ??
+        NIC Model equivalent for nameend attribute : ??
+        NIC Model equivalent for spanname attribute : ??
+        NIC Model equivalent for hspan attribute : ??
+        NIC Model equivalent for morerows attribute : ??
+        NIC Model equivalent for colsep attribute : ??
+        NIC Model equivalent for rowsep attribute : ??
+        NIC Model equivalent for valign attribute : ??
+        NIC Model equivalent for charoff attribute : ??
+        NIC Model equivalent for char attribute : ??
+    
+    Element used to define the cell of a table.
+  -->
+  <xs:element name="entry">
+    <xs:complexType>
+      <xs:choice maxOccurs="unbounded">
+        <xs:element ref="p"/>
+        <xs:element ref="citation"/>
+        <xs:element ref="deflist"/>
+        <xs:element ref="randlist"/>
+        <xs:element ref="seqlist"/>
+      </xs:choice>
+      <xs:attributeGroup ref="attlist.entry"/>
+    </xs:complexType>
+  </xs:element>
+  <!--
+    @att colname is the name of one of the columns of a table, used to identify it for column assignment and column spanning.
+    @att namest is the name of leftmost column of span. Name must refer to some colname in a colspec .
+    @att nameend is the name of rightmost column of span. Name must refer to some colname in a colspec.
+    @att spanname is the name of the horizontal span.
+    @att hspan 
+    @att morerows is the number of additional rows in a vertical straddle.
+    @attr colsep is used to indicate if a rule have to be placed to the right of a column.
+    @attr rowsep is used to indicate if a rule have to be placed below a row.
+    @att rotate is the orientation of the table.
+    @att valign is the specification of the vertical position of the data. Posible values are:
+        <ul><li>top</li>
+        <li>bottom</li>
+        <li>middle</li></ul>
+    @att align is the specification of the horizontal alignment of the data. Posible values are:
+        <ul><li>left</li>
+        <li>right</li>
+        <li>center</li>
+        <li>justify</li>
+        <li>char</li></ul>
+    @att charoff is the horizontal offset from the alignment character specified by the char attribute.
+    @att position is the vertical additional space of the top cell margin. 
+    @att char is the character to be used in horizontal text alignment.
+  -->
+  <xs:attributeGroup name="attlist.entry">
+    <xs:attribute name="colname"/>
+    <xs:attribute name="namest"/>
+    <xs:attribute name="nameend"/>
+    <xs:attribute name="spanname"/>
+    <xs:attribute name="hspan"/>
+    <xs:attribute name="morerows" default="0"/>
+    <xs:attribute name="colsep"/>
+    <xs:attribute name="rowsep"/>
+    <xs:attribute name="rotate" default="0"/>
+    <xs:attribute name="valign" default="top">
+      <xs:simpleType>
+        <xs:restriction base="xs:token">
+          <xs:enumeration value="top"/>
+          <xs:enumeration value="bottom"/>
+          <xs:enumeration value="middle"/>
+        </xs:restriction>
+      </xs:simpleType>
+    </xs:attribute>
+    <xs:attribute name="align">
+      <xs:simpleType>
+        <xs:restriction base="xs:token">
+          <xs:enumeration value="left"/>
+          <xs:enumeration value="right"/>
+          <xs:enumeration value="center"/>
+          <xs:enumeration value="justify"/>
+          <xs:enumeration value="char"/>
+        </xs:restriction>
+      </xs:simpleType>
+    </xs:attribute>
+    <xs:attribute name="charoff" default="0"/>
+    <xs:attribute name="position">
+      <xs:simpleType>
+        <xs:restriction base="xs:token">
+          <xs:enumeration value="0"/>
+          <xs:enumeration value="0.5"/>
+          <xs:enumeration value="1"/>
+          <xs:enumeration value="1.5"/>
+          <xs:enumeration value="2"/>
+          <xs:enumeration value="2.5"/>
+          <xs:enumeration value="3"/>
+          <xs:enumeration value="3.5"/>
+          <xs:enumeration value="4"/>
+          <xs:enumeration value="4.5"/>
+          <xs:enumeration value="5"/>
+        </xs:restriction>
+      </xs:simpleType>
+    </xs:attribute>
+    <xs:attribute name="char"/>
+  </xs:attributeGroup>
+  <!--
+        NIC Model equivalent for equation element : ??
+        NIC Model equivalent for id attribute : ??
+    
+    Container used to store Word equation (Microsoft Equation 3.0 editor).
+  -->
+  <xs:element name="equation">
+    <xs:complexType mixed="true">
+      <xs:attributeGroup ref="attlist.equation"/>
+    </xs:complexType>
+  </xs:element>
+  <!--
+    @att type of the equation. Possible values are display (????) of inline (equation is displayed inside the current paragraph).
+    @att graphic is the source file.
+  -->
+  <xs:attributeGroup name="attlist.equation">
+    <xs:attribute name="type" default="inline">
+      <xs:simpleType>
+        <xs:restriction base="xs:token">
+          <xs:enumeration value="display"/>
+          <xs:enumeration value="inline"/>
+        </xs:restriction>
+      </xs:simpleType>
+    </xs:attribute>
+    <xs:attribute name="graphic"/>
+    <xs:attributeGroup ref="id"/>
+  </xs:attributeGroup>
+  <!--
+        NIC Model equivalent for execsumm element : ??
+        NIC Model equivalent for id attribute : ??
+    
+    Container used to begin a executive summary section. It store the text converted from the Word style Executive Summary Heading.<br>
+    execsumm element can be used in frontmatter.
+  -->
+  <xs:element name="execsumm">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:sequence>
+          <xs:element minOccurs="0" ref="heading"/>
+          <xs:element minOccurs="0" maxOccurs="unbounded" ref="subheading"/>
+        </xs:sequence>
+        <xs:element minOccurs="0" ref="highlight"/>
+        <xs:element minOccurs="0" ref="abstract"/>
+        <xs:choice minOccurs="0" maxOccurs="unbounded">
+          <xs:choice maxOccurs="unbounded">
+            <xs:element ref="p"/>
+            <xs:element ref="citation"/>
+            <xs:element ref="deflist"/>
+            <xs:element ref="randlist"/>
+            <xs:element ref="seqlist"/>
+          </xs:choice>
+          <xs:element ref="figure"/>
+          <xs:element ref="tablegrp"/>
+          <xs:element ref="textbox"/>
+        </xs:choice>
+        <xs:element minOccurs="0" maxOccurs="unbounded" ref="section"/>
+      </xs:sequence>
+      <xs:attributeGroup ref="attlist.execsumm"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:attributeGroup name="attlist.execsumm">
+    <xs:attribute name="id" type="xs:ID"/>
+  </xs:attributeGroup>
+  <!--
+        NIC Model equivalent for fax element : ??
+    
+    Container used to store the fax number of an author.
+  -->
+  <xs:element name="fax" type="xs:string"/>
+  <!--
+     DELETED 16-07-2010
+    <!ELEMENT figlist EMPTY>
+    <!ATTLIST figlist
+    %id;>
+  -->
+  <!--
+        NIC Model equivalent for fignote element : ??
+        NIC Model equivalent for id attribute : ??
+        NIC Model equivalent for type attribute : ??
+    
+    Container used to store the notes of a figure. Converted from the Word style Figure Note.
+  -->
+  <xs:element name="fignote">
+    <xs:complexType>
+      <xs:choice maxOccurs="unbounded">
+        <xs:element ref="p"/>
+        <xs:element ref="citation"/>
+        <xs:element ref="deflist"/>
+        <xs:element ref="randlist"/>
+        <xs:element ref="seqlist"/>
+      </xs:choice>
+      <xs:attributeGroup ref="attlist.fignote"/>
+    </xs:complexType>
+  </xs:element>
+  <!--
+    @attr type define the text to be displayed. The possible values are:<br>
+    <ul><li>alpha for lower alpha ordered list</li>
+    <li>number for arabic number ordered list</li>
+    <li>note to display the word <i>note</i></li>
+    <li>notes to display the word <i>notes</i></li>
+    <li>.. to display ".." (two dots). Means nil or negligeable</li>
+    <li>hyphen to display "-"</li>
+    <li>e for estimation</li>
+    <li>n.a. for not available</li>
+    <li>n.c. for non communiqué (in french)</li>
+    <li>n.d. for non disponible (in french)</li>
+    <li>none to display nothing</li>
+    <li>p for provisionnal</li>
+    <li>ast for "*"</li></ul>
+  -->
+  <xs:attributeGroup name="attlist.fignote">
+    <xs:attributeGroup ref="id"/>
+    <xs:attribute name="type" default="number">
+      <xs:simpleType>
+        <xs:restriction base="xs:token">
+          <xs:enumeration value="alpha"/>
+          <xs:enumeration value="number"/>
+          <xs:enumeration value="note"/>
+          <xs:enumeration value="notes"/>
+          <xs:enumeration value=".."/>
+          <xs:enumeration value="hyphen"/>
+          <xs:enumeration value="e"/>
+          <xs:enumeration value="n.a."/>
+          <xs:enumeration value="n.c."/>
+          <xs:enumeration value="n.d."/>
+          <xs:enumeration value="none"/>
+          <xs:enumeration value="p"/>
+          <xs:enumeration value="ast"/>
+        </xs:restriction>
+      </xs:simpleType>
+    </xs:attribute>
+  </xs:attributeGroup>
+  <!--
+        NIC Model equivalent for fignoteref element : ??
+    
+    Cross-reference of a fignote element.
+  -->
+  <xs:element name="fignoteref">
+    <xs:complexType>
+      <xs:attributeGroup ref="attlist.fignoteref"/>
+    </xs:complexType>
+  </xs:element>
+  <!--
+    @att refid is the reference to the corresponding fignote element. 
+    @att format 
+    @att srcfile
+  -->
+  <xs:attributeGroup name="attlist.fignoteref">
+    <xs:attribute name="refid" use="required" type="xs:IDREF"/>
+    <xs:attribute name="format"/>
+    <xs:attribute name="srcfile"/>
+  </xs:attributeGroup>
+  <!--
+        NIC Model equivalent for figure element : ??
+        NIC Model equivalent for id attribute : ??
+        NIC Model equivalent for instlang attribute : ??
+        NIC Model equivalent for label attribute : ??
+        NIC Model equivalent for number attribute : ??
+        NIC Model equivalent for numbering attribute : ??
+    
+    A figure defines the presentation of a picture in the text.
+  -->
+  <xs:element name="figure">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" ref="figureheading"/>
+        <xs:element minOccurs="0" maxOccurs="unbounded" ref="figuresubheading"/>
+        <!--<xs:element minOccurs="0" maxOccurs="unbounded" ref="legend"/>-->
+        <xs:element minOccurs="0" ref="graphic"/>
+        <xs:choice minOccurs="0" maxOccurs="unbounded">
+          <xs:element ref="hyperlink"/>
+          <xs:element ref="fignote"/>
+          <xs:element ref="source"/>
+          <xs:element ref="legend"/>
+        </xs:choice>
+      </xs:sequence>
+      <xs:attributeGroup ref="attlist.figure"/>
+    </xs:complexType>
+  </xs:element>
+  <!--
+    @att width is the width of the figure.
+    @att depth is the depth of the figure.
+    @att place
+    @att instlang define the document language. It can have the following values:
+        <ul><li>i-eng for english</li>
+        <li>i-fr for french</li>
+        <li>i-de for deutsch</li>
+        <li>i-bi-ling for bilingual</li>
+        <li>i-other for other language</li></ul>
+    @att float define if the figure is floating or not. Possible values are <i>y</i> (yes) or <i>n</i> (no).
+    @orient is the orientation of the figure. the possible values are:
+        <ul><li>land for landscape</li>
+        <Li>port for portrait</li></ul>
+    @attr number is used to store the numbering to be displayed.
+    @attr numbering is used to activate the numbering. Possible values are <i>y</i> (yes) or <i>n</i> (no).
+    @attr label is used to store the numbering to be displayed.
+    @attr reference is used to store the numbering to be displayed.
+    @attr type is the type of the figure. The possible values are:
+        <ul><li>figure</li>
+        <li>chart</li>
+        <li>diagram</li>
+        <li>map</li></ul>
+  -->
+  <xs:attributeGroup name="attlist.figure">
+    <xs:attributeGroup ref="id"/>
+    <xs:attribute name="width"/>
+    <xs:attribute name="depth"/>
+    <xs:attribute name="place"/>
+    <xs:attributeGroup ref="instlang"/>
+    <xs:attribute name="float" default="y">
+      <xs:simpleType>
+        <xs:restriction base="xs:token">
+          <xs:enumeration value="y"/>
+          <xs:enumeration value="n"/>
+        </xs:restriction>
+      </xs:simpleType>
+    </xs:attribute>
+    <xs:attribute name="orient" default="port">
+      <xs:simpleType>
+        <xs:restriction base="xs:token">
+          <xs:enumeration value="land"/>
+          <xs:enumeration value="port"/>
+        </xs:restriction>
+      </xs:simpleType>
+    </xs:attribute>
+    <xs:attribute name="label"/>
+    <xs:attribute name="number"/>
+    <xs:attribute name="numbering" default="y">
+      <xs:simpleType>
+        <xs:restriction base="xs:token">
+          <xs:enumeration value="y"/>
+          <xs:enumeration value="n"/>
+        </xs:restriction>
+      </xs:simpleType>
+    </xs:attribute>
+    <xs:attribute name="reference"/>
+    <xs:attribute name="type" default="figure">
+      <xs:simpleType>
+        <xs:restriction base="xs:token">
+          <xs:enumeration value="figure"/>
+          <xs:enumeration value="chart"/>
+          <xs:enumeration value="diagram"/>
+          <xs:enumeration value="map"/>
+        </xs:restriction>
+      </xs:simpleType>
+    </xs:attribute>
+  </xs:attributeGroup>
+  <!--
+        NIC Model equivalent for figureheading element : ??
+    
+    Container used to store the title of a figure. Converted from the Word style Figure Title.
+  -->
+  <xs:element name="figureheading">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="figuremainhead"/>
+        <xs:element minOccurs="0" ref="tochead"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <!--
+        NIC Model equivalent for figuremainhead element : ??
+        NIC Model equivalent for id attribute : ??
+    
+    Container used to define the tile and subtitle of a figure. The text is stored in the figureheading and figuresubheading elements. 
+  -->
+  <xs:element name="figuremainhead">
+    <xs:complexType mixed="true">
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element ref="shortcitation"/>
+        <xs:element ref="comment"/>
+        <xs:element ref="emphasis"/>
+        <xs:element ref="equation"/>
+        <xs:element ref="specchar"/>
+        <xs:element ref="indexword"/>
+        <xs:element ref="fignoteref"/>
+      </xs:choice>
+      <xs:attributeGroup ref="attlist.figuremainhead"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:attributeGroup name="attlist.figuremainhead">
+    <xs:attributeGroup ref="id"/>
+  </xs:attributeGroup>
+  <!--
+        NIC Model equivalent for figuresubheading element : ??
+    
+    Container used to store the subtitle of a figure. Converted from the Word style Figure Sub-title.
+  -->
+  <xs:element name="figuresubheading">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="figuremainhead"/>
+        <xs:element minOccurs="0" ref="tochead"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <!--
+        NIC Model equivalent for firstname element : ??
+    
+    Container used to display the firstname of an author.
+  -->
+  <xs:element name="firstname" type="xs:string"/>
+  <!--
+        NIC Model equivalent for fnote element : ??
+        NIC Model equivalent for id attribute : ??
+    
+    This element creates the notes at the bottom of the page of a document.
+  -->
+  <xs:element name="fnote">
+    <xs:complexType>
+      <xs:choice maxOccurs="unbounded">
+        <xs:element ref="p"/>
+        <xs:element ref="citation"/>
+        <xs:element ref="deflist"/>
+        <xs:element ref="randlist"/>
+        <xs:element ref="seqlist"/>
+        <xs:element ref="tablegrp"/>
+      </xs:choice>
+      <xs:attributeGroup ref="attlist.fnote"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:attributeGroup name="attlist.fnote">
+    <xs:attributeGroup ref="id"/>
+  </xs:attributeGroup>
+  <!--
+        NIC Model equivalent for foreword element : ??
+        NIC Model equivalent for id attribute : ??
+    
+    Container used to begin a foreword section. It store the text converted from the Word style Foreword Heading.<br>
+    foreword element can be used in the following sections:
+        <ul><li>frontmatter</li>
+        <li>part</li></ul>
+  -->
+  <xs:element name="foreword">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:sequence>
+          <xs:element minOccurs="0" ref="heading"/>
+          <xs:element minOccurs="0" maxOccurs="unbounded" ref="subheading"/>
+        </xs:sequence>
+        <xs:element minOccurs="0" ref="authorlist"/>
+        <xs:element minOccurs="0" ref="highlight"/>
+        <xs:element minOccurs="0" ref="abstract"/>
+        <xs:choice minOccurs="0" maxOccurs="unbounded">
+          <xs:choice maxOccurs="unbounded">
+            <xs:element ref="p"/>
+            <xs:element ref="citation"/>
+            <xs:element ref="deflist"/>
+            <xs:element ref="randlist"/>
+            <xs:element ref="seqlist"/>
+          </xs:choice>
+          <xs:element ref="figure"/>
+          <xs:element ref="tablegrp"/>
+          <xs:element ref="textbox"/>
+        </xs:choice>
+        <xs:element minOccurs="0" maxOccurs="unbounded" ref="section"/>
+        <xs:element minOccurs="0" ref="chapconcl"/>
+      </xs:sequence>
+      <xs:attributeGroup ref="attlist.foreword"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:attributeGroup name="attlist.foreword">
+    <xs:attributeGroup ref="id"/>
+  </xs:attributeGroup>
+  <!--
+        NIC Model equivalent for frontmatter element : ??
+        NIC Model equivalent for instlang attribute : ??
+    
+    The frontmatter element is used to store all the elements at the beginning of a document, before the first part or chapter. It can contains:<br>
+    <ul><li>bibinfo</li>
+    <li>authorlist</li>
+    <li>foreword</li>
+    <li>preface</li>
+    <li>about</li>
+    <li>acknowledgement</li>
+    <li>glossary-acronyms</li>
+    <li>execsumm</li>
+    <li>introduction</li></ul>
+  -->
+  <xs:element name="frontmatter">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="bibinfo"/>
+        <xs:element minOccurs="0" ref="authorlist"/>
+        <xs:choice minOccurs="0" maxOccurs="unbounded">
+          <xs:element ref="foreword"/>
+          <xs:element ref="preface"/>
+          <xs:element ref="about"/>
+          <xs:element ref="acknowledgement"/>
+          <xs:element ref="glossary-acronyms"/>
+          <xs:element ref="execsumm"/>
+          <xs:element ref="introduction"/>
+        </xs:choice>
+      </xs:sequence>
+      <xs:attributeGroup ref="attlist.frontmatter"/>
+    </xs:complexType>
+  </xs:element>
+  <!--
+    @attr instlang define the document language. It can have the following values:
+        <ul><li>i-eng for english</li>
+        <li>i-fr for french</li>
+        <li>i-de for deutsch</li>
+        <li>i-bi-ling for bilingual</li>
+        <li>i-other for other language</li></ul>
+  -->
+  <xs:attributeGroup name="attlist.frontmatter">
+    <xs:attributeGroup ref="instlang"/>
+  </xs:attributeGroup>
+  <!--
+        NIC Model equivalent for glossary-acronyms element : ??
+        NIC Model equivalent for id attribute : ??
+        NIC Model equivalent for label attribute : ??
+        NIC Model equivalent for number attribute : ??
+        NIC Model equivalent for numbering attribute : ??
+    
+    Container used to begin a glossary section. It store the text converted from the Word style Glossary Heading.<br>
+  -->
+  <xs:element name="glossary-acronyms">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:sequence>
+          <xs:element minOccurs="0" ref="heading"/>
+          <xs:element minOccurs="0" maxOccurs="unbounded" ref="subheading"/>
+        </xs:sequence>
+        <xs:sequence maxOccurs="unbounded">
+          <xs:choice>
+            <xs:element ref="acronym"/>
+            <xs:sequence>
+              <xs:element ref="term"/>
+              <xs:element minOccurs="0" ref="acronym"/>
+            </xs:sequence>
+          </xs:choice>
+          <xs:element minOccurs="0" ref="gov-ref"/>
+          <xs:element ref="def"/>
+        </xs:sequence>
+      </xs:sequence>
+      <xs:attributeGroup ref="attlist.glossary-acronyms"/>
+    </xs:complexType>
+  </xs:element>
+  <!--
+    @attr label is used to store the numbering to be displayed.
+    @attr number is used to store the numbering to be displayed.
+    @attr numbering is used to activate the numbering. Possible values are <i>y</i> (yes) or <i>n</i> (no).
+  -->
+  <xs:attributeGroup name="attlist.glossary-acronyms">
+    <xs:attributeGroup ref="id"/>
+    <xs:attribute name="label"/>
+    <xs:attribute name="number"/>
+    <xs:attribute name="numbering" default="n">
+      <xs:simpleType>
+        <xs:restriction base="xs:token">
+          <xs:enumeration value="y"/>
+          <xs:enumeration value="n"/>
+        </xs:restriction>
+      </xs:simpleType>
+    </xs:attribute>
+  </xs:attributeGroup>
+  <!-- Element not used -->
+  <xs:element name="gov-ref" type="xs:string"/>
+  <!--
+        NIC Model equivalent for graphic element : ??
+        NIC Model equivalent for id attribute : ??
+    
+    The graphic that has to be display.
+  -->
+  <xs:element name="graphic">
+    <xs:complexType>
+      <xs:attributeGroup ref="attlist.graphic"/>
+    </xs:complexType>
+  </xs:element>
+  <!--
+     
+        @att type is the type of the graphic. Possible values are equation or graphic.
+        @att graphic is the source file.
+    <
+  -->
+  <xs:attributeGroup name="attlist.graphic">
+    <xs:attribute name="graphic"/>
+    <xs:attribute name="id" type="xs:ID"/>
+    <xs:attribute name="type" default="graphic">
+      <xs:simpleType>
+        <xs:restriction base="xs:token">
+          <xs:enumeration value="equation"/>
+          <xs:enumeration value="graphic"/>
+        </xs:restriction>
+      </xs:simpleType>
+    </xs:attribute>
+  </xs:attributeGroup>
+  <!--
+        NIC Model equivalent for heading element : ??
+    
+    Container used to store the text of the different heading element listed above.
+  -->
+  <xs:element name="heading">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="mainhead"/>
+        <xs:element minOccurs="0" ref="tochead"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <!-- Element not used -->
+  <xs:element name="highlight">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:choice maxOccurs="unbounded">
+          <xs:element ref="p"/>
+          <xs:element ref="citation"/>
+          <xs:element ref="deflist"/>
+          <xs:element ref="randlist"/>
+          <xs:element ref="seqlist"/>
+        </xs:choice>
+        <xs:element ref="figure"/>
+        <xs:element ref="tablegrp"/>
+        <xs:element ref="textbox"/>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+  <!-- Element not used -->
+  <xs:element name="hosttitl" type="xs:string"/>
+  <!--
+        NIC Model equivalent for hyperlink element : ??
+        NIC Model equivalent for url attribute : ??
+        NIC Model equivalent for target attribute : ??
+    
+    Container used to store the internal or external reference to a document. 
+  -->
+  <xs:element name="hyperlink">
+    <xs:complexType mixed="true">
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="unbounded" ref="specchar"/>
+      </xs:sequence>
+      <xs:attributeGroup ref="attlist.hyperlink"/>
+    </xs:complexType>
+  </xs:element>
+  <!--
+    @attr url is the wab address of the link. For exemple, http://www.oecd.org
+    @attr target is type of the target. The possible values are:
+    <ul><li>webpage</li>
+    <li>statlink</li>
+    <li>document</li></ul>
+  -->
+  <xs:attributeGroup name="attlist.hyperlink">
+    <xs:attribute name="url" use="required"/>
+    <xs:attribute name="target" default="webpage">
+      <xs:simpleType>
+        <xs:restriction base="xs:token">
+          <xs:enumeration value="webpage"/>
+          <xs:enumeration value="statlink"/>
+          <xs:enumeration value="document"/>
+        </xs:restriction>
+      </xs:simpleType>
+    </xs:attribute>
+  </xs:attributeGroup>
+  <!--
+        NIC Model equivalent for indexword element : ??
+        NIC Model equivalent for id attribute : ??
+        NIC Model equivalent for text attribute : ??
+    
+    Some keywords "defining" the document. Used by search engines to build their index.
+  -->
+  <xs:element name="indexword">
+    <xs:complexType mixed="true">
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="unbounded" ref="noteref"/>
+      </xs:sequence>
+      <xs:attributeGroup ref="attlist.indexword"/>
+    </xs:complexType>
+  </xs:element>
+  <!--
+    @attr refid
+    @attr type
+    @attr text is the text to be displayed.
+  -->
+  <xs:attributeGroup name="attlist.indexword">
+    <xs:attributeGroup ref="id"/>
+    <xs:attribute name="refid" type="xs:IDREF"/>
+    <xs:attribute name="type"/>
+    <xs:attribute name="text"/>
+  </xs:attributeGroup>
+  <!-- Element not used -->
+  <xs:element name="indvpub">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element maxOccurs="unbounded" ref="name"/>
+        <xs:sequence>
+          <xs:element ref="pubtitle"/>
+          <xs:element minOccurs="0" ref="secrespn"/>
+          <xs:element minOccurs="0" ref="edition"/>
+          <xs:element minOccurs="0" ref="no-vols"/>
+          <xs:element minOccurs="0" ref="location"/>
+          <xs:element minOccurs="0" ref="publishr"/>
+          <xs:element ref="date"/>
+          <xs:element minOccurs="0" ref="work-id"/>
+          <xs:element minOccurs="0" ref="volno"/>
+          <xs:element minOccurs="0" ref="issueno"/>
+          <xs:element minOccurs="0" ref="chapno"/>
+          <xs:element minOccurs="0" ref="pgnos"/>
+          <xs:element minOccurs="0" ref="sertitle"/>
+          <xs:element minOccurs="0" ref="translat"/>
+          <xs:element minOccurs="0" ref="isbn"/>
+          <xs:element minOccurs="0" ref="issn"/>
+        </xs:sequence>
+      </xs:sequence>
+      <xs:attributeGroup ref="attlist.indvpub"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:attributeGroup name="attlist.indvpub">
+    <xs:attributeGroup ref="id"/>
+  </xs:attributeGroup>
+  <!-- Element not used -->
+  <xs:element name="info">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:sequence>
+          <xs:element minOccurs="0" ref="heading"/>
+          <xs:element minOccurs="0" maxOccurs="unbounded" ref="subheading"/>
+        </xs:sequence>
+        <xs:choice maxOccurs="unbounded">
+          <xs:element ref="p"/>
+          <xs:element ref="citation"/>
+          <xs:element ref="deflist"/>
+          <xs:element ref="randlist"/>
+          <xs:element ref="seqlist"/>
+        </xs:choice>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <!-- Element not used -->
+  <xs:element name="institut" type="xs:string"/>
+  <!-- Element not used -->
+  <xs:element name="instpub">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="institut"/>
+        <xs:sequence>
+          <xs:element ref="pubtitle"/>
+          <xs:element minOccurs="0" ref="secrespn"/>
+          <xs:element minOccurs="0" ref="edition"/>
+          <xs:element minOccurs="0" ref="no-vols"/>
+          <xs:element minOccurs="0" ref="location"/>
+          <xs:element minOccurs="0" ref="publishr"/>
+          <xs:element ref="date"/>
+          <xs:element minOccurs="0" ref="work-id"/>
+          <xs:element minOccurs="0" ref="volno"/>
+          <xs:element minOccurs="0" ref="issueno"/>
+          <xs:element minOccurs="0" ref="chapno"/>
+          <xs:element minOccurs="0" ref="pgnos"/>
+          <xs:element minOccurs="0" ref="sertitle"/>
+          <xs:element minOccurs="0" ref="translat"/>
+          <xs:element minOccurs="0" ref="isbn"/>
+          <xs:element minOccurs="0" ref="issn"/>
+        </xs:sequence>
+      </xs:sequence>
+      <xs:attributeGroup ref="attlist.instpub"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:attributeGroup name="attlist.instpub">
+    <xs:attributeGroup ref="id"/>
+  </xs:attributeGroup>
+  <!--
+        NIC Model equivalent for introduction element : ??
+    
+    Container used to begin a introduction section. It store the text converted from the Word style Introduction Heading.<br>
+    introduction element can be used in the following sections:
+        <ul><li>frontmatter</li>
+        <li>part</li></ul>
+  -->
+  <xs:element name="introduction">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:sequence>
+          <xs:element minOccurs="0" ref="heading"/>
+          <xs:element minOccurs="0" maxOccurs="unbounded" ref="subheading"/>
+        </xs:sequence>
+        <xs:element minOccurs="0" ref="authorlist"/>
+        <xs:element minOccurs="0" ref="highlight"/>
+        <xs:element minOccurs="0" ref="abstract"/>
+        <xs:choice minOccurs="0" maxOccurs="unbounded">
+          <xs:choice maxOccurs="unbounded">
+            <xs:element ref="p"/>
+            <xs:element ref="citation"/>
+            <xs:element ref="deflist"/>
+            <xs:element ref="randlist"/>
+            <xs:element ref="seqlist"/>
+          </xs:choice>
+          <xs:element ref="figure"/>
+          <xs:element ref="tablegrp"/>
+          <xs:element ref="textbox"/>
+        </xs:choice>
+        <xs:element minOccurs="0" maxOccurs="unbounded" ref="section"/>
+        <xs:element minOccurs="0" ref="chapconcl"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <!--
+        NIC Model equivalent for isbn element : ??
+    
+    Container used to store the ISBN data. 
+  -->
+  <xs:element name="isbn" type="xs:string"/>
+  <!--
+        NIC Model equivalent for issn element : ??
+    
+    Container used to store the ISSN data. 
+  -->
+  <xs:element name="issn" type="xs:string"/>
+  <!-- Element not used -->
+  <xs:element name="issueno" type="xs:string"/>
+  <!-- Element not used -->
+  <xs:element name="jobno">
+    <xs:complexType>
+      <xs:attributeGroup ref="attlist.jobno"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:attributeGroup name="attlist.jobno">
+    <xs:attribute name="jobnumber" use="required"/>
+    <xs:attribute name="oecdcode" use="required"/>
+  </xs:attributeGroup>
+  <!-- Element not used -->
+  <xs:element name="journal" type="xs:string"/>
+  <!-- Element not used -->
+  <xs:element name="keywdgrp">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element maxOccurs="unbounded" ref="keyword"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <!-- Element not used -->
+  <xs:element name="keyword" type="xs:string"/>
+  <!--
+        NIC Model equivalent for langinfo element : ??
+        NIC Model equivalent for origlang attribute : ??
+        NIC Model equivalent for instlang attribute : ??
+    
+    Container used to store the language of a document.
+  -->
+  <xs:element name="langinfo">
+    <xs:complexType>
+      <xs:attributeGroup ref="attlist.langinfo"/>
+    </xs:complexType>
+  </xs:element>
+  <!--
+    @attr origlang define the original language of the document language. It can have the following values:
+        <ul><li>o-eng for english</li>
+        <li>o-fr for french</li>
+        <li>o-de for deutsch</li>
+        <li>o-bi-ling for bilingual</li>
+        <li>o-other for other language</li></ul>
+    @attr instlang define the language used in the document language. It can have the following values:
+        <ul><li>i-eng for english</li>
+        <li>i-fr for french</li>
+        <li>i-de for deutsch</li>
+        <li>i-bi-ling for bilingual</li>
+        <li>i-other for other language</li></ul>
+  -->
+  <xs:attributeGroup name="attlist.langinfo">
+    <xs:attribute name="origlang">
+      <xs:simpleType>
+        <xs:restriction base="xs:token">
+          <xs:enumeration value="o-eng"/>
+          <xs:enumeration value="o-fr"/>
+          <xs:enumeration value="o-de"/>
+          <xs:enumeration value="o-bi-ling"/>
+          <xs:enumeration value="o-other"/>
+        </xs:restriction>
+      </xs:simpleType>
+    </xs:attribute>
+    <xs:attribute name="instlang" use="required">
+      <xs:simpleType>
+        <xs:restriction base="xs:token">
+          <xs:enumeration value="i-eng"/>
+          <xs:enumeration value="i-fr"/>
+          <xs:enumeration value="i-de"/>
+          <xs:enumeration value="i-bi-ling"/>
+          <xs:enumeration value="i-other"/>
+        </xs:restriction>
+      </xs:simpleType>
+    </xs:attribute>
+  </xs:attributeGroup>
+  <!-- Element not used -->
+  <xs:element name="legend">
+    <xs:complexType>
+      <xs:choice>
+        <xs:element ref="deflist"/>
+        <xs:element maxOccurs="unbounded" ref="p"/>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+  <!--
+        NIC Model equivalent for li element : ??
+        NIC Model equivalent for id attribute : ??
+    
+    Container used to store the text to be displayed in a list. Converted from possible Word style:
+    <ul><li>List Bullet for a bulleted list</li>
+    <li>List Number for a numbered list</li>
+    <li>List Continue for a second entry in a list item</li>
+    For the nested levels, the possible Word style are:
+    <ul><li>List Bullet 2, for second level</li>
+    <li>List Bullet 3, for third level</li>
+    <li>List Number 2, for second level</li>
+    <li>List Number 3, for third level</li>
+    <li>List Continue 2, for second level</li>
+    <li>List Continue 3, for third level</li></ul>
+  -->
+  <xs:element name="li">
+    <xs:complexType>
+      <xs:choice maxOccurs="unbounded">
+        <xs:element ref="p"/>
+        <xs:element ref="citation"/>
+        <xs:element ref="deflist"/>
+        <xs:element ref="randlist"/>
+        <xs:element ref="seqlist"/>
+      </xs:choice>
+      <xs:attributeGroup ref="attlist.li"/>
+    </xs:complexType>
+  </xs:element>
+  <!--
+    @attr label is used to store the numbering to be displayed.
+    @attr number is used to store the numbering to be displayed.
+    @attr numbering is used to activate the numbering. Possible values are <i>y</i> (yes) or <i>n</i> (no).
+  -->
+  <xs:attributeGroup name="attlist.li">
+    <xs:attribute name="id" type="xs:ID"/>
+    <xs:attribute name="label"/>
+    <xs:attribute name="number"/>
+    <xs:attribute name="numbering" default="n">
+      <xs:simpleType>
+        <xs:restriction base="xs:token">
+          <xs:enumeration value="y"/>
+          <xs:enumeration value="n"/>
+        </xs:restriction>
+      </xs:simpleType>
+    </xs:attribute>
+  </xs:attributeGroup>
+  <!-- Element not used -->
+  <xs:element name="location" type="xs:string"/>
+  <!--
+        NIC Model equivalent for mainhead element : ??
+        NIC Model equivalent for id attribute : ??
+    
+    Container used to store the text of the titles to be displayed.
+  -->
+  <xs:element name="mainhead">
+    <xs:complexType mixed="true">
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element ref="bibref"/>
+        <xs:element ref="boxnoteref"/>
+        <xs:element ref="comment"/>
+        <xs:element ref="emphasis"/>
+        <xs:element ref="equation"/>
+        <xs:element ref="indexword"/>
+        <xs:element ref="note"/>
+        <xs:element ref="noteref"/>
+        <xs:element ref="shortcitation"/>
+        <xs:element ref="specchar"/>
+        <xs:element ref="xref"/>
+        <xs:element ref="fnote"/>
+        <xs:element ref="graphic"/>
+        <xs:element ref="hyperlink"/>
+      </xs:choice>
+      <xs:attributeGroup ref="attlist.mainhead"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:attributeGroup name="attlist.mainhead">
+    <xs:attributeGroup ref="id"/>
+  </xs:attributeGroup>
+  <!-- Element not used -->
+  <xs:element name="maintitl">
+    <xs:complexType mixed="true">
+      <xs:attributeGroup ref="attlist.maintitl"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:attributeGroup name="attlist.maintitl">
+    <xs:attributeGroup ref="id"/>
+  </xs:attributeGroup>
+  <!-- Element not used -->
+  <xs:element name="mtginfo">
+    <xs:complexType>
+      <xs:choice maxOccurs="unbounded">
+        <xs:element ref="p"/>
+        <xs:element ref="citation"/>
+        <xs:element ref="deflist"/>
+        <xs:element ref="randlist"/>
+        <xs:element ref="seqlist"/>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+  <!--
+        NIC Model equivalent for name element : ??
+    
+    Container used to store firstname and surname of an author.
+  -->
+  <xs:element name="name">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" ref="title"/>
+        <xs:element ref="firstname"/>
+        <xs:element ref="surname"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <!--
+        NIC Model equivalent for narr-doc element : ??
+    
+    The narr-doc element is the root element of the document.
+  -->
+  <xs:element name="narr-doc">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" ref="frontmatter"/>
+        <xs:element minOccurs="0" ref="body"/>
+        <xs:element minOccurs="0" ref="backmatter"/>
+      </xs:sequence>
+      <xs:attributeGroup ref="attlist.narr-doc"/>
+    </xs:complexType>
+  </xs:element>
+  <!--
+    @attr status is the status of the document. The possible values are draft or final.
+    @attr notestyle is where the notes will be placed in the document. the possible values are:
+    <ol><li>book to place the notes at the end of the document, in the backmatter element</li>
+    <li>chapter to place the notes at the end of the chapter, in the chapter element</li>
+    <li>page to place the notes at the bottom of the pages, in the element fnote</li>
+    <li>part to place the note at the end of the part, in the element part</li></ol>
+    @attr classification is in which category the document has to be classified. Possible values are:
+    <ol><li>official</li>
+    <li>publication</li>
+    <li>confidential</li>
+    <li>unclassified</li></ol>
+    @attr sectioning is used to determined how the XML instance have to be sectioning:
+    <ol><li><i>book</i> to keep the instance in one file</li>
+    <li><i>chapter</i> to separate the instance by chapter</li>
+    <li><i>part</li> to separate the instance by part</li></ol>
+  -->
+  <xs:attributeGroup name="attlist.narr-doc">
+    <xs:attribute name="status">
+      <xs:simpleType>
+        <xs:restriction base="xs:token">
+          <xs:enumeration value="draft"/>
+          <xs:enumeration value="final"/>
+        </xs:restriction>
+      </xs:simpleType>
+    </xs:attribute>
+    <xs:attribute name="notestyle" default="chapter">
+      <xs:simpleType>
+        <xs:restriction base="xs:token">
+          <xs:enumeration value="book"/>
+          <xs:enumeration value="chapter"/>
+          <xs:enumeration value="page"/>
+          <xs:enumeration value="part"/>
+        </xs:restriction>
+      </xs:simpleType>
+    </xs:attribute>
+    <xs:attribute name="classification" default="publication">
+      <xs:simpleType>
+        <xs:restriction base="xs:token">
+          <xs:enumeration value="official"/>
+          <xs:enumeration value="publication"/>
+          <xs:enumeration value="confidential"/>
+          <xs:enumeration value="unclassified"/>
+        </xs:restriction>
+      </xs:simpleType>
+    </xs:attribute>
+    <xs:attribute name="sectioning" default="chapter">
+      <xs:simpleType>
+        <xs:restriction base="xs:token">
+          <xs:enumeration value="book"/>
+          <xs:enumeration value="chapter"/>
+          <xs:enumeration value="part"/>
+        </xs:restriction>
+      </xs:simpleType>
+    </xs:attribute>
+  </xs:attributeGroup>
+  <!-- Element not used -->
+  <xs:element name="no-vols" type="xs:string"/>
+  <!--
+        NIC Model equivalent for note element : ??
+        NIC Model equivalent for id attribute : ??
+    
+    Container used to store the notes of the document.
+  -->
+  <xs:element name="note">
+    <xs:complexType>
+      <xs:choice maxOccurs="unbounded">
+        <xs:element ref="p"/>
+        <xs:element ref="citation"/>
+        <xs:element ref="deflist"/>
+        <xs:element ref="randlist"/>
+        <xs:element ref="seqlist"/>
+        <xs:element ref="tablegrp"/>
+      </xs:choice>
+      <xs:attributeGroup ref="attlist.note"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:attributeGroup name="attlist.note">
+    <xs:attributeGroup ref="id"/>
+  </xs:attributeGroup>
+  <!--
+        NIC Model equivalent for noteref element : ??
+    
+    Cross-reference of a note element.
+  -->
+  <xs:element name="noteref">
+    <xs:complexType>
+      <xs:attributeGroup ref="attlist.noteref"/>
+    </xs:complexType>
+  </xs:element>
+  <!--
+    @att refid is the reference to the corresponding note element. 
+    @att format 
+    @att srcfile
+  -->
+  <xs:attributeGroup name="attlist.noteref">
+    <xs:attribute name="refid" use="required" type="xs:IDREF"/>
+    <xs:attribute name="format"/>
+    <xs:attribute name="srcfile"/>
+  </xs:attributeGroup>
+  <!-- Element not used -->
+  <xs:element name="oecd-doc">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" ref="maintitl"/>
+        <xs:element minOccurs="0" ref="pararef"/>
+      </xs:sequence>
+      <xs:attributeGroup ref="attlist.oecd-doc"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:attributeGroup name="attlist.oecd-doc">
+    <xs:attributeGroup ref="id"/>
+  </xs:attributeGroup>
+  <!--
+     DELETED 16-07-2010
+    <!ELEMENT olisavlb EMPTY>
+    <!ATTLIST olisavlb
+    type (full | partial | unavail | complete) #REQUIRED>
+  -->
+  <!--
+     DELETED 16-07-2010
+    <!ELEMENT olisdate EMPTY>
+  -->
+  <!-- Element not used -->
+  <xs:element name="originatingbody">
+    <xs:complexType>
+      <xs:choice maxOccurs="unbounded">
+        <xs:element ref="p"/>
+        <xs:element ref="citation"/>
+        <xs:element ref="deflist"/>
+        <xs:element ref="randlist"/>
+        <xs:element ref="seqlist"/>
+      </xs:choice>
+      <xs:attributeGroup ref="attlist.originatingbody"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:attributeGroup name="attlist.originatingbody">
+    <xs:attribute name="type" default="secretar">
+      <xs:simpleType>
+        <xs:restriction base="xs:token">
+          <xs:enumeration value="secretar"/>
+          <xs:enumeration value="chairman"/>
+          <xs:enumeration value="delegatn"/>
+          <xs:enumeration value="consult"/>
+          <xs:enumeration value="extbody"/>
+          <xs:enumeration value="secgen"/>
+          <xs:enumeration value="other"/>
+        </xs:restriction>
+      </xs:simpleType>
+    </xs:attribute>
+  </xs:attributeGroup>
+  <!--
+        NIC Model equivalent for p element : ??
+        NIC Model equivalent for id attribute : ??
+        NIC Model equivalent for instlang attribute : ??
+        NIC Model equivalent for indent attribute : ??
+    
+    Container used to store the text of all the elements that are not heading. For exemple, p can be parent of li (list), entry (cell), ... 
+  -->
+  <xs:element name="p">
+    <xs:complexType mixed="true">
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element ref="bibref"/>
+        <xs:element ref="boxnoteref"/>
+        <xs:element ref="comment"/>
+        <xs:element ref="emphasis"/>
+        <xs:element ref="equation"/>
+        <xs:element ref="fnote"/>
+        <xs:element ref="graphic"/>
+        <xs:element ref="hyperlink"/>
+        <xs:element ref="indexword"/>
+        <xs:element ref="note"/>
+        <xs:element ref="noteref"/>
+        <xs:element ref="shortcitation"/>
+        <xs:element ref="specchar"/>
+        <xs:element ref="tabnoteref"/>
+        <xs:element ref="xref"/>
+      </xs:choice>
+      <xs:attributeGroup ref="attlist.p"/>
+    </xs:complexType>
+  </xs:element>
+  <!--
+    @attr indent is used to indent the first line of a paragraph. Possible values are <i>y</i> (yes) or <i>n</i> (no).
+    
+    @attr label is used to store the numbering to be displayed.
+    @attr number is used to store the numbering to be displayed.
+    @attr numbering is used to activate the numbering. Possible values are <i>y</i> (yes) or <i>n</i> (no).
+    @attr instlang define the language used in the document language. It can have the following values:
+        <ul><li>i-eng for english</li>
+        <li>i-fr for french</li>
+        <li>i-de for deutsch</li>
+        <li>i-bi-ling for bilingual</li>
+        <li>i-other for other language</li></ul>
+  -->
+  <xs:attributeGroup name="attlist.p">
+    <xs:attributeGroup ref="id"/>
+    <xs:attribute name="indent" default="y">
+      <xs:simpleType>
+        <xs:restriction base="xs:token">
+          <xs:enumeration value="y"/>
+          <xs:enumeration value="n"/>
+        </xs:restriction>
+      </xs:simpleType>
+    </xs:attribute>
+    <xs:attributeGroup ref="instlang"/>
+    <xs:attribute name="label"/>
+    <xs:attribute name="number"/>
+    <xs:attribute name="numbering" default="n">
+      <xs:simpleType>
+        <xs:restriction base="xs:token">
+          <xs:enumeration value="y"/>
+          <xs:enumeration value="n"/>
+        </xs:restriction>
+      </xs:simpleType>
+    </xs:attribute>
+  </xs:attributeGroup>
+  <!-- Element not used -->
+  <xs:element name="pararef" type="xs:string"/>
+  <!--
+        NIC Model equivalent for part element : ??
+        NIC Model equivalent for id attribute : ??
+        NIC Model equivalent for label attribute : ??
+        NIC Model equivalent for number attribute : ??
+        NIC Model equivalent for numbering attribute : ??
+    
+    Container used to begin a part section. Converted frow Word style Part Heading.
+  -->
+  <xs:element name="part">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" ref="bibinfo"/>
+        <xs:sequence>
+          <xs:element minOccurs="0" ref="heading"/>
+          <xs:element minOccurs="0" maxOccurs="unbounded" ref="subheading"/>
+        </xs:sequence>
+        <xs:element minOccurs="0" ref="authorlist"/>
+        <xs:element minOccurs="0" ref="foreword"/>
+        <xs:element minOccurs="0" ref="acknowledgement"/>
+        <xs:element minOccurs="0" ref="highlight"/>
+        <xs:element minOccurs="0" ref="abstract"/>
+        <xs:element minOccurs="0" ref="introduction"/>
+        <xs:element maxOccurs="unbounded" ref="chapter"/>
+        <xs:element minOccurs="0" ref="conclusion"/>
+        <xs:element minOccurs="0" ref="glossary-acronyms"/>
+        <xs:element minOccurs="0" ref="biblio"/>
+        <xs:element minOccurs="0" maxOccurs="unbounded" ref="appendix"/>
+        <xs:element minOccurs="0" maxOccurs="unbounded" ref="annex"/>
+        <xs:element minOccurs="0" ref="info"/>
+      </xs:sequence>
+      <xs:attributeGroup ref="attlist.part"/>
+    </xs:complexType>
+  </xs:element>
+  <!--
+    @attr label is used to store the numbering to be displayed.
+    @attr number is used to store the numbering to be displayed.
+    @attr numbering is used to activate the numbering. Possible values are <i>y</i> (yes) or <i>n</i> (no).
+    @attr mode
+    @attr instlang define the document language. It can have the following values:
+        <ul><li>i-eng for english</li>
+        <li>i-fr for french</li>
+        <li>i-de for deutsch</li>
+        <li>i-bi-ling for bilingual</li>
+        <li>i-other for other language</li></ul>
+    @attr reference is used to store the numbering to be displayed.
+    @attr geocontainer is requested for metadata loader. Possible values are <i>false</i> or <i>true</i>.
+    @attr statisticalannex is requested for metadata loader. Possible values are <i>false</i> or <i>true</i>.
+    @attr metadatatype is requested for metadata loader to re-define the part as a section. The value is <i>section</i>.
+  -->
+  <xs:attributeGroup name="attlist.part">
+    <xs:attributeGroup ref="id"/>
+    <xs:attribute name="label"/>
+    <xs:attribute name="number"/>
+    <xs:attribute name="numbering" default="n">
+      <xs:simpleType>
+        <xs:restriction base="xs:token">
+          <xs:enumeration value="y"/>
+          <xs:enumeration value="n"/>
+        </xs:restriction>
+      </xs:simpleType>
+    </xs:attribute>
+    <xs:attribute name="mode" default="standard">
+      <xs:simpleType>
+        <xs:restriction base="xs:token">
+          <xs:enumeration value="standard"/>
+        </xs:restriction>
+      </xs:simpleType>
+    </xs:attribute>
+    <xs:attribute name="reference"/>
+    <xs:attributeGroup ref="instlang"/>
+    <xs:attributeGroup ref="geocontainer"/>
+    <xs:attributeGroup ref="statisticalannex"/>
+    <xs:attributeGroup ref="metadatatype"/>
+  </xs:attributeGroup>
+  <!-- Element not used -->
+  <xs:element name="periodcl">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="journal"/>
+        <xs:element ref="location"/>
+        <xs:element ref="date"/>
+        <xs:element minOccurs="0" ref="volno"/>
+        <xs:element minOccurs="0" ref="issueno"/>
+        <xs:element minOccurs="0" ref="pgnos"/>
+      </xs:sequence>
+      <xs:attributeGroup ref="attlist.periodcl"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:attributeGroup name="attlist.periodcl">
+    <xs:attribute name="id" type="xs:ID"/>
+  </xs:attributeGroup>
+  <!-- Element not used -->
+  <xs:element name="pgnos" type="xs:string"/>
+  <!--
+        NIC Model equivalent for position element : ??
+    
+    Container used to display the position of an author.
+  -->
+  <xs:element name="position" type="xs:string"/>
+  <!--
+        NIC Model equivalent for preface element : ??
+        NIC Model equivalent for id attribute : ??
+    
+    Container used to begin a preface section.<br>
+    preface element can be used in the frontmatter element
+  -->
+  <xs:element name="preface">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:sequence>
+          <xs:element minOccurs="0" ref="heading"/>
+          <xs:element minOccurs="0" maxOccurs="unbounded" ref="subheading"/>
+        </xs:sequence>
+        <xs:element minOccurs="0" ref="authorlist"/>
+        <xs:element minOccurs="0" ref="highlight"/>
+        <xs:element minOccurs="0" ref="abstract"/>
+        <xs:choice minOccurs="0" maxOccurs="unbounded">
+          <xs:choice maxOccurs="unbounded">
+            <xs:element ref="p"/>
+            <xs:element ref="citation"/>
+            <xs:element ref="deflist"/>
+            <xs:element ref="randlist"/>
+            <xs:element ref="seqlist"/>
+          </xs:choice>
+          <xs:element ref="figure"/>
+          <xs:element ref="tablegrp"/>
+          <xs:element ref="textbox"/>
+        </xs:choice>
+        <xs:element minOccurs="0" maxOccurs="unbounded" ref="section"/>
+        <xs:element minOccurs="0" ref="chapconcl"/>
+      </xs:sequence>
+      <xs:attributeGroup ref="attlist.preface"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:attributeGroup name="attlist.preface">
+    <xs:attributeGroup ref="id"/>
+  </xs:attributeGroup>
+  <!-- Element not used -->
+  <xs:element name="publishr" type="xs:string"/>
+  <!-- Element not used -->
+  <xs:element name="pubtitle" type="xs:string"/>
+  <!-- Element not used -->
+  <xs:element name="pubyear" type="xs:string"/>
+  <!-- Element not used -->
+  <xs:element name="quote">
+    <xs:complexType>
+      <xs:choice maxOccurs="unbounded">
+        <xs:element ref="p"/>
+        <xs:element ref="citation"/>
+        <xs:element ref="deflist"/>
+        <xs:element ref="randlist"/>
+        <xs:element ref="seqlist"/>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+  <!--
+        NIC Model equivalent for randlist element : ??
+        NIC Model equivalent for type attribute : ??
+    
+    Element used to define a random list (for exemple, bulleted list). 
+  -->
+  <xs:element name="randlist">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element maxOccurs="unbounded" ref="li"/>
+      </xs:sequence>
+      <xs:attributeGroup ref="attlist.randlist"/>
+    </xs:complexType>
+  </xs:element>
+  <!--
+    @attr type is used to define the type of the list. The possible values are:
+    <ul><li>bullet for bulleted list corresponding to first level</li>
+    <li>zapf for the list beginning with character in zapf font. Corresponding to second level</li> 
+    <li>hyphen for hyphen list corresponding to third level</li>
+  -->
+  <xs:attributeGroup name="attlist.randlist">
+    <xs:attribute name="type" default="bullet">
+      <xs:simpleType>
+        <xs:restriction base="xs:token">
+          <xs:enumeration value="bullet"/>
+          <xs:enumeration value="hyphen"/>
+          <xs:enumeration value="zapf"/>
+        </xs:restriction>
+      </xs:simpleType>
+    </xs:attribute>
+  </xs:attributeGroup>
+  <!--
+        NIC Model equivalent for row element : ??
+        NIC Model equivalent for rowsep attribute : ??
+    
+    Container used for all the cells in a table row.
+  -->
+  <xs:element name="row">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element maxOccurs="unbounded" ref="entry"/>
+      </xs:sequence>
+      <xs:attributeGroup ref="attlist.row"/>
+    </xs:complexType>
+  </xs:element>
+  <!-- @attr rowsep indicates whether a rule be placed below a row. -->
+  <xs:attributeGroup name="attlist.row">
+    <xs:attribute name="rowsep"/>
+  </xs:attributeGroup>
+  <!-- Element not used -->
+  <xs:element name="secrespn" type="xs:string"/>
+  <!--
+        NIC Model equivalent for section element : ??
+        NIC Model equivalent for id attribute : ??
+        NIC Model equivalent for label attribute : ??
+        NIC Model equivalent for number attribute : ??
+        NIC Model equivalent for numbering attribute : ??
+    
+    Container used to store the subtitles in chapter, for exemple.
+    NIC Model equivalent : ??
+    
+  -->
+  <xs:element name="section">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" ref="bibinfo"/>
+        <xs:sequence>
+          <xs:element minOccurs="0" ref="heading"/>
+          <xs:element minOccurs="0" maxOccurs="unbounded" ref="subheading"/>
+        </xs:sequence>
+        <xs:element minOccurs="0" ref="highlight"/>
+        <xs:element minOccurs="0" ref="abstract"/>
+        <xs:choice minOccurs="0" maxOccurs="unbounded">
+          <xs:choice maxOccurs="unbounded">
+            <xs:element ref="p"/>
+            <xs:element ref="citation"/>
+            <xs:element ref="deflist"/>
+            <xs:element ref="randlist"/>
+            <xs:element ref="seqlist"/>
+          </xs:choice>
+          <xs:element ref="quote"/>
+          <xs:element ref="figure"/>
+          <xs:element ref="tablegrp"/>
+          <xs:element ref="textbox"/>
+          <xs:element ref="section"/>
+          <xs:element ref="biblio"/>
+        </xs:choice>
+      </xs:sequence>
+      <xs:attributeGroup ref="attlist.section"/>
+    </xs:complexType>
+  </xs:element>
+  <!--
+    @attr label is used to store the numbering to be displayed.
+    NIC Model equivalent : ??
+    
+    @attr number is used to store the numbering to be displayed.
+    NIC Model equivalent : ??
+    
+    @attr numbering is used to activate the numbering. Possible values are <i>y</i> (yes) or <i>n</i> (no).
+    NIC Model equivalent : ??
+    
+    @attr content. Possible values are:
+    <ul><li>default</li>
+    <li>indicator</li></ul>
+    @attr geocontainer is requested for metadata loader. Possible values are <i>false</i> or <i>true</i>.
+    NIC Model equivalent : ??
+    
+    @attr statisticalannex is requested for metadata loader. Possible values are <i>false</i> or <i>true</i>.
+    NIC Model equivalent : ??
+    
+    @attr metadatatype is requested for metadata loader to re-define the section as a section. The value is <i>section</i>.
+    NIC Model equivalent : ??
+    
+    
+  -->
+  <xs:attributeGroup name="attlist.section">
+    <xs:attributeGroup ref="id"/>
+    <xs:attribute name="label"/>
+    <xs:attribute name="number"/>
+    <xs:attribute name="numbering" default="n">
+      <xs:simpleType>
+        <xs:restriction base="xs:token">
+          <xs:enumeration value="y"/>
+          <xs:enumeration value="n"/>
+        </xs:restriction>
+      </xs:simpleType>
+    </xs:attribute>
+    <xs:attribute name="content" default="default">
+      <xs:simpleType>
+        <xs:restriction base="xs:token">
+          <xs:enumeration value="default"/>
+          <xs:enumeration value="indicator"/>
+        </xs:restriction>
+      </xs:simpleType>
+    </xs:attribute>
+    <xs:attributeGroup ref="geocontainer"/>
+    <xs:attributeGroup ref="statisticalannex"/>
+    <xs:attributeGroup ref="metadatatype"/>
+  </xs:attributeGroup>
+  <!--
+        NIC Model equivalent for seqlist element : ??
+        NIC Model equivalent for type attribute : ??
+    
+    Element used to define a sequantial list (for exemple, numbered list). 
+  -->
+  <xs:element name="seqlist">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element maxOccurs="unbounded" ref="li"/>
+      </xs:sequence>
+      <xs:attributeGroup ref="attlist.seqlist"/>
+    </xs:complexType>
+  </xs:element>
+  <!--
+    @attr type is used to define the type of the list. The possible values are:
+    <ul><li>arabic for the numbered list</li>
+    <li>lalpha for lower alpha list</li> 
+    <li>ualpha for upper alpha list</li>
+    <li>lroman for lower roman list</li> 
+    <li>uroman for upper roman list</li>
+    <li>hardcoded is the text to be displayed</li></ul>
+  -->
+  <xs:attributeGroup name="attlist.seqlist">
+    <xs:attribute name="type" default="arabic">
+      <xs:simpleType>
+        <xs:restriction base="xs:token">
+          <xs:enumeration value="arabic"/>
+          <xs:enumeration value="lalpha"/>
+          <xs:enumeration value="ualpha"/>
+          <xs:enumeration value="lroman"/>
+          <xs:enumeration value="uroman"/>
+          <xs:enumeration value="hardcoded"/>
+        </xs:restriction>
+      </xs:simpleType>
+    </xs:attribute>
+  </xs:attributeGroup>
+  <!-- Element not used -->
+  <xs:element name="serinfo">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="sertitle"/>
+        <xs:element minOccurs="0" ref="issueno"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <!-- Element not used -->
+  <xs:element name="sertitle" type="xs:string"/>
+  <!--
+        NIC Model equivalent for shortcitation element : ??
+    
+    container used to store the text to be displayed between quotes.
+  -->
+  <xs:element name="shortcitation">
+    <xs:complexType mixed="true">
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element ref="emphasis"/>
+        <xs:element ref="specchar"/>
+        <xs:element ref="noteref"/>
+        <xs:element ref="note"/>
+        <xs:element ref="indexword"/>
+        <xs:element ref="shortcitation"/>
+      </xs:choice>
+      <xs:attributeGroup ref="attlist.shortcitation"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:attributeGroup name="attlist.shortcitation">
+    <xs:attribute name="citationsource"/>
+  </xs:attributeGroup>
+  <!--
+     DELETED 16-07-2010
+    <!ELEMENT size EMPTY>
+    <!ATTLIST size
+    size CDATA #IMPLIED>
+  -->
+  <!--
+        NIC Model equivalent for source element : ??
+    
+    Container used to store the text of the source for the box, figure and table. 
+  -->
+  <xs:element name="source">
+    <xs:complexType>
+      <xs:choice maxOccurs="unbounded">
+        <xs:element ref="p"/>
+        <xs:element ref="citation"/>
+        <xs:element ref="deflist"/>
+        <xs:element ref="randlist"/>
+        <xs:element ref="seqlist"/>
+      </xs:choice>
+      <xs:attributeGroup ref="attlist.source"/>
+    </xs:complexType>
+  </xs:element>
+  <!--
+    @attr type is to define if the word "source" is singular or plural. The possible values are:
+    <ul><li>sing for singular</li>
+    <li>plural</li></ul>
+  -->
+  <xs:attributeGroup name="attlist.source">
+    <xs:attribute name="type" default="sing">
+      <xs:simpleType>
+        <xs:restriction base="xs:token">
+          <xs:enumeration value="sing"/>
+          <xs:enumeration value="plu"/>
+        </xs:restriction>
+      </xs:simpleType>
+    </xs:attribute>
+  </xs:attributeGroup>
+  <!--
+        NIC Model equivalent for spanspec element : ??
+        NIC Model equivalent for spanname attribute : ??
+        NIC Model equivalent for namest attribute : ??
+        NIC Model equivalent for nameend attribute : ??
+        NIC Model equivalent for align attribute : ??
+        NIC Model equivalent for colsep attribute : ??
+        NIC Model equivalent for rowsep attribute : ??
+    
+    The span element defines each rowspan in the table and assigns it a name and which columns it spans.
+  -->
+  <xs:element name="spanspec">
+    <xs:complexType>
+      <xs:attributeGroup ref="attlist.spanspec"/>
+    </xs:complexType>
+  </xs:element>
+  <!--
+    @attr spanname is the name of the span.
+    @attr namest is the column number where the span start.
+    @attr nameend is the column number where the span end.
+    @attr align is the alignment in the cell. Possible values are:
+        <ul><li>left</li>
+        <li>right</li>
+        <li>center</li>
+        <li>justify</li>
+        <li>char</li></ul>
+    @attr charoff
+    @attr char is the character to be used in horizontal text alignment inside the column, for example a decimal point “.” 
+    @attr colsep is used to indicate if a rule have to be placed to the right of a column.
+    @attr rowsep is used to indicate if a rule have to be placed below a row.
+  -->
+  <xs:attributeGroup name="attlist.spanspec">
+    <xs:attribute name="spanname" use="required"/>
+    <xs:attribute name="namest" use="required"/>
+    <xs:attribute name="nameend" use="required"/>
+    <xs:attribute name="align" default="center">
+      <xs:simpleType>
+        <xs:restriction base="xs:token">
+          <xs:enumeration value="left"/>
+          <xs:enumeration value="right"/>
+          <xs:enumeration value="center"/>
+          <xs:enumeration value="justify"/>
+          <xs:enumeration value="char"/>
+        </xs:restriction>
+      </xs:simpleType>
+    </xs:attribute>
+    <xs:attribute name="charoff"/>
+    <xs:attribute name="char"/>
+    <xs:attribute name="colsep"/>
+    <xs:attribute name="rowsep"/>
+  </xs:attributeGroup>
+  <!--
+        NIC Model equivalent for specchar element : ??
+        NIC Model equivalent for font attribute : ??
+        NIC Model equivalent for position attribute : ??
+    
+    Inline element used to change the display of the text within specchar tag. 
+  -->
+  <xs:element name="specchar">
+    <xs:complexType mixed="true">
+      <xs:attributeGroup ref="attlist.specchar"/>
+    </xs:complexType>
+  </xs:element>
+  <!--
+    @attr font is the font to use. The possible values are:
+        <ul><li>euro</li>
+        <li>zapfdingbats</li>
+        <li>symbol</li>
+        <li>timesce</li>
+        <li>timescyr</li>
+        <li>default</li></ul>
+    @attr position is the vertical position of the characters. The posssible values are:
+        <ul><li>sup</li>
+        <li>sub</li>
+        <li>regular</li></ul>
+  -->
+  <xs:attributeGroup name="attlist.specchar">
+    <xs:attribute name="font" default="default">
+      <xs:simpleType>
+        <xs:restriction base="xs:token">
+          <xs:enumeration value="euro"/>
+          <xs:enumeration value="zapfdingbats"/>
+          <xs:enumeration value="symbol"/>
+          <xs:enumeration value="timesce"/>
+          <xs:enumeration value="timescyr"/>
+          <xs:enumeration value="default"/>
+        </xs:restriction>
+      </xs:simpleType>
+    </xs:attribute>
+    <xs:attribute name="position" default="regular">
+      <xs:simpleType>
+        <xs:restriction base="xs:token">
+          <xs:enumeration value="sup"/>
+          <xs:enumeration value="sub"/>
+          <xs:enumeration value="regular"/>
+        </xs:restriction>
+      </xs:simpleType>
+    </xs:attribute>
+  </xs:attributeGroup>
+  <!-- Element not used -->
+  <xs:element name="strtdate" type="xs:string"/>
+  <!--
+        NIC Model equivalent for subheading element : ??
+    
+    Container used to store the text of the different heading element listed above.
+  -->
+  <xs:element name="subheading">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="mainhead"/>
+        <xs:element minOccurs="0" ref="tochead"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <!-- Element not used -->
+  <xs:element name="subtitle" type="xs:string"/>
+  <!--
+        NIC Model equivalent for surname element : ??
+    
+    Container used to display the surname of an author.
+  -->
+  <xs:element name="surname" type="xs:string"/>
+  <!--
+        NIC Model equivalent for table element : ??
+        NIC Model equivalent for colsep attribute : ??
+        NIC Model equivalent for rowsep attribute : ??
+    
+    Element that identifies a table.
+  -->
+  <xs:element name="table">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element maxOccurs="unbounded" ref="tgroup"/>
+      </xs:sequence>
+      <xs:attributeGroup ref="attlist.table"/>
+    </xs:complexType>
+  </xs:element>
+  <!--
+    @attr frame describes position of outer rulings. Possible values are:
+        <ul><li>top</li>
+        <li>bottom</li>
+        <li>topbot</li>
+        <li>all</li>
+        <li>sides</li>
+        <li>none</li></ul>
+    @attr colsep is the default for all tgroup in this table.
+    @attr rowsep is the default for all tgroup in this table.
+    @attr orient Orientation of the entire table.
+    @attr pgwide
+  -->
+  <xs:attributeGroup name="attlist.table">
+    <xs:attribute name="frame">
+      <xs:simpleType>
+        <xs:restriction base="xs:token">
+          <xs:enumeration value="top"/>
+          <xs:enumeration value="bottom"/>
+          <xs:enumeration value="topbot"/>
+          <xs:enumeration value="all"/>
+          <xs:enumeration value="sides"/>
+          <xs:enumeration value="none"/>
+        </xs:restriction>
+      </xs:simpleType>
+    </xs:attribute>
+    <xs:attribute name="colsep"/>
+    <xs:attribute name="rowsep"/>
+    <xs:attribute name="orient">
+      <xs:simpleType>
+        <xs:restriction base="xs:token">
+          <xs:enumeration value="port"/>
+          <xs:enumeration value="land"/>
+        </xs:restriction>
+      </xs:simpleType>
+    </xs:attribute>
+    <xs:attribute name="pgwide"/>
+  </xs:attributeGroup>
+  <!--
+        NIC Model equivalent for tablegrp element : ??
+        NIC Model equivalent for id attribute : ??
+        NIC Model equivalent for instlang attribute : ??
+        NIC Model equivalent for label attribute : ??
+        NIC Model equivalent for number attribute : ??
+        NIC Model equivalent for numbering attribute : ??
+    
+    Container used to store the heading and subheading of a table.
+  -->
+  <xs:element name="tablegrp">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" ref="tableheading"/>
+        <xs:element minOccurs="0" maxOccurs="unbounded" ref="tablesubheading"/>
+        <xs:choice minOccurs="0" maxOccurs="unbounded">
+          <xs:element ref="table"/>
+          <xs:element ref="graphic"/>
+        </xs:choice>
+        <xs:choice minOccurs="0" maxOccurs="unbounded">
+          <xs:element ref="hyperlink"/>
+          <xs:element ref="tabnote"/>
+          <xs:element ref="source"/>
+        </xs:choice>
+      </xs:sequence>
+      <xs:attributeGroup ref="attlist.tablegrp"/>
+    </xs:complexType>
+  </xs:element>
+  <!--
+    @attr instlang define the document language. It can have the following values:
+        <ul><li>i-eng for english</li>
+        <li>i-fr for french</li>
+        <li>i-de for deutsch</li>
+        <li>i-bi-ling for bilingual</li>
+        <li>i-other for other language</li></ul>
+    @attr orient Orientation of the entire table.
+    @attr label is used to store the numbering to be displayed.
+    @attr reference is used to store the numbering to be displayed.
+    @attr name
+    @attr number is used to store the numbering to be displayed.
+    @attr numbering is used to activate the numbering. Possible values are <i>y</i> (yes) or <i>n</i> (no).
+    @attr type is the type of the table. Possible values are <i>table</i> of <i>exhibit</i>.
+    @attr dynamic-graph
+  -->
+  <xs:attributeGroup name="attlist.tablegrp">
+    <xs:attributeGroup ref="id"/>
+    <xs:attributeGroup ref="instlang"/>
+    <xs:attribute name="orient" default="port">
+      <xs:simpleType>
+        <xs:restriction base="xs:token">
+          <xs:enumeration value="land"/>
+          <xs:enumeration value="port"/>
+        </xs:restriction>
+      </xs:simpleType>
+    </xs:attribute>
+    <xs:attribute name="label"/>
+    <xs:attribute name="name"/>
+    <xs:attribute name="number"/>
+    <xs:attribute name="numbering" default="y">
+      <xs:simpleType>
+        <xs:restriction base="xs:token">
+          <xs:enumeration value="y"/>
+          <xs:enumeration value="n"/>
+        </xs:restriction>
+      </xs:simpleType>
+    </xs:attribute>
+    <xs:attribute name="type" default="table">
+      <xs:simpleType>
+        <xs:restriction base="xs:token">
+          <xs:enumeration value="table"/>
+          <xs:enumeration value="exhibit"/>
+        </xs:restriction>
+      </xs:simpleType>
+    </xs:attribute>
+    <xs:attribute name="reference"/>
+    <xs:attribute name="dynamic-graph">
+      <xs:simpleType>
+        <xs:restriction base="xs:token">
+          <xs:enumeration value="y"/>
+          <xs:enumeration value="n"/>
+        </xs:restriction>
+      </xs:simpleType>
+    </xs:attribute>
+  </xs:attributeGroup>
+  <!--
+        NIC Model equivalent for tableheading element : ??
+    
+    container used to store the heading of a table.
+  -->
+  <xs:element name="tableheading">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="tablemainhead"/>
+        <xs:element minOccurs="0" ref="tochead"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <!--
+        NIC Model equivalent for tablemainhead element : ??
+        NIC Model equivalent for id attribute : ??
+    
+    Container used to display the text of a table heading or table subheading.
+  -->
+  <xs:element name="tablemainhead">
+    <xs:complexType mixed="true">
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element ref="shortcitation"/>
+        <xs:element ref="comment"/>
+        <xs:element ref="emphasis"/>
+        <xs:element ref="equation"/>
+        <xs:element ref="specchar"/>
+        <xs:element ref="indexword"/>
+        <xs:element ref="tabnoteref"/>
+      </xs:choice>
+      <xs:attributeGroup ref="attlist.tablemainhead"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:attributeGroup name="attlist.tablemainhead">
+    <xs:attributeGroup ref="id"/>
+  </xs:attributeGroup>
+  <!--
+        NIC Model equivalent for tablesubheading element : ??
+    
+    container used to store the subheading of a table.
+  -->
+  <xs:element name="tablesubheading">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="tablemainhead"/>
+        <xs:element minOccurs="0" ref="tochead"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <!--
+     DELETED 16-07-2010
+    <!ELEMENT tablist EMPTY>
+    <!ATTLIST tablist
+    id ID #IMPLIED>
+  -->
+  <!--
+        NIC Model equivalent for tabnote element : ??
+        NIC Model equivalent for id attribute : ??
+        NIC Model equivalent for type attribute : ??
+    
+    Container used to store the notes of a table. Converted from the Word style Table Note.
+  -->
+  <xs:element name="tabnote">
+    <xs:complexType>
+      <xs:choice maxOccurs="unbounded">
+        <xs:element ref="p"/>
+        <xs:element ref="citation"/>
+        <xs:element ref="deflist"/>
+        <xs:element ref="randlist"/>
+        <xs:element ref="seqlist"/>
+      </xs:choice>
+      <xs:attributeGroup ref="attlist.tabnote"/>
+    </xs:complexType>
+  </xs:element>
+  <!--
+    @attr type define the text to be displayed. The possible values are:<br>
+    <ul><li>alpha for lower alpha ordered list</li>
+    <li>number for arabic number ordered list</li>
+    <li>note to display the word <i>note</i></li>
+    <li>notes to display the word <i>notes</i></li>
+    <li>.. to display ".." (two dots). Means nil or negligeable</li>
+    <li>hyphen to display "-"</li>
+    <li>e for estimation</li>
+    <li>n.a. for not available</li>
+    <li>n.c. for non communiqué (in french)</li>
+    <li>n.d. for non disponible (in french)</li>
+    <li>none to display nothing</li>
+    <li>p for provisionnal</li>
+    <li>ast for "*"</li></ul>
+  -->
+  <xs:attributeGroup name="attlist.tabnote">
+    <xs:attributeGroup ref="id"/>
+    <xs:attribute name="type" default="number">
+      <xs:simpleType>
+        <xs:restriction base="xs:token">
+          <xs:enumeration value="alpha"/>
+          <xs:enumeration value="number"/>
+          <xs:enumeration value="note"/>
+          <xs:enumeration value="notes"/>
+          <xs:enumeration value=".."/>
+          <xs:enumeration value="hyphen"/>
+          <xs:enumeration value="e"/>
+          <xs:enumeration value="n.a."/>
+          <xs:enumeration value="n.c."/>
+          <xs:enumeration value="n.d."/>
+          <xs:enumeration value="none"/>
+          <xs:enumeration value="p"/>
+          <xs:enumeration value="ast"/>
+        </xs:restriction>
+      </xs:simpleType>
+    </xs:attribute>
+  </xs:attributeGroup>
+  <!--
+        NIC Model equivalent for tabnoteref element : ??
+    
+    Cross-reference of a tabnote element.
+  -->
+  <xs:element name="tabnoteref">
+    <xs:complexType>
+      <xs:attributeGroup ref="attlist.tabnoteref"/>
+    </xs:complexType>
+  </xs:element>
+  <!--
+    @att refid is the reference to the corresponding tabnote element. 
+    @att format 
+    @att srcfile
+  -->
+  <xs:attributeGroup name="attlist.tabnoteref">
+    <xs:attribute name="refid" use="required" type="xs:IDREF"/>
+    <xs:attribute name="format"/>
+    <xs:attribute name="srcfile"/>
+  </xs:attributeGroup>
+  <!--
+        NIC Model equivalent for tbody element : ??
+    
+    Element that identifies the body of a tgroup. 
+  -->
+  <xs:element name="tbody">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element maxOccurs="unbounded" ref="row"/>
+      </xs:sequence>
+      <xs:attributeGroup ref="attlist.tbody"/>
+    </xs:complexType>
+  </xs:element>
+  <!--
+    @attr valign is the default text vertical positioning within the entry. Possible values are:
+        <ul><li>top</li>
+        <li>middle</li>
+        <li>bottom</li></ul>
+  -->
+  <xs:attributeGroup name="attlist.tbody">
+    <xs:attribute name="valign" default="top">
+      <xs:simpleType>
+        <xs:restriction base="xs:token">
+          <xs:enumeration value="top"/>
+          <xs:enumeration value="middle"/>
+          <xs:enumeration value="bottom"/>
+        </xs:restriction>
+      </xs:simpleType>
+    </xs:attribute>
+  </xs:attributeGroup>
+  <!--
+        NIC Model equivalent for telephone element : ??
+    
+    Container used to display the telephone of an author.
+  -->
+  <xs:element name="telephone" type="xs:string"/>
+  <!--
+        NIC Model equivalent for term element : ??
+    
+    Container used to store the term of a glossary.
+  -->
+  <xs:element name="term">
+    <xs:complexType>
+      <xs:choice maxOccurs="unbounded">
+        <xs:element ref="p"/>
+        <xs:element ref="citation"/>
+        <xs:element ref="deflist"/>
+        <xs:element ref="randlist"/>
+        <xs:element ref="seqlist"/>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+  <!--
+         NIC Model equivalent for textbox element : ??
+         NIC Model equivalent for id attribute : ??
+    
+    Container used to begin a box section. It store the text converted from the Word style box Heading.<br>
+  -->
+  <xs:element name="textbox">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="boxsection"/>
+      </xs:sequence>
+      <xs:attributeGroup ref="attlist.textbox"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:attributeGroup name="attlist.textbox">
+    <xs:attributeGroup ref="id"/>
+  </xs:attributeGroup>
+  <!--
+        NIC Model equivalent for tgroup element : ??
+        NIC Model equivalent for align attribute : ??
+        NIC Model equivalent for cols attribute : ??
+        NIC Model equivalent for colsep attribute : ??
+        NIC Model equivalent for rowsep attribute : ??
+        NIC Model equivalent for char attribute : ??
+        NIC Model equivalent for type attribute : ??
+        NIC Model equivalent for label attribute : ??
+        NIC Model equivalent for number attribute : ??
+        NIC Model equivalent for numbering attribute : ??
+    
+    Each tgroup effectively identifies a new portion of a table.
+  -->
+  <xs:element name="tgroup">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="unbounded" ref="colspec"/>
+        <xs:element minOccurs="0" maxOccurs="unbounded" ref="spanspec"/>
+        <xs:element minOccurs="0" ref="thead"/>
+        <xs:element ref="tbody"/>
+      </xs:sequence>
+      <xs:attributeGroup ref="attlist.tgroup"/>
+    </xs:complexType>
+  </xs:element>
+  <!--
+    @attr align is the horizontal alignment for the text inside the column. The possible values are:
+    @attr cols is the number of columns in the tgroup.
+    @attr colsep is used to indicate if a rule have to be placed to the right of a column.
+    @attr rowsep is used to indicate if a rule have to be placed below a row.
+    @attr charoff
+    @attr char is the character to be used in horizontal text alignment inside the column, for example a decimal point “.” 
+    @attr type the type of the values containing in the cell. Possible values are <i>txt</i> or <i>num</i>.
+    @attr status is the status of the table. Possible values are <i>user</i>, <i>ok</li> or <i>check</i>.
+    @attr label is used to store the numbering to be displayed.
+    @attr number is used to store the numbering to be displayed.
+    @attr numbering is used to activate the numbering. Possible values are <i>y</i> (yes) or <i>n</i> (no).
+    @attr reference is used to store the numbering to be displayed.
+  -->
+  <xs:attributeGroup name="attlist.tgroup">
+    <xs:attribute name="align" default="left">
+      <xs:simpleType>
+        <xs:restriction base="xs:token">
+          <xs:enumeration value="left"/>
+          <xs:enumeration value="right"/>
+          <xs:enumeration value="center"/>
+          <xs:enumeration value="justify"/>
+          <xs:enumeration value="char"/>
+        </xs:restriction>
+      </xs:simpleType>
+    </xs:attribute>
+    <xs:attribute name="cols" use="required"/>
+    <xs:attribute name="colsep"/>
+    <xs:attribute name="rowsep"/>
+    <xs:attribute name="charoff" default="0"/>
+    <xs:attribute name="char"/>
+    <xs:attribute name="type" default="num">
+      <xs:simpleType>
+        <xs:restriction base="xs:token">
+          <xs:enumeration value="txt"/>
+          <xs:enumeration value="num"/>
+        </xs:restriction>
+      </xs:simpleType>
+    </xs:attribute>
+    <xs:attribute name="status">
+      <xs:simpleType>
+        <xs:restriction base="xs:token">
+          <xs:enumeration value="user"/>
+          <xs:enumeration value="ok"/>
+          <xs:enumeration value="check"/>
+        </xs:restriction>
+      </xs:simpleType>
+    </xs:attribute>
+    <xs:attribute name="label"/>
+    <xs:attribute name="number"/>
+    <xs:attribute name="reference"/>
+    <xs:attribute name="numbering" default="n">
+      <xs:simpleType>
+        <xs:restriction base="xs:token">
+          <xs:enumeration value="y"/>
+          <xs:enumeration value="n"/>
+        </xs:restriction>
+      </xs:simpleType>
+    </xs:attribute>
+  </xs:attributeGroup>
+  <!--
+        NIC Model equivalent for thead element : ??
+    
+    Container that identifies the heading row of a tgroup. 
+  -->
+  <xs:element name="thead">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="unbounded" ref="colspec"/>
+        <xs:element maxOccurs="unbounded" ref="row"/>
+      </xs:sequence>
+      <xs:attributeGroup ref="attlist.thead"/>
+    </xs:complexType>
+  </xs:element>
+  <!-- @attr valign is the default text vertical positioning within the entry. -->
+  <xs:attributeGroup name="attlist.thead">
+    <xs:attribute name="valign">
+      <xs:simpleType>
+        <xs:restriction base="xs:token">
+          <xs:enumeration value="top"/>
+          <xs:enumeration value="middle"/>
+          <xs:enumeration value="bottom"/>
+        </xs:restriction>
+      </xs:simpleType>
+    </xs:attribute>
+  </xs:attributeGroup>
+  <!-- Element not used -->
+  <xs:element name="title" type="xs:string"/>
+  <!-- Element not used -->
+  <xs:element name="tochead" type="xs:string"/>
+  <!-- Element not used -->
+  <xs:element name="traninfo">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="transno"/>
+        <xs:element ref="strtdate"/>
+        <xs:element ref="enddate"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <!-- Element not used -->
+  <xs:element name="translat" type="xs:string"/>
+  <!-- Element not used -->
+  <xs:element name="transno" type="xs:string"/>
+  <!-- Element not used -->
+  <xs:element name="volno" type="xs:string"/>
+  <!-- Element not used -->
+  <xs:element name="work-id" type="xs:string"/>
+  <!--
+        NIC Model equivalent for xref element : ??
+    
+    Inline element used to display the text of an internal reference. 
+  -->
+  <xs:element name="xref">
+    <xs:complexType>
+      <xs:attributeGroup ref="attlist.xref"/>
+    </xs:complexType>
+  </xs:element>
+  <!--
+    @attr refid
+    @attr capital
+    @attr display
+    @attr object is the text to be display. Possible values are:
+        <ul><li>annex</li>
+        <li>box</li>
+        <li>chapter</li>
+        <li>cote</li>
+        <li>figure</li>
+        <li>part</li>
+        <li>section</li>
+        <li>table</li>
+        <li>mainhead</li>
+    @attr type is to define if the word "source" is singular or plural. The possible values are:
+    <ul><li>sing for singular</li>
+    <li>plural</li></ul>
+    @attr cont
+    @attr format
+    @attr srcfile
+  -->
+  <xs:attributeGroup name="attlist.xref">
+    <xs:attribute name="refid" use="required" type="xs:IDREF"/>
+    <xs:attribute name="capital" default="no">
+      <xs:simpleType>
+        <xs:restriction base="xs:token">
+          <xs:enumeration value="no"/>
+          <xs:enumeration value="yes"/>
+        </xs:restriction>
+      </xs:simpleType>
+    </xs:attribute>
+    <xs:attribute name="display"/>
+    <xs:attribute name="object" default="table">
+      <xs:simpleType>
+        <xs:restriction base="xs:token">
+          <xs:enumeration value="annex"/>
+          <xs:enumeration value="box"/>
+          <xs:enumeration value="chapter"/>
+          <xs:enumeration value="cote"/>
+          <xs:enumeration value="figure"/>
+          <xs:enumeration value="part"/>
+          <xs:enumeration value="section"/>
+          <xs:enumeration value="table"/>
+          <xs:enumeration value="mainhead"/>
+        </xs:restriction>
+      </xs:simpleType>
+    </xs:attribute>
+    <xs:attribute name="type" default="sing">
+      <xs:simpleType>
+        <xs:restriction base="xs:token">
+          <xs:enumeration value="plu"/>
+          <xs:enumeration value="sing"/>
+        </xs:restriction>
+      </xs:simpleType>
+    </xs:attribute>
+    <xs:attribute name="cont" default="none">
+      <xs:simpleType>
+        <xs:restriction base="xs:token">
+          <xs:enumeration value="none"/>
+          <xs:enumeration value="and"/>
+          <xs:enumeration value="to"/>
+          <xs:enumeration value="no"/>
+        </xs:restriction>
+      </xs:simpleType>
+    </xs:attribute>
+    <xs:attribute name="format"/>
+    <xs:attribute name="srcfile"/>
+  </xs:attributeGroup>
+</xs:schema>

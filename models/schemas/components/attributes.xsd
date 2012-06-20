@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="UTF-8"?><xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xlink="http://www.w3.org/1999/xlink" elementFormDefault="qualified">
+
+    <xs:annotation>
+        <xs:documentation><section xmlns="http://docbook.org/ns/docbook">
+            <title>OECD Schemas</title>
+            <subtitle>Attribute Models</subtitle>
+            <revhistory>
+                <title>Change Log</title>
+                
+                
+                    <revision>
+                        <revnumber>1</revnumber>
+                        <date>2011-12-02</date>
+                        <author><email>nicg@corbas.co.uk</email><personname>Nic Gibson</personname></author>
+                        <revremark>Initial Version</revremark>
+                    </revision>
+                
+                    <revision>
+                        <revnumber>2</revnumber>
+                        <date>2012-03-29</date>
+                        <authorinitials>NG</authorinitials>
+                        <revremark>Added <link linkend="label">label</link> attribute, inserted it into <link linkend="oecdCommonAttributes">commonAttributes</link></revremark>
+                    </revision>
+
+                <revision>
+                    <revnumber>3</revnumber>
+                    <date>2012-04-13</date>
+                    <authorinitials>NG</authorinitials>
+                    <revremark>Added <link linkend="annotations">annotations</link> attribute.</revremark>
+                </revision>
+                
+            </revhistory>
+        </section></xs:documentation>
+    </xs:annotation>
+    
+    <!-- IMPORTS AND INCLUDES -->
+
+    <xs:import schemaLocation="../external/xml.xsd" namespace="http://www.w3.org/XML/1998/namespace"/>
+    <xs:import schemaLocation="../external/xlink.xsd" namespace="http://www.w3.org/1999/xlink"/>
+    <xs:include schemaLocation="types.xsd"/>
+    
+    <!-- Groups -->
+
+    <xs:attributeGroup name="oecdXmlAttributes" id="oecdXmlAttributes">
+        <xs:annotation>
+            <xs:documentation>
+                <section xmlns="http://docbook.org/ns/docbook">
+                    <para>Attribute group to grandfather in the XML Special Attributes.</para>
+                </section>
+            </xs:documentation>
+        </xs:annotation>
+        <xs:attributeGroup ref="xml:specialAttrs"/>
+    </xs:attributeGroup>
+    
+    
+    <xs:attributeGroup name="oecdLinkingAttributes" id="oecdLinkingAttributes">
+        <xs:annotation>
+            <xs:documentation>
+                <section xmlns="http://docbook.org/ns/docbook">
+                    <para>Attribute group to grandfather in the XLink Attribute Set.</para>
+                </section>
+            </xs:documentation>
+        </xs:annotation>
+        <xs:attributeGroup ref="xlink:simpleLink"/>
+        <xs:attribute ref="xref"/>
+    </xs:attributeGroup>
+    
+    <xs:attributeGroup name="oecdRequiredLinkingAttributes" id="oecdRequiredLinkingAttributes">
+        <xs:annotation>
+            <xs:documentation>
+                <section xmlns="http://docbook.org/ns/docbook">
+                    <para>Attribute group to grandfather in the XLink Attribute Set with a required external link.</para>
+                </section>
+            </xs:documentation>
+        </xs:annotation>
+        <xs:attribute ref="xlink:href" use="required"/>
+        <xs:attribute name="type" type="xs:string" form="qualified" id="type"/>
+        <xs:attribute ref="xlink:role"/>
+        <xs:attribute ref="xlink:arcrole"/>
+        <xs:attribute ref="xlink:title"/>
+        <xs:attribute ref="xlink:show"/>
+        <xs:attribute ref="xlink:actuate"/>        
+    </xs:attributeGroup>
+    
+    <xs:attributeGroup name="oecdCommonAttributes" id="oecdCommonAttributes">
+        <xs:annotation>
+            <xs:documentation>
+                <section xmlns="http://docbook.org/ns/docbook">
+                    <revision>
+                        <revnumber>2</revnumber>
+                        <date>2011-12-29</date>
+                        <author><email>nicg@corbas.co.uk</email><personname>Nic Gibson</personname></author>
+                        <revremark>Added <link linkend="label">label</link> attribute.</revremark>
+                    </revision>
+                    
+                    <para>Defines a set of attributes available to almost any element in the schema.
+                    </para>
+                </section>
+            </xs:documentation>
+        </xs:annotation>
+        <xs:attributeGroup ref="oecdXmlAttributes"/>
+        <xs:attribute ref="metadataRef" use="optional"/>
+        <xs:attribute ref="noteRef" use="optional"/>
+        <xs:attribute ref="label" use="optional"/>
+    </xs:attributeGroup>
+    
+    <!-- attributes -->
+
+    <xs:attribute name="metadataRef" type="xs:IDREF" id="metadataRef">
+        <xs:annotation>
+            <xs:documentation>
+                <section xmlns="http://docbook.org/ns/docbook">
+                    <para>Defines a metadata reference. Metadata may be embedded in the element
+                    it describes or held separately in the document level, documentMeta element.
+                    If held in the documentMeta element it can be referenced via this attribute.
+                    More than one element may reference the same metadata.</para>
+                </section>
+            </xs:documentation>
+        </xs:annotation>
+    </xs:attribute>
+    
+    <xs:attribute name="noteRef" type="xs:IDREF" id="noteRef">
+        <xs:annotation>
+            <xs:documentation>
+                <section xmlns="http://docbook.org/ns/docbook">
+                    <para>Defines a note reference. Notes may be included in the content
+                     model of various block components (lists, tables, figures, boxes, etc).
+                    Note references are available in the common attribute set but are constrained
+                    via Schematron to only those elements which can contain notes.</para>
+                </section>
+            </xs:documentation>
+        </xs:annotation>
+    </xs:attribute>
+    
+    <xs:attribute name="href" type="xs:anyURI" id="href">
+        <xs:annotation>
+            <xs:documentation>
+                <section xmlns="http://docbook.org/ns/docbook">
+                    <para>Defines a reference to external content via a URI.</para>
+                </section>
+            </xs:documentation>
+        </xs:annotation>
+    </xs:attribute>
+    
+    <xs:attribute name="mediaType" type="oecdMediaType" id="mediaType">
+        <xs:annotation>
+            <xs:documentation>
+                <section xmlns="http://docbook.org/ns/docbook">
+                    <para>Defines a reference to external content via a URI.</para>
+                </section>
+            </xs:documentation>            
+        </xs:annotation>
+    </xs:attribute>
+    
+    <xs:attribute name="useWhen" type="xs:string" id="useWhen">
+        <xs:annotation>
+            <xs:documentation>
+                <section xmlns="http://docbook.org/ns/docbook">
+                    <para>Defines processing references for conditional output. NOT intended for use 
+                    with multilingual alternatives.</para>
+                </section>
+            </xs:documentation>            
+        </xs:annotation>      
+    </xs:attribute>
+    
+    <xs:attribute name="xref" type="xs:IDREF" id="xref">
+        <xs:annotation>
+            <xs:documentation>
+                <section xmlns="http://docbook.org/ns/docbook">
+                    <para>Attribute used to reference content elsewhere in the same XML document.</para>
+                </section>
+            </xs:documentation>            
+        </xs:annotation>              
+    </xs:attribute>
+    
+    
+    <xs:attribute name="label" type="xs:string" id="label">
+        <xs:annotation>
+            <xs:documentation>
+                <section xmlns="http://docbook.org/ns/docbook">
+                    <revision>
+                        <revnumber>2</revnumber>
+                        <date>2011-12-29</date>
+                        <author><email>nicg@corbas.co.uk</email><personname>Nic Gibson</personname></author>
+                        <revremark>Initial Version</revremark>
+                    </revision>
+                    <para>Labelling attribute. This can be used to override the presentation of
+                    reference to an element.</para>
+                </section>
+            </xs:documentation>            
+        </xs:annotation>              
+    </xs:attribute>
+    
+    <xs:attribute name="annotations" type="xs:IDREFS" id="annotations">
+        <xs:annotation>
+            <xs:documentation>
+                <section xmlns="http://docbook.org/ns/docbook">
+                    <revision>
+                        <revnumber>3</revnumber>
+                        <date>2011-12-29</date>
+                        <author><email>nicg@corbas.co.uk</email><personname>Nic Gibson</personname></author>
+                        <revremark>Initial Version</revremark>
+                    </revision>
+                    <para>Annotations attribute. This contains a space separated list of the ids of annotation
+                        elements which apply to the current element.</para>
+                </section>
+            </xs:documentation>     
+        </xs:annotation>            
+    </xs:attribute>
+
+</xs:schema>

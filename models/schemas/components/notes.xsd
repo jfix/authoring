@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8"?><xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified"> 
+
+    <xs:annotation>
+        <xs:documentation><section xmlns="http://docbook.org/ns/docbook">
+            <title>OECD Schemas</title>
+            <subtitle>Notes</subtitle>
+            <revhistory>
+                <title>Change Log</title>
+                
+                
+                    <revision>
+                        <revnumber>1</revnumber>
+                        <date>2012-02-10</date>
+                        <author><email>nicg@corbas.co.uk</email><personname>Nic Gibson</personname></author>
+                        <revremark>Initial Version</revremark>                        
+                    </revision>
+                    <revision>
+                        <revnumber>2</revnumber>
+                        <date>2012-03-15</date>
+                        <author><email/><personname>Nic Gibson</personname></author>
+                        <revremark>Refactored for better practices in design.</revremark>
+                    </revision>
+                
+                <revision>
+                    <revnumber>3</revnumber>
+                    <date>2012-04-16</date>
+                    <author><email/><personname>Nic Gibson</personname></author>
+                    <revremark>Added annotations attributes.</revremark>
+                </revision>
+                
+            </revhistory>
+            
+        </section></xs:documentation>
+    </xs:annotation>
+    
+    
+    <!-- INCLUDES AND IMPORTS -->
+    
+    <xs:include schemaLocation="blocks.xsd"/> 
+    
+    <!-- GLOBAL ELEMENTS -->
+    
+    <xs:element name="notes" type="oecdNotesType" id="notes"/>
+    
+    <!-- GLOBAL GROUPS -->
+    
+    <!-- GLOBAL TYPES -->
+    
+    <!-- note -->
+    
+    <xs:attributeGroup name="oecdNoteTypeAttributes" id="oecdNoteTypeAttributes">
+        <xs:annotation>
+            <xs:documentation>
+                <section xmlns="http://docbook.org/ns/docbook">
+                    <para>Attributes for individual notes. Grouped for easy redefinition.</para>
+                </section>
+            </xs:documentation>
+        </xs:annotation>
+        <xs:attributeGroup ref="oecdCommonAttributes"/>
+        <xs:attributeGroup ref="oecdLinkingAttributes"/>
+        <xs:attribute ref="annotations"/>
+    </xs:attributeGroup>
+
+    <xs:group name="oecdNoteTypeContent" id="oecdNoteTypeContent">
+        <xs:annotation>
+            <xs:documentation>
+                <section xmlns="http://docbook.org/ns/docbook">
+                    <para>Content for individual notes. Grouped for easy redefinition.</para>
+                </section>
+            </xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+            <xs:element ref="metadata" minOccurs="0"/>
+            <xs:choice>
+                <xs:group ref="oecdBlockGroup" maxOccurs="unbounded"/>
+            </xs:choice>
+        </xs:sequence>
+    </xs:group>    
+    
+    <xs:complexType name="oecdNoteType" id="oecdNoteType">
+        <xs:annotation>
+            <xs:documentation>
+                <section xmlns="http://docbook.org/ns/docbook">
+                    <para>Individual note. This is not a footnote. Notes are contained within
+                    certain block types (lists, tables, figures) and explain aspects of the 
+                    content. Each note is a block in itself. </para>
+                    <para>The existence of notes on a component does not preclude the existence
+                    of footnotes.</para>
+                </section>
+            </xs:documentation>
+        </xs:annotation>
+        <xs:group ref="oecdNoteTypeContent"/>
+        <xs:attributeGroup ref="oecdNoteTypeAttributes"/>
+    </xs:complexType>    
+    
+    <!-- notes -->
+    
+    <xs:attributeGroup name="oecdNotesTypeAttributes" id="oecdNotesTypeAttributes">
+        <xs:annotation>
+            <xs:documentation>
+                <section xmlns="http://docbook.org/ns/docbook">
+                    <para>Attributes for set of notes. Grouped for easy redefinition.</para>
+                </section>
+            </xs:documentation>
+        </xs:annotation>
+        <xs:attributeGroup ref="oecdCommonAttributes"/>
+        <xs:attributeGroup ref="oecdLinkingAttributes"/>
+        <xs:attribute ref="annotations"/>
+    </xs:attributeGroup>
+    
+    <xs:group name="oecdNotesTypeContent" id="oecdNotesTypeContent">
+        <xs:annotation>
+            <xs:documentation>
+                <section xmlns="http://docbook.org/ns/docbook">
+                    <para>Content for set of notes. Grouped for easy redefinition.</para>
+                </section>
+            </xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+            <xs:element ref="metadata" minOccurs="0"/>
+            <xs:group ref="oecdTitleGroup" minOccurs="0"/>
+            <xs:element name="note" type="oecdNoteType" maxOccurs="unbounded"/>
+        </xs:sequence>
+    </xs:group>    
+    
+    <xs:complexType name="oecdNotesType" id="oecdNotesType">
+        <xs:annotation>
+            <xs:documentation>
+                <section xmlns="http://docbook.org/ns/docbook">
+                    <para>Set of notes. This is a wrapper for a set of notes relating to 
+                    a particular component.</para>
+                </section>
+            </xs:documentation>
+        </xs:annotation>
+        <xs:group ref="oecdNotesTypeContent"/>
+        <xs:attributeGroup ref="oecdNotesTypeAttributes"/>
+    </xs:complexType>    
+    
+    <!-- ATTRIBUTES -->
+    
+
+</xs:schema>

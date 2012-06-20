@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="UTF-8"?><xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+   
+
+    <xs:annotation>
+        <xs:documentation><section xmlns="http://docbook.org/ns/docbook">
+            <section>
+                <title>OECD.Author</title>
+                <subtitle>Paragraph Schema</subtitle>
+                <revhistory>
+                    <title>Change Log</title>
+                    
+                    
+                        <revision>
+                            <revnumber>1</revnumber>
+                            <date>2011-12-02</date>
+                            <author><email>nicg@corbas.co.uk</email><personname>Nic Gibson</personname></author>
+                            <revremark>Initial Version</revremark>
+                        </revision>
+                    
+                        <revision>
+                            <revnumber>2</revnumber>
+                            <date>2012-04-13</date>
+                            <authorinitials>NG</authorinitials>
+                            <revremark>Added annotations attribute.</revremark>                        
+                        </revision>
+                    
+                </revhistory>
+                <para>This model defines paragraphs and other simple components with equivalent
+                    hierarchical position.</para>
+            </section>
+        </section></xs:documentation>
+    </xs:annotation>
+    
+    <!-- IMPORTS AND INCLUDES  -->
+    <xs:include schemaLocation="attributes.xsd"/>
+    <xs:include schemaLocation="inline-group.xsd"/>
+    <xs:include schemaLocation="titles.xsd"/>
+    <xs:include schemaLocation="meta.xsd"/>
+    
+    <xs:include schemaLocation="graphics.xsd"/>
+    <xs:include schemaLocation="equations.xsd"/>
+    
+    <!-- GLOBAL ELEMENTS -->
+    <xs:element name="para" type="oecdParagraphType" id="para"/>
+    <xs:element name="formalPara" type="oecdFormalParagraphType" id="formalPara"/>
+    <xs:element name="paragraphGroup" type="oecdParagraphGroupType" id="paragraphGroup"/>
+    
+     <!-- GLOBAL GROUPS -->
+    <xs:group name="oecdParagraphGroup" id="oecdParagraphGroup">
+        <xs:choice>
+            <xs:element ref="para"/>
+            <xs:element ref="formalPara"/>
+            <xs:element ref="paragraphGroup"/>
+        </xs:choice>
+    </xs:group>
+    
+    <!-- GLOBAL TYPES -->
+    
+    <!-- basic paragraph -->
+    <xs:attributeGroup name="oecdParagraphTypeAttributes" id="oecdParagraphTypeAttributes">
+        <xs:annotation>
+            <xs:documentation>
+                <section xmlns="http://docbook.org/ns/docbook">
+                    <revhistory>
+                        <revision>
+                            <revnumber>2</revnumber>
+                            <date>2012-04-13</date>
+                            <authorinitials>NG</authorinitials>
+                            <revremark>Added annotations attribute.</revremark>                        
+                        </revision>
+                    </revhistory>
+                    <para>Attribute group for paragraph elements to allow easy overrides.</para>
+                </section>
+            </xs:documentation>
+        </xs:annotation>        
+        <xs:attributeGroup ref="oecdCommonAttributes"/>
+        <xs:attributeGroup ref="oecdLinkingAttributes"/>
+        <xs:attribute ref="annotations" use="optional"/>
+    </xs:attributeGroup>
+    
+    <xs:group name="oecdParagraphTypeContent" id="oecdParagraphTypeContent">
+        <xs:annotation>
+            <xs:documentation>
+                <section xmlns="http://docbook.org/ns/docbook">
+                    <para>Group for paragraph element content to allow easy overrides.</para>
+                </section>
+            </xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+            <xs:element ref="metadata" minOccurs="0"/>
+            <xs:group ref="oecdInlineGroup" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>        
+    </xs:group>
+
+    <xs:complexType name="oecdParagraphType" mixed="true" id="oecdParagraphType">
+        <xs:annotation>
+            <xs:documentation>
+                <section xmlns="http://docbook.org/ns/docbook">
+                    <para>Base type for paragraph content.</para>
+                </section>
+            </xs:documentation>
+        </xs:annotation>
+    
+        <xs:group ref="oecdParagraphTypeContent"/>
+        <xs:attributeGroup ref="oecdParagraphTypeAttributes"/>
+
+    </xs:complexType>
+    
+    <!-- formal paragraphs -->
+        
+    <xs:group name="oecdFormalParagraphTypeContent" id="oecdFormalParagraphTypeContent">
+        <xs:annotation>
+            <xs:documentation>
+                <section xmlns="http://docbook.org/ns/docbook">
+                    <para>Group for paragraph element content to allow easy overrides.</para>
+                </section>
+            </xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+            <xs:element ref="metadata" minOccurs="0"/>
+            <xs:element ref="title"/>
+            <xs:element ref="para"/>
+        </xs:sequence>        
+    </xs:group>
+    
+    <xs:complexType name="oecdFormalParagraphType" mixed="true" id="oecdFormalParagraphType">
+        <xs:annotation>
+            <xs:documentation>
+                <section xmlns="http://docbook.org/ns/docbook">
+                    <para>Formal paragraphs - a paragraph with a title.</para>
+                </section>
+            </xs:documentation>
+        </xs:annotation>
+                
+        <xs:group ref="oecdFormalParagraphTypeContent"/>
+        <xs:attributeGroup ref="oecdParagraphTypeAttributes"/>
+        
+    </xs:complexType>
+    
+    <!-- paragraph groups -->
+    <xs:attributeGroup name="oecdParagraphGroupTypeAttributes" id="oecdParagraphGroupTypeAttributes">
+        <xs:annotation>
+            <xs:documentation>
+                <section xmlns="http://docbook.org/ns/docbook">
+                    <para>Group for paragraph group attributes to allow easy overrides.</para>
+                </section>
+            </xs:documentation>
+        </xs:annotation>
+        <xs:attributeGroup ref="oecdCommonAttributes"/>
+        <xs:attributeGroup ref="oecdLinkingAttributes"/>        
+    </xs:attributeGroup>
+    
+    <xs:group name="oecdParagraphGroupTypeContent" id="oecdParagraphGroupTypeContent">
+        <xs:annotation>
+            <xs:documentation>
+                <section xmlns="http://docbook.org/ns/docbook">
+                    <para>Group for paragraph group content to allow easy overrides.</para>
+                </section>
+            </xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+            <xs:element ref="metadata" minOccurs="0"/>
+            <xs:group ref="oecdTitleGroup" minOccurs="0"/>
+            <xs:choice maxOccurs="unbounded">
+                <xs:element ref="para"/>
+                <xs:element ref="formalPara"/>
+            </xs:choice>        
+        </xs:sequence>
+    </xs:group>
+    
+    <xs:complexType name="oecdParagraphGroupType" id="oecdParagraphGroupType">
+        <xs:annotation>
+            <xs:documentation>
+                <section xmlns="http://docbook.org/ns/docbook">
+                    <para>A group of paragraphs. Functions like a section that cannot have 
+                    any substructure.</para>
+                </section>
+            </xs:documentation>
+        </xs:annotation>
+        <xs:group ref="oecdParagraphGroupTypeContent"/>
+        <xs:attributeGroup ref="oecdParagraphGroupTypeAttributes"/>
+    </xs:complexType>
+
+
+</xs:schema>

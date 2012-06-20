@@ -1,0 +1,454 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+
+
+    <xs:annotation>
+        <xs:documentation><section xmlns="http://docbook.org/ns/docbook">
+                <section>
+                    <title>OECD.Author</title>
+                    <subtitle>Lists Schema</subtitle>
+                    <revhistory>
+                        <title>Change Log</title> <revision>
+                            <revnumber>1</revnumber>
+                            <date>2012-01-08</date>
+                            <author><email>nicg@corbas.co.uk</email><personname>Nic
+                                    Gibson</personname></author>
+                            <revremark>Initial Version</revremark>
+                        </revision>
+                        <revision>
+                            <revnumber>2</revnumber>
+                            <date>2012-03-21</date>
+                            <author><email>nicg@corbas.co.uk</email><personname>Nic
+                                    Gibson</personname></author>
+                            <revremark>Added number attribute to ordered list items for
+                                overrides</revremark>
+                        </revision> <revision>
+                            <revnumber>3</revnumber>
+                            <date>2012-03-03</date>
+                            <author><email>nicg@corbas.co.uk</email><personname>Nic
+                                    Gibson</personname></author>
+                            <revremark>Replaced include of inlines.xsd with
+                                inline-group.xsd.</revremark>
+                        </revision> <revision>
+                            <revnumber>4</revnumber>
+                            <date>2012-04-16</date>
+                            <author><email>nicg@corbas.co.uk</email><personname>Nic
+                                    Gibson</personname></author>
+                            <revremark>Added annotations attribute to lists and list
+                                items. Restructured definition list to make it useable for glossaries too.</revremark>
+                        </revision> 
+                    
+                        <revision>
+                            <revnumber>5</revnumber>
+                            <date>2012-04-16</date>
+                            <authorinitials>NG</authorinitials>
+                            <revremark>Removed accidental mixed content models.</revremark>
+                        </revision>
+                    
+                    </revhistory>
+                    <para>This model defines lists of various types</para>
+                </section>
+            </section></xs:documentation>
+    </xs:annotation>
+
+    <!-- IMPORTS AND INCLUDES  -->
+    <xs:include schemaLocation="attributes.xsd"/>
+    <xs:include schemaLocation="inline-group.xsd"/>
+    <xs:include schemaLocation="titles.xsd"/>
+    <xs:include schemaLocation="meta.xsd"/>
+    <xs:include schemaLocation="types.xsd"/>
+    <xs:include schemaLocation="notes.xsd"/>
+    <xs:include schemaLocation="blocks.xsd"/>
+    <!-- NOTE - recursive inclusion -->
+
+
+    <!-- GLOBAL ELEMENTS -->
+    <xs:element name="itemizedList" type="oecdItemizedListType" id="itemizedList"/>
+    <xs:element name="orderedList" type="oecdOrderedListType" id="orderedList"/>
+    <xs:element name="definitionList" type="oecdDefinitionListType" id="definitionList"/>
+
+    <!-- GLOBAL GROUPS -->
+    <xs:group name="oecdListGroup" id="oecdListGroup">
+        <xs:choice>
+            <xs:element ref="itemizedList"/>
+            <xs:element ref="orderedList"/>
+            <xs:element ref="definitionList"/>
+        </xs:choice>
+    </xs:group>
+
+    <!-- GLOBAL TYPES -->
+
+    <!-- list items -->
+    <xs:attributeGroup name="oecdListItemTypeAttributes" id="oecdListItemTypeAttributes">
+        <xs:annotation>
+            <xs:documentation>
+                <section xmlns="http://docbook.org/ns/docbook">
+                    <para>Attributes for list items.</para>
+                </section>
+            </xs:documentation>
+        </xs:annotation>
+        <xs:attributeGroup ref="oecdCommonAttributes"/>
+        <xs:attributeGroup ref="oecdLinkingAttributes"/>
+        <xs:attribute ref="annotations"/>
+    </xs:attributeGroup>
+
+    <xs:group name="oecdListItemTypeContent" id="oecdListItemTypeContent">
+        <xs:annotation>
+            <xs:documentation>
+                <section xmlns="http://docbook.org/ns/docbook">
+                    <para>Content for list items.</para>
+                </section>
+            </xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+            <xs:element ref="metadata" minOccurs="0"/>
+            <xs:choice maxOccurs="unbounded">
+                <xs:group ref="oecdBlockGroup"/>
+            </xs:choice>
+        </xs:sequence>
+    </xs:group>
+
+    <xs:complexType name="oecdListItemType" id="oecdListItemType">
+        <xs:annotation>
+            <xs:documentation>
+                <section xmlns="http://docbook.org/ns/docbook">
+                    <para>List items are a shared type used by both itemized and ordered lists. This
+                        type is extended by list specific list items to add attributes appropriate
+                        to the list type.</para>
+                </section>
+            </xs:documentation>
+        </xs:annotation>
+        <xs:group ref="oecdListItemTypeContent" maxOccurs="unbounded"/>
+        <xs:attributeGroup ref="oecdListItemTypeAttributes"/>
+
+    </xs:complexType>
+
+    <!-- Bulleted lists. Bulleted list items extended the base list item by addding a bullet.-->
+    <xs:complexType name="oecdItemizedListItemType" id="oecdItemizedListItemType">
+        <xs:complexContent>
+            <xs:extension base="oecdListItemType">
+                <xs:attribute ref="marker" use="optional" default="auto"/>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+
+    <xs:attributeGroup name="oecdItemizedListTypeAttributes" id="oecdItemizedListTypeAttributes">
+        <xs:annotation>
+            <xs:documentation>
+                <section xmlns="http://docbook.org/ns/docbook">
+                    <para>Attributes for itemized lists.</para>
+                </section>
+            </xs:documentation>
+        </xs:annotation>
+        <xs:attributeGroup ref="oecdCommonAttributes"/>
+        <xs:attributeGroup ref="oecdLinkingAttributes"/>
+        <xs:attribute ref="marker" use="optional" default="auto"/>
+        <xs:attribute ref="annotations"/>
+    </xs:attributeGroup>
+
+    <xs:group name="oecdItemizedListTypeContent" id="oecdItemizedListTypeContent">
+        <xs:annotation>
+            <xs:documentation>
+                <section xmlns="http://docbook.org/ns/docbook">
+                    <para>Content for itemized lists.</para>
+                </section>
+            </xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+            <xs:element ref="metadata" minOccurs="0"/>
+            <xs:group ref="oecdTitleGroup" minOccurs="0"/>
+            <xs:element name="listItem" type="oecdItemizedListItemType" maxOccurs="unbounded"/>
+            <xs:element ref="notes" minOccurs="0"/>
+        </xs:sequence>
+    </xs:group>
+
+    <xs:complexType name="oecdItemizedListType" id="oecdItemizedListType">
+        <xs:annotation>
+            <xs:documentation>
+                <section xmlns="http://docbook.org/ns/docbook">
+                    <para>Standard itemized lists. These allow the user to choose a default marker
+                        at the level of the list and override it at the item level.</para>
+                </section>
+            </xs:documentation>
+        </xs:annotation>
+        <xs:group ref="oecdItemizedListTypeContent"/>
+        <xs:attributeGroup ref="oecdItemizedListTypeAttributes"/>
+    </xs:complexType>
+
+
+    <!-- ordered lists -->
+    <xs:attributeGroup name="oecdOrderedListTypeAttributes" id="oecdOrderedListTypeAttributes">
+        <xs:annotation>
+            <xs:documentation>
+                <section xmlns="http://docbook.org/ns/docbook">
+                    <para>Attributes for itemized lists.</para>
+                </section>
+            </xs:documentation>
+        </xs:annotation>
+
+        <xs:attributeGroup ref="oecdCommonAttributes"/>
+        <xs:attributeGroup ref="oecdLinkingAttributes"/>
+        <xs:attribute ref="annotations"/>
+
+        <xs:attribute name="numeration" type="oecdListNumeration" default="arabic" id="numeration">
+            <xs:annotation>
+                <xs:documentation>
+                    <section xmlns="http://docbook.org/ns/docbook">
+                        <para>List numeration style for ordered lists.</para>
+                    </section>
+                </xs:documentation>
+            </xs:annotation>
+        </xs:attribute>
+
+        <xs:attribute name="continuation" type="oecdListContinuation" default="start"
+            id="continuation">
+            <xs:annotation>
+                <xs:documentation>
+                    <section xmlns="http://docbook.org/ns/docbook">
+                        <para>List continuation style for ordered lists</para>
+                    </section>
+                </xs:documentation>
+            </xs:annotation>
+        </xs:attribute>
+
+        <xs:attribute name="start" type="xs:nonNegativeInteger" id="start">
+            <xs:annotation>
+                <xs:documentation>
+                    <section xmlns="http://docbook.org/ns/docbook">
+                        <para>Starting position for lists which have their continuation style set to
+                            'start'.</para>
+                    </section>
+                </xs:documentation>
+            </xs:annotation>
+        </xs:attribute>
+
+
+        <xs:attribute name="number" type="xs:nonNegativeInteger" id="number">
+            <xs:annotation>
+                <xs:documentation>
+                    <section xmlns="http://docbook.org/ns/docbook">
+                        <para>Numbering override for list items where the author needs to override
+                            the list numbering completely.</para>
+                    </section>
+                </xs:documentation>
+            </xs:annotation>
+        </xs:attribute>
+
+
+    </xs:attributeGroup>
+
+    <xs:group name="oecdOrderedListTypeContent" id="oecdOrderedListTypeContent">
+        <xs:annotation>
+            <xs:documentation>
+                <section xmlns="http://docbook.org/ns/docbook">
+                    <para>Content for itemized lists.</para>
+                </section>
+            </xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+            <xs:element ref="metadata" minOccurs="0"/>
+            <xs:group ref="oecdTitleGroup" minOccurs="0"/>
+            <xs:element name="listItem" type="oecdListItemType" maxOccurs="unbounded"/>
+            <xs:element ref="notes" minOccurs="0"/>
+        </xs:sequence>
+    </xs:group>
+
+    <xs:complexType name="oecdOrderedListType" id="oecdOrderedListType">
+        <xs:annotation>
+            <xs:documentation>
+                <section xmlns="http://docbook.org/ns/docbook">
+                    <para>Standard ordered lists. Lists can have several numeration types which are
+                        set at list level (as changing the numbering system part way through a
+                        single list is unusual). Numbering can continue based on the end of a
+                        previous list or start at a specific number.</para>
+                </section>
+            </xs:documentation>
+        </xs:annotation>
+        <xs:group ref="oecdOrderedListTypeContent"/>
+        <xs:attributeGroup ref="oecdOrderedListTypeAttributes"/>
+    </xs:complexType>
+
+
+    <!-- definition lists -->
+
+    <xs:attributeGroup name="oecdDefinitionListTermTypeAttributes"
+        id="oecdDefinitionListTermTypeAttributes">
+        <xs:annotation>
+            <xs:documentation>
+                <section xmlns="http://docbook.org/ns/docbook">
+                    <para>Attributes for terms in definition lists.</para>
+                </section>
+            </xs:documentation>
+        </xs:annotation>
+        <xs:attributeGroup ref="oecdCommonAttributes"/>
+        <xs:attributeGroup ref="oecdLinkingAttributes"/>
+    </xs:attributeGroup>
+
+    <xs:group name="oecdDefinitionListTermTypeContent" id="oecdDefinitionListTermTypeContent">
+        <xs:annotation>
+            <xs:documentation>
+                <section xmlns="http://docbook.org/ns/docbook">
+                    <para>Content for terms in definition lists.</para>
+                </section>
+            </xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+            <xs:element ref="metadata" minOccurs="0"/>
+            <!-- this is inside a mixed element! -->
+            <xs:group ref="oecdInlineGroup" maxOccurs="unbounded" minOccurs="0"/>
+        </xs:sequence>
+    </xs:group>
+
+    <xs:complexType name="oecdDefinitionListTermType"  id="oecdDefinitionListTermType">
+        <xs:annotation>
+            <xs:documentation>
+                <section xmlns="http://docbook.org/ns/docbook">
+                    <para>The term to be defined in a definition list.</para>
+                </section>
+            </xs:documentation>
+        </xs:annotation>
+        <xs:group ref="oecdDefinitionListTermTypeContent"/>
+        <xs:attributeGroup ref="oecdDefinitionListTermTypeAttributes"/>
+    </xs:complexType>
+
+    <xs:attributeGroup name="oecdDefinitionListDefinitionTypeAttributes"
+        id="oecdDefinitionListDefinitionTypeAttributes">
+        <xs:annotation>
+            <xs:documentation>
+                <section xmlns="http://docbook.org/ns/docbook">
+                    <para>Attributes for definitions in definition lists.</para>
+                </section>
+            </xs:documentation>
+        </xs:annotation>
+        <xs:attributeGroup ref="oecdCommonAttributes"/>
+        <xs:attributeGroup ref="oecdLinkingAttributes"/>
+        <xs:attribute ref="annotations"/>
+    </xs:attributeGroup>
+
+    <xs:group name="oecdDefinitionListDefinitionTypeContent"
+        id="oecdDefinitionListDefinitionTypeContent">
+        <xs:annotation>
+            <xs:documentation>
+                <section xmlns="http://docbook.org/ns/docbook">
+                    <para>Content for definitions in definition lists.</para>
+                </section>
+            </xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+            <xs:group ref="oecdBlockGroup" maxOccurs="unbounded"/>
+        </xs:sequence>
+    </xs:group>
+
+    <xs:complexType name="oecdDefinitionListDefinitionType" 
+        id="oecdDefinitionListDefinitionType">
+        <xs:annotation>
+            <xs:documentation>
+                <section xmlns="http://docbook.org/ns/docbook">
+                    <para>The definition in a definition list.</para>
+                </section>
+            </xs:documentation>
+        </xs:annotation>
+        <xs:group ref="oecdDefinitionListDefinitionTypeContent"/>
+        <xs:attributeGroup ref="oecdDefinitionListDefinitionTypeAttributes"/>
+    </xs:complexType>
+
+    <xs:attributeGroup name="oecdDefinitionListItemTypeAttributes"
+        id="oecdDefinitionListItemTypeAttributes">
+        <xs:annotation>
+            <xs:documentation>
+                <section xmlns="http://docbook.org/ns/docbook">
+                    <para>Attributes for items in definition lists.</para>
+                </section>
+            </xs:documentation>
+        </xs:annotation>
+        <xs:attributeGroup ref="oecdCommonAttributes"/>
+        <xs:attributeGroup ref="oecdLinkingAttributes"/>
+        <xs:attribute ref="annotations"/>
+    </xs:attributeGroup>
+
+    <xs:group name="oecdDefinitionListItemTypeContent" id="oecdDefinitionListItemTypeContent">
+        <xs:annotation>
+            <xs:documentation>
+                <section xmlns="http://docbook.org/ns/docbook">
+                    <para>Content for items in definition lists.</para>
+                </section>
+            </xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+            <xs:element ref="metadata" minOccurs="0"/>
+            <xs:element name="term" type="oecdDefinitionListTermType"/>
+            <xs:element name="definition" type="oecdDefinitionListDefinitionType"/>
+        </xs:sequence>
+    </xs:group>
+
+    <xs:complexType name="oecdDefinitionListItemType"  id="oecdDefinitionListItemType">
+        <xs:annotation>
+            <xs:documentation>
+                <section xmlns="http://docbook.org/ns/docbook">
+                    <para>A term/definition pair in a definition list.</para>
+                </section>
+            </xs:documentation>
+        </xs:annotation>
+        <xs:group ref="oecdDefinitionListItemTypeContent"/>
+        <xs:attributeGroup ref="oecdDefinitionListItemTypeAttributes"/>
+    </xs:complexType>
+
+
+    <xs:attributeGroup name="oecdDefinitionListTypeAttributes" id="oecdDefinitionListTypeAttributes">
+        <xs:annotation>
+            <xs:documentation>
+                <section xmlns="http://docbook.org/ns/docbook">
+                    <para>Attributes for definition lists.</para>
+                </section>
+            </xs:documentation>
+        </xs:annotation>
+        <xs:attributeGroup ref="oecdCommonAttributes"/>
+        <xs:attributeGroup ref="oecdLinkingAttributes"/>
+        <xs:attribute ref="annotations"/>
+    </xs:attributeGroup>
+
+    <xs:group name="oecdDefinitionListTypeContent" id="oecdDefinitionListTypeContent">
+        <xs:annotation>
+            <xs:documentation>
+                <section xmlns="http://docbook.org/ns/docbook">
+                    <para>Content for definition lists.</para>
+                </section>
+            </xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+            <xs:element ref="metadata" minOccurs="0"/>
+            <xs:group ref="oecdTitleGroup" minOccurs="0"/>
+            <xs:element name="listItem" type="oecdDefinitionListItemType" maxOccurs="unbounded"/>
+            <xs:element ref="notes" minOccurs="0"/>
+        </xs:sequence>
+    </xs:group>
+
+    <xs:complexType name="oecdDefinitionListType"  id="oecdDefinitionListType">
+        <xs:annotation>
+            <xs:documentation>
+                <section xmlns="http://docbook.org/ns/docbook">
+                    <para>Definition lists consist of pairs of terms and definitions. The
+                        definitions are marked up using a term and a list item contained in a
+                        defintion list item.</para>
+                </section>
+            </xs:documentation>
+        </xs:annotation>
+        <xs:group ref="oecdDefinitionListTypeContent"/>
+        <xs:attributeGroup ref="oecdDefinitionListTypeAttributes"/>
+    </xs:complexType>
+
+
+
+    <!-- ATTRIBUTES -->
+    <xs:attribute name="marker" type="oecdListMarker" default="auto" id="marker">
+        <xs:annotation>
+            <xs:documentation>
+                <section xmlns="http://docbook.org/ns/docbook">
+                    <para>List marker for itemized lists. Used at both list and item levels.</para>
+                </section>
+            </xs:documentation>
+        </xs:annotation>
+    </xs:attribute>
+
+
+</xs:schema>

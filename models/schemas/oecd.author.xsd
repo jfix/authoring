@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" 
+    xmlns="urn:oecd:names:xmlns:authoring:document" targetNamespace="urn:oecd:names:xmlns:authoring:document" xmlns:xd="http://www.oecd.org/ns/schema/xdocs">
+
+
+    <xs:annotation>
+        <xs:appinfo>
+            <xd:name>official-document</xd:name>
+            <xd:root>document</xd:root>
+        </xs:appinfo>
+        <xs:documentation>
+            <section xmlns="http://docbook.org/ns/docbook">
+                <title>OECD Schemas</title>
+                <subtitle>Master Schema</subtitle>
+                <revhistory>
+                    <title>Change Log</title>
+                    <revision>
+                        <revnumber>1</revnumber>
+                        <date>2011-12-02</date>
+                        <author>
+                            <email>nicg@corbas.co.uk</email>
+                            <personname>Nic Gibson</personname>
+                        </author>
+                        <revremark>Initial Version</revremark>
+                    </revision>
+                    <revision>
+                        <revnumber>2</revnumber>
+                        <date>2012-03-28</date>
+                        <author>
+                            <email>joseph.crowther@oecd.org</email>
+                            <authorinitials>JWC</authorinitials>
+                        </author>
+                        <revremark>Added hooks for documentation, and created document element and oecdDocument type.</revremark>
+                    </revision>                   
+                    <revision>
+                        <revnumber>3</revnumber>
+                        <date>2012-03-31</date>
+                        <author>
+                            <email>nicg@corbas.co.uk</email>
+                            <authorinitials>NG</authorinitials>
+                        </author>
+                        <revremark>Modified JWC's update to match final oecdBaseDocument type.</revremark>
+                    </revision>
+                    
+                    <revision>
+                        <revnumber>4</revnumber>
+                        <date>2012-04-16</date>
+                        <author>
+                            <email>nicg@corbas.co.uk</email>
+                            <authorinitials>NG</authorinitials>
+                        </author>
+                        <revremark>Added article.</revremark>
+                    </revision>
+                </revhistory>
+            </section>
+        </xs:documentation>
+    </xs:annotation>
+    
+    <!-- IMPORTS AND INCLUDES -->
+    <xs:include schemaLocation="structure/document.xsd"/>
+        
+    <!-- GLOBAL ELEMENTS -->
+
+
+    <xs:annotation>
+        <xs:documentation>
+            <section xmlns="http://docbook.org/ns/docbook">
+                <para>This model is used by authors to create official OECD documents and publications.</para>                
+            </section>
+            
+        </xs:documentation>
+    </xs:annotation>
+
+    <xs:element name="document" type="oecdBaseDocumentType"/>
+    <xs:element name="article" type="oecdBaseArticleType"/>
+
+</xs:schema>

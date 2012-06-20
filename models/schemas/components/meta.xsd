@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?><xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+
+    <xs:annotation>
+        <xs:documentation><section xmlns="http://docbook.org/ns/docbook">
+            <section>
+                <title>OECD Schemas</title>
+                <subtitle>Metadata</subtitle>
+                <para>This is a wrapper element for an arbitrary metadata model.</para>
+            </section>
+        </section></xs:documentation>
+    </xs:annotation>
+        
+    <xs:include schemaLocation="attributes.xsd"/>
+    
+    <!-- GLOBAL ELEMENTS -->
+    <xs:element name="metadataItem" type="oecdMetadataItemType" id="metadataItem"/>   
+    <xs:element name="metadata" type="oecdMetadataType" id="metadata"/>
+    
+    <!-- GLOBAL ATTRIBUTE -->
+    <!-- N.B. The metadataRef attribute is defined in attributes.xsd -->
+    
+
+    <!-- TYPES -->
+    
+    
+    <!-- metadata element type -->
+    <xs:attributeGroup name="oecdMetadataTypeAttributes" id="oecdMetadataTypeAttributes">
+        <xs:annotation>
+            <xs:documentation>
+                <section xmlns="http://docbook.org/ns/docbook">
+                    <para>Attributes for metadata. Grouped to allow easy override.</para>
+                </section>
+            </xs:documentation>
+        </xs:annotation>        
+        <xs:attributeGroup ref="oecdCommonAttributes"/>    
+    </xs:attributeGroup>
+    
+    <xs:group name="oecdMetadataTypeContent" id="oecdMetadataTypeContent">
+        <xs:annotation>
+            <xs:documentation>
+                <section xmlns="http://docbook.org/ns/docbook">
+                    <para>Content for metadata. Grouped to allow easy override.</para>
+                </section>
+            </xs:documentation>
+        </xs:annotation>
+        <xs:choice>
+            <xs:element ref="metadataItem"/>
+            <xs:element ref="metadata"/>
+        </xs:choice>       
+    </xs:group>
+    
+    <xs:complexType name="oecdMetadataType" id="oecdMetadataType">
+        <xs:annotation>
+            <xs:documentation>
+                <section xmlns="http://docbook.org/ns/docbook">
+                    <para>Metadata container element. Allowed as a child at almost any location in 
+                    a document.</para>
+                </section>
+            </xs:documentation>
+        </xs:annotation>
+        <xs:group ref="oecdMetadataTypeContent" maxOccurs="unbounded"/>
+        <xs:attributeGroup ref="oecdMetadataTypeAttributes"/>        
+    </xs:complexType>
+    
+    <!-- metdata group type. -->
+    <xs:attributeGroup name="oecdMetadataItemTypeAttributes" id="oecdMetadataItemTypeAttributes">
+        <xs:annotation>
+            <xs:documentation>
+                <section xmlns="http://docbook.org/ns/docbook">
+                    <para>Attributes for metadata items. Grouped to allow easy override.</para>
+                </section>
+            </xs:documentation>
+        </xs:annotation>        
+        <xs:attributeGroup ref="oecdCommonAttributes"/>
+        <xs:attributeGroup ref="oecdLinkingAttributes"/>
+    </xs:attributeGroup>
+    
+    <xs:group name="oecdMetadateItemTypeContent" id="oecdMetadateItemTypeContent">
+        <xs:annotation>
+            <xs:documentation>
+                <section xmlns="http://docbook.org/ns/docbook">
+                    <para>Content for metadata items. Grouped to allow easy override.</para>
+                    <para>The content model for metadata is currently defined as a single
+                        element from any namespace. This is unlikely to be the final model
+                        and simply acts as a placeholder.</para>
+                </section>
+            </xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+            <xs:any namespace="##any"/>
+        </xs:sequence>
+    </xs:group>
+         
+    <xs:complexType name="oecdMetadataItemType" id="oecdMetadataItemType">
+        <xs:annotation>
+            <xs:documentation xmlns:html="http://www.w3.org/1999/xhtml">
+                <section xmlns="http://docbook.org/ns/docbook">
+                    <para>The content model for metadata is currently defined as a single
+                    element from any namespace. This is unlikely to be the final model
+                    and simply acts as a placeholder.</para>
+                </section>
+            </xs:documentation>
+        </xs:annotation>
+        <xs:group ref="oecdMetadateItemTypeContent"/>
+        <xs:attributeGroup ref="oecdMetadataItemTypeAttributes"/>
+        
+    </xs:complexType>
+    
+    
+    
+
+</xs:schema>

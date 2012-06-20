@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?><xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+
+    <xs:annotation>
+        <xs:documentation><section xmlns="http://docbook.org/ns/docbook">
+            <title>OECD Schemas</title>
+            <subtitle>Preface Model</subtitle>
+            <revhistory>
+                <title>Change Log</title>
+                
+                
+                    <revision>
+                        <revnumber>1</revnumber>
+                        <date>2011-12-02</date>
+                        <author><email>nicg@corbas.co.uk</email><personname>Nic Gibson</personname></author>
+                        <revremark>Initial Version</revremark>
+                    </revision>
+                    <revision>
+                        <revnumber>2</revnumber>
+                        <date>2012-03-21</date>
+                        <author><email>nicg@corbas.co.uk</email><personname>Nic Gibson</personname></author>
+                        <revremark>Restructured to separate file from section.</revremark>
+                    </revision>
+                    
+                
+            </revhistory>
+            <para>An appendix is a section</para>
+        </section></xs:documentation>
+    </xs:annotation>
+    
+    <!-- IMPORTS AND INCLUDES -->
+    
+    <xs:include schemaLocation="section.xsd"/>
+    
+    <!-- GLOBAL ELEMENTS -->
+    
+    <xs:element name="preface" type="oecdSectionType" id="preface"/>
+
+</xs:schema>

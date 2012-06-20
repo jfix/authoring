@@ -1,0 +1,279 @@
+<?xml version="1.0" encoding="UTF-8"?><xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+
+    <xs:annotation>
+        <xs:documentation><section xmlns="http://docbook.org/ns/docbook">
+            <title>OECD Schemas</title>
+            <subtitle>Extract Models</subtitle>
+            <revhistory>
+                <title>Change Log</title>
+                
+                
+                    <revision>
+                        <revnumber>1</revnumber>
+                        <date>2012-01-08</date>
+                        <author><email>nicg@corbas.co.uk</email><personname>Nic Gibson</personname></author>
+                        <revremark>Initial Version</revremark>
+                    </revision>
+                
+                <revision>
+                    <revnumber>2</revnumber>
+                    <date>2012-04-13</date>
+                    <authorinitials>NG</authorinitials>
+                    <revremark>Added annotations attribute and reworked to use extract element as top level</revremark>
+                </revision>
+                
+            </revhistory>
+        </section></xs:documentation>
+    </xs:annotation>
+    
+    <!-- INCLUDES AND IMPORTS -->
+    
+    <xs:include schemaLocation="blocks.xsd"/>
+    <xs:include schemaLocation="attribution.xsd"/>
+    <xs:include schemaLocation="graphics.xsd"/>
+    
+    <!-- GLOBAL ELEMENTS -->
+    <xs:element name="blockQuote" type="oecdBlockQuoteType" id="blockQuote"/>   
+    <xs:element name="externalContentReference" type="oecdExternalContentReferenceType" id="externalContentReference"/>
+    <xs:element name="embeddedContent" type="oecdEmbeddedContentType" id="embeddedContent"/>
+    <xs:element name="extract" type="oecdExtractType" id="extract"/>
+    
+    <!-- GLOBAL GROUPS -->
+    <xs:group name="oecdExtractsGroup" id="oecdExtractsGroup">
+        <xs:choice>
+            <xs:element ref="blockQuote"/>
+            <xs:element ref="embeddedContent"/>
+            <xs:element ref="externalContentReference"/>
+        </xs:choice>
+    </xs:group>
+    
+    <!-- GLOBAL TYPES -->
+    
+     
+    <!-- block quotes -->
+    <xs:attributeGroup name="oecdBlockQuoteTypeAttributes" id="oecdBlockQuoteTypeAttributes">
+        <xs:annotation>
+            <xs:documentation>
+                
+                <revision>
+                    <revnumber>2</revnumber>
+                    <date>2012-04-13</date>
+                    <authorinitials>NG</authorinitials>
+                    <revremark>Added annotations attribute</revremark>
+                </revision>
+                <section xmlns="http://docbook.org/ns/docbook">
+                    <para>Blockquote attributes, grouped for easy overrides and reuse.</para>
+                </section>
+            </xs:documentation>
+        </xs:annotation>
+        
+        <xs:attributeGroup ref="oecdCommonAttributes"/>
+        <xs:attributeGroup ref="oecdLinkingAttributes"/>
+        <xs:attribute ref="annotations" use="optional"/>
+        
+    </xs:attributeGroup>
+    
+    
+    <xs:group name="oecdBlockQuoteTypeContent" id="oecdBlockQuoteTypeContent">
+        <xs:annotation>
+            <xs:documentation>
+                <section xmlns="http://docbook.org/ns/docbook">
+                    <para>Blockquote content, grouped for easy overrides and reuse.</para>
+                </section>
+            </xs:documentation>
+        </xs:annotation>
+        <xs:choice>
+            <xs:element ref="metadata" minOccurs="0"/>
+            
+            <xs:group maxOccurs="unbounded" ref="oecdBlockGroup"/>
+        </xs:choice>
+    </xs:group>
+    
+    <xs:complexType name="oecdBlockQuoteType" id="oecdBlockQuoteType">
+        <xs:annotation>
+            <xs:documentation>
+                <section xmlns="http://docbook.org/ns/docbook">
+                    <para>Blockquote elements are intended for transcribed text from
+                    external sources. A blockquote has essential metadata stored
+                    in the attribution element.</para>   
+                </section>
+            </xs:documentation>
+        </xs:annotation>
+        <xs:group ref="oecdBlockQuoteTypeContent"/>
+        <xs:attributeGroup ref="oecdBlockQuoteTypeAttributes"/>
+    </xs:complexType>
+    
+    
+    <!-- external references -->
+    <xs:attributeGroup name="oecdExternalContentReferenceTypeAttributes" id="oecdExternalContentReferenceTypeAttributes">
+        <xs:annotation>
+            <xs:documentation>
+                
+                <section xmlns="http://docbook.org/ns/docbook">
+                    
+                    <revision>
+                        <revnumber>2</revnumber>
+                        <date>2012-04-13</date>
+                        <authorinitials>NG</authorinitials>
+                        <revremark>Added annotations attribute</revremark>
+                    </revision>
+                    <para>External content reference attributes, grouped for easy overrides and reuse.</para>
+                </section>
+            </xs:documentation>
+        </xs:annotation>
+        
+        <xs:attributeGroup ref="oecdCommonAttributes"/>
+        <xs:attributeGroup ref="oecdRequiredLinkingAttributes"/>
+        <xs:attribute ref="annotations" use="optional"/>
+        
+    </xs:attributeGroup>
+    
+    
+    <xs:group name="oecdExternalContentReferenceTypeContent" id="oecdExternalContentReferenceTypeContent">
+        <xs:annotation>
+            <xs:documentation>
+                <section xmlns="http://docbook.org/ns/docbook">                
+
+                    <para>External content reference content, grouped for easy overrides and reuse.</para>
+                </section>
+            </xs:documentation>
+        </xs:annotation>
+        <xs:choice>
+            <xs:element ref="metadata" minOccurs="0"/>
+            
+        </xs:choice>
+    </xs:group>
+    
+    <xs:complexType name="oecdExternalContentReferenceType" id="oecdExternalContentReferenceType">
+        <xs:annotation>
+            <xs:documentation>
+                <section xmlns="http://docbook.org/ns/docbook">
+                    <para>External Content references allow content to be referenced from
+                        a document without the content being present. The content must
+                        be referenceable using a URI.</para>   
+                </section>
+            </xs:documentation>
+        </xs:annotation>
+        <xs:group ref="oecdExternalContentReferenceTypeContent"/>
+        <xs:attributeGroup ref="oecdExternalContentReferenceTypeAttributes"/>
+    </xs:complexType>
+
+    <!-- embedded xml references -->
+    
+    <xs:attributeGroup name="oecdEmbeddedContentTypeAttributes" id="oecdEmbeddedContentTypeAttributes">
+        <xs:annotation>
+            <xs:documentation>
+                <revision>
+                    <revnumber>2</revnumber>
+                    <date>2012-04-13</date>
+                    <authorinitials>NG</authorinitials>
+                    <revremark>Added annotations attribute</revremark>
+                </revision>
+                <section xmlns="http://docbook.org/ns/docbook">
+                    <para>Embedded attributes, grouped for easy overrides and reuse.</para>
+                </section>
+            </xs:documentation>
+        </xs:annotation>
+        
+        <xs:attributeGroup ref="oecdCommonAttributes"/>
+        <xs:attributeGroup ref="oecdRequiredLinkingAttributes"/>
+        <xs:attribute ref="annotations" use="optional"/>
+        
+    </xs:attributeGroup>
+    
+    
+    <xs:group name="oecdEmbeddedContentTypeContent" id="oecdEmbeddedContentTypeContent">
+        <xs:annotation>
+            <xs:documentation>
+                <section xmlns="http://docbook.org/ns/docbook">
+                    <para>embedded content content, grouped for easy overrides and reuse.</para>
+                </section>
+            </xs:documentation>
+        </xs:annotation>
+        <xs:choice>
+            <xs:element ref="metadata" minOccurs="0"/>
+            
+            <xs:any namespace="##other" maxOccurs="unbounded"/>
+        </xs:choice>
+    </xs:group>
+    
+    <xs:complexType name="oecdEmbeddedContentType" id="oecdEmbeddedContentType">
+        <xs:annotation>
+            <xs:documentation>
+                <section xmlns="http://docbook.org/ns/docbook">
+                    <para>Embedded Content. This elements allows external content to be referenced
+                    within the XML.</para>   
+                </section>
+            </xs:documentation>
+        </xs:annotation>
+        <xs:group ref="oecdEmbeddedContentTypeContent"/>
+        <xs:attributeGroup ref="oecdEmbeddedContentTypeAttributes"/>
+    </xs:complexType>
+    
+    
+    <!-- extracts -->
+    
+    <xs:attributeGroup name="oecdExtractTypeAttributes" id="oecdExtractTypeAttributes">
+        <xs:annotation>
+            <xs:documentation>
+                <section xmlns="http://docbook.org/ns/docbook">
+                    <revision>
+                        <revnumber>2</revnumber>
+                        <date>2012-04-13</date>
+                        <authorinitials>NG</authorinitials>
+                        <revremark>Added annotations attribute</revremark>
+                    </revision>
+                    <para>Extract attributes, grouped for easy overrides and reuse.</para>
+                </section>
+            </xs:documentation>
+        </xs:annotation>
+        
+        <xs:attributeGroup ref="oecdCommonAttributes"/>
+        <xs:attributeGroup ref="oecdLinkingAttributes"/>
+        <xs:attribute ref="annotations" use="optional"/>
+        
+    </xs:attributeGroup>
+    
+    <xs:group name="oecdExtractTypeContent" id="oecdExtractTypeContent">
+        <xs:annotation>
+            <xs:documentation>
+                <section xmlns="http://docbook.org/ns/docbook">
+                    <para>Extract content, grouped for easy overrides and reuse.</para>
+                </section>
+            </xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+            <xs:element ref="metadata" minOccurs="0"/>
+            <xs:group ref="oecdTitleGroup" minOccurs="0"/>
+            <xs:element ref="attribution"/>
+            <xs:choice>
+                <xs:element ref="blockQuote"/>
+                <xs:element ref="embeddedContent"/>
+                <xs:element ref="externalContentReference"/>
+                <xs:element ref="externalGraphic"/>
+            </xs:choice>            
+        </xs:sequence>    
+    </xs:group>
+    
+    <xs:complexType name="oecdExtractType" id="oecdExtractType">
+        <xs:annotation>
+            <xs:documentation>
+                <section xmlns="http://docbook.org/ns/docbook">
+                    <para>Extracts are a way to include content from other sources. An extract 
+                    many consist of content in one of four forms:</para>
+                    <itemizedlist>
+                        <listitem><para>referenced content - via a URI</para></listitem>
+                        <listitem><para>embedded XML content</para></listitem>
+                        <listitem><para>transcribed quotes</para></listitem>
+                        <listitem><para>scanned images</para></listitem>
+                    </itemizedlist>
+                </section>
+            </xs:documentation>
+        </xs:annotation>
+        <xs:group ref="oecdExtractTypeContent"/>
+        <xs:attributeGroup ref="oecdExtractTypeAttributes"/>
+    </xs:complexType>
+    
+    <!-- ATTRIBUTES -->
+
+</xs:schema>

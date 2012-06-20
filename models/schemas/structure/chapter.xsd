@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="UTF-8"?><xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+
+    <xs:annotation>
+        <xs:documentation><section xmlns="http://docbook.org/ns/docbook">
+            <title>OECD Schemas</title>
+            <subtitle>Chapter Model</subtitle>
+            <revhistory>
+                <title>Change Log</title>
+                
+                
+                    <revision>
+                        <revnumber>1</revnumber>
+                        <date>2011-12-02</date>
+                        <author><email>nicg@corbas.co.uk</email><personname>Nic Gibson</personname></author>
+                        <revremark>Initial Version</revremark>
+                    </revision>
+                    <revision>
+                        <revnumber>2</revnumber>
+                        <date>2012-03-21</date>
+                        <author><email>nicg@corbas.co.uk</email><personname>Nic Gibson</personname></author>
+                        <revremark>Broke into multiple types so that appendix and preface can derive from it.</revremark>
+                    </revision>
+                    <revision>
+                        <revnumber>3</revnumber>
+                        <date>2012-03-29</date>
+                        <author><email>nicg@corbas.co.uk</email><personname>Nic Gibson</personname></author>
+                        <revremark>Added notes to chapter model.</revremark>
+                    </revision>
+                <revision>
+                    <revnumber>3</revnumber>
+                    <date>2012-03-30</date>
+                    <author><email>nicg@corbas.co.uk</email><personname>Nic Gibson</personname></author>
+                    <revremark>Added acknowledgements to chapter model.</revremark>
+                </revision>                    
+                
+                <revision>
+                    <revnumber>4</revnumber>
+                    <date>2012-04-16</date>
+                    <author><email>nicg@corbas.co.uk</email><personname>Nic Gibson</personname></author>
+                    <revremark>Added glossary to chapter model.</revremark>
+                </revision>        
+                
+            </revhistory>
+            <para>A chapter is a high level structural element. It has been modelled as a separate component
+            to a section as it does not have quite the same structure (a chapter has additional content). 
+            The content model for a chapter contains the content model for a section.</para>
+            
+          
+        </section>
+        </xs:documentation>
+    </xs:annotation>
+    
+    <!-- IMPORTS AND INCLUDES -->
+    
+    <xs:include schemaLocation="section.xsd"/>
+    <xs:include schemaLocation="../semantic/abstract.xsd"/>
+    <xs:include schemaLocation="../semantic/biblio.xsd"/>
+    <xs:include schemaLocation="../semantic/glossary.xsd"/>
+    <xs:include schemaLocation="../components/notes.xsd"/>
+    <xs:include schemaLocation="../semantic/acknowledgements.xsd"/>
+    
+    <!-- GLOBAL ELEMENTS -->
+    
+    <xs:element name="chapter" type="oecdChapterType" id="chapter"/>
+    <xs:element name="appendix" type="oecdAppendixType" id="appendix"/>
+    <xs:element name="introduction" type="oecdChapterType" id="introduction"/>
+    
+    <!-- GLOBAL TYPES -->
+    <xs:attributeGroup name="oecdChapterTypeAttributes" id="oecdChapterTypeAttributes">
+        <xs:annotation>
+            <xs:documentation>
+                <section xmlns="http://docbook.org/ns/docbook">
+                    <para>Chapter type attributes grouped for easy overrides.</para>
+                </section>
+            </xs:documentation>
+        </xs:annotation>
+        
+    </xs:attributeGroup>
+    
+    <xs:group name="oecdChapterBaseTypeContent" id="oecdChapterBaseTypeContent">
+        <xs:annotation>
+            <xs:documentation>
+                <section xmlns="http://docbook.org/ns/docbook">
+                    <revhistory>
+                        <title>Change Log</title>
+                        
+                        
+                        <revision>
+                            <revnumber>3</revnumber>
+                            <date>2012-03-29</date>
+                            <author><email>nicg@corbas.co.uk</email><personname>Nic Gibson</personname></author>
+                            <revremark>Added notes element</revremark>
+                        </revision>
+                        
+                        <revision>
+                            <revnumber>4</revnumber>
+                            <date>2012-04-16</date>
+                            <author><email>nicg@corbas.co.uk</email><personname>Nic Gibson</personname></author>
+                            <revremark>Added glossary element.</revremark>
+                        </revision>   
+                    </revhistory>
+                        
+                    <para>Uses the base section content type to add those components which are not allowed in a preface, etc.
+                        Note that a chapter appendix is basically a section whilst a standalone appendix is almost a chapter.
+                        Therefore, the chapter model extends this but the appendix one doesn't.
+                    </para>
+                </section>
+            </xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+            <xs:element ref="metadata" minOccurs="0"/>
+            <xs:group ref="oecdTitleGroup"/>
+            <xs:element ref="abstract" minOccurs="0"/>
+            <xs:element ref="acknowledgements" minOccurs="0"/>
+            <xs:choice maxOccurs="unbounded">
+                <xs:group ref="oecdSectionTypeContent"/>
+                <xs:element ref="glossary"/>
+            </xs:choice>
+            
+            
+            <!-- note - forcing sequence here is not ideal but there is no sensible way to model it in XSD -->
+            <xs:element ref="bibliography" minOccurs="0" maxOccurs="unbounded"/>
+            <xs:element ref="notes" minOccurs="0" maxOccurs="unbounded"/>
+            
+        </xs:sequence>    
+    </xs:group>
+
+    
+    <xs:group name="oecdChapterTypeContent" id="oecdChapterTypeContent">
+        <xs:annotation>
+            <xs:documentation>
+                <section xmlns="http://docbook.org/ns/docbook">
+                    <para>Uses the base section content type to add those components which are not allowed in a preface, etc.
+                        Note that a chapter appendix is basically a section whilst a standalone appendix is almost a chapter.
+                        </para>
+                </section>
+            </xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+            <xs:group ref="oecdChapterBaseTypeContent"/>
+            <xs:element name="appendix" type="oecdSectionType" minOccurs="0" maxOccurs="unbounded"/>
+         </xs:sequence>
+    </xs:group>
+    
+     <xs:complexType name="oecdChapterType" id="oecdChapterType">
+        <xs:annotation>
+            <xs:documentation>
+                <section xmlns="http://docbook.org/ns/docbook">
+                    <para>The chapter type is not directly derived from a section
+                    as the content model is too different.</para>
+                </section>
+            </xs:documentation>
+        </xs:annotation>
+
+        <xs:group ref="oecdChapterTypeContent"/>
+        <xs:attributeGroup ref="oecdChapterTypeAttributes"/>
+
+    </xs:complexType>
+    
+    <!-- appendix -->
+    <xs:complexType name="oecdAppendixType" id="oecdAppendixType">
+        <xs:annotation>
+            <xs:documentation>
+                <section xmlns="http://docbook.org/ns/docbook">
+                    <para>The chapter type is not directly derived from a section
+                        as the content model is too different.</para>
+                </section>
+            </xs:documentation>
+        </xs:annotation>
+        
+        <xs:group ref="oecdChapterBaseTypeContent"/>
+        <xs:attributeGroup ref="oecdChapterTypeAttributes"/>
+        
+    </xs:complexType>
+    
+
+</xs:schema>
