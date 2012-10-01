@@ -41,6 +41,16 @@
                     <revremark>Created oecdBlockEquationType derived from oecdEquationType in order
                         to add annotations as it only makes sense to annotate blocks.</revremark>
                 </revision>
+                
+                    
+                    
+                    <revision>
+                        <revnumber>5</revnumber>
+                        <date>2012-08-02</date>
+                        <authorinitials>NG</authorinitials>
+                        <revremark>Modified oecdEquationType to allow for multiple renditions.</revremark>
+                    </revision>
+                
             </revhistory>
         </section></xs:documentation>
     </xs:annotation>
@@ -107,13 +117,26 @@
     <xs:complexType name="oecdEquationType" id="oecdEquationType">
         <xs:annotation>
             <xs:documentation>
+                <revhistory>
+                    <title>Change Log</title>
+                    
+                    
+                    <revision>
+                        <revnumber>5</revnumber>
+                        <date>2012-08-02</date>
+                        <authorinitials>NG</authorinitials>
+                        <revremark>Modified content model to allow multiple renditions of an an
+                        equation. The sequential order of the renditions should be take as the order
+                        of preference.</revremark>
+                    </revision>
+                </revhistory>
                 <section xmlns="http://docbook.org/ns/docbook">
                     <para>The equation type is used as the base for both inline and block equations. This model
                         allows any one of inline text, MathML or an external graphic.</para>
                 </section>
             </xs:documentation>
         </xs:annotation>
-        <xs:group ref="oecdEquationTypeContent"/>
+        <xs:group ref="oecdEquationTypeContent" maxOccurs="unbounded"/>
         <xs:attributeGroup ref="oecdEquationTypeAttributes"/>       
     </xs:complexType>
   
