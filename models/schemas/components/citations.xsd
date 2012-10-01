@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+
+    <xs:annotation>
+        <xs:documentation><section xmlns="http://docbook.org/ns/docbook">
+                <title>OECD Schemas</title>
+                <subtitle>Citation Model</subtitle>
+                <revhistory>
+                    <title>Change Log</title>
+                    <revision>
+                        <revnumber>1</revnumber>
+                        <date>2011-12-02</date>
+                        <author><email>nicg@corbas.co.uk</email><personname>Nic Gibson</personname></author>
+                        <revremark>Initial Version</revremark>
+                    </revision>
+                </revhistory>
+                <para>A citation element references an existing bibliographic reference stored as a mods element elsewhere in the document or in an external data store.</para>
+            </section></xs:documentation>
+    </xs:annotation>
+
+    <!-- IMPORTS AND INCLUDES -->
+    <xs:include schemaLocation="attributes.xsd"/>
+    <xs:include schemaLocation="meta.xsd"/>
+    <xs:include schemaLocation="inlines.xsd"/>
+
+    <!-- GLOBAL ELEMENTS -->
+    <xs:element name="citation" type="oecdCitationType"/>
+
+    <!-- COMPLEX TYPES -->
+
+    <xs:attributeGroup name="oecdCitationTypeAttributes" id="oecdCitationTypeAttributes">
+
+        <xs:annotation>
+            <xs:documentation>
+                <section xmlns="http://docbook.org/ns/docbook">
+                    <para>Citation attributes for easy override</para>
+                    <para>Citations either content an internal reference in the form of an id reference or an external reference in the form of a URI. XML Schema does not allow us to constrain an element to either one of two attributes so we use a Schematron annotation to express this requirement.</para>
+                </section>
+            </xs:documentation>
+
+            <xs:appinfo>
+                <assert xmlns="http://purl.oclc.org/dsdl/schematron" test="@biblioRef or @xlink:href">Citations may only refer to one of an internal or external bibliographic entry.</assert>
+            </xs:appinfo>
+
+        </xs:annotation>
+
+        <xs:attributeGroup ref="oecdCommonAttributes"/>
+        <xs:attributeGroup ref="oecdLinkingAttributes"/>
+        <xs:attribute ref="biblioRef"/>
+
+
+    </xs:attributeGroup>
+
+    <xs:group name="oecdCitationTypeContent" id="oecdCitationTypeContent">
+        <xs:annotation>
+            <xs:documentation>
+                <section xmlns="http://docbook.org/ns/docbook">
+                    <para>Citation contentfor easy override</para>
+                    <para>Citations either content an internal reference in the form of an id reference or an external reference in the form of a URI. We allow the citation element to have inline content in order to allow a mechanism for overriding the rendition of the cited content.</para>
+                </section>
+            </xs:documentation>
+        </xs:annotation>
+
+        <xs:sequence>
+            <xs:element ref="metadata" minOccurs="0" maxOccurs="unbounded"/>
+            <xs:element ref="oecdInline" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+
+    </xs:group>
+
+    <xs:complexType name="oecdCitationType" id="oecdCitationType" mixed="true">
+
+        <xs:annotation>
+            <xs:documentation>
+                <section xmlns="http://docbook.org/ns/docbook">
+                    <para>A citation element references an existing bibliographic reference stored as a mods element elsewhere in the document or in an external data store.</para>
+                </section>
+            </xs:documentation>
+        </xs:annotation>
+
+        <xs:group ref="oecdCitationTypeContent"/>
+        <xs:attributeGroup ref="oecdCitationTypeAttributes"/>
+
+    </xs:complexType>
+
+    <!-- ATTRIBUTES -->
+    <xs:attribute name="biblioRef" type="xs:IDREF" id="biblioRef">
+        <xs:annotation>
+            <xs:documentation>
+                <section xmlns="http://docbook.org/ns/docbook">
+                    <para>The biblioRef attribute refers to a bibliographic entry elsewhere in the current document. A schematron assertion is used to ensure that it points at something valid.</para>
+                    <remark>The assertion needs to be made more intelligent - should be type based.</remark>
+                </section>
+            </xs:documentation>
+            <xs:appinfo>
+                <assert xmlns="http://purl.oclc.org/dsdl/schematron" test="local-name(id(@biblioRef) = 'mods'"/>
+            </xs:appinfo>
+        </xs:annotation>
+    </xs:attribute>
+
+
+</xs:schema>
