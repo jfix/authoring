@@ -1,0 +1,403 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xlink="http://www.w3.org/1999/xlink"
+	elementFormDefault="qualified">
+
+	<xs:annotation>
+		<xs:documentation>
+			<section xmlns="http://docbook.org/ns/docbook">
+				<title>OECD Schemas</title>
+				<subtitle>Multilingual Summaries</subtitle>
+				<revhistory>
+					<title>Change Log</title>
+					<revision>
+						<revnumber>1</revnumber>
+						<date>2012-09-17</date>
+						<author><email>nicg@corbas.co.uk</email><personname>Nic
+							Gibson</personname></author>
+						<revremark>Initial Version</revremark>
+					</revision>
+				</revhistory>
+				<section>
+					<title>Primary business rules for the Multilingual summaries</title>
+					<orderedlist numeration="arabic"><listitem><para>A multilingual summary is made
+								of three parts :</para>
+							<orderedlist numeration="lowerroman"><listitem><para>Main text : the
+										text in English must not exceed 2000 words This means that
+										practically, all summaries texts are 1500-2200 words
+										long.</para></listitem>
+								<listitem><para>Abstract on first page: In general this is taken
+										from the marketing blurb in Kappa and presented as 3-4
+										bullet points.</para></listitem>
+								<listitem><para>Disclaimer at the end is 90 words in
+									English</para></listitem></orderedlist></listitem>
+						<listitem><para>We always start from an English version of the text, so
+								English always exists</para></listitem>
+						<listitem><para>English only does not exist:</para>
+							<orderedlist><listitem><para>Therefore : the minimum number of MLS is 2
+										(but this is a special case, and happens usually when the
+										direction gives PAC the translation, we do not usually order
+										translations just in one language).</para></listitem>
+								<listitem><para>The maximum number is in general 25, which means all
+										languages from member countries plus Russian and Chinese
+										(but this number could increase with new member countries,
+										or if we are asked to translate also into languages "key
+										partners"). It can also happen that the direction gives a
+										translation in a different language from the usual ones. We
+										could say that the maximum number could be given by the list
+										of possible languages?</para>
+									<link
+										xlink:href="http://oecdshare.oecd.org/pac/publishing/Lists/Lookup%20language/AllItems.aspx"
+										>http://oecdshare.oecd.org/pac/publishing/Lists/Lookup%20language/AllItems.aspx</link></listitem></orderedlist></listitem>
+						<listitem><para>French version is not always produced, it only exists if the
+								direction can give the translation</para></listitem></orderedlist>
+				</section>
+			</section>
+		</xs:documentation>
+	</xs:annotation>
+
+	<!-- IMPORTS and INCLUDES -->
+	<xs:include schemaLocation="../components/meta.xsd"/>
+	<xs:include schemaLocation="../components/attributes.xsd"/>
+	<xs:include schemaLocation="../components/titles.xsd"/>
+
+
+	<!-- GLOBAL ELEMENTS -->
+
+	<!-- no need to expand - identical to standard titles -->
+	<xs:element name="Sidebar" type="oecdTitleType"/>
+	<xs:element name="MainHead" type="oecdTitleType"/>
+	<xs:element name="SubHead" type="oecdTitleType"/>
+	<xs:element name="PublicationTitle" type="oecdTitleType"/>
+	<xs:element name="PublicationSubTitle" type="oecdTitleType"/>
+
+
+
+	<xs:element name="Heading" type="mlsHeadingType"/>
+	<xs:element name="PublicationYear" type="mlsYearType"/>
+	<xs:element name="Emphasis" type="oecdEmphasisType"/>
+	<xs:element name="Hyperlink" type="mlsHyperlinkType"/>
+	<xs:element name="Para" type="mlsParaType"/>
+
+	<xs:element name="ListItem" type="mlsListItemType"/>
+	<xs:element name="List" type="mlsListType"/>
+
+	<!-- Too simple to do any other way -->
+	<xs:element name="Br"/>
+	<xs:element name="PublicationAcronym" type="xs:string"/>
+	<xs:element name="Isbn" type="xs:string"/>
+
+	<!-- heading type -->
+	<xs:attributeGroup name="mlsHeadingTypeAttributes">
+		<xs:annotation>
+			<xs:documentation>
+				<section xmlns="http://docbook.org/ns/docbook">
+					<para>Attributes for headings as a group for easy overrides and reuse.</para>
+				</section>
+			</xs:documentation>
+		</xs:annotation>
+		<xs:attributeGroup ref="oecdCommonAttributes"/>
+	</xs:attributeGroup>
+
+	<xs:group name="mlsHeadingTypeContent">
+		<xs:annotation>
+			<xs:documentation>
+				<section xmlns="http://docbook.org/ns/docbook">
+					<para>Content for headings as a group for easy overrides and reuse.</para>
+				</section>
+			</xs:documentation>
+		</xs:annotation>
+		<xs:choice>
+			<xs:element ref="MainHead"/>
+			<xs:element ref="SubHead"/>
+			<xs:element ref="Sidebar"/>
+		</xs:choice>
+
+	</xs:group>
+
+	<xs:complexType name="mlsHeadingType">
+		<xs:annotation>
+			<xs:documentation>
+				<section xmlns="http://docbook.org/ns/docbook">
+					<para>Headings for multilingual summaries. This is a wrapper around the
+						redefined standard titles group.</para>
+				</section>
+			</xs:documentation>
+		</xs:annotation>
+		<xs:group ref="mlsHeadingTypeContent" minOccurs="0" maxOccurs="unbounded"/>
+		<xs:attributeGroup ref="mlsHeadingTypeAttributes"/>
+	</xs:complexType>
+
+	<!-- paragraphs -->
+	<xs:attributeGroup name="mlsParaTypeAttributes">
+		<xs:annotation>
+			<xs:documentation>
+				<section xmlns="http://docbook.org/ns/docbook">
+					<para>Attributes for paragraphs as a group for easy overrides and reuse.</para>
+				</section>
+			</xs:documentation>
+		</xs:annotation>
+		<xs:attributeGroup ref="oecdCommonAttributes"/>
+	</xs:attributeGroup>
+
+	<xs:group name="mlsParaTypeContent">
+		<xs:annotation>
+			<xs:documentation>
+				<section xmlns="http://docbook.org/ns/docbook">
+					<para>Content for paragraphs as a group for easy overrides and reuse.</para>
+				</section>
+			</xs:documentation>
+		</xs:annotation>
+		<xs:choice>
+			<xs:element ref="Hyperlink"/>
+			<xs:element ref="Br"/>
+			<xs:element ref="Emphasis"/>
+			<!-- <xs:element ref="Note"/> -->
+		</xs:choice>
+	</xs:group>
+
+	<xs:complexType name="mlsParaType" mixed="true">
+		<xs:annotation>
+			<xs:documentation>
+				<section xmlns="http://docbook.org/ns/docbook">
+					<para>Paragraphs type.</para>
+				</section>
+			</xs:documentation>
+		</xs:annotation>
+		<xs:group ref="mlsParaTypeContent" maxOccurs="unbounded" minOccurs="0"/>
+		<xs:attributeGroup ref="mlsParaTypeAttributes"/>
+	</xs:complexType>
+
+	<!-- lists - similar to a simpler version of the oecd Base itemized list but too simplistic to model as such -->
+	<xs:attributeGroup name="mlsListTypeAttributes">
+		<xs:annotation>
+			<xs:documentation>
+				<section xmlns="http://docbook.org/ns/docbook">
+					<para>Attributes for lists as a group for easy overrides and reuse.</para>
+				</section>
+			</xs:documentation>
+		</xs:annotation>
+		<xs:attributeGroup ref="oecdCommonAttributes"/>
+	</xs:attributeGroup>
+
+	<xs:group name="mlsListTypeContent">
+		<xs:annotation>
+			<xs:documentation>
+				<section xmlns="http://docbook.org/ns/docbook">
+					<para>Content for lists as a group for easy overrides and reuse.</para>
+				</section>
+			</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element ref="ListItem"/>
+		</xs:sequence>
+	</xs:group>
+
+	<xs:complexType name="mlsListType">
+		<xs:annotation>
+			<xs:documentation>
+				<section xmlns="http://docbook.org/ns/docbook">
+					<para>List type. A very simple non-recursive bulleted list.</para>
+				</section>
+			</xs:documentation>
+		</xs:annotation>
+		<xs:group ref="mlsListTypeContent" maxOccurs="unbounded" minOccurs="1"/>
+		<xs:attributeGroup ref="mlsListTypeAttributes"/>
+	</xs:complexType>
+
+
+	<xs:attributeGroup name="mlsListItemTypeAttributes">
+		<xs:annotation>
+			<xs:documentation>
+				<section xmlns="http://docbook.org/ns/docbook">
+					<para>Attributes for list items as a group for easy overrides and reuse.</para>
+				</section>
+			</xs:documentation>
+		</xs:annotation>
+		<xs:attributeGroup ref="oecdCommonAttributes"/>
+	</xs:attributeGroup>
+
+	<xs:group name="mlsListItemTypeContent">
+		<xs:annotation>
+			<xs:documentation>
+				<section xmlns="http://docbook.org/ns/docbook">
+					<para>Content for list items as a group for easy overrides and reuse.</para>
+				</section>
+			</xs:documentation>
+		</xs:annotation>
+		<xs:choice>
+			<xs:element ref="Hyperlink"/>
+			<xs:element ref="Br"/>
+			<xs:element ref="Emphasis"/>
+		</xs:choice>
+	</xs:group>
+
+	<xs:complexType name="mlsListItemType" mixed="true">
+		<xs:annotation>
+			<xs:documentation>
+				<section xmlns="http://docbook.org/ns/docbook">
+					<para>List item type. Very simple bulleted lists.</para>
+				</section>
+			</xs:documentation>
+		</xs:annotation>
+		<xs:group ref="mlsListItemTypeContent" maxOccurs="unbounded" minOccurs="0"/>
+		<xs:attributeGroup ref="mlsListTypeAttributes"/>
+	</xs:complexType>
+
+	<!-- abstracts -->
+	<xs:attributeGroup name="mlsShortAbstractTypeAttributes">
+		<xs:annotation>
+			<xs:documentation>
+				<section xmlns="http://docbook.org/ns/docbook">
+					<para>Attributes for short abstracts as a group for easy overrides and
+						reuse.</para>
+				</section>
+			</xs:documentation>
+		</xs:annotation>
+		<xs:attributeGroup ref="oecdCommonAttributes"/>
+	</xs:attributeGroup>
+
+	<xs:group name="mlsShortAbstractTypeContent">
+		<xs:annotation>
+			<xs:documentation>
+				<section xmlns="http://docbook.org/ns/docbook">
+					<para>Content for short abstracts as a group for easy overrides and
+						reuse.</para>
+				</section>
+			</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element ref="Para"/>
+		</xs:sequence>
+	</xs:group>
+
+	<xs:complexType name="mlsShortAbstractType">
+		<xs:annotation>
+			<xs:documentation>
+				<section xmlns="http://docbook.org/ns/docbook">
+					<para>Short abstract type.</para>
+				</section>
+			</xs:documentation>
+		</xs:annotation>
+		<xs:group ref="mlsShortAbstractTypeContent" maxOccurs="unbounded" minOccurs="1"/>
+		<xs:attributeGroup ref="mlsShortAbstractTypeAttributes"/>
+	</xs:complexType>
+
+	<xs:attributeGroup name="mlsLongAbstractTypeAttributes">
+		<xs:annotation>
+			<xs:documentation>
+				<section xmlns="http://docbook.org/ns/docbook">
+					<para>Attributes for long abstracts as a group for easy overrides and
+						reuse.</para>
+				</section>
+			</xs:documentation>
+		</xs:annotation>
+		<xs:attributeGroup ref="oecdCommonAttributes"/>
+	</xs:attributeGroup>
+
+	<xs:group name="mlsLongAbstractTypeContent">
+		<xs:annotation>
+			<xs:documentation>
+				<section xmlns="http://docbook.org/ns/docbook">
+					<para>Content for long abstracts as a group for easy overrides and reuse.</para>
+				</section>
+			</xs:documentation>
+		</xs:annotation>
+		<xs:choice>
+			<xs:element ref="Para"/>
+			<xs:element ref="List"/>
+		</xs:choice>
+	</xs:group>
+
+	<xs:complexType name="mlsLongAbstractType">
+		<xs:annotation>
+			<xs:documentation>
+				<section xmlns="http://docbook.org/ns/docbook">
+					<para>Long abstract type. A short abstract with an added option for
+						Lists.</para>
+				</section>
+			</xs:documentation>
+		</xs:annotation>
+		<xs:group ref="mlsLongAbstractTypeContent" maxOccurs="unbounded" minOccurs="1"/>
+		<xs:attributeGroup ref="mlsLongAbstractTypeAttributes"/>
+	</xs:complexType>
+
+	<!-- languages -->
+	<xs:attributeGroup name="mlsSpecificLanguageTypeAttributes">
+		<xs:annotation>
+			<xs:documentation>
+				<section xmlns="http://docbook.org/ns/docbook">
+					<para>Attribute for languages as a group for easy overrides and reuse.</para>
+				</section>
+			</xs:documentation>
+		</xs:annotation>
+		<xs:attributeGroup ref="oecdXmlAttributes"/>
+	</xs:attributeGroup>
+
+	<xs:complexType name="mlsSpecificLanguageType">
+		<xs:annotation>
+			<xs:documentation>
+				<para xmlns="http://docbook.org/ns/docbook">This type represents a single language
+					referenced in a summary</para>
+			</xs:documentation>
+		</xs:annotation>
+		<xs:attributeGroup ref="mlsSpecificLanguageTypeAttributes"/>
+	</xs:complexType>
+
+	<xs:attributeGroup name="mlsLanguageTypeAttributes">
+		<xs:annotation>
+			<xs:documentation>
+				<para xmlns="http://docbook.org/ns/docbook"/>
+			</xs:documentation>
+		</xs:annotation>
+	</xs:attributeGroup>
+
+	<!-- hyperlinks - too different to standard xlink based link to copy -->
+	<xs:attributeGroup name="mlsHyperlinkTypeAttributes">
+		<xs:annotation>
+			<xs:documentation>
+				<para xmlns="http://docbook.org/ns/docbook">Attributes are defined locally for this
+					element due to the very very restricted usage range.</para>
+			</xs:documentation>
+		</xs:annotation>
+
+		<xs:attribute name="target" type="xs:string"/>
+		<xs:attribute name="url">
+			<xs:simpleType>
+				<xs:restriction base="xs:anyURI">
+					<xs:minLength value="1"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+
+	</xs:attributeGroup>
+
+	<xs:complexType name="mlsHyperlinkType">
+		<xs:annotation>
+			<xs:documentation>
+				<para xmlns="http://docbook.org/ns/docbook">MLS Hyperlink type. Text only with
+					attributes.</para>
+			</xs:documentation>
+		</xs:annotation>
+		<xs:attributeGroup ref="mlsHyperlinkTypeAttributes"/>
+	</xs:complexType>
+
+	<!-- SIMPLE TYPES -->
+
+	<!-- years -->
+	<xs:simpleType name="mlsYearType">
+		<xs:annotation>
+			<xs:documentation>
+				<section xmlns="http://docbook.org/ns/docbook">
+					<para/>
+				</section>
+			</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:gYear">
+			<xs:minInclusive value="1961"/>
+		</xs:restriction>
+	</xs:simpleType>
+
+
+
+
+</xs:schema>
