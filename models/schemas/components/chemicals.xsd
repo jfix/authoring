@@ -28,6 +28,13 @@
                     <revremark>Created oecdBlockChemicalStructureType derived from oecdChemicalStructureType in order
                     to add annotations as it only makes sense to annotate blocks.</revremark>
                 </revision>
+                
+                <revision>
+                    <revnumber>4</revnumber>
+                    <date>2012-08-02</date>
+                    <authorinitials>NG</authorinitials>
+                    <revremark>Updated oecdChemicalStructureType to add multiple renditions.</revremark>
+                </revision>
             </revhistory>
         </section></xs:documentation>
         
@@ -101,19 +108,30 @@
     <xs:complexType name="oecdChemicalStructureType" id="oecdChemicalStructureType">
         <xs:annotation>
             <xs:documentation>
+                <revhistory>
+                    <title>Change Log</title>
+                    <revision>
+                        <revnumber>4</revnumber>
+                        <date>2012-08-02</date>
+                        <authorinitials>NG</authorinitials>
+                        <revremark>Changed reference to oecdChemicalStructureTypeContent to
+                         make maxOccurs unbounded, allowing for multiple renditions.</revremark>
+                    </revision>
+                </revhistory>
                 <section xmlns="http://docbook.org/ns/docbook">
                     <para>The  chemical structure type is used as the base for both inline and block structures. This model
                         allows any one of inline text, CML or an external graphic.</para>
                 </section>
             </xs:documentation>
         </xs:annotation>
-        <xs:group ref="oecdChemicalStructureTypeContent"/>
+        <xs:group ref="oecdChemicalStructureTypeContent" maxOccurs="unbounded"/>
         <xs:attributeGroup ref="oecdChemicalStructureTypeAttributes"/>       
     </xs:complexType>
     
     <xs:complexType name="oecdBlockChemicalStructureType" id="oecdBlockChemicalStructureType">
         <xs:annotation>
             <xs:documentation>
+
                 <section xmlns="http://docbook.org/ns/docbook">
                     <revision>
                         <revnumber>3</revnumber>
