@@ -42,6 +42,13 @@
                   
                 </revision>
                 
+                <revision>
+                    <revnumber>4</revnumber>
+                    <date>2012-08-02</date>
+                    <authorinitials>NG</authorinitials>
+                    <revremark>Added the citation element. Note that rev 3 allowed for inline bibliographic entries
+                    not citations.</revremark>
+                </revision>
                 
             </revhistory>
             
@@ -54,7 +61,9 @@
     <xs:include schemaLocation="equations.xsd"/>
     <xs:include schemaLocation="chemicals.xsd"/>
     <xs:include schemaLocation="index.xsd"/>
+    <xs:include schemaLocation="citations.xsd"/>
     <xs:import schemaLocation="../external/mods.xsd" namespace="http://www.loc.gov/mods/v3"/>
+    
 
     <!-- GLOBAL GROUPS -->
     <xs:group name="oecdInlineGroup" id="oecdInlineGroup">
@@ -75,6 +84,7 @@
             <xs:element ref="footnote" minOccurs="0" maxOccurs="unbounded"/>
             <xs:element ref="indexTerm" minOccurs="0" maxOccurs="unbounded"/>
             <xs:element ref="mods:mods" maxOccurs="unbounded" minOccurs="0"/>
+            <xs:element ref="citation" maxOccurs="unbounded" minOccurs="0"/>
         </xs:choice>
     </xs:group>
     
