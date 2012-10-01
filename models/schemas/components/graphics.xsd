@@ -20,7 +20,14 @@
                         <date>2012-04-13</date>
                         <authorinitials>NG</authorinitials>
                         <revremark>Added annotations attribute</revremark>
-                    </revision> </revhistory>
+                    </revision>
+                    <revision>
+                        <revnumber>3</revnumber>
+                        <date>2012-08-02</date>
+                        <authorinitials>NG</authorinitials>
+                        <revremark>Modified oecdBlockGraphicType and oecdInlineGraphicType to allow for multiple renditions.</revremark>
+                    </revision>
+                </revhistory>
             </section></xs:documentation>
     </xs:annotation>
 
@@ -183,6 +190,15 @@
     <xs:group name="oecdBlockGraphicTypeContent" id="oecdBlockGraphicTypeContent">
         <xs:annotation>
             <xs:documentation>
+              <revhistory> 
+                  <title>Change Log</title><revision>
+                    <revnumber>3</revnumber>
+                    <date>2012-08-02</date>
+                    <authorinitials>NG</authorinitials>
+                      <revremark>Modified reference to oecdGraphicsGroup to make it unbounded
+                          allowing for multiple renditions. The sequential order of renditions
+                          should be taken as a preference order.</revremark>
+                </revision></revhistory>
                 <section xmlns="http://docbook.org/ns/docbook">
                     <para>Content for block graphics. Grouped to allow easy override.</para>
                 </section>
@@ -193,7 +209,7 @@
             <xs:group ref="oecdTitleGroup" minOccurs="0"/>
             <xs:element ref="caption" minOccurs="0"/>
             <xs:element ref="attribution" minOccurs="0"/>
-            <xs:group ref="oecdGraphicsGroup"/>
+            <xs:group ref="oecdGraphicsGroup" maxOccurs="unbounded"/>
             <xs:element ref="notes" minOccurs="0"/>
         </xs:sequence>
     </xs:group>
@@ -227,6 +243,15 @@
     <xs:group name="oecdInlineGraphicTypeContent" id="oecdInlineGraphicTypeContent">
         <xs:annotation>
             <xs:documentation>
+                <revhistory> 
+                    <title>Change Log</title><revision>
+                        <revnumber>3</revnumber>
+                        <date>2012-08-02</date>
+                        <authorinitials>NG</authorinitials>
+                        <revremark>Modified reference to oecdGraphicsGroup to make it unbounded
+                            allowing for multiple renditions. The sequential order of renditions
+                            should be taken as a preference order.</revremark>
+                    </revision></revhistory>
                 <section xmlns="http://docbook.org/ns/docbook">
                     <para>Content for inline graphics. Grouped to allow easy override.</para>
                 </section>
@@ -235,7 +260,7 @@
         <xs:sequence>
             <xs:element ref="metadata" minOccurs="0"/>
             <xs:element ref="attribution" minOccurs="0"/>
-            <xs:group ref="oecdGraphicsGroup"/>
+            <xs:group ref="oecdGraphicsGroup" maxOccurs="unbounded"/>
         </xs:sequence>
     </xs:group>
 
