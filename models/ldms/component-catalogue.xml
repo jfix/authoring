@@ -1,0 +1,1666 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="../tools/modelling.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+
+<model xmlns="http://www.corbas.co.uk/ns/model" xmlns:db="http://docbook.org/ns/docbook" xmlns:xd="http://www.oecd.org/ns/schema/xdocs"
+    xmlns:s="http://www.ascc.net/xml/schematron" xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"
+    xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:svg="http://www.w3.org/2000/svg" xmlns:rng="http://relaxng.org/ns/structure/1.0"
+    xmlns:mml="http://www.w3.org/1998/Math/MathML" xmlns:html="http://www.w3.org/1999/xhtml" xmlns:ctrl="http://nwalsh.com/xmlns/schema-control/">
+    <db:title>OECD.Author Document Model Version 0.1</db:title>
+
+
+    <!-- @role values 
+
+"history" applied to db:section for defining <revhistory/>   
+"narrative" applied to db:section for authored texts
+"deprecated" applied to <component/> when no onger used.
+"production" applied to <component/> when accepted and in production
+    
+    -->
+    <!--     
+        LOG 
+    -->
+    <db:section>
+        <db:title>Log</db:title>
+        <db:revhistory>
+            <db:title>Change Log</db:title>
+            <db:revision>
+                <db:revnumber>0.66</db:revnumber>
+                <db:date>2012-04-02</db:date>
+                <db:author>
+                    <db:orgname>OECD</db:orgname>
+                    <db:email>joseph.crowther@oecd.org</db:email>
+                </db:author>
+                <db:revremark>Removed Sidebar from catalogue</db:revremark>
+            </db:revision>
+            <db:revision>
+                <db:revnumber>0.67</db:revnumber>
+                <db:date>2012-04-02</db:date>
+                <db:author>
+                    <db:orgname>OECD</db:orgname>
+                    <db:email>joseph.crowther@oecd.org</db:email>
+                </db:author>
+                <db:revremark>
+                    <db:remark>added revision header</db:remark>
+                    <db:remark>added production values to component roles</db:remark>
+                    <db:remark>general document housekeeping</db:remark>
+                </db:revremark>
+            </db:revision>
+            <db:revision>
+                <db:revnumber>3</db:revnumber>
+                <db:date>2012-04-16</db:date>
+                <db:authorinitials>NG</db:authorinitials>
+                <db:revremark>Content type updates to match to schema and report, added model for publication, changed abstract defn to match</db:revremark>
+            </db:revision>
+        </db:revhistory>
+    </db:section>
+    <!-- 
+        FRONTMATTER of Document Modelling Report
+        
+        not rendered in xdocs yet
+    -->
+
+    <!--<db:section role="narrative">
+        <db:title>Approach</db:title>
+        <db:orderedlist>
+            <db:listitem>
+                <db:para role="Numbered Normal">We have taken the approach of modelling the semantic and structural components of a document
+                    separately in order to encourage modularity, simplicity and reuse where many semantic entities will follow the same structural
+                    model. We have also separated the modelling of the content of documents themselves from their components. This allows us to create
+                    a logical document model that encompasses all of the semantic components of OECD documents without need to reference specific
+                    document types. Additionally, the semantic content can be described and implemented in terms of the structural
+                    components.</db:para>
+            </db:listitem>
+            <db:listitem>
+                <db:para role="Numbered Normal">The wide range of content analysed during the content analysis stage of the project and the results of
+                    the document assembly and modelling workshops has provided a large number of semantic components and a solid overview of the
+                    structural components of documents.</db:para>
+            </db:listitem>
+            <db:listitem>
+                <db:para role="Numbered Normal">The separation of these parts of the model will allow the creation of new high-level models (document
+                    types) to be a matter of choosing the correct components and defining their relationships and cardinality within that model. The
+                    exact relationships and the cardinality of those relationships are part of the schema design process – the document model simply
+                    identifies that there is a relationship.</db:para>
+            </db:listitem>
+            <db:listitem>
+                <db:para role="Numbered Normal">At this stage in the project we do not intend to create a document model for any specific OECD
+                    document type. Document types discovered as part of the document modelling and analysis processes are, however, listed in Appendix
+                    A of this document.</db:para>
+            </db:listitem>
+            <db:listitem>
+                <db:para role="Numbered Normal">The five groups of components (Semantic, Structural, Block, Inline and Metadata) make up the component
+                    catalogue for the model. Document types compose this catalogue into concrete models for use in document creation. Editorial and
+                    publishing enrichment components are beyond the scope of this modelling exercise. The model could be extended to support these
+                    types of requirements. </db:para>
+            </db:listitem>
+        </db:orderedlist>
+    </db:section>
+-->
+    <!--    <db:section>
+        <db:title>Scope</db:title>
+        <db:orderedlist numeration="arabic" continuation="continues" spacing="normal">
+            <db:listitem>
+                <db:para role="Numbered Normal">The scope of the OECD.Author document-modelling project is limited to the analysis and modelling of
+                    official documents and CRC documents. </db:para>
+            </db:listitem>
+        </db:orderedlist>
+    </db:section>
+-->
+    <!--    <db:section>
+        <db:title>Development Process</db:title>
+        <db:orderedlist numeration="arabic" continuation="continues" spacing="normal">
+            <db:listitem>
+                <db:para role="Numbered Normal">This model has been developed primarily through the use of workshops to gain consensus on the
+                    structure and content of OECD documents. The document analysis has been based on a corpus of official documents (with multiple
+                    language translations of the same document removed) covering a two-year period. This produced approximately 28,000 documents for
+                    analysis. </db:para>
+            </db:listitem>
+            <db:listitem>
+                <db:para role="Numbered Normal">The document analysis helped identify some of the document types listed in Appendix and most of the
+                    components list used as an input to the initial workshop.</db:para>
+            </db:listitem>
+            <db:listitem>
+                <db:para role="Numbered Normal">This initial workshop involving OECD staff involved in the construction and editing of official
+                    documents led to the creation of an initial list of document components. Additionally, the attendees of the initial workshop
+                    refined the document type list.</db:para>
+            </db:listitem>
+            <db:listitem>
+                <db:para role="Numbered Normal">The second workshop was intended to reach consensus on two groups of topics. Firstly, we needed to
+                    agree the base technologies to be used for the model and any existing models to be used as components of the OECD.Author model.
+                    Secondly, some agreement needed to be made on the technical governance of this model.</db:para>
+            </db:listitem>
+            <db:listitem>
+                <db:para role="Numbered Normal">The technical approach to modelling is discussed below (Technical Approach). Governance issues will be
+                    discussed in a separate document. </db:para>
+            </db:listitem>
+        </db:orderedlist>
+    </db:section>-->
+    <!--    <db:section>
+        <db:title>Semantic models</db:title>
+        <section>
+            <db:title>High-level semantic models</db:title>
+            <orderedlist numeration="arabic" continuation="continues" spacing="normal">
+                <listitem>
+                    <para role="Numbered Normal">The high level semantic models identified represent semantic components of a document that may be found in one or more document types. In all cases they can be viewed as specialisations of the generic section concept discussed below. These models include both OECD specific concepts such as ‘mandate’ and traditional publishing concepts such as ‘chapter’. However, all of these can be viewed as sections. It is envisaged that specialisations would occur at the schema implementation level through type inheritance. Within the model itself, specialisation is indicated through descriptive text.</para>
+                </listitem>
+            </orderedlist>
+    
+    <section>
+        <db:title>Publishing models</db:title>
+        <itemizedlist mark="disc" spacing="normal">
+            <listitem>
+                <para role="List Paragraph">Volume</para>
+            </listitem>
+            <listitem>
+                <para role="List Paragraph">Part</para>
+            </listitem>
+            <listitem>
+                <para role="List Paragraph">Chapter</para>
+            </listitem>
+            <listitem>
+                <para role="List Paragraph">Section</para>
+            </listitem>
+        </itemizedlist>
+        <orderedlist numeration="arabic" continuation="continues" spacing="normal">
+            <listitem>
+                <para role="Numbered Normal">The models above were defined during the Modelling Workshops. It was felt that they may be superfluous but replacing them with sections and associated metadata would be simpler and more appropriate than adding them at a later point.</para>
+            </listitem>
+        </orderedlist>
+    </section>-->
+    <!--
+        initial modelling notes that Nic wrote
+    -->
+
+    <db:section role="notes">
+        <db:title>Notes</db:title>
+
+        <db:section>
+            <db:title>Bibliographies</db:title>
+            <db:para>Bibliographies may or may not exist! What is the difference betwee a standalone set of references and a bibliography? If it is
+                not cited in the text, how do we represent it?</db:para>
+            <db:para>Clearly, further reading, reference and citations should all be validated in the same way. All of them contain bibliographic data
+                but the bibliographic data might be better stored out of line , possibly with the citation. Also, a citation can occur anywhere in the
+                text.</db:para>
+            <db:para>Bibliographic mark-up itself must use MODS.</db:para>
+            <db:para>Consider the DocBook model.</db:para>
+            <db:para>Val thinks this is a structural component, others though semantic.</db:para>
+            <db:para>Rendering : Pac would like to move to ISO 690 presentation.</db:para>
+            <db:para>Kim governance question: bibliographical reference management - exchange formats and repositories used for oecd and external
+                references, how authors should share references.</db:para>
+        </db:section>
+
+        <db:section>
+            <db:title>Tables of Contents, etc</db:title>
+            <db:para>Tables of contents, list of figures, boxes etc do not exist as components per se as they are always better generated from the
+                content. </db:para>
+            <db:para>Big, big question from Val: do authors need to see these things are they are writing ? do they need to reference them on the
+                screen when discussing with someone else</db:para>
+        </db:section>
+
+        <db:section>
+            <db:title>Indexes</db:title>
+            <db:para>Indexes must be marked up in the text. This allows them to be extracted in in such a way that there is no relationship between
+                the index and its mark-up. Indexes are not a component as they are calculated just likes TOCs - but the inline mark up of index
+                candidates need to be accommodated in the model</db:para>
+        </db:section>
+
+    </db:section>
+
+
+    <!--  COMPONENT CATALOGUE -->
+    <component xml:id="volume" role="production">
+        <name>Volume</name>
+        <category>publishing</category>
+        <children>
+            <component-ref ref="grp-titles"/>
+            <component-ref ref="metadata-group"/>
+            <component-ref ref="part"/>
+            <component-ref ref="chapter"/>
+            <component-ref ref="bibliography"/>
+            <component-ref ref="index"/>
+        </children>
+        <db:section role="definition">
+            <db:title>Definition</db:title>
+            <db:para>Volumes exist purely for the purposes of publishing content in printed form, most notably the Model Tax Convention.</db:para>
+        </db:section>
+        <db:section role="history">
+            <db:title>Version</db:title>
+            <db:revhistory>
+                <db:revision>
+                    <db:revnumber>1</db:revnumber>
+                    <db:date>2012-03-27</db:date>
+                    <db:authorinitials>JWC</db:authorinitials>
+                </db:revision>
+                <db:revision>
+                    <db:revnumber>2</db:revnumber>
+                    <db:date>2012-04-02</db:date>
+                    <db:authorinitials>NG</db:authorinitials>
+                    <db:revremark>Updated to match schema model as it's more precise.</db:revremark>
+                </db:revision>
+            </db:revhistory>
+        </db:section>
+    </component>
+
+    <component xml:id="simple-agenda" role="modelled">
+        <name>Agenda</name>
+        <category>semantic</category>
+        <children>
+            <component-ref ref="grp-titles"/>
+            <component-ref ref="simple-para"/>
+            <component-ref ref="agenda-item"/>
+        </children>
+    </component>
+
+    <component xml:id="advanced-agenda" role="modelled">
+        <name>Agenda</name>
+        <category>semantic</category>
+        <children>
+            <component-ref ref="grp-titles"/>
+            <component-ref ref="simple-para"/>
+            <component-ref ref="agenda-session"/>
+        </children>
+    </component>
+
+    <component xml:id="article" role="modelled">
+        <name>Article</name>
+        <category>document</category>
+        <children>
+            <component-ref ref="section"/>
+            <component-ref ref="abstract"/>
+            <component-ref ref="metadata-group"/>
+            <component-ref ref="bibliography"/>
+            <component-ref ref="annex"/>
+            <component-ref ref="acknowledgement"/>
+            <component-ref ref="notes"/>
+            <component-ref ref="executive-summary"/>
+            <component-ref ref="preface"/>
+        </children>
+    </component>
+
+    <component xml:id="document" role="production">
+        <name>Document</name>
+        <category>document</category>
+        <children>
+            <component-ref ref="section"/>
+            <component-ref ref="preface"/>
+            <component-ref ref="glossary"/>
+            <component-ref ref="abstract"/>
+            <component-ref ref="introduction"/>
+            <component-ref ref="chapter"/>
+            <component-ref ref="executive-summary"/>
+            <component-ref ref="abbreviation-list"/>
+            <component-ref ref="part"/>
+            <component-ref ref="recommendation"/>
+            <component-ref ref="metadata-group"/>
+            <component-ref ref="bibliography"/>
+            <component-ref ref="annex"/>
+        </children>
+
+  
+        <db:section role="debate">
+            <db:title>Notes</db:title>
+            <db:para>There are likely to be many document elements, one for each model. They may be distinguished by name or namespace or both. The
+                elements listed here are simply children of the document and do not represent any concrete model.</db:para>
+        </db:section>
+    </component>
+    
+    <component xml:id="publication" role="production">
+        <name>Publication</name>
+        <category>document</category>
+        <children>
+            <component-ref ref="section"/>
+            <component-ref ref="preface"/>
+            <component-ref ref="glossary"/>
+            <component-ref ref="introduction"/>
+            <component-ref ref="chapter"/>
+            <component-ref ref="executive-summary"/>
+            <component-ref ref="abbreviation-list"/>
+            <component-ref ref="part"/>
+            <component-ref ref="volume"/>
+            <component-ref ref="recommendation"/>
+            <component-ref ref="metadata-group"/>
+            <component-ref ref="bibliography"/>
+            <component-ref ref="annex"/>
+        </children>
+    </component>
+
+    <component xml:id="chapter" role="production">
+        <name>Chapter</name>
+        <category>semantic</category>
+        <category>publishing</category>
+        <children>
+            <component-ref ref="abstract"/>
+            <component-ref ref="grp-titles"/>
+            <component-ref ref="grp-nested-blocks"/>
+            <component-ref ref="bibliography"/>
+            <component-ref ref="notes"/>
+        </children>
+        <type-of>
+            <component-ref ref="section"/>
+        </type-of>
+
+
+        <db:section role="debate">
+            <db:title>Notes</db:title>
+            <db:para role="notes">A chapter is, in many ways, an extension of a section. However, chapters often have required features that cannot be
+                represented as simple variants on a section. For example, they have abstracts.</db:para>
+        </db:section>
+
+        <db:section role="definition">
+            <db:title>Definition</db:title>
+            <db:para>A chapter is the basic unit of published documents. Many official documents are chapters in that they are combined to create
+                publications, each document becoming a chapter of the publication. A chapter may be the document itself, a standalone part of an
+                official document or simply a structural element within a document. </db:para>
+        </db:section>
+    </component>
+
+    <component xml:id="introduction" role="production">
+        <name>Introduction</name>
+        <category>semantic</category>
+        <category>publishing</category>
+        <children>
+            <component-ref ref="abstract"/>
+            <component-ref ref="grp-titles"/>
+            <component-ref ref="grp-nested-blocks"/>
+            <component-ref ref="bibliography"/>
+            <component-ref ref="notes"/>
+        </children>
+        <type-of>
+            <component-ref ref="section"/>
+        </type-of>
+
+        <db:section role="definition">
+            <db:title>Definition</db:title>
+            <db:para>28. An introduction shares an identical structural role to a chapter. However, there are additional semantics. Conventionally, an
+                introduction is considered part of the body of a document in contrast to a preface or foreword, which is not.</db:para>
+        </db:section>
+    </component>
+
+    <component xml:id="part" role="production">
+        <name>Part</name>
+        <category>semantic</category>
+        <category>publishing</category>
+        <type-of>
+            <component-ref ref="section"/>
+        </type-of>
+
+        <db:section>
+            <db:title>Definition</db:title>
+            <db:para>A part is a high level section that sits, hierarchically, between documents (the book equivalent level) and chapter level
+                material such as chapters themselves, appendices and prefaces. </db:para>
+        </db:section>
+    </component>
+
+    <component xml:id="mandate" role="modelled">
+        <name>Mandate</name>
+        <category>semantic</category>
+        <category>document</category>
+        <type-of>
+            <component-ref ref="section"/>
+        </type-of>
+    </component>
+
+    <component xml:id="recommendation" role="modelled">
+        <name>Recommendation</name>
+        <category>semantic</category>
+        <type-of>
+            <component-ref ref="extract"/>
+        </type-of>
+    </component>
+
+    <component xml:id="annex" role="production">
+        <name>Annex (or appendix)</name>
+        <category>semantic</category>
+        <type-of>
+            <component-ref ref="section"/>
+        </type-of>
+
+        <db:section role="definition">
+            <db:title>Definition</db:title>
+            <db:para>Appendices are much the same as a chapter except that they have added semantic impact. An appendix adds to or comments on the
+                information contained in the main body of the document. Annexes do not need to be translated. </db:para>
+            <db:note>
+                <db:warning>
+                    <db:para>An annex is an appendix with a different title.</db:para>
+                </db:warning>
+            </db:note>
+        </db:section>
+    </component>
+
+
+    <component xml:id="extract" role="production">
+        <name>Extract</name>
+        <category>structural</category>
+        <category>block</category>
+        <children>
+            <component-ref ref="metadata-group"/>
+            <component-ref ref="linked-content"/>
+            <component-ref ref="foreign-content"/>
+            <component-ref ref="blockquote"/>
+        </children>
+
+        <db:section role="definition">
+            <db:title>Definitions</db:title>
+            <db:para role="definition">Extracts represent one of two related inter document relationships. The first of these is embedding all or part
+                of a document into the current document. This can range from a block quote (one or more paragraphs of text from an externalsource)
+                from legislation in an official document to the inclusion of an entire official document as part of another official document. The
+                second is linking where the content is not included into the reference document until the time at which it is rendered.</db:para>
+        </db:section>
+    </component>
+
+    <component xml:id="abstract" role="production">
+        <name>Abstract</name>
+        <category>semantic</category>
+        <type-of>
+            <component-ref ref="paragraph-group"/>
+        </type-of>
+
+        <db:section role="definition">
+            <db:title>Definition</db:title>
+            <db:para>An abstract consists of paragraphs only. Semantically, it is a specialised type of section.</db:para>
+            <db:para>An abstract is found at the start of chapter like content (primarily articles and chapters themselves). The abstract of documents
+                created using the current CRC process may contain name, address and signature information. We consider that this is a rendering
+                feature not an authoring feature and have not included it into this model.</db:para>
+            <db:para>The modelling workshop could not reach a clear consensus on the detailed structure of an abstract although it was agreed that it
+                should only consist of paragraph text. The number of paragraphs of text that could occur in an abstract could not be easily agreed. It
+                was agreed that authors should be consulted.</db:para>
+            <db:para>During the first author workshop, it was made clear that an abstract should only consist of one paragraph of text. However, it
+                was agreed that it would be possible for more than one to occur.</db:para>
+        </db:section>
+    </component>
+
+    <component xml:id="executive-summary" role="production">
+        <name>Executive Summary</name>
+        <category>semantic</category>
+        <type-of>
+            <component-ref ref="section"/>
+        </type-of>
+
+        <db:section role="notes">
+            <db:title>Notes</db:title>
+            <db:para>An executive summary is currently only defined by word count (in the Style Guide). Most executive summaries contain a paragraph
+                for each major section of a document. The initial sentence may need to be marked up as it is often a summary of the summary.</db:para>
+            <db:para>Any simple block may appear in an executive summary although this is rare (ECO may need graphs and tables)</db:para>
+            <db:para>There is value in being able to identify and extract the executive summary.</db:para>
+        </db:section>
+
+        <db:section role="definition">
+            <db:title>Definition</db:title>
+            <db:para>An executive summary always occurs as the beginning of a document if at all. It was agreed in the modelling meeting that the
+                semantic definition of an executive summary is considerably simpler than the structural definition.</db:para>
+            <db:para>OECD guidelines state that an executive summary should consist of headings and paragraph text only. The modelling workshop felt
+                that it might be wise to extend this to any block component as it was felt that ECO might wish to include charts and tables in the
+                executive summary.</db:para>
+            <db:para>The current OECD style guide suggests a maximum of 3000 words for an executive summary. The first author interview (with authors
+                from ENV) suggested that an executive summary could be of considerable length (up to eight pages being relatively common). However,
+                the authors indicated that an executive summary would only ever contain headings and paragraph text.</db:para>
+            <db:para>For these reasons, we have currently modelled the executive summary as a type of paragraph group.</db:para>
+        </db:section>
+
+    </component>
+
+
+    <component xml:id="preface" role="production">
+        <name>Preface</name>
+        <category>semantic</category>
+        <type-of>
+            <component-ref ref="section"/>
+        </type-of>
+
+        <db:section role="notes">
+            <db:title>Notes</db:title>
+            <db:para>Volumes/parts are in and of themselves documents - just different names - so vols and parts may have prefaces too. Suggests that
+                the model of a document should be more flexible.</db:para>
+        </db:section>
+
+        <db:section role="definition">
+            <db:title>Definition</db:title>
+            <db:para>A preface differs from an introduction in that it is not part of the primary narrative of the document. A document may have more
+                than one preface and each of those may have a different author (who is unlikely to be the primary author of the document) as
+                identified by the modelling workshop.</db:para>
+            <db:para>Structurally a preface is identical to a chapter.</db:para>
+        </db:section>
+    </component>
+    
+    <component xml:id='conclusion' role="production">
+        <name>Conclusion</name>
+        <category>semantic</category>
+        <type-of>
+            <component-ref ref="section"/>
+        </type-of>
+        
+        
+        
+    </component>
+
+    <component xml:id="acknowledgement" role="production">
+        <name>Acknowledgement</name>
+        <category>semantic</category>
+        <type-of>
+            <component-ref ref="section"/>
+        </type-of>
+
+        <db:section role="definition">
+            <db:title>Definition</db:title>
+            <db:para>If acknowledgements of contributions and assistance in preparing a document or publication are extensive, a separate
+                acknowledgements and credits section can be created with its own heading. This section can include refernces colleagues, including
+                those involved in the production of the document or publication, experts and others who contributed ideas and assistance.</db:para>
+        </db:section>
+    </component>
+
+
+
+
+    <component xml:id="glossary" role="production">
+        <name>Glossary</name>
+        <category>semantic</category>
+        <category>structural</category>
+        <type-of>
+            <component-ref ref="section"/>
+        </type-of>
+        <db:section role="decision">
+            <db:title>Notes</db:title>
+            <db:para>Glossaries are term/definition lists.</db:para>
+            <db:para>Governance or resource question: what glossaries can be made available to authors and what tuning/granularity is needed to make
+                the use of them efficiently within a given subject area or directorate? </db:para>
+            <db:para>Product question: is it possible to have business rules automatically applied for glossary candidates or acronym mistakes, etc.?
+            </db:para>
+        </db:section>
+    </component>
+
+    <component xml:id="abbreviation-list" role="modelled">
+        <name>Abbrevation List</name>
+        <category>semantic</category>
+        <type-of>
+            <component-ref ref="glossary"/>
+        </type-of>
+
+        <db:section role="notes">
+            <db:title>Notes</db:title>
+            <db:para>Need to consider abbreviation lists. Not only are they are a sort of glossary but they could be generated automatically from
+                several different sources (use a global repo to help authors or even create the list from the contents of the document).</db:para>
+        </db:section>
+
+    </component>
+
+    <component xml:id="bibliography" role="production">
+        <name>Bibliography</name>
+        <category>semantic</category>
+        <type-of>
+            <component-ref ref="section"/>
+        </type-of>
+        <db:section>
+            <db:title>Definition</db:title>
+            <db:para>Bibliographic content will generally be represented by citation components at the inline level. However, it is clear that some
+                documents contain bibliographic content that is not based on citations within the text. For this reason, the model contains a
+                References component that contains MODS (The Library Of Congress, 2011) references. </db:para>
+        </db:section>
+
+    </component>
+
+    <component xml:id="further-reading" role="modelled">
+        <name>Further Reading</name>
+        <category>semantic</category>
+        <children>
+            <component-ref ref="bibliographic-entry"/>
+        </children>
+        <type-of>
+            <component-ref ref="bibliography"/>
+        </type-of>
+    </component>
+
+    <component xml:id="bibliographic-entry" role="production">
+        <name>Bibliographic Entry</name>
+        <category>semantic</category>
+
+        <children>
+            <component-ref ref="foreign-content"/>
+        </children>
+
+    </component>
+
+    <component xml:id="chemical-formula" role="production">
+        <name>Chemical Formula</name>
+        <category>semantic</category>
+        <category>inline</category>
+        <category>block</category>
+        <text/>
+        <children>
+            <component-ref ref="metadata-group"/>
+            <component-ref ref="index-term"/>
+            <component-ref ref="graphic"/>
+            <component-ref ref="foreign-content"/>
+        </children>
+
+        <db:section role="notes">
+            <db:title>Notes</db:title>
+            <db:para>Need to work out more about these. We know they exist in documents but we don't know anything about how they are generated -
+                processed SMILES or CML or something else?</db:para>
+
+            <db:para>The modelling workshop identified three potential models for chemical formulae. All three of these are represented by the
+                chemical formula component. We assume that one of the alternatives will be used.</db:para>
+
+            <db:para>Firstly, formulae may be represented using XML from the Chemical Markup Language schema. Secondly, it may be represented as text
+                conforming to the SMILES or OpenSMILES specifications. Finally, it may be represented as a graphic.</db:para>
+
+
+        </db:section>
+    </component>
+
+    <component xml:id="equation" role="production">
+        <name>Equation</name>
+        <category>semantic</category>
+        <category>inline</category>
+        <category>block</category>
+        <text/>
+        <children>
+            <component-ref ref="metadata-group"/>
+            <component-ref ref="index-term"/>
+            <component-ref ref="graphic"/>
+            <component-ref ref="foreign-content"/>
+        </children>
+
+        <db:section role="notes">
+            <db:title>Notes</db:title>
+            <db:para>The equation element should be a wrapper allowing both graphical and textual (either plain text or XML) representations within
+                the same wrapper.</db:para>
+
+            <!-- dmr -->
+
+            <db:para>Four possible models for equations were also identified. All of these are represented by the equation component, any one of them
+                being allowed within an equation element.</db:para>
+
+            <db:para>Equations may be represented as simple text using Unicode characters to represent the equation. Equations may also be represented
+                as LaTeX content (this appears to be desired but no conclusion has been made as to whether it is useful). Ideally, equations will be
+                represented as MathML mark-up. Ideally, content MathML should be used although presentation MathML would be acceptable. Finally,
+                equations may be represented as a graphic.</db:para>
+
+
+        </db:section>
+
+    </component>
+
+    <component xml:id="table" role="production">
+        <name>Table</name>
+        <category>block</category>
+        <children>
+            <component-ref ref="title"/>
+            <component-ref ref="table-head"/>
+            <component-ref ref="table-body"/>
+            <component-ref ref="table-foot"/>
+            <component-ref ref="notes"/>
+            <component-ref ref="annotation"/>
+            <component-ref ref="metadata-group"/>
+            <component-ref ref="index-term"/>
+        </children>
+        <db:section role="notes">
+            <db:title>Notes</db:title>
+            <db:para>Previous discussion suggests that we use the CALS table model and consider it defined. The components here are simply to
+                demonstrate the structure and see how it integrates into the model - not a full (or even accurate) version of CALS.</db:para>
+
+
+
+            <!-- dmr -->
+
+            <db:para>Tables are ubiquitous in OECD documents. Tables are currently modelled using a variant on the CALS Table Model (OASIS, 2001). In
+                order to ensure that tables in the new model are as compatible as possible with existing uses and with application interchange
+                requirements we would suggest that the XML Exchange Table Model DTD (OASIS, 1999) be used as the OECD table model.</db:para>
+
+            <db:para>This was discussed in both the technical workshop (Corbas Consulting, 2011) and the modelling workshops and agreed as the basis
+                for the model. The OASIS XML Exchange Model schema will be imported into the model within a wrapper element.</db:para>
+
+
+        </db:section>
+
+    </component>
+
+    <component xml:id="table-head" role="production">
+        <name>Table Head</name>
+        <category>block</category>
+        <children>
+            <component-ref ref="table-rows"/>
+        </children>
+    </component>
+
+    <component xml:id="table-body" role="production">
+        <name>Table Body</name>
+        <category>block</category>
+        <children>
+            <component-ref ref="table-rows"/>
+        </children>
+    </component>
+
+    <component xml:id="table-foot" role="production">
+        <name>Table Foot</name>
+        <category>block</category>
+        <children>
+            <component-ref ref="table-rows"/>
+        </children>
+    </component>
+
+    <component xml:id="table-rows" role="production">
+        <name>Table Rows</name>
+        <category>block</category>
+        <children>
+            <component-ref ref="table-data"/>
+        </children>
+    </component>
+
+    <component xml:id="table-data" role="production">
+        <name>Table Data</name>
+        <category>block</category>
+        <text/>
+        <children>
+            <component-ref ref="grp-simple-blocks"/>
+        </children>
+    </component>
+
+    <component xml:id="notes" role="production">
+        <name>Notes</name>
+        <category>block</category>
+        <children>
+            <component-ref ref="simple-para"/>
+            <component-ref ref="metadata-group"/>
+        </children>
+
+        <db:section>
+            <db:title>Notes</db:title>
+            <db:para>Initially thought of as table notes. However, the component seems more generic than that.</db:para>
+            <db:para>We need to ask authors about the content of notes. Is it just paragraph text or is there more? Do we need to make detailed
+                distinctions about the meaning of zero valued notes for ECO?</db:para>
+
+            <db:section role="definition">
+                <db:title>Definition</db:title>
+                <db:para>The modelling workshop identified that certain components (tables and figures especially) can contain arbitrary notes. We
+                    proposed a notes component to handle these notes. There is no apparent reason to restrict this model to tables and figures.
+                    Therefore, we have created this component as a standard block model in order to provide maximum flexibility.</db:para>
+                <db:para>The component consists of a wrapper and individual notes. Notes may contains any simple block structure such as paragraphs
+                    and tables.</db:para>
+            </db:section>
+
+        </db:section>
+
+
+
+
+    </component>
+
+    <component xml:id="section" role="production">
+        <name>Section</name>
+        <category>structural</category>
+        <category>publishing</category>
+        <children>
+            <component-ref ref="title" cardinality="one"/>
+            <component-ref ref="grp-nested-blocks" cardinality="one-or-more"/>
+            <component-ref ref="annotation"/>
+            <component-ref ref="index-term"/>
+            <component-ref ref="metadata-group"/>
+        </children>
+
+        <db:section role="notes">
+            <db:title>Notes</db:title>
+            <db:para>Sections are the primary structural component of structured documents. Most of the semantic structures are specialised types of
+                sections. Sections may be nested arbitrarily deeply. Heading levels are then defined purely by section nesting. </db:para>
+        </db:section>
+
+        <db:section role="definition">
+            <db:title>Definition</db:title>
+            <db:para> A section is the basic structural component of all OECD.Author documents. </db:para>
+            <db:para>The modelling workshop defined a section as a hierarchical component of a document with a title and text that could be considered
+                a child. Sections may contain other sections and all block content. </db:para>
+            <db:para> In order to avoid ambiguity this model allows block content to occur in a section until the first sub section is created.
+                Following that point, only subsections may be created. This ensures that the document model does not become ambiguous. </db:para>
+            <db:para> Components and models derived from the basic section will often add additional constraints to this model. Models defined by
+                metadata area unlikely to add constraints whereas publishing models such as chapters and parts will almost always do so.</db:para>
+
+            <!--           <!-\- STRUCTURAL -\->
+            <db:para>The primary structural model used in OECD documents is the section. For the purposes of this modelling exercise a section is
+                defined as:</db:para>
+            <db:para>An optional title followed a sequence of one or more structural or block level components that can be viewed as an individual
+                unit.</db:para>
+            <db:para>In existing documents almost all sections have a title. Those without a title are a small subset. Currently, only ‘abstract’ has
+                been defined as not having a title.</db:para>
+            <db:para>This primary structural model can be broken into two subsets – simple and recursive. The simple models may not contain themselves
+                directly. Recursive models may contain themselves as shown in Figure 1:</db:para>
+
+            <!-\- recursive -\->
+            <db:para>The generic section model is recursive. A simpler section model will be implemented during the creation of a physical model
+                because it will be difficult to constrain the recursive model appropriately.</db:para>-->
+
+
+
+        </db:section>
+
+    </component>
+
+
+    <component xml:id="sidebar" role="deprecated">
+        <name>Sidebar</name>
+        <category>structural</category>
+        <children>
+            <component-ref ref="grp-simple-blocks"/>
+            <component-ref ref="metadata-group"/>
+        </children>
+
+        <db:section role="notes">
+            <db:title>Notes</db:title>
+            <db:para>Restricted content that can be placed out of the normal flow of text but is related to the current part of the flow.</db:para>
+        </db:section>
+
+        <db:section>
+            <db:title>Log</db:title>
+            <db:revhistory>
+                <db:title>Change Log</db:title>
+                <db:revision>
+                    <db:revnumber>0.1</db:revnumber>
+                    <db:date>2012-04-02</db:date>
+                    <db:author>
+                        <db:orgname>OECD</db:orgname>
+                        <db:email>joseph.crowther@oecd.org</db:email>
+                    </db:author>
+                    <db:revremark>Removed Sidebar from catalogue</db:revremark>
+                </db:revision>
+            </db:revhistory>
+        </db:section>
+
+    </component>
+
+
+    <component xml:id="annotation" role="missing">
+        <name>Annotation</name>
+        <category>structural</category>
+        <children>
+            <component-ref ref="simple-para"/>
+            <component-ref ref="metadata-group"/>
+        </children>
+
+        <db:section role="notes">
+            <db:title>Notes</db:title>
+            <db:para>Content that annotates another element. Normally block level elements such as paragraphs and tables.</db:para>
+        </db:section>
+    </component>
+
+
+    <component xml:id="box" role="production">
+        <name>Box</name>
+        <category>structural</category>
+        <children>
+            <component-ref ref="grp-nested-blocks"/>
+            <component-ref ref="metadata-group"/>
+            <component-ref ref="index-term"/>
+        </children>
+        <type-of>
+            <component-ref ref="section"></component-ref>
+        </type-of>
+        
+        <db:section role="notes">
+            <db:title>Notes</db:title>
+            <db:para>Boxed content. Can contain almost any other content. Sits in the flow of the document much like a section.</db:para>
+        </db:section>
+
+        <db:section role="definition">
+            <db:title>Definition</db:title>
+            <db:para>This component has an unusual role in the model. The content model for a box is that of a section. However, the box itself
+                fulfils a similar role to a paragraph. For this reason, after consultation with authors we have decided to treat it as a block
+                component not a structural one.</db:para>
+            <db:para>Boxes are set off from the text in some way (usually by formatting with a border around it). When rendered to print the box
+                location can be changed slightly for best presentation.</db:para>
+            <db:para>Boxes have nested sections with semantic headings, if they are considered as a section the section is to group all subsections
+                and allow for notes, footnotes and sources dedicated to the high level section.</db:para>
+        </db:section>
+
+    </component>
+
+
+    <component xml:id="title" role="production">
+        <name>Title</name>
+        <category>block</category>
+        <text/>
+        <children>
+            <component-ref ref="grp-simple-inlines"/>
+        </children>
+    </component>
+
+
+    <component xml:id="subtitle" role="production">
+        <name>Subtitle</name>
+        <category>block</category>
+        <text/>
+        <children>
+            <component-ref ref="grp-simple-inlines"/>
+        </children>
+    </component>
+
+    <component xml:id="short-title" role="production">
+        <name>Short Title</name>
+        <category>inline</category>
+        <text/>
+        <children>
+            <component-ref ref="grp-simple-inlines"/>
+        </children>
+        <db:section role="model-doc">
+            <db:title>Definition</db:title>
+            <db:para>Used to store the abbreviated title of a component (text only).</db:para>
+        </db:section>
+    </component>
+
+
+
+    <component xml:id="phrase" role="production">
+        <name>Phrase</name>
+        <category>inline</category>
+        <category>semantic</category>
+        <text/>
+        <children>
+            <component-ref ref="grp-simple-inlines"/>
+        </children>
+
+        <db:section role="notes">
+            <db:title>Notes</db:title>
+            <db:para>The semantic tags on inline content must be defined in as optional. When used they should associate taxonomies with text.
+            </db:para>
+        </db:section>
+        
+        <db:section role="source">
+            <db:title>Source</db:title>
+            <db:para>The semantic tags on inline content must be defined in as optional. When used they should associate taxonomies with text.
+            </db:para>
+        </db:section>
+                
+        <db:section role="definition">
+            <db:title>Definition</db:title>
+            <db:para>The semantic tag component allows a word or phrase to refer to metadata. We do not envisage that metadata will be stored directly
+                within this element – it should be stored out of line in the same XML document and referenced from the phrase being
+                described.</db:para>
+        </db:section>
+        
+        <db:section role="mapping">
+            <db:title>Narrdoc</db:title>
+            <db:para>N/A</db:para>
+        </db:section>
+        
+    </component>
+
+    <component xml:id="formatting-tag" role="production">
+        <name>Formatting Tag</name>
+        <category>inline</category>
+        <text/>
+        <children>
+            <component-ref ref="grp-simple-inlines"/>
+        </children>
+
+        <db:section role="notes">
+            <db:title>Notes</db:title>
+            <db:para>Any simple formatting (italicisation without any particular semantic load for example).</db:para>
+        </db:section>
+
+
+        <db:section role="definition">
+            <db:title>Definition</db:title>
+            <db:para>Semantic models of text normally do not provide any way of indicating formatting. The new OECD.Author model must provide some way
+                to indicate simple inline formatting requirements because the current AE2007 environment allows it. Therefore, the modelling workshop
+                agreed that some sort of simple formatting must be allowed.</db:para>
+            <db:para>No decision on the implementation of this component has been decided. As formatting options are in many ways open ended, we
+                suggest that a single formatting element would be advisable with the precise requested rendering indicated via properties (defined by
+                a set of values taken from an enumerated list)</db:para>
+
+        </db:section>
+    </component>
+
+    <component xml:id="index" role="production">
+        <name>Index</name>
+        <category>semantic</category>
+
+        <db:section role="definition">
+            <db:title>Definition</db:title>
+            <db:para>An index is simply a placeholder to indicate the desired rendering location for index terms.</db:para>
+        </db:section>
+    </component>
+
+    <component xml:id="index-term" role="production">
+        <name>Index Term</name>
+        <category>inline</category>
+        <category>semantic</category>
+        <text/>
+        <children>
+            <component-ref ref="grp-simple-inlines"/>
+        </children>
+
+        <db:section role="notes">
+            <db:title>Notes</db:title>
+            <db:para>This is likely to be a heavily structured inline element. We need to consider how many levels of index should be available. We
+                also need to consider how multiple index axes should be represented. However, neither of these is a major modelling issue.</db:para>
+            <db:para>If information can be retrieved from content about the depth of existing indices this would be very useful.</db:para>
+        </db:section>
+
+        <db:section role="definition">
+            <db:title>Definition</db:title>
+
+            <db:para>Indexes must be created from the content rather than the typeset pages. This separates the concepts of indexing from the
+                requirements of printing. Therefore, the modelling workshop agreed model whereby words or phrases that are to be indexed should be
+                indicated within the XML text.</db:para>
+
+            <db:para>The model has taken the approach used by the DocBook project as the basis for the index model. This allows for three levels of
+                index term, alternates (“see Other Concept”) and additional information (“see also Other Concept”).</db:para>
+
+        </db:section>
+
+    </component>
+
+    <component xml:id="citation" role="missing">
+        <name>Citation</name>
+        <category>inline</category>
+        <category>semantic</category>
+
+
+        <db:section role="definition">
+            <db:title>Definition</db:title>
+            <db:para>The modelling workshop agreed that, in general, citation content should be stored out of line of the text, holding only a
+                reference to the bibliographic data itself. It was agreed that bibliographic data should be stored in the Library of Congress MODS
+                format (The Library Of Congress, 2011). Citations will store a reference to a bibliographic entry. In initial implementations all
+                bibliographic entries will be stored in the document itself. It is envisaged that web services will be provide a look-up mechanism to
+                provide consistency in future implementations.</db:para>
+        </db:section>
+    </component>
+
+
+    <component xml:id="footnote" role="production">
+        <name>Footnote</name>
+        <category>inline</category>
+        <category>semantic</category>
+        <children>
+            <component-ref ref="simple-para"/>
+        </children>
+
+        <db:section role="definition">
+            <db:title>Definition</db:title>
+            <db:para>Footnotes are to be stored inline at the point of first reference. A footnote may contain paragraph text only. This allows
+                footnote rendering to be under the total control of the output mechanisms since no rendering assumptions are made. Footnotes must be
+                identifiable to ensure that a single footnote may be referenced more than once. Footnotes are the only inline model that may contain
+                paragraph content.</db:para>
+        </db:section>
+
+    </component>
+    <component xml:id="link" role="production">
+        <name>Link</name>
+        <category>inline</category>
+        <category>semantic</category>
+        <text/>
+        <children>
+            <component-ref ref="grp-simple-inlines"/>
+        </children>
+
+        <db:section role="notes">
+            <db:title>Notes</db:title>
+            <db:para>We need to handle two types of link. Firstly, we need to be able reference hyperlinked content. Secondly, we need to represent a
+                reference to another OECD document or location within an OECD document.</db:para>
+            <db:para>Beyond scope but… We should consider how we identify content and how we generate URLs to reference content. Consider using DOIs
+                for this purpose as this is what they were designed for. DOIs cost when you register them so creating DOIs without a registration does
+                not incur a cost.</db:para>
+        </db:section>
+
+
+        <db:section role="definition">
+            <db:title>Definition</db:title>
+            <db:para>The link component is intended to act as a semantic placeholder for almost all types of link. Footnotes and citations are handled
+                separately but otherwise, the link component represents both internal and external references. Clearly, this may not be the case at
+                implementation level.</db:para>
+
+            <db:para>The OECD preference for the use of open standards and existing models suggests that the appropriate model for link mark-up should
+                be the XLink specification (W3C, 2010). XLink is possibly not an appropriate model for internal links as it requires the linked
+                resource to be referenced as an IRI. A different model may be required for internal link mark-up.</db:para>
+        </db:section>
+    </component>
+
+    <component xml:id="subscript" role="production">
+        <name>Subscript</name>
+        <category>inline</category>
+    </component>
+
+    <component xml:id="superscript" role="production">
+        <name>Superscript</name>
+        <category>inline</category>
+    </component>
+    
+    <component xml:id='acronym' role="production">
+        <name>Acronym</name>
+        <category>inline</category>
+    </component>
+    
+
+    <component xml:id="formal-para" role="production">
+        <name>Formal Paragraph</name>
+        <category>block</category>
+        <children>
+            <component-ref ref="grp-titles"/>
+            <component-ref ref="grp-simple-inlines"/>
+            <component-ref ref="annotation"/>
+            <component-ref ref="metadata-group"/>
+        </children>
+
+        <db:section>
+            <db:title>Definition</db:title>
+            <db:para>Formal paragraphs are simply standard paragraphs with a title. They can occur in almost all contexts where a standard paragraph
+                may occur.</db:para>
+        </db:section>
+    </component>
+
+    <component xml:id="paragraph-group" role="production">
+        <name>Paragraph Group</name>
+        <category>block</category>
+        <children>
+            <component-ref ref="grp-titles"/>
+            <component-ref ref="simple-para"/>
+        </children>
+
+        <db:section>
+            <db:title>Definition</db:title>
+
+            <db:para>Paragraph groups have been included in the model as a result of the document analysis process. A paragraph group consists of a
+                set of related paragraphs of text with an optional heading.</db:para>
+            <db:para>Paragraph groups are an appropriate way to model much legal content as well as being a base for other types.</db:para>
+
+            <db:para>Paragraphs are the basic components for almost all content. We intend to introduce a model that allows mixed content . The
+                initial model will not define the elements that may occur within a paragraph. The model defines a component type of 'Inline
+                Components'. Any number (including zero) of inline components are valid within a paragraph.</db:para>
+            <db:para>Paragraphs may occur in almost any context. Equally, almost any block may occur in the same context as a paragraph.</db:para>
+
+
+
+        </db:section>
+    </component>
+
+    <component xml:id="simple-para" role="production">
+        <name>Paragraph</name>
+        <category>block</category>
+        <children>
+            <component-ref ref="grp-simple-inlines"/>
+            <component-ref ref="annotation"/>
+            <component-ref ref="metadata-group"/>
+        </children>
+
+
+        <db:section>
+            <db:title>Definition</db:title>
+            <db:para>Simple paragraphs are simply standard paragraphs without a title. They can occur in almost all contexts where a standard
+                paragraph may occur.</db:para>
+        </db:section>
+    </component>
+
+    <component xml:id="blockquote" role="missing">
+        <name>Block Quote</name>
+        <category>block</category>
+        <children>
+            <component-ref ref="grp-simple-blocks"/>
+        </children>
+
+        <db:section role="notes">
+            <db:title>Notes</db:title>
+            <db:para>Foreign content such as quotation added as native part of the current document.</db:para>
+        </db:section>
+    </component>
+
+    <component xml:id="itemized-list" role="production">
+        <name>Itemized List</name>
+        <category>block</category>
+        <children>
+            <component-ref ref="grp-titles"/>
+            <component-ref ref="list-item"/>
+        </children>
+
+        <db:section>
+            <db:title>Notes</db:title>
+            <db:para>An itemized list has a single marker used for all elements within that list. As with ordered lists the AE2007 environment places
+                a rigid constraint on the depth of the list. This constraint is relaxed in the model as above.</db:para>
+            <db:para>Rendering rules for markers are applied exactly as above.</db:para>
+        </db:section>
+
+        <db:section role="definition">
+            <db:title>Definition</db:title>
+            <db:para>An itemized list has a single marker used for all elements within that list. As with ordered lists the AE2007 environment places
+                a rigid constraint on the depth of the list. This constraint is relaxed in the model as above.</db:para>
+            <db:para>Rendering rules for markers are applied exactly as above.</db:para>
+        </db:section>
+
+
+    </component>
+
+    <component xml:id="definition-list" role="production">
+        <name>Definition List</name>
+        <category>semantic</category>
+
+        <children>
+            <component-ref ref="grp-titles"/>
+            <component-ref ref="definition-list-entry"/>
+        </children>
+
+        <db:section role="definition">
+            <db:title>Definition</db:title>
+            <db:para>A definition list is a series of terms and definitions. This is often used to define lists of abbreviations or to explain jargon.
+                It can be seen as a simple glossary. The term part of a definition list is a simple phrase and contains only inline content. The
+                definition part of a definition list follows the standard list item definition above.</db:para>
+        </db:section>
+    </component>
+
+    <component xml:id="definition-list-entry" role="production">
+        <name>Definition List Entry</name>
+        <category>semantic</category>
+        <children>
+            <component-ref ref="term"/>
+            <component-ref ref="definition"/>
+        </children>
+    </component>
+
+    <component xml:id="term" role="production">
+        <name>Term</name>
+        <category>semantic</category>
+        <text/>
+        <children>
+            <component-ref ref="grp-simple-inlines"/>
+        </children>
+    </component>
+
+    <component xml:id="definition" role="production">
+        <name>Definition</name>
+        <category>semantic</category>
+        <text/>
+        <children>
+            <component-ref ref="grp-simple-inlines"/>
+        </children>
+    </component>
+
+
+    <component xml:id="ordered-list" role="production">
+        <name>Ordered List</name>
+        <category>block</category>
+        <children>
+            <component-ref ref="grp-titles"/>
+            <component-ref ref="list-item"/>
+        </children>
+
+        <db:section role="notes">
+            <db:title>Notes</db:title>
+            <db:para>An ordered list consists of a number of items with an incrementing counter of some sort (not necessarily numeric). Rendering can
+                either be defined by a style guide or chosen by a user.</db:para>
+        </db:section>
+
+
+        <db:section role="definition">
+        <db:title>Definition</db:title>
+                
+            <db:para>An ordered list has markers associated with each item that increment from one item to the next. AE2007 places rigid constrains on
+                rendering of lists limiting the user to four styles and a maximum depth of five. There is no obvious reason for the limitation (and
+                the document analysis found that the maximum depth in the sample was six – achieved using a standard Word list).</db:para>
+
+            <db:para>The model will support and unlimited nesting depth for lists. Business rules will be applied at the document type level to
+                restrict this if required.</db:para>
+
+            <db:para>The rendering form for list markers needs to be represented in the model. In order to encourage consistency, a default style
+                should be presented (managed at the document type level). Style hint information such as this must be inherited through the model.
+                This implies that style metadata can be applied at multiple locations and used as appropriate.</db:para>
+
+            <db:para>Ordered lists must be able to restart numbering from the immediately preceding list at the same hierarchical level.</db:para>
+        </db:section>
+      </component>
+
+    <component xml:id="list-item" role="production">
+        <name>List Item</name>
+        <category>block</category>
+        <children>
+            <component-ref ref="grp-titles"/>
+            <component-ref ref="grp-simple-blocks"/>
+            <component-ref ref="annotation"/>
+            <component-ref ref="metadata-group"/>
+            <component-ref ref="index-term"/>
+        </children>
+
+        <db:section role="notes">
+            <db:title>Notes</db:title>
+            <db:para>List content can be fairly broad. In OECD documents there appears to be no clear distinction between numbered sections and
+                paragraphs and lists. This distinction may need to be created in an arbitrary manner.</db:para>
+        </db:section>
+
+        <db:section role="definition">
+            <db:title>Definition</db:title>
+            <db:para>As is conventional, we have assumed that lists of both types will have identical content models. The list items can contain most
+                of the paragraph equivalent blocks. In particular, list items may contain lists.</db:para>
+        </db:section>
+    </component>
+
+    <component xml:id="figure" role="production">
+        <name>Figure</name>
+        <category>block</category>
+        <children>
+            <component-ref ref="grp-titles"/>
+            <component-ref ref="graphic"/>
+            <component-ref ref="notes"/>
+            <component-ref ref="annotation"/>
+            <component-ref ref="metadata-group"/>
+            <component-ref ref="index-term"/>
+        </children>
+        <db:section role="notes">
+            <db:title>Notes</db:title>
+            <db:para>A figure is a graphic with a title and potentially notes. In OECD terms, a chart is a figure. </db:para>
+        </db:section>
+
+
+        <db:section role="definition">
+            <db:title>Definition</db:title>
+            <db:para>A figure was defined in the modelling workshop as a graphic with additional semantics and content. The most important feature of
+                a figure is the concept that it is a graphical representation of data. As such figures may contain metadata defining the data source
+                (internal data source, external attributions, etc).</db:para>
+            <db:para>Additionally, figures may have sources (recorded via metadata), footnotes, explanatory notes and titles.</db:para>
+        </db:section>
+    </component>
+
+    <component xml:id="graphic" role="production">
+        <name>Graphic</name>
+        <category>block</category>
+        <category>inline</category>
+        <children>
+            <component-ref ref="metadata-group"/>
+            <component-ref ref="foreign-content"/>
+        </children>
+        <db:section role="notes">
+            <db:title>Notes</db:title>
+            <db:para>A graphic is simply a container for a referenced image. Images could be bitmaps, EPS referencess, references to SVG or even
+                embedded image data.</db:para>
+        </db:section>
+        
+        <db:section role="definition">
+            <db:title>Definition</db:title>
+            <db:para>A graphic represents an external image and metadata about that image. An image may be a reference to external content such as a
+                graphic file or it may be SVG (W3C, 2011) content. The metadata for a graphic includes source information and should normally be
+                required.</db:para>
+
+        </db:section>
+    </component>
+
+
+    <component xml:id="document-list" role="missing">
+        <name>Document List</name>
+        <category>semantic</category>
+        <children>
+            <component-ref ref="document-reference"/>
+        </children>
+
+        <db:section>
+            <db:title>Definition</db:title>
+            <db:para>Document Lists are defined for use in agendas although there is no requirement that this be the case. Agenda items may have
+                associated documents (official documents, room documents or almost any other document). When an agenda is annotated actions may be
+                associated with those documents. The Document List contains one or more Document Reference components.</db:para>
+        </db:section>
+
+    </component>
+
+    <component xml:id="document-reference" role="missing">
+        <name>Document Reference</name>
+        <category>semantic</category>
+        <text/>
+        <children>
+            <component-ref ref="linked-content"/>
+            <component-ref ref="cote"/>
+        </children>
+
+        <db:section>
+            <db:title>Definition</db:title>
+            <db:para>A Document Reference is a simplified citation. It contains a COTE or a document title only. In addition an Action component is
+                allowed in order to represent an action to be taken on that reference.</db:para>
+        </db:section>
+
+    </component>
+
+    <component xml:id="cote" role="missing">
+        <name>Cote</name>
+        <category>semantic</category>
+        <text/>
+        <type-of>
+            <component-ref ref="metadata-item"/>
+        </type-of>
+    </component>
+
+
+    <!-- metadata components -->
+
+    <component xml:id="metadata-group" role="production">
+        <name>Metadata Group</name>
+        <category>semantic</category>
+        <children>
+            <component-ref ref="metadata-item"/>
+        </children>
+    </component>
+
+    <component xml:id="metadata-item">
+        <name>Metadata Item</name>
+        <category>semantic</category>
+
+        <db:section>
+            <db:title>Definition</db:title>
+            <db:para>The metadata model has not yet been fully defined. Currently, we are assuming that the model will use some as yet undecided
+                representation of RDF (W3C, 2004). Metadata content will be represented using a mixture of well-known vocabularies such as Dublin Core
+                (Dublin Core Metadata Initiative), MODS (The Library Of Congress, 2011) and FOAF (The Friend of a Friend Project) along with
+                taxonomies created by the OECD.</db:para>
+            <db:para>Metadata may be stored directly with the object being described or may be referenced. Direct metadata will be stored as a group
+                of metadata items. Referenced metadata will be stored in the same XML file but will not be stored as a child of the object being
+                described. The metadata will still be stored as a group of metadata items but will be referenced via an identifier
+                attribute.</db:para>
+        </db:section>
+    </component>
+
+    <component xml:id="duration" role="production">
+        <name>Duration</name>
+        <category>semantic</category>
+        <type-of>
+            <component-ref ref="metadata-item"/>
+        </type-of>
+
+        <db:section>
+            <db:title>Definition</db:title>
+            <db:para>A Duration component is simply a period of time. Currently, the model allows these in two locations – as simple inlines and as
+                part of the metadata for an agenda item.</db:para>
+        </db:section>
+    </component>
+
+    <component xml:id="date-time" role="production">
+        <name>DateTime</name>
+        <category>semantic</category>
+        <type-of>
+            <component-ref ref="metadata-item"/>
+        </type-of>
+
+        <db:section role="model-doc">
+            <db:title>Definition</db:title>
+            <db:para>A DateTime component allows a time and a date to be indicated in text. None of the semantics of a date are intended to
+                represented, merely the indication that the text represents a date an/or time.</db:para>
+        </db:section>
+
+    </component>
+
+    <component xml:id="schedule" role="modelled">
+        <name>Schedule</name>
+        <category>semantic</category>
+        <type-of>
+            <component-ref ref="metadata-item"/>
+        </type-of>
+    </component>
+
+    <component xml:id="agenda-item-type" role="missing">
+        <name>Agenda Item Type</name>
+        <category>semantic</category>
+        <type-of>
+            <component-ref ref="metadata-item"/>
+        </type-of>
+    </component>
+
+    <!-- foreign models -->
+    <component xml:id="foreign-content" role="missing">
+        <name>Foreign Content</name>
+        <category>semantic</category>
+        <db:section>
+            <db:title>Notes</db:title>
+            <db:para>Content from an external source actually embedded into the document</db:para>
+        </db:section>
+    </component>
+
+
+    <component xml:id="linked-content" role="missing">
+        <name>Linked Content</name>
+        <category>semantic</category>
+        <db:section>
+            <db:title>Notes</db:title>
+            <db:para>Content from an external source referenced by the document</db:para>
+        </db:section>
+    </component>
+
+    <!-- groups -->
+    <group xml:id="grp-nested-blocks" role="production">
+        <name>Nested Blocks</name>
+        <children>
+            <component-ref ref="grp-simple-blocks"/>
+            <component-ref ref="table"/>
+            <component-ref ref="section"/>
+            <component-ref ref="box"/>
+        </children>
+
+        <db:section>
+            <db:title>Definition</db:title>
+
+            <db:para>Most of the content of any document consists of blocks of text. Block models represent that various ways of structuring these
+                blocks of text. Semantically, most of the blocks are interchangeable. One of the major determinants when deciding a component should
+                be considered a structural or block model is the answer to the question "Can this component contain other structural components?" If
+                this is not the case, we consider it a block model. The distinction can be difficult at the border between the two. Another question
+                to be asked is "Can this component be replaced by another without destroying the structure of the document?" If this is the case, we
+                consider it a block model.</db:para>
+
+        </db:section>
+
+    </group>
+
+
+
+    <group xml:id="grp-note" role="production">
+        <name>Note Block</name>
+        <children>
+            <component-ref ref="footnote"/>
+            <component-ref ref="simple-para"/>
+        </children>
+
+        <db:section role="model-documentation">
+            <db:title>Definition</db:title>
+
+            <db:para>The notes model was defined originally as specific table or chart notes by the modelling workshop. Nic Gibson has proposed that
+                the model is generalised to represent any block note group without the particular semantics of a footnote (or endnote).</db:para>
+
+            <db:para>The modelling workshop identified that certain components (tables and figures especially) can contain arbitrary notes. We
+                proposed a notes component to handle these notes. There is no apparent reason to restrict this model to tables and figures. Therefore,
+                we have created this component as a standard block model in order to provide maximum flexibility.</db:para>
+
+            <db:para>The component consists of a wrapper and individual notes. Notes may contains any simple block structure such as paragraphs and
+                tables.</db:para>
+
+
+        </db:section>
+
+
+    </group>
+
+    <group xml:id="grp-simple-blocks" role="production">
+        <name>Simple Blocks</name>
+        <children>
+            <component-ref ref="simple-para"/>
+            <component-ref ref="paragraph-group"/>
+            <component-ref ref="ordered-list"/>
+            <component-ref ref="itemized-list"/>
+            <component-ref ref="figure"/>
+            <component-ref ref="graphic"/>
+            <component-ref ref="extract"/>
+        </children>
+    </group>
+
+    <group xml:id="grp-simple-inlines" role="production">
+        <name>Simple Inlines</name>
+        <children>
+            <component-ref ref="chemical-formula"/>
+            <component-ref ref="equation"/>
+            <component-ref ref="phrase"/>
+            <component-ref ref="formatting-tag"/>
+            <component-ref ref="index-term"/>
+            <component-ref ref="footnote"/>
+            <component-ref ref="citation"/>
+            <component-ref ref="link"/>
+            <component-ref ref="acronym"/>
+            <component-ref ref="superscript"/>
+            <component-ref ref="subscript"/>
+        </children>
+    </group>
+
+    <group xml:id="grp-titles" role="production">
+        <name>Title Group</name>
+        <children>
+            <component-ref ref="title"/>
+            <component-ref ref="subtitle"/>
+            <component-ref ref="short-title"/>
+        </children>
+    </group>
+
+    <!-- agenda specific components -->
+    <component xml:id="agenda-item" role="missing">
+        <name>Agenda Item</name>
+        <category>semantic</category>
+        <children>
+            <component-ref ref="agenda-item-metadata"/>
+            <component-ref ref="grp-titles"/>
+            <component-ref ref="simple-para"/>
+            <component-ref ref="document-list"/>
+        </children>
+
+        <db:section>
+            <db:title>Definition</db:title>
+            <db:para>An agenda item component represents a single item in an agenda. In the initial OECD agendas, it generally consists of a title
+                along with some metadata and an optional Document List component. When an annotated agenda is created additional textual information
+                and a time and duration are added to the item.</db:para>
+        </db:section>
+
+    </component>
+
+    <component xml:id="agenda-item-metadata" role="missing">
+        <name>Agenda Item Metadata</name>
+        <category>semantic</category>
+        <children>
+            <component-ref ref="duration"/>
+            <component-ref ref="agenda-item-type"/>
+        </children>
+        <type-of>
+            <component-ref ref="metadata-group"/>
+        </type-of>
+    </component>
+
+    <component xml:id="agenda-session-metadata" role="missing">
+        <name>Agenda Session Metdata</name>
+        <category>semantic</category>
+        <children>
+            <component-ref ref="agenda-item-type"/>
+            <component-ref ref="schedule"/>
+            <component-ref ref="duration"/>
+        </children>
+        <type-of>
+            <component-ref ref="metadata-group"/>
+        </type-of>
+    </component>
+
+    <component xml:id="agenda-session" role="missing">
+        <name>Agenda Session</name>
+        <category>semantic</category>
+        <children>
+            <component-ref ref="grp-titles"/>
+            <component-ref ref="agenda-session-metadata"/>
+            <component-ref ref="agenda-item"/>
+        </children>
+
+        <db:section>
+            <db:title>Definition</db:title>
+            <db:para>An agenda session represents a group of agenda items grouped together with a title and optional session specific metadata.
+                Initially identified metadata includes time, location and duration.</db:para>
+        </db:section>
+
+    </component>
+</model>
