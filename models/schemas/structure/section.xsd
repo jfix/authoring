@@ -111,7 +111,7 @@
             </xs:annotation>
         </xs:attribute>
         
-        <xs:attribute ref="annotations" use="optional"/>
+        <xs:attributeGroup ref="ANNOTATIONS-GROUP"/>
         
         
     </xs:attributeGroup>

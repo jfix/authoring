@@ -35,6 +35,14 @@
                     <authorinitials>NG</authorinitials>
                     <revremark>Updated oecdChemicalStructureType to add multiple renditions.</revremark>
                 </revision>
+            	
+            	<revision>
+            		<revnumber>5</revnumber>
+            		<date>2012-10-05</date>
+            		<authorinitials>NG</authorinitials>
+            		<revremark>Wrapped global attributes in groups to avoid namespace prefix requirement.</revremark>
+            	</revision>
+            	
             </revhistory>
         </section></xs:documentation>
         
@@ -81,7 +89,7 @@
                 </section>
             </xs:documentation>
         </xs:annotation>
-        <xs:attribute ref="annotations"/>
+    	<xs:attributeGroup ref="ANNOTATIONS-GROUP"/>
     </xs:attributeGroup>
     
     <xs:group name="oecdChemicalStructureTypeContent" id="oecdChemicalStructureTypeContent">

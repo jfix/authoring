@@ -21,6 +21,14 @@
                     <authorinitials>NG</authorinitials>
                     <revremark>Added annotations attribute and reworked to use extract element as top level</revremark>
                 </revision>
+            	
+            	<revision>
+            		<revnumber>3</revnumber>
+            		<date>2012-10-05</date>
+            		<authorinitials>NG</authorinitials>
+            		<revremark>Wrapped global attributes in groups to avoid namespace prefix requirement.</revremark>
+            	</revision>
+            	
                 
             </revhistory>
         </section></xs:documentation>
@@ -69,7 +77,7 @@
         
         <xs:attributeGroup ref="oecdCommonAttributes"/>
         <xs:attributeGroup ref="oecdLinkingAttributes"/>
-        <xs:attribute ref="annotations" use="optional"/>
+        <xs:attributeGroup ref="ANNOTATIONS-GROUP"/>
         
     </xs:attributeGroup>
     
@@ -124,7 +132,7 @@
         
         <xs:attributeGroup ref="oecdCommonAttributes"/>
         <xs:attributeGroup ref="oecdRequiredLinkingAttributes"/>
-        <xs:attribute ref="annotations" use="optional"/>
+        <xs:attributeGroup ref="ANNOTATIONS-GROUP"/>
         
     </xs:attributeGroup>
     
@@ -177,7 +185,7 @@
         
         <xs:attributeGroup ref="oecdCommonAttributes"/>
         <xs:attributeGroup ref="oecdRequiredLinkingAttributes"/>
-        <xs:attribute ref="annotations" use="optional"/>
+        <xs:attributeGroup ref="ANNOTATIONS-GROUP"/>
         
     </xs:attributeGroup>
     
@@ -230,7 +238,7 @@
         
         <xs:attributeGroup ref="oecdCommonAttributes"/>
         <xs:attributeGroup ref="oecdLinkingAttributes"/>
-        <xs:attribute ref="annotations" use="optional"/>
+        <xs:attributeGroup ref="ANNOTATIONS-GROUP"/>
         
     </xs:attributeGroup>
     

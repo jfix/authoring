@@ -50,6 +50,14 @@
                         <authorinitials>NG</authorinitials>
                         <revremark>Modified oecdEquationType to allow for multiple renditions.</revremark>
                     </revision>
+            	
+            	<revision>
+            		<revnumber>6</revnumber>
+            		<date>2012-10-05</date>
+            		<authorinitials>NG</authorinitials>
+            		<revremark>Wrapped global attributes in groups to avoid namespace prefix requirement.</revremark>
+            	</revision>
+            	
                 
             </revhistory>
         </section></xs:documentation>
@@ -90,7 +98,7 @@
                 </section>
             </xs:documentation>
         </xs:annotation>
-        <xs:attribute ref="annotations"/>
+    	<xs:attributeGroup ref="ANNOTATIONS-GROUP"/>
     </xs:attributeGroup>
     
     <xs:group name="oecdEquationTypeContent" id="oecdEquationTypeContent">

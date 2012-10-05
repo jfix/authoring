@@ -28,6 +28,13 @@
                     <authorinitials>NG</authorinitials>
                     <revremark>Added <link linkend="annotations">annotations</link> attribute.</revremark>
                 </revision>
+            	
+            	<revision>
+            		<revnumber>4</revnumber>
+            		<date>2012-10-05</date>
+            		<authorinitials>NG</authorinitials>
+            		<revremark>Wrapped global attributes in groups to avoid the need to namespace prefix them on use.</revremark>
+            	</revision>
                 
             </revhistory>
         </section></xs:documentation>
@@ -62,7 +69,7 @@
             </xs:documentation>
         </xs:annotation>
         <xs:attributeGroup ref="xlink:simpleLink"/>
-        <xs:attribute ref="xref"/>
+        <xs:attributeGroup ref="XREF-GROUP"/>
     </xs:attributeGroup>
     
     <xs:attributeGroup name="oecdRequiredLinkingAttributes" id="oecdRequiredLinkingAttributes">
@@ -99,14 +106,15 @@
             </xs:documentation>
         </xs:annotation>
         <xs:attributeGroup ref="oecdXmlAttributes"/>
-        <xs:attribute ref="metadataRef" use="optional"/>
-        <xs:attribute ref="noteRef" use="optional"/>
-        <xs:attribute ref="label" use="optional"/>
+        <xs:attributeGroup ref="METADATAREF-GROUP"/>
+        <xs:attributeGroup ref="NOTEREF-GROUP"/>
+        <xs:attributeGroup ref="LABEL-GROUP"/>
     </xs:attributeGroup>
     
     <!-- attributes -->
 
-    <xs:attribute name="metadataRef" type="xs:IDREF" id="metadataRef">
+<xs:attributeGroup name="METADATAREF-GROUP">     
+	<xs:attribute name="metadataRef" type="xs:IDREF" id="metadataRef">
         <xs:annotation>
             <xs:documentation>
                 <section xmlns="http://docbook.org/ns/docbook">
@@ -118,8 +126,10 @@
             </xs:documentation>
         </xs:annotation>
     </xs:attribute>
-    
-    <xs:attribute name="noteRef" type="xs:IDREF" id="noteRef">
+</xs:attributeGroup>
+	
+<xs:attributeGroup name="NOTEREF-GROUP">    
+	<xs:attribute name="noteRef" type="xs:IDREF" id="noteRef">
         <xs:annotation>
             <xs:documentation>
                 <section xmlns="http://docbook.org/ns/docbook">
@@ -131,8 +141,9 @@
             </xs:documentation>
         </xs:annotation>
     </xs:attribute>
+</xs:attributeGroup>
     
-    <xs:attribute name="href" type="xs:anyURI" id="href">
+<xs:attributeGroup name="HREF-GROUP">    <xs:attribute name="href" type="xs:anyURI" id="href">
         <xs:annotation>
             <xs:documentation>
                 <section xmlns="http://docbook.org/ns/docbook">
@@ -141,8 +152,10 @@
             </xs:documentation>
         </xs:annotation>
     </xs:attribute>
+</xs:attributeGroup>
     
-    <xs:attribute name="mediaType" type="oecdMediaType" id="mediaType">
+<xs:attributeGroup name="MEDIATYPE-GROUP">    
+	<xs:attribute name="mediaType" type="oecdMediaType" id="mediaType">
         <xs:annotation>
             <xs:documentation>
                 <section xmlns="http://docbook.org/ns/docbook">
@@ -151,8 +164,10 @@
             </xs:documentation>            
         </xs:annotation>
     </xs:attribute>
-    
-    <xs:attribute name="useWhen" type="xs:string" id="useWhen">
+</xs:attributeGroup>    
+
+	<xs:attributeGroup name="USEWHEN-GROUP">    
+	<xs:attribute name="useWhen" type="xs:string" id="useWhen">
         <xs:annotation>
             <xs:documentation>
                 <section xmlns="http://docbook.org/ns/docbook">
@@ -162,7 +177,9 @@
             </xs:documentation>            
         </xs:annotation>      
     </xs:attribute>
-    
+</xs:attributeGroup>	
+
+<xs:attributeGroup name="XREF-GROUP">    
     <xs:attribute name="xref" type="xs:IDREF" id="xref">
         <xs:annotation>
             <xs:documentation>
@@ -172,9 +189,10 @@
             </xs:documentation>            
         </xs:annotation>              
     </xs:attribute>
+</xs:attributeGroup>
     
-    
-    <xs:attribute name="label" type="xs:string" id="label">
+<xs:attributeGroup name="LABEL-GROUP">    
+	<xs:attribute name="label" type="xs:string" id="label">
         <xs:annotation>
             <xs:documentation>
                 <section xmlns="http://docbook.org/ns/docbook">
@@ -190,8 +208,10 @@
             </xs:documentation>            
         </xs:annotation>              
     </xs:attribute>
-    
-    <xs:attribute name="annotations" type="xs:IDREFS" id="annotations">
+</xs:attributeGroup>    
+	
+<xs:attributeGroup name="ANNOTATIONS-GROUP">    
+	<xs:attribute name="annotations" type="xs:IDREFS" id="annotations">
         <xs:annotation>
             <xs:documentation>
                 <section xmlns="http://docbook.org/ns/docbook">
@@ -207,5 +227,5 @@
             </xs:documentation>     
         </xs:annotation>            
     </xs:attribute>
-
+</xs:attributeGroup>
 </xs:schema>
