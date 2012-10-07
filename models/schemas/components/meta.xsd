@@ -1,249 +1,323 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
 
-    <xs:annotation>
-        <xs:documentation><section xmlns="http://docbook.org/ns/docbook">
-                <revhistory>
-                    <title>Change Log</title>
-                    <revision>
-                        <revnumber>1</revnumber>
-                        <date/>
-                        <authorinitials>NG</authorinitials>
-                        <revremark>Initial version</revremark>
-                    </revision>
-                    <revision>
-                        <revnumber>2</revnumber>
-                        <date>2012-08-06</date>
-                        <authorinitials>NG</authorinitials>
-                        <revremark>Modified oecdMetadataItemType to have correct attributes for desired content model. Modified oecdMetadatType to have subject attribute.</revremark>
-                    </revision>
-                </revhistory>
-                <section>
-                    <title>OECD Schemas</title>
-                    <subtitle>Metadata</subtitle>
-                    <para>This is a wrapper element for an arbitrary metadata model.</para>
-                </section>
-            </section></xs:documentation>
-    </xs:annotation>
+	<xs:annotation>
+		<xs:documentation><section xmlns="http://docbook.org/ns/docbook">
+				<revhistory>
+					<title>Change Log</title>
+					<revision>
+						<revnumber>1</revnumber>
+						<date/>
+						<authorinitials>NG</authorinitials>
+						<revremark>Initial version</revremark>
+					</revision>
+					<revision>
+						<revnumber>2</revnumber>
+						<date>2012-08-06</date>
+						<authorinitials>NG</authorinitials>
+						<revremark>Modified oecdMetadataItemType to have correct attributes for
+							desired content model. Modified oecdMetadatType to have subject
+							attribute.</revremark>
+					</revision>
+					<revision>
+						<revnumber>3</revnumber>
+						<date>2012-10-05</date>
+						<authorinitials>NG</authorinitials>
+						<revremark>Modified all groups to actually contain the element definitions -
+							they will never be used in isolation and they should not be global as
+							they should not be namespace prefixed.</revremark>
+					</revision>
+				</revhistory>
+				<section>
+					<title>OECD Schemas</title>
+					<subtitle>Metadata</subtitle>
+					<para>This is a wrapper element for an arbitrary metadata model.</para>
+				</section>
+			</section></xs:documentation>
+	</xs:annotation>
 
-    <xs:include schemaLocation="attributes.xsd"/>
+	<xs:include schemaLocation="attributes.xsd"/>
 
-    <!-- GLOBAL ELEMENTS -->
-    <xs:element name="metadataItem" type="oecdMetadataItemType" id="metadataItem"/>
-    <xs:element name="metadata" type="oecdMetadataType" id="metadata"/>
+	<!-- GLOBAL ELEMENTS -->
+	<xs:element name="metadataItem" type="oecdMetadataItemType" id="metadataItem"/>
+	<xs:element name="metadata" type="oecdMetadataType" id="metadata"/>
 
-    <!-- GLOBAL ATTRIBUTE -->
-    <!-- N.B. The metadataRef attribute is defined in attributes.xsd -->
-
-
-    <!-- TYPES -->
+	<!-- GLOBAL ATTRIBUTE -->
+	<!-- N.B. The metadataRef attribute is defined in attributes.xsd -->
 
 
-    <!-- metadata group type -->
-    <xs:attributeGroup name="oecdMetadataTypeAttributes" id="oecdMetadataTypeAttributes">
-        <xs:annotation>
-            <xs:documentation>
-                <section xmlns="http://docbook.org/ns/docbook">
-                    <revhistory>
-                        <title>Change Log</title>
-                        <revision>
-                            <revnumber>2</revnumber>
-                            <date>2012-08-06</date>
-                            <authorinitials>NG</authorinitials>
-                            <revremark>Added new attributes - subject and subjectURI to flesh out metadata model.</revremark>
-                        </revision>
-                    </revhistory> <para>Attributes for metadata. Grouped to allow easy override.</para>
-                </section>
-            </xs:documentation>
-        </xs:annotation>
-        <xs:attributeGroup ref="oecdCommonAttributes"/>
-        <xs:attribute ref="subject"/>
-        <xs:attribute ref="subjectURI"/>
-    </xs:attributeGroup>
+	<!-- TYPES -->
 
-    <xs:group name="oecdMetadataTypeContent" id="oecdMetadataTypeContent">
-        <xs:annotation>
-            <xs:documentation>
-                <section xmlns="http://docbook.org/ns/docbook">
-                    <revhistory>
-                        <revnumber>2</revnumber>
-                        <date>2012-08-06</date>
-                        <authorinitials>NG</authorinitials>
-                        <revremark>Major rewrite. Rebuilt content model to require one or other of metadataItem or metadata plus zero or more of either. We require that grouped metadata follows individual items simply to make the schema sane (and non-ambigous).</revremark>
-                    </revhistory>
-                    <para>Content for metadata. Grouped to allow easy override.</para>
-                </section>
-            </xs:documentation>
-        </xs:annotation>
-        <xs:sequence>
-            <xs:element ref="metadataItem" minOccurs="0" maxOccurs="unbounded"/>
-            <xs:element ref="metadata" maxOccurs="unbounded" minOccurs="0"/>
-        </xs:sequence>
-    </xs:group>
 
-    <xs:complexType name="oecdMetadataType" id="oecdMetadataType">
-        <xs:annotation>
-            <xs:documentation>
-                <section xmlns="http://docbook.org/ns/docbook">
-                    <para>Metadata container element. Allowed as a child at almost any location in a document.</para>
-                </section>
-            </xs:documentation>
-        </xs:annotation>
-        <xs:group ref="oecdMetadataTypeContent" maxOccurs="unbounded"/>
-        <xs:attributeGroup ref="oecdMetadataTypeAttributes"/>
-    </xs:complexType>
+	<!-- metadata group type -->
+	<xs:attributeGroup name="oecdMetadataTypeAttributes" id="oecdMetadataTypeAttributes">
+		<xs:annotation>
+			<xs:documentation>
+				<section xmlns="http://docbook.org/ns/docbook">
+					<revhistory>
+						<title>Change Log</title>
+						<revision>
+							<revnumber>2</revnumber>
+							<date>2012-08-06</date>
+							<authorinitials>NG</authorinitials>
+							<revremark>Added new attributes - subject and subjectURI to flesh out
+								metadata model.</revremark>
+						</revision>
+						<revision>
+							<revnumber>3</revnumber>
+							<date>2012-10-05</date>
+							<authorinitials>NG</authorinitials>
+							<revremark>Moved element definitions into the group.</revremark>
+						</revision>
+					</revhistory>
+					<para>Attributes for metadata. Grouped to allow easy override.</para>
+				</section>
+			</xs:documentation>
+		</xs:annotation>
+		<xs:attributeGroup ref="oecdCommonAttributes"/>
+		<xs:attributeGroup ref="oecdMetaSubjectAttributes"/>
+		
+	</xs:attributeGroup>
 
-    <!-- metdata item type. -->
-    <xs:attributeGroup name="oecdMetadataItemTypeAttributes" id="oecdMetadataItemTypeAttributes">
-        <xs:annotation>
+	<xs:group name="oecdMetadataTypeContent" id="oecdMetadataTypeContent">
+		<xs:annotation>
+			<xs:documentation>
+				<section xmlns="http://docbook.org/ns/docbook">
+					<revhistory>
+						<revision>
+							<revnumber>2</revnumber>
+							<date>2012-08-06</date>
+							<authorinitials>NG</authorinitials>
+							<revremark>Major rewrite. Rebuilt content model to require one or other
+								of metadataItem or metadata plus zero or more of either. We require
+								that grouped metadata follows individual items simply to make the
+								schema sane (and non-ambigous).</revremark>
+						</revision>
+					</revhistory>
+					<para>Content for metadata. Grouped to allow easy override.</para>
+				</section>
+			</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element ref="metadataItem" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element ref="metadata" maxOccurs="unbounded" minOccurs="0"/>
+		</xs:sequence>
+	</xs:group>
 
-            <xs:documentation>
-                <section xmlns="http://docbook.org/ns/docbook">
-                    <revhistory>
-                        <title>Change Log</title>
-                        <revision>
-                            <revnumber>2</revnumber>
-                            <date>2012-08-06</date>
-                            <authorinitials>NG</authorinitials>
-                            <revremark>Added new attributes - subject, property, value - and their URI based alternatives to flesh out metadata model.</revremark>
-                        </revision>
-                    </revhistory> <para>Attributes for metadata items. Grouped to allow easy override.</para>
-                </section>
-            </xs:documentation>
-        </xs:annotation>
-        <xs:attributeGroup ref="oecdCommonAttributes"/>
-        <xs:attributeGroup ref="oecdLinkingAttributes"/>
-        <xs:attribute ref="subject"/>
-        <xs:attribute ref="subjectURI"/>
-        <xs:attribute ref="property"/>
-        <xs:attribute ref="propertyURI"/>
-        <xs:attribute ref="value"/>
-        <xs:attribute ref="valueURI"/>
+	<xs:complexType name="oecdMetadataType" id="oecdMetadataType">
+		<xs:annotation>
+			<xs:documentation>
+				<section xmlns="http://docbook.org/ns/docbook">
+					<para>Metadata container element. Allowed as a child at almost any location in a
+						document.</para>
+				</section>
+			</xs:documentation>
+		</xs:annotation>
+		<xs:group ref="oecdMetadataTypeContent" maxOccurs="unbounded"/>
+		<xs:attributeGroup ref="oecdMetadataTypeAttributes"/>
+	</xs:complexType>
 
-    </xs:attributeGroup>
+	<!-- metdata item type. -->
+	<xs:attributeGroup name="oecdMetadataItemTypeAttributes" id="oecdMetadataItemTypeAttributes">
+		<xs:annotation>
 
-    <xs:group name="oecdMetadateItemTypeContent" id="oecdMetadateItemTypeContent">
-        <xs:annotation>
-            <xs:documentation>
-                <section xmlns="http://docbook.org/ns/docbook">
-                    <para>Content for metadata items. Grouped to allow easy override.</para>
-                    <para>The content model for metadata is currently defined as empty as all value is carried on the attributes.</para>
-                </section>
-            </xs:documentation>
-        </xs:annotation>
-        <xs:sequence/>
+			<xs:documentation>
+				<section xmlns="http://docbook.org/ns/docbook">
+					<revhistory>
+						<title>Change Log</title>
+						<revision>
+							<revnumber>2</revnumber>
+							<date>2012-08-06</date>
+							<authorinitials>NG</authorinitials>
+							<revremark>Added new attributes - subject, property, value - and their
+								URI based alternatives to flesh out metadata model.</revremark>
+						</revision>
+					</revhistory>
+					<para>Attributes for metadata items. Grouped to allow easy override.</para>
+				</section>
+			</xs:documentation>
+		</xs:annotation>
+		<xs:attributeGroup ref="oecdCommonAttributes"/>
+		<xs:attributeGroup ref="oecdLinkingAttributes"/>
+		<xs:attributeGroup ref="oecdMetaSubjectAttributes"/>
+		<xs:attributeGroup ref="oecdMetaPropertyAttributes"/>
+		<xs:attributeGroup ref="oecdMetaValueAttributes"/>
+		
+	</xs:attributeGroup>
 
-    </xs:group>
+	<xs:group name="oecdMetadateItemTypeContent" id="oecdMetadateItemTypeContent">
+		<xs:annotation>
+			<xs:documentation>
+				<section xmlns="http://docbook.org/ns/docbook">
+					<para>Content for metadata items. Grouped to allow easy override.</para>
+					<para>The content model for metadata is currently defined as empty as all value
+						is carried on the attributes.</para>
+				</section>
+			</xs:documentation>
+		</xs:annotation>
+		<xs:sequence/>
 
-    <xs:complexType name="oecdMetadataItemType" id="oecdMetadataItemType">
-        <xs:annotation>
-            <xs:documentation xmlns:html="http://www.w3.org/1999/xhtml">
-                <section xmlns="http://docbook.org/ns/docbook">
-                    <para>The content model for metadata is currently defined as a single element from any namespace. This is unlikely to be the final model and simply acts as a placeholder.</para>
-                </section>
-            </xs:documentation>
-        </xs:annotation>
-        <xs:group ref="oecdMetadateItemTypeContent"/>
-        <xs:attributeGroup ref="oecdMetadataItemTypeAttributes"/>
+	</xs:group>
 
-    </xs:complexType>
+	<xs:complexType name="oecdMetadataItemType" id="oecdMetadataItemType">
+		<xs:annotation>
+			<xs:documentation xmlns:html="http://www.w3.org/1999/xhtml">
+				<section xmlns="http://docbook.org/ns/docbook">
+					<para>The content model for metadata is currently defined as a single element
+						from any namespace. This is unlikely to be the final model and simply acts
+						as a placeholder.</para>
+				</section>
+			</xs:documentation>
+		</xs:annotation>
+		<xs:group ref="oecdMetadateItemTypeContent"/>
+		<xs:attributeGroup ref="oecdMetadataItemTypeAttributes"/>
 
-    <!-- SIMPLE TYPES -->
+	</xs:complexType>
 
-    <xs:simpleType name="oecdStringMetaType">
-        <xs:annotation>
-            <xs:documentation>
-                <section xmlns="http://docbook.org/ns/docbook"> <revhistory>
-                        <revnumber>2</revnumber>
-                        <date>2012-08-06</date>
-                        <authorinitials>NG</authorinitials>
-                        <revremark>Initial version</revremark>
-                    </revhistory> <para>The OECD string meta type is defined in order to allow a shared textual data type for string based metadata so that all three attributes below have a common type (non-empty string).</para>
-                </section>
-            </xs:documentation>
-        </xs:annotation>
-        <xs:restriction base="xs:string">
-            <xs:minLength value="1"/>
-        </xs:restriction>
-    </xs:simpleType>
+	<!-- SIMPLE TYPES -->
 
-    <xs:simpleType name="oecdURIMetaType">
-        <xs:annotation>
-            <xs:documentation>
-                <section xmlns="http://docbook.org/ns/docbook">
-                    <revhistory>
-                        <revnumber>2</revnumber>
-                        <date>2012-08-06</date>
-                        <authorinitials>NG</authorinitials>
-                        <revremark>Initial version</revremark>
-                    </revhistory> <para>The OECD URI meta type is defined in order to allow a shared data type for URI based metadata so that all three attributes below have a common type (non-blank anyURI).</para>
-                </section>
-            </xs:documentation>
-        </xs:annotation>
-        <xs:restriction base="xs:anyURI">
-            <xs:minLength value="1"/>
-        </xs:restriction>
-    </xs:simpleType>
+	<xs:simpleType name="oecdStringMetaType">
+		<xs:annotation>
+			<xs:documentation>
+				<section xmlns="http://docbook.org/ns/docbook">
+					<revhistory>
+						<revnumber>2</revnumber>
+						<date>2012-08-06</date>
+						<authorinitials>NG</authorinitials>
+						<revremark>Initial version</revremark>
+					</revhistory>
+					<para>The OECD string meta type is defined in order to allow a shared textual
+						data type for string based metadata so that all three attributes below have
+						a common type (non-empty string).</para>
+				</section>
+			</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:minLength value="1"/>
+		</xs:restriction>
+	</xs:simpleType>
 
-    <!-- ATTRIBUTES -->
-    <xs:attribute name="subject" type="oecdStringMetaType">
-        <xs:annotation>
-            <xs:documentation>
-                <section xmlns="http://docbook.org/ns/docbook">
-                    <para>Attribute used to indicate the subject of a metadata statement. This element can be omitted to indicate that it refers to the enclosing or referring element or if it is part of a group of metadata items with a specified subject.</para>
-                </section>
-            </xs:documentation>
-        </xs:annotation>
-    </xs:attribute>
+	<xs:simpleType name="oecdURIMetaType">
+		<xs:annotation>
+			<xs:documentation>
+				<section xmlns="http://docbook.org/ns/docbook">
+					<revhistory>
+						<revnumber>2</revnumber>
+						<date>2012-08-06</date>
+						<authorinitials>NG</authorinitials>
+						<revremark>Initial version</revremark>
+					</revhistory>
+					<para>The OECD URI meta type is defined in order to allow a shared data type for
+						URI based metadata so that all three attributes below have a common type
+						(non-blank anyURI).</para>
+				</section>
+			</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:anyURI">
+			<xs:minLength value="1"/>
+		</xs:restriction>
+	</xs:simpleType>
 
-    <xs:attribute name="subjectURI" type="oecdURIMetaType">
-        <xs:annotation>
-            <xs:documentation>
-                <section xmlns="http://docbook.org/ns/docbook">
-                    <para>Attribute used to indicate the subject of a metadata statement. Identical to subject above but requires a URI.</para>
-                </section>
-            </xs:documentation>
-        </xs:annotation>
-    </xs:attribute>
+	<!-- ATTRIBUTES -->
+	<xs:attributeGroup name="oecdMetaSubjectAttributes" id="oecdMetaSubjectAttributes">
 
-    <xs:attribute name="property" type="oecdStringMetaType">
-        <xs:annotation>
-            <xs:documentation>
-                <section xmlns="http://docbook.org/ns/docbook">
-                    <para>Attribute used to indicate the property of an entity in a metadata statement.</para>
-                </section>
-            </xs:documentation>
-        </xs:annotation>
-    </xs:attribute>
+		<xs:annotation>
+			<xs:documentation>
+				<para xmlns="http://docbook.org/ns/docbook">Wrap up metadata subject
+					attributes.</para>
+			</xs:documentation>
+		</xs:annotation>
 
-    <xs:attribute name="propertyURI" type="oecdURIMetaType">
-        <xs:annotation>
-            <xs:documentation>
-                <section xmlns="http://docbook.org/ns/docbook">
-                    <para>Attribute used to indicate the property of an entity in a metadata statement. Identical to property above but requires a URI.</para>
-                </section>
-            </xs:documentation>
-        </xs:annotation>
-    </xs:attribute>
+		<xs:attribute name="subject" type="oecdStringMetaType">
+			<xs:annotation>
+				<xs:documentation>
+					<section xmlns="http://docbook.org/ns/docbook">
+						<para>Attribute used to indicate the subject of a metadata statement. This
+							element can be omitted to indicate that it refers to the enclosing or
+							referring element or if it is part of a group of metadata items with a
+							specified subject.</para>
+					</section>
+				</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
 
-    <xs:attribute name="value" type="oecdStringMetaType">
-        <xs:annotation>
-            <xs:documentation>
-                <section xmlns="http://docbook.org/ns/docbook">
-                    <para>Attribute used to indicate the value of an entity in a metadata statement.</para>
-                </section>
-            </xs:documentation>
-        </xs:annotation>
-    </xs:attribute>
+		<xs:attribute name="subjectURI" type="oecdURIMetaType">
+			<xs:annotation>
+				<xs:documentation>
+					<section xmlns="http://docbook.org/ns/docbook">
+						<para>Attribute used to indicate the subject of a metadata statement.
+							Identical to subject above but requires a URI.</para>
+					</section>
+				</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
 
-    <xs:attribute name="valueURI" type="oecdURIMetaType">
-        <xs:annotation>
-            <xs:documentation>
-                <section xmlns="http://docbook.org/ns/docbook">
-                    <para>Attribute used to indicate the value of an entity in a metadata statement. Identical to value above but requires a URI.</para>
-                </section>
-            </xs:documentation>
-        </xs:annotation>
-    </xs:attribute>
+	</xs:attributeGroup>
 
+	<xs:attributeGroup name="oecdMetaPropertyAttributes" id="oecdMetaPropertyAttributes">
+
+		<xs:annotation>
+			<xs:documentation>
+				<para xmlns="http://docbook.org/ns/docbook">Wrap up metadata property
+					attributes.</para>
+			</xs:documentation>
+		</xs:annotation>
+
+		<xs:attribute name="property" type="oecdStringMetaType">
+			<xs:annotation>
+				<xs:documentation>
+					<section xmlns="http://docbook.org/ns/docbook">
+						<para>Attribute used to indicate the property of an entity in a metadata
+							statement.</para>
+					</section>
+				</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+
+		<xs:attribute name="propertyURI" type="oecdURIMetaType">
+			<xs:annotation>
+				<xs:documentation>
+					<section xmlns="http://docbook.org/ns/docbook">
+						<para>Attribute used to indicate the property of an entity in a metadata
+							statement. Identical to property above but requires a URI.</para>
+					</section>
+				</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+
+	</xs:attributeGroup>
+
+	<xs:attributeGroup name="oecdMetaValueAttributes" id="oecdMetaValueAttributes">
+
+		<xs:annotation>
+			<xs:documentation>
+				<para xmlns="http://docbook.org/ns/docbook">Wrap up metadata value
+					attributes.</para>
+			</xs:documentation>
+		</xs:annotation>
+
+		<xs:attribute name="value" type="oecdStringMetaType">
+			<xs:annotation>
+				<xs:documentation>
+					<section xmlns="http://docbook.org/ns/docbook">
+						<para>Attribute used to indicate the value of an entity in a metadata
+							statement.</para>
+					</section>
+				</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+
+		<xs:attribute name="valueURI" type="oecdURIMetaType">
+			<xs:annotation>
+				<xs:documentation>
+					<section xmlns="http://docbook.org/ns/docbook">
+						<para>Attribute used to indicate the value of an entity in a metadata
+							statement. Identical to value above but requires a URI.</para>
+					</section>
+				</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		
+	</xs:attributeGroup>
+	
 </xs:schema>
