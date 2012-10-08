@@ -28,6 +28,13 @@
                         <revremark>Removed oecdTableType.</revremark>
                         <revremark>Redefined model using soextblx baseType.</revremark>
                     </revision>
+                    <revision>
+                        <revnumber>4</revnumber>
+                        <date>2012-10-08</date>
+                        <authorinitials>JC</authorinitials>
+                        <revremark>Modified table model to make tfoot optional.</revremark>
+                        <revremark>Modified the occurrence value for Table-Foot content model.</revremark>
+                    </revision>
                 </revhistory>
             </section></xs:documentation>
     </xs:annotation>
@@ -44,7 +51,7 @@
             <xs:complexContent>
                 <xs:extension base="Table">
                     <xs:sequence>
-                        <xs:element name="tfoot" type="Table-Foot" maxOccurs="unbounded"/>
+                        <xs:element name="tfoot" type="Table-Foot" minOccurs="0" maxOccurs="1"/>
                     </xs:sequence>
                     <xs:attribute name="orientation" type="xs:string"/>
                 </xs:extension>
@@ -85,7 +92,7 @@
             <!--The table footer contains notes and sources. [maximum 1 per table] -->
             <xs:element ref="notes" minOccurs="0" maxOccurs="1"/>
             <!-- A note to a table, appearing at the foot. -->
-            <xs:element name="footnotes" type="Table-Footnotes" minOccurs="0"/>
+            <xs:element name="footnotes" type="Table-Footnotes" minOccurs="0" maxOccurs="1"/>
             <xs:element ref="sources" minOccurs="0" maxOccurs="1"/>
         </xs:sequence>
 
