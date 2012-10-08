@@ -39,6 +39,15 @@
                     <author><email>nicg@corbas.co.uk</email><personname>Nic Gibson</personname></author>
                     <revremark>Added glossary to chapter model.</revremark>
                 </revision>        
+            	
+            	<revision>
+            		<revnumber>5</revnumber>
+            		<date>2012-10-08</date>
+            		<author><email>nicg@corbas.co.uk</email><personname>Nic Gibson</personname></author>
+            		<revremark>Modified the chapter base content model to use section base content rather
+            			than section content. This resolves an issue where multiple titles were wrongly
+            			required.</revremark>
+            	</revision> 
                 
             </revhistory>
             <para>A chapter is a high level structural element. It has been modelled as a separate component
@@ -97,6 +106,23 @@
                             <author><email>nicg@corbas.co.uk</email><personname>Nic Gibson</personname></author>
                             <revremark>Added glossary element.</revremark>
                         </revision>   
+                    	
+                    	<revision>
+                    		<revnumber>5</revnumber>
+                    		<date>2012-10-06</date>
+                    		<authorinitials>NG</authorinitials>
+                    		<revremark>Modified to use oecdSectionTypeBaseContent to avoide the need for
+                    		problematic additional titles. </revremark>
+                    	</revision>
+                    	
+                    	<revision>
+                    		<revnumber>5</revnumber>
+                    		<date>2012-10-08</date>
+                    		<author><email>nicg@corbas.co.uk</email><personname>Nic Gibson</personname></author>
+                    		<revremark>Modified to use section base content rather
+                    			than section content. This resolves an issue where multiple titles were wrongly
+                    			required.</revremark>
+                    	</revision> 
                     </revhistory>
                         
                     <para>Uses the base section content type to add those components which are not allowed in a preface, etc.
@@ -112,7 +138,7 @@
             <xs:element ref="abstract" minOccurs="0"/>
             <xs:element ref="acknowledgements" minOccurs="0"/>
             <xs:choice maxOccurs="unbounded">
-                <xs:group ref="oecdSectionTypeContent"/>
+            	<xs:group ref="oecdSectionTypeBaseContent"/>
                 <xs:element ref="glossary"/>
             </xs:choice>
             
