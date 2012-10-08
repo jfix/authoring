@@ -56,6 +56,12 @@
                 		<authorinitials>NG</authorinitials>
                 		<revremark>Added standard attributes to footnote element.</revremark>
                 	</revision>
+                	<revision>
+                		<revnumber>9</revnumber>
+                		<date>2012-10-08</date>
+                		<authorinitials>NG</authorinitials>
+                		<revremark>Removed required metadataReference from phrase. Should be optional.</revremark>
+                	</revision>
                 </revhistory>
                 <para>Note: the inline graphic component is defined in graphics.</para>
             </section></xs:documentation>
@@ -334,10 +340,19 @@
                 <section xmlns="http://docbook.org/ns/docbook">
                     <para>Phrase type attributes grouped for easy override and reuse.</para>
                 </section>
+            	<revhistory>
+            			<revision>
+            				<revnumber>9</revnumber>
+            				<date>2012-10-08</date>
+            				<authorinitials>NG</authorinitials>
+            				<revremark>Removed required metadataReference. Should be optional as phrases can carry
+            				other meaning (e.g. language).</revremark>
+            			</revision>
+            	</revhistory>
             </xs:documentation>
         </xs:annotation>
 
-        <xs:attribute name="metadataRefs" type="xs:IDREFS" id="phraseMetadataRefs" use="required">
+        <xs:attribute name="metadataRefs" type="xs:IDREFS" id="phraseMetadataRefs">
             <xs:annotation>
                 <xs:documentation>
                     <section xmlns="http://docbook.org/ns/docbook">
@@ -362,7 +377,8 @@
                         <authorinitials>NG</authorinitials>
                         <revremark>Initial version</revremark>
                     </revision>
-                    <para>This element is used for semantic tagging. It allows an arbitrary number of metadata elements to be referenced.</para>
+                    <para>This element can be used for semantic tagging. It allows an arbitrary number of metadata elements to be referenced. The
+                    metadata referencing method is via attributes as the model doesn't allow metadata elements at this point. </para>
                 </div>
             </xs:documentation>
         </xs:annotation>
