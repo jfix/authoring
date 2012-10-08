@@ -45,11 +45,17 @@
                         <revremark>Adding missing substitutionGroup attributes.</revremark>
                     </revision>
                     <revision>
-                        <revnumber></revnumber>
+                        <revnumber>7</revnumber>
                         <date>2012-04-18</date>
                         <authorinitials>jc</authorinitials>
                         <revremark>Added content model for abbrev.</revremark>
                     </revision>
+                	<revision>
+                		<revnumber>8</revnumber>
+                		<date>2012-10-08</date>
+                		<authorinitials>NG</authorinitials>
+                		<revremark>Added standard attributes to footnote element.</revremark>
+                	</revision>
                 </revhistory>
                 <para>Note: the inline graphic component is defined in graphics.</para>
             </section></xs:documentation>
@@ -247,8 +253,19 @@
                 <section xmlns="http://docbook.org/ns/docbook">
                     <para>Footnote type attributes grouped for easy override and reuse.</para>
                 </section>
+            	<revhistory>
+            		<title>Change Log</title>
+            		<revision>
+            			<revnumber>8</revnumber>
+            			<date>2012-10-08</date>
+            			<authorinitials>NG</authorinitials>
+            			<revremark>Added standard attributes - omitted in previous versions.</revremark>
+            		</revision>
+            	</revhistory>
             </xs:documentation>
         </xs:annotation>
+    	<xs:attributeGroup ref="oecdCommonAttributes"/>
+    	<xs:attributeGroup ref="oecdLinkingAttributes"/>    	
     </xs:attributeGroup>
 
     <xs:group name="oecdFootNoteTypeContent" id="oecdFootNoteTypeContent">
