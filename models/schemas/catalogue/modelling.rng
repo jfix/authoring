@@ -18,6 +18,7 @@
                                           isolate revision information for a component from documentation
                                           etc...
     0.4     Joseph Crowther 04/04/2012    added enumeration for metadata specific components
+    0.5		Nic Gibson 10/10/12			  added simple metadata recording (metadata and item elements).
 -->	
 <grammar ns="http://www.corbas.co.uk/ns/model" xmlns="http://relaxng.org/ns/structure/1.0"
   datatypeLibrary="http://www.w3.org/2001/XMLSchema-datatypes">
@@ -161,6 +162,36 @@
       <ref name="corbas.model.component-ref"/>
     </element>
   </define>
+	
+	<define name="corbas.model.metadata">
+		<element name="metadata">
+			<oneOrMore>
+				<ref name="corbas.model.metadata.item"/>
+			</oneOrMore>
+		</element>
+	</define>
+	
+	<define name="corbas.model.metadata.item">
+		<element name="item">
+			<ref name="corbas.model.metadata.attribs"/>
+		</element>
+	</define>
+	
+	<define name="corbas.model.metadata.name.attrib">
+		<attribute name="name"><text/></attribute>
+	</define>
+	
+	<define name="corbas.model.metadata.type.attrib">
+		<attribute name="type"><text/></attribute>
+	</define>
+	
+	<define name="corbas.model.metadata.attribs">
+		<interleave>
+			<ref name="corbas.model.metadata.name.attrib"/>
+			<ref name="corbas.model.metadata.type.attrib"/>
+		</interleave>
+	</define>
+
   <define name="corbas.model.category-enum">
     <choice>
       <value>semantic</value>
@@ -206,6 +237,9 @@
     <optional>
       <ref name="corbas.model.type-of"/>
     </optional>
+  	<optional>
+  		<ref name="corbas.model.metadata"/>
+  	</optional>
     <optional>
       <ref name="corbas.model.notes"/>
     </optional>
