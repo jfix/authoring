@@ -1,0 +1,269 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+    ===============================================================================
+    RelaxNG schema for modelling logical data structures. 
+    ================================================================================
+    Creation date: 23/03/2012
+    Created by:    Nic Gibson
+    ===============================================================================
+    Version history
+    
+    Version no.	Name            Date           Reason
+    _______________________________________________________________________________
+  
+    0.1			Nic Gibson      23/03/2012    Initial Version
+    0.2     Joseph Crowther	27/03/2012    added header
+                                          added enumeration for publishing specific components
+    0.3     Joseph Crowther 30/03/2012    added <oneOrMore> to corbas.model.notes to allow us to 
+                                          isolate revision information for a component from documentation
+                                          etc...
+    0.4     Joseph Crowther 04/04/2012    added enumeration for metadata specific components
+-->	
+<grammar ns="http://www.corbas.co.uk/ns/model" xmlns="http://relaxng.org/ns/structure/1.0"
+  datatypeLibrary="http://www.w3.org/2001/XMLSchema-datatypes">
+
+  <include href="docbook.rng" ns="http://docbook.org/ns/docbook">
+    <define name="db._any">
+      <element>
+        <anyName>
+          <except>
+            <nsName/>
+            <nsName ns="http://www.corbas.co.uk/ns/model"/>
+          </except>
+        </anyName>
+        <zeroOrMore>
+          <choice>
+            <ref name="db._any.attribute"/>
+            <text/>
+            <ref name="db._any"/>
+          </choice>
+        </zeroOrMore>
+      </element>
+    </define>
+  </include>
+
+
+  <start combine="choice">
+    <ref name="corbas.model.model"/>
+  </start>
+
+  <define name="corbas.model.attribute.id">
+    <attribute name="xml:id">
+      <data type="ID"/>
+    </attribute>
+  </define>
+
+  <define name="corbas.model.attribute.href">
+    <attribute name="href">
+      <data type="anyURI"/>
+    </attribute>
+  </define>
+
+  <define name="corbas.model.attribute.role">
+    <attribute name="role"/>
+  </define>
+
+  <define name="corbas.model.attribute.ref">
+    <attribute name="ref">
+      <data type="IDREF"/>
+    </attribute>
+  </define>
+
+  <define name="corbas.model.cardinality.enum">
+    <choice>
+      <value>zero-or-one</value>
+      <value>zero-or-more</value>
+      <value>one-or-more</value>
+      <value>one</value>
+    </choice>
+  </define>
+  <define name="corbas.model.attribute.cardinality">
+    <attribute name="cardinality">
+      <ref name="corbas.model.cardinality.enum"/>
+    </attribute>
+  </define>
+  <define name="corbas.model.base.attribs">
+    <interleave>
+      <optional>
+        <ref name="corbas.model.attribute.id"/>
+      </optional>
+      <optional>
+        <ref name="corbas.model.attribute.role"/>
+      </optional>
+    </interleave>
+  </define>
+  <define name="corbas.model.link">
+    <element name="link">
+      <interleave>
+        <ref name="corbas.model.attribute.href"/>
+        <ref name="corbas.model.base.attribs"/>
+      </interleave>
+      <optional>
+        <text/>
+      </optional>
+    </element>
+  </define>
+
+
+
+
+
+
+  <define name="corbas.model.gv.content">
+    <text/>
+  </define>
+
+  <define name="corbas.model.gv">
+    <element name="gv">
+      <ref name="corbas.model.base.attribs"/>
+      <ref name="corbas.model.gv.content"/>
+    </element>
+  </define>
+
+  <define name="corbas.model.svg">
+    <element name="svg">
+      <ref name="db._any.svg"/>
+    </element>
+  </define>
+
+  <define name="corbas.model.diagram.content">
+    <choice>
+      <ref name="corbas.model.gv"/>
+      <ref name="corbas.model.svg"/>
+    </choice>
+  </define>
+  <define name="corbas.model.diagram">
+    <element name="diagram">
+      <ref name="corbas.model.base.attribs"/>
+      <ref name="corbas.model.diagram.content"/>
+    </element>
+  </define>
+
+
+
+  <define name="corbas.model.component-ref">
+    <element name="component-ref">
+      <ref name="corbas.model.attribute.ref"/>
+      <optional>
+        <ref name="corbas.model.attribute.cardinality"/>
+      </optional>
+    </element>
+  </define>
+  <define name="corbas.model.children">
+    <element name="children">
+      <oneOrMore>
+        <ref name="corbas.model.component-ref"/>
+      </oneOrMore>
+    </element>
+  </define>
+  <define name="corbas.model.type-of">
+    <element name="type-of">
+      <ref name="corbas.model.component-ref"/>
+    </element>
+  </define>
+  <define name="corbas.model.category-enum">
+    <choice>
+      <value>semantic</value>
+      <value>structural</value>
+      <value>publishing</value>
+      <value>block</value>
+      <value>inline</value>
+      <value>metadata</value>
+      <value>document</value>
+    </choice>
+  </define>
+  <define name="corbas.model.category">
+    <element name="category">
+      <ref name="corbas.model.category-enum"/>
+    </element>
+  </define>
+  <define name="corbas.model.notes">
+    <oneOrMore>
+      <ref name="db.section"/>
+    </oneOrMore>
+  </define>
+  <define name="corbas.model.name">
+    <element name="name">
+      <text/>
+    </element>
+  </define>
+  <define name="corbas.model.text">
+    <element name="text">
+      <empty/>
+    </element>
+  </define>
+  <define name="corbas.model.component.content">
+    <ref name="corbas.model.name"/>
+    <oneOrMore>
+      <ref name="corbas.model.category"/>
+    </oneOrMore>
+    <optional>
+      <ref name="corbas.model.text"/>
+    </optional>
+    <optional>
+      <ref name="corbas.model.children"/>
+    </optional>
+    <optional>
+      <ref name="corbas.model.type-of"/>
+    </optional>
+    <optional>
+      <ref name="corbas.model.notes"/>
+    </optional>
+  </define>
+  <define name="corbas.model.component">
+    <element name="component">
+      <interleave>
+        <ref name="corbas.model.attribute.id"/>
+        <optional>
+          <ref name="corbas.model.attribute.role"/>
+        </optional>
+      </interleave>
+      <ref name="corbas.model.component.content"/>
+    </element>
+  </define>
+  <define name="corbas.model.group.content">
+    <ref name="corbas.model.name"/>
+
+    <ref name="corbas.model.children"/>
+
+    <optional>
+      <ref name="corbas.model.notes"/>
+    </optional>
+  </define>
+  <define name="corbas.model.group">
+    <element name="group">
+      <ref name="corbas.model.base.attribs"/>
+      <ref name="corbas.model.group.content"/>
+    </element>
+  </define>
+  <define name="corbas.model.content">
+    <ref name="db.title"/>
+    <choice>
+      <oneOrMore>
+        <ref name="db.section"/>
+      </oneOrMore>
+      <group>
+        <optional>
+          <ref name="db.title"/>
+        </optional>
+        <oneOrMore>
+          <ref name="db.section"/>
+        </oneOrMore>
+        <zeroOrMore>
+          <ref name="db.section"/>
+        </zeroOrMore>
+      </group>
+    </choice>
+    <zeroOrMore>
+      <choice>
+        <ref name="corbas.model.component"/>
+        <ref name="corbas.model.group"/>
+      </choice>
+    </zeroOrMore>
+  </define>
+  <define name="corbas.model.model">
+    <element name="model">
+      <ref name="corbas.model.content"/>
+    </element>
+  </define>
+</grammar>
