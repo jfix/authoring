@@ -35,6 +35,13 @@
             		<authorinitials>NG</authorinitials>
             		<revremark>Wrapped global attributes in groups to avoid the need to namespace prefix them on use.</revremark>
             	</revision>
+            	
+            	<revision>
+            		<revnumber>5</revnumber>
+            		<date>2012-10-11</date>
+            		<authorinitials>NG</authorinitials>
+            		<revremark>Modified xlink:simpleLink to xlink:simpleAttrs to use the standard XLink schema file.</revremark>
+            	</revision>
                 
             </revhistory>
         </section></xs:documentation>
@@ -68,7 +75,7 @@
                 </section>
             </xs:documentation>
         </xs:annotation>
-        <xs:attributeGroup ref="xlink:simpleLink"/>
+        <xs:attributeGroup ref="xlink:simpleAttrs"/>
         <xs:attributeGroup ref="XREF-GROUP"/>
     </xs:attributeGroup>
     
