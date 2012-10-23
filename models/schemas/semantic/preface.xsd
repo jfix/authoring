@@ -20,8 +20,12 @@
                         <author><email>nicg@corbas.co.uk</email><personname>Nic Gibson</personname></author>
                         <revremark>Restructured to separate file from section.</revremark>
                     </revision>
-                    
-                
+                <revision>
+                    <revnumber>3</revnumber>
+                    <date>2012-10-23</date>
+                    <authorinitials>JC</authorinitials>
+                    <revremark>Updated schemaLocation for section.</revremark>
+                </revision>
             </revhistory>
             <para>An appendix is a section</para>
         </section></xs:documentation>
@@ -29,7 +33,7 @@
     
     <!-- IMPORTS AND INCLUDES -->
     
-    <xs:include schemaLocation="section.xsd"/>
+    <xs:include schemaLocation="../structure/section.xsd"/>
     
     <!-- GLOBAL ELEMENTS -->
     

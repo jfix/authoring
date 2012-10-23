@@ -29,6 +29,13 @@
                         <revremark>added include to conclusion.xsd.</revremark>
                         <revremark>updated oecdBaseDocumentTypeContent to allow conclusion.</revremark>
                     </revision>
+                    <revision>
+                        <revnumber>4</revnumber>
+                        <date>2012-10-23</date>
+                        <authorinitials>JC</authorinitials>
+                        <revremark>Updated schemaLocation for preface to align with agreed report and component catalogue.</revremark>
+                        <revremark>Rehashed includes alpha-sort.</revremark>
+                    </revision>
                     <para>A document is the standard top-level structural element. </para>
                 </revhistory>
             </section>
@@ -38,15 +45,15 @@
     <!-- IMPORTS AND INCLUDES -->
 
     <xs:include schemaLocation="chapter.xsd"/>
-    <xs:include schemaLocation="preface.xsd"/>
     <xs:include schemaLocation="part.xsd"/>
-    <xs:include schemaLocation="../components/meta.xsd"/>
-    <xs:include schemaLocation="../semantic/biblio.xsd"/>
-    <xs:include schemaLocation="../semantic/glossary.xsd"/>
-    <xs:include schemaLocation="../semantic/acknowledgements.xsd"/>
-    <xs:include schemaLocation="../semantic/executive-summary.xsd"/>
-    <xs:include schemaLocation="../semantic/conclusion.xsd"/>
     <xs:include schemaLocation="../components/document-meta.xsd"/>
+    <xs:include schemaLocation="../components/meta.xsd"/>
+    <xs:include schemaLocation="../semantic/acknowledgements.xsd"/>
+    <xs:include schemaLocation="../semantic/biblio.xsd"/>
+    <xs:include schemaLocation="../semantic/conclusion.xsd"/>
+    <xs:include schemaLocation="../semantic/executive-summary.xsd"/>
+    <xs:include schemaLocation="../semantic/glossary.xsd"/>
+    <xs:include schemaLocation="../semantic/preface.xsd"/>
 
     <!-- GLOBAL GROUPS -->
 
