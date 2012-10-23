@@ -50,6 +50,12 @@
 							the schema forced multiple titles into chapters, prefaces and
 							appendices. This was not correct.</revremark>
 					</revision>
+					<revision>
+						<revnumber>5</revnumber>
+						<date>2012-10-23</date>
+						<authorinitials>JC</authorinitials>
+						<revremark>Added common attribute group to oecdSectionTypeAttributes.</revremark>
+					</revision>
 				</revhistory>
 			</section></xs:documentation>
 	</xs:annotation>
@@ -76,6 +82,14 @@
 			<xs:documentation>
 				<section xmlns="http://docbook.org/ns/docbook">
 					<para>Attributes for sections as a group for easy overrides and reuse.</para>
+					<revhistory>
+						<revision>
+							<revnumber>1</revnumber>
+							<date>2012-10-23</date>
+							<authorinitials>JC</authorinitials>
+							<revremark>Added attribute group oecdCommonAttributes to primarily allow @id.</revremark>                        
+						</revision>
+					</revhistory>
 				</section>
 			</xs:documentation>
 		</xs:annotation>
@@ -123,6 +137,7 @@
 		</xs:attribute>
 
 		<xs:attributeGroup ref="ANNOTATIONS-GROUP"/>
+		<xs:attributeGroup ref="oecdCommonAttributes"/>
 
 
 	</xs:attributeGroup>
