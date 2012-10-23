@@ -56,6 +56,12 @@
 						<authorinitials>JC</authorinitials>
 						<revremark>Added common attribute group to oecdSectionTypeAttributes.</revremark>
 					</revision>
+					<revision>
+						<revnumber>6</revnumber>
+						<date>2012-10-23</date>
+						<authorinitials>JC</authorinitials>
+						<revremark>Added attribute group to oecdLinkingAttributes.</revremark>
+					</revision>
 				</revhistory>
 			</section></xs:documentation>
 	</xs:annotation>
@@ -88,6 +94,14 @@
 							<date>2012-10-23</date>
 							<authorinitials>JC</authorinitials>
 							<revremark>Added attribute group oecdCommonAttributes to primarily allow @id.</revremark>                        
+						</revision>
+					</revhistory>
+					<revhistory>
+						<revision>
+							<revnumber>2</revnumber>
+							<date>2012-10-23</date>
+							<authorinitials>JC</authorinitials>
+							<revremark>Added attribute group oecdLinkingAttributes to facilitate component links.</revremark>                        
 						</revision>
 					</revhistory>
 				</section>
@@ -135,11 +149,9 @@
 				</xs:documentation>
 			</xs:annotation>
 		</xs:attribute>
-
 		<xs:attributeGroup ref="ANNOTATIONS-GROUP"/>
 		<xs:attributeGroup ref="oecdCommonAttributes"/>
-
-
+		<xs:attributeGroup ref="oecdLinkingAttributes"/>
 	</xs:attributeGroup>
 
 	<xs:group name="oecdSectionTypeBaseContent" id="oecdSectionTypeBaseContent">
@@ -213,7 +225,6 @@
 
 		<xs:group ref="oecdSectionTypeContent"/>
 		<xs:attributeGroup ref="oecdSectionTypeAttributes"/>
-
 	</xs:complexType>
 
 </xs:schema>
