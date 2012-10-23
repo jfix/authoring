@@ -35,6 +35,12 @@
                         <revremark>Modified table model to make tfoot optional.</revremark>
                         <revremark>Modified the occurrence value for Table-Foot content model.</revremark>
                     </revision>
+                    <revision>
+                        <revnumber>5</revnumber>
+                        <date>2012-10-23</date>
+                        <authorinitials>JC</authorinitials>
+                        <revremark>Modified table redefine to provide component level attributes and meta.</revremark>
+                    </revision>
                 </revhistory>
             </section></xs:documentation>
     </xs:annotation>
@@ -54,6 +60,7 @@
                         <xs:element name="tfoot" type="Table-Foot" minOccurs="0" maxOccurs="1"/>
                     </xs:sequence>
                     <xs:attribute name="orientation" type="xs:string"/>
+                    <xs:attributeGroup ref="oecdTableTypeAttributes"/>
                 </xs:extension>
             </xs:complexContent>
         </xs:complexType>
@@ -107,5 +114,25 @@
 
     <xs:element name="table" type="Table" id="table"/>
 
+    <xs:attributeGroup name="oecdTableTypeAttributes" id="oecdTableTypeAttributes">
+        <xs:annotation>
+            <xs:documentation>
+                <section xmlns="http://docbook.org/ns/docbook">
+                    <revhistory>
+                        <revision>
+                            <revnumber>1</revnumber>
+                            <date>2012-10-23</date>
+                            <authorinitials>JC</authorinitials>
+                            <revremark>Added group.</revremark>                        
+                        </revision>
+                    </revhistory>
+                    <para>Attribute group for table elements to allow easy overrides.</para>
+                </section>
+            </xs:documentation>
+        </xs:annotation>        
+        <xs:attributeGroup ref="oecdCommonAttributes"/>
+        <xs:attributeGroup ref="oecdLinkingAttributes"/>
+        <xs:attributeGroup ref="ANNOTATIONS-GROUP"/>
+    </xs:attributeGroup>
 
 </xs:schema>
