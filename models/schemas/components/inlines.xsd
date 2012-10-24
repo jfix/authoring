@@ -62,6 +62,18 @@
                 		<authorinitials>NG</authorinitials>
                 		<revremark>Removed required metadataReference from phrase. Should be optional.</revremark>
                 	</revision>
+                    <revision>
+                        <revnumber>9</revnumber>
+                        <date>2012-10-08</date>
+                        <authorinitials>NG</authorinitials>
+                        <revremark>Removed required metadataReference from phrase. Should be optional.</revremark>
+                    </revision>
+                    <revision>
+                        <revnumber>10</revnumber>
+                        <date>2012-10-24</date>
+                        <authorinitials>JC</authorinitials>
+                        <revremark>Unexposed oecdInline element, this element cannot appear in the document (because it is abstract).</revremark>
+                    </revision>
                 </revhistory>
                 <para>Note: the inline graphic component is defined in graphics.</para>
             </section></xs:documentation>
@@ -77,7 +89,7 @@
 
 
     <!-- GLOBAL ELEMENTS -->
-    <xs:element name="oecdInline" type="oecdInlineType" id="oecdInline"/>
+    <xs:element name="oecdInline" type="oecdInlineType" id="oecdInline" abstract="true"/>
     <!-- different name to all other elements as it is abstract -->
     <xs:element name="emphasis" type="oecdEmphasisType" substitutionGroup="oecdInline" id="emphasis"/>
     <xs:element name="footnote" type="oecdFootnoteType" id="footnote"/>
