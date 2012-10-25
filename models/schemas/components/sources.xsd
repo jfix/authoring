@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xs:schema 
     xmlns:xs="http://www.w3.org/2001/XMLSchema" 
+    xmlns:mods="http://www.loc.gov/mods/v3"
     elementFormDefault="qualified">
 
     <xs:annotation>
@@ -21,7 +22,12 @@
 	            		<authorinitials>NG</authorinitials>
 	            		<revremark>Wrapped global attributes in groups to avoid namespace prefix requirement.</revremark>
 	            	</revision>
-					
+                	<revision>
+                		<revnumber>3</revnumber>
+                		<date>2012-10-25</date>
+                		<authorinitials>NG</authorinitials>
+                		<revremark>Updated <link linkend="oecdSourceTypeContent">oecdSourceTypeContent</link> to use MODS and citations for source information.</revremark>
+                	</revision>					
                 </revhistory>
             </section>
         </xs:documentation>
@@ -29,9 +35,9 @@
 
 
     <!-- INCLUDES AND IMPORTS -->
-
-    <xs:include schemaLocation="paras.xsd"/>
-    <!--<xs:import schemaLocation="../external/mods.xsd" namespace="http://www.loc.gov/mods/v3"/>-->
+	<xs:include schemaLocation="attributes.xsd"/>
+	<xs:include schemaLocation="titles.xsd"/>
+    <xs:import schemaLocation="../external/mods.xsd" namespace="http://www.loc.gov/mods/v3"/>
 
     <!-- GLOBAL ELEMENTS -->
 
@@ -59,17 +65,24 @@
     <xs:group name="oecdSourceTypeContent" id="oecdSourceTypeContent">
         <xs:annotation>
             <xs:documentation>
+            	<revhistory>
+            		<revision>
+            			<revnumber>3</revnumber>
+            			<date>2012-10-25</date>
+            			<authorinitials>NG</authorinitials>
+            			<revremark>Updated to use MODS and citations for source information.</revremark>
+            		</revision>	
+            	</revhistory>
                 <section xmlns="http://docbook.org/ns/docbook">
-                    <para>Content for individual sources. Grouped for easy redefinition.</para>
+                    <para>Content for individual sources. Grouped for easy redefinition. A source
+                    may be either a citation or a full bibliographic reference.</para>
                 </section>
             </xs:documentation>
         </xs:annotation>
-        <xs:sequence>
-            <xs:element ref="metadata" minOccurs="0"/>
-            <xs:sequence>
-                <xs:element ref="para" maxOccurs="unbounded"/>
-            </xs:sequence>
-        </xs:sequence>
+        <xs:choice>
+            <xs:element ref="citation"/>
+			<xs:element ref="mods:mods"/>
+        </xs:choice>
     </xs:group>
 
     <xs:complexType name="oecdSourceType" id="oecdSourceType">
