@@ -29,6 +29,15 @@
             		<revremark>Wrapped global attributes in groups to avoid namespace prefix requirement.</revremark>
             	</revision>
             	
+            	<revision>
+            		<revnumber>4</revnumber>
+            		<date>2012-10-25</date>
+            		<authorinitials>NG</authorinitials>
+            		<revremark>Replaced attribution with sources in the <link linkend="oecdBlockQuoteTypeContent">oecdBlockQuoteTypeContent</link> 
+            			group for consistency across model.</revremark>
+            	</revision>
+            	
+            	
                 
             </revhistory>
         </section></xs:documentation>
@@ -37,7 +46,7 @@
     <!-- INCLUDES AND IMPORTS -->
     
     <xs:include schemaLocation="blocks.xsd"/>
-    <xs:include schemaLocation="attribution.xsd"/>
+    <xs:include schemaLocation="sources.xsd"/>
     <xs:include schemaLocation="graphics.xsd"/>
     
     <!-- GLOBAL ELEMENTS -->
@@ -88,6 +97,15 @@
                 <section xmlns="http://docbook.org/ns/docbook">
                     <para>Blockquote content, grouped for easy overrides and reuse.</para>
                 </section>
+            	
+            	<revision>
+            		<revnumber>4</revnumber>
+            		<date>2012-10-25</date>
+            		<authorinitials>NG</authorinitials>
+            		<revremark>Replaced attribution with sources for consistency across model.</revremark>
+            	</revision>
+            	
+            	
             </xs:documentation>
         </xs:annotation>
         <xs:choice>
@@ -100,10 +118,11 @@
     <xs:complexType name="oecdBlockQuoteType" id="oecdBlockQuoteType">
         <xs:annotation>
             <xs:documentation>
+            	
                 <section xmlns="http://docbook.org/ns/docbook">
                     <para>Blockquote elements are intended for transcribed text from
                     external sources. A blockquote has essential metadata stored
-                    in the attribution element.</para>   
+                    in the sources element.</para>   
                 </section>
             </xs:documentation>
         </xs:annotation>
@@ -253,7 +272,7 @@
         <xs:sequence>
             <xs:element ref="metadata" minOccurs="0"/>
             <xs:group ref="oecdTitleGroup" minOccurs="0"/>
-            <xs:element ref="attribution"/>
+            <xs:element ref="sources"/>
             <xs:choice>
                 <xs:element ref="blockQuote"/>
                 <xs:element ref="embeddedContent"/>
