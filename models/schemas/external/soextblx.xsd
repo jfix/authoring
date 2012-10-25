@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:db="http://www.oasis-open.org/docbook/xmlschema/4.1.2"
-	xmlns:xd="http://www.oecd.org/ns/schema/xdocs" elementFormDefault="qualified" attributeFormDefault="unqualified" id="soextblx">
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:db="http://www.oasis-open.org/docbook/xmlschema/4.1.2" xmlns:xd="http://www.oecd.org/ns/schema/xdocs" elementFormDefault="qualified" attributeFormDefault="unqualified" id="soextblx">
 
 	<xs:annotation>
 		<xs:documentation><section xmlns="http://docbook.org/ns/docbook">
@@ -33,12 +32,36 @@
 							<remark>renamed title element titles to allow extension</remark>
 						</remark>
 					</revision>
+					<revision>
+						<revnumber>3</revnumber>
+						<date>2012-10-25</date>
+						<authorinitials>JC</authorinitials>
+						<remark>
+							<remark>Included meta.xsd and added reference to GLOBAL metadata element.</remark>
+						</remark>
+					</revision>
 				</revhistory>
-			</section></xs:documentation>
+			</section>
+		</xs:documentation>
 	</xs:annotation>
 
+	<xs:include schemaLocation="../components/meta.xsd"/>
+
 	<xs:complexType name="Table">
+		<xs:annotation>
+			<xs:documentation>
+				<section xmlns="http://docbook.org/ns/docbook">
+					<revision>
+						<revnumber>1</revnumber>
+						<date>2011-10-25</date>
+						<author>JC</author>
+						<revremark>Added metadata to the table sequence of complexType Table.</revremark>
+					</revision>
+				</section>
+			</xs:documentation>
+		</xs:annotation>
 		<xs:sequence>
+			<xs:element ref="metadata" minOccurs="0"/>
 			<xs:element name="titles" type="Table.Title" minOccurs="0"/>
 			<xs:element name="tgroup" type="Table.Tgroup" maxOccurs="unbounded"/>
 		</xs:sequence>
