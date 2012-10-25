@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?xml-model href="../tools/modelling.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
 
+
+<?xml-model href="../schemas/catalogue/modelling.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
 <model xmlns="http://www.corbas.co.uk/ns/model" xmlns:db="http://docbook.org/ns/docbook" xmlns:xd="http://www.oecd.org/ns/schema/xdocs"
     xmlns:s="http://www.ascc.net/xml/schematron" xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"
     xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:svg="http://www.w3.org/2000/svg" xmlns:rng="http://relaxng.org/ns/structure/1.0"
@@ -1475,21 +1476,7 @@
 
     </component>
 
-    <component xml:id="schedule" role="modelled">
-        <name>Schedule</name>
-        <category>semantic</category>
-        <type-of>
-            <component-ref ref="metadata-item"/>
-        </type-of>
-    </component>
 
-    <component xml:id="agenda-item-type" role="missing">
-        <name>Agenda Item Type</name>
-        <category>semantic</category>
-        <type-of>
-            <component-ref ref="metadata-item"/>
-        </type-of>
-    </component>
 
     <!-- foreign models -->
     <component xml:id="foreign-content" role="missing">
@@ -1603,63 +1590,136 @@
     </group>
 
     <!-- agenda specific components -->
+	<component xml:id="agenda" role="missing">
+		<name>Agenda</name>
+		<category>semantic</category>
+		<children>
+			<component-ref ref="grp-titles" cardinality="one"/>
+			<component-ref ref="abstract" cardinality="zero-or-more"/>
+			<component-ref ref="grp-simple-blocks" cardinality="zero-or-more"/>
+			<component-ref ref="agenda-section" cardinality="one-or-more"/>
+			<component-ref ref="agenda-session" cardinality="one-or-more"/>
+		</children>
+		<metadata>
+			<item name="start" type="datetime"/>
+			<item name="end" type="datetime"/>
+		</metadata>
+				
+		<section xmlns="http://docbook.org/ns/docbook">
+			<title>Definition</title>
+			<para>An agenda consists of text plus a list of agenda items  divided into sessions. All agendas consist 
+			of at least one session. A large proportion of the 
+			Basic textual information is also used in introductory materials and in the sections that an agenda
+			may be divided into. Annotations can be provided. There are, within the OECD, many ways to render
+			annotations. The model treats annotations as associated with the items although they may be rendered
+			as a final section.</para>
+			
+			<para>An annotated agenda is defined as an agenda where one or more items have annotations.</para>
+			
+			<para>A complex agenda is defined as one where more than one session exists.</para>
+			
+			<revhistory>
+				<revision>
+					<revnumber>2</revnumber>
+					<date>2012-10-25</date>
+					<authorinitials>NG</authorinitials>
+					<revdescription>
+						<para>Agendas have had a complete redesign since the initial version included in the document
+						modelling report. There are two reasons for this rewrite. Firstly, further analysis of the
+						initial modelling suggested that the model had been overcomplicated by the creation 
+						of simple and complex agenda models. A simple agenda be viewed as a complex agenda with
+						one session only. Therefore, there is no need for the disction. Secondly, analysis of
+						further documents has indicated that agendas require additional structure (a section
+						analogue) and that annotation can be applied at any time.</para>
+						<para>We have additionally discovered agendas with unexpected features such as abstracts. These
+						have been added to the component structure.</para>
+					</revdescription>
+				</revision>
+			</revhistory>
+			
+		</section>
+		
+	</component>
+	
+	<component xml:id="agenda-section" role="missing">
+		<name>Agenda Section</name>
+		<category>semantic</category>
+		<category>structural</category>
+		<children>
+			<component-ref ref="grp-titles" cardinality="one"/>
+			<component-ref ref="grp-simple-blocks" cardinality="zero-or-more"/>
+			<component-ref ref="agenda-session" cardinality="one-or-more"/>
+		</children>
+		
+		<section xmlns="http://docbook.org/ns/docbook">
+			<title>Definition</title>
+			<para>An agenda section provides a degree of structure to agendas. There is no apparent reason to have
+			deeply nested sections such as occur in narrative documents but agendas have been seen to have some
+			structural features. Therefore, we have not implemented nesting for agenda sections.</para>
+		</section>
+	</component>
+	
+	
     <component xml:id="agenda-item" role="missing">
         <name>Agenda Item</name>
         <category>semantic</category>
         <children>
-            <component-ref ref="agenda-item-metadata"/>
-            <component-ref ref="grp-titles"/>
-            <component-ref ref="simple-para"/>
-            <component-ref ref="document-list"/>
+            <component-ref ref="grp-titles" cardinality="one"/>
+            <component-ref ref="simple-para" cardinality="zero-or-more"/>
+            <component-ref ref="document-list" cardinality="zero-or-one"/>
+        	<component-ref ref="agenda-annotation" cardinality="zero-or-one"/>
         </children>
-
+    	
+    	<metadata>
+    		<item name="start" type="datetime"/>
+    		<item type="duration" name="duration"/>
+    		
+    	</metadata>
+    	
         <db:section>
             <db:title>Definition</db:title>
             <db:para>An agenda item component represents a single item in an agenda. In the initial OECD agendas, it generally consists of a title
                 along with some metadata and an optional Document List component. When an annotated agenda is created additional textual information
-                and a time and duration are added to the item.</db:para>
+                can be added to the item. </db:para>
         </db:section>
 
     </component>
-
-    <component xml:id="agenda-item-metadata" role="missing">
-        <name>Agenda Item Metadata</name>
-        <category>semantic</category>
-        <children>
-            <component-ref ref="duration"/>
-            <component-ref ref="agenda-item-type"/>
-        </children>
-        <type-of>
-            <component-ref ref="metadata-group"/>
-        </type-of>
-    </component>
-
-    <component xml:id="agenda-session-metadata" role="missing">
-        <name>Agenda Session Metdata</name>
-        <category>semantic</category>
-        <children>
-            <component-ref ref="agenda-item-type"/>
-            <component-ref ref="schedule"/>
-            <component-ref ref="duration"/>
-        </children>
-        <type-of>
-            <component-ref ref="metadata-group"/>
-        </type-of>
-    </component>
-
+	
+	<component xml:id="agenda-annotation">
+		<name>Agenda Annotation</name>
+		<category>semantic</category> 
+		<children>
+			<component-ref ref="grp-titles" cardinality="zero-or-one"/>
+			<component-ref ref="grp-simple-blocks" cardinality="one-or-more"/>
+		</children>
+		
+		<db:section>
+			<db:title>Definition</db:title>
+			<db:para>An agenda annotation component represents the textual annotations that can be added to any agenda item at any time. The
+			annotation can consist of any of the simple block components. </db:para>
+		</db:section>
+		
+	</component>
+	
     <component xml:id="agenda-session" role="missing">
         <name>Agenda Session</name>
         <category>semantic</category>
         <children>
-            <component-ref ref="grp-titles"/>
-            <component-ref ref="agenda-session-metadata"/>
-            <component-ref ref="agenda-item"/>
+            <component-ref ref="grp-titles" cardinality="one"/>
+        	<component-ref ref="grp-simple-blocks" cardinality="zero-or-more"/>
+            <component-ref ref="agenda-item" cardinality="one-or-more"/>
         </children>
-
+    	<metadata>
+    		<item name="agenda-item-type" type="unknown"/>
+    		<item type="duration" name="duration"/>
+    	</metadata>
+    	
         <db:section>
             <db:title>Definition</db:title>
             <db:para>An agenda session represents a group of agenda items grouped together with a title and optional session specific metadata.
-                Initially identified metadata includes time, location and duration.</db:para>
+                Initially identified metadata includes time, location and duration. Sessions often have introductory text. Agendas with one 
+                session only can be considered to be semantically equal to agendas with no sessions. Therefore, there is no model for a simple agenda.
+           </db:para>
         </db:section>
 
     </component>
