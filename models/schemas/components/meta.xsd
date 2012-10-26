@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" xmlns:xlink="http://www.w3.org/1999/xlink">
 
 	<xs:annotation>
-		<xs:documentation><section xmlns="http://docbook.org/ns/docbook">
+		<xs:documentation><section xmlns="http://docbook.org/ns/docbook"
+				>
 				<revhistory>
 					<title>Change Log</title>
 					<revision>
@@ -26,6 +27,16 @@
 						<revremark>Modified all groups to actually contain the element definitions -
 							they will never be used in isolation and they should not be global as
 							they should not be namespace prefixed.</revremark>
+					</revision>
+					<revision>
+						<revnumber>4</revnumber>
+						<date>2012-10-26</date>
+						<authorinitials>NG</authorinitials>
+						<revremark>Modified the <link linkend="oecdMetadataTypeAttributes"
+								>oecdMetadataTypeAttributes</link> group to include the property
+							attributes in order to satisfy <link
+								xlink:href="https://pacps01.oecd.org/redmine/issues/4872">issue
+								4872</link>.</revremark>
 					</revision>
 				</revhistory>
 				<section>
@@ -69,14 +80,23 @@
 							<authorinitials>NG</authorinitials>
 							<revremark>Moved element definitions into the group.</revremark>
 						</revision>
-					</revhistory>
+						<revision>
+							<revnumber>4</revnumber>
+							<date>2012-10-26</date>
+							<authorinitials>NG</authorinitials>
+							<revremark>Modified to include the property attributes in order to
+								satisfy <link
+									xlink:href="https://pacps01.oecd.org/redmine/issues/4872">issue
+									4872</link>.</revremark>
+						</revision> </revhistory>
 					<para>Attributes for metadata. Grouped to allow easy override.</para>
 				</section>
 			</xs:documentation>
 		</xs:annotation>
 		<xs:attributeGroup ref="oecdCommonAttributes"/>
 		<xs:attributeGroup ref="oecdMetaSubjectAttributes"/>
-		
+		<xs:attributeGroup ref="oecdMetaPropertyAttributes"/>
+
 	</xs:attributeGroup>
 
 	<xs:group name="oecdMetadataTypeContent" id="oecdMetadataTypeContent">
@@ -142,7 +162,7 @@
 		<xs:attributeGroup ref="oecdMetaSubjectAttributes"/>
 		<xs:attributeGroup ref="oecdMetaPropertyAttributes"/>
 		<xs:attributeGroup ref="oecdMetaValueAttributes"/>
-		
+
 	</xs:attributeGroup>
 
 	<xs:group name="oecdMetadateItemTypeContent" id="oecdMetadateItemTypeContent">
@@ -317,7 +337,7 @@
 				</xs:documentation>
 			</xs:annotation>
 		</xs:attribute>
-		
+
 	</xs:attributeGroup>
-	
+
 </xs:schema>
