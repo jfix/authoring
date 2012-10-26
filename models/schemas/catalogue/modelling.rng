@@ -17,8 +17,9 @@
     0.3     Joseph Crowther 30/03/2012    added <oneOrMore> to corbas.model.notes to allow us to 
                                           isolate revision information for a component from documentation
                                           etc...
-    0.4     Joseph Crowther 04/04/2012    added enumeration for metadata specific components
+    0.4   JC          04/04/2012    added enumeration for metadata specific components
     0.5		Nic Gibson 10/10/12			  added simple metadata recording (metadata and item elements).
+    0.6   JC          26/10/2012    added component role enumeration   
 -->	
 <grammar ns="http://www.corbas.co.uk/ns/model" xmlns="http://relaxng.org/ns/structure/1.0"
   datatypeLibrary="http://www.w3.org/2001/XMLSchema-datatypes">
@@ -61,7 +62,14 @@
   </define>
 
   <define name="corbas.model.attribute.role">
-    <attribute name="role"/>
+    <attribute name="role">
+      <choice>
+        <value>modelled</value>
+        <value>production</value>
+        <value>deprecated</value>
+        <value>missing</value>
+      </choice>
+    </attribute>
   </define>
 
   <define name="corbas.model.attribute.ref">
