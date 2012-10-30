@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="urn:oecd:names:xmlns:authoring:testing" targetNamespace="urn:oecd:names:xmlns:authoring:testing" xmlns:xd="http://www.oecd.org/ns/schema/xdocs" elementFormDefault="qualified">
+	<xs:annotation>
+		<xs:appinfo>
+			<xd:name>CheckList</xd:name>
+			<xd:root>TestDefinition</xd:root>
+		</xs:appinfo>
+		<xs:documentation>
+			<section xmlns="http://docbook.org/ns/docbook">
+				<title>OECD Schemas</title>
+				<subtitle>Master Schema for Quality Assurance</subtitle>
+				<revhistory>
+					<title>Change Log</title>
+					<revision>
+						<revnumber>1</revnumber>
+						<date>2012-10-30</date>
+						<author>Pierre Attar</author>
+						<revremark>Initial Version</revremark>
+					</revision>
+					<revision>
+						<revnumber>2</revnumber>
+						<date>2012-10-30</date>
+						<author>JC</author>
+						<revremark>Inherited schema from tireme sarl (merci Pierre).</revremark>
+						<revremark>Added OECD namespace and hooks for documentation.</revremark>
+					</revision>
+				</revhistory>
+			</section>
+		</xs:documentation>
+	</xs:annotation>
+
+	<xs:element name="TestDefinition">
+		<xs:complexType>
+			<xs:choice maxOccurs="unbounded">
+				<xs:element ref="Section"/>
+				<xs:element ref="IntegrationTests"/>
+				<xs:element ref="UnitTests"/>
+			</xs:choice>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="Section" type="ContainerType"/>
+	<xs:element name="IntegrationTests" type="ContainerType"/>
+	<xs:element name="UnitTests" type="ContainerType"/>
+	<xs:element name="Test">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="Purpose"/>
+				<xs:element ref="Comments" minOccurs="0"/>
+				<xs:element ref="Objective"/>
+				<xs:element ref="ToBeDone" minOccurs="0"/>
+				<xs:element ref="ValidationTarget" minOccurs="0" maxOccurs="unbounded"/>
+			</xs:sequence>
+			<xs:attribute name="folderName" use="required"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="Comments"/>
+	<xs:element name="Objective" type="xs:string"/>
+	<xs:element name="ValidationTarget">
+		<xs:complexType>
+			<xs:choice>
+				<xs:choice>
+					<xs:element name="NotAvailable"/>
+					<xs:element name="NotPertinent"/>
+				</xs:choice>
+				<xs:sequence>
+					<xs:element name="InputFiles">
+						<xs:complexType>
+							<xs:choice maxOccurs="unbounded">
+								<xs:element name="File">
+									<xs:complexType>
+										<xs:attribute name="fileName"/>
+									</xs:complexType>
+								</xs:element>
+							</xs:choice>
+						</xs:complexType>
+					</xs:element>
+					<xs:element ref="ValidationActions"/>
+					<xs:element ref="Status"/>
+					<xs:element ref="Results" minOccurs="0"/>
+				</xs:sequence>
+			</xs:choice>
+			<xs:attribute ref="target" use="required"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="ValidationActions">
+		<xs:complexType>
+			<xs:choice maxOccurs="unbounded">
+				<xs:element name="P"/>
+			</xs:choice>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="Status">
+		<xs:simpleType>
+			<xs:restriction base="xs:NCName">
+				<xs:enumeration value="ready"/>
+				<xs:enumeration value="tbd"/>
+				<xs:enumeration value="pending"/>
+				<xs:enumeration value="ongoing"/>
+			</xs:restriction>
+		</xs:simpleType>
+	</xs:element>
+	<xs:element name="Results">
+		<xs:complexType>
+			<xs:sequence maxOccurs="unbounded">
+				<xs:element ref="Result"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="Result">
+		<xs:complexType>
+			<xs:simpleContent>
+				<xs:extension base="xs:string">
+					<xs:attribute name="date"/>
+					<xs:attribute name="passed" type="xs:boolean"/>
+				</xs:extension>
+			</xs:simpleContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="Purpose" type="xs:string"/>
+	<xs:attribute name="target">
+		<xs:simpleType>
+			<xs:restriction base="xs:token">
+				<xs:enumeration value="upcast"/>
+				<xs:enumeration value="contentModelAE"/>
+			</xs:restriction>
+		</xs:simpleType>
+	</xs:attribute>
+	<xs:complexType name="ContainerType">
+		<xs:sequence>
+			<xs:element ref="Purpose" minOccurs="0"/>
+			<xs:element ref="Comments" minOccurs="0"/>
+			<xs:element ref="Objective" minOccurs="0"/>
+			<xs:sequence>
+				<xs:element ref="ToBeDone" minOccurs="0" maxOccurs="unbounded"/>
+				<xs:element ref="Test" minOccurs="0" maxOccurs="unbounded"/>
+				<xs:element ref="Section" minOccurs="0" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:sequence>
+		<xs:attribute name="folderName" use="required"/>
+		<xs:attribute ref="target" use="optional"/>
+	</xs:complexType>
+	<xs:element name="ToBeDone"/>
+</xs:schema>
