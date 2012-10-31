@@ -36,6 +36,7 @@
                         <date>2012-10-31</date>
                         <authorinitials>JC</authorinitials>
                         <revremark>Modified oecdEmbeddedContentType to satisfy #4904.</revremark>
+                        <revremark>Missed redmine hook.</revremark>
                     </revision>
                 </revhistory>
             </section></xs:documentation>
