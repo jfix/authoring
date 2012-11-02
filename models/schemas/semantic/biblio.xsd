@@ -1,23 +1,28 @@
-<?xml version="1.0" encoding="UTF-8"?><xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:mods="http://www.loc.gov/mods/v3" elementFormDefault="qualified">
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:mods="http://www.loc.gov/mods/v3" elementFormDefault="qualified">
 
     <xs:annotation>
         <xs:documentation><section xmlns="http://docbook.org/ns/docbook">
                 <title>OECD Schemas</title>
                 <subtitle>Simple Structual Components</subtitle>
                 <revhistory>
-                    <title>Change Log</title> <revision>
+                    <title>Change Log</title>
+                    <revision>
                         <revnumber>1</revnumber>
                         <date>2012-03-21</date>
-                        <author><email>nicg@corbas.co.uk</email><personname>Nic
-                            Gibson</personname></author>
+                        <author><email>nicg@corbas.co.uk</email><personname>Nic Gibson</personname></author>
                         <revremark>Initial Version</revremark>
-                    </revision> </revhistory>
-                <para>Bibliographic models. There are two distinct bibliographic models. Firstly, we
-                    have an application driven process which uses bibliographic tools. In this case
-                    it is only necessary to indicate where the bibliography should be rendered.
-                    Secondly, we have reference material or additional reading where the
-                    bibliography should be generated as section type content inline allowing authors
-                    to enter their bibliographic material directly.</para>
+                    </revision>
+                    <revision>
+                        <revnumber>2</revnumber>
+                        <date>2012-11-02</date>
+                        <author>JC</author>
+                        <revremark>Applied type to biblioSection element.</revremark>
+                    </revision>
+                </revhistory>
+                <para>Bibliographic models. There are two distinct bibliographic models. Firstly, we have an application driven process which uses bibliographic tools. In this case it is only
+                    necessary to indicate where the bibliography should be rendered. Secondly, we have reference material or additional reading where the bibliography should be generated as section
+                    type content inline allowing authors to enter their bibliographic material directly.</para>
             </section></xs:documentation>
     </xs:annotation>
 
@@ -72,8 +77,7 @@
         <xs:annotation>
             <xs:documentation>
                 <section xmlns="http://docbook.org/ns/docbook">
-                    <para>Bibliographic section type. Allows bibliographic entries (mods elements)
-                        and/or further structure.</para>
+                    <para>Bibliographic section type. Allows bibliographic entries (mods elements) and/or further structure.</para>
                 </section>
             </xs:documentation>
         </xs:annotation>
@@ -97,8 +101,7 @@
             <xs:annotation>
                 <xs:documentation>
                     <section xmlns="http://docbook.org/ns/docbook">
-                        <para>Type attribute. Bibliographic references (citations) may be typed to
-                            create multiple bibliographies or reference sections.</para>
+                        <para>Type attribute. Bibliographic references (citations) may be typed to create multiple bibliographies or reference sections.</para>
                     </section>
                 </xs:documentation>
             </xs:annotation>
@@ -106,28 +109,32 @@
 
     </xs:attributeGroup>
 
-    
+
     <xs:group name="oecdBibliographyTypeContent" id="oecdBibliographyTypeContent">
         <xs:annotation>
             <xs:documentation>
                 <section xmlns="http://docbook.org/ns/docbook">
-                    <para>Bibliography content model. Bibliographies may 
-                    be empty (automatically populated from citations) or they
-                    may be a list of citations, or they may have some sort 
-                    of structure and contain citations.</para>
+                    <revision>
+                        <revnumber>2</revnumber>
+                        <date>2012-11-02</date>
+                        <author>JC</author>
+                        <revremark>Typed element.</revremark>
+                    </revision>
+                </section>
+                <section xmlns="http://docbook.org/ns/docbook">
+                    <para>Bibliography content model. Bibliographies may be empty (automatically populated from citations) or they may be a list of citations, or they may have some sort of structure
+                        and contain citations.</para>
                 </section>
             </xs:documentation>
         </xs:annotation>
-
         <xs:sequence>
             <xs:element ref="metadata" minOccurs="0"/>
             <xs:group ref="oecdTitleGroup" minOccurs="0"/>
             <xs:choice minOccurs="0">
                 <xs:element ref="mods:mods" maxOccurs="unbounded"/>
-                <xs:element name="biblioSection" maxOccurs="unbounded"/>
+                <xs:element name="biblioSection" type="oecdBiblioSectionType" maxOccurs="unbounded"/>
             </xs:choice>
         </xs:sequence>
-
     </xs:group>
 
     <xs:complexType name="oecdBibliographyType" id="oecdBibliographyType">
@@ -144,6 +151,6 @@
 
 
     <!-- SIMPLE TYPES -->
-    
-    
+
+
 </xs:schema>
