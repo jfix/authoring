@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" 
+    xmlns="urn:oecd:names:xmlns:authoring:document" 
+    targetNamespace="urn:oecd:names:xmlns:authoring:document"
+    xmlns:xd="http://www.oecd.org/ns/schema/xdocs" 
+    elementFormDefault="qualified" >
+
+    <xs:annotation>
+        <xs:appinfo>
+            <xd:name>official-agenda</xd:name>
+            <xd:root>document</xd:root>
+        </xs:appinfo>
+        <xs:documentation>
+            <section xmlns="http://docbook.org/ns/docbook">
+                <title>OECD Schemas</title>
+                <subtitle>Master Schema</subtitle>
+                <revhistory>
+                    <title>Change Log</title>
+                    <revision>
+                        <revnumber>1</revnumber>
+                        <date>2012-11-01</date>
+                        <author>JC</author>
+                        <revremark>Initial Version</revremark>
+                    </revision>
+                </revhistory>
+            </section>
+        </xs:documentation>
+    </xs:annotation>
+
+    <!-- IMPORTS AND INCLUDES -->
+    <xs:include schemaLocation="structure/agenda.xsd"/>
+
+    <xs:annotation>
+        <xs:documentation>
+            <section xmlns="http://docbook.org/ns/docbook">
+                <para>This model is used to create OECD Agendas.</para>
+            </section>
+        </xs:documentation>
+    </xs:annotation>
+    
+    <!-- GLOBAL ELEMENTS -->
+    <xs:element name="document" type="oecdBaseAgendaType"/>
+
+</xs:schema>
