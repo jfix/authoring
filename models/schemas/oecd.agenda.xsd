@@ -22,13 +22,19 @@
                         <author>JC</author>
                         <revremark>Initial Version</revremark>
                     </revision>
+                    <revision>
+                        <revnumber>2</revnumber>
+                        <date>2012-11-05</date>
+                        <author>JC</author>
+                        <revremark>Updated location to agenda.xsd</revremark>
+                    </revision>
                 </revhistory>
             </section>
         </xs:documentation>
     </xs:annotation>
 
     <!-- IMPORTS AND INCLUDES -->
-    <xs:include schemaLocation="structure/agenda.xsd"/>
+    <xs:include schemaLocation="semantic/agenda.xsd"/>
 
     <xs:annotation>
         <xs:documentation>
