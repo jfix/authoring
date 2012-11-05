@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+
+
+    <xs:annotation>
+        <xs:documentation><section xmlns="http://docbook.org/ns/docbook">
+                <title>OECD Schemas</title>
+                <subtitle>Document Component</subtitle>
+                <revhistory>
+                    <title>Change Log</title>
+                    <revision>
+                        <revnumber>1</revnumber>
+                        <date>2012-10-26</date>
+                        <author>JC</author>
+                        <revremark>Initial version (placeholder)</revremark>
+                    </revision>
+                    <para>A document is the standard top-level structural element.</para>
+                </revhistory>
+            </section>
+        </xs:documentation>
+    </xs:annotation>
+
+    <!-- IMPORTS AND INCLUDES -->
+
+    <xs:include schemaLocation="../structure/agenda-section.xsd"/>
+    <xs:include schemaLocation="../components/document-meta.xsd"/>
+    <xs:include schemaLocation="../components/meta.xsd"/>
+    <xs:include schemaLocation="../components/blocks.xsd"/>
+
+    <!-- GLOBAL GROUPS -->
+
+
+    <!-- COMPLEX TYPES -->
+
+    <!-- document base -->
+
+    <xs:attributeGroup name="oecdBaseAgendaTypeAttributes" id="oecdBaseDocumentTypeAttributes">
+        <xs:annotation>
+            <xs:documentation>
+                <section xmlns="http://docbook.org/ns/docbook">
+                    <para>Attributes for agenda base type.</para>
+                </section>
+            </xs:documentation>
+        </xs:annotation>
+        <xs:attributeGroup ref="oecdCommonAttributes"/>
+        <xs:attributeGroup ref="oecdLinkingAttributes"/>
+    </xs:attributeGroup>
+
+    <xs:group name="oecdBaseAgendaTypeContent" id="oecdBaseAgendaTypeContent">
+
+        <xs:annotation>
+            <xs:documentation>
+                <section xmlns="http://docbook.org/ns/docbook">
+                    <para>Content for agenda base type.</para>
+                </section>
+            </xs:documentation>
+        </xs:annotation>
+
+        <xs:sequence>
+
+            <xs:element name="documentMetadata" type="oecdDocumentMetadataType" minOccurs="0"/>
+            <xs:element ref="metadata"/>
+            <xs:group ref="oecdTitleGroup"/>
+            <xs:element name="abstract" type="oecdParagraphGroupType" id="abstract" minOccurs="0"/>
+            <xs:choice>
+                <xs:sequence>
+                    <xs:group ref="oecdBlockGroup" minOccurs="0" maxOccurs="unbounded"/>
+                    <xs:choice maxOccurs="unbounded">
+                        <xs:element ref="agenda-section"/>
+                        <xs:element ref="agenda-session"/>
+                    </xs:choice>
+                </xs:sequence>
+            </xs:choice>
+        </xs:sequence>
+    </xs:group>
+
+    <xs:complexType name="oecdBaseAgendaType" id="oecdBaseAgendaType">
+        <xs:annotation>
+            <xs:documentation>
+                <section xmlns="http://docbook.org/ns/docbook">
+                    <para>The base agenda type describes a standard agenda with sessions
+                        
+                        
+                        or an article type with sections.</para>
+                    
+                </section>
+            </xs:documentation>
+        </xs:annotation>
+
+        <xs:group ref="oecdBaseAgendaTypeContent"/>
+        <xs:attributeGroup ref="oecdBaseAgendaTypeAttributes"/>
+    </xs:complexType>
+
+
+</xs:schema>
