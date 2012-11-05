@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+
+	<xs:annotation>
+		<xs:documentation>
+			<section xmlns="http://docbook.org/ns/docbook">
+				<title>OECD Schemas</title>
+				<subtitle>Agenda Meeting Model</subtitle>
+				<revhistory>
+					<title>Change Log</title>
+					<revision>
+						<revnumber>1</revnumber>
+						<date>2011-11-01</date>
+						<author>JC</author>
+						<revremark>Initial Version</revremark>
+					</revision>
+				</revhistory>
+			</section>
+		</xs:documentation>
+	</xs:annotation>
+
+	<!-- IMPORTS AND INCLUDES -->
+	<xs:include schemaLocation="../components/attributes.xsd"/>
+	<xs:include schemaLocation="../components/blocks.xsd"/>
+	<xs:include schemaLocation="../components/titles.xsd"/>
+	<xs:include schemaLocation="../components/annotation.xsd"/>
+
+	<!-- GLOBAL ELEMENTS -->
+	<xs:element name="agenda-section" type="oecdAgendaSectionType" id="agenda-section"/>
+	<xs:element name="agenda-session" type="oecdAgendaSessionType" id="agenda-session"/>
+	<!-- GLOBAL GROUPS -->
+
+	<xs:attributeGroup name="oecdAgendaSectionTypeAttributes" id="oecdSectionTypeAttributes">
+
+		<xs:annotation>
+			<xs:documentation>
+				<section xmlns="http://docbook.org/ns/docbook">
+					<para>Attributes for agenda sections as a group for easy overrides and reuse.</para>
+				</section>
+			</xs:documentation>
+		</xs:annotation>
+
+		<xs:attributeGroup ref="ANNOTATIONS-GROUP"/>
+		<xs:attributeGroup ref="oecdCommonAttributes"/>
+		<xs:attributeGroup ref="oecdLinkingAttributes"/>
+	</xs:attributeGroup>
+
+	<xs:group name="oecdAgendaSectionTypeBaseContent" id="oecdSectionTypeBaseContent">
+		<xs:annotation>
+			<xs:documentation>
+				<para xmlns="http://docbook.org/ns/docbook">This group is used to define the content model of all agenda section content.</para>
+			</xs:documentation>
+		</xs:annotation>
+
+		<xs:sequence>
+			<xs:sequence>
+				<xs:group ref="oecdBlockGroup" minOccurs="0" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:sequence>
+
+	</xs:group>
+
+	<xs:group name="oecdAgendaItemTypeContent" id="oecdAgendaItemTypeContent">
+		<xs:sequence>
+			<xs:element ref="metadata" minOccurs="0"/>
+			<xs:group ref="oecdTitleGroup"/>
+			<xs:choice maxOccurs="unbounded">
+				<xs:element ref="para" maxOccurs="unbounded" minOccurs="0"/>
+				<xs:element ref="externalContentReference" maxOccurs="unbounded"/>
+				<xs:element ref="phrase" maxOccurs="unbounded"/>
+				<xs:element name="annotation" type="oecdAgendaAnnotationType" maxOccurs="unbounded" minOccurs="0"/>
+			</xs:choice>
+		</xs:sequence>
+	</xs:group>
+
+	<xs:group name="oecdAgendaAnnotationTypeContent" id="oecdAgendaAnnotationTypeContent">
+		<xs:annotation>
+			<xs:documentation>
+				<para xmlns="http://docbook.org/ns/docbook">This group is used to define the content model of annotaiton elements. Annotation content is separately the main item.</para>
+			</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:group ref="oecdTitleGroup"/>
+			<xs:group ref="oecdSimpleBlockGroup" minOccurs="0"/>
+		</xs:sequence>
+	</xs:group>
+
+	<xs:group name="oecdAgendaSectionTypeContent" id="oecdSectionTypeContent">
+
+		<xs:annotation>
+			<xs:documentation>
+				<section xmlns="http://docbook.org/ns/docbook">
+					<para>Content for agenda sections as a group for easy overrides and reuse.</para>
+				</section>
+			</xs:documentation>
+		</xs:annotation>
+
+		<xs:sequence>
+			<xs:element ref="metadata" minOccurs="0"/>
+			<xs:group ref="oecdTitleGroup"/>
+			<xs:group ref="oecdAgendaSectionTypeBaseContent"/>
+		</xs:sequence>
+
+	</xs:group>
+
+	<xs:group name="oecdAgendaSessionTypeContent" id="oecdAgendaSessionTypeContent">
+
+		<xs:annotation>
+			<xs:documentation>
+				<section xmlns="http://docbook.org/ns/docbook">
+					<para>Content for sessions as a group for easy overrides and reuse.</para>
+				</section>
+			</xs:documentation>
+		</xs:annotation>
+
+		<xs:sequence>
+			<xs:element ref="metadata" minOccurs="0"/>
+			<xs:group ref="oecdTitleGroup"/>
+			<xs:group ref="oecdSimpleBlockGroup" minOccurs="0"/>
+			<xs:element name="agenda-item" type="oecdAgendaItemType" minOccurs="1" maxOccurs="unbounded"/>
+		</xs:sequence>
+
+	</xs:group>
+
+	<!-- COMPLEX TYPES -->
+	<xs:complexType name="oecdAgendaSectionType" id="oecdAgendaSectionType">
+		<xs:group ref="oecdAgendaSectionTypeContent"/>
+		<xs:attributeGroup ref="oecdAgendaSectionTypeAttributes"/>
+	</xs:complexType>
+
+	<xs:complexType name="oecdAgendaSessionType" id="oecdAgendaSessionType">
+		<xs:group ref="oecdAgendaSessionTypeContent"/>
+		<xs:attributeGroup ref="oecdAgendaSectionTypeAttributes"/>
+	</xs:complexType>
+
+	<xs:complexType name="oecdAgendaItemType" id="oecdAgendaItemType">
+		<xs:annotation>
+			<xs:documentation>
+				<section xmlns="http://docbook.org/ns/docbook">
+					<para>Items are the major recursive structural components of a Session.</para>
+				</section>
+			</xs:documentation>
+		</xs:annotation>
+
+		<xs:group ref="oecdAgendaItemTypeContent"/>
+		<xs:attributeGroup ref="oecdAgendaSectionTypeAttributes"/>
+	</xs:complexType>
+
+	<xs:complexType name="oecdAgendaAnnotationType" id="oecdAgendaAnnotationType">
+		<xs:group ref="oecdAgendaAnnotationTypeContent"/>
+		<xs:attributeGroup ref="oecdAgendaSectionTypeAttributes"/>
+	</xs:complexType>
+
+</xs:schema>
