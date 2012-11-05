@@ -57,6 +57,11 @@
                 <db:authorinitials>JC</db:authorinitials>
                 <db:revremark>Deprecated component models for simple-agenda and advanced-agenda.</db:revremark>
             </db:revision>
+        	<db:revision>
+        		<db:date>2012-11-05</db:date>
+        		<db:authorinitials>NG</db:authorinitials>
+        		<db:revremark>Inserted components for revision management - comment and revision</db:revremark>
+        	</db:revision>
         </db:revhistory>
     </db:section>
     <!-- 
@@ -1582,5 +1587,38 @@
             <db:para>An agenda session represents a group of agenda items grouped together with a title and optional session specific metadata. Initially identified metadata includes time, location and duration. Sessions often have introductory text. Agendas with one session only can be considered to be semantically equal to agendas with no sessions. Therefore, there is no model for a simple agenda. </db:para>
         </db:section>
 
-    </component>
+    </component >
+		
+	<component xml:id="comment">
+		<name>Comment</name>
+		<category>semantic</category>
+		<children>
+			<component-ref ref="grp-simple-inlines"/>
+			<component-ref ref="metadata-group"/>
+		</children>
+		<metadata>
+			<item name="comment-author" type="username"/>
+			<item name="comment-time" type="datetime"/>
+		</metadata>
+		
+		<db:section>
+			<db:title>Definition</db:title>
+			<db:para>A comment by a user within a document. Used during revision and editorial processes.</db:para>
+		</db:section>
+	</component>
+	
+	<component xml:id="revision">
+		<name>Revision</name>
+		<category>semantic</category>
+		<metadata>
+			<item name="revision-type" type="text (deletion or insertion)"/>
+			<item name="revision-time" type="datetime"/>
+		</metadata>
+		
+		<db:section>
+			<db:title>Definition</db:title>
+			<db:para>A document revision. Used to mark the range of a deletion or insertion.</db:para>
+		</db:section>
+	</component>
+	
 </model>
