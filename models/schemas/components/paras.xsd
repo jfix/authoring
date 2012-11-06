@@ -1,4 +1,5 @@
-<?xml version="1.0" encoding="UTF-8"?><xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" >
    
 
     <xs:annotation>
@@ -30,6 +31,13 @@
 	            		<authorinitials>NG</authorinitials>
 	            		<revremark>Wrapped global attributes in groups to avoid namespace prefix requirement.</revremark>
 	            	</revision>
+                	
+                	<revision>
+                		<revnumber>4</revnumber>
+                		<date>2012-11-05</date>
+                		<authorinitials>NG</authorinitials>
+                		<revremark>Included the embeddable blocks into paragraphs to resolve issue .</revremark>
+                	</revision>
 					
                 </revhistory>
                 <para>This model defines paragraphs and other simple components with equivalent
@@ -43,12 +51,21 @@
     <xs:include schemaLocation="inline-group.xsd"/>
     <xs:include schemaLocation="titles.xsd"/>
     <xs:include schemaLocation="meta.xsd"/>
+	<xs:include schemaLocation="blocks.xsd"/>
     
     <xs:include schemaLocation="graphics.xsd"/>
     <xs:include schemaLocation="equations.xsd"/>
     
     <!-- GLOBAL ELEMENTS -->
-    <xs:element name="para" type="oecdParagraphType" id="para"/>
+    <xs:element name="para" type="oecdParagraphType" id="para">
+    	<xs:annotation>
+    		<xs:appinfo>
+    			<rule xmlns="http://purl.oclc.org/dsdl/schematron" context="para">
+    				<assert xmlns="http://purl.oclc.org/dsdl/schematron" test="not(normalize-space(.) = '')">Paragraphs must not be empty.</assert>
+    			</rule>
+    		</xs:appinfo>
+    	</xs:annotation>
+    </xs:element>
     <xs:element name="formalPara" type="oecdFormalParagraphType" id="formalPara"/>
     <xs:element name="paragraphGroup" type="oecdParagraphGroupType" id="paragraphGroup"/>
     
@@ -96,6 +113,7 @@
         <xs:sequence>
             <xs:element ref="metadata" minOccurs="0"/>
             <xs:group ref="oecdInlineGroup" minOccurs="0" maxOccurs="unbounded"/>
+        	<xs:group ref="oecdEmbeddableBlockGroup" minOccurs="0" maxOccurs="unbounded"/>
         </xs:sequence>        
     </xs:group>
 
@@ -106,7 +124,11 @@
                     <para>Base type for paragraph content.</para>
                 </section>
             </xs:documentation>
+        	
+ 
         </xs:annotation>
+    	
+    	
     
         <xs:group ref="oecdParagraphTypeContent"/>
         <xs:attributeGroup ref="oecdParagraphTypeAttributes"/>

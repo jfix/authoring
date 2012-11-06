@@ -39,6 +39,14 @@
                     <author><email>nicg@corbas.co.uk</email><personname>Nic Gibson</personname></author>
                     <revremark>Added tables</revremark>
                 </revision>   
+            	
+            	<revision>
+            		<revnumber>5</revnumber>
+            		<date>2012-10-26</date>
+            		<authorinitials>NG</authorinitials>
+            		<revremark>Added the <link linkend="oecdEmbeddableBlockGroup">oecdEmbeddableBlockGroup to be referenced
+            		from paragraphs to allow for embedded content and to resolve problems with issues </link> </revremark>
+            	</revision>
             </revhistory>
             
         </section></xs:documentation>
@@ -91,6 +99,33 @@
             <xs:group ref="oecdExtractsGroup"/>
         </xs:choice>        
     </xs:group>
+	
+	<xs:group name="oecdEmbeddableBlockGroup" id="oecdEmbeddableBlockGroup">
+		<xs:annotation>
+			<xs:documentation>
+				<section xmlns="http://docbook.org/ns/docbook">
+					<para>The oecdEmbeddableBlockGroup enumerates thos blocks which many be inserted into paragraphs.Authors have
+					indicated that some block rendered components are considered as part of paragraphs. This group represents
+					those components.</para>
+					<para>Schematron rules are probably necessary to avoid recursion issues here. It may make more sense to place
+					the rules on the components themselves.</para>
+				</section>
+				
+			</xs:documentation>
+			
+		</xs:annotation>
+		
+		<xs:choice>
+			<xs:element ref="itemizedList"/>
+			<xs:element ref="orderedList"/>
+			<xs:element ref="equation"/>   
+			<xs:element ref="chemicalStructure"/>
+			<xs:element ref="graphic"/>
+			<xs:element ref="figure"/>
+			<xs:element ref="table"/>
+		</xs:choice>        
+		
+	</xs:group> 
     
     <!-- groups of blocks. Used a base for other types -->
     
