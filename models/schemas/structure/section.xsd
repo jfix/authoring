@@ -51,6 +51,12 @@
 						<authorinitials>JC</authorinitials>
 						<revremark>Added attribute group to oecdLinkingAttributes.</revremark>
 					</revision>
+					<revision>
+						<revnumber>7</revnumber>
+						<date>2011-11-06</date>
+						<author>JC</author>
+						<revremark>Modified oecdListContinuation.</revremark>
+					</revision>
 				</revhistory>
 			</section></xs:documentation>
 	</xs:annotation>
@@ -95,14 +101,27 @@
 							<date>2012-11-06</date>
 							<authorinitials>JC</authorinitials>
 							<revremark>Removed attribute numeration.</revremark>
-						</revision> </revhistory>
+						</revision>
+					</revhistory>
 				</section>
 			</xs:documentation>
 		</xs:annotation>
 
-		<xs:attribute name="continuation" type="oecdListContinuation" id="continuation">
+		<xs:attribute name="continuation" type="oecdComponentContinuation" id="section-continuation">
 			<xs:annotation>
 				<xs:documentation>
+					<section xmlns="http://docbook.org/ns/docbook">
+						<revhistory>
+							<title>Change Log</title>
+							<revision>
+								<revnumber>1</revnumber>
+								<date>2011-11-06</date>
+								<author>JC</author>
+								<revremark>Applied generic type</revremark>
+								<revremark>Applied unique ID</revremark>
+							</revision>
+						</revhistory>
+					</section>
 					<section xmlns="http://docbook.org/ns/docbook">
 						<para>Numbering continuation flag for sections</para>
 					</section>

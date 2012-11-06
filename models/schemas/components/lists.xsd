@@ -52,6 +52,12 @@
                             <revremark>Modified content model for oecdDefinitionListTermType to allow mixed content.</revremark>
                         </revision>
                     </revhistory>
+                    <revision>
+                        <revnumber>8</revnumber>
+                        <date>2011-11-06</date>
+                        <author>JC</author>
+                        <revremark>Modified oecdListContinuation.</revremark>
+                    </revision>
                     <para>This model defines lists of various types</para>
                 </section>
             </section></xs:documentation>
@@ -203,9 +209,21 @@
             </xs:annotation>
         </xs:attribute>
 
-        <xs:attribute name="continuation" type="oecdListContinuation" default="start" id="continuation">
+        <xs:attribute name="continuation" type="oecdComponentContinuation" default="start" id="list-continuation">
             <xs:annotation>
                 <xs:documentation>
+                    <section xmlns="http://docbook.org/ns/docbook">
+                        <revhistory>
+                            <title>Change Log</title>
+                            <revision>
+                                <revnumber>1</revnumber>
+                                <date>2011-11-06</date>
+                                <author>JC</author>
+                                <revremark>Applied generic type</revremark>
+                                <revremark>Applied unique ID</revremark>
+                            </revision>
+                        </revhistory>
+                    </section>
                     <section xmlns="http://docbook.org/ns/docbook">
                         <para>List continuation style for ordered lists</para>
                     </section>
@@ -257,7 +275,8 @@
         <xs:annotation>
             <xs:documentation>
                 <section xmlns="http://docbook.org/ns/docbook">
-                    <para>Standard ordered lists. Lists can have several numeration types which are set at list level (as changing the numbering system part way through a single list is unusual). Numbering can continue based on the end of a previous list or start at a specific number.</para>
+                    <para>Standard ordered lists. Lists can have several numeration types which are set at list level (as changing the numbering system part way through a single list is unusual).
+                        Numbering can continue based on the end of a previous list or start at a specific number.</para>
                 </section>
             </xs:documentation>
         </xs:annotation>

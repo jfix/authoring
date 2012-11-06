@@ -1,33 +1,37 @@
-<?xml version="1.0" encoding="UTF-8"?><xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
 
   <xs:annotation>
     <xs:documentation><section xmlns="http://docbook.org/ns/docbook">
-      <section>
-        <title>OECD Schemas</title>
-        <subtitle>Low Level Data Types</subtitle> 
-        <revhistory>
-          <title>Change Log</title>
-          
-          
+        <section>
+          <title>OECD Schemas</title>
+          <subtitle>Low Level Data Types</subtitle>
+          <revhistory>
+            <title>Change Log</title>
             <revision>
               <revnumber>1</revnumber>
               <date>2011-12-02</date>
               <author><email>nicg@corbas.co.uk</email><personname>Nic Gibson</personname></author>
               <revremark>Initial Version</revremark>
             </revision>
-          
-        </revhistory> </section>
-    </section></xs:documentation>
+            <revision>
+              <revnumber>2</revnumber>
+              <date>2011-11-06</date>
+              <author>JC</author>
+              <revremark>Modified oecdListContinuation.</revremark>
+            </revision>
+          </revhistory>
+        </section>
+      </section></xs:documentation>
   </xs:annotation>
- 
-  
+
+
 
   <xs:simpleType name="oecdCharacterStyleType" id="oecdCharacterStyleType">
     <xs:annotation>
       <xs:documentation>
         <section xmlns="http://docbook.org/ns/docbook">
-          <para>Simple enumeration of the inline character styles we might see. This is more intended
-            as a demonstration than a model requirement. </para>
+          <para>Simple enumeration of the inline character styles we might see. This is more intended as a demonstration than a model requirement. </para>
         </section>
       </xs:documentation>
     </xs:annotation>
@@ -46,29 +50,29 @@
         <section xmlns="http://docbook.org/ns/docbook">
           <para>Placeholder for Cotes.</para>
         </section>
-      </xs:documentation>      
+      </xs:documentation>
     </xs:annotation>
     <xs:restriction base="xs:string"/>
   </xs:simpleType>
-  
-  
+
+
   <xs:simpleType name="oecdMediaType" id="oecdMediaType">
     <xs:annotation>
       <xs:documentation>
         <section xmlns="http://docbook.org/ns/docbook">
           <para>Placeholder for IETF MIME media types.</para>
         </section>
-      </xs:documentation>      
+      </xs:documentation>
     </xs:annotation>
     <xs:restriction base="xs:string"/>
   </xs:simpleType>
-  
+
   <xs:simpleType name="oecdListMarker" id="oecdListMarker">
     <xs:annotation>
       <xs:documentation>
         <section xmlns="http://docbook.org/ns/docbook">
           <para>Bulleted lists.</para>
-        </section>        
+        </section>
       </xs:documentation>
     </xs:annotation>
     <xs:restriction base="xs:string">
@@ -81,13 +85,13 @@
       <xs:enumeration value="solid-diamonad"/>
     </xs:restriction>
   </xs:simpleType>
-  
+
   <xs:simpleType name="oecdListNumeration" id="oecdListNumeration">
     <xs:annotation>
       <xs:documentation>
         <section xmlns="http://docbook.org/ns/docbook">
           <para>This defines numeration styles for numbered lists.</para>
-        </section>        
+        </section>
       </xs:documentation>
     </xs:annotation>
     <xs:restriction base="xs:string">
@@ -96,14 +100,32 @@
       <xs:enumeration value="upper-roman"/>
       <xs:enumeration value="lower-alpha"/>
       <xs:enumeration value="upper-alpha"/>
-    </xs:restriction>    
+    </xs:restriction>
   </xs:simpleType>
-  
-  <xs:simpleType name="oecdListContinuation" id="oecdListContinuation">
+
+  <xs:simpleType name="oecdComponentContinuation" id="oecdComponentContinuation">
+    <xs:annotation>
+      <xs:documentation>
+        <section xmlns="http://docbook.org/ns/docbook">
+          <revhistory>
+            <title>Change Log</title>
+            <revision>
+              <revnumber>1</revnumber>
+              <date>2011-11-06</date>
+              <author>JC</author>
+              <revremark>Generisize simpleType</revremark>
+            </revision>
+          </revhistory>
+        </section>
+        <section xmlns="http://docbook.org/ns/docbook">
+          <para>Defines continuation options allowed on document components.</para>
+        </section>
+      </xs:documentation>
+    </xs:annotation>
     <xs:restriction base="xs:string">
       <xs:enumeration value="continue"/>
       <xs:enumeration value="start"/>
     </xs:restriction>
   </xs:simpleType>
-  
+
 </xs:schema>
