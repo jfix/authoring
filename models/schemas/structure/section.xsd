@@ -118,7 +118,7 @@
 								<date>2011-11-06</date>
 								<author>JC</author>
 								<revremark>Applied generic type</revremark>
-								<revremark>Applied unique ID</revremark>
+								<revremark>Applied unique ID to continuation</revremark>
 							</revision>
 						</revhistory>
 					</section>
@@ -129,9 +129,21 @@
 			</xs:annotation>
 		</xs:attribute>
 
-		<xs:attribute name="start" type="xs:nonNegativeInteger" id="start">
+		<xs:attribute name="start" type="xs:string" id="section-start">
 			<xs:annotation>
 				<xs:documentation>
+					<section xmlns="http://docbook.org/ns/docbook">
+						<revhistory>
+							<title>Change Log</title>
+							<revision>
+								<revnumber>1</revnumber>
+								<date>2011-11-06</date>
+								<author>JC</author>
+								<revremark>Changed type to string</revremark>
+								<revremark>Applied unique ID to start</revremark>
+							</revision>
+						</revhistory>
+					</section>
 					<section xmlns="http://docbook.org/ns/docbook">
 						<para>Starting count for sections which have their continuation style set to 'start'.</para>
 					</section>
@@ -139,9 +151,21 @@
 			</xs:annotation>
 		</xs:attribute>
 
-		<xs:attribute name="number" type="xs:nonNegativeInteger" id="number">
+		<xs:attribute name="number" type="xs:string" id="section-number">
 			<xs:annotation>
 				<xs:documentation>
+					<section xmlns="http://docbook.org/ns/docbook">
+						<revhistory>
+							<title>Change Log</title>
+							<revision>
+								<revnumber>1</revnumber>
+								<date>2011-11-06</date>
+								<author>JC</author>
+								<revremark>Changed type to string</revremark>
+								<revremark>Applied unique ID to number</revremark>
+							</revision>
+						</revhistory>
+					</section>
 					<section xmlns="http://docbook.org/ns/docbook">
 						<para>Numbering override for sections where the author needs to override the section numbering completely.</para>
 					</section>
