@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+    <xs:annotation>
+        <xs:documentation><section xmlns="http://docbook.org/ns/docbook">
+                <title>OECD Schemas</title>
+                <subtitle>General inline models</subtitle>
+                <revhistory>
+                    <title>Change Log</title>
+                    <revision>
+                        <revnumber>1</revnumber>
+                        <date>2011-12-02</date>
+                        <author><email>nicg@corbas.co.uk</email><personname>Nic Gibson</personname></author>
+                        <revremark>Initial Version</revremark>
+                    </revision>
+                </revhistory>
+            </section>
+        </xs:documentation>
+    </xs:annotation>
+
+    <!-- IMPORTS AND INCLUDES -->
+
+    <xs:include schemaLocation="attributes.xsd"/>
+    <xs:include schemaLocation="meta.xsd"/>
+    <xs:include schemaLocation="inline-group.xsd"/>
+
+
+    <!-- GLOBAL ELEMENTS -->
+	<xs:element name="comment" type="oecdCommentType"/>
+	
+	<xs:element name="revisionStart" type="oecdRevisionStartType">
+		<xs:annotation>
+			<xs:appinfo>
+				<assert xmlns="http://purl.oclc.org/dsdl/schematron" test="following::revisionEnd[@xml:id = current()/@revisionEnd]">A matching revision end marker must exist for each revision start and it must follow the start.</assert>
+			</xs:appinfo>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="revisionEnd" type="oecdRevisionEndType"/>
+	
+	<!-- GLOBAL GROUPS -->
+	<xs:group name="oecdRevisionsGroup">
+		<xs:choice>
+			<xs:element ref="revisionStart"/>
+			<xs:element ref="revisionEnd"/>
+		</xs:choice>
+	</xs:group>
+
+	<!-- COMPLEX TYPES -->
+
+	<xs:attributeGroup name="oecdCommentTypeAttributes" id="oecdCommentTypeAttributes">
+		<xs:annotation>
+			<xs:documentation>
+				<p xmlns="http://docbook.org/ns/docbook">Attributes for the oecdCommentType complex type
+				grouped together for easy reuse and customisation.</p>
+			</xs:documentation>
+		</xs:annotation>
+		
+		<xs:attributeGroup ref="oecdCommonAttributes"/>
+				
+	</xs:attributeGroup>
+	
+	<xs:group name="oecdCommentTypeContent" id="oecdCommentTypeContent">
+		<xs:annotation>
+			<xs:documentation>
+				<p xmlns="http://docbook.org/ns/docbook">Content for the oecdCommentType complex type
+					grouped together for easy reuse and customisation.</p>
+				
+				<p>Metadata checking required in schematron when user name and timestamp properties are finalised.</p>
+			</xs:documentation>
+		
+			
+		</xs:annotation>
+		
+		<xs:sequence>
+			<xs:element ref="metadata"/>
+			<xs:group ref="oecdInlineGroup" maxOccurs="unbounded"></xs:group>
+		</xs:sequence>
+		
+	</xs:group>
+	
+	
+	<xs:complexType name="oecdCommentType" id="oecdCommentType" mixed="true">
+		<xs:annotation>
+			<xs:documentation>
+				<p xmlns="http://docbook.org/ns/docbook">This type represents author comments
+				in text.</p>
+			</xs:documentation>
+		</xs:annotation>
+		
+		<xs:group ref="oecdCommentTypeContent" maxOccurs="unbounded"/>
+		<xs:attributeGroup ref="oecdCommentTypeAttributes"/>
+		
+	</xs:complexType>
+	
+	
+	<xs:attributeGroup name="oecdRevisionStartTypeAttribs" id="oecdRevisionStartTypeAttribs">
+		<xs:annotation>
+			<xs:documentation>
+				<p xmlns="http://docbook.org/ns/docbook">Attributes for the oecdRevisionStartType complex type
+					grouped together for easy reuse and customisation.</p>
+			</xs:documentation>
+		</xs:annotation>
+		
+		<xs:attributeGroup ref="oecdCommonAttributes"/>
+		<xs:attributeGroup ref="REVISIONTYPE-GROUP"/>
+		<xs:attributeGroup ref="REVISIONTIME-GROUP"/>
+		<xs:attributeGroup ref="REVISIONEND-GROUP"/>
+		
+	</xs:attributeGroup>
+	
+	<xs:group name="oecdRevisionStartTypeContent" id="oecdRevisionStartTypeContent">
+		<xs:annotation>
+			<xs:documentation>
+				<p xmlns="http://docbook.org/ns/docbook">Content for the oecdRevisionStartType complex type
+					grouped together for easy reuse and customisation.</p>
+			</xs:documentation>
+		</xs:annotation>
+		
+		<xs:sequence>
+			<xs:element ref="metadata"/>		<!-- required -->
+			<xs:element ref="comment" minOccurs="0"/>
+		</xs:sequence>
+		
+	</xs:group>
+	
+	<xs:complexType name="oecdRevisionStartType" id="oecdRevisionStartType">
+		<xs:annotation>
+			<xs:documentation>
+				<p xmlns="http://docbook.org/ns/docbook">The revision start type is used to represent the start
+				of an insertion or deletion. It refers to a matching revision end element (of type
+				oecdRevisionEnd).</p>
+				<p>Additional rules apply to this element - an insertion cannot be placed inside a deletion.</p>
+			</xs:documentation>
+		</xs:annotation>
+		
+		<xs:group ref="oecdRevisionStartTypeContent"/>
+		<xs:attributeGroup ref="oecdRevisionStartTypeAttribs"/>
+		
+	</xs:complexType>
+	
+	<xs:attributeGroup name="oecdRevisionEndTypeAttribs" id="oecdRevisionEndTypeAttribs">
+		
+		<xs:annotation>
+			<xs:documentation>
+				<p xmlns="http://docbook.org/ns/docbook">Attributes for the oecdRevisionEndType complex type
+					grouped together for easy reuse and customisation. The id attribute of this element
+				is required as it it always referenced by the start element.</p>
+			</xs:documentation>
+		</xs:annotation>
+		
+		<xs:attributeGroup ref="oecdIdRequiredXmlAttributes"/>
+		
+	</xs:attributeGroup>
+	
+	<xs:complexType name="oecdRevisionEndType">
+		<xs:annotation>
+			<xs:documentation>
+				<p xmlns="http://docbook.org/ns/docbook">The revision end type is simply a marker that
+				can be referred to by the start element. All information is carried on the start.</p>
+			</xs:documentation>
+		</xs:annotation>
+		
+		<xs:attributeGroup ref="oecdRevisionEndTypeAttribs"/>
+		
+	</xs:complexType>
+    
+
+    <!-- SIMPLE TYPES -->
+
+	<xs:attributeGroup name="REVISIONTYPE-GROUP">
+		<xs:attribute name="revisionType" use="required">
+			<xs:simpleType>
+				<xs:restriction base="xs:string">
+					<xs:enumeration value="deletion"/>
+					<xs:enumeration value="insertion"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute> 
+	</xs:attributeGroup>
+	
+	<xs:attributeGroup name="REVISIONTIME-GROUP">
+		<xs:attribute name="revisionTime" use="required">
+			<xs:simpleType>
+				<xs:restriction base="xs:dateTime"/>
+			</xs:simpleType>
+		</xs:attribute> 
+	</xs:attributeGroup>
+	
+	<xs:attributeGroup name="REVISIONEND-GROUP">
+		<xs:attribute name="revisionEnd" use="required">
+			<xs:simpleType>
+				<xs:restriction base="xs:IDREF"/>
+			</xs:simpleType>
+		</xs:attribute> 
+	</xs:attributeGroup>
+
+
+</xs:schema>

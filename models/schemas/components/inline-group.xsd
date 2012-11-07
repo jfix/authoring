@@ -49,6 +49,13 @@
                     <revremark>Added the citation element. Note that rev 3 allowed for inline bibliographic entries
                     not citations.</revremark>
                 </revision>
+            	
+            	<revision>
+            		<revnumber>5</revnumber>
+            		<date>2012-11-05</date>
+            		<authorinitials>NG</authorinitials>
+            		<revremark>Added the revision start and end markers.</revremark>
+            	</revision>
                 
             </revhistory>
             
@@ -62,6 +69,7 @@
     <xs:include schemaLocation="chemicals.xsd"/>
     <xs:include schemaLocation="index.xsd"/>
     <xs:include schemaLocation="citations.xsd"/>
+	<xs:include schemaLocation="revisions.xsd"/>
     <xs:import schemaLocation="../external/mods.xsd" namespace="http://www.loc.gov/mods/v3"/>
     
 
@@ -85,6 +93,7 @@
             <xs:element ref="indexTerm" minOccurs="0" maxOccurs="unbounded"/>
             <xs:element ref="mods:mods" maxOccurs="unbounded" minOccurs="0"/>
             <xs:element ref="citation" maxOccurs="unbounded" minOccurs="0"/>
+        	<xs:group ref="oecdRevisionsGroup" maxOccurs="unbounded" minOccurs="0"/>
         </xs:choice>
     </xs:group>
     

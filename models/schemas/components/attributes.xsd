@@ -42,7 +42,14 @@
             		<authorinitials>NG</authorinitials>
             		<revremark>Modified xlink:simpleLink to xlink:simpleAttrs to use the standard XLink schema file.</revremark>
             	</revision>
-                
+
+            	<revision>
+            		<revnumber>6</revnumber>
+            		<date>2012-11-06</date>
+            		<authorinitials>NG</authorinitials>
+            		<revremark>Added the oecdIdRequiredXmlAttributes group to be used in types where an id is required.</revremark>
+            	</revision>
+            	
             </revhistory>
         </section></xs:documentation>
     </xs:annotation>
@@ -65,7 +72,22 @@
         </xs:annotation>
         <xs:attributeGroup ref="xml:specialAttrs"/>
     </xs:attributeGroup>
-    
+
+	<xs:attributeGroup name="oecdIdRequiredXmlAttributes" id="oecdIdRequiredXmlAttributes">
+		<xs:annotation>
+			<xs:documentation>
+				<section xmlns="http://docbook.org/ns/docbook">
+					<para>Attribute group to grandfather in the XML Special Attributes. This 
+					variant differs in that the xml:id attribute is required.</para>
+				</section>
+			</xs:documentation>
+		</xs:annotation>
+		<xs:attribute ref="xml:base"/>
+		<xs:attribute ref="xml:lang"/>
+		<xs:attribute ref="xml:space"/>
+		<xs:attribute ref="xml:id" use="required"/>
+	</xs:attributeGroup>
+	
     
     <xs:attributeGroup name="oecdLinkingAttributes" id="oecdLinkingAttributes">
         <xs:annotation>
