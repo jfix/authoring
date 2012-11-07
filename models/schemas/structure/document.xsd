@@ -11,15 +11,13 @@
                     <revision>
                         <revnumber>1</revnumber>
                         <date>2012-03-30</date>
-                        <author><email>nicg@corbas.co.uk</email><personname>Nic
-                            Gibson</personname></author>
+                        <author><email>nicg@corbas.co.uk</email><personname>Nic Gibson</personname></author>
                         <revremark>Initial Version</revremark>
                     </revision>
                     <revision>
                         <revnumber>2</revnumber>
                         <date>2012-04-16</date>
-                        <author><email>nicg@corbas.co.uk</email><personname>Nic
-                            Gibson</personname></author>
+                        <author><email>nicg@corbas.co.uk</email><personname>Nic Gibson</personname></author>
                         <revremark>Separated document and article, added glossary</revremark>
                     </revision>
                     <revision>
@@ -35,6 +33,12 @@
                         <authorinitials>JC</authorinitials>
                         <revremark>Updated schemaLocation for preface to align with agreed report and component catalogue.</revremark>
                         <revremark>Rehashed includes alpha-sort.</revremark>
+                    </revision>
+                    <revision>
+                        <revnumber>5</revnumber>
+                        <date>2012-11-07</date>
+                        <authorinitials>JC</authorinitials>
+                        <revremark>Implementation of foreword.</revremark>
                     </revision>
                     <para>A document is the standard top-level structural element. </para>
                 </revhistory>
@@ -53,6 +57,7 @@
     <xs:include schemaLocation="../semantic/conclusion.xsd"/>
     <xs:include schemaLocation="../semantic/executive-summary.xsd"/>
     <xs:include schemaLocation="../semantic/glossary.xsd"/>
+    <xs:include schemaLocation="../semantic/foreword.xsd"/>
     <xs:include schemaLocation="../semantic/preface.xsd"/>
 
     <!-- GLOBAL GROUPS -->
@@ -83,46 +88,52 @@
         <xs:annotation>
             <xs:documentation>
                 <section xmlns="http://docbook.org/ns/docbook">
+                    <revhistory>
+                        <revision>
+                            <revnumber>2</revnumber>
+                            <date>2012-04-16</date>
+                            <author>JC</author>
+                            <revremark>Added foreword to group.</revremark>
+                        </revision>
+                    </revhistory>
+                </section>
+                <section xmlns="http://docbook.org/ns/docbook">
                     <para>Content for document base type.</para>
                 </section>
             </xs:documentation>
         </xs:annotation>
 
         <xs:sequence>
-
-            <xs:element name="documentMetadata" type="oecdDocumentMetadataType" minOccurs="0"/>
-            <xs:element ref="metadata"/>
+           <xs:element name="documentMetadata" type="oecdDocumentMetadataType" minOccurs="0"/>
+           <xs:element ref="metadata"/>
             <!-- not optional here! -->
+            
             <xs:group ref="oecdTitleGroup"/>
             <xs:element ref="executiveSummary" minOccurs="0"/>
             
             <xs:choice>
                 <xs:element ref="part" maxOccurs="unbounded"/>
                 <xs:sequence>
+
                     <xs:element ref="acknowledgements" minOccurs="0"/>
+                    <xs:element ref="foreword" minOccurs="0"/>
                     <xs:element ref="preface" minOccurs="0"/>
-                    
                     <xs:element ref="introduction" minOccurs="0"/>
-                    
+
                     <xs:choice maxOccurs="unbounded">
                         <xs:element ref="chapter"/>
                         <xs:element ref="glossary"/>
                     </xs:choice>
-                    
+
                     <!-- note - forcing sequence here is not ideal but there is no sensible way to model it in XSD -->
                     <xs:element ref="conclusion" minOccurs="0" maxOccurs="unbounded"/>
                     <xs:element ref="bibliography" minOccurs="0" maxOccurs="unbounded"/>
                     <xs:element ref="appendix" minOccurs="0" maxOccurs="unbounded"/>
-                    
                     <xs:element ref="index" minOccurs="0"/>
-                    
+
                 </xs:sequence>
             </xs:choice>
-
-
-
         </xs:sequence>
-
     </xs:group>
 
     <xs:complexType name="oecdBaseDocumentType" id="oecdBaseDocumentType">
@@ -130,8 +141,7 @@
         <xs:annotation>
             <xs:documentation>
                 <section xmlns="http://docbook.org/ns/docbook">
-                    <para>The base document type describes a standard document with chapters or an
-                        article type with sections.</para>
+                    <para>The base document type describes a standard document with chapters or an article type with sections.</para>
                 </section>
             </xs:documentation>
         </xs:annotation>
@@ -150,8 +160,7 @@
                         <revision>
                             <revnumber>2</revnumber>
                             <date>2012-04-16</date>
-                            <author><email>nicg@corbas.co.uk</email><personname>Nic
-                                    Gibson</personname></author>
+                            <author><email>nicg@corbas.co.uk</email><personname>Nic Gibson</personname></author>
                             <revremark>Initial version</revremark>
                         </revision>
                     </revhistory>
@@ -178,8 +187,8 @@
             <xs:element ref="notes" minOccurs="0"/>
         </xs:sequence>
     </xs:group>
-    
-    
+
+
     <xs:complexType name="oecdBaseArticleType" id="oecdBaseArticleType">
         <xs:annotation>
             <xs:documentation>
