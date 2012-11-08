@@ -40,6 +40,12 @@
                         <authorinitials>JC</authorinitials>
                         <revremark>Implementation of foreword.</revremark>
                     </revision>
+                    <revision>
+                        <revnumber>5</revnumber>
+                        <date>2012-11-08</date>
+                        <authorinitials>JC</authorinitials>
+                        <revremark>Implementation of multiple prefaces [#4943].</revremark>
+                    </revision>
                     <para>A document is the standard top-level structural element. </para>
                 </revhistory>
             </section>
@@ -158,13 +164,19 @@
                 <section xmlns="http://docbook.org/ns/docbook">
                     <revhistory>
                         <revision>
-                            <revnumber>2</revnumber>
+                            <revnumber>1</revnumber>
                             <date>2012-04-16</date>
                             <author><email>nicg@corbas.co.uk</email><personname>Nic Gibson</personname></author>
                             <revremark>Initial version</revremark>
                         </revision>
+                        <revision>
+                            <revnumber>2</revnumber>
+                            <date>2012-11-08</date>
+                            <author></author>
+                            <revremark>Initial version</revremark>
+                        </revision>
                     </revhistory>
-                    <para>Content for article base type.</para>
+                    <para>Allowed multiple prefaces [#4943].</para>
                 </section>
             </xs:documentation>
         </xs:annotation>
@@ -177,7 +189,7 @@
 
             <xs:element ref="executiveSummary" minOccurs="0"/>
             <xs:element ref="acknowledgements" minOccurs="0"/>
-            <xs:element ref="preface" minOccurs="0"/>
+            <xs:element ref="preface" minOccurs="0" maxOccurs="unbounded"/>
 
             <xs:group ref="oecdSectionTypeContent" maxOccurs="unbounded"/>
 
