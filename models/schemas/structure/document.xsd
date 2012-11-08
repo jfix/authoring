@@ -101,6 +101,12 @@
                             <author>JC</author>
                             <revremark>Added foreword to group.</revremark>
                         </revision>
+                        <revision>
+                            <revnumber>2</revnumber>
+                            <date>2012-11-08</date>
+                            <author>JC</author>
+                            <revremark>Allowed multiple prefaces [#4943].</revremark>
+                        </revision>
                     </revhistory>
                 </section>
                 <section xmlns="http://docbook.org/ns/docbook">
@@ -123,7 +129,7 @@
 
                     <xs:element ref="acknowledgements" minOccurs="0"/>
                     <xs:element ref="foreword" minOccurs="0"/>
-                    <xs:element ref="preface" minOccurs="0"/>
+                    <xs:element ref="preface" minOccurs="0" maxOccurs="unbounded"/>
                     <xs:element ref="introduction" minOccurs="0"/>
 
                     <xs:choice maxOccurs="unbounded">
@@ -169,14 +175,7 @@
                             <author><email>nicg@corbas.co.uk</email><personname>Nic Gibson</personname></author>
                             <revremark>Initial version</revremark>
                         </revision>
-                        <revision>
-                            <revnumber>2</revnumber>
-                            <date>2012-11-08</date>
-                            <author></author>
-                            <revremark>Initial version</revremark>
-                        </revision>
                     </revhistory>
-                    <para>Allowed multiple prefaces [#4943].</para>
                 </section>
             </xs:documentation>
         </xs:annotation>
@@ -189,7 +188,7 @@
 
             <xs:element ref="executiveSummary" minOccurs="0"/>
             <xs:element ref="acknowledgements" minOccurs="0"/>
-            <xs:element ref="preface" minOccurs="0" maxOccurs="unbounded"/>
+            <xs:element ref="preface" minOccurs="0"/>
 
             <xs:group ref="oecdSectionTypeContent" maxOccurs="unbounded"/>
 
