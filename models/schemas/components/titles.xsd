@@ -38,6 +38,12 @@
                     <revremark>Modified <link xlink:href="oecdTitleGroup">oecdTitleGroup</link>. @minOccurs of 'shortTitle' accidentally set to
                     1. Changed to 0.</revremark>
                 </revision>
+                <revision>
+                    <revnumber>5</revnumber>
+                    <date>2012-11-09</date>
+                    <authorinitials>JC</authorinitials>
+                    <revremark>Modified shortTitle to take into account #4843, at the simplest *</revremark>
+                </revision>
                 
                 
             </revhistory>
@@ -55,7 +61,7 @@
     <!-- TODO: determine if these really all should be the same type -->
     <xs:element name="title" type="oecdTitleType" id="title"/>
     <xs:element name="sub-title" type="oecdTitleType" id="subTitle"/>
-    <xs:element name="shortTitle" type="oecdShortTitleType" id="shortTitle"/>
+    <xs:element name="alternative-title" type="oecdAlternativeTitleType" id="shortTitle"/>
     <xs:element name="caption" type="oecdTitleType" id="caption"/>
     
     <!-- GLOBAL GROUPS -->
@@ -81,7 +87,7 @@
         <xs:sequence>
             <xs:element ref="title"/>
             <xs:element ref="sub-title" minOccurs="0"/>
-            <xs:element ref="shortTitle" minOccurs="0"/>
+            <xs:element ref="alternative-title" minOccurs="0" maxOccurs="unbounded"/>
         </xs:sequence>
     </xs:group>
     
@@ -136,7 +142,7 @@
         <xs:attributeGroup ref="oecdLinkingAttributes"/>
     </xs:attributeGroup>
     
-    <xs:complexType name="oecdShortTitleType" id="oecdShortTitleType">
+    <xs:complexType name="oecdAlternativeTitleType" id="oecdShortTitleType">
         <xs:annotation>
             <xs:documentation>
                 <section xmlns="http://docbook.org/ns/docbook">
