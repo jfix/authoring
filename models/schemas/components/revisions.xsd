@@ -27,20 +27,20 @@
     <!-- GLOBAL ELEMENTS -->
 	<xs:element name="comment" type="oecdCommentType"/>
 	
-	<xs:element name="revisionStart" type="oecdRevisionStartType">
+	<xs:element name="revision-start" type="oecdRevisionStartType">
 		<xs:annotation>
 			<xs:appinfo>
 				<assert xmlns="http://purl.oclc.org/dsdl/schematron" test="following::revisionEnd[@xml:id = current()/@revisionEnd]">A matching revision end marker must exist for each revision start and it must follow the start.</assert>
 			</xs:appinfo>
 		</xs:annotation>
 	</xs:element>
-	<xs:element name="revisionEnd" type="oecdRevisionEndType"/>
+	<xs:element name="revision-end" type="oecdRevisionEndType"/>
 	
 	<!-- GLOBAL GROUPS -->
 	<xs:group name="oecdRevisionsGroup">
 		<xs:choice>
-			<xs:element ref="revisionStart"/>
-			<xs:element ref="revisionEnd"/>
+			<xs:element ref="revision-start"/>
+			<xs:element ref="revision-end"/>
 		</xs:choice>
 	</xs:group>
 
@@ -167,7 +167,7 @@
     <!-- SIMPLE TYPES -->
 
 	<xs:attributeGroup name="REVISIONTYPE-GROUP">
-		<xs:attribute name="revisionType" use="required">
+		<xs:attribute name="revision-type" use="required">
 			<xs:simpleType>
 				<xs:restriction base="xs:string">
 					<xs:enumeration value="deletion"/>
@@ -178,7 +178,7 @@
 	</xs:attributeGroup>
 	
 	<xs:attributeGroup name="REVISIONTIME-GROUP">
-		<xs:attribute name="revisionTime" use="required">
+		<xs:attribute name="revision-time" use="required">
 			<xs:simpleType>
 				<xs:restriction base="xs:dateTime"/>
 			</xs:simpleType>
@@ -186,7 +186,7 @@
 	</xs:attributeGroup>
 	
 	<xs:attributeGroup name="REVISIONEND-GROUP">
-		<xs:attribute name="revisionEnd" use="required">
+		<xs:attribute name="revision-end" use="required">
 			<xs:simpleType>
 				<xs:restriction base="xs:IDREF"/>
 			</xs:simpleType>

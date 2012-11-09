@@ -38,6 +38,12 @@
 								xlink:href="https://pacps01.oecd.org/redmine/issues/4872">issue
 								4872</link>.</revremark>
 					</revision>
+					<revision>
+						<revnumber>5</revnumber>
+						<date>2012-11-09</date>
+						<author>JC</author>
+						<revremark>Applied lower-case convention [#4947] to biblioSection.</revremark>
+					</revision>
 				</revhistory>
 				<section>
 					<title>OECD Schemas</title>
@@ -50,7 +56,7 @@
 	<xs:include schemaLocation="attributes.xsd"/>
 
 	<!-- GLOBAL ELEMENTS -->
-	<xs:element name="metadataItem" type="oecdMetadataItemType" id="metadataItem"/>
+	<xs:element name="metadata-item" type="oecdMetadataItemType" id="metadataItem"/>
 	<xs:element name="metadata" type="oecdMetadataType" id="metadata"/>
 
 	<!-- GLOBAL ATTRIBUTE -->
@@ -113,13 +119,19 @@
 								that grouped metadata follows individual items simply to make the
 								schema sane (and non-ambigous).</revremark>
 						</revision>
+						<revision>
+							<revnumber>2</revnumber>
+							<date>2012-11-08</date>
+							<author>JC</author>
+							<revremark>Modified element name for to use the lower-case convention [#4947].</revremark>
+						</revision>
 					</revhistory>
 					<para>Content for metadata. Grouped to allow easy override.</para>
 				</section>
 			</xs:documentation>
 		</xs:annotation>
 		<xs:sequence>
-			<xs:element ref="metadataItem" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element ref="metadata-item" minOccurs="0" maxOccurs="unbounded"/>
 			<xs:element ref="metadata" maxOccurs="unbounded" minOccurs="0"/>
 		</xs:sequence>
 	</xs:group>
@@ -261,7 +273,7 @@
 			</xs:annotation>
 		</xs:attribute>
 
-		<xs:attribute name="subjectURI" type="oecdURIMetaType">
+		<xs:attribute name="subject-uri" type="oecdURIMetaType">
 			<xs:annotation>
 				<xs:documentation>
 					<section xmlns="http://docbook.org/ns/docbook">
@@ -294,7 +306,7 @@
 			</xs:annotation>
 		</xs:attribute>
 
-		<xs:attribute name="propertyURI" type="oecdURIMetaType">
+		<xs:attribute name="property-uri" type="oecdURIMetaType">
 			<xs:annotation>
 				<xs:documentation>
 					<section xmlns="http://docbook.org/ns/docbook">
@@ -327,7 +339,7 @@
 			</xs:annotation>
 		</xs:attribute>
 
-		<xs:attribute name="valueURI" type="oecdURIMetaType">
+		<xs:attribute name="value-uri" type="oecdURIMetaType">
 			<xs:annotation>
 				<xs:documentation>
 					<section xmlns="http://docbook.org/ns/docbook">

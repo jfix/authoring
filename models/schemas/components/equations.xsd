@@ -73,7 +73,7 @@
     
 
     <!-- GLOBAL ELEMENTS -->
-    <xs:element name="inlineEquation" type="oecdEquationType" id="inlineEquation"/>
+    <xs:element name="inline-equation" type="oecdEquationType" id="inlineEquation"/>
     <xs:element name="equation" type="oecdBlockEquationType" id="equation"/>
     
     <!-- COMPLEX TYPES -->

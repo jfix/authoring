@@ -92,7 +92,7 @@
         <xs:sequence>
             <xs:element ref="metadata" minOccurs="0"/>
             <xs:group ref="oecdTitleGroup" minOccurs="0"/>
-            <xs:element name="glossItem" type="oecdGlossaryItemType" maxOccurs="unbounded"/>
+            <xs:element name="gloss-item" type="oecdGlossaryItemType" maxOccurs="unbounded"/>
             <xs:element ref="notes" minOccurs="0"/>
         </xs:sequence>
     </xs:group>

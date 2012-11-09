@@ -1,4 +1,5 @@
-<?xml version="1.0" encoding="UTF-8"?><xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
 
 
     <xs:annotation>
@@ -10,73 +11,71 @@
                     <revision>
                         <revnumber>1</revnumber>
                         <date>2012-03-30</date>
-                        <author><email>nicg@corbas.co.uk</email><personname>Nic
-                            Gibson</personname></author>
+                        <author><email>nicg@corbas.co.uk</email><personname>Nic Gibson</personname></author>
                         <revremark>Initial Version</revremark>
                     </revision>
                     <revision>
                         <revnumber>2</revnumber>
                         <date>2012-04-16</date>
-                        <author><email>nicg@corbas.co.uk</email><personname>Nic
-                            Gibson</personname></author>
+                        <author><email>nicg@corbas.co.uk</email><personname>Nic Gibson</personname></author>
                         <revremark>Added missing global element</revremark>
                     </revision>
-                    <para>A volume is a publishing structural element. A volume contains multiple
-                        parts of multiple documents. Volumes may stand alone. </para>
+                    <para>A volume is a publishing structural element. A volume contains multiple parts of multiple documents. Volumes may stand alone. </para>
                 </revhistory>
             </section>
         </xs:documentation>
     </xs:annotation>
 
     <!-- IMPORTS AND INCLUDES -->
-    
+
     <xs:include schemaLocation="part.xsd"/>
     <xs:include schemaLocation="../components/document-meta.xsd"/>
-    
+
     <!-- GLOBAL ELEMENTS -->
     <xs:element name="volume" type="oecdVolumeType"/>
-    
+
     <!-- GLOBAL GROUPS -->
-    
+
     <!-- COMPLEX TYPES -->
-    
+
     <!-- volume -->
-    
+
     <xs:attributeGroup name="oecdVolumeTypeAttributes" id="oecdVolumeTypeAttributes">
-        
+
         <xs:annotation>
             <xs:documentation>
                 <section xmlns="http://docbook.org/ns/docbook">
                     <para>Attributes for volume type grouped for easy override.</para>
                 </section>
             </xs:documentation>
-            
-        </xs:annotation>        
-        
+
+        </xs:annotation>
+
         <xs:attributeGroup ref="oecdCommonAttributes"/>
         <xs:attributeGroup ref="oecdLinkingAttributes"/>
-        
+
     </xs:attributeGroup>
-    
+
     <xs:group name="oecdVolumeTypeContent" id="oecdVolumeTypeContent">
-        
+
         <xs:annotation>
             <xs:documentation>
                 <section xmlns="http://docbook.org/ns/docbook">
                     <para>Content for volume type grouped for easy override</para>
                 </section>
             </xs:documentation>
-        </xs:annotation>        
-        
+        </xs:annotation>
+
         <xs:sequence>
-            
-            <xs:element name="documentMetadata" type="oecdDocumentMetadataType" minOccurs="0"/>
-            <xs:element ref="metadata"/> <!-- not optional here! -->
+
+            <xs:element name="document-metadata" type="oecdDocumentMetadataType" minOccurs="0"/>
+            <xs:element ref="metadata"/>
+            <!-- not optional here! -->
             <xs:group ref="oecdTitleGroup"/>
-          
+
             <xs:element ref="preface" minOccurs="0"/>
             <xs:element ref="introduction" minOccurs="0"/>
-            
+
             <xs:choice>
                 <xs:element ref="part" maxOccurs="unbounded"/>
                 <xs:element ref="chapter" maxOccurs="unbounded"/>
@@ -85,32 +84,30 @@
             <xs:element ref="bibliography" minOccurs="0" maxOccurs="unbounded"/>
             <xs:element ref="appendix" minOccurs="0" maxOccurs="unbounded"/>
             <xs:element ref="index" minOccurs="0"/>
-            
+
         </xs:sequence>
-        
+
     </xs:group>
-    
+
     <xs:complexType name="oecdVolumeType" id="oecdVolumeType">
-        
+
         <xs:annotation>
             <xs:documentation>
                 <section xmlns="http://docbook.org/ns/docbook">
-                    <para>The volume type describes a structure that wraps containers such as chapters
-                        and parts into a standalone entity that is (effectively) a specialised type
-                        of book.</para>
+                    <para>The volume type describes a structure that wraps containers such as chapters and parts into a standalone entity that is (effectively) a specialised type of book.</para>
                 </section>
             </xs:documentation>
         </xs:annotation>
-        
+
         <xs:group ref="oecdVolumeTypeContent"/>
         <xs:attributeGroup ref="oecdVolumeTypeAttributes"/>
-        
+
     </xs:complexType>
-    
-    
+
+
     <!-- SIMPLE TYPES -->
-    
-    
+
+
 
 
 </xs:schema>

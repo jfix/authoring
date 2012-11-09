@@ -1,85 +1,73 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" >
-   
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+
 
     <xs:annotation>
         <xs:documentation><section xmlns="http://docbook.org/ns/docbook">
-            <section>
-                <title>OECD.Author</title>
-                <subtitle>Paragraph Schema</subtitle>
-                <revhistory>
-                    <title>Change Log</title>
-                    
-                    
-                        <revision>
+                <section>
+                    <title>OECD.Author</title>
+                    <subtitle>Paragraph Schema</subtitle>
+                    <revhistory>
+                        <title>Change Log</title> <revision>
                             <revnumber>1</revnumber>
                             <date>2011-12-02</date>
                             <author><email>nicg@corbas.co.uk</email><personname>Nic Gibson</personname></author>
                             <revremark>Initial Version</revremark>
-                        </revision>
-                    
-                        <revision>
+                        </revision> <revision>
                             <revnumber>2</revnumber>
                             <date>2012-04-13</date>
                             <authorinitials>NG</authorinitials>
-                            <revremark>Added annotations attribute.</revremark>                        
-                        </revision>
-                    
-	            	<revision>
-	            		<revnumber>3</revnumber>
-	            		<date>2012-10-05</date>
-	            		<authorinitials>NG</authorinitials>
-	            		<revremark>Wrapped global attributes in groups to avoid namespace prefix requirement.</revremark>
-	            	</revision>
-                	
-                	<revision>
-                		<revnumber>4</revnumber>
-                		<date>2012-11-05</date>
-                		<authorinitials>NG</authorinitials>
-                		<revremark>Included the embeddable blocks into paragraphs to resolve issue .</revremark>
-                	</revision>
-					
-                </revhistory>
-                <para>This model defines paragraphs and other simple components with equivalent
-                    hierarchical position.</para>
-            </section>
-        </section></xs:documentation>
+                            <revremark>Added annotations attribute.</revremark>
+                        </revision> <revision>
+                            <revnumber>3</revnumber>
+                            <date>2012-10-05</date>
+                            <authorinitials>NG</authorinitials>
+                            <revremark>Wrapped global attributes in groups to avoid namespace prefix requirement.</revremark>
+                        </revision> <revision>
+                            <revnumber>4</revnumber>
+                            <date>2012-11-05</date>
+                            <authorinitials>NG</authorinitials>
+                            <revremark>Included the embeddable blocks into paragraphs to resolve issue .</revremark>
+                        </revision> </revhistory>
+                    <para>This model defines paragraphs and other simple components with equivalent hierarchical position.</para>
+                </section>
+            </section></xs:documentation>
     </xs:annotation>
-    
+
     <!-- IMPORTS AND INCLUDES  -->
     <xs:include schemaLocation="attributes.xsd"/>
     <xs:include schemaLocation="inline-group.xsd"/>
     <xs:include schemaLocation="titles.xsd"/>
     <xs:include schemaLocation="meta.xsd"/>
-	<xs:include schemaLocation="blocks.xsd"/>
-    
+    <xs:include schemaLocation="blocks.xsd"/>
+
     <xs:include schemaLocation="graphics.xsd"/>
     <xs:include schemaLocation="equations.xsd"/>
-    
+
     <!-- GLOBAL ELEMENTS -->
     <xs:element name="para" type="oecdParagraphType" id="para">
-    	<xs:annotation>
-    		<xs:appinfo>
-    			<rule xmlns="http://purl.oclc.org/dsdl/schematron" context="para">
-    				<assert xmlns="http://purl.oclc.org/dsdl/schematron" test="not(normalize-space(.) = '')">Paragraphs must not be empty.</assert>
-    			</rule>
-    		</xs:appinfo>
-    	</xs:annotation>
+        <xs:annotation>
+            <xs:appinfo>
+                <rule xmlns="http://purl.oclc.org/dsdl/schematron" context="para">
+                    <assert xmlns="http://purl.oclc.org/dsdl/schematron" test="not(normalize-space(.) = '')">Paragraphs must not be empty.</assert>
+                </rule>
+            </xs:appinfo>
+        </xs:annotation>
     </xs:element>
-    <xs:element name="formalPara" type="oecdFormalParagraphType" id="formalPara"/>
-    <xs:element name="paragraphGroup" type="oecdParagraphGroupType" id="paragraphGroup"/>
-    
-     <!-- GLOBAL GROUPS -->
+    <xs:element name="formal-para" type="oecdFormalParagraphType" id="formalPara"/>
+    <xs:element name="paragraph-group" type="oecdParagraphGroupType" id="paragraphGroup"/>
+
+    <!-- GLOBAL GROUPS -->
     <xs:group name="oecdParagraphGroup" id="oecdParagraphGroup">
         <xs:choice>
             <xs:element ref="para"/>
-            <xs:element ref="formalPara"/>
-            <xs:element ref="paragraphGroup"/>
+            <xs:element ref="formal-para"/>
+            <xs:element ref="paragraph-group"/>
         </xs:choice>
     </xs:group>
-    
+
     <!-- GLOBAL TYPES -->
-    
+
     <!-- basic paragraph -->
     <xs:attributeGroup name="oecdParagraphTypeAttributes" id="oecdParagraphTypeAttributes">
         <xs:annotation>
@@ -90,18 +78,18 @@
                             <revnumber>2</revnumber>
                             <date>2012-04-13</date>
                             <authorinitials>NG</authorinitials>
-                            <revremark>Added annotations attribute.</revremark>                        
+                            <revremark>Added annotations attribute.</revremark>
                         </revision>
                     </revhistory>
                     <para>Attribute group for paragraph elements to allow easy overrides.</para>
                 </section>
             </xs:documentation>
-        </xs:annotation>        
+        </xs:annotation>
         <xs:attributeGroup ref="oecdCommonAttributes"/>
         <xs:attributeGroup ref="oecdLinkingAttributes"/>
         <xs:attributeGroup ref="ANNOTATIONS-GROUP"/>
     </xs:attributeGroup>
-    
+
     <xs:group name="oecdParagraphTypeContent" id="oecdParagraphTypeContent">
         <xs:annotation>
             <xs:documentation>
@@ -113,8 +101,8 @@
         <xs:sequence>
             <xs:element ref="metadata" minOccurs="0"/>
             <xs:group ref="oecdInlineGroup" minOccurs="0" maxOccurs="unbounded"/>
-        	<xs:group ref="oecdEmbeddableBlockGroup" minOccurs="0" maxOccurs="unbounded"/>
-        </xs:sequence>        
+            <xs:group ref="oecdEmbeddableBlockGroup" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
     </xs:group>
 
     <xs:complexType name="oecdParagraphType" mixed="true" id="oecdParagraphType">
@@ -124,19 +112,19 @@
                     <para>Base type for paragraph content.</para>
                 </section>
             </xs:documentation>
-        	
- 
+
+
         </xs:annotation>
-    	
-    	
-    
+
+
+
         <xs:group ref="oecdParagraphTypeContent"/>
         <xs:attributeGroup ref="oecdParagraphTypeAttributes"/>
 
     </xs:complexType>
-    
+
     <!-- formal paragraphs -->
-        
+
     <xs:group name="oecdFormalParagraphTypeContent" id="oecdFormalParagraphTypeContent">
         <xs:annotation>
             <xs:documentation>
@@ -149,9 +137,9 @@
             <xs:element ref="metadata" minOccurs="0"/>
             <xs:element ref="title"/>
             <xs:element ref="para"/>
-        </xs:sequence>        
+        </xs:sequence>
     </xs:group>
-    
+
     <xs:complexType name="oecdFormalParagraphType" mixed="true" id="oecdFormalParagraphType">
         <xs:annotation>
             <xs:documentation>
@@ -160,12 +148,12 @@
                 </section>
             </xs:documentation>
         </xs:annotation>
-                
+
         <xs:group ref="oecdFormalParagraphTypeContent"/>
         <xs:attributeGroup ref="oecdParagraphTypeAttributes"/>
-        
+
     </xs:complexType>
-    
+
     <!-- paragraph groups -->
     <xs:attributeGroup name="oecdParagraphGroupTypeAttributes" id="oecdParagraphGroupTypeAttributes">
         <xs:annotation>
@@ -176,9 +164,9 @@
             </xs:documentation>
         </xs:annotation>
         <xs:attributeGroup ref="oecdCommonAttributes"/>
-        <xs:attributeGroup ref="oecdLinkingAttributes"/>        
+        <xs:attributeGroup ref="oecdLinkingAttributes"/>
     </xs:attributeGroup>
-    
+
     <xs:group name="oecdParagraphGroupTypeContent" id="oecdParagraphGroupTypeContent">
         <xs:annotation>
             <xs:documentation>
@@ -192,17 +180,16 @@
             <xs:group ref="oecdTitleGroup" minOccurs="0"/>
             <xs:choice maxOccurs="unbounded">
                 <xs:element ref="para"/>
-                <xs:element ref="formalPara"/>
-            </xs:choice>        
+                <xs:element ref="formal-para"/>
+            </xs:choice>
         </xs:sequence>
     </xs:group>
-    
+
     <xs:complexType name="oecdParagraphGroupType" id="oecdParagraphGroupType">
         <xs:annotation>
             <xs:documentation>
                 <section xmlns="http://docbook.org/ns/docbook">
-                    <para>A group of paragraphs. Functions like a section that cannot have 
-                    any substructure.</para>
+                    <para>A group of paragraphs. Functions like a section that cannot have any substructure.</para>
                 </section>
             </xs:documentation>
         </xs:annotation>

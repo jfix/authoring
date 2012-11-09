@@ -92,7 +92,7 @@
             <xs:group ref="oecdParagraphGroup"/>
             <xs:group ref="oecdListGroup"/>  
             <xs:element ref="equation"/>   
-            <xs:element ref="chemicalStructure"/>
+            <xs:element ref="chemical-structure"/>
             <xs:element ref="graphic"/>
             <xs:element ref="figure"/>
             <xs:element ref="table"/>
@@ -116,10 +116,10 @@
 		</xs:annotation>
 		
 		<xs:choice>
-			<xs:element ref="itemizedList"/>
-			<xs:element ref="orderedList"/>
+			<xs:element ref="itemized-list"/>
+			<xs:element ref="ordered-list"/>
 			<xs:element ref="equation"/>   
-			<xs:element ref="chemicalStructure"/>
+			<xs:element ref="chemical-structure"/>
 			<xs:element ref="graphic"/>
 			<xs:element ref="figure"/>
 			<xs:element ref="table"/>

@@ -1,66 +1,61 @@
-<?xml version="1.0" encoding="UTF-8"?><xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
-    
-    
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+
+
     <xs:annotation>
         <xs:documentation><section xmlns="http://docbook.org/ns/docbook">
-            <title>OECD Schemas</title>
-            <subtitle>Chemical Structure Components</subtitle>
-            <revhistory>
-                <title>Change Log</title>
-
+                <title>OECD Schemas</title>
+                <subtitle>Chemical Structure Components</subtitle>
+                <revhistory>
+                    <title>Change Log</title>
                     <revision>
                         <revnumber>1</revnumber>
                         <date>2012-03-29</date>
                         <author><email>nicg@corbas.co.uk</email><personname>Nic Gibson</personname></author>
                         <revremark>Initial Version</revremark>
                     </revision>
-                <revision>
-                    <revnumber>2</revnumber>
-                    <date>2012-03-03</date>
-                    <author><email>nicg@corbas.co.uk</email><personname>Nic Gibson</personname></author>
-                    <revremark>Modified oecdChemicalStructureTypeContent to replace 'oecdInline' with 'text'.</revremark>
-                </revision>
-                
-                <revision>
-                    <revnumber>3</revnumber>
-                    <date>2012-04-15</date>
-                    <author><email>nicg@corbas.co.uk</email><personname>Nic Gibson</personname></author>
-                    <revremark>Created oecdBlockChemicalStructureType derived from oecdChemicalStructureType in order
-                    to add annotations as it only makes sense to annotate blocks.</revremark>
-                </revision>
-                
-                <revision>
-                    <revnumber>4</revnumber>
-                    <date>2012-08-02</date>
-                    <authorinitials>NG</authorinitials>
-                    <revremark>Updated oecdChemicalStructureType to add multiple renditions.</revremark>
-                </revision>
-            	
-            	<revision>
-            		<revnumber>5</revnumber>
-            		<date>2012-10-05</date>
-            		<authorinitials>NG</authorinitials>
-            		<revremark>Wrapped global attributes in groups to avoid namespace prefix requirement.</revremark>
-            	</revision>
-            	
-            </revhistory>
-        </section></xs:documentation>
-        
+                    <revision>
+                        <revnumber>2</revnumber>
+                        <date>2012-03-03</date>
+                        <author><email>nicg@corbas.co.uk</email><personname>Nic Gibson</personname></author>
+                        <revremark>Modified oecdChemicalStructureTypeContent to replace 'oecdInline' with 'text'.</revremark>
+                    </revision>
+                    <revision>
+                        <revnumber>3</revnumber>
+                        <date>2012-04-15</date>
+                        <author><email>nicg@corbas.co.uk</email><personname>Nic Gibson</personname></author>
+                        <revremark>Created oecdBlockChemicalStructureType derived from oecdChemicalStructureType in order to add annotations as it only makes sense to annotate blocks.</revremark>
+                    </revision>
+                    <revision>
+                        <revnumber>4</revnumber>
+                        <date>2012-08-02</date>
+                        <authorinitials>NG</authorinitials>
+                        <revremark>Updated oecdChemicalStructureType to add multiple renditions.</revremark>
+                    </revision>
+                    <revision>
+                        <revnumber>5</revnumber>
+                        <date>2012-10-05</date>
+                        <authorinitials>NG</authorinitials>
+                        <revremark>Wrapped global attributes in groups to avoid namespace prefix requirement.</revremark>
+                    </revision>
+                </revhistory>
+            </section></xs:documentation>
+
     </xs:annotation>
-    
+
     <!-- IMPORTS AND INCLUDES -->
 
-    <xs:include schemaLocation="attributes.xsd"/>    
+    <xs:include schemaLocation="attributes.xsd"/>
     <xs:include schemaLocation="types.xsd"/>
     <xs:include schemaLocation="meta.xsd"/>
     <xs:include schemaLocation="inlines.xsd"/>
     <xs:include schemaLocation="graphics.xsd"/>
-    
+
 
     <!-- GLOBAL ELEMENTS -->
-    <xs:element name="inlineChemicalStructure" type="oecdChemicalStructureType" id="inlineChemicalStructure"/>
-    <xs:element name="chemicalStructure" type="oecdBlockChemicalStructureType" id="chemicalStructure"/>
-    
+    <xs:element name="inline-chemical-structure" type="oecdChemicalStructureType" id="inlineChemicalStructure"/>
+    <xs:element name="chemical-structure" type="oecdBlockChemicalStructureType" id="chemicalStructure"/>
+
     <!-- COMPLEX TYPES -->
 
     <!-- chemical structure types-->
@@ -74,7 +69,7 @@
         </xs:annotation>
         <xs:attributeGroup ref="oecdCommonAttributes"/>
     </xs:attributeGroup>
-    
+
     <xs:attributeGroup name="oecdBlockChemicalStructureTypeAttributes" id="oecdBlockChemicalStructureTypeAttributes">
         <xs:annotation>
             <xs:documentation>
@@ -89,9 +84,9 @@
                 </section>
             </xs:documentation>
         </xs:annotation>
-    	<xs:attributeGroup ref="ANNOTATIONS-GROUP"/>
+        <xs:attributeGroup ref="ANNOTATIONS-GROUP"/>
     </xs:attributeGroup>
-    
+
     <xs:group name="oecdChemicalStructureTypeContent" id="oecdChemicalStructureTypeContent">
         <xs:annotation>
             <xs:documentation>
@@ -108,11 +103,11 @@
         </xs:annotation>
         <xs:choice>
             <xs:any namespace="http://www.xml-cml.org/schema"/>
-            <xs:element ref="text"/>   
-            <xs:group ref="oecdGraphicsGroup"/> 
+            <xs:element ref="text"/>
+            <xs:group ref="oecdGraphicsGroup"/>
         </xs:choice>
     </xs:group>
-    
+
     <xs:complexType name="oecdChemicalStructureType" id="oecdChemicalStructureType">
         <xs:annotation>
             <xs:documentation>
@@ -122,24 +117,21 @@
                         <revnumber>4</revnumber>
                         <date>2012-08-02</date>
                         <authorinitials>NG</authorinitials>
-                        <revremark>Changed reference to oecdChemicalStructureTypeContent to
-                         make maxOccurs unbounded, allowing for multiple renditions.</revremark>
+                        <revremark>Changed reference to oecdChemicalStructureTypeContent to make maxOccurs unbounded, allowing for multiple renditions.</revremark>
                     </revision>
                 </revhistory>
                 <section xmlns="http://docbook.org/ns/docbook">
-                    <para>The  chemical structure type is used as the base for both inline and block structures. This model
-                        allows any one of inline text, CML or an external graphic.</para>
+                    <para>The chemical structure type is used as the base for both inline and block structures. This model allows any one of inline text, CML or an external graphic.</para>
                 </section>
             </xs:documentation>
         </xs:annotation>
         <xs:group ref="oecdChemicalStructureTypeContent" maxOccurs="unbounded"/>
-        <xs:attributeGroup ref="oecdChemicalStructureTypeAttributes"/>       
+        <xs:attributeGroup ref="oecdChemicalStructureTypeAttributes"/>
     </xs:complexType>
-    
+
     <xs:complexType name="oecdBlockChemicalStructureType" id="oecdBlockChemicalStructureType">
         <xs:annotation>
             <xs:documentation>
-
                 <section xmlns="http://docbook.org/ns/docbook">
                     <revision>
                         <revnumber>3</revnumber>
@@ -157,6 +149,6 @@
             </xs:extension>
         </xs:complexContent>
     </xs:complexType>
-    
+
 
 </xs:schema>

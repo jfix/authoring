@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:svg="http://www.w3.org/2000/svg"
-	elementFormDefault="qualified">
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:svg="http://www.w3.org/2000/svg" elementFormDefault="qualified">
 
 
 	<xs:annotation>
@@ -12,8 +11,7 @@
 					<revision>
 						<revnumber>1</revnumber>
 						<date>2011-12-02</date>
-						<author><email>nicg@corbas.co.uk</email><personname>Nic
-							Gibson</personname></author>
+						<author><email>nicg@corbas.co.uk</email><personname>Nic Gibson</personname></author>
 						<revremark>Initial Version</revremark>
 					</revision>
 					<revision>
@@ -26,31 +24,25 @@
 						<revnumber>3</revnumber>
 						<date>2012-08-02</date>
 						<authorinitials>NG</authorinitials>
-						<revremark>Modified oecdBlockGraphicType and oecdInlineGraphicType to allow
-							for multiple renditions.</revremark>
-					</revision> <revision>
+						<revremark>Modified oecdBlockGraphicType and oecdInlineGraphicType to allow for multiple renditions.</revremark>
+					</revision>
+					<revision>
 						<revnumber>4</revnumber>
 						<date>2012-10-05</date>
 						<authorinitials>NG</authorinitials>
-						<revremark>Wrapped global attributes in groups to avoid namespace prefix
-							requirement.</revremark>
-					</revision> <revision>
+						<revremark>Wrapped global attributes in groups to avoid namespace prefix requirement.</revremark>
+					</revision>
+					<revision>
 						<revnumber>5</revnumber>
 						<date>2012-10-25</date>
 						<authorinitials>NG</authorinitials>
 						<revdescription>
-							<para>Replaced attribution with sources in the <link
-								linkend="oecdBlockGraphicTypeContent"
-								>oecdBlockGraphicTypeContent</link> group for consistency across
-								model.</para>
-							<para>Replaced attribution with sources in the <link
-								linkend="oecdInlineGraphicTypeContent"
-								>oecdInlineGraphicTypeContent</link> group for consistency across
-								model.</para>
-							<para>Added sources to <link linkend="oecdFigureTypeContent">oecdFigureTypeContent</link> and
-							an schematron assertion to ensure that the sources are not on the graphic element of a figure.
-							</para></revdescription>
-					</revision> </revhistory>
+							<para>Replaced attribution with sources in the <link linkend="oecdBlockGraphicTypeContent">oecdBlockGraphicTypeContent</link> group for consistency across model.</para>
+							<para>Replaced attribution with sources in the <link linkend="oecdInlineGraphicTypeContent">oecdInlineGraphicTypeContent</link> group for consistency across model.</para>
+							<para>Added sources to <link linkend="oecdFigureTypeContent">oecdFigureTypeContent</link> and an schematron assertion to ensure that the sources are not on the graphic
+								element of a figure. </para></revdescription>
+					</revision>
+				</revhistory>
 			</section></xs:documentation>
 	</xs:annotation>
 
@@ -65,10 +57,10 @@
 
 
 	<!-- GLOBAL ELEMENTS -->
-	<xs:element name="externalGraphic" type="oecdExternalGraphicType" id="externalGraphic"/>
-	<xs:element name="svgGraphic" type="oecdSvgGraphicType" id="svgGraphic"/>
+	<xs:element name="external-graphic" type="oecdExternalGraphicType" id="externalGraphic"/>
+	<xs:element name="svg-graphic" type="oecdSvgGraphicType" id="svgGraphic"/>
 
-	<xs:element name="inlineGraphic" type="oecdInlineGraphicType" id="inlineGraphic"/>
+	<xs:element name="inline-graphic" type="oecdInlineGraphicType" id="inlineGraphic"/>
 	<xs:element name="graphic" type="oecdBlockGraphicType" id="graphic"/>
 
 	<xs:element name="figure" type="oecdFigureType" id="figure"/>
@@ -76,8 +68,8 @@
 	<!-- GLOBAL GROUPS -->
 	<xs:group name="oecdGraphicsGroup" id="oecdGraphicsGroup">
 		<xs:choice>
-			<xs:element ref="externalGraphic"/>
-			<xs:element ref="svgGraphic"/>
+			<xs:element ref="external-graphic"/>
+			<xs:element ref="svg-graphic"/>
 		</xs:choice>
 	</xs:group>
 
@@ -91,8 +83,7 @@
 
 	<!-- External Graphic References -->
 
-	<xs:attributeGroup name="oecdExternalGraphicTypeAttributes"
-		id="oecdExternalGraphicTypeAttributes">
+	<xs:attributeGroup name="oecdExternalGraphicTypeAttributes" id="oecdExternalGraphicTypeAttributes">
 		<xs:annotation>
 			<xs:documentation>
 				<section xmlns="http://docbook.org/ns/docbook">
@@ -108,8 +99,7 @@
 			<xs:documentation>
 				<section xmlns="http://docbook.org/ns/docbook">
 					<title>TODO</title>
-					<para>Schematron required to ensure that at least one appropriate attribute is
-						set.</para>
+					<para>Schematron required to ensure that at least one appropriate attribute is set.</para>
 				</section>
 			</xs:documentation>
 		</xs:annotation>
@@ -143,8 +133,7 @@
 						<authorinitials>NG</authorinitials>
 						<revremark>Added annotations attribute</revremark>
 					</revision>
-					<para>External graphic reference. The graphic reference is an attribute. Only
-						metadata content is allowed.</para>
+					<para>External graphic reference. The graphic reference is an attribute. Only metadata content is allowed.</para>
 				</section>
 			</xs:documentation>
 		</xs:annotation>
@@ -176,12 +165,23 @@
 		<xs:annotation>
 			<xs:documentation>
 				<section xmlns="http://docbook.org/ns/docbook">
+					<revhistory>
+						<title>Change Log</title>
+						<revision>
+							<revnumber>1</revnumber>
+							<date>2012-11-09</date>
+							<author/>
+							<revdescription>changed processing model to lax, until we can assure the quality of the SVG content.</revdescription>
+						</revision>
+					</revhistory>
+				</section>
+				<section xmlns="http://docbook.org/ns/docbook">
 					<para>Content for SVG graphics. Grouped to allow easy override.</para>
 				</section>
 			</xs:documentation>
 		</xs:annotation>
 		<xs:sequence>
-			<xs:any namespace="http://www.w3.org/2000/svg"/>
+			<xs:any namespace="http://www.w3.org/2000/svg" processContents="lax"/>
 		</xs:sequence>
 	</xs:group>
 
@@ -218,19 +218,15 @@
 						<revnumber>3</revnumber>
 						<date>2012-08-02</date>
 						<authorinitials>NG</authorinitials>
-						<revremark>Modified reference to oecdGraphicsGroup to make it unbounded
-							allowing for multiple renditions. The sequential order of renditions
-							should be taken as a preference order.</revremark>
+						<revremark>Modified reference to oecdGraphicsGroup to make it unbounded allowing for multiple renditions. The sequential order of renditions should be taken as a preference
+							order.</revremark>
 					</revision>
 					<revision>
-					<revnumber>5</revnumber>
-					<date>2012-10-25</date>
-					<authorinitials>NG</authorinitials>
-					<revremark>
-						Replaced attribution with sources  for consistency across
-							model.</revremark>
-							</revision>
-					
+						<revnumber>5</revnumber>
+						<date>2012-10-25</date>
+						<authorinitials>NG</authorinitials>
+						<revremark> Replaced attribution with sources for consistency across model.</revremark>
+					</revision>
 				</revhistory>
 				<section xmlns="http://docbook.org/ns/docbook">
 					<para>Content for block graphics. Grouped to allow easy override.</para>
@@ -281,18 +277,14 @@
 						<revnumber>3</revnumber>
 						<date>2012-08-02</date>
 						<authorinitials>NG</authorinitials>
-						<revremark>Modified reference to oecdGraphicsGroup to make it unbounded
-							allowing for multiple renditions. The sequential order of renditions
-							should be taken as a preference order.</revremark>
+						<revremark>Modified reference to oecdGraphicsGroup to make it unbounded allowing for multiple renditions. The sequential order of renditions should be taken as a preference
+							order.</revremark>
 					</revision>
-				
 					<revision>
 						<revnumber>5</revnumber>
 						<date>2012-10-25</date>
 						<authorinitials>NG</authorinitials>
-						<revremark>
-							Replaced attribution with sources  for consistency across
-							model.</revremark>
+						<revremark> Replaced attribution with sources for consistency across model.</revremark>
 					</revision>
 				</revhistory>
 				<section xmlns="http://docbook.org/ns/docbook">
@@ -311,8 +303,7 @@
 		<xs:annotation>
 			<xs:documentation>
 				<section xmlns="http://docbook.org/ns/docbook">
-					<para>Block graphic type. This has a considerably more restricted model than a
-						block graphic.</para>
+					<para>Block graphic type. This has a considerably more restricted model than a block graphic.</para>
 				</section>
 			</xs:documentation>
 		</xs:annotation>
@@ -339,28 +330,22 @@
 			<xs:documentation>
 				<section xmlns="http://docbook.org/ns/docbook">
 					<para>Content for figures. Grouped to allow easy override.</para>
-					
 					<revhistory>
 						<revision>
 							<revnumber>5</revnumber>
 							<date>2012-10-25</date>
 							<authorinitials>NG</authorinitials>
-							<revremark>
-								Added sources to figure element. Added schematron assertion
-							to require that the embedded graphic did not have sources.</revremark>
+							<revremark> Added sources to figure element. Added schematron assertion to require that the embedded graphic did not have sources.</revremark>
 						</revision>
 					</revhistory>
-					
-					
 				</section>
-				
-				
 			</xs:documentation>
-			
+
 			<xs:appinfo>
-				<assert xmlns="http://purl.oclc.org/dsdl/schematron" test="not(graphic/sources)">Source information must not be present on graphics within figures. It should be placed on the figure instead.</assert>
+				<assert xmlns="http://purl.oclc.org/dsdl/schematron" test="not(graphic/sources)">Source information must not be present on graphics within figures. It should be placed on the figure
+					instead.</assert>
 			</xs:appinfo>
-			
+
 		</xs:annotation>
 		<xs:sequence>
 			<xs:element ref="metadata" minOccurs="0"/>
@@ -375,8 +360,7 @@
 		<xs:annotation>
 			<xs:documentation>
 				<section xmlns="http://docbook.org/ns/docbook">
-					<para>Figure Type. Figures are essentially wrappers around block graphics
-						allowing titles and notes to be added.</para>
+					<para>Figure Type. Figures are essentially wrappers around block graphics allowing titles and notes to be added.</para>
 				</section>
 			</xs:documentation>
 		</xs:annotation>

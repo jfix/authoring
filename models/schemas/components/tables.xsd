@@ -72,9 +72,9 @@
                 <xs:extension base="Table.Entry">
                     <xs:choice>
                         <xs:element ref="para" maxOccurs="unbounded"/>
-                        <xs:element ref="itemizedList" maxOccurs="unbounded"/>
-                        <xs:element ref="definitionList" maxOccurs="unbounded"/>
-                        <xs:element ref="orderedList"/>
+                        <xs:element ref="itemized-list" maxOccurs="unbounded"/>
+                        <xs:element ref="definition-list" maxOccurs="unbounded"/>
+                        <xs:element ref="ordered-list"/>
                         <xs:element ref="mods:mods" maxOccurs="unbounded"/>
                     </xs:choice>
                 </xs:extension>

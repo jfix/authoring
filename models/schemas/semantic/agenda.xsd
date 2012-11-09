@@ -58,7 +58,7 @@
 
         <xs:sequence>
 
-            <xs:element name="documentMetadata" type="oecdDocumentMetadataType" minOccurs="0"/>
+            <xs:element name="document-metadata" type="oecdDocumentMetadataType" minOccurs="0"/>
             <xs:element ref="metadata"/>
             <xs:group ref="oecdTitleGroup"/>
             <xs:element name="abstract" type="oecdParagraphGroupType" id="abstract" minOccurs="0"/>

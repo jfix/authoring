@@ -75,16 +75,16 @@
 
 
     <!-- GLOBAL ELEMENTS -->
-    <xs:element name="itemizedList" type="oecdItemizedListType" id="itemizedList"/>
-    <xs:element name="orderedList" type="oecdOrderedListType" id="orderedList"/>
-    <xs:element name="definitionList" type="oecdDefinitionListType" id="definitionList"/>
+    <xs:element name="itemized-list" type="oecdItemizedListType" id="itemizedList"/>
+    <xs:element name="ordered-list" type="oecdOrderedListType" id="orderedList"/>
+    <xs:element name="definition-list" type="oecdDefinitionListType" id="definitionList"/>
 
     <!-- GLOBAL GROUPS -->
     <xs:group name="oecdListGroup" id="oecdListGroup">
         <xs:choice>
-            <xs:element ref="itemizedList"/>
-            <xs:element ref="orderedList"/>
-            <xs:element ref="definitionList"/>
+            <xs:element ref="itemized-list"/>
+            <xs:element ref="ordered-list"/>
+            <xs:element ref="definition-list"/>
         </xs:choice>
     </xs:group>
 
@@ -167,7 +167,7 @@
         <xs:sequence>
             <xs:element ref="metadata" minOccurs="0"/>
             <xs:group ref="oecdTitleGroup" minOccurs="0"/>
-            <xs:element name="listItem" type="oecdItemizedListItemType" maxOccurs="unbounded"/>
+            <xs:element name="list-item" type="oecdItemizedListItemType" maxOccurs="unbounded"/>
             <xs:element ref="notes" minOccurs="0"/>
         </xs:sequence>
     </xs:group>
@@ -290,7 +290,7 @@
         <xs:sequence>
             <xs:element ref="metadata" minOccurs="0"/>
             <xs:group ref="oecdTitleGroup" minOccurs="0"/>
-            <xs:element name="listItem" type="oecdListItemType" maxOccurs="unbounded"/>
+            <xs:element name="list-item" type="oecdListItemType" maxOccurs="unbounded"/>
             <xs:element ref="notes" minOccurs="0"/>
         </xs:sequence>
     </xs:group>
@@ -462,7 +462,7 @@
         <xs:sequence>
             <xs:element ref="metadata" minOccurs="0"/>
             <xs:group ref="oecdTitleGroup" minOccurs="0"/>
-            <xs:element name="listItem" type="oecdDefinitionListItemType" maxOccurs="unbounded"/>
+            <xs:element name="list-item" type="oecdDefinitionListItemType" maxOccurs="unbounded"/>
             <xs:element ref="notes" minOccurs="0"/>
         </xs:sequence>
     </xs:group>

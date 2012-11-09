@@ -1,67 +1,53 @@
-<?xml version="1.0" encoding="UTF-8"?><xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified"
-    xmlns:mods="http://www.loc.gov/mods/v3"> 
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" xmlns:mods="http://www.loc.gov/mods/v3">
 
     <xs:annotation>
         <xs:documentation><section xmlns="http://docbook.org/ns/docbook">
-            <title>OECD Schemas</title>
-            <subtitle>Inline Model Group</subtitle>
-            <para>This module simply wraps several sources of inline material
-            in a simple group for ease of use. In most cases, this should be used instead
-            of inlines.xsd.</para>
-            
-            <revhistory>
-                <title>Change Log</title>
-                
-                
+                <title>OECD Schemas</title>
+                <subtitle>Inline Model Group</subtitle>
+                <para>This module simply wraps several sources of inline material in a simple group for ease of use. In most cases, this should be used instead of inlines.xsd.</para>
+                <revhistory>
+                    <title>Change Log</title>
                     <revision>
                         <revnumber>1</revnumber>
                         <date>2012-03-21</date>
                         <author><email>nicg@corbas.co.uk</email><personname>Nic Gibson</personname></author>
                         <revremark>Initial Version</revremark>
                     </revision>
-
-                <revision>
-                    <revnumber>2</revnumber>
-                    <date>2012-03-29</date>
-                    <author><email>nicg@corbas.co.uk</email><personname>Nic Gibson</personname></author>
-                    <revremark>Added chemical structures</revremark>
-                </revision>
-                
-                <revision>
-                    <revnumber>2</revnumber>
-                    <date>2012-03-29</date>
-                    <author><email>nicg@corbas.co.uk</email><personname>Nic Gibson</personname></author>
-                    <revremark>Added index terms</revremark>
-                </revision>
-                
-                <revision>
-                    <revnumber>3</revnumber>
-                    <date>2012-04-13</date>
-                    <author><email>nicg@corbas.co.uk</email><personname>Nic Gibson</personname></author>
-                    <revremark>Added citations (mods element)</revremark>
-                  
-                </revision>
-                
-                <revision>
-                    <revnumber>4</revnumber>
-                    <date>2012-08-02</date>
-                    <authorinitials>NG</authorinitials>
-                    <revremark>Added the citation element. Note that rev 3 allowed for inline bibliographic entries
-                    not citations.</revremark>
-                </revision>
-            	
-            	<revision>
-            		<revnumber>5</revnumber>
-            		<date>2012-11-05</date>
-            		<authorinitials>NG</authorinitials>
-            		<revremark>Added the revision start and end markers.</revremark>
-            	</revision>
-                
-            </revhistory>
-            
-        </section></xs:documentation>
+                    <revision>
+                        <revnumber>2</revnumber>
+                        <date>2012-03-29</date>
+                        <author><email>nicg@corbas.co.uk</email><personname>Nic Gibson</personname></author>
+                        <revremark>Added chemical structures</revremark>
+                    </revision>
+                    <revision>
+                        <revnumber>2</revnumber>
+                        <date>2012-03-29</date>
+                        <author><email>nicg@corbas.co.uk</email><personname>Nic Gibson</personname></author>
+                        <revremark>Added index terms</revremark>
+                    </revision>
+                    <revision>
+                        <revnumber>3</revnumber>
+                        <date>2012-04-13</date>
+                        <author><email>nicg@corbas.co.uk</email><personname>Nic Gibson</personname></author>
+                        <revremark>Added citations (mods element)</revremark>
+                    </revision>
+                    <revision>
+                        <revnumber>4</revnumber>
+                        <date>2012-08-02</date>
+                        <authorinitials>NG</authorinitials>
+                        <revremark>Added the citation element. Note that rev 3 allowed for inline bibliographic entries not citations.</revremark>
+                    </revision>
+                    <revision>
+                        <revnumber>5</revnumber>
+                        <date>2012-11-05</date>
+                        <authorinitials>NG</authorinitials>
+                        <revremark>Added the revision start and end markers.</revremark>
+                    </revision>
+                </revhistory>
+            </section></xs:documentation>
     </xs:annotation>
-    
+
     <!-- IMPORTS AND INCLUDES -->
     <xs:include schemaLocation="inlines.xsd"/>
     <xs:include schemaLocation="graphics.xsd"/>
@@ -69,33 +55,33 @@
     <xs:include schemaLocation="chemicals.xsd"/>
     <xs:include schemaLocation="index.xsd"/>
     <xs:include schemaLocation="citations.xsd"/>
-	<xs:include schemaLocation="revisions.xsd"/>
+    <xs:include schemaLocation="revisions.xsd"/>
     <xs:import schemaLocation="../external/mods.xsd" namespace="http://www.loc.gov/mods/v3"/>
-    
+
 
     <!-- GLOBAL GROUPS -->
     <xs:group name="oecdInlineGroup" id="oecdInlineGroup">
         <xs:annotation>
             <xs:documentation>
                 <section xmlns="http://docbook.org/ns/docbook">
-                    <para>the oecdInlineGroup provides simple access to inlines defined in this module
-                        whether or not they are derived from oecdInline </para>
+                    <para>the oecdInlineGroup provides simple access to inlines defined in this module whether or not they are derived from oecdInline </para>
                 </section>
             </xs:documentation>
-            
+
         </xs:annotation>
         <xs:choice>
-            <xs:element ref="oecdInline" maxOccurs="unbounded" minOccurs="0"/> <!-- base of a substitution group -->
-            <xs:element ref="inlineEquation" maxOccurs="unbounded" minOccurs="0"/>
-            <xs:element ref="inlineChemicalStructure" maxOccurs="unbounded" minOccurs="0"/>
-            <xs:element ref="inlineGraphic" maxOccurs="unbounded" minOccurs="0"/>
+            <xs:element ref="oecd-inline" maxOccurs="unbounded" minOccurs="0"/>
+            <!-- base of a substitution group -->
+            <xs:element ref="inline-equation" maxOccurs="unbounded" minOccurs="0"/>
+            <xs:element ref="inline-chemical-structure" maxOccurs="unbounded" minOccurs="0"/>
+            <xs:element ref="inline-graphic" maxOccurs="unbounded" minOccurs="0"/>
             <xs:element ref="footnote" minOccurs="0" maxOccurs="unbounded"/>
-            <xs:element ref="indexTerm" minOccurs="0" maxOccurs="unbounded"/>
+            <xs:element ref="index-term" minOccurs="0" maxOccurs="unbounded"/>
             <xs:element ref="mods:mods" maxOccurs="unbounded" minOccurs="0"/>
             <xs:element ref="citation" maxOccurs="unbounded" minOccurs="0"/>
-        	<xs:group ref="oecdRevisionsGroup" maxOccurs="unbounded" minOccurs="0"/>
+            <xs:group ref="oecdRevisionsGroup" maxOccurs="unbounded" minOccurs="0"/>
         </xs:choice>
     </xs:group>
-    
+
 
 </xs:schema>

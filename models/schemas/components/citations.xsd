@@ -34,7 +34,8 @@
             <xs:documentation>
                 <section xmlns="http://docbook.org/ns/docbook">
                     <para>Citation attributes for easy override</para>
-                    <para>Citations either content an internal reference in the form of an id reference or an external reference in the form of a URI. XML Schema does not allow us to constrain an element to either one of two attributes so we use a Schematron annotation to express this requirement.</para>
+                    <para>Citations either content an internal reference in the form of an id reference or an external reference in the form of a URI. XML Schema does not allow us to constrain an
+                        element to either one of two attributes so we use a Schematron annotation to express this requirement.</para>
                 </section>
             </xs:documentation>
 
@@ -56,14 +57,15 @@
             <xs:documentation>
                 <section xmlns="http://docbook.org/ns/docbook">
                     <para>Citation contentfor easy override</para>
-                    <para>Citations either content an internal reference in the form of an id reference or an external reference in the form of a URI. We allow the citation element to have inline content in order to allow a mechanism for overriding the rendition of the cited content.</para>
+                    <para>Citations either content an internal reference in the form of an id reference or an external reference in the form of a URI. We allow the citation element to have inline
+                        content in order to allow a mechanism for overriding the rendition of the cited content.</para>
                 </section>
             </xs:documentation>
         </xs:annotation>
 
         <xs:sequence>
             <xs:element ref="metadata" minOccurs="0" maxOccurs="unbounded"/>
-            <xs:element ref="oecdInline" minOccurs="0" maxOccurs="unbounded"/>
+            <xs:element ref="oecd-inline" minOccurs="0" maxOccurs="unbounded"/>
         </xs:sequence>
 
     </xs:group>
@@ -84,20 +86,21 @@
     </xs:complexType>
 
     <!-- ATTRIBUTES -->
-	<xs:attributeGroup name="BIBLIOREF-GROUP">
-    <xs:attribute name="biblioRef" type="xs:IDREF" id="biblioRef">
-        <xs:annotation>
-            <xs:documentation>
-                <section xmlns="http://docbook.org/ns/docbook">
-                    <para>The biblioRef attribute refers to a bibliographic entry elsewhere in the current document. A schematron assertion is used to ensure that it points at something valid.</para>
-                    <remark>The assertion needs to be made more intelligent - should be type based.</remark>
-                </section>
-            </xs:documentation>
-            <xs:appinfo>
-                <assert xmlns="http://purl.oclc.org/dsdl/schematron" test="local-name(id(@biblioRef) = 'mods'"/>
-            </xs:appinfo>
-        </xs:annotation>
-    </xs:attribute>
-	</xs:attributeGroup>
+    <xs:attributeGroup name="BIBLIOREF-GROUP">
+        <xs:attribute name="biblio-ref" type="xs:IDREF" id="biblioRef">
+            <xs:annotation>
+                <xs:documentation>
+                    <section xmlns="http://docbook.org/ns/docbook">
+                        <para>The biblio-ref attribute refers to a bibliographic entry elsewhere in the current document. A schematron assertion is used to ensure that it points at something
+                            valid.</para>
+                        <remark>The assertion needs to be made more intelligent - should be type based.</remark>
+                    </section>
+                </xs:documentation>
+                <xs:appinfo>
+                    <assert xmlns="http://purl.oclc.org/dsdl/schematron" test="local-name(id(@biblioRef) = 'mods'"/>
+                </xs:appinfo>
+            </xs:annotation>
+        </xs:attribute>
+    </xs:attributeGroup>
 
 </xs:schema>

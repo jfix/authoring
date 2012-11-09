@@ -116,13 +116,13 @@
         </xs:annotation>
 
         <xs:sequence>
-           <xs:element name="documentMetadata" type="oecdDocumentMetadataType" minOccurs="0"/>
-           <xs:element ref="metadata"/>
+            <xs:element name="document-metadata" type="oecdDocumentMetadataType" minOccurs="0"/>
+            <xs:element ref="metadata"/>
             <!-- not optional here! -->
-            
+
             <xs:group ref="oecdTitleGroup"/>
-            <xs:element ref="executiveSummary" minOccurs="0"/>
-            
+            <xs:element ref="executive-summary" minOccurs="0"/>
+
             <xs:choice>
                 <xs:element ref="part" maxOccurs="unbounded"/>
                 <xs:sequence>
@@ -181,12 +181,12 @@
         </xs:annotation>
 
         <xs:sequence>
-            <xs:element name="documentMetadata" type="oecdDocumentMetadataType" minOccurs="0"/>
+            <xs:element name="document-metadata" type="oecdDocumentMetadataType" minOccurs="0"/>
             <xs:element ref="metadata"/>
             <!-- not optional here! -->
             <xs:group ref="oecdTitleGroup"/>
 
-            <xs:element ref="executiveSummary" minOccurs="0"/>
+            <xs:element ref="executive-summary" minOccurs="0"/>
             <xs:element ref="acknowledgements" minOccurs="0"/>
             <xs:element ref="preface" minOccurs="0"/>
 

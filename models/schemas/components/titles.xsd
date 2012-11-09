@@ -54,7 +54,7 @@
     <!-- GLOBAL ELEMENTS -->
     <!-- TODO: determine if these really all should be the same type -->
     <xs:element name="title" type="oecdTitleType" id="title"/>
-    <xs:element name="subTitle" type="oecdTitleType" id="subTitle"/>
+    <xs:element name="sub-title" type="oecdTitleType" id="subTitle"/>
     <xs:element name="shortTitle" type="oecdShortTitleType" id="shortTitle"/>
     <xs:element name="caption" type="oecdTitleType" id="caption"/>
     
@@ -80,7 +80,7 @@
         </xs:annotation>
         <xs:sequence>
             <xs:element ref="title"/>
-            <xs:element ref="subTitle" minOccurs="0"/>
+            <xs:element ref="sub-title" minOccurs="0"/>
             <xs:element ref="shortTitle" minOccurs="0"/>
         </xs:sequence>
     </xs:group>

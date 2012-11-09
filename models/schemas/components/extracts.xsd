@@ -55,17 +55,17 @@
     </xs:redefine>-->
 
     <!-- GLOBAL ELEMENTS -->
-    <xs:element name="blockQuote" type="oecdBlockQuoteType" id="blockQuote"/>
-    <xs:element name="externalContentReference" type="oecdExternalContentReferenceType" id="externalContentReference"/>
-    <xs:element name="embeddedContent" type="oecdEmbeddedContentType" id="embeddedContent"/>
+    <xs:element name="block-quote" type="oecdBlockQuoteType" id="blockQuote"/>
+    <xs:element name="external-content-reference" type="oecdExternalContentReferenceType" id="externalContentReference"/>
+    <xs:element name="embedded-content" type="oecdEmbeddedContentType" id="embeddedContent"/>
     <xs:element name="extract" type="oecdExtractType" id="extract"/>
 
     <!-- GLOBAL GROUPS -->
     <xs:group name="oecdExtractsGroup" id="oecdExtractsGroup">
         <xs:choice>
-            <xs:element ref="blockQuote"/>
-            <xs:element ref="embeddedContent"/>
-            <xs:element ref="externalContentReference"/>
+            <xs:element ref="block-quote"/>
+            <xs:element ref="embedded-content"/>
+            <xs:element ref="external-content-reference"/>
         </xs:choice>
     </xs:group>
 
@@ -271,10 +271,10 @@
             <xs:group ref="oecdTitleGroup" minOccurs="0"/>
             <xs:element ref="sources"/>
             <xs:choice>
-                <xs:element ref="blockQuote"/>
-                <xs:element ref="embeddedContent"/>
-                <xs:element ref="externalContentReference"/>
-                <xs:element ref="externalGraphic"/>
+                <xs:element ref="block-quote"/>
+                <xs:element ref="embedded-content"/>
+                <xs:element ref="external-content-reference"/>
+                <xs:element ref="external-graphic"/>
             </xs:choice>
         </xs:sequence>
     </xs:group>

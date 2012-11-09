@@ -89,16 +89,16 @@
 
 
     <!-- GLOBAL ELEMENTS -->
-    <xs:element name="oecdInline" type="oecdInlineType" id="oecdInline" abstract="true"/>
+    <xs:element name="oecd-inline" type="oecdInlineType" id="oecdInline" abstract="true"/>
     <!-- different name to all other elements as it is abstract -->
-    <xs:element name="emphasis" type="oecdEmphasisType" substitutionGroup="oecdInline" id="emphasis"/>
+    <xs:element name="emphasis" type="oecdEmphasisType" substitutionGroup="oecd-inline" id="emphasis"/>
     <xs:element name="footnote" type="oecdFootnoteType" id="footnote"/>
     <xs:element name="text" type="oecdTextType" id="text"/>
-    <xs:element name="sub" type="oecdSubscriptType" substitutionGroup="oecdInline" id="sub"/>
-    <xs:element name="sup" type="oecdSuperscriptType" substitutionGroup="oecdInline" id="sup"/>
-    <xs:element name="quote" type="oecdQuoteType" substitutionGroup="oecdInline" id="quote"/>
-    <xs:element name="phrase" type="oecdPhraseType" substitutionGroup="oecdInline" id="phrase"/>
-    <xs:element name="abbrev" type="oecdAbbrevitionType" substitutionGroup="oecdInline" id="abbrev"/>
+    <xs:element name="sub" type="oecdSubscriptType" substitutionGroup="oecd-inline" id="sub"/>
+    <xs:element name="sup" type="oecdSuperscriptType" substitutionGroup="oecd-inline" id="sup"/>
+    <xs:element name="quote" type="oecdQuoteType" substitutionGroup="oecd-inline" id="quote"/>
+    <xs:element name="phrase" type="oecdPhraseType" substitutionGroup="oecd-inline" id="phrase"/>
+    <xs:element name="abbrev" type="oecdAbbrevitionType" substitutionGroup="oecd-inline" id="abbrev"/>
     <!-- COMPLEX TYPES -->
 
     <!-- abstract inline elements -->
@@ -124,7 +124,7 @@
             </xs:documentation>
         </xs:annotation>
         <xs:sequence>
-            <xs:element ref="oecdInline" maxOccurs="unbounded" minOccurs="0"/>
+            <xs:element ref="oecd-inline" maxOccurs="unbounded" minOccurs="0"/>
         </xs:sequence>
     </xs:group>
 
@@ -364,7 +364,7 @@
             </xs:documentation>
         </xs:annotation>
 
-        <xs:attribute name="metadataRefs" type="xs:IDREFS" id="phraseMetadataRefs">
+        <xs:attribute name="metadata-refs" type="xs:IDREFS" id="phraseMetadataRefs">
             <xs:annotation>
                 <xs:documentation>
                     <section xmlns="http://docbook.org/ns/docbook">

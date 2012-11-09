@@ -1,65 +1,51 @@
-<?xml version="1.0" encoding="UTF-8"?><xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xlink="http://www.w3.org/1999/xlink" elementFormDefault="qualified">
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xlink="http://www.w3.org/1999/xlink" elementFormDefault="qualified">
 
     <xs:annotation>
         <xs:documentation><section xmlns="http://docbook.org/ns/docbook">
-            <title>OECD Schemas</title>
-            <subtitle>Attribute Models</subtitle>
-            <revhistory>
-                <title>Change Log</title>
-                
-                
-                    <revision>
+                <title>OECD Schemas</title>
+                <subtitle>Attribute Models</subtitle>
+                <revhistory>
+                    <title>Change Log</title> <revision>
                         <revnumber>1</revnumber>
                         <date>2011-12-02</date>
                         <author><email>nicg@corbas.co.uk</email><personname>Nic Gibson</personname></author>
                         <revremark>Initial Version</revremark>
-                    </revision>
-                
-                    <revision>
+                    </revision> <revision>
                         <revnumber>2</revnumber>
                         <date>2012-03-29</date>
                         <authorinitials>NG</authorinitials>
                         <revremark>Added <link linkend="label">label</link> attribute, inserted it into <link linkend="oecdCommonAttributes">commonAttributes</link></revremark>
-                    </revision>
-
-                <revision>
-                    <revnumber>3</revnumber>
-                    <date>2012-04-13</date>
-                    <authorinitials>NG</authorinitials>
-                    <revremark>Added <link linkend="annotations">annotations</link> attribute.</revremark>
-                </revision>
-            	
-            	<revision>
-            		<revnumber>4</revnumber>
-            		<date>2012-10-05</date>
-            		<authorinitials>NG</authorinitials>
-            		<revremark>Wrapped global attributes in groups to avoid the need to namespace prefix them on use.</revremark>
-            	</revision>
-            	
-            	<revision>
-            		<revnumber>5</revnumber>
-            		<date>2012-10-11</date>
-            		<authorinitials>NG</authorinitials>
-            		<revremark>Modified xlink:simpleLink to xlink:simpleAttrs to use the standard XLink schema file.</revremark>
-            	</revision>
-
-            	<revision>
-            		<revnumber>6</revnumber>
-            		<date>2012-11-06</date>
-            		<authorinitials>NG</authorinitials>
-            		<revremark>Added the oecdIdRequiredXmlAttributes group to be used in types where an id is required.</revremark>
-            	</revision>
-            	
-            </revhistory>
-        </section></xs:documentation>
+                    </revision> <revision>
+                        <revnumber>3</revnumber>
+                        <date>2012-04-13</date>
+                        <authorinitials>NG</authorinitials>
+                        <revremark>Added <link linkend="annotations">annotations</link> attribute.</revremark>
+                    </revision> <revision>
+                        <revnumber>4</revnumber>
+                        <date>2012-10-05</date>
+                        <authorinitials>NG</authorinitials>
+                        <revremark>Wrapped global attributes in groups to avoid the need to namespace prefix them on use.</revremark>
+                    </revision> <revision>
+                        <revnumber>5</revnumber>
+                        <date>2012-10-11</date>
+                        <authorinitials>NG</authorinitials>
+                        <revremark>Modified xlink:simpleLink to xlink:simpleAttrs to use the standard XLink schema file.</revremark>
+                    </revision> <revision>
+                        <revnumber>6</revnumber>
+                        <date>2012-11-06</date>
+                        <authorinitials>NG</authorinitials>
+                        <revremark>Added the oecdIdRequiredXmlAttributes group to be used in types where an id is required.</revremark>
+                    </revision> </revhistory>
+            </section></xs:documentation>
     </xs:annotation>
-    
+
     <!-- IMPORTS AND INCLUDES -->
 
     <xs:import schemaLocation="../external/xml.xsd" namespace="http://www.w3.org/XML/1998/namespace"/>
     <xs:import schemaLocation="../external/xlink.xsd" namespace="http://www.w3.org/1999/xlink"/>
     <xs:include schemaLocation="types.xsd"/>
-    
+
     <!-- Groups -->
 
     <xs:attributeGroup name="oecdXmlAttributes" id="oecdXmlAttributes">
@@ -73,22 +59,21 @@
         <xs:attributeGroup ref="xml:specialAttrs"/>
     </xs:attributeGroup>
 
-	<xs:attributeGroup name="oecdIdRequiredXmlAttributes" id="oecdIdRequiredXmlAttributes">
-		<xs:annotation>
-			<xs:documentation>
-				<section xmlns="http://docbook.org/ns/docbook">
-					<para>Attribute group to grandfather in the XML Special Attributes. This 
-					variant differs in that the xml:id attribute is required.</para>
-				</section>
-			</xs:documentation>
-		</xs:annotation>
-		<xs:attribute ref="xml:base"/>
-		<xs:attribute ref="xml:lang"/>
-		<xs:attribute ref="xml:space"/>
-		<xs:attribute ref="xml:id" use="required"/>
-	</xs:attributeGroup>
-	
-    
+    <xs:attributeGroup name="oecdIdRequiredXmlAttributes" id="oecdIdRequiredXmlAttributes">
+        <xs:annotation>
+            <xs:documentation>
+                <section xmlns="http://docbook.org/ns/docbook">
+                    <para>Attribute group to grandfather in the XML Special Attributes. This variant differs in that the xml:id attribute is required.</para>
+                </section>
+            </xs:documentation>
+        </xs:annotation>
+        <xs:attribute ref="xml:base"/>
+        <xs:attribute ref="xml:lang"/>
+        <xs:attribute ref="xml:space"/>
+        <xs:attribute ref="xml:id" use="required"/>
+    </xs:attributeGroup>
+
+
     <xs:attributeGroup name="oecdLinkingAttributes" id="oecdLinkingAttributes">
         <xs:annotation>
             <xs:documentation>
@@ -100,7 +85,7 @@
         <xs:attributeGroup ref="xlink:simpleAttrs"/>
         <xs:attributeGroup ref="XREF-GROUP"/>
     </xs:attributeGroup>
-    
+
     <xs:attributeGroup name="oecdRequiredLinkingAttributes" id="oecdRequiredLinkingAttributes">
         <xs:annotation>
             <xs:documentation>
@@ -115,9 +100,9 @@
         <xs:attribute ref="xlink:arcrole"/>
         <xs:attribute ref="xlink:title"/>
         <xs:attribute ref="xlink:show"/>
-        <xs:attribute ref="xlink:actuate"/>        
+        <xs:attribute ref="xlink:actuate"/>
     </xs:attributeGroup>
-    
+
     <xs:attributeGroup name="oecdCommonAttributes" id="oecdCommonAttributes">
         <xs:annotation>
             <xs:documentation>
@@ -127,10 +112,7 @@
                         <date>2011-12-29</date>
                         <author><email>nicg@corbas.co.uk</email><personname>Nic Gibson</personname></author>
                         <revremark>Added <link linkend="label">label</link> attribute.</revremark>
-                    </revision>
-                    
-                    <para>Defines a set of attributes available to almost any element in the schema.
-                    </para>
+                    </revision> <para>Defines a set of attributes available to almost any element in the schema. </para>
                 </section>
             </xs:documentation>
         </xs:annotation>
@@ -139,122 +121,116 @@
         <xs:attributeGroup ref="NOTEREF-GROUP"/>
         <xs:attributeGroup ref="LABEL-GROUP"/>
     </xs:attributeGroup>
-    
+
     <!-- attributes -->
 
-<xs:attributeGroup name="METADATAREF-GROUP">     
-	<xs:attribute name="metadataRef" type="xs:IDREF" id="metadataRef">
-        <xs:annotation>
-            <xs:documentation>
-                <section xmlns="http://docbook.org/ns/docbook">
-                    <para>Defines a metadata reference. Metadata may be embedded in the element
-                    it describes or held separately in the document level, documentMeta element.
-                    If held in the documentMeta element it can be referenced via this attribute.
-                    More than one element may reference the same metadata.</para>
-                </section>
-            </xs:documentation>
-        </xs:annotation>
-    </xs:attribute>
-</xs:attributeGroup>
-	
-<xs:attributeGroup name="NOTEREF-GROUP">    
-	<xs:attribute name="noteRef" type="xs:IDREF" id="noteRef">
-        <xs:annotation>
-            <xs:documentation>
-                <section xmlns="http://docbook.org/ns/docbook">
-                    <para>Defines a note reference. Notes may be included in the content
-                     model of various block components (lists, tables, figures, boxes, etc).
-                    Note references are available in the common attribute set but are constrained
-                    via Schematron to only those elements which can contain notes.</para>
-                </section>
-            </xs:documentation>
-        </xs:annotation>
-    </xs:attribute>
-</xs:attributeGroup>
-    
-<xs:attributeGroup name="HREF-GROUP">    <xs:attribute name="href" type="xs:anyURI" id="href">
-        <xs:annotation>
-            <xs:documentation>
-                <section xmlns="http://docbook.org/ns/docbook">
-                    <para>Defines a reference to external content via a URI.</para>
-                </section>
-            </xs:documentation>
-        </xs:annotation>
-    </xs:attribute>
-</xs:attributeGroup>
-    
-<xs:attributeGroup name="MEDIATYPE-GROUP">    
-	<xs:attribute name="mediaType" type="oecdMediaType" id="mediaType">
-        <xs:annotation>
-            <xs:documentation>
-                <section xmlns="http://docbook.org/ns/docbook">
-                    <para>Defines a reference to external content via a URI.</para>
-                </section>
-            </xs:documentation>            
-        </xs:annotation>
-    </xs:attribute>
-</xs:attributeGroup>    
+    <xs:attributeGroup name="METADATAREF-GROUP">
+        <xs:attribute name="metadata-ref" type="xs:IDREF" id="metadataRef">
+            <xs:annotation>
+                <xs:documentation>
+                    <section xmlns="http://docbook.org/ns/docbook">
+                        <para>Defines a metadata reference. Metadata may be embedded in the element it describes or held separately in the document level, documentMeta element. If held in the
+                            documentMeta element it can be referenced via this attribute. More than one element may reference the same metadata.</para>
+                    </section>
+                </xs:documentation>
+            </xs:annotation>
+        </xs:attribute>
+    </xs:attributeGroup>
 
-	<xs:attributeGroup name="USEWHEN-GROUP">    
-	<xs:attribute name="useWhen" type="xs:string" id="useWhen">
-        <xs:annotation>
-            <xs:documentation>
-                <section xmlns="http://docbook.org/ns/docbook">
-                    <para>Defines processing references for conditional output. NOT intended for use 
-                    with multilingual alternatives.</para>
-                </section>
-            </xs:documentation>            
-        </xs:annotation>      
-    </xs:attribute>
-</xs:attributeGroup>	
+    <xs:attributeGroup name="NOTEREF-GROUP">
+        <xs:attribute name="note-ref" type="xs:IDREF" id="noteRef">
+            <xs:annotation>
+                <xs:documentation>
+                    <section xmlns="http://docbook.org/ns/docbook">
+                        <para>Defines a note reference. Notes may be included in the content model of various block components (lists, tables, figures, boxes, etc). Note references are available in
+                            the common attribute set but are constrained via Schematron to only those elements which can contain notes.</para>
+                    </section>
+                </xs:documentation>
+            </xs:annotation>
+        </xs:attribute>
+    </xs:attributeGroup>
 
-<xs:attributeGroup name="XREF-GROUP">    
-    <xs:attribute name="xref" type="xs:IDREF" id="xref">
-        <xs:annotation>
-            <xs:documentation>
-                <section xmlns="http://docbook.org/ns/docbook">
-                    <para>Attribute used to reference content elsewhere in the same XML document.</para>
-                </section>
-            </xs:documentation>            
-        </xs:annotation>              
-    </xs:attribute>
-</xs:attributeGroup>
-    
-<xs:attributeGroup name="LABEL-GROUP">    
-	<xs:attribute name="label" type="xs:string" id="label">
-        <xs:annotation>
-            <xs:documentation>
-                <section xmlns="http://docbook.org/ns/docbook">
-                    <revision>
-                        <revnumber>2</revnumber>
-                        <date>2011-12-29</date>
-                        <author><email>nicg@corbas.co.uk</email><personname>Nic Gibson</personname></author>
-                        <revremark>Initial Version</revremark>
-                    </revision>
-                    <para>Labelling attribute. This can be used to override the presentation of
-                    reference to an element.</para>
-                </section>
-            </xs:documentation>            
-        </xs:annotation>              
-    </xs:attribute>
-</xs:attributeGroup>    
-	
-<xs:attributeGroup name="ANNOTATIONS-GROUP">    
-	<xs:attribute name="annotations" type="xs:IDREFS" id="annotations">
-        <xs:annotation>
-            <xs:documentation>
-                <section xmlns="http://docbook.org/ns/docbook">
-                    <revision>
-                        <revnumber>3</revnumber>
-                        <date>2011-12-29</date>
-                        <author><email>nicg@corbas.co.uk</email><personname>Nic Gibson</personname></author>
-                        <revremark>Initial Version</revremark>
-                    </revision>
-                    <para>Annotations attribute. This contains a space separated list of the ids of annotation
-                        elements which apply to the current element.</para>
-                </section>
-            </xs:documentation>     
-        </xs:annotation>            
-    </xs:attribute>
-</xs:attributeGroup>
+    <xs:attributeGroup name="HREF-GROUP">
+        <xs:attribute name="href" type="xs:anyURI" id="href">
+            <xs:annotation>
+                <xs:documentation>
+                    <section xmlns="http://docbook.org/ns/docbook">
+                        <para>Defines a reference to external content via a URI.</para>
+                    </section>
+                </xs:documentation>
+            </xs:annotation>
+        </xs:attribute>
+    </xs:attributeGroup>
+
+    <xs:attributeGroup name="MEDIATYPE-GROUP">
+        <xs:attribute name="media-type" type="oecdMediaType" id="mediaType">
+            <xs:annotation>
+                <xs:documentation>
+                    <section xmlns="http://docbook.org/ns/docbook">
+                        <para>Defines a reference to external content via a URI.</para>
+                    </section>
+                </xs:documentation>
+            </xs:annotation>
+        </xs:attribute>
+    </xs:attributeGroup>
+
+    <xs:attributeGroup name="USEWHEN-GROUP">
+        <xs:attribute name="useWhen" type="xs:string" id="useWhen">
+            <xs:annotation>
+                <xs:documentation>
+                    <section xmlns="http://docbook.org/ns/docbook">
+                        <para>Defines processing references for conditional output. NOT intended for use with multilingual alternatives.</para>
+                    </section>
+                </xs:documentation>
+            </xs:annotation>
+        </xs:attribute>
+    </xs:attributeGroup>
+
+    <xs:attributeGroup name="XREF-GROUP">
+        <xs:attribute name="xref" type="xs:IDREF" id="xref">
+            <xs:annotation>
+                <xs:documentation>
+                    <section xmlns="http://docbook.org/ns/docbook">
+                        <para>Attribute used to reference content elsewhere in the same XML document.</para>
+                    </section>
+                </xs:documentation>
+            </xs:annotation>
+        </xs:attribute>
+    </xs:attributeGroup>
+
+    <xs:attributeGroup name="LABEL-GROUP">
+        <xs:attribute name="label" type="xs:string" id="label">
+            <xs:annotation>
+                <xs:documentation>
+                    <section xmlns="http://docbook.org/ns/docbook">
+                        <revision>
+                            <revnumber>2</revnumber>
+                            <date>2011-12-29</date>
+                            <author><email>nicg@corbas.co.uk</email><personname>Nic Gibson</personname></author>
+                            <revremark>Initial Version</revremark>
+                        </revision>
+                        <para>Labelling attribute. This can be used to override the presentation of reference to an element.</para>
+                    </section>
+                </xs:documentation>
+            </xs:annotation>
+        </xs:attribute>
+    </xs:attributeGroup>
+
+    <xs:attributeGroup name="ANNOTATIONS-GROUP">
+        <xs:attribute name="annotations" type="xs:IDREFS" id="annotations">
+            <xs:annotation>
+                <xs:documentation>
+                    <section xmlns="http://docbook.org/ns/docbook">
+                        <revision>
+                            <revnumber>3</revnumber>
+                            <date>2011-12-29</date>
+                            <author><email>nicg@corbas.co.uk</email><personname>Nic Gibson</personname></author>
+                            <revremark>Initial Version</revremark>
+                        </revision>
+                        <para>Annotations attribute. This contains a space separated list of the ids of annotation elements which apply to the current element.</para>
+                    </section>
+                </xs:documentation>
+            </xs:annotation>
+        </xs:attribute>
+    </xs:attributeGroup>
 </xs:schema>

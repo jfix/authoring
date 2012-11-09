@@ -33,7 +33,7 @@
     <xs:include schemaLocation="attributes.xsd"/>
     
     <!-- GLOBAL ELEMENTS -->
-    <xs:element name="indexTerm" type="oecdIndexTermType" id="indexTerm"/>
+    <xs:element name="index-term" type="oecdIndexTermType" id="indexTerm"/>
     <xs:element name="index" type="oecdIndexType" id="index"/>
     
     <!-- GLOBAL GROUPS -->
@@ -112,15 +112,15 @@
                             <xs:element name="tertiary" type="oecdIndexTermLevelsType"/>
                             <xs:choice minOccurs="0">
                                 <xs:element name="see" type="oecdIndexTermLevelsType"/>
-                                <xs:element name="seeAlso" type="oecdIndexTermLevelsType" maxOccurs="unbounded"/>
+                                <xs:element name="see-also" type="oecdIndexTermLevelsType" maxOccurs="unbounded"/>
                             </xs:choice>                          
                         </xs:sequence>
                         <xs:element name="see" type="oecdIndexTermLevelsType"/>
-                        <xs:element name="seeAlso" type="oecdIndexTermLevelsType" maxOccurs="unbounded"/>
+                        <xs:element name="see-also" type="oecdIndexTermLevelsType" maxOccurs="unbounded"/>
                     </xs:choice>
                 </xs:sequence>
                 <xs:element name="see" type="oecdIndexTermLevelsType"/>
-                <xs:element name="seeAlso" type="oecdIndexTermLevelsType" maxOccurs="unbounded"/>
+                <xs:element name="see-also" type="oecdIndexTermLevelsType" maxOccurs="unbounded"/>
             </xs:choice>
         </xs:sequence>
     </xs:group>
