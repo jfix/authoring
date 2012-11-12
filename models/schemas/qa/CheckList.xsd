@@ -29,14 +29,14 @@
 						<revnumber>3</revnumber>
 						<date>2012-11-12</date>
 						<author>JC</author>
-						<revremark>Modify @target to resolve [#4960].</revremark>
+						<revremark>Modify @target to resolve [#4959].</revremark>
 						<revremark>Applied separation</revremark>
 					</revision>
 					<revision>
 						<revnumber>4</revnumber>
 						<date>2012-11-12</date>
 						<author>JC</author>
-						<revremark>Add enumeration to target to resolve [#4959].</revremark>
+						<revremark>Add enumeration to target to resolve [#4960].</revremark>
 					</revision>
 				</revhistory>
 			</section>
@@ -52,13 +52,13 @@
 			</xs:choice>
 		</xs:complexType>
 	</xs:element>
-	
+
 	<xs:element name="Section" type="ContainerType"/>
-	
+
 	<xs:element name="IntegrationTests" type="ContainerType"/>
-	
+
 	<xs:element name="UnitTests" type="ContainerType"/>
-	
+
 	<xs:element name="Test">
 		<xs:complexType>
 			<xs:sequence>
@@ -71,11 +71,11 @@
 			<xs:attribute name="folderName" use="required"/>
 		</xs:complexType>
 	</xs:element>
-	
+
 	<xs:element name="Comments"/>
-	
+
 	<xs:element name="Objective" type="xs:string"/>
-	
+
 	<xs:element name="ValidationTarget">
 		<xs:complexType>
 			<xs:choice>
@@ -103,7 +103,7 @@
 			<xs:attribute name="target" type="OECD.Test.Target" use="required"/>
 		</xs:complexType>
 	</xs:element>
-	
+
 	<xs:element name="ValidationActions">
 		<xs:complexType>
 			<xs:choice maxOccurs="unbounded">
@@ -111,7 +111,7 @@
 			</xs:choice>
 		</xs:complexType>
 	</xs:element>
-	
+
 	<xs:element name="Status">
 		<xs:simpleType>
 			<xs:restriction base="xs:NCName">
@@ -170,5 +170,5 @@
 			<xs:enumeration value="oecd.agenda"/>
 		</xs:restriction>
 	</xs:simpleType>
-	
+
 </xs:schema>
