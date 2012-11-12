@@ -29,8 +29,14 @@
 						<revnumber>3</revnumber>
 						<date>2012-11-12</date>
 						<author>JC</author>
-						<revremark>Modify @target to resolve [#4959].</revremark>
+						<revremark>Modify @target to resolve [#4960].</revremark>
 						<revremark>Applied separation</revremark>
+					</revision>
+					<revision>
+						<revnumber>4</revnumber>
+						<date>2012-11-12</date>
+						<author>JC</author>
+						<revremark>Add enumeration to target to resolve [#4959].</revremark>
 					</revision>
 				</revhistory>
 			</section>
@@ -158,6 +164,10 @@
 		<xs:restriction base="xs:token">
 			<xs:enumeration value="upcast"/>
 			<xs:enumeration value="contentModelAE"/>
+			<xs:enumeration value="qxa"/>
+			<xs:enumeration value="oecd.author"/>
+			<xs:enumeration value="oecd.publication"/>
+			<xs:enumeration value="oecd.agenda"/>
 		</xs:restriction>
 	</xs:simpleType>
 	
