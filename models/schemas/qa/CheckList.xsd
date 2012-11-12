@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="urn:oecd:names:xmlns:authoring:testing" targetNamespace="urn:oecd:names:xmlns:authoring:testing" xmlns:xd="http://www.oecd.org/ns/schema/xdocs" elementFormDefault="qualified">
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="urn:oecd:names:xmlns:authoring:testing" targetNamespace="urn:oecd:names:xmlns:authoring:testing"
+	xmlns:xd="http://www.oecd.org/ns/schema/xdocs" elementFormDefault="qualified">
 	<xs:annotation>
 		<xs:appinfo>
 			<xd:name>CheckList</xd:name>
@@ -24,6 +25,13 @@
 						<revremark>Inherited schema from tireme sarl (merci Pierre).</revremark>
 						<revremark>Added OECD namespace and hooks for documentation.</revremark>
 					</revision>
+					<revision>
+						<revnumber>3</revnumber>
+						<date>2012-11-12</date>
+						<author>JC</author>
+						<revremark>Modify @target to resolve [#4959].</revremark>
+						<revremark>Applied separation</revremark>
+					</revision>
 				</revhistory>
 			</section>
 		</xs:documentation>
@@ -38,9 +46,13 @@
 			</xs:choice>
 		</xs:complexType>
 	</xs:element>
+	
 	<xs:element name="Section" type="ContainerType"/>
+	
 	<xs:element name="IntegrationTests" type="ContainerType"/>
+	
 	<xs:element name="UnitTests" type="ContainerType"/>
+	
 	<xs:element name="Test">
 		<xs:complexType>
 			<xs:sequence>
@@ -53,8 +65,11 @@
 			<xs:attribute name="folderName" use="required"/>
 		</xs:complexType>
 	</xs:element>
+	
 	<xs:element name="Comments"/>
+	
 	<xs:element name="Objective" type="xs:string"/>
+	
 	<xs:element name="ValidationTarget">
 		<xs:complexType>
 			<xs:choice>
@@ -79,9 +94,10 @@
 					<xs:element ref="Results" minOccurs="0"/>
 				</xs:sequence>
 			</xs:choice>
-			<xs:attribute ref="target" use="required"/>
+			<xs:attribute name="target" type="OECD.Test.Target" use="required"/>
 		</xs:complexType>
 	</xs:element>
+	
 	<xs:element name="ValidationActions">
 		<xs:complexType>
 			<xs:choice maxOccurs="unbounded">
@@ -89,6 +105,7 @@
 			</xs:choice>
 		</xs:complexType>
 	</xs:element>
+	
 	<xs:element name="Status">
 		<xs:simpleType>
 			<xs:restriction base="xs:NCName">
@@ -99,6 +116,7 @@
 			</xs:restriction>
 		</xs:simpleType>
 	</xs:element>
+
 	<xs:element name="Results">
 		<xs:complexType>
 			<xs:sequence maxOccurs="unbounded">
@@ -106,6 +124,7 @@
 			</xs:sequence>
 		</xs:complexType>
 	</xs:element>
+
 	<xs:element name="Result">
 		<xs:complexType>
 			<xs:simpleContent>
@@ -116,15 +135,9 @@
 			</xs:simpleContent>
 		</xs:complexType>
 	</xs:element>
+
 	<xs:element name="Purpose" type="xs:string"/>
-	<xs:attribute name="target">
-		<xs:simpleType>
-			<xs:restriction base="xs:token">
-				<xs:enumeration value="upcast"/>
-				<xs:enumeration value="contentModelAE"/>
-			</xs:restriction>
-		</xs:simpleType>
-	</xs:attribute>
+
 	<xs:complexType name="ContainerType">
 		<xs:sequence>
 			<xs:element ref="Purpose" minOccurs="0"/>
@@ -137,7 +150,15 @@
 			</xs:sequence>
 		</xs:sequence>
 		<xs:attribute name="folderName" use="required"/>
-		<xs:attribute ref="target" use="optional"/>
+		<xs:attribute name="target" type="OECD.Test.Target" use="optional"/>
 	</xs:complexType>
 	<xs:element name="ToBeDone"/>
+
+	<xs:simpleType name="OECD.Test.Target">
+		<xs:restriction base="xs:token">
+			<xs:enumeration value="upcast"/>
+			<xs:enumeration value="contentModelAE"/>
+		</xs:restriction>
+	</xs:simpleType>
+	
 </xs:schema>
