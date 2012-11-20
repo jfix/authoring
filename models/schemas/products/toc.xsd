@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="urn:oecd:names:xmlns:authoring:product" targetNamespace="urn:oecd:names:xmlns:authoring:product" xmlns:xd="http://www.oecd.org/ns/schema/xdocs">
+
+  <xs:annotation>
+    <xs:documentation><section xmlns="http://docbook.org/ns/docbook">
+        <title>OECD Schemas</title>
+        <subtitle>Table of Contents Model</subtitle>
+        <revhistory>
+          <title>Change Log</title>
+          <revision>
+            <revnumber>1</revnumber>
+            <date>2012-11-20</date>
+            <author>JC</author>
+            <revremark>Initial Version</revremark>
+          </revision>
+        </revhistory>
+      </section>
+    </xs:documentation>
+  </xs:annotation>
+  
+  <!-- IMPORTS AND INCLUDES -->
+  <xs:include schemaLocation="../components/attributes.xsd"/>
+  <xs:include schemaLocation="../components/titles.xsd"/>
+
+  <!-- GLOBAL ELEMENTS -->
+  <xs:element name="toc" type="oecdToCType" id="toc"/>
+  
+  <xs:complexType name="oecdToCType" id="oecdToCType">
+    <xs:annotation>
+      <xs:documentation>
+        <section xmlns="http://docbook.org/ns/docbook">
+          
+        </section>
+      </xs:documentation>
+    </xs:annotation>
+    
+    <xs:group ref="oecdToCTypeContent"/>
+    <xs:attributeGroup ref="oecdLinkingAttributes"/>
+    <xs:attributeGroup ref="oecdCommonAttributes"/>
+  </xs:complexType>
+  
+  <xs:group name="oecdToCTypeContent" id="oecdToCTypeContent">
+    <xs:annotation>
+      <xs:documentation>
+        <section xmlns="http://docbook.org/ns/docbook">
+          <para>Content for ToCs as a group for easy overrides and reuse.</para>
+          <revhistory>
+            <title>Change Log</title>
+            <revision>
+              <revnumber/>
+              <date/>
+              <author/>
+              <revremark/>
+            </revision>
+          </revhistory>
+        </section>
+      </xs:documentation>
+    </xs:annotation>
+    
+    <xs:sequence>
+      <xs:sequence>
+        <xs:choice minOccurs="0" maxOccurs="unbounded">
+          <xs:group ref="oecdTitleGroup" minOccurs="0"/>
+        </xs:choice>
+      </xs:sequence>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="toc-sect" type="oecdTocSectionType" maxOccurs="unbounded"/>
+        <xs:element name="toc-entry" type="oecdTocEntryType" maxOccurs="unbounded"/>
+      </xs:choice>
+    </xs:sequence>
+  </xs:group>
+  
+  
+  <xs:complexType name="oecdTocSectionType"  id="oecdTocSectionType">
+    <xs:group ref="oecdTocSectionTypeContent"/>
+    <xs:attributeGroup ref="oecdCommonAttributes"/>
+    <xs:attributeGroup ref="oecdLinkingAttributes"/>
+    <xs:attribute name="pagenum"/>
+  </xs:complexType>
+  
+  
+  <xs:group name="oecdTocSectionTypeContent" id="oecdTocSectionTypeContent">
+    <xs:annotation>
+      <xs:documentation>
+        <section xmlns="http://docbook.org/ns/docbook">
+          <para>Section content for ToCs as a group for easy overrides and reuse.</para>
+          <revhistory>
+            <title>Change Log</title>
+            <revision>
+              <revnumber/>
+              <date/>
+              <author/>
+              <revremark/>
+            </revision>
+          </revhistory>
+        </section>
+      </xs:documentation>
+    </xs:annotation>
+    
+    <xs:sequence>
+      <xs:sequence>
+        <xs:choice minOccurs="0" maxOccurs="unbounded">
+          <xs:group ref="oecdTitleGroup" minOccurs="0"/>
+        </xs:choice>
+      </xs:sequence>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="toc-sect" type="oecdTocSectionType" maxOccurs="unbounded"/>
+        <xs:element name="toc-entry" type="oecdTocEntryType" maxOccurs="unbounded"/>
+      </xs:choice>
+    </xs:sequence>
+  </xs:group>
+  
+  <xs:complexType name="oecdTocEntryType"  id="oecdTocEntryType" mixed="true">
+    <xs:annotation>
+      <xs:documentation>
+        <section xmlns="http://docbook.org/ns/docbook">
+          <para>An entry in a toc.</para>
+        </section>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:group ref="oecdTocEntryTypeContent"/>
+    <xs:attributeGroup ref="oecdCommonAttributes"/>
+    <xs:attributeGroup ref="oecdLinkingAttributes"/>
+    <xs:attribute name="pagenum"/>
+  </xs:complexType>
+  
+  
+  <xs:group name="oecdTocEntryTypeContent" id="oecdTocEntryTypeContent">
+    <xs:annotation>
+      <xs:documentation>
+        <section xmlns="http://docbook.org/ns/docbook">
+          <para>Entry content for ToCs as a group for easy overrides and reuse.</para>
+          <revhistory>
+            <title>Change Log</title>
+            <revision>
+              <revnumber/>
+              <date/>
+              <author/>
+              <revremark/>
+            </revision>
+          </revhistory>
+        </section>
+      </xs:documentation>
+    </xs:annotation>
+    
+    <xs:sequence>
+      <xs:sequence>
+        <xs:choice minOccurs="0" maxOccurs="unbounded">
+          <xs:group ref="oecdTitleGroup" minOccurs="0"/>
+        </xs:choice>
+      </xs:sequence>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="toc-sect" type="oecdTocSectionType" maxOccurs="unbounded"/>
+        <xs:element name="toc-entry" type="oecdTocEntryType" maxOccurs="unbounded"/>
+      </xs:choice>
+    </xs:sequence>
+  </xs:group>
+
+</xs:schema>
