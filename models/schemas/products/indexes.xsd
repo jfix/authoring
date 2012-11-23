@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="urn:oecd:names:xmlns:authoring:product" targetNamespace="urn:oecd:names:xmlns:authoring:product" xmlns:xd="http://www.oecd.org/ns/schema/xdocs">
+
+  <xs:annotation>
+    <xs:documentation><section xmlns="http://docbook.org/ns/docbook">
+        <title>OECD Schemas</title>
+        <subtitle>Index Model</subtitle>
+        <revhistory>
+          <title>Change Log</title>
+          <revision>
+            <revnumber>1</revnumber>
+            <date>2012-11-22</date>
+            <author>JC</author>
+            <revremark>Initial Version</revremark>
+          </revision>
+        </revhistory>
+      </section>
+    </xs:documentation>
+  </xs:annotation>
+
+  <!-- IMPORTS AND INCLUDES -->
+  <xs:include schemaLocation="../components/attributes.xsd"/>
+  <xs:include schemaLocation="../components/titles.xsd"/>
+
+  <xs:import schemaLocation="../components/index.xsd"/>
+  
+ <!-- REDEFINES -->
+  
+  <xs:redefine schemaLocation="../components/index.xsd">
+    <xs:complexType name="oecdIndexType">
+      <xs:complexContent>
+        <xs:extension base="oecdIndexType">
+          <xs:choice>
+            <xs:group ref="oecdIndexTypeContent"/>
+          </xs:choice>
+        </xs:extension>
+      </xs:complexContent>
+    </xs:complexType>
+  </xs:redefine>
+
+  <xs:redefine schemaLocation="../components/index.xsd">
+    <xs:complexType name="oecdIndexTermType">
+      <xs:complexContent>
+        <xs:extension base="oecdIndexTermType">
+          <xs:attribute name="pagenum"/>
+        </xs:extension>
+      </xs:complexContent>
+    </xs:complexType>
+  </xs:redefine>
+
+  <!-- GLOBAL ELEMENTS -->
+  <xs:element name="indexes" type="oecdIndexType" id="indexes"/>
+
+  <xs:group name="oecdIndexTypeContent" id="oecdIndexTypeContent">
+    <xs:annotation>
+      <xs:documentation>
+        <section xmlns="http://docbook.org/ns/docbook">
+          <para>Content for Indexes as a group for easy overrides and reuse.</para>
+          <revhistory>
+            <title>Change Log</title>
+            <revision>
+              <revnumber/>
+              <date/>
+              <author/>
+              <revremark/>
+            </revision>
+          </revhistory>
+        </section>
+      </xs:documentation>
+    </xs:annotation>
+
+    <xs:sequence>
+      <xs:sequence>
+        <xs:choice minOccurs="0" maxOccurs="unbounded">
+          <xs:group ref="oecdTitleGroup" minOccurs="0"/>
+        </xs:choice>
+      </xs:sequence>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="index-sect" type="oecdIndexSectionType" maxOccurs="unbounded"/>
+      </xs:choice>
+    </xs:sequence>
+  </xs:group>
+
+  <xs:complexType name="oecdIndexSectionType" id="oecdIndexSectionType">
+    <xs:group ref="oecdIndexSectionTypeContent"/>
+    <xs:attributeGroup ref="oecdCommonAttributes"/>
+    <xs:attributeGroup ref="oecdLinkingAttributes"/>
+    <xs:attribute name="type"/>
+  </xs:complexType>
+
+  <xs:group name="oecdIndexSectionTypeContent" id="oecdIndexSectionTypeContent">
+    <xs:annotation>
+      <xs:documentation>
+        <section xmlns="http://docbook.org/ns/docbook">
+          <para>Section content for Indexes as a group for easy overrides and reuse.</para>
+          <revhistory>
+            <title>Change Log</title>
+            <revision>
+              <revnumber/>
+              <date/>
+              <author/>
+              <revremark/>
+            </revision>
+          </revhistory>
+        </section>
+      </xs:documentation>
+    </xs:annotation>
+
+    <xs:sequence>
+      <xs:sequence>
+        <xs:choice minOccurs="0" maxOccurs="unbounded">
+          <xs:group ref="oecdTitleGroup" minOccurs="0"/>
+        </xs:choice>
+      </xs:sequence>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="index-sect" type="oecdIndexSectionType" maxOccurs="unbounded"/>
+        <xs:element name="index-entry" type="oecdIndexTermType" maxOccurs="unbounded"/>
+      </xs:choice>
+    </xs:sequence>
+  </xs:group>
+
+</xs:schema>
