@@ -8,27 +8,38 @@
                     <title>OECD.Author</title>
                     <subtitle>Paragraph Schema</subtitle>
                     <revhistory>
-                        <title>Change Log</title> <revision>
+                        <title>Change Log</title>
+                        <revision>
                             <revnumber>1</revnumber>
                             <date>2011-12-02</date>
                             <author><email>nicg@corbas.co.uk</email><personname>Nic Gibson</personname></author>
                             <revremark>Initial Version</revremark>
-                        </revision> <revision>
+                        </revision>
+                        <revision>
                             <revnumber>2</revnumber>
                             <date>2012-04-13</date>
                             <authorinitials>NG</authorinitials>
                             <revremark>Added annotations attribute.</revremark>
-                        </revision> <revision>
+                        </revision>
+                        <revision>
                             <revnumber>3</revnumber>
                             <date>2012-10-05</date>
                             <authorinitials>NG</authorinitials>
                             <revremark>Wrapped global attributes in groups to avoid namespace prefix requirement.</revremark>
-                        </revision> <revision>
+                        </revision>
+                        <revision>
                             <revnumber>4</revnumber>
                             <date>2012-11-05</date>
                             <authorinitials>NG</authorinitials>
                             <revremark>Included the embeddable blocks into paragraphs to resolve issue .</revremark>
-                        </revision> </revhistory>
+                        </revision>
+                        <revision>
+                            <revnumber>5</revnumber>
+                            <date>2012-12-06</date>
+                            <authorinitials>JC</authorinitials>
+                            <revremark>Modified para attributes to align numebring model with section.</revremark>
+                        </revision>
+                    </revhistory>
                     <para>This model defines paragraphs and other simple components with equivalent hierarchical position.</para>
                 </section>
             </section></xs:documentation>
@@ -85,6 +96,74 @@
                 </section>
             </xs:documentation>
         </xs:annotation>
+
+
+        <xs:attribute name="continuation" type="oecdComponentContinuation" id="para-continuation">
+            <xs:annotation>
+                <xs:documentation>
+                    <section xmlns="http://docbook.org/ns/docbook">
+                        <revhistory>
+                            <title>Change Log</title>
+                            <revision>
+                                <revnumber>1</revnumber>
+                                <date>2012-12-06</date>
+                                <author>JC</author>
+                                <revremark>Applied generic type</revremark>
+                                <revremark>Applied unique ID to continuation</revremark>
+                            </revision>
+                        </revhistory>
+                    </section>
+                    <section xmlns="http://docbook.org/ns/docbook">
+                        <para>Numbering continuation flag for paras</para>
+                    </section>
+                </xs:documentation>
+            </xs:annotation>
+        </xs:attribute>
+
+        <xs:attribute name="start" type="xs:string" id="para-start">
+            <xs:annotation>
+                <xs:documentation>
+                    <section xmlns="http://docbook.org/ns/docbook">
+                        <revhistory>
+                            <title>Change Log</title>
+                            <revision>
+                                <revnumber>1</revnumber>
+                                <date>2012-12-06</date>
+                                <author>JC</author>
+                                <revremark>Changed type to string</revremark>
+                                <revremark>Applied unique ID to start</revremark>
+                            </revision>
+                        </revhistory>
+                    </section>
+                    <section xmlns="http://docbook.org/ns/docbook">
+                        <para>Starting count for paras which have their continuation style set to 'start'.</para>
+                    </section>
+                </xs:documentation>
+            </xs:annotation>
+        </xs:attribute>
+
+        <xs:attribute name="number" type="xs:string" id="para-number">
+            <xs:annotation>
+                <xs:documentation>
+                    <section xmlns="http://docbook.org/ns/docbook">
+                        <revhistory>
+                            <title>Change Log</title>
+                            <revision>
+                                <revnumber>1</revnumber>
+                                <date>2012-12-06</date>
+                                <author>JC</author>
+                                <revremark>Changed type to string</revremark>
+                                <revremark>Applied unique ID to number</revremark>
+                            </revision>
+                        </revhistory>
+                    </section>
+                    <section xmlns="http://docbook.org/ns/docbook">
+                        <para>Numbering override for paras where the author needs to override the para numbering completely.</para>
+                    </section>
+                </xs:documentation>
+            </xs:annotation>
+        </xs:attribute>
+
         <xs:attributeGroup ref="oecdCommonAttributes"/>
         <xs:attributeGroup ref="oecdLinkingAttributes"/>
         <xs:attributeGroup ref="ANNOTATIONS-GROUP"/>
