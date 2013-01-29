@@ -1,65 +1,115 @@
-<?xml version="1.0" encoding="UTF-8"?><xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
-    xmlns:sch="http://purl.oclc.org/dsdl/schematron"
-    elementFormDefault="qualified">
-    
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:sch="http://purl.oclc.org/dsdl/schematron" elementFormDefault="qualified">
+
     <xs:annotation>
         <xs:documentation><section xmlns="http://docbook.org/ns/docbook">
-            <title>OECD Schemas</title>
-            <subtitle>Box Model</subtitle>
-            <revhistory>
-                <title>Change Log</title>
-                
-                
+                <title>OECD Schemas</title>
+                <subtitle>Box Model</subtitle>
+                <revhistory>
+                    <title>Change Log</title>
                     <revision>
                         <revnumber>1</revnumber>
                         <date>2012-03-21</date>
                         <author><email>nicg@corbas.co.uk</email><personname>Nic Gibson</personname></author>
                         <revremark>Initial version.</revremark>
                     </revision>
-             
-                <revision>
-                    <revnumber>2</revnumber>
-                    <date>2012-04-16</date>
-                    <author><email>nicg@corbas.co.uk</email><personname>Nic Gibson</personname></author>
-                    <revremark>Added assertion to constrain boxes to not contain boxes.</revremark>
-                </revision>
-               
-            </revhistory>
-            
-        </section></xs:documentation>
+                    <revision>
+                        <revnumber>2</revnumber>
+                        <date>2012-04-16</date>
+                        <author><email>nicg@corbas.co.uk</email><personname>Nic Gibson</personname></author>
+                        <revremark>Added assertion to constrain boxes to not contain boxes.</revremark>
+                    </revision>
+                    <revision>
+                        <revnumber>3</revnumber>
+                        <date>2013-01-29</date>
+                        <authorinitials>JC</authorinitials>
+                        <revremark>Modified box to align content model for notes, footnotes and sources with that of tables and figures.</revremark>
+                    </revision>
+                </revhistory>
+            </section>
+        </xs:documentation>
     </xs:annotation>
-    
+
     <!-- IMPORTS AND INCLUDES -->
-    
+
     <xs:include schemaLocation="../structure/section.xsd"/>
     <xs:include schemaLocation="notes.xsd"/>
-    
+    <xs:include schemaLocation="sources.xsd">
+    <xs:annotation>
+        <xs:documentation>
+            <section xmlns="http://docbook.org/ns/docbook">
+                <revhistory>
+                    <title>Change Log</title>
+                    <revision>
+                        <revnumber>1</revnumber>
+                        <date>2013-01-29</date>
+                        <author>JC</author>
+                        <revremark>Added include for sources</revremark>
+                    </revision>
+                </revhistory>
+            </section>
+        </xs:documentation>
+    </xs:annotation>
+    </xs:include>
     <!-- GLOBAL ELEMENTS -->
-    
-    <xs:element name="box" type="oecdSectionType" id="box"/>
-    
+
+    <xs:element name="box" type="oecdBoxType" id="box">
+        <xs:annotation>
+            <xs:documentation>
+                <section xmlns="http://docbook.org/ns/docbook">
+                    <para>Main box element.</para>
+                </section>
+                <section xmlns="http://docbook.org/ns/docbook">
+                    <revhistory>
+                        <title>Change Log</title>
+                        <revision>
+                            <revnumber>1</revnumber>
+                            <date>2013-01-29</date>
+                            <author>JC</author>
+                            <revremark>Changed type</revremark>
+                        </revision>
+                    </revhistory>
+                </section>
+            </xs:documentation>
+        </xs:annotation>
+    </xs:element>
+
     <!-- GLOBAL TYPES -->
     <xs:complexType name="oecdBoxType" id="oecdBoxType">
         <xs:annotation>
             <xs:documentation>
                 <section xmlns="http://docbook.org/ns/docbook">
-                    <para>An box occupies the same structural position as block content and is treated as a block.
-                    However, the content model of a block is that of a section with an optional notes element
-                    appended.</para>
+                    <para>An box occupies the same structural position as block content and is treated as a block. However, the content model of a block is that of a section with an optional notes element appended.</para>
                 </section>
             </xs:documentation>
             <xs:appinfo>
                 <sch:assert role="error" test="not(descendant::box)">Boxes must not contain boxes.</sch:assert>
             </xs:appinfo>
         </xs:annotation>
-        
+
         <xs:complexContent>
             <xs:extension base="oecdSectionType">
+                <xs:annotation>
+                    <xs:documentation>
+                        <section xmlns="http://docbook.org/ns/docbook">
+                            <revhistory>
+                                <title>Change Log</title>
+                                <revision>
+                                    <revnumber>1</revnumber>
+                                    <date>2013-01-29</date>
+                                    <author>JC</author>
+                                    <revremark>Added sources to sequence.</revremark>
+                                </revision>
+                            </revhistory>
+                        </section>
+                    </xs:documentation>
+                </xs:annotation>
                 <xs:sequence>
                     <xs:element ref="notes" minOccurs="0"/>
+                    <xs:element ref="sources" minOccurs="0"/>
                 </xs:sequence>
             </xs:extension>
         </xs:complexContent>
     </xs:complexType>
-    
+
 </xs:schema>
