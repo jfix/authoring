@@ -41,6 +41,12 @@
                         <authorinitials>JC</authorinitials>
                         <revremark>Modified table redefine to provide component level attributes and meta.</revremark>
                     </revision>
+                    <revision>
+                        <revnumber>6</revnumber>
+                        <date>2013-01-29</date>
+                        <authorinitials>JC</authorinitials>
+                        <revremark>Modified table align notes and sources with those on figures and boxes.</revremark>
+                    </revision>
                 </revhistory>
             </section></xs:documentation>
     </xs:annotation>
@@ -95,21 +101,28 @@
     </xs:redefine>
 
     <xs:complexType name="Table-Foot">
+        <xs:annotation>
+            <xs:documentation>
+                <section xmlns="http://docbook.org/ns/docbook">
+                    <para>A Table-Foot contains the Notes and Sources of the Table.</para>
+                    <revhistory>
+                        <revision>
+                            <revnumber>2</revnumber>
+                            <date>2013-01-29</date>
+                            <author>JC</author>
+                            <revremark>Removed footnotes element and associated Table-Footnotes complexType.</revremark>
+                        </revision>
+                    </revhistory>
+                </section>
+            </xs:documentation>
+        </xs:annotation>
         <xs:sequence>
             <!--The table footer contains notes and sources. [maximum 1 per table] -->
             <xs:element ref="notes" minOccurs="0" maxOccurs="1"/>
             <!-- A note to a table, appearing at the foot. -->
-            <xs:element name="footnotes" type="Table-Footnotes" minOccurs="0" maxOccurs="1"/>
             <xs:element ref="sources" minOccurs="0" maxOccurs="1"/>
         </xs:sequence>
 
-    </xs:complexType>
-
-    <xs:complexType name="Table-Footnotes">
-
-        <xs:sequence>
-            <xs:element ref="footnote" maxOccurs="unbounded"/>
-        </xs:sequence>
     </xs:complexType>
 
     <xs:element name="table" type="Table" id="table"/>
