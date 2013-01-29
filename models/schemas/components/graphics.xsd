@@ -39,11 +39,17 @@
 						<revdescription>
 							<para>Replaced attribution with sources in the <link linkend="oecdBlockGraphicTypeContent">oecdBlockGraphicTypeContent</link> group for consistency across model.</para>
 							<para>Replaced attribution with sources in the <link linkend="oecdInlineGraphicTypeContent">oecdInlineGraphicTypeContent</link> group for consistency across model.</para>
-							<para>Added sources to <link linkend="oecdFigureTypeContent">oecdFigureTypeContent</link> and an schematron assertion to ensure that the sources are not on the graphic
-								element of a figure. </para></revdescription>
+							<para>Added sources to <link linkend="oecdFigureTypeContent">oecdFigureTypeContent</link> and an schematron assertion to ensure that the sources are not on the graphic element of a figure. </para></revdescription>
+					</revision>
+					<revision>
+						<revnumber>6</revnumber>
+						<date>2013-01-29</date>
+						<authorinitials>JC</authorinitials>
+						<revremark>Modified figure to allow sources in the logical position aligned with those for tables and boxes.</revremark>
 					</revision>
 				</revhistory>
-			</section></xs:documentation>
+			</section>
+		</xs:documentation>
 	</xs:annotation>
 
 	<!-- INCLUDES AND IMPORTS -->
@@ -218,8 +224,7 @@
 						<revnumber>3</revnumber>
 						<date>2012-08-02</date>
 						<authorinitials>NG</authorinitials>
-						<revremark>Modified reference to oecdGraphicsGroup to make it unbounded allowing for multiple renditions. The sequential order of renditions should be taken as a preference
-							order.</revremark>
+						<revremark>Modified reference to oecdGraphicsGroup to make it unbounded allowing for multiple renditions. The sequential order of renditions should be taken as a preference order.</revremark>
 					</revision>
 					<revision>
 						<revnumber>5</revnumber>
@@ -277,8 +282,7 @@
 						<revnumber>3</revnumber>
 						<date>2012-08-02</date>
 						<authorinitials>NG</authorinitials>
-						<revremark>Modified reference to oecdGraphicsGroup to make it unbounded allowing for multiple renditions. The sequential order of renditions should be taken as a preference
-							order.</revremark>
+						<revremark>Modified reference to oecdGraphicsGroup to make it unbounded allowing for multiple renditions. The sequential order of renditions should be taken as a preference order.</revremark>
 					</revision>
 					<revision>
 						<revnumber>5</revnumber>
@@ -337,22 +341,27 @@
 							<authorinitials>NG</authorinitials>
 							<revremark> Added sources to figure element. Added schematron assertion to require that the embedded graphic did not have sources.</revremark>
 						</revision>
+						<revision>
+							<revnumber>2</revnumber>
+							<date>2013-01-29</date>
+							<author>JC</author>
+							<revremark>Changed sequence putting sources last.</revremark>
+						</revision>
 					</revhistory>
 				</section>
 			</xs:documentation>
 
 			<xs:appinfo>
-				<assert xmlns="http://purl.oclc.org/dsdl/schematron" test="not(graphic/sources)">Source information must not be present on graphics within figures. It should be placed on the figure
-					instead.</assert>
+				<assert xmlns="http://purl.oclc.org/dsdl/schematron" test="not(graphic/sources)">Source information must not be present on graphics within figures. It should be placed on the figure instead.</assert>
 			</xs:appinfo>
 
 		</xs:annotation>
 		<xs:sequence>
 			<xs:element ref="metadata" minOccurs="0"/>
 			<xs:group ref="oecdTitleGroup" minOccurs="0"/>
-			<xs:element ref="sources" minOccurs="0"/>
 			<xs:element ref="graphic"/>
 			<xs:element ref="notes" minOccurs="0"/>
+			<xs:element ref="sources" minOccurs="0"/>
 		</xs:sequence>
 	</xs:group>
 
