@@ -75,6 +75,12 @@
                 <db:authorinitials>JC</db:authorinitials>
                 <db:revremark>Added Annex and usage [#5288].</db:revremark>
             </db:revision>
+            <db:revision>
+                <db:revnumber>8</db:revnumber>
+                <db:date>2013-02-13</db:date>
+                <db:authorinitials>JC</db:authorinitials>
+                <db:revremark>Integration of revision history for components in component-catalogue.xml and wider XDocs framework.</db:revremark>
+            </db:revision>
         </db:revhistory>
     </db:section>
     <!-- 
@@ -420,21 +426,21 @@
             <component-ref ref="extract"/>
         </type-of>
     </component>
-    
+
     <component xml:id="appendix" role="production">
         <name>Appendix</name>
         <category>semantic</category>
         <type-of>
             <component-ref ref="section"/>
-        </type-of>        
+        </type-of>
         <db:section role="definition">
             <db:title>Definition</db:title>
             <db:para>Appendices are much the same as a chapter except that they have added semantic impact. An appendix adds to or comments on the information contained in the main body of the document.</db:para>
         </db:section>
     </component>
-    
+
     <component xml:id="annex" role="production">
-        <name>Annex (or appendix)</name>
+        <name>Annex</name>
         <category>semantic</category>
         <type-of>
             <component-ref ref="section"/>
@@ -443,8 +449,19 @@
             <db:title>Definition</db:title>
             <db:para>Annexes are much the same as a chapter except that they have added semantic impact. They have the same content model as appendicies although Annexes do not need to be translated.</db:para>
         </db:section>
+        <db:section role="revhistory">
+            <db:title>Revision History</db:title>
+            <db:revhistory>
+                <db:title>Change Log</db:title>
+                <db:revision>
+                    <db:revnumber>1</db:revnumber>
+                    <db:date>2013-02-06</db:date>
+                    <db:authorinitials>JC</db:authorinitials>
+                    <db:revremark>Component added by ticket <db:link xlink:href="https://pacps01.oecd.org/redmine/issues/5288">[#5288] </db:link>.</db:revremark>
+                </db:revision>
+            </db:revhistory>
+        </db:section>
     </component>
-
 
     <component xml:id="extract" role="production">
         <name>Extract</name>
