@@ -5,21 +5,28 @@
 <model xmlns="http://www.corbas.co.uk/ns/model" xmlns:db="http://docbook.org/ns/docbook" xmlns:xd="http://www.oecd.org/ns/schema/xdocs" xmlns:s="http://www.ascc.net/xml/schematron" xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:svg="http://www.w3.org/2000/svg" xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:mml="http://www.w3.org/1998/Math/MathML" xmlns:html="http://www.w3.org/1999/xhtml" xmlns:ctrl="http://nwalsh.com/xmlns/schema-control/">
     <db:title>OECD.Author Document Model Version 0.1</db:title>
 
+    <db:section role="xsd">
+        <db:title>Schema Management</db:title>
+        <db:programlisting annotations="name">Component Catalogue</db:programlisting>
+        <db:programlisting annotations="root-element">document</db:programlisting>
+        <db:para>The Component Catalogue is a comprehensive list of all the components used in narrative models for capturing official OECD documents and publications. To date, it supports all documents and camera-ready and typset publications.</db:para>
+    </db:section>
 
-    <!-- @role values 
+    <db:section role="notes">
+        <db:title>Developer Notes</db:title>
+        <db:para>
+            <![CDATA[
+            "revhistory" applied to db:section for defining <revhistory/>   
+            "narrative" applied to db:section for authored texts
+            "deprecated" applied to <component/> when the component is no longer used.
+            "production" applied to <component/> when the component is accepted and is in production 
+            "modelled" applied to <component/> when the component is modelled and is in the XML schema
+            "missing" applied to <component/> when the component is modelled and is not in the XML schema
+            ]]>
+        </db:para>
+    </db:section>
 
-"history" applied to db:section for defining <revhistory/>   
-"narrative" applied to db:section for authored texts
-"deprecated" applied to <component/> when the component is no longer used.
-"production" applied to <component/> when the component is accepted and is in production 
-"modelled" applied to <component/> when the component is modelled and is in the XML schema
-"missing" applied to <component/> when the component is modelled and is not in the XML schema
-    
-    -->
-    <!--     
-        LOG 
-    -->
-    <db:section>
+    <db:section role="global-log">
         <db:title>Log</db:title>
         <db:revhistory>
             <db:title>Change Log</db:title>
@@ -244,7 +251,7 @@
             <db:title>Definition</db:title>
             <db:para>Volumes exist purely for the purposes of publishing content in printed form, most notably the Model Tax Convention.</db:para>
         </db:section>
-        <db:section role="history">
+        <db:section role="revhistory">
             <db:title>Version</db:title>
             <db:revhistory>
                 <db:revision>
