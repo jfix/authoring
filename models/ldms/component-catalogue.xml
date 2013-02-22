@@ -88,124 +88,14 @@
                 <db:authorinitials>JC</db:authorinitials>
                 <db:revremark>Integration of revision history for components in component-catalogue.xml and wider XDocs framework.</db:revremark>
             </db:revision>
+            <db:revision>
+                <db:revnumber>9</db:revnumber>
+                <db:date>2013-02-22</db:date>
+                <db:authorinitials>JC</db:authorinitials>
+                <db:revremark>Added hooks to content models from db.</db:revremark>
+            </db:revision>
         </db:revhistory>
     </db:section>
-    <!-- 
-        FRONTMATTER of Document Modelling Report
-        
-        not rendered in xdocs yet
-    -->
-
-    <!--<db:section role="narrative">
-        <db:title>Approach</db:title>
-        <db:orderedlist>
-            <db:listitem>
-                <db:para role="Numbered Normal">We have taken the approach of modelling the semantic and structural components of a document
-                    separately in order to encourage modularity, simplicity and reuse where many semantic entities will follow the same structural
-                    model. We have also separated the modelling of the content of documents themselves from their components. This allows us to create
-                    a logical document model that encompasses all of the semantic components of OECD documents without need to reference specific
-                    document types. Additionally, the semantic content can be described and implemented in terms of the structural
-                    components.</db:para>
-            </db:listitem>
-            <db:listitem>
-                <db:para role="Numbered Normal">The wide range of content analysed during the content analysis stage of the project and the results of
-                    the document assembly and modelling workshops has provided a large number of semantic components and a solid overview of the
-                    structural components of documents.</db:para>
-            </db:listitem>
-            <db:listitem>
-                <db:para role="Numbered Normal">The separation of these parts of the model will allow the creation of new high-level models (document
-                    types) to be a matter of choosing the correct components and defining their relationships and cardinality within that model. The
-                    exact relationships and the cardinality of those relationships are part of the schema design process – the document model simply
-                    identifies that there is a relationship.</db:para>
-            </db:listitem>
-            <db:listitem>
-                <db:para role="Numbered Normal">At this stage in the project we do not intend to create a document model for any specific OECD
-                    document type. Document types discovered as part of the document modelling and analysis processes are, however, listed in Appendix
-                    A of this document.</db:para>
-            </db:listitem>
-            <db:listitem>
-                <db:para role="Numbered Normal">The five groups of components (Semantic, Structural, Block, Inline and Metadata) make up the component
-                    catalogue for the model. Document types compose this catalogue into concrete models for use in document creation. Editorial and
-                    publishing enrichment components are beyond the scope of this modelling exercise. The model could be extended to support these
-                    types of requirements. </db:para>
-            </db:listitem>
-        </db:orderedlist>
-    </db:section>
--->
-    <!--    <db:section>
-        <db:title>Scope</db:title>
-        <db:orderedlist numeration="arabic" continuation="continues" spacing="normal">
-            <db:listitem>
-                <db:para role="Numbered Normal">The scope of the OECD.Author document-modelling project is limited to the analysis and modelling of
-                    official documents and CRC documents. </db:para>
-            </db:listitem>
-        </db:orderedlist>
-    </db:section>
--->
-    <!--    <db:section>
-        <db:title>Development Process</db:title>
-        <db:orderedlist numeration="arabic" continuation="continues" spacing="normal">
-            <db:listitem>
-                <db:para role="Numbered Normal">This model has been developed primarily through the use of workshops to gain consensus on the
-                    structure and content of OECD documents. The document analysis has been based on a corpus of official documents (with multiple
-                    language translations of the same document removed) covering a two-year period. This produced approximately 28,000 documents for
-                    analysis. </db:para>
-            </db:listitem>
-            <db:listitem>
-                <db:para role="Numbered Normal">The document analysis helped identify some of the document types listed in Appendix and most of the
-                    components list used as an input to the initial workshop.</db:para>
-            </db:listitem>
-            <db:listitem>
-                <db:para role="Numbered Normal">This initial workshop involving OECD staff involved in the construction and editing of official
-                    documents led to the creation of an initial list of document components. Additionally, the attendees of the initial workshop
-                    refined the document type list.</db:para>
-            </db:listitem>
-            <db:listitem>
-                <db:para role="Numbered Normal">The second workshop was intended to reach consensus on two groups of topics. Firstly, we needed to
-                    agree the base technologies to be used for the model and any existing models to be used as components of the OECD.Author model.
-                    Secondly, some agreement needed to be made on the technical governance of this model.</db:para>
-            </db:listitem>
-            <db:listitem>
-                <db:para role="Numbered Normal">The technical approach to modelling is discussed below (Technical Approach). Governance issues will be
-                    discussed in a separate document. </db:para>
-            </db:listitem>
-        </db:orderedlist>
-    </db:section>-->
-    <!--    <db:section>
-        <db:title>Semantic models</db:title>
-        <section>
-            <db:title>High-level semantic models</db:title>
-            <orderedlist numeration="arabic" continuation="continues" spacing="normal">
-                <listitem>
-                    <para role="Numbered Normal">The high level semantic models identified represent semantic components of a document that may be found in one or more document types. In all cases they can be viewed as specialisations of the generic section concept discussed below. These models include both OECD specific concepts such as ‘mandate’ and traditional publishing concepts such as ‘chapter’. However, all of these can be viewed as sections. It is envisaged that specialisations would occur at the schema implementation level through type inheritance. Within the model itself, specialisation is indicated through descriptive text.</para>
-                </listitem>
-            </orderedlist>
-    
-    <section>
-        <db:title>Publishing models</db:title>
-        <itemizedlist mark="disc" spacing="normal">
-            <listitem>
-                <para role="List Paragraph">Volume</para>
-            </listitem>
-            <listitem>
-                <para role="List Paragraph">Part</para>
-            </listitem>
-            <listitem>
-                <para role="List Paragraph">Chapter</para>
-            </listitem>
-            <listitem>
-                <para role="List Paragraph">Section</para>
-            </listitem>
-        </itemizedlist>
-        <orderedlist numeration="arabic" continuation="continues" spacing="normal">
-            <listitem>
-                <para role="Numbered Normal">The models above were defined during the Modelling Workshops. It was felt that they may be superfluous but replacing them with sections and associated metadata would be simpler and more appropriate than adding them at a later point.</para>
-            </listitem>
-        </orderedlist>
-    </section>-->
-    <!--
-        initial modelling notes that Nic wrote
-    -->
 
     <db:section role="notes">
         <db:title>Notes</db:title>
