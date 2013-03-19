@@ -94,6 +94,12 @@
                 <db:authorinitials>JC</db:authorinitials>
                 <db:revremark>Added hooks to content models from db.</db:revremark>
             </db:revision>
+            <db:revision>
+                <db:revnumber>10</db:revnumber>
+                <db:date>2013-02-25</db:date>
+                <db:authorinitials>JC</db:authorinitials>
+                <db:revremark>Removed Abstract from Document and Publicaiton.</db:revremark>
+            </db:revision>
         </db:revhistory>
     </db:section>
 
@@ -207,7 +213,6 @@
             <component-ref ref="part"/>
             <component-ref ref="chapter"/>
             <component-ref ref="section"/>
-            <component-ref ref="abstract"/>
             <component-ref ref="introduction"/>
             <component-ref ref="glossary"/>
             <component-ref ref="abbreviation-list"/>
@@ -216,10 +221,20 @@
             <component-ref ref="appendix"/>
             <component-ref ref="annex"/>
         </children>
-
         <db:section role="debate">
             <db:title>Notes</db:title>
             <db:para>There are likely to be many document elements, one for each model. They may be distinguished by name or namespace or both. The elements listed here are simply children of the document and do not represent any concrete model.</db:para>
+        </db:section>
+        <db:section role="revhistory">
+            <db:title>Version</db:title>
+            <db:revhistory>
+                <db:revision>
+                    <db:revnumber>1</db:revnumber>
+                    <db:date>2012-02-25</db:date>
+                    <db:authorinitials>JC</db:authorinitials>
+                    <db:revremark>Removed abstract as per the BC/TC agreement 05/02/2013. It was agreed that document abstracts would be managed in the metadata-group.</db:revremark>
+                </db:revision>
+            </db:revhistory>
         </db:section>
     </component>
 
@@ -235,7 +250,6 @@
             <component-ref ref="part"/>
             <component-ref ref="chapter"/>
             <component-ref ref="section"/>
-            <component-ref ref="abstract"/>
             <component-ref ref="introduction"/>
             <component-ref ref="glossary"/>
             <component-ref ref="abbreviation-list"/>
@@ -243,6 +257,17 @@
             <component-ref ref="appendix"/>
             <component-ref ref="annex"/>
         </children>
+        <db:section role="revhistory">
+            <db:title>Version</db:title>
+            <db:revhistory>
+                <db:revision>
+                    <db:revnumber>1</db:revnumber>
+                    <db:date>2012-02-25</db:date>
+                    <db:authorinitials>JC</db:authorinitials>
+                    <db:revremark>Removed abstract as per the BC/TC agreement 05/02/2013. It was agreed that document abstracts would be managed in the metadata-group.</db:revremark>
+                </db:revision>
+            </db:revhistory>
+        </db:section>
     </component>
 
     <component xml:id="chapter" role="production">
@@ -461,9 +486,6 @@
         <type-of>
             <component-ref ref="section"/>
         </type-of>
-
-
-
     </component>
 
     <component xml:id="acknowledgement" role="production">
@@ -503,7 +525,6 @@
         <type-of>
             <component-ref ref="glossary"/>
         </type-of>
-
         <db:section role="notes">
             <db:title>Notes</db:title>
             <db:para>Need to consider abbreviation lists. Not only are they are a sort of glossary but they could be generated automatically from several different sources (use a global repo to help authors or even create the list from the contents of the document).</db:para>
@@ -521,7 +542,6 @@
             <db:title>Definition</db:title>
             <db:para>Bibliographic content will generally be represented by citation components at the inline level. However, it is clear that some documents contain bibliographic content that is not based on citations within the text. For this reason, the model contains a References component that contains MODS (The Library Of Congress, 2011) references. </db:para>
         </db:section>
-
     </component>
 
     <component xml:id="further-reading" role="modelled">
@@ -538,11 +558,9 @@
     <component xml:id="bibliographic-entry" role="production">
         <name>Bibliographic Entry</name>
         <category>semantic</category>
-
         <children>
             <component-ref ref="foreign-content"/>
         </children>
-
     </component>
 
     <component xml:id="chemical-formula" role="production">
@@ -1226,8 +1244,11 @@
         <db:section role="definition">
             <db:title>Definition</db:title>
             <db:para>A graphic represents an external image and metadata about that image. An image may be a reference to external content such as a graphic file or it may be SVG (W3C, 2011) content. The metadata for a graphic includes source information and should normally be required.</db:para>
-
+            <db:para>Graphic definitions defined by STD are: Chart, Bar, Scatter, Plot, Spider, Deformed Plot (supplied by David Brackfield)</db:para>
         </db:section>
+
+
+
     </component>
 
 
