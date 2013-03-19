@@ -62,7 +62,7 @@
                     <revnumber>7</revnumber>
                     <date>2013-03-19</date>
                     <authorinitials>JC</authorinitials>
-                    <revremark>Changed processing model for mathml to lax to allow validation of markup, the assumption here is that the mathml has already been processed and validated by MathType.</revremark>
+                    <revremark>Changed processing model for mathml to lax to ignore validation for the time being, the assumption here is that the mathml has already been processed and validated by MathType.</revremark>
                 </revision>
             	
                 
