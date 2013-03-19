@@ -134,13 +134,17 @@
 
                     <xs:choice maxOccurs="unbounded">
                         <xs:element ref="chapter"/>
+                        <xs:element ref="section"/>
                         <xs:element ref="glossary"/>
                     </xs:choice>
 
                     <!-- note - forcing sequence here is not ideal but there is no sensible way to model it in XSD -->
                     <xs:element ref="conclusion" minOccurs="0" maxOccurs="unbounded"/>
                     <xs:element ref="bibliography" minOccurs="0" maxOccurs="unbounded"/>
-                    <xs:element ref="appendix" minOccurs="0" maxOccurs="unbounded"/>
+                    <xs:choice maxOccurs="unbounded">
+                        <xs:element ref="appendix" minOccurs="0" maxOccurs="unbounded"/>
+                        <xs:element ref="annex" minOccurs="0" maxOccurs="unbounded"/>
+                    </xs:choice>
                     <xs:element ref="index" minOccurs="0"/>
 
                 </xs:sequence>

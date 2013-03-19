@@ -11,8 +11,7 @@
                     <revision>
                         <revnumber>1</revnumber>
                         <date>2012-03-30</date>
-                        <author><email>nicg@corbas.co.uk</email><personname>Nic
-                            Gibson</personname></author>
+                        <author><email>nicg@corbas.co.uk</email><personname>Nic Gibson</personname></author>
                         <revremark>Initial Version</revremark>
                     </revision>
                     <revision>
@@ -22,9 +21,14 @@
                         <revremark>Updated schemaLocation for preface to align with agreed report and component catalogue.</revremark>
                         <revremark>Rehashed includes alpha-sort.</revremark>
                     </revision>
-                    <para>A part is a publishing structural element. It contains multiple documents.
-                        Parts cannot stand alone and must be part of a higher level
-                        container.</para>
+                    <revision>
+                        <revnumber>3</revnumber>
+                        <date>2013-03-19</date>
+                        <author>JC</author>
+                        <revremark>Updated appendix implementation and added annex [#5534].</revremark>
+                    </revision>
+                    
+                    <para>A part is a publishing structural element. It contains multiple documents. Parts cannot stand alone and must be part of a higher level container.</para>
                 </revhistory>
             </section>
         </xs:documentation>
@@ -86,7 +90,10 @@
 
             <!-- note - forcing sequence here is not ideal but there is no sensible way to model it in XSD -->
             <xs:element ref="bibliography" minOccurs="0" maxOccurs="unbounded"/>
-            <xs:element ref="appendix" minOccurs="0" maxOccurs="unbounded"/>
+            <xs:choice maxOccurs="unbounded">
+                <xs:element ref="appendix" minOccurs="0" maxOccurs="unbounded"/>
+                <xs:element ref="annex" minOccurs="0" maxOccurs="unbounded"/>
+            </xs:choice>
 
         </xs:sequence>
 
@@ -97,8 +104,7 @@
         <xs:annotation>
             <xs:documentation>
                 <section xmlns="http://docbook.org/ns/docbook">
-                    <para>The part type describes a structure that contains a subset of a document
-                        that can be placed within a larger structural model such as a volume.</para>
+                    <para>The part type describes a structure that contains a subset of a document that can be placed within a larger structural model such as a volume.</para>
                 </section>
             </xs:documentation>
         </xs:annotation>

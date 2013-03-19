@@ -1,13 +1,12 @@
-<?xml version="1.0" encoding="UTF-8"?><xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
 
     <xs:annotation>
         <xs:documentation><section xmlns="http://docbook.org/ns/docbook">
-            <title>OECD Schemas</title>
-            <subtitle>Chapter Model</subtitle>
-            <revhistory>
-                <title>Change Log</title>
-                
-                
+                <title>OECD Schemas</title>
+                <subtitle>Chapter Model</subtitle>
+                <revhistory>
+                    <title>Change Log</title>
                     <revision>
                         <revnumber>1</revnumber>
                         <date>2011-12-02</date>
@@ -26,65 +25,66 @@
                         <author><email>nicg@corbas.co.uk</email><personname>Nic Gibson</personname></author>
                         <revremark>Added notes to chapter model.</revremark>
                     </revision>
-                <revision>
-                    <revnumber>3</revnumber>
-                    <date>2012-03-30</date>
-                    <author><email>nicg@corbas.co.uk</email><personname>Nic Gibson</personname></author>
-                    <revremark>Added acknowledgements to chapter model.</revremark>
-                </revision>                    
-                
-                <revision>
-                    <revnumber>4</revnumber>
-                    <date>2012-04-16</date>
-                    <author><email>nicg@corbas.co.uk</email><personname>Nic Gibson</personname></author>
-                    <revremark>Added glossary to chapter model.</revremark>
-                </revision>        
-            	
-            	<revision>
-            		<revnumber>5</revnumber>
-            		<date>2012-10-08</date>
-            		<author><email>nicg@corbas.co.uk</email><personname>Nic Gibson</personname></author>
-            		<revremark>Modified the chapter base content model to use section base content rather
-            			than section content. This resolves an issue where multiple titles were wrongly
-            			required.</revremark>
-            	</revision> 
-                <revision>
-                    <revnumber>5</revnumber>
-                    <date>2012-10-23</date>
-                    <authorinitials>JC</authorinitials>
-                    <revremark>Added common attribute group to oecdChapterTypeAttributes.</revremark>
-                </revision>
-                <revision>
-                    <revnumber>6</revnumber>
-                    <date>2012-10-23</date>
-                    <authorinitials>JC</authorinitials>
-                    <revremark>Added attribute group to oecdLinkingAttributes.</revremark>
-                </revision>
-            </revhistory>
-            <para>A chapter is a high level structural element. It has been modelled as a separate component
-            to a section as it does not have quite the same structure (a chapter has additional content). 
-            The content model for a chapter contains the content model for a section.</para>
+                    <revision>
+                        <revnumber>3</revnumber>
+                        <date>2012-03-30</date>
+                        <author><email>nicg@corbas.co.uk</email><personname>Nic Gibson</personname></author>
+                        <revremark>Added acknowledgements to chapter model.</revremark>
+                    </revision>
+                    <revision>
+                        <revnumber>4</revnumber>
+                        <date>2012-04-16</date>
+                        <author><email>nicg@corbas.co.uk</email><personname>Nic Gibson</personname></author>
+                        <revremark>Added glossary to chapter model.</revremark>
+                    </revision>
+                    <revision>
+                        <revnumber>5</revnumber>
+                        <date>2012-10-08</date>
+                        <author><email>nicg@corbas.co.uk</email><personname>Nic Gibson</personname></author>
+                        <revremark>Modified the chapter base content model to use section base content rather than section content. This resolves an issue where multiple titles were wrongly
+                            required.</revremark>
+                    </revision>
+                    <revision>
+                        <revnumber>5</revnumber>
+                        <date>2012-10-23</date>
+                        <authorinitials>JC</authorinitials>
+                        <revremark>Added common attribute group to oecdChapterTypeAttributes.</revremark>
+                    </revision>
+                    <revision>
+                        <revnumber>6</revnumber>
+                        <date>2012-10-23</date>
+                        <authorinitials>JC</authorinitials>
+                        <revremark>Added attribute group to oecdLinkingAttributes.</revremark>
+                    </revision>
+                    <revision>
+                        <revnumber>7</revnumber>
+                        <date>2013-03-19</date>
+                        <author>JC</author>
+                        <revremark>Updated appendix implementation and added annex [#5534].</revremark>
+                    </revision>
+                </revhistory> 
             
-          
-        </section>
+            <para>A chapter is a high level structural element. It has been modelled as a separate component to a section as it does not have quite the same structure (a chapter has
+                    additional content). The content model for a chapter contains the content model for a section.</para>
+            </section>
         </xs:documentation>
     </xs:annotation>
-    
+
     <!-- IMPORTS AND INCLUDES -->
-    
+
     <xs:include schemaLocation="section.xsd"/>
     <xs:include schemaLocation="../semantic/abstract.xsd"/>
     <xs:include schemaLocation="../semantic/biblio.xsd"/>
     <xs:include schemaLocation="../semantic/glossary.xsd"/>
     <xs:include schemaLocation="../components/notes.xsd"/>
     <xs:include schemaLocation="../semantic/acknowledgements.xsd"/>
-    
+    <xs:include schemaLocation="../semantic/appendix.xsd"/>
+
     <!-- GLOBAL ELEMENTS -->
-    
+
     <xs:element name="chapter" type="oecdChapterType" id="chapter"/>
-    <xs:element name="appendix" type="oecdAppendixType" id="appendix"/>
     <xs:element name="introduction" type="oecdChapterType" id="introduction"/>
-    
+
     <!-- GLOBAL TYPES -->
     <xs:attributeGroup name="oecdChapterTypeAttributes" id="oecdChapterTypeAttributes">
         <xs:annotation>
@@ -96,13 +96,13 @@
                             <revnumber>1</revnumber>
                             <date>2012-10-23</date>
                             <authorinitials>JC</authorinitials>
-                            <revremark>Added attribute group to content model to primarily allow @id.</revremark>                        
+                            <revremark>Added attribute group to content model to primarily allow @id.</revremark>
                         </revision>
                         <revision>
                             <revnumber>2</revnumber>
                             <date>2012-10-23</date>
                             <authorinitials>JC</authorinitials>
-                            <revremark>Added attribute group oecdLinkingAttributes to facilitate component links.</revremark>                        
+                            <revremark>Added attribute group oecdLinkingAttributes to facilitate component links.</revremark>
                         </revision>
                     </revhistory>
                 </section>
@@ -111,51 +111,40 @@
         <xs:attributeGroup ref="oecdCommonAttributes"/>
         <xs:attributeGroup ref="oecdLinkingAttributes"/>
     </xs:attributeGroup>
-    
+
     <xs:group name="oecdChapterBaseTypeContent" id="oecdChapterBaseTypeContent">
         <xs:annotation>
             <xs:documentation>
                 <section xmlns="http://docbook.org/ns/docbook">
                     <revhistory>
                         <title>Change Log</title>
-                        
-                        
                         <revision>
                             <revnumber>3</revnumber>
                             <date>2012-03-29</date>
                             <author><email>nicg@corbas.co.uk</email><personname>Nic Gibson</personname></author>
                             <revremark>Added notes element</revremark>
                         </revision>
-                        
                         <revision>
                             <revnumber>4</revnumber>
                             <date>2012-04-16</date>
                             <author><email>nicg@corbas.co.uk</email><personname>Nic Gibson</personname></author>
                             <revremark>Added glossary element.</revremark>
-                        </revision>   
-                    	
-                    	<revision>
-                    		<revnumber>5</revnumber>
-                    		<date>2012-10-06</date>
-                    		<authorinitials>NG</authorinitials>
-                    		<revremark>Modified to use oecdSectionTypeBaseContent to avoide the need for
-                    		problematic additional titles. </revremark>
-                    	</revision>
-                    	
-                    	<revision>
-                    		<revnumber>5</revnumber>
-                    		<date>2012-10-08</date>
-                    		<author><email>nicg@corbas.co.uk</email><personname>Nic Gibson</personname></author>
-                    		<revremark>Modified to use section base content rather
-                    			than section content. This resolves an issue where multiple titles were wrongly
-                    			required.</revremark>
-                    	</revision> 
+                        </revision>
+                        <revision>
+                            <revnumber>5</revnumber>
+                            <date>2012-10-06</date>
+                            <authorinitials>NG</authorinitials>
+                            <revremark>Modified to use oecdSectionTypeBaseContent to avoide the need for problematic additional titles. </revremark>
+                        </revision>
+                        <revision>
+                            <revnumber>5</revnumber>
+                            <date>2012-10-08</date>
+                            <author><email>nicg@corbas.co.uk</email><personname>Nic Gibson</personname></author>
+                            <revremark>Modified to use section base content rather than section content. This resolves an issue where multiple titles were wrongly required.</revremark>
+                        </revision>
                     </revhistory>
-                        
-                    <para>Uses the base section content type to add those components which are not allowed in a preface, etc.
-                        Note that a chapter appendix is basically a section whilst a standalone appendix is almost a chapter.
-                        Therefore, the chapter model extends this but the appendix one doesn't.
-                    </para>
+                    <para>Uses the base section content type to add those components which are not allowed in a preface, etc. Note that a chapter appendix is basically a section whilst a standalone
+                        appendix is almost a chapter. Therefore, the chapter model extends this but the appendix one doesn't. </para>
                 </section>
             </xs:documentation>
         </xs:annotation>
@@ -165,41 +154,42 @@
             <xs:element ref="abstract" minOccurs="0"/>
             <xs:element ref="acknowledgements" minOccurs="0"/>
             <xs:choice maxOccurs="unbounded">
-            	<xs:group ref="oecdSectionTypeBaseContent"/>
+                <xs:group ref="oecdSectionTypeBaseContent"/>
                 <xs:element ref="glossary"/>
             </xs:choice>
-            
-            
+
+
             <!-- note - forcing sequence here is not ideal but there is no sensible way to model it in XSD -->
             <xs:element ref="bibliography" minOccurs="0" maxOccurs="unbounded"/>
             <xs:element ref="notes" minOccurs="0" maxOccurs="unbounded"/>
-            
-        </xs:sequence>    
+
+        </xs:sequence>
     </xs:group>
 
-    
+
     <xs:group name="oecdChapterTypeContent" id="oecdChapterTypeContent">
         <xs:annotation>
             <xs:documentation>
                 <section xmlns="http://docbook.org/ns/docbook">
-                    <para>Uses the base section content type to add those components which are not allowed in a preface, etc.
-                        Note that a chapter appendix is basically a section whilst a standalone appendix is almost a chapter.
-                        </para>
+                    <para>Uses the base section content type to add those components which are not allowed in a preface, etc. Note that a chapter appendix is basically a section whilst a standalone
+                        appendix is almost a chapter. </para>
                 </section>
             </xs:documentation>
         </xs:annotation>
         <xs:sequence>
             <xs:group ref="oecdChapterBaseTypeContent"/>
-            <xs:element name="appendix" type="oecdSectionType" minOccurs="0" maxOccurs="unbounded"/>
-         </xs:sequence>
+            <xs:choice maxOccurs="unbounded">
+                <xs:element ref="appendix" minOccurs="0" maxOccurs="unbounded"/>
+                <xs:element ref="annex" minOccurs="0" maxOccurs="unbounded"/>
+            </xs:choice>
+        </xs:sequence>
     </xs:group>
-    
-     <xs:complexType name="oecdChapterType" id="oecdChapterType">
+
+    <xs:complexType name="oecdChapterType" id="oecdChapterType">
         <xs:annotation>
             <xs:documentation>
                 <section xmlns="http://docbook.org/ns/docbook">
-                    <para>The chapter type is not directly derived from a section
-                    as the content model is too different.</para>
+                    <para>The chapter type is not directly derived from a section as the content model is too different.</para>
                 </section>
             </xs:documentation>
         </xs:annotation>
@@ -208,22 +198,6 @@
         <xs:attributeGroup ref="oecdChapterTypeAttributes"/>
 
     </xs:complexType>
-    
-    <!-- appendix -->
-    <xs:complexType name="oecdAppendixType" id="oecdAppendixType">
-        <xs:annotation>
-            <xs:documentation>
-                <section xmlns="http://docbook.org/ns/docbook">
-                    <para>The chapter type is not directly derived from a section
-                        as the content model is too different.</para>
-                </section>
-            </xs:documentation>
-        </xs:annotation>
-        
-        <xs:group ref="oecdChapterBaseTypeContent"/>
-        <xs:attributeGroup ref="oecdChapterTypeAttributes"/>
-        
-    </xs:complexType>
-    
+
 
 </xs:schema>

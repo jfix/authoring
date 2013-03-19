@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:mods="http://www.loc.gov/mods/v3" elementFormDefault="qualified">
+
+    <xs:annotation>
+        <xs:documentation><section xmlns="http://docbook.org/ns/docbook">
+                <title>OECD Schemas</title>
+                <subtitle>Appendix and Annex Components</subtitle>
+                <revhistory>
+                    <revision>
+                        <title>Change Log</title>
+                        <revnumber>1</revnumber>
+                        <date>2013-03-19</date>
+                        <author>JC</author>
+                        <revremark>Initial version for update to appendix implementation and added annex [#5534].</revremark>
+                    </revision>
+                </revhistory>
+            </section>
+        </xs:documentation>
+    </xs:annotation>
+
+    <!-- IMPORTS AND INCLUDES -->
+    <xs:include schemaLocation="../structure/section.xsd"/>
+
+    <!-- GLOBAL ELEMENTS -->
+    <xs:element name="appendix" type="oecdAppendixType" id="appendix"/>
+    <xs:element name="annex" type="oecdAppendixType" id="annex"/>
+
+    <!-- COMPLEX TYPES -->
+
+    <!-- appendix/annex -->
+
+    <xs:complexType name="oecdAppendixType" id="oecdAppendixType">
+
+        <xs:annotation>
+            <xs:documentation>
+                <section xmlns="http://docbook.org/ns/docbook">
+                    <para>The oecdAppendixType is derived from a section as the content model is identical.</para>
+                </section>
+            </xs:documentation>
+        </xs:annotation>
+
+        <xs:group ref="oecdSectionTypeContent"/>
+        <xs:attributeGroup ref="oecdSectionTypeAttributes"/>
+
+    </xs:complexType>
+
+</xs:schema>
