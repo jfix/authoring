@@ -14,6 +14,12 @@
 						<author>JC</author>
 						<revremark>Initial Version</revremark>
 					</revision>
+					<revision>
+						<revnumber>2</revnumber>
+						<date>2013-03-19</date>
+						<author>JC</author>
+						<revremark>Made duplicate IDs unique in accordance with best practices and to resolve #5538.</revremark>
+					</revision>
 				</revhistory>
 			</section>
 		</xs:documentation>
@@ -30,7 +36,7 @@
 	<xs:element name="agenda-session" type="oecdAgendaSessionType" id="agenda-session"/>
 	<!-- GLOBAL GROUPS -->
 
-	<xs:attributeGroup name="oecdAgendaSectionTypeAttributes" id="oecdSectionTypeAttributes">
+	<xs:attributeGroup name="oecdAgendaSectionTypeAttributes" id="oecdAgendaSectionTypeAttributes">
 
 		<xs:annotation>
 			<xs:documentation>
@@ -45,7 +51,7 @@
 		<xs:attributeGroup ref="oecdLinkingAttributes"/>
 	</xs:attributeGroup>
 
-	<xs:group name="oecdAgendaSectionTypeBaseContent" id="oecdSectionTypeBaseContent">
+	<xs:group name="oecdAgendaSectionTypeBaseContent" id="oecdAgendaSectionTypeBaseContent">
 		<xs:annotation>
 			<xs:documentation>
 				<para xmlns="http://docbook.org/ns/docbook">This group is used to define the content model of all agenda section content.</para>
@@ -76,7 +82,7 @@
 	<xs:group name="oecdAgendaAnnotationTypeContent" id="oecdAgendaAnnotationTypeContent">
 		<xs:annotation>
 			<xs:documentation>
-				<para xmlns="http://docbook.org/ns/docbook">This group is used to define the content model of annotaiton elements. Annotation content is separately the main item.</para>
+				<para xmlns="http://docbook.org/ns/docbook">This group is used to define the content model of annotation elements. Annotation content is separately the main item.</para>
 			</xs:documentation>
 		</xs:annotation>
 		<xs:sequence>
@@ -85,7 +91,7 @@
 		</xs:sequence>
 	</xs:group>
 
-	<xs:group name="oecdAgendaSectionTypeContent" id="oecdSectionTypeContent">
+	<xs:group name="oecdAgendaSectionTypeContent" id="oecdAgendaSectionTypeContent">
 
 		<xs:annotation>
 			<xs:documentation>
