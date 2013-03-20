@@ -3,7 +3,8 @@
 
 
     <xs:annotation>
-        <xs:documentation><section xmlns="http://docbook.org/ns/docbook">
+        <xs:documentation>
+            <section xmlns="http://docbook.org/ns/docbook">
                 <title>OECD Schemas</title>
                 <subtitle>Part Component</subtitle>
                 <revhistory>
@@ -11,25 +12,41 @@
                     <revision>
                         <revnumber>1</revnumber>
                         <date>2012-03-30</date>
-                        <author><email>nicg@corbas.co.uk</email><personname>Nic Gibson</personname></author>
+                        <author><email>nicg@corbas.co.uk</email><personname>Nic
+                            Gibson</personname></author>
                         <revremark>Initial Version</revremark>
                     </revision>
                     <revision>
                         <revnumber>2</revnumber>
                         <date>2012-10-23</date>
                         <authorinitials>JC</authorinitials>
-                        <revremark>Updated schemaLocation for preface to align with agreed report and component catalogue.</revremark>
+                        <revremark>Updated schemaLocation for preface to align with agreed report and
+                            component catalogue.</revremark>
                         <revremark>Rehashed includes alpha-sort.</revremark>
                     </revision>
                     <revision>
                         <revnumber>3</revnumber>
                         <date>2013-03-19</date>
                         <author>JC</author>
-                        <revremark>Updated appendix implementation and added annex [#5534].</revremark>
+                        <revremark>Updated appendix implementation and added annex
+                            [#5534].</revremark>
                     </revision>
-                    
-                    <para>A part is a publishing structural element. It contains multiple documents. Parts cannot stand alone and must be part of a higher level container.</para>
+                    <revision>
+                        <revnumber>4</revnumber>
+                        <date>2013-03-19</date>
+                        <author>JC</author>
+                        <revremark>Removed preface in compliance with [#5336].</revremark>
+                    </revision>
+                    <revision>
+                        <revnumber>5</revnumber>
+                        <date>2013-03-20</date>
+                        <author>JC</author>
+                        <revremark>Wholesale changes of oecdPartTypeContent in compliance with
+                            [#5536].</revremark>
+                    </revision>
                 </revhistory>
+                <para>A part is a publishing structural element. It contains multiple documents.
+                    Parts cannot stand alone and must be part of a higher level container.</para>
             </section>
         </xs:documentation>
     </xs:annotation>
@@ -40,6 +57,7 @@
     <xs:include schemaLocation="../components/meta.xsd"/>
     <xs:include schemaLocation="../semantic/acknowledgements.xsd"/>
     <xs:include schemaLocation="../semantic/biblio.xsd"/>
+    <xs:include schemaLocation="../semantic/conclusion.xsd"/>
     <xs:include schemaLocation="../semantic/executive-summary.xsd"/>
     <xs:include schemaLocation="../semantic/preface.xsd"/>
 
@@ -75,6 +93,17 @@
                 <section xmlns="http://docbook.org/ns/docbook">
                     <para>Content for part type.</para>
                 </section>
+                <section xmlns="http://docbook.org/ns/docbook">
+                    <revhistory>
+                        <title>Change Log</title>
+                        <revision>
+                            <revnumber>1</revnumber>
+                            <date>2013-03-19</date>
+                            <author>JC</author>
+                            <revremark>Removed reference to preface element</revremark>
+                        </revision>
+                    </revhistory>
+                </section>
             </xs:documentation>
         </xs:annotation>
 
@@ -82,14 +111,13 @@
 
             <xs:element ref="metadata" minOccurs="0"/>
             <xs:group ref="oecdTitleGroup"/>
-
-            <xs:element ref="preface" minOccurs="0"/>
-
             <xs:element ref="introduction" minOccurs="0"/>
-            <xs:element ref="chapter" maxOccurs="unbounded"/>
 
-            <!-- note - forcing sequence here is not ideal but there is no sensible way to model it in XSD -->
+            <xs:element ref="chapter" maxOccurs="unbounded"/>
+            <xs:element ref="conclusion" minOccurs="0" maxOccurs="unbounded"/>
+            <xs:element ref="glossary" minOccurs="0" maxOccurs="unbounded"/>
             <xs:element ref="bibliography" minOccurs="0" maxOccurs="unbounded"/>
+
             <xs:choice maxOccurs="unbounded">
                 <xs:element ref="appendix" minOccurs="0" maxOccurs="unbounded"/>
                 <xs:element ref="annex" minOccurs="0" maxOccurs="unbounded"/>
@@ -104,7 +132,8 @@
         <xs:annotation>
             <xs:documentation>
                 <section xmlns="http://docbook.org/ns/docbook">
-                    <para>The part type describes a structure that contains a subset of a document that can be placed within a larger structural model such as a volume.</para>
+                    <para>The part type describes a structure that contains a subset of a document
+                        that can be placed within a larger structural model such as a volume.</para>
                 </section>
             </xs:documentation>
         </xs:annotation>
