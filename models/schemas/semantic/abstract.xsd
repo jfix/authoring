@@ -1,28 +1,83 @@
-<?xml version="1.0" encoding="UTF-8"?><xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
-    
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+    xmlns:sch="http://purl.oclc.org/dsdl/schematron" elementFormDefault="qualified">
+
     <xs:annotation>
-        <xs:documentation><section xmlns="http://docbook.org/ns/docbook">
-            <title>OECD Schemas</title>
-            <subtitle>Abstract</subtitle>
-            <para>An abstract is a paragraph group.</para>
-            <revhistory>
-                <title>Change Log</title>
-                
-                
+        <xs:documentation>
+            <section xmlns="http://docbook.org/ns/docbook">
+                <title>OECD Schemas</title>
+                <subtitle>Abstract</subtitle>
+                <para>An abstract contains simple paragraph text, no structural paragraphs only
+                    multiple gramatical ones.</para>
+                <revhistory>
+                    <title>Change Log</title>
                     <revision>
                         <revnumber>1</revnumber>
                         <date>2012-03-20</date>
-                        <author><email>nicg@corbas.co.uk</email><personname>Nic Gibson</personname></author>
+                        <author>JC</author>
                         <revremark>Initial Version</revremark>
                     </revision>
-                
-            </revhistory>
-        </section></xs:documentation>
+                </revhistory>
+            </section>
+        </xs:documentation>
     </xs:annotation>
-    
+
     <xs:include schemaLocation="../components/paras.xsd"/>
-    
-    <xs:element name="abstract" type="oecdParagraphGroupType" id="abstract"/>
-    
-    
+    <xs:include schemaLocation="../components/attributes.xsd"/>
+
+    <xs:element name="abstract" type="oecdAbstractType" id="abstract"/>
+
+    <xs:complexType name="oecdAbstractType" mixed="false" id="oecdAbstractType">
+
+        <xs:annotation>
+            <xs:documentation>
+                <section xmlns="http://docbook.org/ns/docbook">
+                    <para>Base type for abstract content.</para>
+                </section>
+            </xs:documentation>
+        </xs:annotation>
+
+        <xs:group ref="oecdAbstractTypeContent"/>
+        <xs:attributeGroup ref="oecdAbstractTypeAttributes"/>
+
+    </xs:complexType>
+
+    <xs:group name="oecdAbstractTypeContent" id="oecdAbstractTypeContent">
+        <xs:annotation>
+            <xs:documentation>
+                <section xmlns="http://docbook.org/ns/docbook">
+                    <para>Group for abstract element content to allow easy overrides.</para>
+                </section>
+            </xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+            <xs:element ref="metadata" minOccurs="0"/>
+            <xs:element ref="para" maxOccurs="unbounded"/>
+        </xs:sequence>
+    </xs:group>
+
+    <xs:attributeGroup name="oecdAbstractTypeAttributes" id="oecdSectionTypeAttributes">
+
+        <xs:annotation>
+            <xs:documentation>
+                <section xmlns="http://docbook.org/ns/docbook">
+                    <para>Attributes for abstracts as a group for easy overrides and reuse.</para>
+                    <revhistory>
+                        <revision>
+                            <revnumber>1</revnumber>
+                            <date>2013-03-20</date>
+                            <authorinitials>JC</authorinitials>
+                            <revremark>Initial Version.</revremark>
+                        </revision>
+                    </revhistory>
+                </section>
+            </xs:documentation>
+        </xs:annotation>
+
+        <xs:attributeGroup ref="ANNOTATIONS-GROUP"/>
+        <xs:attributeGroup ref="oecdCommonAttributes"/>
+        <xs:attributeGroup ref="oecdLinkingAttributes"/>
+
+    </xs:attributeGroup>
+
 </xs:schema>
