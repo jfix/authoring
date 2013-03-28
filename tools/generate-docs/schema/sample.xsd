@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xd="http://www.oecd.org/ns/schema/xdocs">
+
+    <xs:annotation>
+        <xs:appinfo>
+            <xd:name>pars</xd:name>
+            <xd:root>document</xd:root>
+        </xs:appinfo>
+        <xs:documentation>
+            <xd:p>Pars is a comprehensive model for capturing document content. To date, Pars supports nothing
+                apart from itself.</xd:p>
+        </xs:documentation>
+    </xs:annotation>
+
+    <xs:element name="root">
+        <xs:complexType mixed="true">
+            <xs:attribute name="colsep"/>
+            <xs:attribute name="rowsep"/>
+            <xs:attribute name="align"/>
+        </xs:complexType>
+    </xs:element>
+</xs:schema>
