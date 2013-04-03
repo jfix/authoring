@@ -16,8 +16,8 @@
             models for capturing official OECD documents and publications. To date, it supports all documents
             and camera-ready and typset publications.</db:para>
         <db:important>
-            <db:para>The Component Catalogue XSD is automatically generated from source XML. The XSD should not be
-                edited.</db:para>
+            <db:para>The Component Catalogue XSD is automatically generated from source XML. The XSD should
+                not be edited.</db:para>
         </db:important>
 
     </db:section>
@@ -114,6 +114,14 @@
                 <db:authorinitials>JC</db:authorinitials>
                 <db:revremark>Removed Abstract from Document and Publicaiton.</db:revremark>
             </db:revision>
+            <db:revision>
+                <db:revnumber>11</db:revnumber>
+                <db:date>2013-03-20</db:date>
+                <db:authorinitials>JC</db:authorinitials>
+                <db:revremark>Wholesale re-work of document and publicaiton structures as per the BC/TC
+                    agreement 05/02/2013 that official document and publicaiton models should be
+                    aligned.[#5336].</db:revremark>
+            </db:revision>
         </db:revhistory>
     </db:section>
 
@@ -125,14 +133,20 @@
             <db:para>Bibliographies may or may not exist! What is the difference betwee a standalone set of
                 references and a bibliography? If it is not cited in the text, how do we represent
                 it?</db:para>
+
             <db:para>Clearly, further reading, reference and citations should all be validated in the same
                 way. All of them contain bibliographic data but the bibliographic data might be better stored
                 out of line , possibly with the citation. Also, a citation can occur anywhere in the
                 text.</db:para>
+
             <db:para>Bibliographic mark-up itself must use MODS.</db:para>
+
             <db:para>Consider the DocBook model.</db:para>
+
             <db:para>Val thinks this is a structural component, others though semantic.</db:para>
-            <db:para>Rendering : Pac would like to move to ISO 690 presentation.</db:para>
+
+            <db:para>Rendering : PAC would like to move to ISO 690 presentation.</db:para>
+
             <db:para>Kim governance question: bibliographical reference management - exchange formats and
                 repositories used for oecd and external references, how authors should share
                 references.</db:para>
@@ -234,13 +248,16 @@
         <category>document</category>
         <children>
             <component-ref ref="metadata-group"/>
+            <component-ref ref="grp-titles"/>
             <component-ref ref="foreword"/>
+            <component-ref ref="acknowledgement"/>
             <component-ref ref="preface"/>
             <component-ref ref="executive-summary"/>
+            <component-ref ref="introduction"/>
             <component-ref ref="part"/>
             <component-ref ref="chapter"/>
             <component-ref ref="section"/>
-            <component-ref ref="introduction"/>
+            <component-ref ref="conclusion"/>
             <component-ref ref="glossary"/>
             <component-ref ref="abbreviation-list"/>
             <component-ref ref="recommendation"/>
@@ -248,21 +265,30 @@
             <component-ref ref="appendix"/>
             <component-ref ref="annex"/>
         </children>
+
         <db:section role="debate">
             <db:title>Notes</db:title>
             <db:para>There are likely to be many document elements, one for each model. They may be
                 distinguished by name or namespace or both. The elements listed here are simply children of
                 the document and do not represent any concrete model.</db:para>
         </db:section>
+
         <db:section role="revhistory">
             <db:title>Version</db:title>
             <db:revhistory>
                 <db:revision>
                     <db:revnumber>1</db:revnumber>
-                    <db:date>2012-02-25</db:date>
+                    <db:date>2013-02-25</db:date>
                     <db:authorinitials>JC</db:authorinitials>
                     <db:revremark>Removed abstract as per the BC/TC agreement 05/02/2013. It was agreed that
                         document abstracts would be managed in the metadata-group.</db:revremark>
+                </db:revision>
+                <db:revision>
+                    <db:revnumber>2</db:revnumber>
+                    <db:date>2013-03-20</db:date>
+                    <db:authorinitials>JC</db:authorinitials>
+                    <db:revremark>Re-work of document and publicaiton structures as per the BC/TC agreement
+                        05/02/2013</db:revremark>
                 </db:revision>
             </db:revhistory>
         </db:section>
@@ -273,16 +299,20 @@
         <category>document</category>
         <children>
             <component-ref ref="metadata-group"/>
+            <component-ref ref="grp-titles"/>
             <component-ref ref="foreword"/>
+            <component-ref ref="acknowledgement"/>
             <component-ref ref="preface"/>
             <component-ref ref="executive-summary"/>
+            <component-ref ref="introduction"/>
             <component-ref ref="volume"/>
             <component-ref ref="part"/>
             <component-ref ref="chapter"/>
             <component-ref ref="section"/>
-            <component-ref ref="introduction"/>
+            <component-ref ref="conclusion"/>
             <component-ref ref="glossary"/>
             <component-ref ref="abbreviation-list"/>
+            <component-ref ref="recommendation"/>
             <component-ref ref="bibliography"/>
             <component-ref ref="appendix"/>
             <component-ref ref="annex"/>
@@ -292,10 +322,18 @@
             <db:revhistory>
                 <db:revision>
                     <db:revnumber>1</db:revnumber>
-                    <db:date>2012-02-25</db:date>
+                    <db:date>2013-02-25</db:date>
                     <db:authorinitials>JC</db:authorinitials>
                     <db:revremark>Removed abstract as per the BC/TC agreement 05/02/2013. It was agreed that
                         document abstracts would be managed in the metadata-group.</db:revremark>
+                </db:revision>
+
+                <db:revision>
+                    <db:revnumber>2</db:revnumber>
+                    <db:date>2013-03-20</db:date>
+                    <db:authorinitials>JC</db:authorinitials>
+                    <db:revremark>Re-work of document and publicaiton structures as per the BC/TC agreement
+                        05/02/2013</db:revremark>
                 </db:revision>
             </db:revhistory>
         </db:section>
@@ -306,16 +344,23 @@
         <category>semantic</category>
         <category>publishing</category>
         <children>
-            <component-ref ref="abstract"/>
+            <component-ref ref="metadata-group"/>
             <component-ref ref="grp-titles"/>
+            <component-ref ref="abstract"/>
+            <component-ref ref="introduction"/>
+            <component-ref ref="section"/>
             <component-ref ref="grp-nested-blocks"/>
-            <component-ref ref="bibliography"/>
             <component-ref ref="notes"/>
+            <component-ref ref="conclusion"/>
+            <component-ref ref="glossary"/>
+            <component-ref ref="bibliography"/>
+            <component-ref ref="appendix"/>
+            <component-ref ref="annex"/>
         </children>
+
         <type-of>
             <component-ref ref="section"/>
         </type-of>
-
 
         <db:section role="debate">
             <db:title>Notes</db:title>
@@ -330,6 +375,19 @@
                 in that they are combined to create publications, each document becoming a chapter of the
                 publication. A chapter may be the document itself, a standalone part of an official document
                 or simply a structural element within a document. </db:para>
+        </db:section>
+
+        <db:section role="revhistory">
+            <db:title>Version</db:title>
+            <db:revhistory>
+                <db:revision>
+                    <db:revnumber>1</db:revnumber>
+                    <db:date>2013-03-20</db:date>
+                    <db:authorinitials>JC</db:authorinitials>
+                    <db:revremark>Re-work of document and publicaiton structures as per the BC/TC agreement
+                        05/02/2013</db:revremark>
+                </db:revision>
+            </db:revhistory>
         </db:section>
     </component>
 
@@ -360,15 +418,40 @@
         <name>Part</name>
         <category>semantic</category>
         <category>publishing</category>
+        <children>
+            <component-ref ref="metadata-group"/>
+            <component-ref ref="grp-titles"/>
+            <component-ref ref="introduction"/>
+            <component-ref ref="chapter"/>
+            <component-ref ref="notes"/>
+            <component-ref ref="conclusion"/>
+            <component-ref ref="glossary"/>
+            <component-ref ref="bibliography"/>
+            <component-ref ref="appendix"/>
+            <component-ref ref="annex"/>
+        </children>
         <type-of>
             <component-ref ref="section"/>
         </type-of>
 
-        <db:section>
+        <db:section role="definition">
             <db:title>Definition</db:title>
             <db:para>A part is a high level section that sits, hierarchically, between documents (the book
                 equivalent level) and chapter level material such as chapters themselves, appendices and
                 prefaces. </db:para>
+        </db:section>
+
+        <db:section role="revhistory">
+            <db:title>Version</db:title>
+            <db:revhistory>
+                <db:revision>
+                    <db:revnumber>1</db:revnumber>
+                    <db:date>2013-03-20</db:date>
+                    <db:authorinitials>JC</db:authorinitials>
+                    <db:revremark>Re-work of document and publicaiton structures as per the BC/TC agreement
+                        05/02/2013</db:revremark>
+                </db:revision>
+            </db:revhistory>
         </db:section>
     </component>
 
@@ -626,7 +709,7 @@
         <type-of>
             <component-ref ref="section"/>
         </type-of>
-        <db:section>
+        <db:section role="definition">
             <db:title>Definition</db:title>
             <db:para>Bibliographic content will generally be represented by citation components at the inline
                 level. However, it is clear that some documents contain bibliographic content that is not
@@ -805,7 +888,7 @@
             <component-ref ref="metadata-group"/>
         </children>
 
-        <db:section>
+        <db:section role="notes">
             <db:title>Notes</db:title>
             <db:para>Initially thought of as table notes. However, the component seems more generic than
                 that.</db:para>
@@ -898,7 +981,7 @@
                 the current part of the flow.</db:para>
         </db:section>
 
-        <db:section>
+        <db:section role="revhistory">
             <db:title>Log</db:title>
             <db:revhistory>
                 <db:title>Change Log</db:title>
@@ -994,7 +1077,7 @@
         <children>
             <component-ref ref="grp-simple-inlines"/>
         </children>
-        <db:section role="model-doc">
+        <db:section role="definition">
             <db:title>Definition</db:title>
             <db:para>Used to store the abbreviated title of a component (text only).</db:para>
         </db:section>
@@ -1209,7 +1292,7 @@
             <component-ref ref="metadata-group"/>
         </children>
 
-        <db:section>
+        <db:section role="definition">
             <db:title>Definition</db:title>
             <db:para>Formal paragraphs are simply standard paragraphs with a title. They can occur in almost
                 all contexts where a standard paragraph may occur.</db:para>
@@ -1224,7 +1307,7 @@
             <component-ref ref="simple-para"/>
         </children>
 
-        <db:section>
+        <db:section role="definition">
             <db:title>Definition</db:title>
 
             <db:para>Paragraph groups have been included in the model as a result of the document analysis
@@ -1255,7 +1338,7 @@
         </children>
 
 
-        <db:section>
+        <db:section role="definition">
             <db:title>Definition</db:title>
             <db:para>Simple paragraphs are simply standard paragraphs without a title. They can occur in
                 almost all contexts where a standard paragraph may occur.</db:para>
@@ -1283,7 +1366,7 @@
             <component-ref ref="list-item"/>
         </children>
 
-        <db:section>
+        <db:section role="notes">
             <db:title>Notes</db:title>
             <db:para>An itemized list has a single marker used for all elements within that list. As with
                 ordered lists the AE2007 environment places a rigid constraint on the depth of the list. This
@@ -1476,7 +1559,7 @@
             <component-ref ref="document-reference"/>
         </children>
 
-        <db:section>
+        <db:section role="definition">
             <db:title>Definition</db:title>
             <db:para>Document Lists are defined for use in agendas although there is no requirement that this
                 be the case. Agenda items may have associated documents (official documents, room documents or
@@ -1495,7 +1578,7 @@
             <component-ref ref="cote"/>
         </children>
 
-        <db:section>
+        <db:section role="definition">
             <db:title>Definition</db:title>
             <db:para>A Document Reference is a simplified citation. It contains a COTE or a document title
                 only. In addition an Action component is allowed in order to represent an action to be taken
@@ -1528,7 +1611,7 @@
         <name>Metadata Item</name>
         <category>semantic</category>
 
-        <db:section>
+        <db:section role="definition">
             <db:title>Definition</db:title>
             <db:para>The metadata model has not yet been fully defined. Currently, we are assuming that the
                 model will use some as yet undecided representation of RDF (W3C, 2004). Metadata content will
@@ -1550,7 +1633,7 @@
             <component-ref ref="metadata-item"/>
         </type-of>
 
-        <db:section>
+        <db:section role="definition">
             <db:title>Definition</db:title>
             <db:para>A Duration component is simply a period of time. Currently, the model allows these in two
                 locations – as simple inlines and as part of the metadata for an agenda item.</db:para>
@@ -1564,7 +1647,7 @@
             <component-ref ref="metadata-item"/>
         </type-of>
 
-        <db:section role="model-doc">
+        <db:section role="definition">
             <db:title>Definition</db:title>
             <db:para>A DateTime component allows a time and a date to be indicated in text. None of the
                 semantics of a date are intended to represented, merely the indication that the text
@@ -1579,7 +1662,7 @@
     <component xml:id="foreign-content" role="modelled">
         <name>Foreign Content</name>
         <category>semantic</category>
-        <db:section>
+        <db:section role="notes">
             <db:title>Notes</db:title>
             <db:para>Content from an external source actually embedded into the document</db:para>
             <db:note>
@@ -1592,7 +1675,7 @@
     <component xml:id="linked-content" role="modelled">
         <name>Linked Content</name>
         <category>semantic</category>
-        <db:section>
+        <db:section role="notes">
             <db:title>Notes</db:title>
             <db:para>Content from an external source referenced by the document</db:para>
             <db:note>
@@ -1611,7 +1694,7 @@
             <component-ref ref="box"/>
         </children>
 
-        <db:section>
+        <db:section role="definition">
             <db:title>Definition</db:title>
 
             <db:para>Most of the content of any document consists of blocks of text. Block models represent
@@ -1636,7 +1719,7 @@
             <component-ref ref="simple-para"/>
         </children>
 
-        <db:section role="model-documentation">
+        <db:section role="definition">
             <db:title>Definition</db:title>
 
             <db:para>The notes model was defined originally as specific table or chart notes by the modelling
@@ -1785,7 +1868,7 @@
 
         </metadata>
 
-        <db:section>
+        <db:section role="definition">
             <db:title>Definition</db:title>
             <db:para>An agenda item component represents a single item in an agenda. In the initial OECD
                 agendas, it generally consists of a title along with some metadata and an optional Document
@@ -1803,7 +1886,7 @@
             <component-ref ref="grp-simple-blocks" cardinality="one-or-more"/>
         </children>
 
-        <db:section>
+        <db:section role="definition">
             <db:title>Definition</db:title>
             <db:para>An agenda annotation component represents the textual annotations that can be added to
                 any agenda item at any time. The annotation can consist of any of the simple block components.
@@ -1825,7 +1908,7 @@
             <item type="duration" name="duration"/>
         </metadata>
 
-        <db:section>
+        <db:section role="definition">
             <db:title>Definition</db:title>
             <db:para>An agenda session represents a group of agenda items grouped together with a title and
                 optional session specific metadata. Initially identified metadata includes time, location and
@@ -1848,7 +1931,7 @@
             <item name="comment-time" type="datetime"/>
         </metadata>
 
-        <db:section>
+        <db:section role="definition">
             <db:title>Definition</db:title>
             <db:para>A comment by a user within a document. Used during revision and editorial
                 processes.</db:para>
@@ -1863,7 +1946,7 @@
             <item name="revision-time" type="datetime"/>
         </metadata>
 
-        <db:section>
+        <db:section role="definition">
             <db:title>Definition</db:title>
             <db:para>A document revision. Used to mark the range of a deletion or insertion.</db:para>
         </db:section>
