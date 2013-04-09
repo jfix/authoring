@@ -4,7 +4,6 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:url="http://www.oecd.org/ns/schema" name="create-docs"
   xmlns:xd="http://www.oecd.org/ns/schema/xdocs" version="1.0">
 
-
   <p:input port="source" sequence="true" primary="true"/>
   <p:input port="supplements" sequence="true" primary="false"/>
   <p:input port="parameters" kind="parameter"/>
@@ -60,7 +59,7 @@
       <p:xquery>
         <p:input port="query">
           <p:inline>
-            <c:query> declare namespace xd = "http://xml.smg-uk.com/schema/xdocs"; declare namespace db =
+            <c:query> declare namespace xd = "http://www.oecd.org/ns/schema/xdocs"; declare namespace db =
               "http://docbook.org/ns/docbook"; declare namespace xlink = "http://www.w3.org/1999/xlink";
               declare default element namespace ""; for $target in
               distinct-values(//db:productname[@role='schema'] | //db:link[@role='schema']/@xlink:href) let
