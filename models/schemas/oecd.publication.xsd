@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" 
-    xmlns="urn:oecd:names:xmlns:authoring:document" targetNamespace="urn:oecd:names:xmlns:authoring:document" xmlns:xd="http://www.oecd.org/ns/schema/xdocs">
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified"
+    xmlns="urn:oecd:names:xmlns:authoring:document" targetNamespace="urn:oecd:names:xmlns:authoring:document"
+    xmlns:xd="http://www.oecd.org/ns/schema/xdocs">
 
 
     <xs:annotation>
         <xs:appinfo>
-            <xd:name>official-document</xd:name>
-            <xd:root>document</xd:root>
+            <xd:name>official-publication</xd:name>
+            <xd:root>publication</xd:root>
         </xs:appinfo>
         <xs:documentation>
             <section xmlns="http://docbook.org/ns/docbook">
@@ -30,50 +31,56 @@
                             <email>nicg@corbas.co.uk</email>
                             <personname>Nic Gibson</personname>
                         </author>
-                        <revremark>Corrected element type for <link linkend="publication">publication.</link>from oecdBaseDocumenType to oecdPublicationType</revremark>
+                        <revremark>Corrected element type for <link linkend="publication"
+                            >publication.</link>from oecdBaseDocumenType to oecdPublicationType</revremark>
                     </revision>
-                </revhistory>
+                    <revision>
+                        <revnumber>3</revnumber>
+                        <date>2013-04-09</date>
+                        <author>JC</author>
+                        <revremark>Updated documentaion error Bug #5610.</revremark>
+                    </revision></revhistory>
             </section>
         </xs:documentation>
     </xs:annotation>
-    
+
     <!-- IMPORTS AND INCLUDES -->
     <xs:include schemaLocation="structure/document.xsd"/>
     <xs:include schemaLocation="structure/volume.xsd"/>
-        
+
     <!-- GLOBAL ELEMENTS -->
 
 
-    
+
     <!-- COMPLEX TYPES -->
     <xs:group name="oecdPublicationTypeContent" id="oecdPublicationTypeContent">
         <xs:annotation>
             <xs:documentation>
                 <section xmlns="http://docbook.org/ns/docbook">
-                    <para>Content model for OECD publications.</para>                
+                    <para>Content model for OECD publications.</para>
                 </section>
             </xs:documentation>
         </xs:annotation>
         <xs:sequence>
-            
+
             <xs:element name="document-metadata" type="oecdDocumentMetadataType" minOccurs="0"/>
             <xs:element ref="metadata"/>
             <!-- not optional here! -->
             <xs:group ref="oecdTitleGroup"/>
-            
+
             <xs:choice>
                 <xs:element name="document" type="oecdBaseDocumentType"/>
                 <xs:element ref="volume"/>
             </xs:choice>
-            
+
         </xs:sequence>
-    </xs:group>    
-    
+    </xs:group>
+
     <xs:complexType name="oecdPublicationType" id="oecdPublicationType">
         <xs:annotation>
             <xs:documentation>
                 <section xmlns="http://docbook.org/ns/docbook">
-                    <para>This model is used to create OECD publications.</para>                
+                    <para>This model is used to create OECD publications.</para>
                 </section>
             </xs:documentation>
         </xs:annotation>
@@ -87,7 +94,6 @@
                 <section xmlns="http://docbook.org/ns/docbook">
                     <title>Change Log</title>
                     <revhistory>
-                        
                         <revision>
                             <revnumber>2</revnumber>
                             <date>2012-05-25</date>
@@ -95,13 +101,14 @@
                                 <email>nicg@corbas.co.uk</email>
                                 <personname>Nic Gibson</personname>
                             </author>
-                            <revremark>Corrected element from oecdBaseDocumenType to oecdPublicationType</revremark>
+                            <revremark>Corrected element from oecdBaseDocumenType to
+                                oecdPublicationType</revremark>
                         </revision>
                     </revhistory>
                 </section>
             </xs:documentation>
         </xs:annotation>
     </xs:element>
-    
+
 
 </xs:schema>
