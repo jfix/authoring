@@ -1,0 +1,2105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2006 sp1 U (http://www.altova.com) by mvercelli (EMBRACE) -->
+<!-- edited with XML Spy v4.4 U (http://www.xmlspy.com) by In.vison Research 2 (In.vison Research) -->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="urn:xpressauthor:appconfig" targetNamespace="urn:xpressauthor:appconfig" elementFormDefault="qualified" attributeFormDefault="unqualified">
+  <xs:element name="AppConfig">
+    <xs:complexType>
+      <xs:all>
+        <xs:element name="Menus" minOccurs="0">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element ref="MenuBar" minOccurs="0" maxOccurs="unbounded"/>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="CommandBars" minOccurs="0">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element ref="CommandBar" minOccurs="0" maxOccurs="unbounded"/>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Ribbon" minOccurs="0">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element ref="customUI"/>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="ShortcutKeys" minOccurs="0">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="ShortcutKey" minOccurs="0" maxOccurs="unbounded">
+                <xs:complexType>
+                  <xs:choice minOccurs="0" maxOccurs="unbounded">
+                    <xs:element ref="InternalClass"/>
+                    <xs:element ref="ExtensibilityMethod"/>
+                  </xs:choice>
+                  <xs:attribute name="key" type="xs:string" use="required"/>
+                  <xs:attribute name="shift" type="xs:boolean" use="optional"/>
+                  <xs:attribute name="ctrl" type="xs:boolean" use="optional"/>
+                  <xs:attribute name="alt" type="xs:boolean" use="optional"/>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="ExtensibilityInterface" minOccurs="0">
+          <xs:complexType>
+            <xs:all>
+              <xs:element name="MethodInfo" minOccurs="0">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="Method" minOccurs="0" maxOccurs="unbounded">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="Argument" minOccurs="0" maxOccurs="unbounded">
+                            <xs:complexType>
+                              <xs:choice>
+                                <xs:element name="Token" minOccurs="0" maxOccurs="unbounded">
+                                  <xs:complexType mixed="true">
+                                    <xs:sequence>
+                                      <xs:any processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
+                                    </xs:sequence>
+                                  </xs:complexType>
+                                </xs:element>
+                                <xs:element name="Delegate" minOccurs="0" maxOccurs="unbounded">
+                                  <xs:simpleType>
+                                    <xs:restriction base="xs:string">
+                                      <xs:enumeration value="GetNodeProperties"/>
+                                      <xs:enumeration value="GetPreviousNode"/>
+                                      <xs:enumeration value="GetNextNode"/>
+                                      <xs:enumeration value="GetXomNode"/>
+                                      <xs:enumeration value="GetExportedNode"/>
+                                      <xs:enumeration value="InsertNode"/>
+                                      <xs:enumeration value="DeleteNode"/>
+                                      <xs:enumeration value="AssignTextNode"/>
+                                      <xs:enumeration value="SelectNode"/>
+                                      <xs:enumeration value="SelectNodes"/>
+                                      <xs:enumeration value="InsertEmphasis"/>
+                                      <xs:enumeration value="GetToggleButtonState"/>
+                                      <xs:enumeration value="GetPreText"/>
+                                      <xs:enumeration value="GetPostText"/>
+                                      <xs:enumeration value="AssignPreText"/>
+                                      <xs:enumeration value="AssignPostText"/>
+                                      <xs:enumeration value="AssignDocVariable"/>
+                                      <xs:enumeration value="RefreshDocVariable"/>
+                                      <xs:enumeration value="RefreshDocVariables"/>
+                                      <xs:enumeration value="CreateContextMenu"/>
+                                      <xs:enumeration value="InvokeInternalClass"/>
+                                      <xs:enumeration value="InvokeMethodId"/>
+                                      <xs:enumeration value="UpdateAttributes"/>
+                                      <xs:enumeration value="IsEditableElement"/>
+                                      <xs:enumeration value="ToggleEditableRegion"/>
+                                      <xs:enumeration value="ShadeRegion"/>
+                                      <xs:enumeration value="BeginUndoRecording"/>
+                                      <xs:enumeration value="EndUndoRecording"/>
+                                      <xs:enumeration value="ReplaceNode"/>
+                                      <xs:enumeration value="GetPageNumber"/>
+                                      <xs:enumeration value="GetSectionMetadata"/>
+                                      <xs:enumeration value="GetXmlResolver"/>
+                                      <xs:enumeration value="SetXmlResolver"/>
+                                      <xs:enumeration value="GetExtensibleUserInterface"/>
+                                    </xs:restriction>
+                                  </xs:simpleType>
+                                </xs:element>
+                              </xs:choice>
+                              <xs:attribute name="type" use="required">
+                                <xs:simpleType>
+                                  <xs:restriction base="xs:string">
+                                    <xs:enumeration value="XomRoot"/>
+                                    <xs:enumeration value="XomCurrentNode"/>
+                                    <xs:enumeration value="XomSelectedNodes"/>
+                                    <xs:enumeration value="XomPreviousNode"/>
+                                    <xs:enumeration value="ExportedRoot"/>
+                                    <xs:enumeration value="ExportedCurrentNode"/>
+                                    <xs:enumeration value="ExportedCurrentNodeTree"/>
+                                    <xs:enumeration value="PasteNode"/>
+                                    <xs:enumeration value="DeleteNodes"/>
+                                    <xs:enumeration value="Filename"/>
+                                    <xs:enumeration value="UserName"/>
+                                    <xs:enumeration value="WordUserName"/>
+                                    <xs:enumeration value="DocumentType"/>
+                                    <xs:enumeration value="DocNumber"/>
+                                    <xs:enumeration value="Revision"/>
+                                    <xs:enumeration value="AccessMode"/>
+                                    <xs:enumeration value="StyleList"/>
+                                    <xs:enumeration value="ToggleState"/>
+                                    <xs:enumeration value="Tag"/>
+                                    <xs:enumeration value="Tokens"/>
+                                    <xs:enumeration value="Delegates"/>
+                                  </xs:restriction>
+                                </xs:simpleType>
+                              </xs:attribute>
+                            </xs:complexType>
+                          </xs:element>
+                        </xs:sequence>
+                        <xs:attribute name="id" type="xs:ID" use="required"/>
+                        <xs:attribute name="assembly" type="xs:string" use="required"/>
+                        <xs:attribute name="class" type="xs:string" use="required"/>
+                        <xs:attribute name="method" type="xs:string" use="required"/>
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="Connect" minOccurs="0">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element ref="ExtensibilityMethod" minOccurs="0" maxOccurs="unbounded"/>
+                  </xs:sequence>
+                  <xs:attribute name="accessMode" type="xs:string" use="optional"/>
+                </xs:complexType>
+              </xs:element>
+            </xs:all>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="CultureName" type="xs:string" default="en-US"/>
+        <xs:element name="ErrorLogging" type="xs:boolean"/>
+        <xs:element name="UndoHistory" type="xs:int"/>
+        <xs:element name="ResolveReferences" minOccurs="0">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Reference" minOccurs="0" maxOccurs="unbounded">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="Token" minOccurs="0" maxOccurs="unbounded"/>
+                  </xs:sequence>
+                  <xs:attribute name="pattern" type="xs:string" use="required"/>
+                  <xs:attribute name="assembly" type="xs:string" use="required"/>
+                  <xs:attribute name="class" type="xs:string" use="required"/>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Namespaces">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Namespace" maxOccurs="unbounded">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="BeforeOpen" minOccurs="0">
+                      <xs:annotation>
+                        <xs:documentation>An EI that can be invoked before the document is opened in XA. Only 3 types of arguments are supported - ExportedRoot, Filename and Tokens. Typically the ExportedRoot contains the resultant of the EI which will be used by XA to open the document. Also the EI can return a false return value to cancel the Open. This method can be used in place of the transform attribute to perfomr operations that cannot typically be done in a stylesheet.</xs:documentation>
+                      </xs:annotation>
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="Argument" minOccurs="0" maxOccurs="unbounded">
+                            <xs:complexType>
+                              <xs:choice>
+                                <xs:element name="Token" minOccurs="0" maxOccurs="unbounded">
+                                  <xs:complexType mixed="true">
+                                    <xs:sequence>
+                                      <xs:any processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
+                                    </xs:sequence>
+                                  </xs:complexType>
+                                </xs:element>
+                              </xs:choice>
+                              <xs:attribute name="type" use="required">
+                                <xs:simpleType>
+                                  <xs:restriction base="xs:string">
+                                    <xs:enumeration value="ExportedRoot"/>
+                                    <xs:enumeration value="Filename"/>
+                                    <xs:enumeration value="Tokens"/>
+                                  </xs:restriction>
+                                </xs:simpleType>
+                              </xs:attribute>
+                            </xs:complexType>
+                          </xs:element>
+                        </xs:sequence>
+                        <xs:attribute name="method" type="xs:string" use="required"/>
+                        <xs:attribute name="assembly" type="xs:string" use="required"/>
+                        <xs:attribute name="class" type="xs:string" use="required"/>
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                  <xs:attribute name="reevaluate" type="xs:boolean">
+                    <xs:annotation>
+                      <xs:documentation>This attribute specifies whether to reeavalute the Namespace node for the given document after an input transform has been applied. Typically used in conjunction with the transform attribute or the BeforeOpen child node.</xs:documentation>
+                    </xs:annotation>
+                  </xs:attribute>
+                  <xs:attribute name="mapperClass">
+                    <xs:annotation>
+                      <xs:documentation>This attribute (along with mapperAssembly) points to an external class that implements the Invision.Xpress.Interfaces.IConditionMapper containing the condition to be evaluated.</xs:documentation>
+                    </xs:annotation>
+                  </xs:attribute>
+                  <xs:attribute name="mapperAssembly">
+                    <xs:annotation>
+                      <xs:documentation>This attribute along with mapperClass points to an external method that allows for an external condition to be injected in the evaluation of a paticular namespace node</xs:documentation>
+                    </xs:annotation>
+                  </xs:attribute>
+                  <xs:attribute name="productLine" type="xs:string" use="optional"/>
+                  <xs:attribute name="uri" type="xs:string" use="optional"/>
+                  <xs:attribute name="root" type="xs:string" use="optional"/>
+                  <xs:attribute name="internalName" type="xs:string" use="optional"/>
+                  <xs:attribute name="transform" type="xs:string" use="optional">
+                    <xs:annotation>
+                      <xs:documentation>Location of a transform stylesheet that can be applied to the document being opened before XA opens it. Typically either this or the BeforeOpen EI method is used.</xs:documentation>
+                    </xs:annotation>
+                  </xs:attribute>
+                  <xs:attribute name="schema" type="xs:string" use="required">
+                    <xs:annotation>
+                      <xs:documentation>The schema to be used for the given namespace. Contains a path to the actual xas file (can be relative or full)</xs:documentation>
+                    </xs:annotation>
+                  </xs:attribute>
+                  <xs:attribute name="template" type="xs:string" use="required">
+                    <xs:annotation>
+                      <xs:documentation>The template file to be used for the given namespace. Contains a path to the template(dot/dotx) file (can be relative or full)</xs:documentation>
+                    </xs:annotation>
+                  </xs:attribute>
+                  <xs:attribute name="config" type="xs:string" use="required">
+                    <xs:annotation>
+                      <xs:documentation>The config file to be used for the given namespace. Contains a path to the doc-config file (can be relative or full)</xs:documentation>
+                    </xs:annotation>
+                  </xs:attribute>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="NotSupported" minOccurs="0" maxOccurs="unbounded">
+                <xs:complexType>
+                  <xs:attribute name="productLine" type="xs:string" use="optional"/>
+                  <xs:attribute name="uri" type="xs:string" use="optional"/>
+                  <xs:attribute name="root" type="xs:string" use="optional"/>
+                  <xs:attribute name="message" type="xs:string" use="required"/>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="EnableOfficeCustomization" minOccurs="0"/>
+        <xs:element name="EnableProgressDialogs" minOccurs="0"/>
+        <xs:element name="TempFilePath" type="xs:string" minOccurs="0"/>
+        <xs:element name="LogFilePath" type="xs:string" minOccurs="0"/>
+        <xs:element name="DisableTemplateAddins" minOccurs="0">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element ref="AddIn" minOccurs="0" maxOccurs="unbounded"/>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:all>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddIn" type="xs:string"/>
+  <xs:element name="MenuBar">
+    <xs:complexType>
+      <xs:choice maxOccurs="unbounded">
+        <xs:element name="MenuItem">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="ShortcutKey" minOccurs="0">
+                <xs:complexType>
+                  <xs:attribute name="key" type="xs:string" use="required"/>
+                  <xs:attribute name="shift" type="xs:boolean" use="optional"/>
+                  <xs:attribute name="ctrl" type="xs:boolean" use="optional"/>
+                  <xs:attribute name="alt" type="xs:boolean" use="optional"/>
+                </xs:complexType>
+              </xs:element>
+              <xs:choice minOccurs="0" maxOccurs="unbounded">
+                <xs:element ref="InternalClass"/>
+                <xs:element ref="ExtensibilityMethod"/>
+              </xs:choice>
+            </xs:sequence>
+            <xs:attribute name="resourceId" type="xs:string" use="required"/>
+            <xs:attribute name="faceId" type="xs:string" use="optional"/>
+            <xs:attribute name="accessMode" type="xs:string" use="optional"/>
+            <xs:attribute name="position" type="xs:int" use="optional"/>
+            <xs:attribute name="beginGroup" type="xs:boolean" use="optional"/>
+            <xs:attribute name="toggle" type="xs:boolean" use="optional"/>
+            <xs:attribute name="toggleGroup" type="xs:string" use="optional"/>
+          </xs:complexType>
+        </xs:element>
+        <xs:element ref="MenuBar"/>
+        <xs:element ref="WordControl"/>
+      </xs:choice>
+      <xs:attribute name="resourceId" type="xs:string" use="required"/>
+      <xs:attribute name="position" type="xs:int" use="optional"/>
+      <xs:attribute name="beginGroup" type="xs:boolean" use="optional"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CommandBar">
+    <xs:complexType>
+      <xs:choice maxOccurs="unbounded">
+        <xs:element name="CommandBarButton">
+          <xs:complexType>
+            <xs:choice minOccurs="0" maxOccurs="unbounded">
+              <xs:element ref="InternalClass"/>
+              <xs:element ref="ExtensibilityMethod"/>
+            </xs:choice>
+            <xs:attribute name="resourceId" type="xs:string" use="required"/>
+            <xs:attribute name="faceId" type="xs:string" use="optional"/>
+            <xs:attribute name="accessMode" type="xs:string" use="optional"/>
+            <xs:attribute name="position" type="xs:int" use="optional"/>
+            <xs:attribute name="beginGroup" type="xs:boolean" use="optional"/>
+            <xs:attribute name="toggle" type="xs:boolean" use="optional"/>
+            <xs:attribute name="toggleGroup" type="xs:string" use="optional"/>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="CommandBarComboBox">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element ref="InternalClass"/>
+            </xs:sequence>
+            <xs:attribute name="resourceId" type="xs:string" use="required"/>
+            <xs:attribute name="accessMode" type="xs:string" use="optional"/>
+            <xs:attribute name="position" type="xs:int" use="optional"/>
+            <xs:attribute name="width" type="xs:int" use="optional"/>
+            <xs:attribute name="beginGroup" type="xs:boolean" use="optional"/>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="CommandBarPopup">
+          <xs:complexType>
+            <xs:sequence maxOccurs="unbounded">
+              <xs:element name="CommandBarButton">
+                <xs:complexType>
+                  <xs:choice minOccurs="0" maxOccurs="unbounded">
+                    <xs:element ref="InternalClass"/>
+                    <xs:element ref="ExtensibilityMethod"/>
+                  </xs:choice>
+                  <xs:attribute name="resourceId" type="xs:string" use="required"/>
+                  <xs:attribute name="faceId" type="xs:string" use="optional"/>
+                  <xs:attribute name="accessMode" type="xs:string" use="optional"/>
+                  <xs:attribute name="position" type="xs:int" use="optional"/>
+                  <xs:attribute name="beginGroup" type="xs:boolean" use="optional"/>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+            <xs:attribute name="resourceId" type="xs:string" use="required"/>
+            <xs:attribute name="accessMode" type="xs:string" use="optional"/>
+            <xs:attribute name="position" type="xs:int" use="optional"/>
+            <xs:attribute name="beginGroup" type="xs:boolean" use="optional"/>
+          </xs:complexType>
+        </xs:element>
+        <xs:element ref="CommandBar"/>
+        <xs:element ref="WordControl"/>
+      </xs:choice>
+      <xs:attribute name="name" type="xs:string" use="required"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="InternalClass">
+    <xs:complexType mixed="true">
+      <xs:sequence>
+        <xs:any processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
+      </xs:sequence>
+      <xs:attribute name="name" type="xs:string" use="required"/>
+      <xs:anyAttribute namespace="##any" processContents="lax"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ExtensibilityMethod">
+    <xs:complexType>
+      <xs:attribute name="id" type="xs:string" use="required"/>
+      <xs:attribute name="enableXPath" type="xs:string" use="optional"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="WordControl">
+    <xs:complexType>
+      <xs:attribute name="controlId" type="xs:int" use="required"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:simpleType name="ST_BoxStyle">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="horizontal"/>
+      <xs:enumeration value="vertical"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="ST_Delegate">
+    <xs:restriction base="xs:string">
+      <xs:minLength value="1"/>
+      <xs:maxLength value="1024"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="ST_ID">
+    <xs:restriction base="xs:NCName">
+      <xs:minLength value="1"/>
+      <xs:maxLength value="1024"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="ST_ItemSize">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="normal"/>
+      <xs:enumeration value="large"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="ST_Keytip">
+    <xs:restriction base="xs:token">
+      <xs:minLength value="1"/>
+      <xs:maxLength value="3"/>
+      <xs:whiteSpace value="collapse"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="ST_LongString">
+    <xs:restriction base="xs:string">
+      <xs:minLength value="1"/>
+      <xs:maxLength value="4096"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="ST_QID">
+    <xs:restriction base="xs:QName">
+      <xs:minLength value="1"/>
+      <xs:maxLength value="1024"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="ST_Size">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="normal"/>
+      <xs:enumeration value="large"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="ST_String">
+    <xs:restriction base="xs:string">
+      <xs:minLength value="1"/>
+      <xs:maxLength value="1024"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="ST_UniqueID">
+    <xs:restriction base="xs:ID">
+      <xs:minLength value="1"/>
+      <xs:maxLength value="1024"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="ST_GalleryRowColumnCount">
+    <xs:annotation>
+      <xs:documentation>
+				A numeric argument for the maximum number of rows or columns in galleries.
+			</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:positiveInteger"/>
+  </xs:simpleType>
+  <xs:simpleType name="ST_GalleryItemWidthHeight">
+    <xs:annotation>
+      <xs:documentation>
+				A numeric argument for the maximum width or height of a gallery item.
+			</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:positiveInteger">
+      <xs:minInclusive value="1"/>
+      <xs:maxInclusive value="4096"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="ST_Uri">
+    <xs:restriction base="xs:string">
+      <xs:minLength value="1"/>
+      <xs:maxLength value="1024"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="ST_TaskSizes">
+    <xs:annotation>
+      <xs:documentation>
+				Specifies the allowed sizes of task controls in taskGroups or taskFormGroups.
+			</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="largeMediumSmall"/>
+      <xs:enumeration value="largeMedium"/>
+      <xs:enumeration value="large"/>
+      <xs:enumeration value="mediumSmall"/>
+      <xs:enumeration value="medium"/>
+      <xs:enumeration value="small"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="ST_StringLength">
+    <xs:annotation>
+      <xs:documentation>
+				Specifies a numeric argument which determines maximum string length, such as in editBox
+				String length is limited to 1024 characters.
+			</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:positiveInteger">
+      <xs:minInclusive value="1"/>
+      <xs:maxInclusive value="1024"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:attributeGroup name="AG_Action">
+    <xs:attribute name="onAction" type="ST_Delegate" use="optional"/>
+  </xs:attributeGroup>
+  <xs:attributeGroup name="AG_XACommonAttributes">
+    <xs:attribute name="accessMode" type="xs:string" use="optional"/>
+  </xs:attributeGroup>
+  <xs:attributeGroup name="AG_Enabled">
+    <xs:attribute name="enabled" type="xs:boolean" use="optional"/>
+    <xs:attribute name="getEnabled" type="ST_Delegate" use="optional"/>
+  </xs:attributeGroup>
+  <xs:attributeGroup name="AG_CommonAttributes">
+    <xs:attributeGroup ref="AG_Enabled"/>
+    <xs:attributeGroup ref="AG_XACommonAttributes"/>
+  </xs:attributeGroup>
+  <xs:attributeGroup name="AG_Description">
+    <xs:attribute name="description" type="ST_LongString" use="optional"/>
+    <xs:attribute name="getDescription" type="ST_Delegate" use="optional"/>
+  </xs:attributeGroup>
+  <xs:attributeGroup name="AG_DropDownAttributes">
+    <xs:attribute name="showItemImage" type="xs:boolean" use="optional"/>
+    <xs:attribute name="getItemCount" type="ST_Delegate" use="optional"/>
+    <xs:attribute name="getItemLabel" type="ST_Delegate" use="optional"/>
+    <xs:attribute name="getItemScreentip" type="ST_Delegate" use="optional"/>
+    <xs:attribute name="getItemSupertip" type="ST_Delegate" use="optional"/>
+    <xs:attribute name="getItemImage" type="ST_Delegate" use="optional"/>
+    <xs:attribute name="getItemID" type="ST_Delegate" use="optional"/>
+    <xs:attribute name="sizeString" type="ST_String" use="optional"/>
+  </xs:attributeGroup>
+  <xs:attributeGroup name="AG_IDCustom">
+    <xs:attribute name="id" type="ST_String" use="optional"/>
+    <xs:attribute name="idQ" type="ST_QID" use="optional"/>
+  </xs:attributeGroup>
+  <xs:attributeGroup name="AG_IDMso">
+    <xs:attribute name="idMso" type="ST_ID" use="optional"/>
+  </xs:attributeGroup>
+  <xs:attributeGroup name="AG_Image">
+    <xs:attribute name="image" type="ST_Uri" use="optional"/>
+    <xs:attribute name="imageMso" type="ST_ID" use="optional"/>
+    <xs:attribute name="getImage" type="ST_Delegate" use="optional"/>
+  </xs:attributeGroup>
+  <xs:attributeGroup name="AG_Keytip">
+    <xs:attribute name="keytip" type="ST_Keytip" use="optional"/>
+    <xs:attribute name="getKeytip" type="ST_Delegate" use="optional"/>
+  </xs:attributeGroup>
+  <xs:attributeGroup name="AG_Label">
+    <xs:attribute name="label" type="ST_String" use="optional"/>
+    <xs:attribute name="getLabel" type="ST_Delegate" use="optional"/>
+  </xs:attributeGroup>
+  <xs:attributeGroup name="AG_PositionAttributes">
+    <xs:attribute name="insertAfterMso" type="ST_ID" use="optional"/>
+    <xs:attribute name="insertBeforeMso" type="ST_ID" use="optional"/>
+    <xs:attribute name="insertAfterQ" type="ST_QID" use="optional"/>
+    <xs:attribute name="insertBeforeQ" type="ST_QID" use="optional"/>
+  </xs:attributeGroup>
+  <xs:attributeGroup name="AG_Screentip">
+    <xs:attribute name="screentip" type="ST_String" use="optional"/>
+    <xs:attribute name="getScreentip" type="ST_Delegate" use="optional"/>
+    <xs:attribute name="supertip" type="ST_String" use="optional"/>
+    <xs:attribute name="getSupertip" type="ST_Delegate" use="optional"/>
+  </xs:attributeGroup>
+  <xs:attributeGroup name="AG_SizeAttributes">
+    <xs:attribute name="size" type="ST_Size" use="optional"/>
+    <xs:attribute name="getSize" type="ST_Delegate" use="optional"/>
+  </xs:attributeGroup>
+  <xs:attributeGroup name="AG_Tag">
+    <xs:attribute name="tag" type="ST_String" use="optional"/>
+  </xs:attributeGroup>
+  <xs:attributeGroup name="AG_Title">
+    <xs:attribute name="title" type="ST_String" use="optional"/>
+    <xs:attribute name="getTitle" type="ST_Delegate" use="optional"/>
+  </xs:attributeGroup>
+  <xs:attributeGroup name="AG_UIAttributes">
+    <xs:attributeGroup ref="AG_CommonAttributes"/>
+    <xs:attributeGroup ref="AG_Label"/>
+    <xs:attributeGroup ref="AG_PositionAttributes"/>
+    <xs:attributeGroup ref="AG_Visible"/>
+    <xs:attributeGroup ref="AG_Keytip"/>
+  </xs:attributeGroup>
+  <xs:attributeGroup name="AG_ItemAttributes">
+    <xs:attributeGroup ref="AG_Image"/>
+    <xs:attributeGroup ref="AG_Screentip"/>
+    <xs:attributeGroup ref="AG_UIAttributes"/>
+  </xs:attributeGroup>
+  <xs:attributeGroup name="AG_ControlAttributes">
+    <xs:attributeGroup ref="AG_ItemAttributes"/>
+    <xs:attribute name="showLabel" type="xs:boolean" use="optional"/>
+    <xs:attribute name="getShowLabel" type="ST_Delegate" use="optional"/>
+    <xs:attribute name="showImage" type="xs:boolean" use="optional"/>
+    <xs:attribute name="getShowImage" type="ST_Delegate" use="optional"/>
+  </xs:attributeGroup>
+  <xs:attributeGroup name="AG_IDAttributes">
+    <xs:attributeGroup ref="AG_IDCustom"/>
+    <xs:attributeGroup ref="AG_IDMso"/>
+    <xs:attributeGroup ref="AG_Tag"/>
+  </xs:attributeGroup>
+  <xs:attributeGroup name="AG_DynamicContentAttributes">
+    <xs:annotation>
+      <xs:documentation>
+				Attributes for controls that support dynamic content.
+			</xs:documentation>
+    </xs:annotation>
+    <xs:attribute name="invalidateContentOnDrop" type="xs:boolean" use="optional">
+      <xs:annotation>
+        <xs:documentation>
+					Whether to fire callback for dynamic content each time the control is dropped.
+				</xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+  </xs:attributeGroup>
+  <xs:attributeGroup name="AG_Definitive">
+    <xs:annotation>
+      <xs:documentation>
+				Specifies the isDefinitive attribute
+			</xs:documentation>
+    </xs:annotation>
+    <xs:attribute name="isDefinitive" type="xs:boolean" use="optional">
+      <xs:annotation>
+        <xs:documentation>
+					Specifies whether an action should close the Backstage when it is invoked
+				</xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+  </xs:attributeGroup>
+  <xs:attributeGroup name="AG_Pressed">
+    <xs:annotation>
+      <xs:documentation>
+				Specifies the GetPressed callback.
+			</xs:documentation>
+    </xs:annotation>
+    <xs:attribute name="getPressed" type="ST_Delegate" use="optional">
+      <xs:annotation>
+        <xs:documentation>
+					Specifies a callback which returns true if the Button/CheckBox is pressed.
+				</xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+  </xs:attributeGroup>
+  <xs:attributeGroup name="AG_Expand">
+    <xs:annotation>
+      <xs:documentation>
+				Specifies attributes that specify how a control expands within its container
+			</xs:documentation>
+    </xs:annotation>
+    <xs:attribute name="expand" use="optional">
+      <xs:simpleType>
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="horizontal"/>
+          <xs:enumeration value="vertical"/>
+          <xs:enumeration value="both"/>
+          <xs:enumeration value="neither"/>
+        </xs:restriction>
+      </xs:simpleType>
+    </xs:attribute>
+  </xs:attributeGroup>
+  <xs:attributeGroup name="AG_ButtonStyle">
+    <xs:annotation>
+      <xs:documentation>
+				Specifies the style of a Button
+			</xs:documentation>
+    </xs:annotation>
+    <xs:attribute name="style" use="optional">
+      <xs:simpleType>
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="normal"/>
+          <xs:enumeration value="borderless"/>
+          <xs:enumeration value="large"/>
+        </xs:restriction>
+      </xs:simpleType>
+    </xs:attribute>
+  </xs:attributeGroup>
+  <xs:attributeGroup name="AG_HelperText">
+    <xs:annotation>
+      <xs:documentation>
+				Group HelperText 
+			</xs:documentation>
+    </xs:annotation>
+    <xs:attribute name="helperText" type="ST_LongString" use="optional"/>
+    <xs:attribute name="getHelperText" type="ST_Delegate" use="optional"/>
+  </xs:attributeGroup>
+  <xs:attributeGroup name="AG_AlignAttributes">
+    <xs:annotation>
+      <xs:documentation>
+				Attributes that specify a control's alignment.
+			</xs:documentation>
+    </xs:annotation>
+    <xs:attribute name="alignLabel" use="optional">
+      <xs:simpleType>
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="topLeft"/>
+          <xs:enumeration value="top"/>
+          <xs:enumeration value="topRight"/>
+          <xs:enumeration value="left"/>
+          <xs:enumeration value="center"/>
+          <xs:enumeration value="right"/>
+          <xs:enumeration value="bottomLeft"/>
+          <xs:enumeration value="bottom"/>
+          <xs:enumeration value="bottomRight"/>
+        </xs:restriction>
+      </xs:simpleType>
+    </xs:attribute>
+  </xs:attributeGroup>
+  <xs:attributeGroup name="AG_ShowLabel">
+    <xs:attribute name="showLabel" type="xs:boolean" use="optional">
+      <xs:annotation>
+        <xs:documentation>
+					Specifies whether or not to show the label on a control.
+				</xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+    <xs:attribute name="getShowLabel" type="ST_Delegate" use="optional">
+      <xs:annotation>
+        <xs:documentation>
+					Specifies a callback which returns whether to show the label.
+				</xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+  </xs:attributeGroup>
+  <xs:attributeGroup name="AG_GroupStyle">
+    <xs:annotation>
+      <xs:documentation>
+				Specifies the group style attributes
+			</xs:documentation>
+    </xs:annotation>
+    <xs:attribute name="style" use="optional">
+      <xs:simpleType>
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="normal"/>
+          <xs:enumeration value="warning"/>
+          <xs:enumeration value="error"/>
+        </xs:restriction>
+      </xs:simpleType>
+    </xs:attribute>
+    <xs:attribute name="getStyle" type="ST_Delegate" use="optional">
+      <xs:annotation>
+        <xs:documentation>
+					Specifies a callback which returns the style of a group.
+				</xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+  </xs:attributeGroup>
+  <xs:attributeGroup name="AG_AltText">
+    <xs:annotation>
+      <xs:documentation>
+				Specifies attributes that can be applied to specify the alternative
+				text of an image-based control.
+			</xs:documentation>
+    </xs:annotation>
+    <xs:attribute name="altText" type="ST_LongString" use="optional">
+      <xs:annotation>
+        <xs:documentation>
+					Alternative text for the control.
+				</xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+    <xs:attribute name="getAltText" type="ST_Delegate" use="optional">
+      <xs:annotation>
+        <xs:documentation>
+					Specifies a callback which returns the alternative text.
+				</xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+  </xs:attributeGroup>
+  <xs:attributeGroup name="AG_Visible">
+    <xs:attribute name="visible" use="optional">
+      <xs:simpleType>
+        <xs:restriction base="xs:NMTOKEN">
+          <xs:enumeration value="true"/>
+          <xs:enumeration value="false"/>
+          <xs:enumeration value="Word"/>
+          <xs:enumeration value="XA"/>
+          <xs:enumeration value="xa"/>
+        </xs:restriction>
+      </xs:simpleType>
+    </xs:attribute>
+  </xs:attributeGroup>
+  <xs:complexType name="CT_Command" mixed="false">
+    <xs:sequence>
+      <xs:group ref="XA_Button_Group"/>
+    </xs:sequence>
+    <xs:attributeGroup ref="AG_Action"/>
+    <xs:attributeGroup ref="AG_Enabled"/>
+    <xs:attributeGroup ref="AG_XACommonAttributes"/>
+    <xs:attributeGroup ref="AG_IDMso"/>
+    <xs:attributeGroup ref="AG_Visible"/>
+  </xs:complexType>
+  <xs:complexType name="CT_ControlBase">
+    <xs:attributeGroup ref="AG_ControlAttributes"/>
+  </xs:complexType>
+  <xs:complexType name="CT_Control">
+    <xs:complexContent>
+      <xs:extension base="CT_ControlBase">
+        <xs:attributeGroup ref="AG_IDAttributes"/>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="CT_ButtonRegular">
+    <xs:complexContent>
+      <xs:extension base="CT_Control">
+        <xs:attributeGroup ref="AG_Action"/>
+        <xs:attributeGroup ref="AG_Description"/>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="CT_Button">
+    <xs:complexContent>
+      <xs:extension base="CT_ButtonRegular">
+        <xs:attributeGroup ref="AG_SizeAttributes"/>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="CT_GalleryRegular">
+    <xs:annotation>
+      <xs:documentation>
+				A dropdown grid control that can be sized.
+			</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="CT_DropDownRegular">
+        <xs:attributeGroup ref="AG_Description"/>
+        <xs:attributeGroup ref="AG_DynamicContentAttributes"/>
+        <xs:attribute name="columns" type="ST_GalleryRowColumnCount" use="optional">
+          <xs:annotation>
+            <xs:documentation>
+							Number of columns in dropdown gallery.
+						</xs:documentation>
+          </xs:annotation>
+        </xs:attribute>
+        <xs:attribute name="rows" type="ST_GalleryRowColumnCount" use="optional">
+          <xs:annotation>
+            <xs:documentation>
+							Number of rows in dropdown gallery.
+						</xs:documentation>
+          </xs:annotation>
+        </xs:attribute>
+        <xs:attribute name="itemWidth" type="ST_GalleryItemWidthHeight" use="optional">
+          <xs:annotation>
+            <xs:documentation>
+							Item width in pixels.
+						</xs:documentation>
+          </xs:annotation>
+        </xs:attribute>
+        <xs:attribute name="itemHeight" type="ST_GalleryItemWidthHeight" use="optional">
+          <xs:annotation>
+            <xs:documentation>
+							Item height in pixels.
+						</xs:documentation>
+          </xs:annotation>
+        </xs:attribute>
+        <xs:attribute name="getItemWidth" type="ST_Delegate" use="optional">
+          <xs:annotation>
+            <xs:documentation>
+							Callback that returns the item width.
+						</xs:documentation>
+          </xs:annotation>
+        </xs:attribute>
+        <xs:attribute name="getItemHeight" type="ST_Delegate" use="optional">
+          <xs:annotation>
+            <xs:documentation>
+							Callback that returns the item height.
+						</xs:documentation>
+          </xs:annotation>
+        </xs:attribute>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="CT_Gallery">
+    <xs:annotation>
+      <xs:documentation>
+				A gallery control.
+			</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="CT_GalleryRegular"/>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="CT_ControlCloneRegular">
+    <xs:complexContent>
+      <xs:restriction base="CT_Control">
+        <xs:attribute name="id" use="prohibited"/>
+      </xs:restriction>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="CT_ControlClone">
+    <xs:complexContent>
+      <xs:restriction base="CT_Button">
+        <xs:attribute name="id" use="prohibited"/>
+        <xs:attribute name="onAction" use="prohibited"/>
+      </xs:restriction>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="CT_VisibleButton">
+    <xs:complexContent>
+      <xs:restriction base="CT_ButtonRegular">
+        <xs:attribute name="visible" use="prohibited"/>
+        <xs:attribute name="getVisible" use="prohibited"/>
+      </xs:restriction>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="CT_ToggleButtonRegular">
+    <xs:complexContent>
+      <xs:extension base="CT_ButtonRegular">
+        <xs:attribute name="getPressed" type="ST_Delegate" use="optional"/>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="CT_ToggleButton">
+    <xs:complexContent>
+      <xs:extension base="CT_ToggleButtonRegular">
+        <xs:attributeGroup ref="AG_SizeAttributes"/>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="CT_VisibleToggleButton">
+    <xs:complexContent>
+      <xs:restriction base="CT_ToggleButtonRegular">
+        <xs:attribute name="visible" use="prohibited"/>
+        <xs:attribute name="getVisible" use="prohibited"/>
+      </xs:restriction>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="CT_CheckBox">
+    <xs:complexContent>
+      <xs:restriction base="CT_ToggleButtonRegular">
+        <xs:attribute name="image" use="prohibited"/>
+        <xs:attribute name="imageMso" use="prohibited"/>
+        <xs:attribute name="getImage" use="prohibited"/>
+        <xs:attribute name="showImage" use="prohibited"/>
+        <xs:attribute name="getShowImage" use="prohibited"/>
+        <xs:attribute name="showLabel" use="prohibited"/>
+        <xs:attribute name="getShowLabel" use="prohibited"/>
+      </xs:restriction>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="CT_Item">
+    <xs:attribute name="id" type="ST_String" use="optional"/>
+    <xs:attribute name="label" type="ST_String" use="optional"/>
+    <xs:attribute name="image" type="ST_Uri" use="optional"/>
+    <xs:attribute name="imageMso" type="ST_ID" use="optional"/>
+    <xs:attribute name="screentip" type="ST_String" use="optional"/>
+    <xs:attribute name="supertip" type="ST_String" use="optional"/>
+  </xs:complexType>
+  <xs:complexType name="CT_DropDownRegular">
+    <xs:complexContent>
+      <xs:extension base="CT_Control">
+        <xs:sequence>
+          <xs:element name="item" type="CT_Item" minOccurs="0" maxOccurs="1000"/>
+          <xs:element name="button" type="CT_ButtonRegular" minOccurs="0" maxOccurs="16"/>
+        </xs:sequence>
+        <xs:attributeGroup ref="AG_Action"/>
+        <xs:attributeGroup ref="AG_DropDownAttributes"/>
+        <xs:attribute name="getSelectedItemID" type="ST_Delegate" use="optional"/>
+        <xs:attribute name="getSelectedItemIndex" type="ST_Delegate" use="optional"/>
+        <xs:attribute name="showItemLabel" type="xs:boolean" use="optional"/>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:group name="EG_MenuControlsBase">
+    <xs:choice>
+      <xs:element name="control" type="CT_ControlCloneRegular"/>
+      <xs:element name="button">
+        <xs:complexType>
+          <xs:complexContent>
+            <xs:extension base="CT_ButtonRegular">
+              <xs:group ref="XA_Button_Group"/>
+            </xs:extension>
+          </xs:complexContent>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="checkBox" type="CT_CheckBox"/>
+      <xs:element name="toggleButton" type="CT_ToggleButtonRegular"/>
+      <xs:element name="menuSeparator" type="CT_MenuSeparator"/>
+    </xs:choice>
+  </xs:group>
+  <xs:group name="EG_MenuOrSplitButtonRegular">
+    <xs:choice>
+      <xs:element name="splitButton" type="CT_SplitButtonRegular"/>
+      <xs:element name="menu" type="CT_MenuRegular"/>
+    </xs:choice>
+  </xs:group>
+  <xs:group name="EG_MenuOrSplitButtonWithTitle">
+    <xs:choice>
+      <xs:element name="splitButton" type="CT_SplitButtonWithTitle"/>
+      <xs:element name="menu" type="CT_MenuWithTitle"/>
+    </xs:choice>
+  </xs:group>
+  <xs:complexType name="CT_OfficeMenu">
+    <xs:sequence>
+      <xs:choice minOccurs="0" maxOccurs="1000">
+        <xs:group ref="EG_MenuControlsBase"/>
+        <xs:group ref="EG_MenuOrSplitButtonWithTitle"/>
+      </xs:choice>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="CT_MenuRegular">
+    <xs:complexContent>
+      <xs:extension base="CT_ControlBase">
+        <xs:sequence>
+          <xs:choice minOccurs="0" maxOccurs="1000">
+            <xs:group ref="EG_MenuControlsBase"/>
+            <xs:group ref="EG_MenuOrSplitButtonRegular"/>
+          </xs:choice>
+        </xs:sequence>
+        <xs:attribute name="itemSize" type="ST_ItemSize" use="optional"/>
+        <xs:attributeGroup ref="AG_Description"/>
+        <xs:attributeGroup ref="AG_IDAttributes"/>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="CT_MenuWithTitle">
+    <xs:complexContent>
+      <xs:extension base="CT_ControlBase">
+        <xs:sequence>
+          <xs:choice minOccurs="0" maxOccurs="1000">
+            <xs:group ref="EG_MenuControlsBase"/>
+            <xs:group ref="EG_MenuOrSplitButtonWithTitle"/>
+          </xs:choice>
+        </xs:sequence>
+        <xs:attributeGroup ref="AG_IDAttributes"/>
+        <xs:attribute name="itemSize" type="ST_ItemSize" use="optional"/>
+        <xs:attributeGroup ref="AG_Title"/>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="CT_Menu">
+    <xs:complexContent>
+      <xs:extension base="CT_MenuRegular">
+        <xs:attributeGroup ref="AG_SizeAttributes"/>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="CT_SplitButtonBase">
+    <xs:complexContent>
+      <xs:extension base="CT_Control"/>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="CT_SplitButtonRestricted">
+    <xs:complexContent>
+      <xs:restriction base="CT_SplitButtonBase">
+        <xs:attribute name="label" use="prohibited"/>
+        <xs:attribute name="getLabel" use="prohibited"/>
+        <xs:attribute name="screentip" use="prohibited"/>
+        <xs:attribute name="getScreentip" use="prohibited"/>
+        <xs:attribute name="supertip" use="prohibited"/>
+        <xs:attribute name="getSupertip" use="prohibited"/>
+        <xs:attribute name="image" use="prohibited"/>
+        <xs:attribute name="imageMso" use="prohibited"/>
+        <xs:attribute name="getImage" use="prohibited"/>
+        <xs:attribute name="showImage" use="prohibited"/>
+        <xs:attribute name="getShowImage" use="prohibited"/>
+      </xs:restriction>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="CT_SplitButtonRegular">
+    <xs:complexContent>
+      <xs:extension base="CT_SplitButtonRestricted">
+        <xs:sequence minOccurs="0">
+          <xs:choice minOccurs="0">
+            <xs:element name="button" type="CT_VisibleButton"/>
+            <xs:element name="toggleButton" type="CT_VisibleToggleButton"/>
+          </xs:choice>
+          <xs:element name="menu" type="CT_MenuRegular"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="CT_SplitButtonWithTitle">
+    <xs:complexContent>
+      <xs:extension base="CT_SplitButtonRestricted">
+        <xs:sequence minOccurs="0">
+          <xs:choice minOccurs="0">
+            <xs:element name="button" type="CT_VisibleButton"/>
+            <xs:element name="toggleButton" type="CT_VisibleToggleButton"/>
+          </xs:choice>
+          <xs:element name="menu" type="CT_MenuWithTitle"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="CT_SplitButton">
+    <xs:complexContent>
+      <xs:extension base="CT_SplitButtonRegular">
+        <xs:attributeGroup ref="AG_SizeAttributes"/>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:group name="EG_Controls">
+    <xs:choice>
+      <xs:element name="control" type="CT_ControlClone"/>
+      <xs:element name="button" type="CT_Button"/>
+      <xs:element name="toggleButton" type="CT_ToggleButton"/>
+      <xs:element name="checkBox" type="CT_CheckBox"/>
+      <xs:element name="dropDown" type="CT_DropDownRegular"/>
+      <xs:element name="menu" type="CT_Menu"/>
+      <xs:element name="splitButton" type="CT_SplitButton"/>
+      <xs:element name="box" type="CT_Box"/>
+      <xs:element name="buttonGroup" type="CT_ButtonGroup"/>
+      <xs:element name="gallery">
+        <xs:complexType>
+          <xs:complexContent>
+            <xs:extension base="CT_GalleryRegular">
+              <xs:attributeGroup ref="AG_SizeAttributes"/>
+            </xs:extension>
+          </xs:complexContent>
+        </xs:complexType>
+      </xs:element>
+    </xs:choice>
+  </xs:group>
+  <xs:complexType name="CT_DialogLauncher">
+    <xs:sequence>
+      <xs:element name="button" type="CT_ButtonRegular"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="CT_Box">
+    <xs:group ref="EG_Controls" minOccurs="0" maxOccurs="1000"/>
+    <xs:attributeGroup ref="AG_IDCustom"/>
+    <xs:attributeGroup ref="AG_Visible"/>
+    <xs:attributeGroup ref="AG_PositionAttributes"/>
+    <xs:attribute name="boxStyle" type="ST_BoxStyle" use="optional"/>
+  </xs:complexType>
+  <xs:complexType name="CT_Separator">
+    <xs:attributeGroup ref="AG_IDCustom"/>
+    <xs:attributeGroup ref="AG_Visible"/>
+    <xs:attributeGroup ref="AG_PositionAttributes"/>
+  </xs:complexType>
+  <xs:complexType name="CT_MenuSeparator">
+    <xs:attributeGroup ref="AG_IDCustom"/>
+    <xs:attributeGroup ref="AG_PositionAttributes"/>
+    <xs:attributeGroup ref="AG_Title"/>
+  </xs:complexType>
+  <xs:complexType name="CT_ButtonGroup">
+    <xs:sequence>
+      <xs:choice minOccurs="0" maxOccurs="1000">
+        <xs:element name="control" type="CT_ControlCloneRegular"/>
+        <xs:element name="button" type="CT_ButtonRegular"/>
+        <xs:element name="toggleButton" type="CT_ToggleButtonRegular"/>
+        <xs:element name="menu" type="CT_MenuRegular"/>
+        <xs:element name="splitButton" type="CT_SplitButtonRegular"/>
+      </xs:choice>
+    </xs:sequence>
+    <xs:attributeGroup ref="AG_IDCustom"/>
+    <xs:attributeGroup ref="AG_Visible"/>
+    <xs:attributeGroup ref="AG_PositionAttributes"/>
+  </xs:complexType>
+  <xs:complexType name="CT_Group">
+    <xs:sequence>
+      <xs:sequence>
+        <xs:choice minOccurs="0" maxOccurs="1000">
+          <xs:group ref="EG_Controls"/>
+          <xs:element name="separator" type="CT_Separator"/>
+        </xs:choice>
+      </xs:sequence>
+      <xs:element name="dialogBoxLauncher" type="CT_DialogLauncher" minOccurs="0"/>
+    </xs:sequence>
+    <xs:attributeGroup ref="AG_IDAttributes"/>
+    <xs:attributeGroup ref="AG_Label"/>
+    <xs:attributeGroup ref="AG_Image"/>
+    <xs:attributeGroup ref="AG_PositionAttributes"/>
+    <xs:attributeGroup ref="AG_Screentip"/>
+    <xs:attributeGroup ref="AG_Visible"/>
+    <xs:attributeGroup ref="AG_Keytip"/>
+  </xs:complexType>
+  <xs:complexType name="CT_Tab">
+    <xs:sequence>
+      <xs:choice minOccurs="0" maxOccurs="100">
+        <xs:element name="group" type="CT_Group"/>
+      </xs:choice>
+    </xs:sequence>
+    <xs:attributeGroup ref="AG_IDAttributes"/>
+    <xs:attributeGroup ref="AG_Label"/>
+    <xs:attributeGroup ref="AG_PositionAttributes"/>
+    <xs:attributeGroup ref="AG_Visible"/>
+    <xs:attributeGroup ref="AG_Keytip"/>
+  </xs:complexType>
+  <xs:complexType name="CT_Tabs">
+    <xs:sequence>
+      <xs:element name="tab" type="CT_Tab" maxOccurs="100"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="CT_TabSet">
+    <xs:sequence>
+      <xs:element name="tab" type="CT_Tab" minOccurs="0" maxOccurs="50"/>
+    </xs:sequence>
+    <xs:attribute name="idMso" type="ST_ID" use="required"/>
+    <xs:attributeGroup ref="AG_Visible"/>
+  </xs:complexType>
+  <xs:complexType name="CT_ContextualTabs">
+    <xs:sequence>
+      <xs:element name="tabSet" type="CT_TabSet" maxOccurs="100"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="CT_Ribbon">
+    <xs:all>
+      <xs:element name="officeMenu" type="CT_OfficeMenu" minOccurs="0"/>
+      <xs:element name="tabs" type="CT_Tabs" minOccurs="0"/>
+      <xs:element name="contextualTabs" type="CT_ContextualTabs" minOccurs="0"/>
+    </xs:all>
+    <xs:attribute name="startFromScratch" type="xs:boolean" use="optional"/>
+  </xs:complexType>
+  <xs:complexType name="CT_Commands">
+    <xs:sequence>
+      <xs:element name="command" type="CT_Command" maxOccurs="5000"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="CT_CustomUI">
+    <xs:sequence>
+      <xs:element name="commands" type="CT_Commands" minOccurs="0"/>
+      <xs:element name="ribbon" type="CT_Ribbon" minOccurs="0"/>
+      <xs:element name="backstage" type="CT_Backstage" minOccurs="0"/>
+    </xs:sequence>
+    <xs:attribute name="onLoad" type="ST_Delegate" use="optional"/>
+    <xs:attribute name="loadImage" type="ST_Delegate" use="optional"/>
+  </xs:complexType>
+  <xs:complexType name="CT_TaskFormGroupTask">
+    <xs:annotation>
+      <xs:documentation>
+				Specifies a task in a TaskFormGroup
+			</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="group" type="CT_BackstageGroup" minOccurs="0" maxOccurs="1000">
+        <xs:annotation>
+          <xs:documentation>
+						Group.
+					</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+    <xs:attributeGroup ref="AG_IDAttributes"/>
+    <xs:attributeGroup ref="AG_PositionAttributes"/>
+    <xs:attributeGroup ref="AG_Image"/>
+    <xs:attributeGroup ref="AG_Enabled"/>
+    <xs:attributeGroup ref="AG_Label"/>
+    <xs:attributeGroup ref="AG_Visible"/>
+    <xs:attributeGroup ref="AG_Description"/>
+    <xs:attributeGroup ref="AG_Keytip"/>
+  </xs:complexType>
+  <xs:complexType name="CT_TaskFormGroupCategory">
+    <xs:annotation>
+      <xs:documentation>
+				Specifies a collection of TaskFormGroupTask controls.
+			</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="task" type="CT_TaskFormGroupTask" minOccurs="0" maxOccurs="1000">
+        <xs:annotation>
+          <xs:documentation>
+						task
+					</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+    <xs:attributeGroup ref="AG_IDAttributes"/>
+    <xs:attributeGroup ref="AG_PositionAttributes"/>
+    <xs:attributeGroup ref="AG_Visible"/>
+    <xs:attributeGroup ref="AG_Label"/>
+  </xs:complexType>
+  <xs:complexType name="CT_TaskFormGroup">
+    <xs:annotation>
+      <xs:documentation>
+				Specifies a TaskFormGroup.
+			</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="category" type="CT_TaskFormGroupCategory" minOccurs="0" maxOccurs="100">
+        <xs:annotation>
+          <xs:documentation>
+						TaskFormGroup category
+					</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+    <xs:attributeGroup ref="AG_IDAttributes"/>
+    <xs:attributeGroup ref="AG_Label"/>
+    <xs:attributeGroup ref="AG_Visible"/>
+    <xs:attributeGroup ref="AG_HelperText"/>
+    <xs:attributeGroup ref="AG_ShowLabel"/>
+    <xs:attribute name="allowedTaskSizes" type="ST_TaskSizes" use="optional"/>
+  </xs:complexType>
+  <xs:complexType name="CT_BackstageButtonBase">
+    <xs:annotation>
+      <xs:documentation>
+				Specifies a generic button in the Backstage
+			</xs:documentation>
+    </xs:annotation>
+    <xs:attributeGroup ref="AG_IDCustom"/>
+    <xs:attributeGroup ref="AG_Action"/>
+    <xs:attributeGroup ref="AG_Definitive"/>
+    <xs:attributeGroup ref="AG_Enabled"/>
+    <xs:attributeGroup ref="AG_Label"/>
+    <xs:attributeGroup ref="AG_Visible"/>
+    <xs:attributeGroup ref="AG_Keytip"/>
+    <xs:attributeGroup ref="AG_Image"/>
+  </xs:complexType>
+  <xs:complexType name="CT_BackstageRegularButton">
+    <xs:annotation>
+      <xs:documentation>
+				A BackstageButtonBase which additionally has the screentip attributes
+			</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="CT_BackstageButtonBase">
+        <xs:sequence>
+          <xs:element name="ShortcutKey" minOccurs="0"/>
+          <xs:element ref="InternalClass" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="ExtensibilityMethod" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+        <xs:attributeGroup ref="AG_Screentip"/>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="CT_PrimaryItem">
+    <xs:annotation>
+      <xs:documentation>
+				Specifies a primary button or menu
+			</xs:documentation>
+    </xs:annotation>
+    <xs:choice>
+      <xs:element name="button" minOccurs="0">
+        <xs:complexType>
+          <xs:complexContent>
+            <xs:extension base="CT_BackstageRegularButton">
+              <xs:attributeGroup ref="AG_XACommonAttributes"/>
+            </xs:extension>
+          </xs:complexContent>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="menu" type="CT_BackstagePrimaryMenu" minOccurs="0"/>
+    </xs:choice>
+  </xs:complexType>
+  <xs:complexType name="CT_BackstageMenuButton">
+    <xs:annotation>
+      <xs:documentation>
+				A BackstageButtonBase which additionally has the description attributes
+			</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="CT_BackstageButtonBase">
+        <xs:sequence>
+          <xs:element name="ShortcutKey" minOccurs="0"/>
+          <xs:element ref="InternalClass" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="ExtensibilityMethod" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+        <xs:attributeGroup ref="AG_Description"/>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="CT_BackstageCheckBoxBase">
+    <xs:annotation>
+      <xs:documentation>
+				Specifies a generic CheckBox in the Backstage
+			</xs:documentation>
+    </xs:annotation>
+    <xs:attributeGroup ref="AG_IDCustom"/>
+    <xs:attributeGroup ref="AG_Action"/>
+    <xs:attributeGroup ref="AG_Pressed"/>
+    <xs:attributeGroup ref="AG_Enabled"/>
+    <xs:attributeGroup ref="AG_Label"/>
+    <xs:attributeGroup ref="AG_Visible"/>
+    <xs:attributeGroup ref="AG_Keytip"/>
+  </xs:complexType>
+  <xs:complexType name="CT_BackstageCheckBox">
+    <xs:annotation>
+      <xs:documentation>
+				A BackstageCheckBox which has the additional attributes for group controls
+			</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="CT_BackstageCheckBoxBase">
+        <xs:attributeGroup ref="AG_Expand"/>
+        <xs:attributeGroup ref="AG_Description"/>
+        <xs:attributeGroup ref="AG_Screentip"/>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="CT_BackstageMenuCheckBox">
+    <xs:annotation>
+      <xs:documentation>
+				A BackstageCheckBox which exists in a primary menu
+			</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="CT_BackstageCheckBoxBase">
+        <xs:attributeGroup ref="AG_Description"/>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="CT_BackstageSubMenu">
+    <xs:annotation>
+      <xs:documentation>
+				Specifies a BackstageMenu which also includes the
+				description/getDescription attributes
+			</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="CT_BackstageMenuBase">
+        <xs:attributeGroup ref="AG_Description"/>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="CT_BackstageMenuToggleButton">
+    <xs:annotation>
+      <xs:documentation>
+				An toggle button which exists in a primary menu
+			</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="CT_BackstageMenuCheckBox">
+        <xs:attributeGroup ref="AG_Image"/>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:group name="EG_BackstageMenuControls">
+    <xs:annotation>
+      <xs:documentation>
+				Defines the controls that can go in a Backstage MenuGroup
+			</xs:documentation>
+    </xs:annotation>
+    <xs:choice>
+      <xs:element name="button">
+        <xs:complexType>
+          <xs:complexContent>
+            <xs:extension base="CT_BackstageMenuButton">
+              <xs:attributeGroup ref="AG_XACommonAttributes"/>
+            </xs:extension>
+          </xs:complexContent>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="checkBox" type="CT_BackstageMenuCheckBox"/>
+      <xs:element name="menu" type="CT_BackstageSubMenu"/>
+      <xs:element name="toggleButton" type="CT_BackstageMenuToggleButton"/>
+    </xs:choice>
+  </xs:group>
+  <xs:complexType name="CT_BackstageMenuGroup">
+    <xs:annotation>
+      <xs:documentation>
+				Backstage MenuGroup
+			</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:choice minOccurs="0" maxOccurs="1000">
+        <xs:group ref="EG_BackstageMenuControls"/>
+      </xs:choice>
+    </xs:sequence>
+    <xs:attributeGroup ref="AG_IDCustom"/>
+    <xs:attributeGroup ref="AG_Label"/>
+    <xs:attribute name="itemSize" type="ST_ItemSize" use="optional">
+      <xs:annotation>
+        <xs:documentation>
+					Specifies size of menu items.
+				</xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+  </xs:complexType>
+  <xs:complexType name="CT_BackstageMenuBase">
+    <xs:annotation>
+      <xs:documentation>
+				Specifies a Backstage menu
+			</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:choice minOccurs="0" maxOccurs="1000">
+        <xs:element name="menuGroup" type="CT_BackstageMenuGroup"/>
+      </xs:choice>
+    </xs:sequence>
+    <xs:attributeGroup ref="AG_IDCustom"/>
+    <xs:attributeGroup ref="AG_Enabled"/>
+    <xs:attributeGroup ref="AG_Label"/>
+    <xs:attributeGroup ref="AG_Visible"/>
+    <xs:attributeGroup ref="AG_Image"/>
+    <xs:attributeGroup ref="AG_Keytip"/>
+  </xs:complexType>
+  <xs:complexType name="CT_BackstagePrimaryMenu">
+    <xs:annotation>
+      <xs:documentation>
+				Specifies a BackstageMenu which also includes the screentip attributes
+			</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="CT_BackstageMenuBase">
+        <xs:attributeGroup ref="AG_Screentip"/>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="CT_BackstageGroupButton">
+    <xs:annotation>
+      <xs:documentation>
+				A BackstageRegularButton that additionally has the group layout attributes
+			</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="CT_BackstageRegularButton">
+        <xs:attributeGroup ref="AG_Expand"/>
+        <xs:attributeGroup ref="AG_ButtonStyle"/>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="CT_BackstageEditBox">
+    <xs:annotation>
+      <xs:documentation>
+				Specifies an EditBox in the Backstage
+			</xs:documentation>
+    </xs:annotation>
+    <xs:attributeGroup ref="AG_IDCustom"/>
+    <xs:attributeGroup ref="AG_AlignAttributes"/>
+    <xs:attributeGroup ref="AG_Expand"/>
+    <xs:attributeGroup ref="AG_Enabled"/>
+    <xs:attributeGroup ref="AG_Label"/>
+    <xs:attributeGroup ref="AG_Visible"/>
+    <xs:attributeGroup ref="AG_Keytip"/>
+    <xs:attribute name="getText" type="ST_Delegate" use="optional"/>
+    <xs:attribute name="onChange" type="ST_Delegate" use="optional"/>
+    <xs:attribute name="maxLength" type="ST_StringLength" use="optional"/>
+    <xs:attribute name="sizeString" type="ST_String" use="optional"/>
+  </xs:complexType>
+  <xs:complexType name="CT_BackstageItem">
+    <xs:annotation>
+      <xs:documentation>
+				Represents a selection item in a Backstage DropDown, ComboBox or RadioGroup
+			</xs:documentation>
+    </xs:annotation>
+    <xs:attribute name="id" type="ST_String" use="optional">
+      <xs:annotation>
+        <xs:documentation>
+					Specifies the ID of an item. Items cannot use idMso or idQ.
+				</xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+    <xs:attributeGroup ref="AG_Label"/>
+  </xs:complexType>
+  <xs:complexType name="CT_BackstageDropDown">
+    <xs:annotation>
+      <xs:documentation>
+				Specifies a drop-down control
+			</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="item" type="CT_BackstageItem" minOccurs="0" maxOccurs="1000"/>
+    </xs:sequence>
+    <xs:attributeGroup ref="AG_IDCustom"/>
+    <xs:attributeGroup ref="AG_AlignAttributes"/>
+    <xs:attributeGroup ref="AG_Expand"/>
+    <xs:attributeGroup ref="AG_Enabled"/>
+    <xs:attributeGroup ref="AG_Label"/>
+    <xs:attributeGroup ref="AG_Visible"/>
+    <xs:attributeGroup ref="AG_Action"/>
+    <xs:attributeGroup ref="AG_Screentip"/>
+    <xs:attributeGroup ref="AG_Keytip"/>
+    <xs:attribute name="getSelectedItemIndex" type="ST_Delegate" use="optional"/>
+    <xs:attribute name="sizeString" type="ST_String" use="optional"/>
+    <xs:attribute name="getItemCount" type="ST_Delegate" use="optional"/>
+    <xs:attribute name="getItemLabel" type="ST_Delegate" use="optional"/>
+    <xs:attribute name="getItemID" type="ST_Delegate" use="optional"/>
+  </xs:complexType>
+  <xs:complexType name="CT_RadioGroup">
+    <xs:annotation>
+      <xs:documentation>
+				Specifies a group of radio buttons
+			</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="radioButton" type="CT_BackstageItem" minOccurs="0" maxOccurs="1000"/>
+    </xs:sequence>
+    <xs:attributeGroup ref="AG_IDCustom"/>
+    <xs:attributeGroup ref="AG_AlignAttributes"/>
+    <xs:attributeGroup ref="AG_Expand"/>
+    <xs:attributeGroup ref="AG_Enabled"/>
+    <xs:attributeGroup ref="AG_Label"/>
+    <xs:attributeGroup ref="AG_Visible"/>
+    <xs:attributeGroup ref="AG_Action"/>
+    <xs:attributeGroup ref="AG_Keytip"/>
+    <xs:attribute name="getSelectedItemIndex" type="ST_Delegate" use="optional"/>
+    <xs:attribute name="getItemCount" type="ST_Delegate" use="optional"/>
+    <xs:attribute name="getItemLabel" type="ST_Delegate" use="optional"/>
+    <xs:attribute name="getItemID" type="ST_Delegate" use="optional"/>
+  </xs:complexType>
+  <xs:complexType name="CT_BackstageComboBox">
+    <xs:annotation>
+      <xs:documentation>
+				Specifies a combo box control
+			</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="item" type="CT_BackstageItem" minOccurs="0" maxOccurs="1000"/>
+    </xs:sequence>
+    <xs:attributeGroup ref="AG_IDCustom"/>
+    <xs:attributeGroup ref="AG_AlignAttributes"/>
+    <xs:attributeGroup ref="AG_Expand"/>
+    <xs:attributeGroup ref="AG_Enabled"/>
+    <xs:attributeGroup ref="AG_Label"/>
+    <xs:attributeGroup ref="AG_Visible"/>
+    <xs:attributeGroup ref="AG_Keytip"/>
+    <xs:attribute name="getText" type="ST_Delegate" use="optional"/>
+    <xs:attribute name="onChange" type="ST_Delegate" use="optional"/>
+    <xs:attribute name="sizeString" type="ST_String" use="optional"/>
+    <xs:attribute name="getItemCount" type="ST_Delegate" use="optional"/>
+    <xs:attribute name="getItemLabel" type="ST_Delegate" use="optional"/>
+    <xs:attribute name="getItemID" type="ST_Delegate" use="optional"/>
+  </xs:complexType>
+  <xs:complexType name="CT_Hyperlink">
+    <xs:annotation>
+      <xs:documentation>
+				Specifies a hyperlink control
+			</xs:documentation>
+    </xs:annotation>
+    <xs:attributeGroup ref="AG_IDCustom"/>
+    <xs:attributeGroup ref="AG_AlignAttributes"/>
+    <xs:attributeGroup ref="AG_Expand"/>
+    <xs:attributeGroup ref="AG_Enabled"/>
+    <xs:attributeGroup ref="AG_Visible"/>
+    <xs:attributeGroup ref="AG_Keytip"/>
+    <xs:attributeGroup ref="AG_Label"/>
+    <xs:attributeGroup ref="AG_Action"/>
+    <xs:attributeGroup ref="AG_Image"/>
+    <xs:attributeGroup ref="AG_Screentip"/>
+    <xs:attribute name="target" type="ST_String" use="optional"/>
+    <xs:attribute name="getTarget" type="ST_Delegate" use="optional"/>
+  </xs:complexType>
+  <xs:complexType name="CT_BackstageLabelControl">
+    <xs:annotation>
+      <xs:documentation>
+				Specifies a label control
+			</xs:documentation>
+    </xs:annotation>
+    <xs:attributeGroup ref="AG_IDCustom"/>
+    <xs:attributeGroup ref="AG_AlignAttributes"/>
+    <xs:attributeGroup ref="AG_Expand"/>
+    <xs:attributeGroup ref="AG_Enabled"/>
+    <xs:attributeGroup ref="AG_Label"/>
+    <xs:attributeGroup ref="AG_Visible"/>
+    <xs:attribute name="noWrap" type="xs:boolean" use="optional"/>
+  </xs:complexType>
+  <xs:complexType name="CT_GroupBox">
+    <xs:annotation>
+      <xs:documentation>
+				Specifies a groupBox.
+			</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:group ref="EG_GroupControls" minOccurs="0" maxOccurs="1000"/>
+    </xs:sequence>
+    <xs:attributeGroup ref="AG_IDCustom"/>
+    <xs:attributeGroup ref="AG_Expand"/>
+    <xs:attributeGroup ref="AG_Label"/>
+  </xs:complexType>
+  <xs:complexType name="CT_LayoutContainer">
+    <xs:annotation>
+      <xs:documentation>
+				Specifies a layoutContainer.
+			</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:group ref="EG_GroupControls" minOccurs="0" maxOccurs="1000"/>
+    </xs:sequence>
+    <xs:attributeGroup ref="AG_IDCustom"/>
+    <xs:attribute name="align" use="optional">
+      <xs:simpleType>
+        <xs:annotation>
+          <xs:documentation>
+						Specifies side of the layoutContainer where the children controls will be aligned.
+					</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="topLeft"/>
+          <xs:enumeration value="top"/>
+          <xs:enumeration value="topRight"/>
+          <xs:enumeration value="left"/>
+          <xs:enumeration value="center"/>
+          <xs:enumeration value="right"/>
+          <xs:enumeration value="bottomLeft"/>
+          <xs:enumeration value="bottom"/>
+          <xs:enumeration value="bottomRight"/>
+        </xs:restriction>
+      </xs:simpleType>
+    </xs:attribute>
+    <xs:attribute name="expand" use="optional">
+      <xs:annotation>
+        <xs:documentation>
+					Specifies the directions in which the layoutContainer will expand to fill its parent container.
+				</xs:documentation>
+      </xs:annotation>
+      <xs:simpleType>
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="horizontal"/>
+          <xs:enumeration value="vertical"/>
+          <xs:enumeration value="both"/>
+          <xs:enumeration value="neither"/>
+        </xs:restriction>
+      </xs:simpleType>
+    </xs:attribute>
+    <xs:attribute name="layoutChildren" use="optional">
+      <xs:annotation>
+        <xs:documentation>
+					Specifies the layout direction for the children controls.
+				</xs:documentation>
+      </xs:annotation>
+      <xs:simpleType>
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="horizontal"/>
+          <xs:enumeration value="vertical"/>
+        </xs:restriction>
+      </xs:simpleType>
+    </xs:attribute>
+  </xs:complexType>
+  <xs:complexType name="CT_ImageControl">
+    <xs:annotation>
+      <xs:documentation>
+				An image-hosting control
+			</xs:documentation>
+    </xs:annotation>
+    <xs:attributeGroup ref="AG_IDCustom"/>
+    <xs:attributeGroup ref="AG_Enabled"/>
+    <xs:attributeGroup ref="AG_Visible"/>
+    <xs:attributeGroup ref="AG_Image"/>
+    <xs:attributeGroup ref="AG_AltText"/>
+  </xs:complexType>
+  <xs:group name="EG_GroupControls">
+    <xs:annotation>
+      <xs:documentation>
+				Defines the controls that can go in a group.
+			</xs:documentation>
+    </xs:annotation>
+    <xs:choice>
+      <xs:element name="button">
+        <xs:complexType>
+          <xs:complexContent>
+            <xs:extension base="CT_BackstageGroupButton">
+              <xs:attributeGroup ref="AG_XACommonAttributes"/>
+            </xs:extension>
+          </xs:complexContent>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="checkBox" type="CT_BackstageCheckBox"/>
+      <xs:element name="editBox" type="CT_BackstageEditBox"/>
+      <xs:element name="dropDown" type="CT_BackstageDropDown"/>
+      <xs:element name="radioGroup" type="CT_RadioGroup"/>
+      <xs:element name="comboBox" type="CT_BackstageComboBox"/>
+      <xs:element name="hyperlink" type="CT_Hyperlink"/>
+      <xs:element name="labelControl" type="CT_BackstageLabelControl"/>
+      <xs:element name="groupBox" type="CT_GroupBox"/>
+      <xs:element name="layoutContainer" type="CT_LayoutContainer"/>
+      <xs:element name="imageControl" type="CT_ImageControl"/>
+    </xs:choice>
+  </xs:group>
+  <xs:complexType name="CT_GroupControls">
+    <xs:annotation>
+      <xs:documentation>
+				Specifies a collection of controls that can live in groups.
+			</xs:documentation>
+    </xs:annotation>
+    <xs:choice minOccurs="0" maxOccurs="1000">
+      <xs:group ref="EG_GroupControls" minOccurs="0" maxOccurs="1000">
+        <xs:annotation>
+          <xs:documentation>
+						All of the controls which are allowed inside of groups.
+					</xs:documentation>
+        </xs:annotation>
+      </xs:group>
+    </xs:choice>
+  </xs:complexType>
+  <xs:complexType name="CT_BackstageGroup">
+    <xs:annotation>
+      <xs:documentation>
+				Specifies a group in the backstage.
+			</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:choice minOccurs="0">
+        <xs:element name="primaryItem" type="CT_PrimaryItem" minOccurs="0">
+          <xs:annotation>
+            <xs:documentation>
+							Primary item (button/menu).
+						</xs:documentation>
+          </xs:annotation>
+        </xs:element>
+      </xs:choice>
+      <xs:element name="topItems" type="CT_GroupControls" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>
+						TopItems.
+					</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="bottomItems" type="CT_GroupControls" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>
+						TopItems.
+					</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+    <xs:attributeGroup ref="AG_IDAttributes"/>
+    <xs:attributeGroup ref="AG_PositionAttributes"/>
+    <xs:attributeGroup ref="AG_Label"/>
+    <xs:attributeGroup ref="AG_Visible"/>
+    <xs:attributeGroup ref="AG_GroupStyle"/>
+    <xs:attributeGroup ref="AG_HelperText"/>
+    <xs:attributeGroup ref="AG_ShowLabel"/>
+  </xs:complexType>
+  <xs:complexType name="CT_TaskGroupTask">
+    <xs:annotation>
+      <xs:documentation>
+				Specifies a task in a TaskGroup
+			</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="ShortcutKey" minOccurs="0"/>
+      <xs:element ref="InternalClass" minOccurs="0" maxOccurs="unbounded"/>
+      <xs:element ref="ExtensibilityMethod" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+    <xs:attributeGroup ref="AG_IDAttributes"/>
+    <xs:attributeGroup ref="AG_PositionAttributes"/>
+    <xs:attributeGroup ref="AG_Action"/>
+    <xs:attributeGroup ref="AG_Definitive"/>
+    <xs:attributeGroup ref="AG_Image"/>
+    <xs:attributeGroup ref="AG_Enabled"/>
+    <xs:attributeGroup ref="AG_Label"/>
+    <xs:attributeGroup ref="AG_Visible"/>
+    <xs:attributeGroup ref="AG_Description"/>
+    <xs:attributeGroup ref="AG_Keytip"/>
+  </xs:complexType>
+  <xs:complexType name="CT_TaskGroupCategory">
+    <xs:annotation>
+      <xs:documentation>
+				Specifies a collection of TaskGroupTask controls.
+			</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="task" minOccurs="0" maxOccurs="1000">
+        <xs:annotation>
+          <xs:documentation>
+						task
+					</xs:documentation>
+        </xs:annotation>
+        <xs:complexType>
+          <xs:complexContent>
+            <xs:extension base="CT_TaskGroupTask"/>
+          </xs:complexContent>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+    <xs:attributeGroup ref="AG_IDAttributes"/>
+    <xs:attributeGroup ref="AG_PositionAttributes"/>
+    <xs:attributeGroup ref="AG_Visible"/>
+    <xs:attributeGroup ref="AG_Label"/>
+  </xs:complexType>
+  <xs:complexType name="CT_TaskGroup">
+    <xs:annotation>
+      <xs:documentation>
+				Specifies a TaskGroup.
+			</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="category" type="CT_TaskGroupCategory" minOccurs="0" maxOccurs="100">
+        <xs:annotation>
+          <xs:documentation>
+						TaskGroup category
+					</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+    <xs:attributeGroup ref="AG_IDAttributes"/>
+    <xs:attributeGroup ref="AG_PositionAttributes"/>
+    <xs:attributeGroup ref="AG_Label"/>
+    <xs:attributeGroup ref="AG_Visible"/>
+    <xs:attributeGroup ref="AG_HelperText"/>
+    <xs:attributeGroup ref="AG_ShowLabel"/>
+    <xs:attribute name="allowedTaskSizes" type="ST_TaskSizes" use="optional"/>
+  </xs:complexType>
+  <xs:group name="EG_SimpleGroups">
+    <xs:annotation>
+      <xs:documentation>
+				Specifies the list of simple group types.
+			</xs:documentation>
+    </xs:annotation>
+    <xs:choice>
+      <xs:element name="group" type="CT_BackstageGroup">
+        <xs:annotation>
+          <xs:documentation>
+						A regular group.
+					</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="taskGroup" type="CT_TaskGroup">
+        <xs:annotation>
+          <xs:documentation>
+						A TaskGroup.
+					</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:choice>
+  </xs:group>
+  <xs:complexType name="CT_BackstageGroups">
+    <xs:annotation>
+      <xs:documentation>
+				Specifies a collection of groups, which is either one taskFormGroup or 
+				a set of simple groups.
+			</xs:documentation>
+    </xs:annotation>
+    <xs:choice>
+      <xs:choice minOccurs="0">
+        <xs:element name="taskFormGroup" type="CT_TaskFormGroup">
+          <xs:annotation>
+            <xs:documentation>
+							A TaskFormGroup.
+						</xs:documentation>
+          </xs:annotation>
+        </xs:element>
+      </xs:choice>
+      <xs:choice minOccurs="0" maxOccurs="1000">
+        <xs:group ref="EG_SimpleGroups"/>
+      </xs:choice>
+    </xs:choice>
+  </xs:complexType>
+  <xs:complexType name="CT_SimpleGroups">
+    <xs:annotation>
+      <xs:documentation>
+				Specifies a collection of simple groups.
+			</xs:documentation>
+    </xs:annotation>
+    <xs:choice minOccurs="0" maxOccurs="1000">
+      <xs:group ref="EG_SimpleGroups"/>
+    </xs:choice>
+  </xs:complexType>
+  <xs:complexType name="CT_BackstageTab">
+    <xs:annotation>
+      <xs:documentation>
+				Specifies a tab that contains a fastCommands section and group controls.
+			</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="firstColumn" type="CT_BackstageGroups" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>
+						The left column of groups.
+					</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="secondColumn" type="CT_SimpleGroups" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>
+						The right column of groups.
+					</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+    <xs:attributeGroup ref="AG_IDAttributes"/>
+    <xs:attributeGroup ref="AG_PositionAttributes"/>
+    <xs:attributeGroup ref="AG_Enabled"/>
+    <xs:attributeGroup ref="AG_Label"/>
+    <xs:attributeGroup ref="AG_Visible"/>
+    <xs:attributeGroup ref="AG_Keytip"/>
+    <xs:attributeGroup ref="AG_Title"/>
+    <xs:attribute name="columnWidthPercent" use="optional">
+      <xs:annotation>
+        <xs:documentation>
+					Specifies the division of the tab's columns, as a percentage of the width of the entire tab.
+				</xs:documentation>
+      </xs:annotation>
+      <xs:simpleType>
+        <xs:restriction base="xs:positiveInteger">
+          <xs:minInclusive value="1"/>
+          <xs:maxInclusive value="99"/>
+        </xs:restriction>
+      </xs:simpleType>
+    </xs:attribute>
+    <xs:attribute name="firstColumnMinWidth" use="optional">
+      <xs:annotation>
+        <xs:documentation>
+					Specifies the minimum width of the tab's first column in pixels.
+				</xs:documentation>
+      </xs:annotation>
+      <xs:simpleType>
+        <xs:restriction base="xs:positiveInteger">
+          <xs:minInclusive value="1"/>
+          <xs:maxInclusive value="10000"/>
+        </xs:restriction>
+      </xs:simpleType>
+    </xs:attribute>
+    <xs:attribute name="firstColumnMaxWidth" use="optional">
+      <xs:annotation>
+        <xs:documentation>
+					Specifies the maximum width of the tab's first column in pixels.
+				</xs:documentation>
+      </xs:annotation>
+      <xs:simpleType>
+        <xs:restriction base="xs:positiveInteger">
+          <xs:minInclusive value="1"/>
+          <xs:maxInclusive value="10000"/>
+        </xs:restriction>
+      </xs:simpleType>
+    </xs:attribute>
+    <xs:attribute name="secondColumnMinWidth" use="optional">
+      <xs:annotation>
+        <xs:documentation>
+					Specifies the minimum width of the tab's second column in pixels.
+				</xs:documentation>
+      </xs:annotation>
+      <xs:simpleType>
+        <xs:restriction base="xs:positiveInteger">
+          <xs:minInclusive value="1"/>
+          <xs:maxInclusive value="10000"/>
+        </xs:restriction>
+      </xs:simpleType>
+    </xs:attribute>
+    <xs:attribute name="secondColumnMaxWidth" use="optional">
+      <xs:annotation>
+        <xs:documentation>
+					Specifies the maximum width of the tab's second column in pixels.
+				</xs:documentation>
+      </xs:annotation>
+      <xs:simpleType>
+        <xs:restriction base="xs:positiveInteger">
+          <xs:minInclusive value="1"/>
+          <xs:maxInclusive value="10000"/>
+        </xs:restriction>
+      </xs:simpleType>
+    </xs:attribute>
+  </xs:complexType>
+  <xs:complexType name="CT_BackstageFastCommandButton">
+    <xs:annotation>
+      <xs:documentation>
+				A BackstageRegularButton that also has FastCommand-related attributes
+			</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="CT_BackstageButtonBase">
+        <xs:attributeGroup ref="AG_IDMso"/>
+        <xs:attributeGroup ref="AG_PositionAttributes"/>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="CT_Backstage">
+    <xs:annotation>
+      <xs:documentation>
+
+				Specifies the Backstage tag
+
+			</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:choice minOccurs="0" maxOccurs="255">
+        <xs:element name="tab" type="CT_BackstageTab">
+          <xs:annotation>
+            <xs:documentation>
+							A tab.
+						</xs:documentation>
+          </xs:annotation>
+        </xs:element>
+        <xs:element name="button">
+          <xs:complexType>
+            <xs:complexContent>
+              <xs:extension base="CT_BackstageFastCommandButton">
+                <xs:group ref="XA_Button_Group"/>
+                <xs:attributeGroup ref="AG_XACommonAttributes"/>
+              </xs:extension>
+            </xs:complexContent>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:sequence>
+    <xs:attribute name="onShow" type="ST_Delegate" use="optional">
+      <xs:annotation>
+        <xs:documentation>
+					Specifies a callback which is invoked when a Backstage is opened.
+				</xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+    <xs:attribute name="onHide" type="ST_Delegate" use="optional">
+      <xs:annotation>
+        <xs:documentation>
+					Specifies a callback which is invoked when a Backstage is closed.
+				</xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+  </xs:complexType>
+  <xs:element name="customUI" type="CT_CustomUI"/>
+  <xs:group name="XA_Button_Group">
+    <xs:sequence>
+      <xs:element name="ShortcutKey" minOccurs="0">
+        <xs:complexType>
+          <xs:attribute name="key" type="xs:string" use="required"/>
+          <xs:attribute name="shift" type="xs:boolean" use="optional"/>
+          <xs:attribute name="ctrl" type="xs:boolean" use="optional"/>
+          <xs:attribute name="alt" type="xs:boolean" use="optional"/>
+        </xs:complexType>
+      </xs:element>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element ref="InternalClass"/>
+        <xs:element ref="ExtensibilityMethod"/>
+      </xs:choice>
+    </xs:sequence>
+  </xs:group>
+  <!-- Word 2007 ribbon elements - end -->
+</xs:schema>

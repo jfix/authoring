@@ -1,0 +1,2002 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XML Spy v4.3 U (http://www.xmlspy.com) by In.vison Research 2 (In.vison Research) -->
+<!-- edited with XMLSpy v2010 rel. 3 (http://www.altova.com) by Adecco1 (Adecco) -->
+<xs:schema xmlns="urn:xpressauthor:xpressschema" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="urn:xpressauthor:xpressschema" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<xs:element name="XpressSchema">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="Attributes" maxOccurs="unbounded"/>
+				<xs:element ref="Emphasis" maxOccurs="unbounded"/>
+				<xs:element ref="Elements" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:simpleType name="lineType">
+		<xs:restriction base="xs:NMTOKEN">
+			<xs:enumeration value="Invalid"/>
+			<xs:enumeration value="None"/>
+			<xs:enumeration value="Single"/>
+			<xs:enumeration value="Dot"/>
+			<xs:enumeration value="DashSmallGap"/>
+			<xs:enumeration value="DashLargeGap"/>
+			<xs:enumeration value="DashDot"/>
+			<xs:enumeration value="DashDotDot"/>
+			<xs:enumeration value="Double"/>
+			<xs:enumeration value="Triple"/>
+			<xs:enumeration value="ThinThickSmallGap"/>
+			<xs:enumeration value="ThickThinSmallGap"/>
+			<xs:enumeration value="ThinThickThinSmallGap"/>
+			<xs:enumeration value="ThinThickMedGap"/>
+			<xs:enumeration value="ThickThinMedGap"/>
+			<xs:enumeration value="ThinThickThinMedGap"/>
+			<xs:enumeration value="ThinThickLargeGap"/>
+			<xs:enumeration value="ThickThinLargeGap"/>
+			<xs:enumeration value="ThinThickThinLargeGap"/>
+			<xs:enumeration value="SingleWavy"/>
+			<xs:enumeration value="DoubleWavy"/>
+			<xs:enumeration value="DashDotStroked"/>
+			<xs:enumeration value="Emboss3D"/>
+			<xs:enumeration value="Engrave3D"/>
+			<xs:enumeration value="Outset"/>
+			<xs:enumeration value="Inset"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="allowDeny">
+		<xs:restriction base="xs:NMTOKEN">
+			<xs:enumeration value="allow"/>
+			<xs:enumeration value="deny"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:attributeGroup name="commonAttributes">
+		<xs:attribute name="name" type="xs:string" use="required"/>
+		<xs:attribute name="namespace" type="xs:string" use="optional"/>
+		<xs:attribute name="prefix" type="xs:string" use="optional"/>
+		<xs:attribute name="xmlname" type="xs:string" use="optional"/>
+	</xs:attributeGroup>
+	<xs:attributeGroup name="fieldAttributes">
+		<xs:attribute name="datatype" use="optional">
+			<xs:simpleType>
+				<xs:restriction base="xs:string">
+					<xs:enumeration value="string"/>
+					<xs:enumeration value="multiline"/>
+					<xs:enumeration value="datetime"/>
+					<xs:enumeration value="time"/>
+					<xs:enumeration value="uniqueidentifier"/>
+					<xs:enumeration value="droplist"/>
+					<xs:enumeration value="combobox"/>
+          <xs:enumeration value="imagewidth"/>
+          <xs:enumeration value="imageheight"/>
+          <xs:enumeration value="imagewidthdpi"/>
+          <xs:enumeration value="imageheightdpi"/>
+					<xs:enumeration value="sectionBreak"/>
+					<xs:enumeration value="pageBreak"/>
+					<xs:enumeration value="columnBreak"/>
+					<xs:enumeration value="tableBorderBottomStyle"/>
+					<xs:enumeration value="tableBorderRightStyle"/>
+					<xs:enumeration value="tableFrame"/>
+					<xs:enumeration value="tableRowColumnIndex"/>
+					<xs:enumeration value="tableRowColumnIdentifier"/>
+					<xs:enumeration value="tableColumnWidth"/>
+					<xs:enumeration value="tableRowHeight"/>
+					<xs:enumeration value="tableCellColumnStart"/>
+					<xs:enumeration value="tableCellColumnEnd"/>
+					<xs:enumeration value="tableCellRowCount"/>
+					<xs:enumeration value="tableCellColumnCount"/>
+					<xs:enumeration value="tableCellContentRotate"/>
+					<xs:enumeration value="tableAlignmentHorizontal"/>
+					<xs:enumeration value="tableAlignmentVertical"/>
+					<xs:enumeration value="tableStyle"/>
+					<xs:enumeration value="tableColumnCount"/>
+					<xs:enumeration value="tableRowCount"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+		<xs:attribute name="format" type="xs:string" use="optional"/>
+		<xs:attribute name="pattern" type="xs:string" use="optional"/>
+		<xs:attribute name="displayPattern" type="xs:string" use="optional"/>
+		<xs:attribute name="friendly" type="xs:string" use="optional"/>
+		<xs:attribute name="attrGroupName" type="xs:string" use="optional"/>
+		<xs:attribute name="default" use="optional">
+			<xs:simpleType>
+				<xs:restriction base="xs:string"/>
+			</xs:simpleType>
+		</xs:attribute>
+		<xs:attribute name="fixed" type="xs:string" use="optional"/>
+		<xs:attribute name="visible" type="xs:boolean" use="optional" default="false"/>
+		<xs:attribute name="readonly" type="xs:boolean" use="optional" default="true"/>
+		<xs:attribute name="required" type="xs:boolean" use="optional" default="true"/>
+		<xs:attribute name="externalMethodId" type="xs:string" use="optional"/>
+		<xs:attribute name="keepWithNext" type="xs:boolean"/>
+		<xs:attribute name="widowControl" type="xs:boolean"/>
+	</xs:attributeGroup>
+	<xs:simpleType name="colorType">
+		<xs:restriction base="xs:NMTOKEN">
+			<xs:enumeration value="Black"/>
+			<xs:enumeration value="DarkRed"/>
+			<xs:enumeration value="Red"/>
+			<xs:enumeration value="DarkGreen"/>
+			<xs:enumeration value="OliveGreen"/>
+			<xs:enumeration value="Brown"/>
+			<xs:enumeration value="Orange"/>
+			<xs:enumeration value="Green"/>
+			<xs:enumeration value="DarkYellow"/>
+			<xs:enumeration value="LightOrange"/>
+			<xs:enumeration value="Lime"/>
+			<xs:enumeration value="Gold"/>
+			<xs:enumeration value="BrightGreen"/>
+			<xs:enumeration value="Yellow"/>
+			<xs:enumeration value="Gray95"/>
+			<xs:enumeration value="Gray90"/>
+			<xs:enumeration value="Gray875"/>
+			<xs:enumeration value="Gray85"/>
+			<xs:enumeration value="Gray80"/>
+			<xs:enumeration value="Gray75"/>
+			<xs:enumeration value="Gray70"/>
+			<xs:enumeration value="Gray65"/>
+			<xs:enumeration value="Gray625"/>
+			<xs:enumeration value="DarkTeal"/>
+			<xs:enumeration value="Plum"/>
+			<xs:enumeration value="Gray60"/>
+			<xs:enumeration value="SeaGreen"/>
+			<xs:enumeration value="Gray55"/>
+			<xs:enumeration value="DarkBlue"/>
+			<xs:enumeration value="Violet"/>
+			<xs:enumeration value="Teal"/>
+			<xs:enumeration value="Gray50"/>
+			<xs:enumeration value="Gray45"/>
+			<xs:enumeration value="Indigo"/>
+			<xs:enumeration value="BlueGray"/>
+			<xs:enumeration value="Gray40"/>
+			<xs:enumeration value="Tan"/>
+			<xs:enumeration value="LightYellow"/>
+			<xs:enumeration value="Gray375"/>
+			<xs:enumeration value="Gray35"/>
+			<xs:enumeration value="Gray30"/>
+			<xs:enumeration value="Gray25"/>
+			<xs:enumeration value="Rose"/>
+			<xs:enumeration value="Aqua"/>
+			<xs:enumeration value="Gray20"/>
+			<xs:enumeration value="LightGreen"/>
+			<xs:enumeration value="Gray15"/>
+			<xs:enumeration value="Gray125"/>
+			<xs:enumeration value="Gray10"/>
+			<xs:enumeration value="Gray05"/>
+			<xs:enumeration value="Blue"/>
+			<xs:enumeration value="Pink"/>
+			<xs:enumeration value="LightBlue"/>
+			<xs:enumeration value="Lavender"/>
+			<xs:enumeration value="SkyBlue"/>
+			<xs:enumeration value="PaleBlue"/>
+			<xs:enumeration value="Turquoise"/>
+			<xs:enumeration value="LightTurquoise"/>
+			<xs:enumeration value="White"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="rgbType">
+		<xs:restriction base="xs:hexBinary"/>
+	</xs:simpleType>
+	<xs:attributeGroup name="tableStyles">
+		<xs:attribute name="horizAlign" use="optional" default="left">
+			<xs:simpleType>
+				<xs:restriction base="xs:NMTOKEN">
+					<xs:enumeration value="left"/>
+					<xs:enumeration value="right"/>
+					<xs:enumeration value="center"/>
+					<xs:enumeration value="justify"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+		<xs:attribute name="vertAlign" use="optional" default="top">
+			<xs:simpleType>
+				<xs:restriction base="xs:NMTOKEN">
+					<xs:enumeration value="top"/>
+					<xs:enumeration value="middle"/>
+					<xs:enumeration value="bottom"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+		<xs:attribute name="backColor" type="xs:string" use="optional"/>
+		<xs:attribute name="frame" type="xs:NMTOKEN" use="optional" default="all"/>
+		<xs:attribute name="frameStyle" type="xs:NMTOKEN" use="optional" default="single"/>
+	</xs:attributeGroup>
+	<xs:attributeGroup name="tgroupConstraint">
+		<xs:attribute name="insertDeleteColumns" type="allowDeny" use="optional" default="allow">
+			<xs:annotation>
+				<xs:documentation>Controls the ability to insert and delete columns within this group</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="changeWidth" type="allowDeny" use="optional" default="allow">
+			<xs:annotation>
+				<xs:documentation>Controls modifying the width of columns within this group </xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+	</xs:attributeGroup>
+	<xs:attributeGroup name="sectionConstraint">
+		<xs:attribute name="insertDeleteRows" type="allowDeny" use="optional" default="allow">
+			<xs:annotation>
+				<xs:documentation>Controls the ability to insert and delete rows within this section</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="changeHeight" type="allowDeny" use="optional" default="allow">
+			<xs:annotation>
+				<xs:documentation>Controls modifying the height of rows within this section</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="changeBorders" type="allowDeny" use="optional" default="allow">
+			<xs:annotation>
+				<xs:documentation>Controls modifying the border state of cells within this section</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="splitCell" type="allowDeny" use="optional" default="allow">
+			<xs:annotation>
+				<xs:documentation>Controls the ability to split cells within this section</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="mergeCells" type="allowDeny" use="optional" default="allow">
+			<xs:annotation>
+				<xs:documentation>Controls the ability to merge cells within this section</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+	</xs:attributeGroup>
+	<xs:attributeGroup name="xpressColumnStyleAttributes">
+		<xs:attribute name="columnBorderStyle" type="lineType" use="optional" default="Single"/>
+		<xs:attribute name="columnBorderColor" type="rgbType" use="optional" default="000000"/>
+		<xs:attribute name="columnBorderWidth" type="xs:string" use="optional" default="1px"/>
+	</xs:attributeGroup>
+	<xs:attributeGroup name="xpressRowStyleAttributes">
+		<xs:attribute name="rowBorderStyle" type="lineType" use="optional" default="Single"/>
+		<xs:attribute name="rowBorderColor" type="rgbType" use="optional" default="000000"/>
+		<xs:attribute name="rowBorderWidth" type="xs:string" use="optional" default="1px"/>
+	</xs:attributeGroup>
+	<xs:element name="ExtensibilityMethods">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="ExtensibilityMethod" maxOccurs="unbounded">
+					<xs:complexType>
+						<xs:attribute name="id" type="xs:string" use="required"/>
+						<xs:attribute name="friendly" type="xs:string" use="optional"/>
+						<xs:attribute name="showInComponentContextMenu" type="xs:boolean" use="optional"/>
+						<xs:attribute name="showInContextMenu" type="xs:boolean" use="optional"/>
+						<xs:attribute name="showXPath" type="xs:string" use="optional"/>
+						<xs:attribute name="enableXPath" type="xs:string" use="optional"/>
+						<xs:attribute name="faceID" type="xs:string" use="optional"/>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="Attributes">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="AttributeDef" minOccurs="0" maxOccurs="unbounded">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="Restriction" minOccurs="0">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="Enumeration" maxOccurs="unbounded">
+											<xs:complexType>
+												<xs:attribute name="value" type="xs:string" use="required"/>
+											</xs:complexType>
+										</xs:element>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+						<xs:attributeGroup ref="commonAttributes"/>
+						<xs:attributeGroup ref="fieldAttributes"/>
+						<xs:attribute name="contextId" type="xs:string" use="optional"/>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="Emphasis">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="EmphasisDef" minOccurs="0" maxOccurs="unbounded">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="Specialized" minOccurs="0">
+								<xs:complexType>
+									<xs:choice>
+										<xs:element name="Footnote">
+											<xs:annotation>
+												<xs:documentation>This emphasis is a Word footnote/endnote emphasis </xs:documentation>
+											</xs:annotation>
+											<xs:complexType>
+												<xs:attribute name="footnoteLocation" use="required">
+													<xs:simpleType>
+														<xs:restriction base="xs:string">
+															<xs:enumeration value="text"/>
+															<xs:enumeration value="section"/>
+															<xs:enumeration value="page"/>
+															<xs:enumeration value="document"/>
+														</xs:restriction>
+													</xs:simpleType>
+												</xs:attribute>
+												<xs:attribute name="allowedNumberingSchemes" type="xs:string" default="arabic bigAlpha smallAlpha bigRoman smallRoman">
+													<xs:annotation>
+														<xs:documentation>When ommitted, the list is:  arabic bigAlpha smallAlpha bigRoman smallRoman.  The first token specified is the default scheme.</xs:documentation>
+													</xs:annotation>
+												</xs:attribute>
+												<xs:attribute name="captionAttribute" type="xs:string" use="optional">
+													<xs:annotation>
+														<xs:documentation>Specifies a child attribute to contain the character used for the footnote link, for example a number or an alpha character.</xs:documentation>
+													</xs:annotation>
+												</xs:attribute>
+												<xs:attribute name="disableCustomMarkTextbox" type="xs:boolean" use="optional" default="false"/>
+											</xs:complexType>
+										</xs:element>
+										<xs:element name="Endnote">
+											<xs:annotation>
+												<xs:documentation>This emphasis is a Xpress Endnote</xs:documentation>
+											</xs:annotation>
+											<xs:complexType>
+												<xs:attribute name="endnoteElementDef" type="xs:string" use="required">
+													<xs:annotation>
+														<xs:documentation>Specifies the ElementDef name that is to contain this endnote item.</xs:documentation>
+													</xs:annotation>
+												</xs:attribute>
+												<xs:attribute name="allowedNumberingSchemes" type="xs:string" default="arabic bigAlpha smallAlpha bigRoman smallRoman">
+													<xs:annotation>
+														<xs:documentation>When ommitted, the list is:  arabic bigAlpha smallAlpha bigRoman smallRoman.  The first token specified is the default scheme.</xs:documentation>
+													</xs:annotation>
+												</xs:attribute>
+												<xs:attribute name="captionAttribute" type="xs:string">
+													<xs:annotation>
+														<xs:documentation>Specifies a child attribute to contain the character used for the endnote link, for example a number or an alpha character.</xs:documentation>
+													</xs:annotation>
+												</xs:attribute>
+												<xs:attribute name="disableCustomMarkTextbox" type="xs:boolean" use="optional" default="false"/>
+											</xs:complexType>
+										</xs:element>
+										<xs:element name="Link">
+											<xs:annotation>
+												<xs:documentation>This emphasis is a hyperlink emphasis that can be of 3 types-Internal/External/Both</xs:documentation>
+											</xs:annotation>
+											<xs:complexType>
+												<xs:choice>
+													<xs:element ref="External"/>
+													<xs:element ref="Multiple"/>
+													<xs:choice>
+														<xs:element ref="Internal"/>
+														<xs:element ref="Custom"/>
+													</xs:choice>
+												</xs:choice>
+											</xs:complexType>
+										</xs:element>
+										<xs:element name="Entity">
+											<xs:annotation>
+												<xs:documentation>This emphasis type is used to tag an XML Entity in the document. Any content entity that is tagged by this emphasis will maintian a synchronous mapping with the entity node in the document.</xs:documentation>
+											</xs:annotation>
+											<xs:complexType>
+												<xs:choice>
+													<xs:element name="Wrapper">
+														<xs:annotation>
+															<xs:documentation>This is used for backward compatability to allow for metadata-based (attributes) entity support. With this approach, an entity can be associated with metadata which will persist in the serialized document. This metadata among other things can be used to control whether an enity can be edited/deleted (using attributeName/attributeValuepairs ) from the Modify/Delete children </xs:documentation>
+														</xs:annotation>
+														<xs:complexType>
+															<xs:sequence minOccurs="0">
+																<xs:element name="Add" minOccurs="0">
+																	<xs:annotation>
+																		<xs:documentation>Specifies whether an entity can be added thru the UI</xs:documentation>
+																	</xs:annotation>
+																	<xs:complexType>
+																		<xs:attribute name="allow" type="xs:boolean" use="required"/>
+																	</xs:complexType>
+																</xs:element>
+																<xs:element name="Modify" minOccurs="0">
+																	<xs:annotation>
+																		<xs:documentation>If allow=true, or an entity reference wrapper element has attributeName = attributeValue, the instance value may be edited through the UI.</xs:documentation>
+																	</xs:annotation>
+																	<xs:complexType>
+																		<xs:attribute name="attributeName" type="xs:string" use="optional"/>
+																		<xs:attribute name="attributeValue" type="xs:string" use="optional"/>
+																		<xs:attribute name="allow" type="xs:boolean" use="optional"/>
+																	</xs:complexType>
+																</xs:element>
+																<xs:element name="Delete" minOccurs="0">
+																	<xs:annotation>
+																		<xs:documentation>If an entity reference wrapper element has attributeName = attributeValue, the instance may be deleted through the UI.  If allow = true, the entity definition may be deleted, provided there are no entity references.</xs:documentation>
+																	</xs:annotation>
+																	<xs:complexType>
+																		<xs:attribute name="attributeName" type="xs:string" use="optional"/>
+																		<xs:attribute name="attributeValue" type="xs:string" use="optional"/>
+																		<xs:attribute name="allow" type="xs:boolean" use="optional"/>
+																	</xs:complexType>
+																</xs:element>
+															</xs:sequence>
+															<xs:attribute name="entityNameAttribute" use="required"/>
+														</xs:complexType>
+													</xs:element>
+													<xs:element name="UserDefined">
+														<xs:annotation>
+															<xs:documentation>This is used to support a more genric entity scenario where metadata and wrapper emphasis are not preserved.</xs:documentation>
+														</xs:annotation>
+														<xs:complexType>
+															<xs:attribute name="allowAdd" type="xs:boolean">
+																<xs:annotation>
+																	<xs:documentation>Specifies whether a new Internal entity definition can be added to the current document.</xs:documentation>
+																</xs:annotation>
+															</xs:attribute>
+															<xs:attribute name="allowModify" type="xs:boolean">
+																<xs:annotation>
+																	<xs:documentation>Specifies whether an entity value can be modified. This attribute is not relevant for external entities - XA will not modify external entity definitions.</xs:documentation>
+																</xs:annotation>
+															</xs:attribute>
+															<xs:attribute name="allowDelete" type="xs:boolean">
+																<xs:annotation>
+																	<xs:documentation>Specifies whether an entity definition can de deleted. An entity definition can de deleted only if there is no entity references within the document. This attribute is irrelevant for external entities - XA will not delete external entity definitions.</xs:documentation>
+																</xs:annotation>
+															</xs:attribute>
+														</xs:complexType>
+													</xs:element>
+												</xs:choice>
+											</xs:complexType>
+										</xs:element>
+										<xs:element name="ProcessingInstruction"/>
+									</xs:choice>
+								</xs:complexType>
+							</xs:element>
+							<xs:sequence>
+								<xs:element name="Style">
+									<xs:complexType>
+										<xs:complexContent>
+											<xs:extension base="StyleType"/>
+										</xs:complexContent>
+									</xs:complexType>
+								</xs:element>
+								<xs:element name="SubStyles" minOccurs="0">
+									<xs:complexType>
+										<xs:sequence>
+											<xs:element name="SubStyle" maxOccurs="unbounded">
+												<xs:complexType>
+													<xs:sequence>
+														<xs:element name="Style" type="StyleType"/>
+													</xs:sequence>
+													<xs:attribute name="value" type="xs:string" use="required"/>
+													<xs:attribute name="friendly" type="xs:string" use="optional"/>
+												</xs:complexType>
+											</xs:element>
+										</xs:sequence>
+										<xs:attribute name="key" type="xs:string" use="required"/>
+									</xs:complexType>
+								</xs:element>
+							</xs:sequence>
+							<xs:element name="Attributes" minOccurs="0">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="AttributeType" maxOccurs="unbounded">
+											<xs:complexType>
+												<xs:attribute name="name" type="xs:string" use="required"/>
+												<xs:attributeGroup ref="fieldAttributes"/>
+											</xs:complexType>
+										</xs:element>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element ref="ExtensibilityMethods" minOccurs="0"/>
+							<xs:element name="Emphasis" minOccurs="0">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="EmphasisType" minOccurs="0" maxOccurs="unbounded">
+											<xs:complexType>
+												<xs:attribute name="name" type="xs:string" use="required"/>
+											</xs:complexType>
+										</xs:element>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element ref="Media" minOccurs="0">
+								<xs:annotation>
+									<xs:documentation>Defines any inline image elements (both reference and embedded) for the parent (para or emphasis)</xs:documentation>
+								</xs:annotation>
+							</xs:element>
+							<xs:element ref="OLE" minOccurs="0"/>
+						</xs:sequence>
+						<xs:attributeGroup ref="commonAttributes"/>
+						<xs:attribute name="friendly" type="xs:string" use="optional"/>
+						<xs:attribute name="readonly" type="xs:boolean" use="optional"/>
+						<xs:attribute name="excludeFromEmphasisCombo" type="xs:boolean" use="optional"/>
+						<xs:attribute name="tooltipTransform" type="xs:string" use="optional"/>
+						<xs:attribute name="selectOnFocus" type="xs:boolean" use="optional" default="false"/>
+						<xs:attribute name="contextId" type="xs:string" use="optional"/>
+						<xs:attribute name="preserveSpace" type="xs:boolean" use="optional" default="false"/>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="Elements">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="ElementDef" maxOccurs="unbounded">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:choice>
+								<xs:element name="OLE">
+									<xs:annotation>
+										<xs:documentation>Defines an OLE element of type indicated in classType attribute.</xs:documentation>
+									</xs:annotation>
+									<xs:complexType>
+										<xs:sequence>
+											<xs:element name="MathTypeEquation">
+												<xs:annotation>
+													<xs:documentation>Defines MathType equation.													</xs:documentation>
+												</xs:annotation>
+												<xs:complexType>
+													<xs:attribute name="saveMTEF" type="xs:boolean" use="optional"/>
+													<xs:attribute name="includeTranslator" type="xs:boolean" use="optional"/>
+													<xs:attribute name="includeMathTypeData" type="xs:boolean" use="optional"/>
+													<xs:attribute name="translator" use="optional">
+														<xs:simpleType>
+															<xs:restriction base="xs:string"/>
+														</xs:simpleType>
+													</xs:attribute>
+													<xs:attribute name="exportFormat" use="optional">
+														<xs:simpleType>
+															<xs:restriction base="xs:string">
+																<xs:enumeration value="GIF"/>
+																<xs:enumeration value="WMF"/>
+																<xs:enumeration value="EPS_NONE"/>
+																<xs:enumeration value="EPS_TIFF"/>
+																<xs:enumeration value="EPS_WMF"/>
+															</xs:restriction>
+														</xs:simpleType>
+													</xs:attribute>
+												</xs:complexType>
+											</xs:element>
+										</xs:sequence>
+										<xs:attribute name="readonly" type="xs:boolean" use="optional"/>
+									</xs:complexType>
+								</xs:element>
+								<xs:element name="Media">
+									<xs:complexType>
+										<xs:attribute name="maxFileSize" type="xs:double" use="optional"/>
+									</xs:complexType>
+								</xs:element>
+								<xs:element name="Reference">
+									<xs:complexType>
+										<xs:choice>
+											<xs:element name="Media">
+												<xs:complexType>
+													<xs:sequence>
+														<xs:element name="Mimetypes">
+															<xs:complexType>
+																<xs:sequence>
+																	<xs:element name="Mimetype" minOccurs="0" maxOccurs="unbounded">
+																		<xs:complexType>
+																			<xs:attribute name="type" type="xs:string" use="required"/>
+																		</xs:complexType>
+																	</xs:element>
+																</xs:sequence>
+															</xs:complexType>
+														</xs:element>
+														<xs:element name="Attributes" minOccurs="0">
+															<xs:complexType>
+																<xs:sequence>
+																	<xs:element name="AttributeType" maxOccurs="unbounded">
+																		<xs:complexType>
+																			<xs:attribute name="name" type="xs:string" use="required"/>
+																			<xs:attributeGroup ref="fieldAttributes"/>
+																		</xs:complexType>
+																	</xs:element>
+																</xs:sequence>
+															</xs:complexType>
+														</xs:element>
+													</xs:sequence>
+													<xs:attribute name="xmlname" type="xs:string" use="required"/>
+													<xs:attribute name="friendly" type="xs:string" use="optional"/>
+													<xs:attribute name="style" type="xs:string" use="optional"/>
+													<xs:attribute name="required" type="xs:boolean"/>
+													<xs:attribute name="excludeFromComponentContextMenu" type="xs:boolean" use="optional"/>
+													<xs:attribute name="maxFileSize" type="xs:double" use="optional"/>
+												</xs:complexType>
+											</xs:element>
+											<xs:element name="ComponentType" maxOccurs="unbounded">
+												<xs:complexType>
+													<xs:attribute name="name" type="xs:string" use="required"/>
+												</xs:complexType>
+											</xs:element>
+										</xs:choice>
+										<xs:attribute name="altAttribute" type="xs:string" use="optional"/>
+									</xs:complexType>
+								</xs:element>
+								<xs:element name="Section">
+									<xs:complexType>
+										<xs:sequence>
+											<xs:choice minOccurs="0">
+												<xs:element name="Para">
+													<xs:complexType>
+														<xs:sequence>
+															<xs:element name="Emphasis" minOccurs="0">
+																<xs:complexType>
+																	<xs:sequence>
+																		<xs:element name="EmphasisType" maxOccurs="unbounded">
+																			<xs:complexType>
+																				<xs:attribute name="name" type="xs:string" use="required"/>
+																			</xs:complexType>
+																		</xs:element>
+																	</xs:sequence>
+																	<xs:attribute name="allowMedia">
+																		<xs:annotation>
+																			<xs:documentation>Specifies whether media is allowed under Emphasis. "yes" allows media elements under any emphasis. "no" does not allow media under any emphasis. "restricted" implies that allow/disallow behavior is derived from the individual emphasis definitions under the EmphasisDef/Media node</xs:documentation>
+																		</xs:annotation>
+																		<xs:simpleType>
+																			<xs:restriction base="xs:string">
+																				<xs:enumeration value="yes"/>
+																				<xs:enumeration value="no"/>
+																				<xs:enumeration value="restricted"/>
+																			</xs:restriction>
+																		</xs:simpleType>
+																	</xs:attribute>
+																	<xs:attribute name="allowOLE">
+																		<xs:annotation>
+																			<xs:documentation>Specifies whether OLE elements are allowed under Emphasis. "yes" allows OLE elements under any emphasis. "no" does not allow OLE under any emphasis. "restricted" implies that allow/disallow behavior is derived from the individual emphasis definitions under the EmphasisDef/OLE node</xs:documentation>
+																		</xs:annotation>
+																		<xs:simpleType>
+																			<xs:restriction base="xs:string">
+																				<xs:enumeration value="yes"/>
+																				<xs:enumeration value="no"/>
+																				<xs:enumeration value="restricted"/>
+																			</xs:restriction>
+																		</xs:simpleType>
+																	</xs:attribute>
+																</xs:complexType>
+															</xs:element>
+															<xs:element ref="Media" minOccurs="0"/>
+															<xs:element ref="OLE" minOccurs="0"/>
+														</xs:sequence>
+														<xs:attribute name="default" type="xs:string" use="optional"/>
+														<xs:attribute name="readonly" type="xs:boolean" use="optional"/>
+														<xs:attribute name="defaultHyperlink" type="xs:string" use="optional"/>
+														<xs:attribute name="childTextnode" type="xs:boolean"/>
+													</xs:complexType>
+												</xs:element>
+											</xs:choice>
+											<xs:choice minOccurs="0" maxOccurs="unbounded">
+												<xs:element name="Sequence">
+													<xs:complexType>
+														<xs:choice>
+															<xs:element name="OLEType">
+																<xs:complexType>
+																	<xs:attribute name="name" use="required"/>
+																</xs:complexType>
+															</xs:element>
+															<xs:element name="TableType">
+																<xs:complexType>
+																	<xs:attribute name="name" type="xs:string" use="required"/>
+																</xs:complexType>
+															</xs:element>
+															<xs:element name="MediaType">
+																<xs:complexType>
+																	<xs:attribute name="name" type="xs:string" use="required"/>
+																	<xs:attribute name="friendly" type="xs:string" use="optional"/>
+																	<xs:attribute name="style" type="xs:string" use="optional"/>
+																</xs:complexType>
+															</xs:element>
+															<xs:element name="ReferenceType">
+																<xs:complexType>
+																	<xs:attribute name="name" type="xs:string" use="required"/>
+																	<xs:attribute name="friendly" type="xs:string" use="optional"/>
+																	<xs:attribute name="style" type="xs:string" use="optional"/>
+																	<xs:attribute name="insertAfter" type="xs:string" use="optional"/>
+																	<xs:attribute name="insertAfterBlank" type="xs:string" use="optional"/>
+																</xs:complexType>
+															</xs:element>
+															<xs:element name="SectionType">
+																<xs:complexType>
+																	<xs:attribute name="name" type="xs:string" use="required"/>
+																	<xs:attribute name="friendly" type="xs:string" use="optional"/>
+																	<xs:attribute name="style" type="xs:string" use="optional"/>
+																	<xs:attribute name="numbering" use="optional">
+																		<xs:simpleType>
+																			<xs:restriction base="xs:string">
+																				<xs:enumeration value="continue"/>
+																				<xs:enumeration value="restart"/>
+																			</xs:restriction>
+																		</xs:simpleType>
+																	</xs:attribute>
+																	<xs:attribute name="visible" type="xs:boolean" use="optional" default="false"/>
+																	<xs:attribute name="insertAfter" type="xs:string" use="optional"/>
+																	<xs:attribute name="insertAfterBlank" type="xs:string" use="optional"/>
+																	<xs:attribute name="default" type="xs:string" use="optional"/>
+																	<xs:attribute name="increaseIndent" type="xs:string" use="optional"/>
+																	<xs:attribute name="decreaseIndent" type="xs:string" use="optional"/>
+																	<xs:attribute name="readonly" type="xs:boolean" use="optional"/>
+																	<xs:attribute name="contextId" type="xs:string" use="optional"/>
+																	<xs:attribute name="allowCut" type="xs:boolean" use="optional"/>
+																	<xs:attribute name="allowCopy" type="xs:boolean" use="optional"/>
+																	<xs:attribute name="allowRemove" type="xs:boolean" use="optional"/>
+																</xs:complexType>
+															</xs:element>
+															<xs:element name="UniqueidentifierType">
+																<xs:complexType>
+																	<xs:attribute name="name" type="xs:string" use="required"/>
+																</xs:complexType>
+															</xs:element>
+															<xs:element name="UnmanagedType">
+																<xs:complexType>
+																	<xs:attribute name="name" type="xs:string" use="required"/>
+																</xs:complexType>
+															</xs:element>
+															<xs:element name="EndnoteType">
+																<xs:complexType>
+																	<xs:attribute name="name" type="xs:string" use="required"/>
+																</xs:complexType>
+															</xs:element>
+														</xs:choice>
+														<xs:attribute name="minOccurs" use="optional">
+															<xs:simpleType>
+																<xs:restriction base="xs:string">
+																	<xs:enumeration value="0"/>
+																	<xs:enumeration value="1"/>
+																</xs:restriction>
+															</xs:simpleType>
+														</xs:attribute>
+														<xs:attribute name="maxOccurs" use="optional">
+															<xs:simpleType>
+																<xs:restriction base="xs:string">
+																	<xs:enumeration value="1"/>
+																	<xs:enumeration value="unbounded"/>
+																</xs:restriction>
+															</xs:simpleType>
+														</xs:attribute>
+													</xs:complexType>
+												</xs:element>
+												<xs:element name="Choice">
+													<xs:complexType>
+														<xs:choice maxOccurs="unbounded">
+															<xs:element name="OLEType">
+																<xs:complexType>
+																	<xs:attribute name="name" use="required"/>
+																</xs:complexType>
+															</xs:element>
+															<xs:element name="MediaType">
+																<xs:complexType>
+																	<xs:attribute name="name" type="xs:string" use="required"/>
+																	<xs:attribute name="friendly" type="xs:string" use="optional"/>
+																	<xs:attribute name="style" type="xs:string" use="optional"/>
+																</xs:complexType>
+															</xs:element>
+															<xs:element name="TableType">
+																<xs:complexType>
+																	<xs:attribute name="name" type="xs:string" use="required"/>
+																</xs:complexType>
+															</xs:element>
+															<xs:element name="ReferenceType">
+																<xs:complexType>
+																	<xs:attribute name="name" type="xs:string" use="required"/>
+																	<xs:attribute name="friendly" type="xs:string" use="optional"/>
+																	<xs:attribute name="style" type="xs:string" use="optional"/>
+																	<xs:attribute name="insertAfter" type="xs:string" use="optional"/>
+																	<xs:attribute name="insertAfterBlank" type="xs:string" use="optional"/>
+																</xs:complexType>
+															</xs:element>
+															<xs:element name="SectionType">
+																<xs:complexType>
+																	<xs:attribute name="name" type="xs:string" use="required"/>
+																	<xs:attribute name="friendly" type="xs:string" use="optional"/>
+																	<xs:attribute name="style" type="xs:string" use="optional"/>
+																	<xs:attribute name="numbering" use="optional">
+																		<xs:simpleType>
+																			<xs:restriction base="xs:string">
+																				<xs:enumeration value="continue"/>
+																				<xs:enumeration value="restart"/>
+																			</xs:restriction>
+																		</xs:simpleType>
+																	</xs:attribute>
+																	<xs:attribute name="visible" type="xs:boolean" use="optional" default="false"/>
+																	<xs:attribute name="insertAfter" type="xs:string" use="optional"/>
+																	<xs:attribute name="insertAfterBlank" type="xs:string" use="optional"/>
+																	<xs:attribute name="default" type="xs:string" use="optional"/>
+																	<xs:attribute name="increaseIndent" type="xs:string" use="optional"/>
+																	<xs:attribute name="decreaseIndent" type="xs:string" use="optional"/>
+																	<xs:attribute name="readonly" type="xs:boolean" use="optional"/>
+																	<xs:attribute name="contextId" type="xs:string" use="optional"/>
+																</xs:complexType>
+															</xs:element>
+															<xs:element name="UniqueidentifierType">
+																<xs:complexType>
+																	<xs:attribute name="name" type="xs:string" use="required"/>
+																</xs:complexType>
+															</xs:element>
+															<xs:element name="UnmanagedType">
+																<xs:complexType>
+																	<xs:attribute name="name" type="xs:string" use="required"/>
+																</xs:complexType>
+															</xs:element>
+															<xs:element name="EndnoteType">
+																<xs:complexType>
+																	<xs:attribute name="name" type="xs:string" use="required"/>
+																</xs:complexType>
+															</xs:element>
+														</xs:choice>
+														<xs:attribute name="minOccurs" use="optional">
+															<xs:simpleType>
+																<xs:restriction base="xs:string">
+																	<xs:enumeration value="0"/>
+																	<xs:enumeration value="1"/>
+																</xs:restriction>
+															</xs:simpleType>
+														</xs:attribute>
+														<xs:attribute name="maxOccurs" use="optional">
+															<xs:simpleType>
+																<xs:restriction base="xs:string">
+																	<xs:enumeration value="1"/>
+																	<xs:enumeration value="unbounded"/>
+																</xs:restriction>
+															</xs:simpleType>
+														</xs:attribute>
+														<xs:attribute name="submenu" type="xs:boolean" use="optional"/>
+													</xs:complexType>
+												</xs:element>
+											</xs:choice>
+										</xs:sequence>
+										<xs:attribute name="displayAttribute" type="xs:string" use="optional"/>
+										<xs:attribute name="displayElement" type="xs:boolean" use="optional"/>
+									</xs:complexType>
+								</xs:element>
+								<xs:element name="Uniqueidentifier">
+									<xs:complexType/>
+								</xs:element>
+								<xs:element name="Unmanaged"/>
+								<xs:element name="Endnote">
+									<xs:complexType/>
+								</xs:element>
+								<xs:element name="Table">
+									<xs:complexType>
+										<xs:sequence>
+											<xs:element name="BeforeTable" minOccurs="0">
+												<xs:complexType>
+													<xs:choice maxOccurs="unbounded">
+														<xs:element name="Sequence">
+															<xs:complexType>
+																<xs:choice>
+																	<xs:element name="OLEType">
+																		<xs:complexType>
+																			<xs:attribute name="name" use="required"/>
+																		</xs:complexType>
+																	</xs:element>
+																	<xs:element name="MediaType">
+																		<xs:complexType>
+																			<xs:attribute name="name" type="xs:string" use="required"/>
+																			<xs:attribute name="friendly" type="xs:string" use="optional"/>
+																			<xs:attribute name="style" type="xs:string" use="optional"/>
+																		</xs:complexType>
+																	</xs:element>
+																	<xs:element name="ReferenceType">
+																		<xs:complexType>
+																			<xs:attribute name="name" type="xs:string" use="required"/>
+																			<xs:attribute name="friendly" type="xs:string" use="optional"/>
+																			<xs:attribute name="style" type="xs:string" use="optional"/>
+																			<xs:attribute name="insertAfter" type="xs:string" use="optional"/>
+																			<xs:attribute name="insertAfterBlank" type="xs:string" use="optional"/>
+																		</xs:complexType>
+																	</xs:element>
+																	<xs:element name="SectionType">
+																		<xs:complexType>
+																			<xs:attribute name="name" type="xs:string" use="required"/>
+																			<xs:attribute name="friendly" type="xs:string" use="optional"/>
+																			<xs:attribute name="style" type="xs:string" use="optional"/>
+																			<xs:attribute name="numbering" use="optional">
+																				<xs:simpleType>
+																					<xs:restriction base="xs:string">
+																						<xs:enumeration value="continue"/>
+																						<xs:enumeration value="restart"/>
+																					</xs:restriction>
+																				</xs:simpleType>
+																			</xs:attribute>
+																			<xs:attribute name="visible" type="xs:boolean" use="optional" default="false"/>
+																			<xs:attribute name="insertAfter" type="xs:string" use="optional"/>
+																			<xs:attribute name="insertAfterBlank" type="xs:string" use="optional"/>
+																			<xs:attribute name="default" type="xs:string" use="optional"/>
+																			<xs:attribute name="increaseIndent" type="xs:string" use="optional"/>
+																			<xs:attribute name="decreaseIndent" type="xs:string" use="optional"/>
+																			<xs:attribute name="readonly" type="xs:boolean" use="optional"/>
+																			<xs:attribute name="contextId" type="xs:string" use="optional"/>
+																			<xs:attribute name="allowCut" type="xs:boolean" use="optional"/>
+																			<xs:attribute name="allowCopy" type="xs:boolean" use="optional"/>
+																			<xs:attribute name="allowRemove" type="xs:boolean" use="optional"/>
+																		</xs:complexType>
+																	</xs:element>
+																	<xs:element name="UniqueidentifierType">
+																		<xs:complexType>
+																			<xs:attribute name="name" type="xs:string" use="required"/>
+																		</xs:complexType>
+																	</xs:element>
+																	<xs:element name="UnmanagedType">
+																		<xs:complexType>
+																			<xs:attribute name="name" type="xs:string" use="required"/>
+																		</xs:complexType>
+																	</xs:element>
+																	<xs:element name="EndnoteType">
+																		<xs:complexType>
+																			<xs:attribute name="name" type="xs:string" use="required"/>
+																		</xs:complexType>
+																	</xs:element>
+																</xs:choice>
+																<xs:attribute name="minOccurs" use="optional">
+																	<xs:simpleType>
+																		<xs:restriction base="xs:string">
+																			<xs:enumeration value="0"/>
+																			<xs:enumeration value="1"/>
+																		</xs:restriction>
+																	</xs:simpleType>
+																</xs:attribute>
+																<xs:attribute name="maxOccurs" use="optional">
+																	<xs:simpleType>
+																		<xs:restriction base="xs:string">
+																			<xs:enumeration value="1"/>
+																			<xs:enumeration value="unbounded"/>
+																		</xs:restriction>
+																	</xs:simpleType>
+																</xs:attribute>
+															</xs:complexType>
+														</xs:element>
+														<xs:element name="Choice">
+															<xs:complexType>
+																<xs:choice maxOccurs="unbounded">
+																	<xs:element name="OLEType">
+																		<xs:complexType>
+																			<xs:attribute name="name" use="required"/>
+																		</xs:complexType>
+																	</xs:element>
+																	<xs:element name="MediaType">
+																		<xs:complexType>
+																			<xs:attribute name="name" type="xs:string" use="required"/>
+																			<xs:attribute name="friendly" type="xs:string" use="optional"/>
+																			<xs:attribute name="style" type="xs:string" use="optional"/>
+																		</xs:complexType>
+																	</xs:element>
+																	<xs:element name="ReferenceType">
+																		<xs:complexType>
+																			<xs:attribute name="name" type="xs:string" use="required"/>
+																			<xs:attribute name="friendly" type="xs:string" use="optional"/>
+																			<xs:attribute name="style" type="xs:string" use="optional"/>
+																			<xs:attribute name="insertAfter" type="xs:string" use="optional"/>
+																			<xs:attribute name="insertAfterBlank" type="xs:string" use="optional"/>
+																		</xs:complexType>
+																	</xs:element>
+																	<xs:element name="SectionType">
+																		<xs:complexType>
+																			<xs:attribute name="name" type="xs:string" use="required"/>
+																			<xs:attribute name="friendly" type="xs:string" use="optional"/>
+																			<xs:attribute name="style" type="xs:string" use="optional"/>
+																			<xs:attribute name="numbering" use="optional">
+																				<xs:simpleType>
+																					<xs:restriction base="xs:string">
+																						<xs:enumeration value="continue"/>
+																						<xs:enumeration value="restart"/>
+																					</xs:restriction>
+																				</xs:simpleType>
+																			</xs:attribute>
+																			<xs:attribute name="visible" type="xs:boolean" use="optional" default="false"/>
+																			<xs:attribute name="insertAfter" type="xs:string" use="optional"/>
+																			<xs:attribute name="insertAfterBlank" type="xs:string" use="optional"/>
+																			<xs:attribute name="default" type="xs:string" use="optional"/>
+																			<xs:attribute name="increaseIndent" type="xs:string" use="optional"/>
+																			<xs:attribute name="decreaseIndent" type="xs:string" use="optional"/>
+																			<xs:attribute name="readonly" type="xs:boolean" use="optional"/>
+																			<xs:attribute name="contextId" type="xs:string" use="optional"/>
+																		</xs:complexType>
+																	</xs:element>
+																	<xs:element name="UniqueidentifierType">
+																		<xs:complexType>
+																			<xs:attribute name="name" type="xs:string" use="required"/>
+																		</xs:complexType>
+																	</xs:element>
+																	<xs:element name="UnmanagedType">
+																		<xs:complexType>
+																			<xs:attribute name="name" type="xs:string" use="required"/>
+																		</xs:complexType>
+																	</xs:element>
+																	<xs:element name="EndnoteType">
+																		<xs:complexType>
+																			<xs:attribute name="name" type="xs:string" use="required"/>
+																		</xs:complexType>
+																	</xs:element>
+																</xs:choice>
+																<xs:attribute name="minOccurs" use="optional">
+																	<xs:simpleType>
+																		<xs:restriction base="xs:string">
+																			<xs:enumeration value="0"/>
+																			<xs:enumeration value="1"/>
+																		</xs:restriction>
+																	</xs:simpleType>
+																</xs:attribute>
+																<xs:attribute name="maxOccurs" use="optional">
+																	<xs:simpleType>
+																		<xs:restriction base="xs:string">
+																			<xs:enumeration value="1"/>
+																			<xs:enumeration value="unbounded"/>
+																		</xs:restriction>
+																	</xs:simpleType>
+																</xs:attribute>
+																<xs:attribute name="submenu" type="xs:boolean" use="optional"/>
+															</xs:complexType>
+														</xs:element>
+													</xs:choice>
+												</xs:complexType>
+											</xs:element>
+											<xs:choice>
+												<xs:element name="TableGroupType">
+													<xs:complexType>
+														<xs:attribute name="name" use="required"/>
+													</xs:complexType>
+												</xs:element>
+												<xs:sequence>
+													<xs:element name="TableColumnType" minOccurs="0">
+														<xs:complexType>
+															<xs:attribute name="name" use="required"/>
+															<xs:attribute name="maxOccurs" use="optional">
+																<xs:simpleType>
+																	<xs:restriction base="xs:string">
+																		<xs:enumeration value="1"/>
+																		<xs:enumeration value="unbounded"/>
+																	</xs:restriction>
+																</xs:simpleType>
+															</xs:attribute>
+														</xs:complexType>
+													</xs:element>
+													<xs:choice>
+														<xs:element name="TableSectionType" maxOccurs="unbounded">
+															<xs:complexType>
+																<xs:attribute name="name" use="required"/>
+																<xs:attribute name="minOccurs" use="optional">
+																	<xs:simpleType>
+																		<xs:restriction base="xs:string">
+																			<xs:enumeration value="0"/>
+																			<xs:enumeration value="1"/>
+																		</xs:restriction>
+																	</xs:simpleType>
+																</xs:attribute>
+																<xs:attribute name="maxOccurs" use="optional">
+																	<xs:simpleType>
+																		<xs:restriction base="xs:string">
+																			<xs:enumeration value="1"/>
+																			<xs:enumeration value="unbounded"/>
+																		</xs:restriction>
+																	</xs:simpleType>
+																</xs:attribute>
+															</xs:complexType>
+														</xs:element>
+														<xs:element name="TableRowType" maxOccurs="unbounded">
+															<xs:complexType>
+																<xs:attribute name="name" use="required"/>
+																<xs:attribute name="minOccurs" use="optional">
+																	<xs:simpleType>
+																		<xs:restriction base="xs:string">
+																			<xs:enumeration value="0"/>
+																			<xs:enumeration value="1"/>
+																		</xs:restriction>
+																	</xs:simpleType>
+																</xs:attribute>
+																<xs:attribute name="maxOccurs" use="optional">
+																	<xs:simpleType>
+																		<xs:restriction base="xs:string">
+																			<xs:enumeration value="1"/>
+																			<xs:enumeration value="unbounded"/>
+																		</xs:restriction>
+																	</xs:simpleType>
+																</xs:attribute>
+															</xs:complexType>
+														</xs:element>
+													</xs:choice>
+												</xs:sequence>
+											</xs:choice>
+											<xs:element name="AfterTable" minOccurs="0">
+												<xs:complexType>
+													<xs:choice maxOccurs="unbounded">
+														<xs:element name="Sequence">
+															<xs:complexType>
+																<xs:choice>
+																	<xs:element name="OLEType">
+																		<xs:complexType>
+																			<xs:attribute name="name" use="required"/>
+																		</xs:complexType>
+																	</xs:element>
+																	<xs:element name="MediaType">
+																		<xs:complexType>
+																			<xs:attribute name="name" type="xs:string" use="required"/>
+																			<xs:attribute name="friendly" type="xs:string" use="optional"/>
+																			<xs:attribute name="style" type="xs:string" use="optional"/>
+																		</xs:complexType>
+																	</xs:element>
+																	<xs:element name="ReferenceType">
+																		<xs:complexType>
+																			<xs:attribute name="name" type="xs:string" use="required"/>
+																			<xs:attribute name="friendly" type="xs:string" use="optional"/>
+																			<xs:attribute name="style" type="xs:string" use="optional"/>
+																			<xs:attribute name="insertAfter" type="xs:string" use="optional"/>
+																			<xs:attribute name="insertAfterBlank" type="xs:string" use="optional"/>
+																		</xs:complexType>
+																	</xs:element>
+																	<xs:element name="SectionType">
+																		<xs:complexType>
+																			<xs:attribute name="name" type="xs:string" use="required"/>
+																			<xs:attribute name="friendly" type="xs:string" use="optional"/>
+																			<xs:attribute name="style" type="xs:string" use="optional"/>
+																			<xs:attribute name="numbering" use="optional">
+																				<xs:simpleType>
+																					<xs:restriction base="xs:string">
+																						<xs:enumeration value="continue"/>
+																						<xs:enumeration value="restart"/>
+																					</xs:restriction>
+																				</xs:simpleType>
+																			</xs:attribute>
+																			<xs:attribute name="visible" type="xs:boolean" use="optional" default="false"/>
+																			<xs:attribute name="insertAfter" type="xs:string" use="optional"/>
+																			<xs:attribute name="insertAfterBlank" type="xs:string" use="optional"/>
+																			<xs:attribute name="default" type="xs:string" use="optional"/>
+																			<xs:attribute name="increaseIndent" type="xs:string" use="optional"/>
+																			<xs:attribute name="decreaseIndent" type="xs:string" use="optional"/>
+																			<xs:attribute name="readonly" type="xs:boolean" use="optional"/>
+																			<xs:attribute name="contextId" type="xs:string" use="optional"/>
+																			<xs:attribute name="allowCut" type="xs:boolean" use="optional"/>
+																			<xs:attribute name="allowCopy" type="xs:boolean" use="optional"/>
+																			<xs:attribute name="allowRemove" type="xs:boolean" use="optional"/>
+																		</xs:complexType>
+																	</xs:element>
+																	<xs:element name="UniqueidentifierType">
+																		<xs:complexType>
+																			<xs:attribute name="name" type="xs:string" use="required"/>
+																		</xs:complexType>
+																	</xs:element>
+																	<xs:element name="UnmanagedType">
+																		<xs:complexType>
+																			<xs:attribute name="name" type="xs:string" use="required"/>
+																		</xs:complexType>
+																	</xs:element>
+																	<xs:element name="EndnoteType">
+																		<xs:complexType>
+																			<xs:attribute name="name" type="xs:string" use="required"/>
+																		</xs:complexType>
+																	</xs:element>
+																</xs:choice>
+																<xs:attribute name="minOccurs" use="optional">
+																	<xs:simpleType>
+																		<xs:restriction base="xs:string">
+																			<xs:enumeration value="0"/>
+																			<xs:enumeration value="1"/>
+																		</xs:restriction>
+																	</xs:simpleType>
+																</xs:attribute>
+																<xs:attribute name="maxOccurs" use="optional">
+																	<xs:simpleType>
+																		<xs:restriction base="xs:string">
+																			<xs:enumeration value="1"/>
+																			<xs:enumeration value="unbounded"/>
+																		</xs:restriction>
+																	</xs:simpleType>
+																</xs:attribute>
+															</xs:complexType>
+														</xs:element>
+														<xs:element name="Choice">
+															<xs:complexType>
+																<xs:choice maxOccurs="unbounded">
+																	<xs:element name="OLEType">
+																		<xs:complexType>
+																			<xs:attribute name="name" use="required"/>
+																		</xs:complexType>
+																	</xs:element>
+																	<xs:element name="MediaType">
+																		<xs:complexType>
+																			<xs:attribute name="name" type="xs:string" use="required"/>
+																			<xs:attribute name="friendly" type="xs:string" use="optional"/>
+																			<xs:attribute name="style" type="xs:string" use="optional"/>
+																		</xs:complexType>
+																	</xs:element>
+																	<xs:element name="ReferenceType">
+																		<xs:complexType>
+																			<xs:attribute name="name" type="xs:string" use="required"/>
+																			<xs:attribute name="friendly" type="xs:string" use="optional"/>
+																			<xs:attribute name="style" type="xs:string" use="optional"/>
+																			<xs:attribute name="insertAfter" type="xs:string" use="optional"/>
+																			<xs:attribute name="insertAfterBlank" type="xs:string" use="optional"/>
+																		</xs:complexType>
+																	</xs:element>
+																	<xs:element name="SectionType">
+																		<xs:complexType>
+																			<xs:attribute name="name" type="xs:string" use="required"/>
+																			<xs:attribute name="friendly" type="xs:string" use="optional"/>
+																			<xs:attribute name="style" type="xs:string" use="optional"/>
+																			<xs:attribute name="numbering" use="optional">
+																				<xs:simpleType>
+																					<xs:restriction base="xs:string">
+																						<xs:enumeration value="continue"/>
+																						<xs:enumeration value="restart"/>
+																					</xs:restriction>
+																				</xs:simpleType>
+																			</xs:attribute>
+																			<xs:attribute name="visible" type="xs:boolean" use="optional" default="false"/>
+																			<xs:attribute name="insertAfter" type="xs:string" use="optional"/>
+																			<xs:attribute name="insertAfterBlank" type="xs:string" use="optional"/>
+																			<xs:attribute name="default" type="xs:string" use="optional"/>
+																			<xs:attribute name="increaseIndent" type="xs:string" use="optional"/>
+																			<xs:attribute name="decreaseIndent" type="xs:string" use="optional"/>
+																			<xs:attribute name="readonly" type="xs:boolean" use="optional"/>
+																			<xs:attribute name="contextId" type="xs:string" use="optional"/>
+																		</xs:complexType>
+																	</xs:element>
+																	<xs:element name="UniqueidentifierType">
+																		<xs:complexType>
+																			<xs:attribute name="name" type="xs:string" use="required"/>
+																		</xs:complexType>
+																	</xs:element>
+																	<xs:element name="UnmanagedType">
+																		<xs:complexType>
+																			<xs:attribute name="name" type="xs:string" use="required"/>
+																		</xs:complexType>
+																	</xs:element>
+																	<xs:element name="EndnoteType">
+																		<xs:complexType>
+																			<xs:attribute name="name" type="xs:string" use="required"/>
+																		</xs:complexType>
+																	</xs:element>
+																</xs:choice>
+																<xs:attribute name="minOccurs" use="optional">
+																	<xs:simpleType>
+																		<xs:restriction base="xs:string">
+																			<xs:enumeration value="0"/>
+																			<xs:enumeration value="1"/>
+																		</xs:restriction>
+																	</xs:simpleType>
+																</xs:attribute>
+																<xs:attribute name="maxOccurs" use="optional">
+																	<xs:simpleType>
+																		<xs:restriction base="xs:string">
+																			<xs:enumeration value="1"/>
+																			<xs:enumeration value="unbounded"/>
+																		</xs:restriction>
+																	</xs:simpleType>
+																</xs:attribute>
+																<xs:attribute name="submenu" type="xs:boolean" use="optional"/>
+															</xs:complexType>
+														</xs:element>
+													</xs:choice>
+												</xs:complexType>
+											</xs:element>
+											<xs:element name="TableStyles" minOccurs="0">
+												<xs:complexType>
+													<xs:sequence maxOccurs="unbounded">
+														<xs:element name="TableStyle">
+															<xs:complexType>
+																<xs:sequence>
+																	<xs:element name="Table">
+																		<xs:complexType>
+																			<xs:sequence>
+																				<xs:element name="Section" maxOccurs="unbounded">
+																					<xs:complexType>
+																						<xs:attribute name="name" use="required"/>
+																						<xs:attributeGroup ref="tableStyles"/>
+																						<xs:attributeGroup ref="xpressRowStyleAttributes"/>
+																					</xs:complexType>
+																				</xs:element>
+																			</xs:sequence>
+																			<xs:attributeGroup ref="tableStyles"/>
+																			<xs:attributeGroup ref="xpressRowStyleAttributes"/>
+																			<xs:attributeGroup ref="xpressColumnStyleAttributes"/>
+																		</xs:complexType>
+																	</xs:element>
+																</xs:sequence>
+																<xs:attribute name="name" type="xs:string" use="required"/>
+															</xs:complexType>
+														</xs:element>
+													</xs:sequence>
+													<xs:attribute name="default" type="xs:string"/>
+												</xs:complexType>
+											</xs:element>
+											<xs:element name="Templates" minOccurs="0">
+												<xs:complexType>
+													<xs:sequence>
+														<xs:element name="Template" minOccurs="0" maxOccurs="unbounded">
+															<xs:annotation>
+																<xs:documentation>This element defines the characteristics of a table and its intended behavior in a given document</xs:documentation>
+															</xs:annotation>
+															<xs:complexType>
+																<xs:sequence>
+																	<xs:any namespace="##any" processContents="skip"/>
+																</xs:sequence>
+																<xs:attribute name="name" use="required"/>
+															</xs:complexType>
+														</xs:element>
+													</xs:sequence>
+													<xs:attribute name="default"/>
+												</xs:complexType>
+											</xs:element>
+										</xs:sequence>
+										<xs:attributeGroup ref="tgroupConstraint"/>
+										<xs:attributeGroup ref="sectionConstraint"/>
+										<xs:attribute name="defaultColumnCount" type="xs:integer" default="3">
+											<xs:annotation>
+												<xs:documentation>Defines the default number of columns within this group of a new instance of a table, if not indicated by the user</xs:documentation>
+											</xs:annotation>
+										</xs:attribute>
+										<xs:attribute name="defaultRowCount" type="xs:integer">
+											<xs:annotation>
+												<xs:documentation>Defines the default number of rows within this section of a new instance of a table, if not indicated by the user</xs:documentation>
+											</xs:annotation>
+										</xs:attribute>
+									</xs:complexType>
+								</xs:element>
+								<xs:element name="TableGroup">
+									<xs:complexType>
+										<xs:sequence>
+											<xs:element name="TableColumnType">
+												<xs:complexType>
+													<xs:attribute name="name" type="xs:string" use="required"/>
+													<xs:attribute name="maxOccurs" use="optional">
+														<xs:simpleType>
+															<xs:restriction base="xs:string">
+																<xs:enumeration value="1"/>
+																<xs:enumeration value="unbounded"/>
+															</xs:restriction>
+														</xs:simpleType>
+													</xs:attribute>
+												</xs:complexType>
+											</xs:element>
+											<xs:element name="TableSectionType" maxOccurs="unbounded">
+												<xs:complexType>
+													<xs:attribute name="name" type="xs:string" use="required"/>
+													<xs:attribute name="minOccurs" use="optional">
+														<xs:simpleType>
+															<xs:restriction base="xs:string">
+																<xs:enumeration value="0"/>
+																<xs:enumeration value="1"/>
+															</xs:restriction>
+														</xs:simpleType>
+													</xs:attribute>
+												</xs:complexType>
+											</xs:element>
+										</xs:sequence>
+										<xs:attributeGroup ref="tgroupConstraint"/>
+										<xs:attributeGroup ref="sectionConstraint"/>
+										<xs:attribute name="defaultColumnCount">
+											<xs:annotation>
+												<xs:documentation>Defines the default number of columns within this group of a new instance of a table, if not indicated by the user</xs:documentation>
+											</xs:annotation>
+										</xs:attribute>
+										<xs:attribute name="defaultRowCount">
+											<xs:annotation>
+												<xs:documentation>Defines the default number of rows within this group of a new instance of a table, if not indicated by the user</xs:documentation>
+											</xs:annotation>
+										</xs:attribute>
+										<xs:attribute name="defaultRowHeight" type="xs:float">
+											<xs:annotation>
+												<xs:documentation>Defines the default height of the rows within this section</xs:documentation>
+											</xs:annotation>
+										</xs:attribute>
+									</xs:complexType>
+								</xs:element>
+								<xs:element name="TableSection">
+									<xs:complexType>
+										<xs:sequence>
+											<xs:element name="TableRowType">
+												<xs:complexType>
+													<xs:attribute name="name" type="xs:string" use="required"/>
+													<xs:attribute name="friendly" type="xs:string" use="optional"/>
+													<xs:attribute name="maxOccurs"/>
+												</xs:complexType>
+											</xs:element>
+										</xs:sequence>
+										<xs:attributeGroup ref="sectionConstraint"/>
+										<xs:attribute name="defaultRowCount">
+											<xs:annotation>
+												<xs:documentation>Defines the default number of rows within this section of a new instance of a table, if not indicated by the user</xs:documentation>
+											</xs:annotation>
+										</xs:attribute>
+										<xs:attribute name="defaultRowHeight" type="xs:float">
+											<xs:annotation>
+												<xs:documentation>Defines the default height of the rows within this section</xs:documentation>
+											</xs:annotation>
+										</xs:attribute>
+										<xs:attribute name="repeatHeaderRows" type="xs:boolean" default="false">
+											<xs:annotation>
+												<xs:documentation>Indicates if the rows in this section should be repeated at the top of each page the table breaks across within Word </xs:documentation>
+											</xs:annotation>
+										</xs:attribute>
+									</xs:complexType>
+								</xs:element>
+								<xs:element name="TableRow">
+									<xs:complexType>
+										<xs:sequence>
+											<xs:element name="TableCellType" maxOccurs="unbounded">
+												<xs:complexType>
+													<xs:attribute name="name" use="required"/>
+													<xs:attribute name="friendly" type="xs:string" use="optional"/>
+													<xs:attribute name="style" type="xs:string" use="optional"/>
+													<xs:attribute name="default" type="xs:string" use="optional"/>
+													<xs:attribute name="readonly" type="xs:boolean" use="optional"/>
+													<xs:attribute name="contextId" type="xs:string" use="optional"/>
+												</xs:complexType>
+											</xs:element>
+										</xs:sequence>
+										<xs:attribute name="repeatHeaderRows" type="xs:boolean" default="false">
+											<xs:annotation>
+												<xs:documentation>Indicates if the rows in this section should be repeated at the top of each page the table breaks across within Word </xs:documentation>
+											</xs:annotation>
+										</xs:attribute>
+										<xs:attribute name="defaultRowHeight" type="xs:float">
+											<xs:annotation>
+												<xs:documentation>Defines the default height of the rows within this section</xs:documentation>
+											</xs:annotation>
+										</xs:attribute>
+									</xs:complexType>
+								</xs:element>
+								<xs:element name="TableCell">
+									<xs:complexType>
+										<xs:sequence>
+											<xs:choice minOccurs="0" maxOccurs="unbounded">
+												<xs:element name="Sequence">
+													<xs:complexType>
+														<xs:choice>
+															<xs:element name="OLEType">
+																<xs:complexType>
+																	<xs:attribute name="name" use="required"/>
+																</xs:complexType>
+															</xs:element>
+															<xs:element name="MediaType">
+																<xs:complexType>
+																	<xs:attribute name="name" type="xs:string" use="required"/>
+																	<xs:attribute name="friendly" type="xs:string" use="optional"/>
+																	<xs:attribute name="style" type="xs:string" use="optional"/>
+																</xs:complexType>
+															</xs:element>
+															<xs:element name="ReferenceType">
+																<xs:complexType>
+																	<xs:attribute name="name" type="xs:string" use="required"/>
+																	<xs:attribute name="friendly" type="xs:string" use="optional"/>
+																	<xs:attribute name="style" type="xs:string" use="optional"/>
+																	<xs:attribute name="insertAfter" type="xs:string" use="optional"/>
+																	<xs:attribute name="insertAfterBlank" type="xs:string" use="optional"/>
+																</xs:complexType>
+															</xs:element>
+															<xs:element name="SectionType">
+																<xs:complexType>
+																	<xs:attribute name="name" type="xs:string" use="required"/>
+																	<xs:attribute name="friendly" type="xs:string" use="optional"/>
+																	<xs:attribute name="style" type="xs:string" use="optional"/>
+																	<xs:attribute name="numbering" use="optional">
+																		<xs:simpleType>
+																			<xs:restriction base="xs:string">
+																				<xs:enumeration value="continue"/>
+																				<xs:enumeration value="restart"/>
+																			</xs:restriction>
+																		</xs:simpleType>
+																	</xs:attribute>
+																	<xs:attribute name="visible" type="xs:boolean" use="optional" default="false"/>
+																	<xs:attribute name="insertAfter" type="xs:string" use="optional"/>
+																	<xs:attribute name="insertAfterBlank" type="xs:string" use="optional"/>
+																	<xs:attribute name="default" type="xs:string" use="optional"/>
+																	<xs:attribute name="increaseIndent" type="xs:string" use="optional"/>
+																	<xs:attribute name="decreaseIndent" type="xs:string" use="optional"/>
+																	<xs:attribute name="readonly" type="xs:boolean" use="optional"/>
+																	<xs:attribute name="contextId" type="xs:string" use="optional"/>
+																	<xs:attribute name="allowCut" type="xs:boolean" use="optional"/>
+																	<xs:attribute name="allowCopy" type="xs:boolean" use="optional"/>
+																	<xs:attribute name="allowRemove" type="xs:boolean" use="optional"/>
+																</xs:complexType>
+															</xs:element>
+															<xs:element name="UniqueidentifierType">
+																<xs:complexType>
+																	<xs:attribute name="name" type="xs:string" use="required"/>
+																</xs:complexType>
+															</xs:element>
+															<xs:element name="UnmanagedType">
+																<xs:complexType>
+																	<xs:attribute name="name" type="xs:string" use="required"/>
+																</xs:complexType>
+															</xs:element>
+															<xs:element name="EndnoteType">
+																<xs:complexType>
+																	<xs:attribute name="name" type="xs:string" use="required"/>
+																</xs:complexType>
+															</xs:element>
+														</xs:choice>
+														<xs:attribute name="minOccurs" use="optional">
+															<xs:simpleType>
+																<xs:restriction base="xs:string">
+																	<xs:enumeration value="0"/>
+																	<xs:enumeration value="1"/>
+																</xs:restriction>
+															</xs:simpleType>
+														</xs:attribute>
+														<xs:attribute name="maxOccurs" use="optional">
+															<xs:simpleType>
+																<xs:restriction base="xs:string">
+																	<xs:enumeration value="1"/>
+																	<xs:enumeration value="unbounded"/>
+																</xs:restriction>
+															</xs:simpleType>
+														</xs:attribute>
+													</xs:complexType>
+												</xs:element>
+												<xs:element name="Choice">
+													<xs:complexType>
+														<xs:choice maxOccurs="unbounded">
+															<xs:element name="OLEType">
+																<xs:complexType>
+																	<xs:attribute name="name" use="required"/>
+																</xs:complexType>
+															</xs:element>
+															<xs:element name="MediaType">
+																<xs:complexType>
+																	<xs:attribute name="name" type="xs:string" use="required"/>
+																	<xs:attribute name="friendly" type="xs:string" use="optional"/>
+																	<xs:attribute name="style" type="xs:string" use="optional"/>
+																</xs:complexType>
+															</xs:element>
+															<xs:element name="ReferenceType">
+																<xs:complexType>
+																	<xs:attribute name="name" type="xs:string" use="required"/>
+																	<xs:attribute name="friendly" type="xs:string" use="optional"/>
+																	<xs:attribute name="style" type="xs:string" use="optional"/>
+																	<xs:attribute name="insertAfter" type="xs:string" use="optional"/>
+																	<xs:attribute name="insertAfterBlank" type="xs:string" use="optional"/>
+																</xs:complexType>
+															</xs:element>
+															<xs:element name="SectionType">
+																<xs:complexType>
+																	<xs:attribute name="name" type="xs:string" use="required"/>
+																	<xs:attribute name="friendly" type="xs:string" use="optional"/>
+																	<xs:attribute name="style" type="xs:string" use="optional"/>
+																	<xs:attribute name="numbering" use="optional">
+																		<xs:simpleType>
+																			<xs:restriction base="xs:string">
+																				<xs:enumeration value="continue"/>
+																				<xs:enumeration value="restart"/>
+																			</xs:restriction>
+																		</xs:simpleType>
+																	</xs:attribute>
+																	<xs:attribute name="visible" type="xs:boolean" use="optional" default="false"/>
+																	<xs:attribute name="insertAfter" type="xs:string" use="optional"/>
+																	<xs:attribute name="insertAfterBlank" type="xs:string" use="optional"/>
+																	<xs:attribute name="default" type="xs:string" use="optional"/>
+																	<xs:attribute name="increaseIndent" type="xs:string" use="optional"/>
+																	<xs:attribute name="decreaseIndent" type="xs:string" use="optional"/>
+																	<xs:attribute name="readonly" type="xs:boolean" use="optional"/>
+																	<xs:attribute name="contextId" type="xs:string" use="optional"/>
+																</xs:complexType>
+															</xs:element>
+															<xs:element name="UniqueidentifierType">
+																<xs:complexType>
+																	<xs:attribute name="name" type="xs:string" use="required"/>
+																</xs:complexType>
+															</xs:element>
+															<xs:element name="UnmanagedType">
+																<xs:complexType>
+																	<xs:attribute name="name" type="xs:string" use="required"/>
+																</xs:complexType>
+															</xs:element>
+															<xs:element name="EndnoteType">
+																<xs:complexType>
+																	<xs:attribute name="name" type="xs:string" use="required"/>
+																</xs:complexType>
+															</xs:element>
+														</xs:choice>
+														<xs:attribute name="minOccurs" use="optional">
+															<xs:simpleType>
+																<xs:restriction base="xs:string">
+																	<xs:enumeration value="0"/>
+																	<xs:enumeration value="1"/>
+																</xs:restriction>
+															</xs:simpleType>
+														</xs:attribute>
+														<xs:attribute name="maxOccurs" use="optional">
+															<xs:simpleType>
+																<xs:restriction base="xs:string">
+																	<xs:enumeration value="1"/>
+																	<xs:enumeration value="unbounded"/>
+																</xs:restriction>
+															</xs:simpleType>
+														</xs:attribute>
+														<xs:attribute name="submenu" type="xs:boolean" use="optional"/>
+													</xs:complexType>
+												</xs:element>
+											</xs:choice>
+										</xs:sequence>
+										<xs:attribute name="defaultElement" type="xs:string" use="optional">
+											<xs:annotation>
+												<xs:documentation>Optional attribute to specify a default para-type for insertion when user types (or pastes text) in the first empty of the cell</xs:documentation>
+											</xs:annotation>
+										</xs:attribute>
+										<xs:attribute name="displayAttribute" type="xs:string" use="optional"/>
+										<xs:attribute name="displayElement" type="xs:boolean" use="optional"/>
+									</xs:complexType>
+								</xs:element>
+								<xs:element name="TableColumn"/>
+							</xs:choice>
+							<xs:element name="Attributes" minOccurs="0">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="AttributeType" maxOccurs="unbounded">
+											<xs:complexType>
+												<xs:attribute name="name" type="xs:string" use="required"/>
+												<xs:attributeGroup ref="fieldAttributes"/>
+											</xs:complexType>
+										</xs:element>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element ref="ExtensibilityMethods" minOccurs="0"/>
+						</xs:sequence>
+						<xs:attributeGroup ref="commonAttributes"/>
+						<xs:attribute name="friendly" type="xs:string" use="optional"/>
+						<xs:attribute name="style" type="xs:string" use="optional"/>
+						<xs:attribute name="visible" type="xs:boolean" use="optional" default="false"/>
+						<xs:attribute name="maxLength" type="xs:int" use="optional"/>
+						<xs:attribute name="isList" type="xs:boolean" use="optional" default="false"/>
+						<xs:attribute name="numbering" use="optional">
+							<xs:simpleType>
+								<xs:restriction base="xs:string">
+									<xs:enumeration value="continue"/>
+									<xs:enumeration value="restart"/>
+								</xs:restriction>
+							</xs:simpleType>
+						</xs:attribute>
+						<xs:attribute name="excludeFromContextMenu" type="xs:boolean" use="optional"/>
+						<xs:attribute name="excludeFromChangeToContextMenu" type="xs:boolean" use="optional"/>
+						<xs:attribute name="excludeFromComponentContextMenu" type="xs:boolean" use="optional"/>
+						<xs:attribute name="contextId" type="xs:string" use="optional"/>
+						<xs:attribute name="allowCut" type="xs:boolean" use="optional"/>
+						<xs:attribute name="allowCopy" type="xs:boolean" use="optional"/>
+						<xs:attribute name="allowRemove" type="xs:boolean" use="optional"/>
+						<xs:attribute name="linkDropHandler" type="xs:string" use="optional"/>
+						<xs:attribute name="externalMethodId" type="xs:string" use="optional"/>
+						<xs:attribute name="externalMethodFriendly"/>
+						<xs:attribute name="referenceAttribute" type="xs:string" use="optional"/>
+						<xs:attribute name="tooltipTransform" type="xs:string" use="optional"/>
+						<xs:attribute name="calloutAttribute" type="xs:string" use="optional"/>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:complexType name="StyleType">
+		<xs:attribute name="fontName" type="xs:string" use="optional"/>
+		<xs:attribute name="fontSize" use="optional">
+			<xs:simpleType>
+				<xs:restriction base="xs:int">
+					<xs:minInclusive value="8"/>
+					<xs:maxInclusive value="72"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+		<xs:attribute name="foreColor" type="xs:string" use="optional"/>
+		<xs:attribute name="backColor" type="xs:string" use="optional"/>
+		<xs:attribute name="bold" type="xs:boolean" use="optional"/>
+		<xs:attribute name="italic" type="xs:boolean" use="optional"/>
+		<xs:attribute name="underline" type="xs:boolean" use="optional"/>
+		<xs:attribute name="strikethrough" type="xs:boolean" use="optional"/>
+		<xs:attribute name="superscript" type="xs:boolean" use="optional"/>
+		<xs:attribute name="subscript" type="xs:boolean" use="optional"/>
+	</xs:complexType>
+	<xs:complexType name="CellGroupType">
+		<xs:sequence>
+			<xs:element name="Attributes" minOccurs="0">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="AttributeType" maxOccurs="unbounded">
+							<xs:complexType>
+								<xs:attribute name="name" type="xs:string" use="required"/>
+								<xs:attributeGroup ref="fieldAttributes"/>
+							</xs:complexType>
+						</xs:element>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element ref="ExtensibilityMethods" minOccurs="0"/>
+			<xs:choice>
+				<xs:element name="CellGroup" type="CellGroupType" maxOccurs="unbounded"/>
+				<xs:element name="Cell" maxOccurs="unbounded">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="Content">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="Para" minOccurs="0">
+											<xs:complexType>
+												<xs:sequence>
+													<xs:element name="Emphasis" minOccurs="0">
+														<xs:complexType>
+															<xs:sequence>
+																<xs:element name="EmphasisType" maxOccurs="unbounded">
+																	<xs:complexType>
+																		<xs:attribute name="name" type="xs:string" use="required"/>
+																	</xs:complexType>
+																</xs:element>
+															</xs:sequence>
+														</xs:complexType>
+													</xs:element>
+												</xs:sequence>
+												<xs:attribute name="namespace" type="xs:string" use="optional"/>
+												<xs:attribute name="prefix"/>
+												<xs:attribute name="xmlname" use="optional"/>
+												<xs:attribute name="default" type="xs:string" use="optional"/>
+												<xs:attribute name="defaultHyperlink" type="xs:string" use="optional"/>
+											</xs:complexType>
+										</xs:element>
+										<xs:element name="SectionType" minOccurs="0" maxOccurs="unbounded">
+											<xs:complexType>
+												<xs:attribute name="name" type="xs:string" use="required"/>
+												<xs:attribute name="friendly" type="xs:string" use="optional"/>
+												<xs:attribute name="style" type="xs:string" use="optional"/>
+												<xs:attribute name="numbering" use="optional">
+													<xs:simpleType>
+														<xs:restriction base="xs:string">
+															<xs:enumeration value="continue"/>
+															<xs:enumeration value="restart"/>
+														</xs:restriction>
+													</xs:simpleType>
+												</xs:attribute>
+												<xs:attribute name="visible" type="xs:boolean" use="optional" default="false"/>
+												<xs:attribute name="insertAfter" type="xs:string" use="optional"/>
+												<xs:attribute name="insertAfterBlank" type="xs:string" use="optional"/>
+												<xs:attribute name="default" type="xs:string" use="optional"/>
+												<xs:attribute name="increaseIndent" type="xs:string" use="optional"/>
+												<xs:attribute name="decreaseIndent" type="xs:string" use="optional"/>
+												<xs:attribute name="contextId" type="xs:string" use="optional"/>
+											</xs:complexType>
+										</xs:element>
+										<xs:element name="MediaType" minOccurs="0" maxOccurs="unbounded">
+											<xs:complexType>
+												<xs:attribute name="name" type="xs:string" use="required"/>
+												<xs:attribute name="friendly" type="xs:string" use="optional"/>
+												<xs:attribute name="style" type="xs:string" use="optional"/>
+											</xs:complexType>
+										</xs:element>
+										<xs:element name="IGNORE-List" minOccurs="0">
+											<xs:complexType>
+												<xs:sequence>
+													<xs:element name="Emphasis" minOccurs="0">
+														<xs:complexType>
+															<xs:sequence>
+																<xs:element name="EmphasisType" maxOccurs="unbounded">
+																	<xs:complexType>
+																		<xs:attribute name="name" type="xs:string" use="required"/>
+																	</xs:complexType>
+																</xs:element>
+															</xs:sequence>
+														</xs:complexType>
+													</xs:element>
+												</xs:sequence>
+												<xs:attribute name="namespace" type="xs:string" use="optional"/>
+												<xs:attribute name="prefix"/>
+												<xs:attribute name="xmlname" use="optional"/>
+												<xs:attribute name="style" use="optional">
+													<xs:annotation>
+														<xs:documentation>default = bullet</xs:documentation>
+													</xs:annotation>
+													<xs:simpleType>
+														<xs:restriction base="xs:string">
+															<xs:enumeration value="bullet"/>
+															<xs:enumeration value="number"/>
+														</xs:restriction>
+													</xs:simpleType>
+												</xs:attribute>
+												<xs:attribute name="allowChangeStyle" type="xs:boolean" use="optional">
+													<xs:annotation>
+														<xs:documentation>default = false</xs:documentation>
+													</xs:annotation>
+												</xs:attribute>
+												<xs:attribute name="numbering" use="optional">
+													<xs:annotation>
+														<xs:documentation>default = restart</xs:documentation>
+													</xs:annotation>
+													<xs:simpleType>
+														<xs:restriction base="xs:string">
+															<xs:enumeration value="continue"/>
+															<xs:enumeration value="restart"/>
+														</xs:restriction>
+													</xs:simpleType>
+												</xs:attribute>
+												<xs:attribute name="allowChangeNumbering" type="xs:boolean" use="optional">
+													<xs:annotation>
+														<xs:documentation>default = false</xs:documentation>
+													</xs:annotation>
+												</xs:attribute>
+												<xs:attribute name="default" type="xs:string" use="optional"/>
+												<xs:attribute name="defaultHyperlink" type="xs:string" use="optional"/>
+											</xs:complexType>
+										</xs:element>
+										<xs:element name="IGNORE-Media" minOccurs="0">
+											<xs:complexType>
+												<xs:attribute name="namespace" type="xs:string" use="optional"/>
+												<xs:attribute name="prefix"/>
+												<xs:attribute name="xmlname"/>
+											</xs:complexType>
+										</xs:element>
+										<xs:element name="IGNORE-Reference" minOccurs="0">
+											<xs:complexType>
+												<xs:attribute name="namespace" type="xs:string" use="optional"/>
+												<xs:attribute name="prefix"/>
+												<xs:attribute name="xmlname"/>
+											</xs:complexType>
+										</xs:element>
+									</xs:sequence>
+									<xs:attribute name="readonly" type="xs:boolean" use="optional">
+										<xs:annotation>
+											<xs:documentation>default = false</xs:documentation>
+										</xs:annotation>
+									</xs:attribute>
+									<xs:attribute name="merge" type="xs:boolean" use="optional">
+										<xs:annotation>
+											<xs:documentation>default = false</xs:documentation>
+										</xs:annotation>
+									</xs:attribute>
+									<xs:attribute name="split" type="xs:boolean" use="optional">
+										<xs:annotation>
+											<xs:documentation>default = false</xs:documentation>
+										</xs:annotation>
+									</xs:attribute>
+									<xs:attribute name="rotate" type="xs:boolean" use="optional">
+										<xs:annotation>
+											<xs:documentation>default = false</xs:documentation>
+										</xs:annotation>
+									</xs:attribute>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="Attributes" minOccurs="0">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="AttributeType" maxOccurs="unbounded">
+											<xs:complexType>
+												<xs:attribute name="name" type="xs:string" use="required"/>
+												<xs:attributeGroup ref="fieldAttributes"/>
+											</xs:complexType>
+										</xs:element>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element ref="ExtensibilityMethods" minOccurs="0"/>
+						</xs:sequence>
+						<xs:attribute name="xmlname" type="xs:string" use="required"/>
+						<xs:attribute name="friendly" type="xs:string" use="optional"/>
+						<xs:attribute name="minOccurs" type="xs:int" use="optional">
+							<xs:annotation>
+								<xs:documentation>default = 1</xs:documentation>
+							</xs:annotation>
+						</xs:attribute>
+						<xs:attribute name="maxOccurs" type="xs:string" use="optional">
+							<xs:annotation>
+								<xs:documentation>default = 1</xs:documentation>
+							</xs:annotation>
+						</xs:attribute>
+						<xs:attribute name="contextId" type="xs:string" use="optional"/>
+					</xs:complexType>
+				</xs:element>
+			</xs:choice>
+		</xs:sequence>
+		<xs:attribute name="xmlname" type="xs:string" use="required"/>
+		<xs:attribute name="orientation" use="optional">
+			<xs:annotation>
+				<xs:documentation>default=row</xs:documentation>
+			</xs:annotation>
+			<xs:simpleType>
+				<xs:restriction base="xs:NMTOKEN">
+					<xs:enumeration value="row"/>
+					<xs:enumeration value="col"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+		<xs:attribute name="friendly" type="xs:string" use="optional"/>
+		<xs:attribute name="minOccurs" type="xs:int" use="optional">
+			<xs:annotation>
+				<xs:documentation>default=1</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="maxOccurs" type="xs:string" use="optional">
+			<xs:annotation>
+				<xs:documentation>default=1</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="contextId" type="xs:string" use="optional"/>
+	</xs:complexType>
+	<xs:element name="Internal">
+		<xs:annotation>
+			<xs:documentation>This indicates that the emphasis is a intra-document hyperlink</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="Target" maxOccurs="unbounded">
+					<xs:annotation>
+						<xs:documentation>This element is intended to describe the possible targets of cross-referencing in a document of a given configuration</xs:documentation>
+					</xs:annotation>
+					<xs:complexType>
+						<xs:attribute name="definition" type="xs:string" use="required"/>
+						<xs:attribute name="link" type="xs:string" use="required"/>
+						<xs:attribute name="xpath" type="xs:string"/>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+			<xs:attribute name="configuration" type="xs:string" use="required"/>
+			<xs:attribute name="substyle" type="xs:string" use="required"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="External">
+		<xs:annotation>
+			<xs:documentation>This indicates that the emphasis is a inter-document hyperlink.</xs:documentation>
+		</xs:annotation>
+		<xs:complexType/>
+	</xs:element>
+	<xs:element name="Custom">
+		<xs:annotation>
+			<xs:documentation>This indicates that this link is a special Custom link whose creation and jump to behavior will be managed externally</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:attribute name="assembly" use="required"/>
+			<xs:attribute name="class" use="required">
+				<xs:annotation>
+					<xs:documentation>The assembly/class attributes point to a class that implements the Invision.Xpress.EmphasisInterfaces.ICustomLink interface</xs:documentation>
+				</xs:annotation>
+			</xs:attribute>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="Multiple">
+		<xs:annotation>
+			<xs:documentation>This group indicates that the same emphasis will be used for both internal and external document links (and any other types) each with different sub-styles.</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:choice minOccurs="2" maxOccurs="2">
+				<xs:element name="External">
+					<xs:annotation>
+						<xs:documentation>This indicates that the emphasis is a inter-document hyperlink.</xs:documentation>
+					</xs:annotation>
+					<xs:complexType>
+						<xs:attribute name="substyle" use="required"/>
+					</xs:complexType>
+				</xs:element>
+				<xs:choice>
+					<xs:element ref="Internal"/>
+					<xs:element name="Custom">
+						<xs:annotation>
+							<xs:documentation>This indicates that this link is a special Custom link whose creation and jump to behavior will be managed externally</xs:documentation>
+						</xs:annotation>
+						<xs:complexType>
+							<xs:attribute name="substyle" use="required"/>
+							<xs:attribute name="assembly" use="required"/>
+							<xs:attribute name="class" use="required">
+								<xs:annotation>
+									<xs:documentation>The assembly/class attributes point to a class that implements the Invision.Xpress.EmphasisInterfaces.ICustomLink interface</xs:documentation>
+								</xs:annotation>
+							</xs:attribute>
+						</xs:complexType>
+					</xs:element>
+				</xs:choice>
+			</xs:choice>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="Media">
+		<xs:annotation>
+			<xs:documentation>Defines any inline image element (both reference and embedded) for the parent (para or emphasis)</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence maxOccurs="unbounded">
+				<xs:element name="MediaType">
+					<xs:complexType>
+						<xs:attribute name="name" use="required"/>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="OLE">
+		<xs:annotation>
+			<xs:documentation>Defines any inline OLE element for the parent (para or emphasis)</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence maxOccurs="unbounded">
+				<xs:element name="OLEType">
+					<xs:complexType>
+						<xs:attribute name="name" use="required"/>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:group name="TableComponents">
+		<xs:sequence/>
+	</xs:group>
+</xs:schema>
