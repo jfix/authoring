@@ -16,7 +16,8 @@
                         <revnumber>2</revnumber>
                         <date>2012-03-21</date>
                         <author><email>nicg@corbas.co.uk</email><personname>Nic Gibson</personname></author>
-                        <revdescription><itemizedlist><listitem><para>Transferred other elements from older files.</para></listitem>
+                        <revdescription><itemizedlist><listitem><para>Transferred other elements from older
+                                        files.</para></listitem>
                                 <listitem><para>Upated base type to current standards.</para></listitem>
                             </itemizedlist></revdescription>
                     </revision>
@@ -50,31 +51,39 @@
                         <authorinitials>jc</authorinitials>
                         <revremark>Added content model for abbrev.</revremark>
                     </revision>
-                	<revision>
-                		<revnumber>8</revnumber>
-                		<date>2012-10-08</date>
-                		<authorinitials>NG</authorinitials>
-                		<revremark>Added standard attributes to footnote element.</revremark>
-                	</revision>
-                	<revision>
-                		<revnumber>9</revnumber>
-                		<date>2012-10-08</date>
-                		<authorinitials>NG</authorinitials>
-                		<revremark>Removed required metadataReference from phrase. Should be optional.</revremark>
-                	</revision>
+                    <revision>
+                        <revnumber>8</revnumber>
+                        <date>2012-10-08</date>
+                        <authorinitials>NG</authorinitials>
+                        <revremark>Added standard attributes to footnote element.</revremark>
+                    </revision>
                     <revision>
                         <revnumber>9</revnumber>
                         <date>2012-10-08</date>
                         <authorinitials>NG</authorinitials>
-                        <revremark>Removed required metadataReference from phrase. Should be optional.</revremark>
+                        <revremark>Removed required metadataReference from phrase. Should be
+                            optional.</revremark>
+                    </revision>
+                    <revision>
+                        <revnumber>9</revnumber>
+                        <date>2012-10-08</date>
+                        <authorinitials>NG</authorinitials>
+                        <revremark>Removed required metadataReference from phrase. Should be
+                            optional.</revremark>
                     </revision>
                     <revision>
                         <revnumber>10</revnumber>
                         <date>2012-10-24</date>
                         <authorinitials>JC</authorinitials>
-                        <revremark>Unexposed oecdInline element, this element cannot appear in the document (because it is abstract).</revremark>
+                        <revremark>Unexposed oecdInline element, this element cannot appear in the document
+                            (because it is abstract).</revremark>
                     </revision>
-                </revhistory>
+                    <revision>
+                        <revnumber>11</revnumber>
+                        <date>2013-04-30</date>
+                        <authorinitials>JC</authorinitials>
+                        <revremark>Applied lower-case convention [#4947] to metadataRefs.</revremark>
+                    </revision> </revhistory>
                 <para>Note: the inline graphic component is defined in graphics.</para>
             </section></xs:documentation>
     </xs:annotation>
@@ -132,8 +141,9 @@
         <xs:annotation>
             <xs:documentation>
                 <section xmlns="http://docbook.org/ns/docbook">
-                    <para>The oecdInline type is the base class of almost all inline components. The components may only contain text or other
-                        elements in general. The purpose of the type is to ensure that all the inlines share a type.</para>
+                    <para>The oecdInline type is the base class of almost all inline components. The
+                        components may only contain text or other elements in general. The purpose of the type
+                        is to ensure that all the inlines share a type.</para>
                 </section>
             </xs:documentation>
         </xs:annotation>
@@ -271,19 +281,19 @@
                 <section xmlns="http://docbook.org/ns/docbook">
                     <para>Footnote type attributes grouped for easy override and reuse.</para>
                 </section>
-            	<revhistory>
-            		<title>Change Log</title>
-            		<revision>
-            			<revnumber>8</revnumber>
-            			<date>2012-10-08</date>
-            			<authorinitials>NG</authorinitials>
-            			<revremark>Added standard attributes - omitted in previous versions.</revremark>
-            		</revision>
-            	</revhistory>
+                <revhistory>
+                    <title>Change Log</title>
+                    <revision>
+                        <revnumber>8</revnumber>
+                        <date>2012-10-08</date>
+                        <authorinitials>NG</authorinitials>
+                        <revremark>Added standard attributes - omitted in previous versions.</revremark>
+                    </revision>
+                </revhistory>
             </xs:documentation>
         </xs:annotation>
-    	<xs:attributeGroup ref="oecdCommonAttributes"/>
-    	<xs:attributeGroup ref="oecdLinkingAttributes"/>    	
+        <xs:attributeGroup ref="oecdCommonAttributes"/>
+        <xs:attributeGroup ref="oecdLinkingAttributes"/>
     </xs:attributeGroup>
 
     <xs:group name="oecdFootNoteTypeContent" id="oecdFootNoteTypeContent">
@@ -310,7 +320,8 @@
                         <authorinitials>NG</authorinitials>
                         <revremark>Initial version</revremark>
                     </revision>
-                    <para>Footnote element. This element acts as an inline but has block content. Therefore, it is not derived from oecdInline.</para>
+                    <para>Footnote element. This element acts as an inline but has block content. Therefore,
+                        it is not derived from oecdInline.</para>
                 </section>
             </xs:documentation>
         </xs:annotation>
@@ -331,8 +342,8 @@
                     <revremark>Initial Version</revremark>
                 </revision>
                 <section xmlns="http://docbook.org/ns/docbook">
-                    <para>The text element type is used to force element content to be element or text as this is currently impossible in XML
-                        Schema.</para>
+                    <para>The text element type is used to force element content to be element or text as this
+                        is currently impossible in XML Schema.</para>
                 </section>
             </xs:documentation>
         </xs:annotation>
@@ -352,15 +363,15 @@
                 <section xmlns="http://docbook.org/ns/docbook">
                     <para>Phrase type attributes grouped for easy override and reuse.</para>
                 </section>
-            	<revhistory>
-            			<revision>
-            				<revnumber>9</revnumber>
-            				<date>2012-10-08</date>
-            				<authorinitials>NG</authorinitials>
-            				<revremark>Removed required metadataReference. Should be optional as phrases can carry
-            				other meaning (e.g. language).</revremark>
-            			</revision>
-            	</revhistory>
+                <revhistory>
+                    <revision>
+                        <revnumber>9</revnumber>
+                        <date>2012-10-08</date>
+                        <authorinitials>NG</authorinitials>
+                        <revremark>Removed required metadataReference. Should be optional as phrases can carry
+                            other meaning (e.g. language).</revremark>
+                    </revision>
+                </revhistory>
             </xs:documentation>
         </xs:annotation>
 
@@ -368,8 +379,9 @@
             <xs:annotation>
                 <xs:documentation>
                     <section xmlns="http://docbook.org/ns/docbook">
-                        <para>Defines a metadata reference. Metadata must be referencd via the documentMeta element in this element. The phrase
-                            element allows for multiple metadata references on a single piece of text. </para>
+                        <para>Defines a metadata reference. Metadata must be referencd via the documentMeta
+                            element in this element. The phrase element allows for multiple metadata
+                            references on a single piece of text. </para>
                         <para/>
                     </section>
                 </xs:documentation>
@@ -389,8 +401,9 @@
                         <authorinitials>NG</authorinitials>
                         <revremark>Initial version</revremark>
                     </revision>
-                    <para>This element can be used for semantic tagging. It allows an arbitrary number of metadata elements to be referenced. The
-                    metadata referencing method is via attributes as the model doesn't allow metadata elements at this point. </para>
+                    <para>This element can be used for semantic tagging. It allows an arbitrary number of
+                        metadata elements to be referenced. The metadata referencing method is via attributes
+                        as the model doesn't allow metadata elements at this point. </para>
                 </div>
             </xs:documentation>
         </xs:annotation>
@@ -413,8 +426,8 @@
                         <authorinitials>jc</authorinitials>
                         <revremark>Initial version</revremark>
                     </revision>
-                    <para>Captures an inline abbreviation or acronym. The full definition for the abbreviation should be held within the 'definition'
-                        attribute.</para>
+                    <para>Captures an inline abbreviation or acronym. The full definition for the abbreviation
+                        should be held within the 'definition' attribute.</para>
                 </div>
             </xs:documentation>
         </xs:annotation>
@@ -429,9 +442,9 @@
         <xs:annotation>
             <xs:documentation>
                 <section xmlns="http://docbook.org/ns/docbook">
-                    <para>Phrase type attributes grouped for easy override and reuse.</para>
+                    <para>abbreviation type attributes grouped for easy override and reuse.</para>
                     <revision>
-                        <revnumber>7</revnumber>
+                        <revnumber>1</revnumber>
                         <date>2012-04-18</date>
                         <authorinitials>jc</authorinitials>
                         <revremark>Initial version</revremark>
@@ -440,12 +453,21 @@
             </xs:documentation>
         </xs:annotation>
 
-        <xs:attribute name="metadataRefs" type="xs:IDREFS" id="abbreviationMetadataRefs" use="required">
+        <xs:attribute name="metadata-refs" type="xs:IDREFS" id="abbreviationMetadataRefs" use="required">
             <xs:annotation>
                 <xs:documentation>
                     <section xmlns="http://docbook.org/ns/docbook">
-                        <para>Defines a metadata reference. Metadata must be referencd via the documentMeta element in this element. The phrase
-                            element allows for multiple metadata references on a single piece of text. </para>
+                        <para>Defines a metadata reference. Metadata must be referencd via the documentMeta
+                            element in this element. The phrase element allows for multiple metadata
+                            references on a single piece of text. </para>
+                    </section>
+                    <section xmlns="http://docbook.org/ns/docbook">
+                        <revision>
+                            <revnumber>1</revnumber>
+                            <date>2013-04-30</date>
+                            <authorinitials>jc</authorinitials>
+                            <revremark>updated attribute name</revremark>
+                        </revision>
                     </section>
                 </xs:documentation>
             </xs:annotation>
@@ -481,8 +503,9 @@
     <xs:simpleType name="oecdStyleAttributeType" id="oecdStyleAttributeType">
         <xs:annotation>
             <xs:documentation>
-                <para xmlns="http://docbook.org/ns/docbook">Enumerated data type to hold the possible values for emphasis elements' style attribute.
-                    This is neither proscriptive nor exhaustive!</para>
+                <para xmlns="http://docbook.org/ns/docbook">Enumerated data type to hold the possible values
+                    for emphasis elements' style attribute. This is neither proscriptive nor
+                    exhaustive!</para>
             </xs:documentation>
         </xs:annotation>
         <xs:restriction base="xs:string">
