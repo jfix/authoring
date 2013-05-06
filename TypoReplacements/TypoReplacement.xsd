@@ -1,0 +1,383 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+	<xs:element name="typo">
+		<xs:annotation>
+			<xs:documentation>Typographic rules management</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="section" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="rules">
+		<xs:annotation>
+			<xs:documentation>A rule information set</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:choice minOccurs="0" maxOccurs="unbounded">
+				<xs:element ref="replacement">
+					<xs:annotation>
+						<xs:documentation>Replacement rule</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element ref="alert"/>
+			</xs:choice>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="replacement">
+		<xs:annotation>
+			<xs:documentation>Replacement rule</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:complexContent>
+				<xs:extension base="ruleType">
+					<xs:sequence minOccurs="0">
+						<xs:element ref="context" minOccurs="0">
+							<xs:annotation>
+								<xs:documentation>Context</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+						<xs:element ref="comment" minOccurs="0"/>
+						<xs:element ref="search"/>
+						<xs:element ref="replace"/>
+						<xs:element ref="history" minOccurs="0"/>
+					</xs:sequence>
+				</xs:extension>
+			</xs:complexContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="alert">
+		<xs:annotation>
+			<xs:documentation>Alert rule</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:complexContent>
+				<xs:extension base="ruleType">
+					<xs:sequence minOccurs="0">
+						<xs:element ref="search"/>
+						<xs:element ref="comment"/>
+						<xs:element ref="history" minOccurs="0"/>
+					</xs:sequence>
+				</xs:extension>
+			</xs:complexContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:complexType name="ruleType">
+
+		<xs:attribute name="targetLanguage" use="required">
+			<xs:simpleType>
+				<xs:list itemType="languages"/>
+			</xs:simpleType>
+		</xs:attribute>
+	</xs:complexType>
+	<xs:element name="element">
+		<xs:annotation>
+			<xs:documentation>An XML element such as <i>...</i>
+			</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:complexContent>
+				<xs:extension base="mixedTextAndPatternType">
+					<xs:attribute name="name" use="required"/>
+				</xs:extension>
+			</xs:complexContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="patternToSearch" type="mixedTextAndPatternType"/>
+	<xs:element name="replacementPattern" type="mixedTextAndPatternType"/>
+	<xs:element name="alt">
+		<xs:annotation>
+			<xs:documentation>Alternative pattern in a known REGEXP language such as PERL, etc.</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:attribute name="language" use="required"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="history">
+		<xs:complexType>
+			<xs:choice maxOccurs="unbounded">
+				<xs:element ref="add"/>
+				<xs:element ref="modify"/>
+			</xs:choice>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="add">
+		<xs:complexType>
+			<xs:complexContent>
+				<xs:extension base="description">
+					<xs:attribute name="date" type="xs:date" use="required"/>
+					<xs:attribute name="user" type="xs:NCName" use="required"/>
+					<xs:attribute name="version" type="xs:string" use="required"/>
+				</xs:extension>
+			</xs:complexContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="modify">
+		<xs:complexType>
+			<xs:complexContent>
+				<xs:extension base="description">
+					<xs:attribute name="date" type="xs:date" use="required"/>
+					<xs:attribute name="user" type="xs:NCName" use="required"/>
+				</xs:extension>
+			</xs:complexContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:complexType name="description">
+		<xs:sequence>
+			<xs:element ref="description"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="description" type="textBasedType"/>
+	<xs:element name="section">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="title"/>
+				<xs:element name="introduction" minOccurs="0">
+					<xs:complexType>
+						<xs:choice>
+							<xs:element name="para" type="textBasedType"/>
+						</xs:choice>
+					</xs:complexType>
+				</xs:element>
+				<xs:element ref="rules" minOccurs="0"/>
+				<xs:element ref="section" minOccurs="0" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:group name="styles">
+		<xs:choice>
+			<xs:element name="sup" type="mixedTextAndPatternType"/>
+			<xs:element name="inf" type="mixedTextAndPatternType"/>
+			<xs:element name="cap" type="mixedTextAndPatternType">
+				<xs:annotation>
+					<xs:documentation>Capitales</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="scap" type="mixedTextAndPatternType">
+				<xs:annotation>
+					<xs:documentation>small capitales</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="rom" type="mixedTextAndPatternType">
+				<xs:annotation>
+					<xs:documentation>Roman</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="b" type="mixedTextAndPatternType">
+				<xs:annotation>
+					<xs:documentation>bold</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="i" type="mixedTextAndPatternType">
+				<xs:annotation>
+					<xs:documentation>italics</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="u" type="mixedTextAndPatternType">
+				<xs:annotation>
+					<xs:documentation>underline</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="nund" type="mixedTextAndPatternType">
+				<xs:annotation>
+					<xs:documentation>non underlined</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="s" type="mixedTextAndPatternType">
+				<xs:annotation>
+					<xs:documentation>Striked out</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="ns" type="mixedTextAndPatternType">
+				<xs:annotation>
+					<xs:documentation>Not striked out</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="quote" type="mixedTextAndPatternType">
+				<xs:annotation>
+					<xs:documentation>quote</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:choice>
+	</xs:group>
+	<xs:group name="spaces">
+		<xs:choice>
+			<xs:element name="nbsp" type="emptyType"/>
+			<xs:element name="thsp" type="emptyType">
+				<xs:annotation>
+					<xs:documentation>Espace fine</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="nbthsp" type="emptyType">
+				<xs:annotation>
+					<xs:documentation>Espace fine insécable</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="quartersp" type="emptyType">
+				<xs:annotation>
+					<xs:documentation>Espace 1/4 cadratin</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="nbquartersp" type="emptyType">
+				<xs:annotation>
+					<xs:documentation>Espace 1/4 cadratin insécable</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="halfsp" type="emptyType">
+				<xs:annotation>
+					<xs:documentation>Espace 1/2 cadratin</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="nbhalfsp" type="emptyType">
+				<xs:annotation>
+					<xs:documentation>Espace 1/2 cadratin insécable</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="cadsp" type="emptyType">
+				<xs:annotation>
+					<xs:documentation>Espace cadratin</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="nbcadsp" type="emptyType">
+				<xs:annotation>
+					<xs:documentation>Espace cadratin insécable</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:choice>
+	</xs:group>
+	<xs:group name="punctuation">
+		<xs:choice>
+			<xs:element name="nbhyph" type="emptyType">
+				<xs:annotation>
+					<xs:documentation>Ponctuation Tiret insécable (&lt;nb-&gt;)</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="halphcadhyph" type="emptyType">
+				<xs:annotation>
+					<xs:documentation>Tiret 1/2 cadratin (&lt;1/2-&gt;)</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="cadhyph" type="emptyType">
+				<xs:annotation>
+					<xs:documentation>Tiret cadratin (&lt;cad-&gt;)</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="dishyph" type="emptyType">
+				<xs:annotation>
+					<xs:documentation>Coupure discrétionnaire (placée avant un mot, elle signifie que celui-ci ne doit pas être divisé en fin de ligne) (&lt;/-&gt;)</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:choice>
+	</xs:group>
+	<xs:element name="pattern">
+		<xs:complexType>
+			<xs:attribute name="value"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:complexType name="mixedTextAndPatternType" mixed="true">
+		<xs:choice minOccurs="0" maxOccurs="unbounded">
+			<xs:element ref="space"/>
+			<xs:element ref="pattern"/>
+			<xs:element ref="element">
+				<xs:annotation>
+					<xs:documentation>An XML element such as <i>...</i>
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element ref="entity"/>
+			<xs:element ref="character"/>
+		</xs:choice>
+	</xs:complexType>
+	<xs:simpleType name="emptyType">
+		<xs:restriction base="xs:string">
+			<xs:maxLength value="0"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:element name="textLang">
+		<xs:complexType mixed="true">
+			<xs:choice minOccurs="0" maxOccurs="unbounded">
+				<xs:element ref="pattern"/>
+				<xs:element ref="space"/>
+			</xs:choice>
+			<xs:attribute name="lang" default="fr">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:enumeration value="en"/>
+						<xs:enumeration value="fr"/>
+						<xs:enumeration value="all"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:attribute>
+		</xs:complexType>
+	</xs:element>
+	<xs:complexType name="textBasedType">
+		<xs:sequence maxOccurs="unbounded">
+			<xs:element ref="textLang"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="space" type="emptyType"/>
+	<xs:element name="entity">
+		<xs:complexType>
+			<xs:simpleContent>
+				<xs:extension base="emptyType">
+					<xs:attribute name="value" type="xs:string" use="required"/>
+				</xs:extension>
+			</xs:simpleContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="character">
+		<xs:complexType>
+			<xs:simpleContent>
+				<xs:extension base="emptyType">
+					<xs:attribute name="value" type="xs:string" use="required"/>
+				</xs:extension>
+			</xs:simpleContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="context">
+		<xs:annotation>
+			<xs:documentation>Context for searching the pattern</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:choice maxOccurs="unbounded">
+				<xs:element name="inElement"/>
+				<xs:element name="notInElement"/>
+				<xs:element name="freeContext"/>
+			</xs:choice>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="title"/>
+	<xs:element name="search">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="patternToSearch"/>
+				<xs:element ref="alt" minOccurs="0" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="replace">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="replacementPattern"/>
+				<xs:element ref="alt" minOccurs="0" maxOccurs="unbounded"/>
+				<xs:element name="conditionalReplacementPattern" minOccurs="0" maxOccurs="unbounded">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element ref="context"/>
+							<xs:element ref="replacementPattern"/>
+							<xs:element ref="alt" minOccurs="0" maxOccurs="unbounded"/>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="comment" type="textBasedType"/>
+	<xs:simpleType name="languages">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="en"/>
+			<xs:enumeration value="fr"/>
+		</xs:restriction>
+	</xs:simpleType>
+</xs:schema>
