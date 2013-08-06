@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="urn:oecd:names:xmlns:authoring:testing" targetNamespace="urn:oecd:names:xmlns:authoring:testing"
-	xmlns:xd="http://www.oecd.org/ns/schema/xdocs" elementFormDefault="qualified">
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xd="http://www.oecd.org/ns/schema/xdocs" elementFormDefault="qualified">
 	<xs:annotation>
 		<xs:appinfo>
 			<xd:name>CheckList</xd:name>
@@ -37,6 +36,12 @@
 						<date>2012-11-12</date>
 						<author>JC</author>
 						<revremark>Add enumeration to target to resolve [#4960].</revremark>
+					</revision>
+					<revision>
+						<revnumber>5</revnumber>
+						<date>2013-08-06</date>
+						<author>JC</author>
+						<revremark>Removed namespace to resolve [#6140].</revremark>
 					</revision>
 				</revhistory>
 			</section>
