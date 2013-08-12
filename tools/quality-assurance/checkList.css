@@ -1,0 +1,232 @@
+
+body {
+    font-family : Arial, Helvetica;
+}
+.toc {
+    font-size : 10pt;
+}
+
+div.toc a {
+  text-decoration: none;
+}
+
+div.toc a:visited {
+  color: blue;
+}
+div.toc ul {
+  list-style: none;
+}
+
+.toc1 {
+    font-weight : bold;
+    color : #2F4A8B;
+    font-size : 15pt;
+}
+.toc2 {
+    font-weight : bold;
+    color : #2F4A8B;
+    font-size : 14pt;
+}
+.toc3 {
+    font-weight : bold;
+    color : #2F4A8B;
+    font-size : 13pt;
+}
+.toc4 {
+    font-weight : bold;
+    color : #2F4A8B;
+    font-size : 13pt;
+}
+
+.td_Title1 {
+    font-size : 20pt;
+    padding-top : 10pt;
+
+    padding-bottom : 5pt;
+    font-weight : bold;
+}
+
+.td_Title2 {
+    font-size : 18pt;
+    padding-bottom : 5pt;
+    padding-top : 10pt;
+    font-weight : bold;
+}
+
+.td_Title3 {
+    font-size : 16pt;
+    padding-bottom : 5pt;
+    padding-top : 10pt;
+    font-weight : bold;
+}
+
+.td_Title4 {
+    font-size : 14pt;
+    padding-bottom : 5pt;
+    padding-top : 10pt;
+    font-weight : bold;
+}
+
+.td_Title5 {
+    font-size : 12pt;
+    padding-bottom : 5pt;
+    padding-top : 10pt;
+    font-weight : bold;
+}
+
+/*.section1 > .td_Title{
+    font-size:20pt;
+    font-weight:bold;
+    color:#2F4A8B;
+}
+.section2 > .td_Title{
+    font-size:16pt;
+    color:#2F4A8B;
+}
+.section3 > .td_Title{
+    font-size:14pt;
+    color:#2F4A8B;
+}
+.section4 > .td_Title{
+    font-size:12pt;
+    color:#2F4A8B;
+}
+.section5 > .td_Title{
+    font-size:10pt;
+    color:#2F4A8B;
+}
+.section6 > .td_Title{
+    font-size:9pt;
+    color:#2F4A8B;
+}*/
+.path {
+    font-family : courier;
+    font-size : 9pt;
+    font-weight : normal;
+    color : black;
+}
+.validationActions > .pDefault,
+.results > .pDefault {
+    margin : 0 0 0 0;
+}
+
+.ts_Purpose {
+    font-weight : bold;
+
+}
+
+
+.purpose {
+    font-weight : bold;
+    font-size : 14pt;
+}
+.pSimpleTitle {
+    font-weight : bold;
+    margin : 0 0 0 0;
+}
+.warning {
+    color : red;
+    font-weight : bold;
+}
+.toBeDone {
+    font-size : 14pt;
+}
+
+/*    FRED: Suppression du filet rouge, remplacer par un aplat*/
+.test {
+    /*    border-left:red solid 1pt;*/
+    background : #E2E2E2;
+    padding : 4px;
+    margin : 20px;
+    margin-left : 5em;
+    margin-right : 5em;
+    border-radius : 5px;
+    box-shadow : 2px 2px 5px #9C9E9F;
+}
+
+.T1_Test {
+    font-size : 12pt;
+    font-weight : bold;
+    padding-top : 10pt;
+    padding-bottom : 3pt;
+}
+
+.ST1_Test {
+    padding-bottom : 2pt;
+}
+
+
+
+.targetToc {
+    font-size : 8pt;
+    color : #2F4A8B;
+}
+.status {
+    font-size : 8pt;
+}
+.ready {
+    color : green;
+    font-weight : bold;
+    text-align : right;
+    padding-right : 1em;
+}
+
+.tbd,
+.pending,
+.ongoing {
+    color : red;
+}
+.validAction,
+.TestResult {
+    font-size : small;
+    padding-top : 0;
+    padding-bottom : 0;
+    margin-bottom : 0;
+    margin-top : 0;
+}
+
+.heading1 {
+
+    text-align : center;
+    font-family : Helvetica;
+
+}
+
+.heading2 {
+    background-color : #00B232;
+    border : 2px solid #006D1F;
+    text-align : center;
+    font-family : Helvetica;
+    color : #FFFFFF;
+    margin-top : 50px;
+    border-radius : 5px;
+    box-shadow : 2px 2px 5px #9C9E9F;
+}
+
+
+/*
+ * default
+ */
+table {
+    border-collapse : collapse;
+    margin-bottom : 2em;
+}
+th {
+    color : grey;
+    border : 1px solid #999;
+    font-weight : 700;
+}
+td {
+    color : grey;
+    border : 1px solid #999;
+}
+ol {
+    list-style-type : lower-roman;
+}
+ul {
+    list-style-type : square;
+}
+/*ul ul,
+li {
+    list-style-type : circle;
+}*/
