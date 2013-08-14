@@ -1,6 +1,33 @@
 <?xml version="1.0" encoding="utf-8"?>
-<xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="2.0" xmlns="http://www.w3.org/1999/xhtml" exclude-result-prefixes="#all">
-	<xsl:output method="xhtml"/>
+<xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="2.0" xmlns="http://www.w3.org/1999/xhtml" exclude-result-prefixes="#all" xmlns:xd="http://www.oecd.org/ns/schema/xdocs">
+	<xsl:output method="xhtml" doctype-system="http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"/>
+
+
+	<section xmlns="http://docbook.org/ns/docbook">
+		<title>OECD Schemas</title>
+		<subtitle>Master XSLT for Quality Assurance Reporting</subtitle>
+		<revhistory>
+			<title>Change Log</title>
+			<revision>
+				<revnumber>1</revnumber>
+				<date>2012-10-30</date>
+				<author>Pierre Attar</author>
+				<revremark>Initial Version</revremark>
+			</revision>
+			<revision>
+				<revnumber>2</revnumber>
+				<date>2013-08-14</date>
+				<author>JC</author>
+				<revremark>Inherited schema from tireme sarl (merci Pierre).</revremark>
+			</revision>
+			<revision>
+				<revnumber>3</revnumber>
+				<date>2013-08-14</date>
+				<author>JC</author>
+				<revremark>Modify icons to resolve [#6150].</revremark>
+			</revision>
+		</revhistory>
+	</section>
 
 
 	<!-- PARAMETERS definition -->
@@ -209,7 +236,22 @@
 						<xsl:value-of select="concat('padding-left:',count(ancestor-or-self::Section|ancestor-or-self::UnitTests|ancestor-or-self::IntegrationTests)-1,'em')"/>
 					</xsl:attribute>
 					<!-- FRED: Ajout du lien de redirection vers la section de la TOC, changement du title="Back to the table of contents" -->
-					<a href="#sectlink{generate-id()}" title="Back to the table of contents"><img src="icons/arrow.gif" style="border:0" alt="Back to the table of contents"/></a>&#160; <a href="link{generate-id()}"/>
+					<a href="#sectlink{generate-id()}" title="Back to the table of contents"><!--<img src="icons/arrow.gif" style="border:0" alt="Back to the table of contents"/>-->
+						<svg xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:svg="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/2000/svg" xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd" xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" width="46" height="20" id="svg2997" version="1.1" inkscape:version="0.48.4 r9939" sodipodi:docname="new.svg">
+							<metadata id="metadata3007">
+								<rdf:RDF>
+									<cc:Work rdf:about="">
+										<dc:format>image/svg+xml</dc:format>
+										<dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+									</cc:Work>
+								</rdf:RDF>
+							</metadata>
+							<defs id="defs3005"/>
+							<sodipodi:namedview pagecolor="#ffffff" bordercolor="#666666" borderopacity="1" objecttolerance="10" gridtolerance="10" guidetolerance="10" inkscape:pageopacity="0" inkscape:pageshadow="2" inkscape:window-width="1680" inkscape:window-height="998" id="namedview3003" showgrid="false" inkscape:zoom="23.826424" inkscape:cx="22.360775" inkscape:cy="10.835375" inkscape:window-x="-8" inkscape:window-y="-8" inkscape:window-maximized="1" inkscape:current-layer="svg2997"/>
+							<path style="fill:#000000;fill-opacity:0;stroke:#000000;stroke-width:1;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:1010" d="m 28.877732,14.587583 -11,0 0,-15.0000001" id="path2999" inkscape:connector-curvature="0"/>
+							<path style="fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:0;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-opacity:0;stroke-dasharray:none;stroke-dashoffset:1010" d="m 17.5,-6.5 4,8 -7,0 3,-8 z" id="path3001" inkscape:connector-curvature="0"/>
+						</svg>
+					</a>&#160; <a href="link{generate-id()}"/>
 					<a name="link{generate-id()}"/>
 					<xsl:number format="1. " level="multiple" count="Section|UnitTests|IntegrationTests|Test"/>
 					<xsl:choose>
@@ -250,7 +292,21 @@
 				<p style="padding-left:1em">
 					<!-- FRED: Ajout du lien de redirection vers le test de la TOC, changement du title="Back to the table of contents" -->
 					<a href="#testlink{generate-id()}" title="Back to the table of contents">
-						<img src="icons/arrow.gif" style="border:0" alt="Back to the table of contents"/>
+						<!--<img src="icons/arrow.gif" style="border:0" alt="Back to the table of contents"/>-->
+						<svg xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:svg="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/2000/svg" xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd" xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" width="46" height="20" id="svg2997" version="1.1" inkscape:version="0.48.4 r9939" sodipodi:docname="new.svg">
+							<metadata id="metadata3007">
+								<rdf:RDF>
+									<cc:Work rdf:about="">
+										<dc:format>image/svg+xml</dc:format>
+										<dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+									</cc:Work>
+								</rdf:RDF>
+							</metadata>
+							<defs id="defs3005"/>
+							<sodipodi:namedview pagecolor="#ffffff" bordercolor="#666666" borderopacity="1" objecttolerance="10" gridtolerance="10" guidetolerance="10" inkscape:pageopacity="0" inkscape:pageshadow="2" inkscape:window-width="1680" inkscape:window-height="998" id="namedview3003" showgrid="false" inkscape:zoom="23.826424" inkscape:cx="22.360775" inkscape:cy="10.835375" inkscape:window-x="-8" inkscape:window-y="-8" inkscape:window-maximized="1" inkscape:current-layer="svg2997"/>
+							<path style="fill:#000000;fill-opacity:0;stroke:#000000;stroke-width:1;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:1010" d="m 28.877732,14.587583 -11,0 0,-15.0000001" id="path2999" inkscape:connector-curvature="0"/>
+							<path style="fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:0;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-opacity:0;stroke-dasharray:none;stroke-dashoffset:1010" d="m 17.5,-6.5 4,8 -7,0 3,-8 z" id="path3001" inkscape:connector-curvature="0"/>
+						</svg>
 					</a>
 					<xsl:text>&#160;</xsl:text>
 
@@ -403,6 +459,6 @@
 		</div>
 	</xsl:template>
 
-
 	<xsl:template match="Status|Purpose"><!-- yet managed --></xsl:template>
+	
 </xsl:stylesheet>
