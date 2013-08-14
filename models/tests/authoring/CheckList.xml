@@ -1,0 +1,1589 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet href="formatCheckList.xslt" type="text/xsl"?>
+<TestDefinition xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../schemas/qa/CheckList.xsd">
+
+
+    <UnitTests folderName="UnitTest">
+
+        <Section folderName="Structures">
+            <Purpose>Assembling Structures</Purpose>
+            <Test folderName="Annotations">
+                <Purpose>Annotation Structure</Purpose>
+                <Objective>Markup of Annotations</Objective>
+                <ValidationTarget target="contentModelAE">
+                    <InputFiles>
+                        <File fileName="1211011e.pdf"/>
+                        <File fileName="annotation.xml"/>
+                    </InputFiles>
+                    <ValidationActions>
+                        <P>Annotations can be marked-up in a document or publication.</P>
+                    </ValidationActions>
+                    <Status>ready</Status>
+                </ValidationTarget>
+            </Test>
+            <Test folderName="Articles">
+                <Purpose>Article Structure</Purpose>
+                <Objective>Markup of Articles</Objective>
+                <ValidationTarget target="contentModelAE">
+                    <InputFiles>
+                        <File fileName="article.pdf"/>
+                        <File fileName="article.xml"/>
+                    </InputFiles>
+                    <ValidationActions>
+                        <P>Articles can be marked-up in a document or publication.</P>
+                    </ValidationActions>
+                    <Status>ready</Status>
+                </ValidationTarget>
+            </Test>
+            <Test folderName="Boxes">
+                <Purpose>Box Structure</Purpose>
+                <Objective>Markup of Boxes</Objective>
+                <ValidationTarget target="contentModelAE">
+                    <InputFiles>
+                        <File fileName="box.pdf"/>
+                        <File fileName="box.xml"/>
+                    </InputFiles>
+                    <ValidationActions>
+                        <P>Boxes can be marked-up in a document or publication.</P>
+                    </ValidationActions>
+                    <Status>ready</Status>
+                </ValidationTarget>
+            </Test>
+            <Test folderName="Chapters">
+                <Purpose>Chapter Structure</Purpose>
+                <Objective>Markup of Chapters</Objective>
+                <ValidationTarget target="contentModelAE">
+                    <InputFiles>
+                        <File fileName="COM-TAD-ENV-JWPTE(2011)45-FINAL-ENG.pdf"/>
+                        <File fileName="chapter.xml"/>
+                    </InputFiles>
+                    <ValidationActions>
+                        <P>Chapters can be marked-up in a document or publication.</P>
+                    </ValidationActions>
+                    <Status>ready</Status>
+                </ValidationTarget>
+            </Test>
+            <Test folderName="Documents">
+                <Purpose>Document Structure</Purpose>
+                <Objective>Markup of Documents</Objective>
+                <ValidationTarget target="contentModelAE">
+                    <InputFiles>
+                        <File fileName="document.pdf"/>
+                        <File fileName="document.xml"/>
+                        <File fileName="document-structure.xml"/>
+                    </InputFiles>
+                    <ValidationActions>
+                        <P>Documents can be marked-up in a document or publication.</P>
+                    </ValidationActions>
+                    <Status>ready</Status>
+                </ValidationTarget>
+            </Test>
+            <Test folderName="Parts">
+                <Purpose>Part Structure</Purpose>
+                <Objective>Markup of Parts</Objective>
+                <ValidationTarget target="contentModelAE">
+                    <InputFiles>
+                        <!--
+                            <File fileName="EDU-WKP(2012)22-ENG.pdf"/>
+                        -->
+                        <File fileName="TAD-CA-APM-WP(2012)6-FINAL-ENG.pdf"/>
+                        <File fileName="5112061e.pdf"/>
+                        <File fileName="part.xml"/>
+                        <File fileName="parts.xml"/>
+                        <File fileName="part-structure.xml"/>
+                        <!--<File fileName="JT03328357.xml"/>-->
+
+                    </InputFiles>
+                    <ValidationActions>
+                        <P>Parts used for chapter grouping before publication is produced.</P>
+                    </ValidationActions>
+                    <Status>tbd</Status>
+                </ValidationTarget>
+
+            </Test>
+            <Test folderName="Publications">
+                <Purpose>Publication Structure</Purpose>
+                <Objective>Markup of Parts</Objective>
+                <ValidationTarget target="contentModelAE">
+                    <InputFiles>
+                        <File fileName="5112051e.pdf"/>
+                        <File fileName="publication-structure.xml"/>
+                    </InputFiles>
+                    <ValidationActions>
+                        <P>Publications can be marked-up.</P>
+                    </ValidationActions>
+                    <Status>tbd</Status>
+                </ValidationTarget>
+            </Test>
+            <Test folderName="Sections">
+                <Purpose>Section Structure</Purpose>
+                <Objective>Markup of Sections</Objective>
+                <ValidationTarget target="contentModelAE">
+                    <InputFiles>
+                        <File fileName="section.pdf"/>
+                        <File fileName="section.xml"/>
+                    </InputFiles>
+                    <ValidationActions>
+                        <P>Sections can be marked-up in a document or publication.</P>
+                    </ValidationActions>
+                    <Status>ready</Status>
+                </ValidationTarget>
+
+            </Test>
+            <Test folderName="Volumes">
+                <Purpose>Volume Structure</Purpose>
+                <Objective>Markup of Volumes</Objective>
+                <ValidationTarget target="contentModelAE">
+                    <InputFiles>
+                        <File fileName="2310111e.pdf"/>
+                        <File fileName="volume.xml"/>
+                        <File fileName="volume-structure.xml"/>
+                    </InputFiles>
+                    <ValidationActions>
+                        <P>Volumes can be marked-up in a publication.</P>
+                    </ValidationActions>
+                    <Status>ready</Status>
+                </ValidationTarget>
+            </Test>
+        </Section>
+
+        <Section folderName="Semantics">
+            <Purpose>Applying Semantics</Purpose>
+
+            <Section folderName="Abstracts">
+                <Purpose>Abstracts</Purpose>
+                <Test folderName="ChapterAbstract">
+                    <Purpose>Chapter Abstracts</Purpose>
+                    <Objective>Markup of Abstracts</Objective>
+                    <ValidationTarget target="contentModelAE">
+                        <InputFiles>
+                            <File fileName="chapter-abstract.pdf"/>
+                            <File fileName="chapter-abstract.xml"/>
+                        </InputFiles>
+                        <ValidationActions>
+                            <P>Abstracts can be marked-up in a document chapter or publication chapter.</P>
+                        </ValidationActions>
+                        <Status>ready</Status>
+                    </ValidationTarget>
+                </Test>
+
+                <Test folderName="MetaAbstract">
+                    <Purpose>Meta Abstracts</Purpose>
+                    <Objective>Markup of Abstracts</Objective>
+                    <ValidationTarget target="contentModelAE">
+                        <InputFiles>
+                            <File fileName="meta-abstract.pdf"/>
+                            <File fileName="meta-abstract.xml"/>
+                        </InputFiles>
+                        <ValidationActions>
+                            <P>Abstracts can be marked-up in a document or publication meta.</P>
+                        </ValidationActions>
+                        <Status>ready</Status>
+                    </ValidationTarget>
+                </Test>
+                <Test folderName="DocumentAbstract">
+                    <Purpose>Document Abstracts</Purpose>
+                    <Objective>Markup of Abstracts</Objective>
+                    <ValidationTarget target="contentModelAE">
+                        <InputFiles>
+                            <File fileName="document-abstract-section.pdf"/>
+                            <File fileName="document-abstract-section.xml"/>
+                        </InputFiles>
+                        <ValidationActions>
+                            <P>Abstracts can be marked-up in a document or publication section.</P>
+                        </ValidationActions>
+                        <Status>ready</Status>
+                    </ValidationTarget>
+                </Test>
+
+
+            </Section>
+
+            <Section folderName="Acknowledgements">
+                <Purpose>Acknowledgements</Purpose>
+                <Test folderName="Acknowledgement">
+                    <Purpose>Acknowledgements</Purpose>
+                    <Objective>Markup of Acknowledgements</Objective>
+                    <ValidationTarget target="contentModelAE">
+                        <InputFiles>
+                            <File fileName="acknowledgements.pdf"/>
+                            <File fileName="acknowledgements.xml"/>
+                        </InputFiles>
+                        <ValidationActions>
+                            <P>Acknowledgements can be marked-up in a document or publication.</P>
+                        </ValidationActions>
+                        <Status>ready</Status>
+                    </ValidationTarget>
+                </Test>
+            </Section>
+
+
+            <Section folderName="Appendices">
+                <Purpose>Appendices</Purpose>
+                <Test folderName="Appendix">
+                    <Purpose>Appendices</Purpose>
+                    <Objective>Markup of Appendices</Objective>
+                    <ValidationTarget target="contentModelAE">
+                        <InputFiles>
+                            <File fileName="appendix.pdf"/>
+                            <File fileName="appendix.xml"/>
+                        </InputFiles>
+                        <ValidationActions>
+                            <P>Appendices can be marked-up in a document or publication.</P>
+                        </ValidationActions>
+                        <Status>tbd</Status>
+                    </ValidationTarget>
+                </Test>
+            </Section>
+
+
+            <Section folderName="Bibliographies">
+                <Purpose>Bibliographies</Purpose>
+                <Test folderName="Bibliography">
+                    <Purpose>Bibliography</Purpose>
+                    <Objective>Markup of Bibliography</Objective>
+                    <ValidationTarget target="contentModelAE">
+                        <InputFiles>
+                            <File fileName="JT03299742_document biblio.pdf"/>
+                            <File fileName="template.xml"/>
+                        </InputFiles>
+                        <ValidationActions>
+                            <P>A Bibliography can be marked-up in a document or publication.</P>
+                        </ValidationActions>
+                        <Status>tbd</Status>
+                    </ValidationTarget>
+                </Test>
+
+                <Test folderName="BiblioSection">
+                    <Purpose>Bibliography Section</Purpose>
+                    <Objective>Markup of Bibliography Sections</Objective>
+                    <ValidationTarget target="contentModelAE">
+                        <InputFiles>
+                            <File fileName="template.xml"/>
+                            <File fileName="template.xml"/>
+                        </InputFiles>
+                        <ValidationActions>
+                            <P>Bibliography sections can be marked-up in a document or publication.</P>
+                        </ValidationActions>
+                        <Status>tbd</Status>
+                    </ValidationTarget>
+                </Test>
+
+                <Test folderName="FurtherReading">
+                    <Purpose>FurtherReading</Purpose>
+                    <Objective>Markup of Further Reading</Objective>
+                    <ValidationTarget target="contentModelAE">
+                        <InputFiles>
+                            <File fileName="template.xml"/>
+                            <File fileName="template.xml"/>
+                        </InputFiles>
+                        <ValidationActions>
+                            <P>N/A</P>
+                        </ValidationActions>
+                        <Status>tbd</Status>
+                    </ValidationTarget>
+                </Test>
+            </Section>
+
+            <Section folderName="Conclusions">
+                <Purpose>Conclusions</Purpose>
+                <Test folderName="Conclusion">
+                    <Purpose>Conclusion</Purpose>
+                    <Objective>Markup of Conclusions</Objective>
+                    <ValidationTarget target="contentModelAE">
+                        <InputFiles>
+                            <File fileName="template.xml"/>
+                            <File fileName="template.xml"/>
+                        </InputFiles>
+                        <ValidationActions>
+                            <P>Conclusions can be marked-up in a document or publication.</P>
+                        </ValidationActions>
+                        <Status>tbd</Status>
+                    </ValidationTarget>
+                </Test>
+            </Section>
+
+            <Section folderName="Extracts">
+                <Purpose>Extracts</Purpose>
+                <Objective>Extracts are typically a new concept. It could be claimed that they are derived from a DITA mindset, however authoring practices show that this is a disiplne that has been used by writes for a long time. What we intend to do at the OECD with extract si promote content re-use and correctness of information.</Objective>
+                <Test folderName="EmbeddedContent">
+                    <Purpose>EmbeddedContent</Purpose>
+                    <Objective>Markup of Embedded Content</Objective>
+                    <ValidationTarget target="contentModelAE">
+                        <InputFiles>
+                            <File fileName="template.xml"/>
+                            <File fileName="template.xml"/>
+                        </InputFiles>
+                        <ValidationActions>
+                            <P>N/A</P>
+                        </ValidationActions>
+                        <Status>tbd</Status>
+                    </ValidationTarget>
+                </Test>
+
+
+                <Test folderName="ExternalContentReference">
+                    <Purpose>ExternalContentReference</Purpose>
+                    <Objective>Markup of External Content Reference</Objective>
+                    <ValidationTarget target="contentModelAE">
+                        <InputFiles>
+                            <File fileName="template.xml"/>
+                            <File fileName="template.xml"/>
+                        </InputFiles>
+                        <ValidationActions>
+                            <P>N/A</P>
+                        </ValidationActions>
+                        <Status>tbd</Status>
+                    </ValidationTarget>
+                </Test>
+
+                <Test folderName="Extract">
+                    <Purpose>Extract</Purpose>
+                    <Objective>Markup of ExtractS</Objective>
+                    <ValidationTarget target="contentModelAE">
+                        <InputFiles>
+                            <File fileName="template.xml"/>
+                            <File fileName="template.xml"/>
+                        </InputFiles>
+                        <ValidationActions>
+                            <P>N/A</P>
+                        </ValidationActions>
+                        <Status>tbd</Status>
+                    </ValidationTarget>
+                </Test>
+
+            </Section>
+
+            <Section folderName="ExecutiveSummaries">
+                <Purpose>Executive Summaries</Purpose>
+                <Test folderName="ExecutiveSummary">
+                    <Purpose>Executive Summary</Purpose>
+                    <Objective>Markup of an Executive Summary</Objective>
+                    <ValidationTarget target="contentModelAE">
+                        <InputFiles>
+                            <File fileName="executive-summary.xml"/>
+                            <File fileName="executive-summary.xml"/>
+                        </InputFiles>
+                        <ValidationActions>
+                            <P>N/A</P>
+                        </ValidationActions>
+                        <Status>tbd</Status>
+                    </ValidationTarget>
+                </Test>
+            </Section>
+
+            <Section folderName="Forewords">
+                <Purpose>Forewords</Purpose>
+                <Test folderName="Foreword">
+                    <Purpose>Foreword</Purpose>
+                    <Objective>Markup of a Foreword</Objective>
+                    <ValidationTarget target="contentModelAE">
+                        <InputFiles>
+                            <File fileName="template.xml"/>
+                            <File fileName="foreword.xml"/>
+                        </InputFiles>
+                        <ValidationActions>
+                            <P>N/A</P>
+                        </ValidationActions>
+                        <Status>tbd</Status>
+                    </ValidationTarget>
+                </Test>
+            </Section>
+
+            <Section folderName="Introductions">
+                <Purpose>Introductions</Purpose>
+                <Test folderName="Introduction">
+                    <Purpose>Introduction</Purpose>
+                    <Objective>Markup of Introductions</Objective>
+                    <ValidationTarget target="contentModelAE">
+                        <InputFiles>
+                            <File fileName="template.xml"/>
+                            <File fileName="introduction.xml"/>
+                        </InputFiles>
+                        <ValidationActions>
+                            <P>N/A</P>
+                        </ValidationActions>
+                        <Status>tbd</Status>
+                    </ValidationTarget>
+                </Test>
+            </Section>
+
+            <Section folderName="Prefaces">
+                <Purpose>Prefaces</Purpose>
+                <Test folderName="Preface">
+                    <Purpose>Prefaces</Purpose>
+                    <Objective>Markup of Prefaces</Objective>
+                    <ValidationTarget target="contentModelAE">
+                        <InputFiles>
+                            <File fileName="template.xml"/>
+                            <File fileName="preface.xml"/>
+                        </InputFiles>
+                        <ValidationActions>
+                            <P>N/A</P>
+                        </ValidationActions>
+                        <Status>tbd</Status>
+                    </ValidationTarget>
+                </Test>
+            </Section>
+
+            <Section folderName="Glossaries">
+                <Purpose>Glossaries</Purpose>
+                <Test folderName="Glossary">
+                    <Purpose>Glossary</Purpose>
+                    <Objective>Markup of a Glossary</Objective>
+                    <ValidationTarget target="contentModelAE">
+                        <InputFiles>
+                            <File fileName="template.xml"/>
+                            <File fileName="glossary.xml"/>
+                        </InputFiles>
+                        <ValidationActions>
+                            <P>N/A</P>
+                        </ValidationActions>
+                        <Status>tbd</Status>
+                    </ValidationTarget>
+                </Test>
+                <Test folderName="GlossaryItems">
+                    <Purpose>GlossaryItems</Purpose>
+                    <Objective>Markup of a Glossary Items</Objective>
+                    <ValidationTarget target="contentModelAE">
+                        <InputFiles>
+                            <File fileName="template.xml"/>
+                            <File fileName="glossary.xml"/>
+                        </InputFiles>
+                        <ValidationActions>
+                            <P>N/A</P>
+                        </ValidationActions>
+                        <Status>tbd</Status>
+                    </ValidationTarget>
+                </Test>
+
+            </Section>
+
+            <Section folderName="Sources">
+                <Purpose>Sources</Purpose>
+                <Test folderName="GraphicSources">
+                    <Purpose>GraphicSources</Purpose>
+                    <Objective>Markup of Graphic Sources</Objective>
+                    <ValidationTarget target="contentModelAE">
+                        <InputFiles>
+                            <File fileName="template.xml"/>
+                            <File fileName="template.xml"/>
+                        </InputFiles>
+                        <ValidationActions>
+                            <P>N/A</P>
+                        </ValidationActions>
+                        <Status>tbd</Status>
+                    </ValidationTarget>
+                </Test>
+
+                <Test folderName="FigureSources">
+                    <Purpose>FigureSources</Purpose>
+                    <Objective>Markup of Figure Sources</Objective>
+                    <ValidationTarget target="contentModelAE">
+                        <InputFiles>
+                            <File fileName="template.xml"/>
+                            <File fileName="template.xml"/>
+                        </InputFiles>
+                        <ValidationActions>
+                            <P>N/A</P>
+                        </ValidationActions>
+                        <Status>tbd</Status>
+                    </ValidationTarget>
+                </Test>
+
+                <Test folderName="TableSources">
+                    <Purpose>TableSources</Purpose>
+                    <Objective>Markup of Table Sources</Objective>
+                    <ValidationTarget target="contentModelAE">
+                        <InputFiles>
+                            <File fileName="template.xml"/>
+                            <File fileName="template.xml"/>
+                        </InputFiles>
+                        <ValidationActions>
+                            <P>N/A</P>
+                        </ValidationActions>
+                        <Status>tbd</Status>
+                    </ValidationTarget>
+                </Test>
+            </Section>
+
+            <Section folderName="Agendas">
+                <Purpose>Agendas</Purpose>
+                <Test folderName="AgendaSections">
+                    <Purpose>AgendaSections</Purpose>
+                    <Objective>Markup of Agenda Sections</Objective>
+                    <ValidationTarget target="contentModelAE">
+                        <InputFiles>
+                            <File fileName="template.xml"/>
+                            <File fileName="template.xml"/>
+                        </InputFiles>
+                        <ValidationActions>
+                            <P>N/A</P>
+                        </ValidationActions>
+                        <Status>tbd</Status>
+                    </ValidationTarget>
+                </Test>
+                <Test folderName="AgendaSessions">
+                    <Purpose>AgendaSessions</Purpose>
+                    <Objective>Markup of Agenda Sessions</Objective>
+                    <ValidationTarget target="contentModelAE">
+                        <InputFiles>
+                            <File fileName="template.xml"/>
+                            <File fileName="template.xml"/>
+                        </InputFiles>
+                        <ValidationActions>
+                            <P>N/A</P>
+                        </ValidationActions>
+                        <Status>tbd</Status>
+                    </ValidationTarget>
+                </Test>
+            </Section>
+
+        </Section>
+
+        <Section folderName="Metadata">
+            <Purpose>Adding Metadata</Purpose>
+            <Test folderName="DocumentMetaData">
+                <Purpose>Document MetaData Pages</Purpose>
+                <Objective>Add document MetaData</Objective>
+                <ValidationTarget target="contentModelAE">
+                    <InputFiles>
+                        <File fileName="2310111e.pdf"/>
+                        <File fileName="volume.xml"/>
+                    </InputFiles>
+                    <ValidationActions>
+                        <P/>
+                    </ValidationActions>
+                    <Status>tbd</Status>
+                </ValidationTarget>
+            </Test>
+
+            <Test folderName="PublicationMetaData">
+                <Purpose>Indexes</Purpose>
+                <Objective>Indexes</Objective>
+                <ValidationTarget target="contentModelAE">
+                    <InputFiles>
+                        <File fileName="2310111e.pdf"/>
+                        <File fileName="volume.xml"/>
+                    </InputFiles>
+                    <ValidationActions>
+                        <P/>
+                    </ValidationActions>
+                    <Status>tbd</Status>
+                </ValidationTarget>
+            </Test>
+
+            <Test folderName="ComponentMetaData">
+                <Purpose>Table of Contents</Purpose>
+                <Objective>Markup of Table of Contents</Objective>
+                <ValidationTarget target="contentModelAE">
+                    <InputFiles>
+                        <File fileName="2310111e.pdf"/>
+                        <File fileName="volume.xml"/>
+                    </InputFiles>
+                    <ValidationActions>
+                        <P/>
+                    </ValidationActions>
+                    <Status>tbd</Status>
+                </ValidationTarget>
+            </Test>
+
+            <Test folderName="MetaDataItems">
+                <Purpose>Table of Contents</Purpose>
+                <Objective>Markup of Table of Contents</Objective>
+                <ValidationTarget target="contentModelAE">
+                    <InputFiles>
+                        <File fileName="2310111e.pdf"/>
+                        <File fileName="volume.xml"/>
+                    </InputFiles>
+                    <ValidationActions>
+                        <P/>
+                    </ValidationActions>
+                    <Status>tbd</Status>
+                </ValidationTarget>
+            </Test>
+
+            <Test folderName="Numbering">
+                <Purpose>Numbering</Purpose>
+                <Objective>Markup of Numbering</Objective>
+                <ValidationTarget target="contentModelAE">
+                    <InputFiles>
+                        <File fileName="2310111e.pdf"/>
+                        <File fileName="numbering.xml"/>
+                    </InputFiles>
+                    <ValidationActions>
+                        <P/>
+                    </ValidationActions>
+                    <Status>tbd</Status>
+                </ValidationTarget>
+            </Test>
+
+        </Section>
+
+        <Section folderName="Blocks">
+            <Purpose>Building Blocks</Purpose>
+            <Section folderName="Quotes">
+                <Purpose>Quotes</Purpose>
+                <Test folderName="BlockQuotes">
+                    <Purpose>Block Quotes</Purpose>
+                    <Objective>Markup of Block Quotes</Objective>
+                    <ValidationTarget target="contentModelAE">
+                        <InputFiles>
+                            <File fileName="1211011e.pdf"/>
+                            <File fileName="block-quote.xml"/>
+                        </InputFiles>
+                        <ValidationActions>
+                            <P>N/A</P>
+                        </ValidationActions>
+                        <Status>ready</Status>
+                    </ValidationTarget>
+                </Test>
+            </Section>
+
+            <Section folderName="Figures">
+                <Purpose>Figures</Purpose>
+                <Test folderName="ExternalGraphics">
+                    <Purpose>External Graphics</Purpose>
+                    <Objective>Markup of External Graphics</Objective>
+                    <ValidationTarget target="contentModelAE">
+                        <InputFiles>
+                            <File fileName="template.xml"/>
+                            <File fileName="template.xml"/>
+                        </InputFiles>
+                        <ValidationActions>
+                            <P>N/A</P>
+                        </ValidationActions>
+                        <Status>ready</Status>
+                    </ValidationTarget>
+                </Test>
+
+                <Test folderName="Figures">
+                    <Purpose>Figures</Purpose>
+                    <Objective>Markup of Figures</Objective>
+                    <ValidationTarget target="contentModelAE">
+                        <InputFiles>
+                            <File fileName="template.xml"/>
+                            <File fileName="template.xml"/>
+                        </InputFiles>
+                        <ValidationActions>
+                            <P>N/A</P>
+                        </ValidationActions>
+                        <Status>ready</Status>
+                    </ValidationTarget>
+                </Test>
+
+                <Test folderName="Graphics">
+                    <Purpose>Graphics</Purpose>
+                    <Objective>Markup of Graphics</Objective>
+                    <ValidationTarget target="contentModelAE">
+                        <InputFiles>
+                            <File fileName="template.xml"/>
+                            <File fileName="template.xml"/>
+                        </InputFiles>
+                        <ValidationActions>
+                            <P>N/A</P>
+                        </ValidationActions>
+                        <Status>ready</Status>
+                    </ValidationTarget>
+                </Test>
+
+                <Test folderName="SVGGraphics">
+                    <Purpose>SVG Graphics</Purpose>
+                    <Objective>Markup of SVG Graphics</Objective>
+                    <ValidationTarget target="contentModelAE">
+                        <InputFiles>
+                            <File fileName="template.xml"/>
+                            <File fileName="template.xml"/>
+                        </InputFiles>
+                        <ValidationActions>
+                            <P>N/A</P>
+                        </ValidationActions>
+                        <Status>ready</Status>
+                    </ValidationTarget>
+                </Test>
+
+            </Section>
+
+            <Section folderName="Lists">
+                <Purpose>Lists</Purpose>
+                <Test folderName="DefinitionLists">
+                    <Purpose>Definition Lists</Purpose>
+                    <Objective>Markup of Definition Lists</Objective>
+                    <ValidationTarget target="contentModelAE">
+                        <InputFiles>
+                            <File fileName="template.xml"/>
+                            <File fileName="template.xml"/>
+                        </InputFiles>
+                        <ValidationActions>
+                            <P>N/A</P>
+                        </ValidationActions>
+                        <Status>ready</Status>
+                    </ValidationTarget>
+                </Test>
+                <Test folderName="ItemizedLists">
+                    <Purpose>Itemised Lists</Purpose>
+                    <Objective>Markup of Itemised Lists</Objective>
+                    <ValidationTarget target="contentModelAE">
+                        <InputFiles>
+                            <File fileName="template.xml"/>
+                            <File fileName="template.xml"/>
+                        </InputFiles>
+                        <ValidationActions>
+                            <P>N/A</P>
+                        </ValidationActions>
+                        <Status>ready</Status>
+                    </ValidationTarget>
+                </Test>
+
+                <Test folderName="ListItems">
+                    <Purpose>List Itsms</Purpose>
+                    <Objective>Markup of List Items</Objective>
+                    <ValidationTarget target="contentModelAE">
+                        <InputFiles>
+                            <File fileName="template.xml"/>
+                            <File fileName="template.xml"/>
+                        </InputFiles>
+                        <ValidationActions>
+                            <P>N/A</P>
+                        </ValidationActions>
+                        <Status>ready</Status>
+                    </ValidationTarget>
+                </Test>
+
+                <Test folderName="OrderedLists">
+                    <Purpose>Ordered Lists</Purpose>
+                    <Objective>Markup of Ordered Lists</Objective>
+                    <ValidationTarget target="contentModelAE">
+                        <InputFiles>
+                            <File fileName="template.xml"/>
+                            <File fileName="template.xml"/>
+                        </InputFiles>
+                        <ValidationActions>
+                            <P>N/A</P>
+                        </ValidationActions>
+                        <Status>ready</Status>
+                    </ValidationTarget>
+                </Test>
+
+
+            </Section>
+
+            <Section folderName="Notes">
+                <Purpose>Notes</Purpose>
+                <Test folderName="Notes">
+                    <Purpose>Notes</Purpose>
+                    <Objective>Markup of Notes</Objective>
+                    <ValidationTarget target="contentModelAE">
+                        <InputFiles>
+                            <File fileName="template.xml"/>
+                            <File fileName="template.xml"/>
+                        </InputFiles>
+                        <ValidationActions>
+                            <P>N/A</P>
+                        </ValidationActions>
+                        <Status>ready</Status>
+                    </ValidationTarget>
+                </Test>
+            </Section>
+
+            <Section folderName="Paras">
+                <Purpose>Paras</Purpose>
+                <Test folderName="Paras">
+                    <Purpose>Paras</Purpose>
+                    <Objective>Markup of Paras</Objective>
+                    <ValidationTarget target="contentModelAE">
+                        <InputFiles>
+                            <File fileName="template.xml"/>
+                            <File fileName="template.xml"/>
+                        </InputFiles>
+                        <ValidationActions>
+                            <P>N/A</P>
+                        </ValidationActions>
+                        <Status>ready</Status>
+                    </ValidationTarget>
+                </Test>
+                <Test folderName="FormalParas">
+                    <Purpose>Formal Paras</Purpose>
+                    <Objective>Markup of Formal Paras</Objective>
+                    <ValidationTarget target="contentModelAE">
+                        <InputFiles>
+                            <File fileName="template.xml"/>
+                            <File fileName="template.xml"/>
+                        </InputFiles>
+                        <ValidationActions>
+                            <P>N/A</P>
+                        </ValidationActions>
+                        <Status>ready</Status>
+                    </ValidationTarget>
+                </Test>
+                <Test folderName="ParagraphGroups">
+                    <Purpose>Paragraph Groups</Purpose>
+                    <Objective>Markup of Paragraph Groups</Objective>
+                    <ValidationTarget target="contentModelAE">
+                        <InputFiles>
+                            <File fileName="template.xml"/>
+                            <File fileName="template.xml"/>
+                        </InputFiles>
+                        <ValidationActions>
+                            <P>N/A</P>
+                        </ValidationActions>
+                        <Status>ready</Status>
+                    </ValidationTarget>
+                </Test>
+            </Section>
+
+            <Section folderName="Titles">
+                <Purpose>Titles</Purpose>
+                <Test folderName="AlternativeTitles">
+                    <Purpose>Alternative Titles</Purpose>
+                    <Objective>Markup of Alternative Titles</Objective>
+                    <ValidationTarget target="contentModelAE">
+                        <InputFiles>
+                            <File fileName="template.xml"/>
+                            <File fileName="template.xml"/>
+                        </InputFiles>
+                        <ValidationActions>
+                            <P>N/A</P>
+                        </ValidationActions>
+                        <Status>ready</Status>
+                    </ValidationTarget>
+                </Test>
+
+                <Test folderName="Captions">
+                    <Purpose>Captions</Purpose>
+                    <Objective>Markup of Captions</Objective>
+                    <ValidationTarget target="contentModelAE">
+                        <InputFiles>
+                            <File fileName="template.xml"/>
+                            <File fileName="template.xml"/>
+                        </InputFiles>
+                        <ValidationActions>
+                            <P>N/A</P>
+                        </ValidationActions>
+                        <Status>ready</Status>
+                    </ValidationTarget>
+                </Test>
+
+                <Test folderName="SubTitles">
+                    <Purpose>Sub Titles</Purpose>
+                    <Objective>Markup of Sub Titles</Objective>
+                    <ValidationTarget target="contentModelAE">
+                        <InputFiles>
+                            <File fileName="template.xml"/>
+                            <File fileName="template.xml"/>
+                        </InputFiles>
+                        <ValidationActions>
+                            <P>N/A</P>
+                        </ValidationActions>
+                        <Status>ready</Status>
+                    </ValidationTarget>
+                </Test>
+
+                <Test folderName="Title">
+                    <Purpose>Title</Purpose>
+                    <Objective>Markup of Title</Objective>
+                    <ValidationTarget target="contentModelAE">
+                        <InputFiles>
+                            <File fileName="template.xml"/>
+                            <File fileName="template.xml"/>
+                        </InputFiles>
+                        <ValidationActions>
+                            <P>N/A</P>
+                        </ValidationActions>
+                        <Status>ready</Status>
+                    </ValidationTarget>
+                </Test>
+
+
+                <Test folderName="Titles">
+                    <Purpose>Titles</Purpose>
+                    <Objective>Markup of Titles</Objective>
+                    <ValidationTarget target="contentModelAE">
+                        <InputFiles>
+                            <File fileName="template.xml"/>
+                            <File fileName="template.xml"/>
+                        </InputFiles>
+                        <ValidationActions>
+                            <P>N/A</P>
+                        </ValidationActions>
+                        <Status>ready</Status>
+                    </ValidationTarget>
+                </Test>
+            </Section>
+
+
+
+
+        </Section>
+
+        <Section folderName="Tables">
+            <Purpose>Defining Tables</Purpose>
+            <Test folderName="Tables">
+                <Purpose>Different Table Tests</Purpose>
+                <Objective>Check if different case of standard tables have an equivalent content model.</Objective>
+                <ValidationTarget target="upcast">
+                    <InputFiles>
+                        <File fileName="Tables.doc"/>
+                    </InputFiles>
+                    <ValidationActions>
+                        <P>Check the tables are well converted</P>
+                    </ValidationActions>
+                    <Status>ready</Status>
+                    <Results>
+                        <Result passed="true"/>
+                    </Results>
+                </ValidationTarget>
+                <ValidationTarget target="contentModelAE">
+                    <InputFiles>
+                        <File fileName="Tables.xml"/>
+                    </InputFiles>
+                    <ValidationActions>
+                        <P>Check the tables are well converted in all section (chapter, section level 1 or level 2 or level 3, annex) contexts.</P>
+                    </ValidationActions>
+                    <Status>ready</Status>
+                </ValidationTarget>
+            </Test>
+            <Test folderName="TableFormatting">
+                <Purpose>Complex Table formatting</Purpose>
+                <Objective>Check if different case of complex tables have an equivalent content model (merged cells, indent in cells, alignment, sources, notes, hyperlinks).</Objective>
+                <ValidationTarget target="upcast">
+                    <InputFiles>
+                        <File fileName="TablesComplexes.doc"/>
+                    </InputFiles>
+                    <ValidationActions>
+                        <P>Check the tables are well converted</P>
+                    </ValidationActions>
+                    <Status>ready</Status>
+                    <Results>
+                        <Result passed="true"/>
+                    </Results>
+                </ValidationTarget>
+                <ValidationTarget target="contentModelAE">
+                    <InputFiles>
+                        <File fileName="TablesComplexes.xml"/>
+                    </InputFiles>
+                    <ValidationActions>
+                        <P>Check the tables are well converted</P>
+                    </ValidationActions>
+                    <Status>ready</Status>
+                </ValidationTarget>
+            </Test>
+            <Test folderName="Tables-in-box">
+
+                <Purpose>Test of tables in boxes</Purpose>
+                <Objective>Test if a table is allowed in a textbox, and has a content model equivalence.</Objective>
+                <ValidationTarget target="upcast">
+                    <InputFiles>
+                        <File fileName="Table-in-Box.doc"/>
+                    </InputFiles>
+                    <ValidationActions>
+                        <P>Check the tables are well converted in textbox</P>
+                    </ValidationActions>
+                    <Status>ready</Status>
+                    <Results>
+                        <Result passed="true"/>
+                    </Results>
+                </ValidationTarget>
+                <ValidationTarget target="contentModelAE">
+                    <InputFiles>
+                        <File fileName="Table-in-Box.xml"/>
+                    </InputFiles>
+                    <ValidationActions>
+                        <P>The tables are well converted in textbox.</P>
+                    </ValidationActions>
+                    <Status>ready</Status>
+                </ValidationTarget>
+            </Test>
+        </Section>
+
+        <Section folderName="Inlines">
+
+
+
+            <Purpose>Working Inline</Purpose>
+
+
+            <Test folderName="Abbreviations">
+                <Purpose>Abbreviations</Purpose>
+                <Objective>Markup of Abbreviations</Objective>
+                <ValidationTarget target="contentModelAE">
+                    <InputFiles>
+                        <File fileName="template.xml"/>
+                        <File fileName="template.xml"/>
+                    </InputFiles>
+                    <ValidationActions>
+                        <P>N/A</P>
+                    </ValidationActions>
+                    <Status>ready</Status>
+                </ValidationTarget>
+            </Test>
+
+
+            <Test folderName="Citations">
+                <Purpose>Citations</Purpose>
+                <Objective>Markup of inline Citations</Objective>
+                <ValidationTarget target="contentModelAE">
+                    <InputFiles>
+                        <File fileName="template.xml"/>
+                        <File fileName="template.xml"/>
+                    </InputFiles>
+                    <ValidationActions>
+                        <P>N/A</P>
+                    </ValidationActions>
+                    <Status>ready</Status>
+                </ValidationTarget>
+            </Test>
+
+
+            <Test folderName="Quotes">
+                <Purpose>Quotes</Purpose>
+                <Objective>Markup of inline Quotes</Objective>
+                <ValidationTarget target="contentModelAE">
+                    <InputFiles>
+                        <File fileName="template.xml"/>
+                        <File fileName="template.xml"/>
+                    </InputFiles>
+                    <ValidationActions>
+                        <P>N/A</P>
+                    </ValidationActions>
+                    <Status>ready</Status>
+                </ValidationTarget>
+            </Test>
+
+
+
+            <Test folderName="Chemistry">
+                <Purpose>Chemical Structures</Purpose>
+                <Objective>Markup of Chemical Structure</Objective>
+                <ValidationTarget target="contentModelAE">
+                    <InputFiles>
+                        <File fileName="template.xml"/>
+                        <File fileName="template.xml"/>
+                    </InputFiles>
+                    <ValidationActions>
+                        <P>N/A</P>
+                    </ValidationActions>
+                    <Status>ready</Status>
+                </ValidationTarget>
+            </Test>
+
+
+
+            <Test folderName="Equations">
+                <Purpose>Equations</Purpose>
+                <Objective>Markup of Inline Equations</Objective>
+                <ValidationTarget target="contentModelAE">
+                    <InputFiles>
+                        <File fileName="template.xml"/>
+                        <File fileName="template.xml"/>
+                    </InputFiles>
+                    <ValidationActions>
+                        <P>N/A</P>
+                    </ValidationActions>
+                    <Status>ready</Status>
+                </ValidationTarget>
+            </Test>
+
+            <Section folderName="Glossaries">
+                <Purpose>Glossaries</Purpose>
+            </Section>
+            <Section folderName="Graphics">
+                <Purpose>Graphics</Purpose>
+                <Test folderName="InlineGraphics">
+                    <Purpose>Inline Graphics</Purpose>
+                    <Objective>Markup of Inline Graphics</Objective>
+                    <ValidationTarget target="contentModelAE">
+                        <InputFiles>
+                            <File fileName="template.xml"/>
+                            <File fileName="template.xml"/>
+                        </InputFiles>
+                        <ValidationActions>
+                            <P>N/A</P>
+                        </ValidationActions>
+                        <Status>ready</Status>
+                    </ValidationTarget>
+                </Test>
+
+                <Test folderName="BlockGraphicsInline">
+                    <Purpose>Block Graphics Inline</Purpose>
+                    <Objective>Markup of Block Graphics Inline</Objective>
+                    <ValidationTarget target="contentModelAE">
+                        <InputFiles>
+                            <File fileName="template.xml"/>
+                            <File fileName="template.xml"/>
+                        </InputFiles>
+                        <ValidationActions>
+                            <P>N/A</P>
+                        </ValidationActions>
+                        <Status>ready</Status>
+                    </ValidationTarget>
+                </Test>
+
+            </Section>
+            <Section folderName="Indexes">
+                <Purpose>Indexes</Purpose>
+            </Section>
+            <Section folderName="Langversion">
+                <Purpose>Langversion</Purpose>
+            </Section>
+
+
+            <Section folderName="LinksReferences">
+                <Purpose>Links and References</Purpose>
+                <Test folderName="Phrase">
+                    <Purpose>Phrase</Purpose>
+                    <Objective>Markup of Inline Phrase</Objective>
+                    <ValidationTarget target="contentModelAE">
+                        <InputFiles>
+                            <File fileName="template.xml"/>
+                            <File fileName="template.xml"/>
+                        </InputFiles>
+                        <ValidationActions>
+                            <P>N/A</P>
+                        </ValidationActions>
+                        <Status>ready</Status>
+                    </ValidationTarget>
+                </Test>
+
+                <Test folderName="Xref">
+                    <Purpose>Xref</Purpose>
+                    <Objective>Markup of Inline Xrefs</Objective>
+                    <ValidationTarget target="contentModelAE">
+                        <InputFiles>
+                            <File fileName="template.xml"/>
+                            <File fileName="template.xml"/>
+                        </InputFiles>
+                        <ValidationActions>
+                            <P>N/A</P>
+                        </ValidationActions>
+                        <Status>ready</Status>
+                    </ValidationTarget>
+                </Test>
+
+                <Test folderName="Hyperlink">
+                    <Purpose>Hyperlink</Purpose>
+                    <Objective>Markup of Inline Hyperlink</Objective>
+                    <ValidationTarget target="contentModelAE">
+                        <InputFiles>
+                            <File fileName="template.xml"/>
+                            <File fileName="template.xml"/>
+                        </InputFiles>
+                        <ValidationActions>
+                            <P>N/A</P>
+                        </ValidationActions>
+                        <Status>ready</Status>
+                    </ValidationTarget>
+                </Test>
+
+            </Section>
+            <Section folderName="NotesReferences">
+                <Purpose>Notes and References</Purpose>
+                <Test folderName="Footnote">
+                    <Purpose>Footnote</Purpose>
+                    <Objective>Markup of Inline Footnotes</Objective>
+                    <ValidationTarget target="contentModelAE">
+                        <InputFiles>
+                            <File fileName="template.xml"/>
+                            <File fileName="template.xml"/>
+                        </InputFiles>
+                        <ValidationActions>
+                            <P>N/A</P>
+                        </ValidationActions>
+                        <Status>ready</Status>
+                    </ValidationTarget>
+                </Test>
+
+                <Test folderName="Footnotes">
+                    <Purpose>Footnotes</Purpose>
+                    <Objective>Markup of Table Footnotes</Objective>
+                    <ValidationTarget target="contentModelAE">
+                        <InputFiles>
+                            <File fileName="template.xml"/>
+                            <File fileName="template.xml"/>
+                        </InputFiles>
+                        <ValidationActions>
+                            <P>N/A</P>
+                        </ValidationActions>
+                        <Status>ready</Status>
+                    </ValidationTarget>
+                </Test>
+            </Section>
+
+
+            <Section folderName="Lists">
+                <Purpose>Lists</Purpose>
+                <Test folderName="DefinitionLists">
+                    <Purpose>Definition Lists</Purpose>
+                    <Objective>Markup of Definition Lists</Objective>
+                    <ValidationTarget target="contentModelAE">
+                        <InputFiles>
+                            <File fileName="template.xml"/>
+                            <File fileName="template.xml"/>
+                        </InputFiles>
+                        <ValidationActions>
+                            <P>N/A</P>
+                        </ValidationActions>
+                        <Status>ready</Status>
+                    </ValidationTarget>
+                </Test>
+
+                <Test folderName="ItemizedLists">
+                    <Purpose>Itemised Lists</Purpose>
+                    <Objective>Markup of Itemised Lists</Objective>
+                    <ValidationTarget target="contentModelAE">
+                        <InputFiles>
+                            <File fileName="template.xml"/>
+                            <File fileName="template.xml"/>
+                        </InputFiles>
+                        <ValidationActions>
+                            <P>N/A</P>
+                        </ValidationActions>
+                        <Status>ready</Status>
+                    </ValidationTarget>
+                </Test>
+
+                <Test folderName="ListItems">
+                    <Purpose>List Itsms</Purpose>
+                    <Objective>Markup of List Items</Objective>
+                    <ValidationTarget target="contentModelAE">
+                        <InputFiles>
+                            <File fileName="template.xml"/>
+                            <File fileName="template.xml"/>
+                        </InputFiles>
+                        <ValidationActions>
+                            <P>N/A</P>
+                        </ValidationActions>
+                        <Status>ready</Status>
+                    </ValidationTarget>
+                </Test>
+
+                <Test folderName="OrderedLists">
+                    <Purpose>Ordered Lists</Purpose>
+                    <Objective>Markup of Ordered Lists</Objective>
+                    <ValidationTarget target="contentModelAE">
+                        <InputFiles>
+                            <File fileName="template.xml"/>
+                            <File fileName="template.xml"/>
+                        </InputFiles>
+                        <ValidationActions>
+                            <P>N/A</P>
+                        </ValidationActions>
+                        <Status>ready</Status>
+                    </ValidationTarget>
+                </Test>
+
+
+            </Section>
+
+            <Section folderName="Emphasis">
+                <Purpose>Emphasis</Purpose>
+                <Test folderName="EmphasisStyles">
+                    <Purpose>Emphasis Styles</Purpose>
+                    <Objective>Markup of Inline Emphasis Styles</Objective>
+                    <ValidationTarget target="contentModelAE">
+                        <InputFiles>
+                            <File fileName="template.xml"/>
+                            <File fileName="template.xml"/>
+                        </InputFiles>
+                        <ValidationActions>
+                            <P>N/A</P>
+                        </ValidationActions>
+                        <Status>ready</Status>
+                    </ValidationTarget>
+                </Test>
+
+                <Test folderName="SubScript">
+                    <Purpose>Subscript</Purpose>
+                    <Objective>Markup of Inline Subscript</Objective>
+                    <ValidationTarget target="contentModelAE">
+                        <InputFiles>
+                            <File fileName="template.xml"/>
+                            <File fileName="template.xml"/>
+                        </InputFiles>
+                        <ValidationActions>
+                            <P>N/A</P>
+                        </ValidationActions>
+                        <Status>ready</Status>
+                    </ValidationTarget>
+                </Test>
+
+                <Test folderName="SuperScript">
+                    <Purpose>SuperScript</Purpose>
+                    <Objective>Markup of Inline Superscript</Objective>
+                    <ValidationTarget target="contentModelAE">
+                        <InputFiles>
+                            <File fileName="template.xml"/>
+                            <File fileName="template.xml"/>
+                        </InputFiles>
+                        <ValidationActions>
+                            <P>N/A</P>
+                        </ValidationActions>
+                        <Status>ready</Status>
+                    </ValidationTarget>
+                </Test>
+            </Section>
+
+            <Section folderName="Tables">
+                <Purpose>Tables</Purpose>
+                <Test folderName="Tables">
+                    <Purpose>Markup of Inline Tables</Purpose>
+                    <Objective>Check if different case of standard tables have an equivalent content model.</Objective>
+                    <ValidationTarget target="upcast">
+                        <InputFiles>
+                            <File fileName="Tables.doc"/>
+                        </InputFiles>
+                        <ValidationActions>
+                            <P>Check the tables are well converted</P>
+                        </ValidationActions>
+                        <Status>ready</Status>
+                        <Results>
+                            <Result passed="true"/>
+                        </Results>
+                    </ValidationTarget>
+                    <ValidationTarget target="contentModelAE">
+                        <InputFiles>
+                            <File fileName="Tables.xml"/>
+                        </InputFiles>
+                        <ValidationActions>
+                            <P>Check the tables are well converted in all section (chapter, section level 1 or level 2 or level 3, annex) contexts.</P>
+                        </ValidationActions>
+                        <Status>ready</Status>
+                    </ValidationTarget>
+                </Test>
+            </Section>
+
+        </Section>
+
+        <Section folderName="Revisions">
+            <Purpose>Reviewing</Purpose>
+
+            <Test folderName="Revisions">
+                <Purpose>Making Revisions</Purpose>
+                <Objective>Markup Revisions</Objective>
+                <ValidationTarget target="contentModelAE">
+                    <InputFiles>
+                        <File fileName="2310111e.pdf"/>
+                        <File fileName="revisions.xml"/>
+                    </InputFiles>
+                    <ValidationActions>
+                        <P/>
+                    </ValidationActions>
+                    <Status>ready</Status>
+                </ValidationTarget>
+            </Test>
+
+            <Test folderName="Comments">
+                <Purpose>Comments</Purpose>
+                <Objective>Markup Comments</Objective>
+                <ValidationTarget target="contentModelAE">
+                    <InputFiles>
+                        <File fileName="2310111e.pdf"/>
+                        <File fileName="comments.xml"/>
+                    </InputFiles>
+                    <ValidationActions>
+                        <P/>
+                    </ValidationActions>
+                    <Status>ready</Status>
+                </ValidationTarget>
+            </Test>
+
+        </Section>
+
+        <Section folderName="Products">
+            <Purpose>Building Products</Purpose>
+            <Test folderName="CoverPages">
+                <Purpose>Cover Pages</Purpose>
+                <Objective>Cover Page Info</Objective>
+                <ValidationTarget target="contentModelAE">
+                    <InputFiles>
+                        <File/>
+                    </InputFiles>
+                    <ValidationActions>
+                        <P/>
+                    </ValidationActions>
+                    <Status>tbd</Status>
+                </ValidationTarget>
+            </Test>
+
+            <Test folderName="Indexes">
+                <Purpose>Indexes</Purpose>
+                <Objective>Indexes</Objective>
+                <ValidationTarget target="contentModelAE">
+                    <InputFiles>
+                        <File fileName="2310111e.pdf"/>
+                        <File fileName="indexes.xml"/>
+                    </InputFiles>
+                    <ValidationActions>
+                        <P/>
+                    </ValidationActions>
+                    <Status>ready</Status>
+                </ValidationTarget>
+            </Test>
+            <Test folderName="ToCs">
+                <Purpose>Table of Contents</Purpose>
+                <Objective>Markup of Table of Contents</Objective>
+                <ValidationTarget target="contentModelAE">
+                    <InputFiles>
+                        <File fileName="2310111e.pdf"/>
+                        <File fileName="toc.xml"/>
+                    </InputFiles>
+                    <ValidationActions>
+                        <P/>
+                    </ValidationActions>
+                    <Status>ready</Status>
+                </ValidationTarget>
+            </Test>
+        </Section>
+
+    </UnitTests>
+
+    <IntegrationTests folderName="IntegrationTest">
+        <Purpose>Test compound Official Documents, Publications and Agendas.</Purpose>
+        <Objective>Check the structure of entire documents, publications and agendas.</Objective>
+        <Section folderName="Schema">
+            <Purpose>Schema Integration</Purpose>
+            <Section folderName="OfficialDocuments">
+                <Purpose>Official Documnets</Purpose>
+                <Objective>Check the mapping of the conversion from od to op, with a complete official document (TAD)</Objective>
+                <Test folderName="OfficialDocument">
+                    <Purpose>Official Document</Purpose>
+                    <Objective>Test Official Document</Objective>
+                    <ValidationTarget target="contentModelAE">
+                        <InputFiles>
+                            <File/>
+                        </InputFiles>
+                        <ValidationActions>
+                            <P/>
+                        </ValidationActions>
+                        <Status>tbd</Status>
+                    </ValidationTarget>
+                </Test>
+            </Section>
+            <Section folderName="Publications">
+                <Purpose>Publications</Purpose>
+                <Objective>Check the mapping from op content model to narrdoc, with a complete standard publication (economic survey)</Objective>
+                <Test folderName="Publicaiton">
+                    <Purpose>Publication</Purpose>
+                    <Objective>Test Publication</Objective>
+                    <ValidationTarget target="contentModelAE">
+                        <InputFiles>
+                            <File/>
+                        </InputFiles>
+                        <ValidationActions>
+                            <P/>
+                        </ValidationActions>
+                        <Status>tbd</Status>
+                    </ValidationTarget>
+                </Test>
+            </Section>
+            <Section folderName="Agendas">
+                <Purpose>Agendas</Purpose>
+                <Objective>Check the markup of agendas with the op content model for simple and complex agendas.</Objective>
+                <Test folderName="Agenda">
+                    <Purpose>Agenda</Purpose>
+                    <Objective>Test Agenda</Objective>
+                    <ValidationTarget target="contentModelAE">
+                        <InputFiles>
+                            <File/>
+                        </InputFiles>
+                        <ValidationActions>
+                            <P/>
+                        </ValidationActions>
+                        <Status>tbd</Status>
+                    </ValidationTarget>
+                </Test>
+            </Section>
+            <Section folderName="Performance">
+                <Purpose>Test performance and processing of documents</Purpose>
+                <Objective>Check the performance during the conversion of documents to publications, a really big document ( 50 000 + lines).</Objective>
+                <Test folderName="Performance">
+                    <Purpose>Performance</Purpose>
+                    <Objective>Test Performance</Objective>
+                    <ValidationTarget target="contentModelAE">
+                        <InputFiles>
+                            <File/>
+                        </InputFiles>
+                        <ValidationActions>
+                            <P/>
+                        </ValidationActions>
+                        <Status>tbd</Status>
+                    </ValidationTarget>
+                </Test>
+            </Section>
+        </Section>
+
+
+        <Section folderName="Client">
+            <Purpose>Client Integration</Purpose>
+            <Objective>Check the structure of entire documents, publications and agendas in the QXA model.</Objective>
+            <Section folderName="OfficialDocuments">
+                <Purpose>Official Documnets</Purpose>
+                <Objective>Check the mapping of Publicaiotns in QXA</Objective>
+                <Test folderName="OfficialDocument">
+                    <Purpose>Official Document</Purpose>
+                    <Objective>Test Official Document</Objective>
+                    <ValidationTarget target="contentModelAE">
+                        <InputFiles>
+                            <File/>
+                        </InputFiles>
+                        <ValidationActions>
+                            <P/>
+                        </ValidationActions>
+                        <Status>tbd</Status>
+                    </ValidationTarget>
+                </Test>
+            </Section>
+            <Section folderName="Publications">
+                <Purpose>Standard Publications</Purpose>
+                <Objective>Check the mapping of Agendas in QXA</Objective>
+                <Test folderName="Publicaiton">
+                    <Purpose>Publication</Purpose>
+                    <Objective>Test Publication</Objective>
+                    <ValidationTarget target="contentModelAE">
+                        <InputFiles>
+                            <File/>
+                        </InputFiles>
+                        <ValidationActions>
+                            <P/>
+                        </ValidationActions>
+                        <Status>tbd</Status>
+                    </ValidationTarget>
+                </Test>
+            </Section>
+            <Section folderName="Agendas">
+                <Purpose>Agendas</Purpose>
+                <Objective>Check the markup of agendas with the op content model for simple and complex agendas.</Objective>
+                <Test folderName="Agenda">
+                    <Purpose>Agenda</Purpose>
+                    <Objective>Test Agenda</Objective>
+                    <ValidationTarget target="contentModelAE">
+                        <InputFiles>
+                            <File/>
+                        </InputFiles>
+                        <ValidationActions>
+                            <P/>
+                        </ValidationActions>
+                        <Status>tbd</Status>
+                    </ValidationTarget>
+                </Test>
+            </Section>
+            <Section folderName="Performance">
+                <Purpose>Test performance and processing of documents</Purpose>
+                <Objective>Check the performance during the conversion of documents to publications, a really big document ( 50 000 + lines).</Objective>
+                <Test folderName="Performance">
+                    <Purpose>Performance</Purpose>
+                    <Objective>Test Performance</Objective>
+                    <ValidationTarget target="contentModelAE">
+                        <InputFiles>
+                            <File/>
+                        </InputFiles>
+                        <ValidationActions>
+                            <P/>
+                        </ValidationActions>
+                        <Status>tbd</Status>
+                    </ValidationTarget>
+                </Test>
+            </Section>
+        </Section>
+    </IntegrationTests>
+</TestDefinition>
