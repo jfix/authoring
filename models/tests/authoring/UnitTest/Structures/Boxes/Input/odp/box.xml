@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:oecd:names:xmlns:authoring:document ../../../../../../../schemas/oecd.author.xsd" xmlns="urn:oecd:names:xmlns:authoring:document" xmlns:xlink="http://www.w3.org/1999/xlink">
+	<metadata>
+		<metadata subject="kim:author">
+			<metadata subject="kim:personname">
+				<metadata-item subject="kim:firstname" value="Braathen_N"/>
+			</metadata>
+		</metadata>
+		<metadata subject="kim:othercredit">
+			<metadata subject="kim:personname">
+				<metadata-item subject="kim:firstname" value="Crowther_1"/>
+			</metadata>
+		</metadata>
+		<metadata-item subject="kim:date" value="Thu, 18 Oct 2012 17:19:00 CEST"/>
+		<metadata subject="kim:revhistory">
+			<metadata subject="kim:revision">
+				<metadata-item subject="kim:revnumber" value="1"/>
+				<metadata-item subject="kim:date" value="Thu, 18 Oct 2012 17:19:00 CEST"/>
+			</metadata>
+		</metadata>
+		<metadata subject="kim:printhistory">
+			<metadata-item subject="kim:para" value="Last printed: Mon, 15 Oct 2012 10:50:00 CEST"/>
+		</metadata>
+		<metadata-item subject="kim:orgname" value="O.E.C.D."/>
+		<metadata-item property="kim:cote" value="COM/ENV/EPOC/CTPA/CFA(2012)43"/>
+		<metadata-item property="kim:originalClassif" value="Unclassified"/>
+		<metadata-item property="kim:language" value="English"/>
+		<metadata-item property="kim:originalLanguage" value="English"/>
+	</metadata>
+	<title>Lessons from 15 years of experience with the Dutch Tax Allowance for Energy Investments for firms</title>
+	<chapter>
+		<title>Lessons from 15 years of experience with the Dutch Tax Allowance for Energy Investments for firms</title>
+		<box>
+			<title>Investment incentives through the EIA</title>
+			<para> The objectives of the Dutch EIA are to improve energy efficiency and increase the share of sustainable energy by stimulating investments in energy saving or sustainable energy technologies. The basic principles of the EIA are the same already for 15 years. </para>
+			<para> The EIA stimulates adoption of energy saving technologies or renewables by lowering their investment cost up-front and is conditional on investments that are screened ex ante by the regulating agency. If (for profit) firms invest in technologies listed in the annually updated ‘Energy List’, they can deduct a part of the investment costs from their taxable profits or taxable income in the year when they invest. With investment level <emphasis style="italic">I</emphasis> , (corporate or income) tax rate t and EIA-rate s, firms can deduct an amount s* <emphasis style="italic">I</emphasis> from their taxable profits or taxable income. In case profits or income are positive, the taxes paid decrease with t*s* <emphasis style="italic">I</emphasis> . To the extent that the Dutch corporate and income taxes are progressive, the more profit you make, the more you benefit from the EIA. In 2011, the net tax reduction was on average 10% of investment costs. </para>
+			<para> Consider the following examples for 2012 when 41.5% of the amount of investment I can be deducted from the taxable profits or income. </para>
+			<itemized-list>
+				<list-item>
+					<para>Firms with a taxable profit higher than EUR 200 000 face a corporate tax rate of 25%, which implies a reduction of corporate taxes paid of EUR 0.104. </para>
+				</list-item>
+				<list-item>
+					<para> Firms with a taxable profit below EUR 200 000 pay a corporate tax rate of 20%<footnote>
+							<para>The redistributive impact of taxes and transfers is defined as the difference in the Gini coefficients for income before cash transfers and taxes (i.e. household market income) and after cash transfers and taxes (i.e. household disposable income). For instance in Sweden, the Gini coefficient was reduced through taxes and transfers from 0.44 to 0.21 (hence by 0.23) in the mid-1990s and from 0.43 to 0.26 (hence by 0.17) in the late 2000s. Entire population.</para>
+						</footnote>, implying tax savings equal to EUR 0.083* <emphasis style="italic">I</emphasis> . </para>
+				</list-item>
+				<list-item>
+					<para> Entrepreneurs paying personal income taxes with a taxable income above EUR 55 695 face an income tax rate of 52% which implies EUR 0.216* <emphasis style="italic">I</emphasis> less tax payments. </para>
+				</list-item>
+			</itemized-list>
+			<para> Next to the annual (additional) savings in energy use due to investments, the EIA decreases up-front investment costs of a specific set of technologies in particular. Compared to alternative investments in conventional reference technologies, the EIA increases the net present value (NPV) of these investments (decreases the payback period) and reduces financing needs for energy saving investments. So the EIA improves the odds for particular investment projects, in particular the adoption of energy-saving or sustainable technologies (see Van Soest and Vollebergh, 2011). Note that annual savings due to the use of more energy efficient technologies depend on the reduction in energy use compared to the conventional, reference technology and the energy price. With rising energy prices, annual savings increase and, as a result, the NPV of energy-saving technologies increases as well. So, less EIA support would be necessary to bridge the NPV gap when energy prices rise – via market price increases or increased energy taxes. Similarly, investments in sustainable energy sources, even though their up-front investments costs may be higher compared to conventional technologies, often lead to lower variable costs. If energy prices increase, the difference between variable costs of conventional and sustainable energy technologies may become substantial. </para>
+			<para> Defining the net adoption costs as the actual adoption costs minus the investment subsidy provided, technologies with lower net adoption costs are likely to obtain a higher ordering in the ranking of available alternative technologies. Therefore, energy-saving technologies, which usually have higher actual adoption costs than traditional technologies, will be adopted more readily with a subsidy than in absence of a subsidy. If firms are heterogeneous, for instance with respect to the technology currently in use or with respect to capital (or borrowing) constraints, the adoption of a particular technology is likely to follow a gradual pattern over time, or a so-called penetration curve (see Figure 2). A subsidy will shift this penetration curve to the left, whereas the overall penetration might be lifted somewhat due to lower net cost of this particular technology. Note that this line of reasoning holds even if firms belong to different risk classes, that is, if they differ with respect to the discount rate they apply to their investment decision. </para>
+			<para> The EIA may also reduce search costs for investors due to the annually updated Energy List which is used to consider eligibility for the subsidy. This Energy List contains generic technologies satisfying a certain (energy) savings standard or a selection of novel, but proven, technologies with a higher energy saving potential than conventional reference technologies. Therefore, the list itself may also have an important attention value which might contribute to alleviate information failures in the adoption market. </para>
+			<para> Apart from adoption decisions, the EIA is likely to also stimulate new inventions in the field of energy-saving or sustainable energy technologies (OECD, 2010; Vollebergh, 2012) The EIA offers innovators a stimulus to develop new technologies that have a better energy efficiency performance than reference technologies, because they can propose their new inventions to be added to the Energy List which is likely to increase sales and profitability of the new inventions. The Energy List is updated annually. Technologies with a sufficient level of market penetration, which have become conventional technologies themselves, are removed from the list. Accordingly, this dynamic element not only reduces the problem of free riding on the demand side (see also section 3), but also reduces the risk for innovators not to pass the market-introduction phase of new technologies. In this way, the EIA indirectly stimulates particular research avenues and therefore directs R&amp;D-investments in specific directions. </para>
+
+			<figure>
+				<title>Penetration curve of new innovations</title>
+				<graphic>
+					<external-graphic xlink:href="images/JT03328691-4.jpg"/>
+				</graphic>
+			</figure>
+
+			<sources>
+				<source>
+					<citation>Van Soest and Vollebergh (2011).</citation>
+				</source>
+			</sources>
+		</box>
+	</chapter>
+
+</document>

@@ -1,0 +1,438 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:oecd:names:xmlns:authoring:document ../../../../../../../schemas/oecd.author.xsd" xmlns="urn:oecd:names:xmlns:authoring:document" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mods="http://www.loc.gov/mods/v3">
+    <metadata>
+        <metadata subject="kim:author">
+            <metadata subject="kim:personname">
+                <metadata-item subject="kim:firstname" value="barnet_a"/>
+            </metadata>
+        </metadata>
+        <metadata subject="kim:othercredit">
+            <metadata subject="kim:personname">
+                <metadata-item subject="kim:firstname" value="Crowther_1"/>
+            </metadata>
+        </metadata>
+        <metadata-item subject="kim:date" value="Thu, 18 Oct 2012 17:37:00 CEST"/>
+        <metadata subject="kim:revhistory">
+            <metadata subject="kim:revision">
+                <metadata-item subject="kim:revnumber" value="1"/>
+                <metadata-item subject="kim:date" value="Thu, 18 Oct 2012 17:37:00 CEST"/>
+            </metadata>
+        </metadata>
+        <metadata subject="kim:printhistory">
+            <metadata-item subject="kim:para" value="Last printed: Wed, 10 Oct 2012 17:04:00 CEST"/>
+        </metadata>
+        <metadata-item subject="kim:orgname" value="O.E.C.D."/>
+        <metadata-item property="kim:cote" value="EDU/WKP(2012)22"/>
+        <metadata-item property="kim:originalClassif" value="Unclassified"/>
+        <metadata-item property="kim:language" value="English"/>
+        <metadata-item property="kim:originalLanguage" value="English"/>
+    </metadata>
+    <title/>
+    <preface>
+        <title>Preface</title>
+        <para/>
+    </preface>
+    <chapter>
+        <title>
+            <emphasis style="bold"/>
+        </title>
+        <para/>
+        <para/>
+        <para/>
+        <para/>
+        <para/>
+        <para/>
+        <para/>
+        <para/>
+        <para/>
+        <para/>
+        <para/>
+        <para/>
+        <para/>
+        <para/>
+    </chapter>
+    <chapter>
+        <title>Summary</title>
+        <para>How to hold autonomous schools and school governing boards accountable for their decisions and performance has become a particularly pressing question for central governments in many OECD countries. Increasing complexity in education systems has led to a greater degree of freedom in decision making for many local authorities, school governing boards and schools. However despite this increasing decentralisation, central governments are still held responsible by the general public for ensuring high quality education. During the last ten years, school accountability has become a critical topic, triggered by the results of international benchmarks such as the Programme for International Student Assessment (PISA) and Trends in International Mathematics and Science Study (TIMSS). This paper analyses trends in accountability mechanisms and processes and argues that vertical measures of accountability, that is, regulatory and school performance accountability, can be usefully augmented by horizontal measures involving multiple stakeholders. This system of multiple school accountability aims to efficiently and effectively take into account the nuanced nature and purposes of education. By combining various forms of accountability, it has the potential to enhance the overall education system, policy for reform, and therefore ultimately improve the quality of education.</para>
+    </chapter>
+    <chapter>
+        <title>
+            <emphasis style="bold"/>
+        </title>
+        <para/>
+        <para/>
+        <para/>
+        <para>Table of contents</para>
+        <para/>
+        <para>
+            <emphasis style="bold"/>
+        </para>
+        <para>
+            <emphasis style="bold">Boxes</emphasis>
+        </para>
+        <para/>
+        <para>
+            <emphasis style="bold"/>
+        </para>
+        <para>
+            <emphasis style="bold"/>
+        </para>
+    </chapter>
+    <chapter>
+        <title>Introduction</title>
+        <para>How to hold increasingly autonomous school governing boards and schools accountable for their decisions and performance has become a pressing question for central governments in many OECD countries. Over the past three decades, education systems and their governance have become markedly more complex. One of the most important responses to this complexity has been to decentralise the locus of administrative decision making: that is, to allow local authorities, school governing boards and schools a greater degree of freedom in decision making. Yet despite increasing decentralisation, central governments are still held responsible by the general public for ensuring high quality education. During the last ten years, school accountability has become a critical topic, often triggered by the results of international benchmarks such as PISA and TIMSS. Consequently, attention is increasingly drawn to the outcomes of educational systems on a national level while much of the decision making takes place on a local or regional level. This paper looks at research on accountability mechanisms and processes, the rise of standardised tests, and the emergence of a new form of accountability that takes the voices of a diverse set of stakeholders into account: multiple school accountability.</para>
+        <section>
+            <title>Accountability concerns</title>
+            <para>The question of how to organise educational accountability effectively has gained relevance as the effects of decentralisation in many countries have become evident: central governments play a more limited role as autonomy has increased for public and (government--dependent) private schools and/or as school governing boards operate on a decentralised level.<footnote xml:id="en382">
+                    <para>See Honingh and Hooge, 2009; Balarin and Lauder, 2008; Rhodes, 2008, 1997; Hudson, 2007; Pierre and Peters, 2005; Bache, 2003, and Hooge, 1998.</para>
+                </footnote> Existing research has argued that it is hard to hold central governments accountable for education policy failures through traditional systems of public accountability such as elections when central government is only playing an enabling or indirectly controlling role. Conversely, the non-governmental actors directly involved in governing education, such as school governing boards, tend not to be elected officials and, therefore, cannot be held accountable through such means as elections.<footnote xml:id="en384">
+                    <para>See James <emphasis style="italic">et al</emphasis>., 2010; Ozga, 2009; Bovens <emphasis style="italic">et al</emphasis>., 2008; Rhodes, 2007; 1997, and Pierre and Peters, 2005.</para>
+                </footnote> This illustrates the <emphasis style="italic">first accountability deficit</emphasis> in education, in which concerns about the legitimacy of schools and school boards can arise given that they cannot be held directly responsible by the public for their decisions and performance. </para>
+            <para>Although traditional forms of public accountability do not fully address these legitimacy issues either<footnote xml:id="en386">
+                    <para>The down sides of traditional forms of public accountability are well known: that elections are held once every few years, that it is impossible to give clear accountability signals as elections force a diversity of opinions and evaluation onto a single ballot, that politicians are elected by a small portion of the population which can leave them vulnerable to favouring patronage, and that the vast majority of public officials are appointed bureaucrats who are not directly accountable to the public through electoral processes (Ozga, 2009; Pierre and Peters, 2005; Ackerman, 2003).</para>
+                </footnote>, their absence is seen as disturbing, especially when there are concerns about the quality of education and/or the quality of governance and decision making in education in a region or country. This concern has prompted a search for new ways to legitimise the process and to hold schools and school boards accountable for their decisions and performance to multiple actors from the local community.</para>
+            <para>Partly in order to counterbalance the growing autonomy of schools and resulting concerns of legitimacy and quality control, school performance accountability and the setting of national standards are now commonly used in a majority of OECD countries. Central governments rely heavily on performance accountability systems in order to monitor, control, and steer the quality of education. This enables relatively objective and unambiguous comparison between the performance of schools and educational systems as a whole. The drawback of school performance accountability is that standardised tests in and of themselves cannot reflect the full range of the purposes and goals of schooling such as social skills, moral development, preparation for the labour market, integration, etc., for which schools should be held accountable.<footnote xml:id="en388">
+                    <para>See Morris, 2011; Biesta, 2008; and Harlen, 2007.</para>
+                </footnote> The <emphasis style="italic">second accountability deficit</emphasis> in education thus concerns the question of how to enhance school performance accountability so that standardised tests could be complemented with other instruments that would assess how well a school or school system is meeting those other diverse goals. </para>
+        </section>
+    </chapter>
+    <chapter>
+        <title>Decentralisation in education</title>
+        <para>Over the last three decades, many governments around the globe have progressively decentralised their education policy. While primarily aimed at improving the quality of education, decentralisation has also been perceived as a way to increase efficiency, encourage innovation, and combat social inequality and segregation in education (Waslander <emphasis style="italic">et al.,</emphasis> 2010). </para>
+        <para>The research literature distinguishes three main pathways that decentralisation in education has taken: 1) <emphasis style="italic">deconcentration</emphasis>, 2) the use of <emphasis style="italic">market mechanisms</emphasis>, and 3) <emphasis style="italic">participative democracy</emphasis>, in which the citizens of a municipality, province, or country wield the tools they need to control their education systems.<footnote xml:id="en390">
+                <para>See Waslander <emphasis style="italic">et al</emphasis>., 2010; Ball, 2009; Hudson, 2007; San Antonio and Gamage, 2007; Fung and Wright, 2001; Hooge, 1998; Lauglo, 1995; Ranson, 1993; and Chubb and Moe, 1990.</para>
+            </footnote> The following sections provide brief summaries of the different logics of each meaning of decentralisation and examine the educational and political ideologies behind these three forms of decentralisation. Examples of how these forms are appearing in various OECD countries are also provided.</para>
+        <section>
+            <title>Deconcentration: Increasing school autonomy</title>
+            <para>Decentralisation in the sense of <emphasis style="italic">deconcentration</emphasis> not only means more local governmental control of education but also more control of education by local non-governmental actors, <emphasis style="italic">e.g.</emphasis>,<emphasis style="italic"/>state-dependent private schools and/or school governing boards (Hooge, 1998; Lauglo, 1995). Deconcentration assumes that the officials, governors, managers and professionals who are closest to local operations know best what should be done and should be given incentives to take initiatives and control and to exercise discretionary power. In the OECD, 15% of students are enrolled in schools that are privately managed (<emphasis style="italic">i.e. </emphasis>managed directly or indirectly by a non-governmental organisation such as a church, trade union, business or other private institution). This varies widely among the countries: in the Netherlands, Ireland and Chile, more than 50% of students are enrolled in privately managed schools. In contrast, in Turkey, Iceland and Norway, more than 98% of students attend schools that are managed publicly (OECD, 2010).</para>
+            <para>In the majority of the OECD countries, decentralisation has led to greater autonomy for schools and school governing boards in making decisions related to resource allocation and/or curriculum and assessment.<footnote xml:id="en392">
+                    <para><emphasis style="italic">Allocating resources</emphasis> to schools is defined as appointing and dismissing teachers, establishing teachers’ starting salaries and salary raises, formulating school budgets and allocating them within the school. <emphasis style="italic">Responsibility for the curriculum and instructional assessment</emphasis> within the school is defined as establishing student-assessment policies, choosing textbooks, determining which courses are offered and the content of those courses (OECD, 2010).</para>
+                </footnote> However, the pattern is different across countries (OECD, 2010):</para>
+            <itemized-list>
+                <list-item>
+                    <para>In the Czech Republic, the Netherlands, United Kingdom and Macao China, the autonomy of schools is <emphasis style="italic">greater, compared to the average</emphasis>, <emphasis style="italic">in decisions relating to resource allocation and also those relating to curriculum and assessment</emphasis>.</para>
+                </list-item>
+                <list-item>
+                    <para>In Chile, Hungary, Sweden, Bulgaria, Dubai (UAE) and Shanghai China, the autonomy of schools is <emphasis style="italic">relatively high only in decisions relating to resource allocation.</emphasis></para>
+                </list-item>
+                <list-item>
+                    <para>In Japan, Korea, New Zealand, Hong Kong, China, and Thailand, schools have <emphasis style="italic">relatively greater autonomy than average</emphasis>
+                        <emphasis style="italic">only in decisions relating to curriculum and assessment</emphasis>.</para>
+                </list-item>
+            </itemized-list>
+            <para>Increased school autonomy often goes hand-in-hand with stronger accountability demands: schools that are granted more decision-making power are required to account for these decisions and their impact. The purpose of linking stronger school accountability to school autonomy is not only to legitimise schools’ decisions but also to encourage school improvement. The combination of more autonomy and accountability is expected to improve schooling by promoting effectiveness and efficiency, and by binding education professionals (teachers and other staff members) to educational purposes and goals. Whether it in fact achieves this goal is not yet clear from the evidence, although results from PISA 2009 suggest that, when autonomy and accountability are intelligently combined, they tend to be associated with better student performance (OECD, 2011a, p. 2): “At the country level, the greater the number of schools that have the responsibility to define and elaborate their curricula and assessments, the better the performance of the entire school system, even after accounting for national income. This association is observed even though having the responsibility to design curricula is not always related to better performance for an individual school. In contrast, there is no relationship between autonomy in resources allocation and performance at the country level”.</para>
+        </section>
+        <section>
+            <title>Using market mechanisms: Increasing parental choice</title>
+            <para>Decentralisation in the sense of<emphasis style="italic"> instituting market mechanisms</emphasis> in education is achieved by enhancing parental choice and encouraging school competition. Policy arrangements to abolish catchment areas, create voucher programmes and set up charter schools are also commonly used mechanisms.<footnote xml:id="en394">
+                    <para>See Waslander <emphasis style="italic">et al</emphasis>., 2010, Faubert, 2009; and Chubb and Moe, 1990</para>
+                </footnote>
+            </para>
+            <para>The introduction of market mechanisms is done under the assumption that schooling is improved by increased demand sensitivity and competition, and that parents in their role as “customers” are considered to be the rightful and best judges of the school or type of education best-suited for their children. Restructuring the position of teachers and other staff members in order to enlarge the scope of their professional autonomy in schools is also a key feature of market mechanisms. This is often done under the assumption that the empowerment of the professionals in schools strengthens the quality of supply side in order to meet customers’ demands (Chubb and Moe, 1990).</para>
+            <para>A substantial body of research has emerged related to market mechanisms in education worldwide (for a review, see Waslander <emphasis style="italic">et al.,</emphasis> 2010). Overall, the results are mixed: small positive effects are found for educational quality (here primarily defined as test scores in reading and mathematics), more commonly in reading than in mathematics. However, the use of market mechanisms also appears to lead to increased segregation or social divisiveness in terms of increasing social class inequality as well as greater inequality of opportunity between “more able” and “less able” students.<footnote xml:id="en396">
+                    <para>See Waslander <emphasis style="italic">et al</emphasis>. 2010, Lauglo, 1995, and Ball, 2009.</para>
+                </footnote></para>
+        </section>
+        <section>
+            <title>Participative democracy: Increasing participation of community members</title>
+            <para>Decentralisation in the sense of <emphasis style="italic">participative democracy </emphasis>refers to enhancing direct citizen participation in education policy making and implementation on the local level. Mechanisms for decentralisation in the sense of participative democracy are the establishment of a community for (enabling parents, employers and community groups to express local needs and to participate in decision making), grant-giving capacity (resources increasing the capacity to meet the learning needs of individuals and groups, granted by the local authority) or enabling the role of a so-called area officer (to foster parental and group involvement in identifying learning needs and organising appropriate development) (Ranson, 1993). The concept is also concerned with enhancing democracy in and around schools by establishing councils and committees that actively involve teachers, parents and pupils, and other members of the community.</para>
+            <para>The rationale for the involvement of community members is that they deal with experience and knowledge in a diverse and relatively more open-minded way than do professionals, local officials and bureaucrats (Fung and Wright, 2001). Research on participative democracy seems to show a positive impact on schooling and/or greater effectiveness or efficiency in education, but to a lesser extent than with deconcentration or the use of market mechanisms.<footnote xml:id="en398">
+                    <para>See Banerjee, <emphasis style="italic">et al</emphasis>., 2007; San Antonio and Gamage, 2007, Cheng and Cheung, 2003, and Marzano, 2003.</para>
+                </footnote> However, there are also indications that these effects are not always present. For instance, Banerjee and colleagues (2009), conducting empirical research in India on local community participation in public schools, found that there was no impact on community involvement, teacher effort or learning outcomes in those schools; however, they did find a large impact on local community involvement and activity <emphasis style="italic">outside</emphasis> of schools.</para>
+            <para>The three meanings of decentralisation described above indicate that in many countries decentralisation in the field of education has not simply meant devolving tasks to regional, local or school levels, although that has happened as well. Governments in particular have increased school autonomy, stimulated demand sensitivity and school competition, and enhanced the influence of parents and other local stakeholders. At the same time, they have looked for ways to hold schools and school governing boards accountable for their decisions and performance in order to keep a grip on, and steer access to, education and its effectiveness, efficiency, and equity. </para>
+        </section>
+    </chapter>
+    <chapter>
+        <title>Accountability shifts in education</title>
+        <para>In addition to its traditional legitimation purpose, school accountability has also been used as a central vehicle for improvement since the broad school improvement initiatives of the 1990s. This is based on the assumption that holding schools accountable for attaining high standards will, in fact, motivate schools to improve their quality (Geijsel <emphasis style="italic">et al</emphasis>., 2010). Thus, the following purposes of school accountability can be distinguished:</para>
+        <itemized-list>
+            <list-item>
+                <para>Legitimation through compliance with laws and regulations.</para>
+            </list-item>
+            <list-item>
+                <para>Accounting for the quality of services provided, in terms of quality of education (effectiveness), value for money (efficiency), equity or access.</para>
+            </list-item>
+            <list-item>
+                <para>Improvement of the quality of services provided, in terms of quality of education (effectiveness), value for money (efficiency), equity or access.</para>
+            </list-item>
+        </itemized-list>
+        <para>Two types of accountability mechanisms are commonly used: vertical and horizontal. <emphasis style="italic">Vertical accountability</emphasis> is top-down and hierarchical. It enforces compliance with laws and regulation and/or holds schools accountable for the quality of education they provide. <emphasis style="italic">Horizontal accountability</emphasis> presupposes non-hierarchical relationships. It is directed at how schools and teachers conduct their profession and/or at how schools and teachers provide multiple stakeholders with insight into their educational processes, decision making, implementation, and results. Each of the two types of accountability is further divided into two subsections (see Table 3.1 below).</para>
+        <para>Table 3.1. Four forms of school accountability</para>
+        <table frame="all">
+            <titles>
+                <title>Table 3.1. Four forms of school accountability</title>
+            </titles>
+            <tgroup cols="2">
+                <colspec colname="col1" colnum="1" colwidth="29.17mm"/>
+                <colspec colname="col2" colnum="2" colwidth="134.66mm"/>
+                <tbody>
+                    <row>
+                        <entry colname="col1" colsep="1" nameend="col2" namest="col1" rowsep="1" valign="top" align="center">
+                            <para>
+                                <emphasis style="bold"/>
+                            </para>
+                        </entry>
+                    </row>
+                    <row>
+                        <entry colname="col1" colsep="1" morerows="1" rowsep="1" valign="middle" align="left">
+                            <para>
+                                <emphasis style="bold"/>
+                            </para>
+                        </entry>
+                        <entry colname="col2" colsep="1" rowsep="0" valign="top" align="left">
+                            <para/>
+                        </entry>
+                    </row>
+                    <row>
+                        <entry colname="col2" colsep="1" rowsep="1" valign="top" align="left">
+                            <para/>
+                        </entry>
+                    </row>
+                    <row>
+                        <entry colname="col1" colsep="1" morerows="1" rowsep="1" valign="middle" align="left">
+                            <para>
+                                <emphasis style="bold"/>
+                            </para>
+                        </entry>
+                        <entry colname="col2" colsep="1" rowsep="0" valign="top" align="left">
+                            <para/>
+                        </entry>
+                    </row>
+                    <row>
+                        <entry colname="col2" colsep="1" rowsep="1" valign="top" align="left">
+                            <para/>
+                        </entry>
+                    </row>
+                </tbody>
+            </tgroup>
+            <tfoot/>
+        </table>
+        <para>Identifying the different types and forms of school accountability are important in order to understand two recent shifts in accountability in education: (1) the move to complement regulatory school accountability with school performance accountability, and (2) exploring the possibility of moving from singular to multiple school accountability.</para>
+        <section>
+            <title>Shift in accountability #1: Complementing regulatory with school performance accountability</title>
+            <para>As laws and regulation are important policy instruments to steer education, regulatory school accountability mechanisms always have been and are still widely used. These primarily include information about students and student characteristics. Less frequent but still common are data on safety issues, curriculum, facilities and grounds, and teacher qualification. The domains with the fewest countries reporting compliance data are related to school finance and governance (OECD, 2011b). </para>
+            <para>In order to balance the greater autonomy granted to schools/school governing boards and the use of market mechanisms, regulatory school accountability has been supplemented with school performance accountability since the 1990s. As a general trend, central governments started steering education on the basis of output factors rather than on detailed input factors. In many OECD countries, forms of block grant were introduced, enabling schools to decide freely how to spend their budget on staff and non-staff costs. In addition, detailed curriculum and classroom organisation prescriptions were replaced by student achievement levels and learning goals to be attained, and market mechanisms were introduced to enhance parental choice and encourage school competition. This shift from input to output steering was accompanied by the introduction of school performance accountability.<footnote xml:id="en400">
+                    <para>See OECD, 2011b; Marks and Nance, 2007; and Ladd, 2001.</para>
+                </footnote>
+            </para>
+            <para>School performance accountability is widespread nowadays in OECD countries, but its frequency and scope vary considerably among and within the countries (see Box 3.1) (OECD, 2011b). </para>
+            <para>In decentralised educational systems, it is no longer enough that autonomous schools/school boards are held accountable only for compliance with input factors as required by law and regulation; they must also meet the required quality standards for service delivery. School performance accountability is a good tool for this because it enables central governments to steer schools and school governing boards on the basis of their performance. It is a cornerstone of accountability in decentralised educational systems, although as Box 3.1 makes clear, countries have chosen to use it in the way that best suits their individual system. </para>
+        </section>
+        <section>
+            <title>Shift in accountability #2: From singular to multiple accountability?</title>
+            <para>The shift to school performance accountability was an important step in ensuring quality control and effective steering of decentralised systems. However, if governments rely only on school performance accountability in assessing the state of education, elements such as socialisation, integration, and personal development, may be overlooked. In addition, although school performance accountability provides a clear picture of student attainment of basic knowledge and skills, a number of researchers have identified a number of unintended effects of school performance accountability:<footnote xml:id="en406">
+                    <para>See Morris, 2011; Rosenkvist, 2010; Feng <emphasis style="italic">et al</emphasis>., 2010; Resnick, 2006; Kane and Staiger, 2002, Ladd and Zelli, 2002, and Ladd, 2001.</para>
+                </footnote></para>
+            <itemized-list>
+                <list-item>
+                    <para>impoverishing the teaching and learning processes as a result of “teaching to the test”;</para>
+                </list-item>
+                <list-item>
+                    <para>narrowing the curriculum in order to focus on those elements that are tested;</para>
+                </list-item>
+                <list-item>
+                    <para>emphasising failure instead of learning or improvement if performance accountability lacks positive interventions designed to assist and support low-performing schools;</para>
+                </list-item>
+                <list-item>
+                    <para>reducing the quality of staff in schools serving low-performing students.<footnote xml:id="en408">
+                            <para>The mechanism behind this unintended effect is that principals in schools with large proportions of low performing students appear to be less supportive of the school-accountability program and less optimistic about their power to remove low performing teachers than other principals. If this perception is accurate (<emphasis style="italic">i.e. </emphasis>they are less able to remove low performing teachers), this could reduce the willingness of ambitious and effective principals to serve in such schools. Similarly, schools with low performing students might find it increasingly more difficult to attract higher quality teachers if teachers in ‘better’ schools can increase their chances of receiving a bonus and minimize the chances of being associated with a publicly identified poorly performing school (Morris, 2011; Fend <emphasis style="italic">et al.</emphasis>, Ladd and Zelli, 2002).</para>
+                        </footnote></para>
+                </list-item>
+            </itemized-list>
+            <para>The higher the stakes are for school leaders and teachers, the more these unintended/undesired effects are likely to occur (Resnick, 2006, for an explanation of high and low stakes accountability, see Appendix 1). Thus, although school performance accountability is a useful tool for central government to monitor quality of student achievement, it is not a cure-all solution when it comes to securing the quality of education. In some OECD countries there has been a move to expand the notion of accountability to a multi-pronged approach that would include the data from school performance measures and augment it with assessment and feedback from other sources.<footnote xml:id="en410">
+                    <para/>
+                </footnote> These other sources involve elements of multiple accountability and structuring the exchange and relations between relevant stakeholders horizontally.</para>
+            <para>Horizontal elements in education governance have had a relatively long tradition in a range of OECD countries. School boards or councils comprised of elected, voluntary members have sought to integrate the voices of parents into the governing process, as seen in Austria, Belgium (Wallonia), Germany and lately also in the United States. However, many of these bodies do not include further groups of stakeholders, for example students. Also, their implicit power as accountees has often remained rather limited, since they are exerting a mainly advisory function rather than a role of an equal partner within education governance. Thus, these boards and councils cannot be regarded as actors within a system of multiple accountability per se, even though their set-up in essence is horizontal. Instead, these bodies have to be seen in a larger context of participatory democratic developments (see section above on decentralisation in education).</para>
+            <para>In some countries, however, notably Denmark, the Netherlands and the United Kingdom, there has recently been a trend in the public services to move towards more profound multiple school accountability designs. Defined as a process involving students, parents, communities and other stakeholders in formulating strategies, decision-making, and evaluation for education, multiple school accountability aims to provide: (1) legitimation for the strategy and decision making of the school (is the school doing the right things?), (2) legitimation for the quality of services provided (is the school doing things well?), and (3) improvement of the quality of services provided.</para>
+            <para>In Denmark, the governance of primary and lower secondary schools is divided between two bodies: the local or town council (Kommunalbestyrelse) and the school council (Skolebestyrelse). The first opens and closes schools, hires and fires teachers, and administers the budget; the latter advises the local or town council with regard to the design of curricula and the activities of the school. It is comprised of five to seven elected representatives of the parents; joint sessions of the town and school councils are also attended by the head of school, teachers and students. The head of school is accountable to both bodies (Stückler, 2005).</para>
+            <para>In England and Wales, the system of multiple accountability is more developed. Here, every school has a school governing body that is comprised of the head of school, elected representatives of parents, teachers and non-teaching school staff, the local education authority, as well as local political representatives. The body is responsible for general administration (including budget) and hiring and firing of teachers and heads of schools (Stückler, 2005).</para>
+            <para>Expanding school performance accountability to encompass a multiple school accountability approach is a potentially promising option for a central government searching for a holistic view of educational quality. In order to think about how and why this could be done, it is useful to distinguish between “process--oriented” and “product--oriented” measurements (such as standardised tests) in school accountability.</para>
+            <para><emphasis style="italic">Process-oriented</emphasis> measurement is grounded in the idea that school performance can be measured and evaluated from multiple angles and therefore multiple standards and criteria can be used. The use of multidimensional performance measures entails the involvement of multiple sources (quantitative data, qualitative data, narratives, reports, observations) and different actors (inside and outside the school organisation) in measuring a range of processes in schools such as teaching and learning or organisation and leadership. Alternative arrangements such as peer reviews, self assessments, or the involvement of a more diverse set of evaluators (<emphasis style="italic">e.g.</emphasis> experts, critical friends, parents) could be adopted to achieve balanced judgments and to take into account factors that are difficult to quantify. </para>
+            <para>Another way of thinking about a multi-pronged approach is to put schools in a broader context that includes emerging collaboration between organisations in education, welfare, youth care and health and their clients. For instance, communities of practice are created to integrate services and agencies involved in the education and care of children and to encourage the participation of parents, families and communities (Ranson, 2008). A developing practice of extended schools and children’s centres have been established in countries such as Denmark, Germany, the Netherlands, Norway, Sweden and the United Kingdom (Cummings, Dyson and Todd, 2011). For example, in the United Kingdom, the Full Service Extended School initiative was introduced in 2003 to provide support for one or more schools in a local education authority area<footnote xml:id="en412">
+                    <para>A local education authority (the term “local authority” was introduced in the Education Act 1902) is a committee set up by each county council or county borough council in the United Kingdom to exercise the responsibilities commonly held by school boards.</para>
+                </footnote> to “provide a comprehensive range of services, including access to health services, adult learning and community activities as well as study support and 8 a.m. to 6 p.m. childcare” (see Cummings <emphasis style="italic">et al</emphasis>, 2007).<footnote xml:id="en414">
+                    <para>See the “Extended Schools and Community-based Programmes” page on Newcastle University’s Research Centre for Learning and Teacher website at: <emphasis style="italic">www.ncl.ac.uk/cflat/about/ESandcommunity.htm</emphasis>.</para>
+                </footnote> Developments such as this have consequences for accountability mechanisms: the integration of service delivery from different institutions and organisations requires accountability mechanisms with an accumulated and integrated character. </para>
+            <para>In short, in order to reduce unintended effects of school performance accountability, interest in multiple accountability (also referred to as “social”, “downward”, “participatory” or “multi-accountability”) has grown in the last ten years.<footnote xml:id="en416">
+                    <para>Morris, 2011; Brandsen <emphasis style="italic">et al.,</emphasis> 2011; Faubert, 2009; and Ozga, 2009.</para>
+                </footnote> A form of horizontal accountability (see Table 3.1), multiple accountability means that schools are accountable to students and their parents, to members of the community, and to the community as a whole for multiple aspects of schooling, based on various information sources.<footnote xml:id="en418">
+                    <para>Hooge <emphasis style="italic">et al</emphasis>., 2004; Biesta, 2004; Leithwood, 2001; De Vijlder <emphasis style="italic">et al</emphasis>., 2002; Fullan, 2000; Ranson, 1993; Evans, 1991; and Levin, 1974.</para>
+                </footnote> It requires that schools work closely with different stakeholders, supporters and constituents in their environment in order to: </para>
+            <itemized-list>
+                <list-item>
+                    <para>help them learn about their rights and duties, requirements, desires and expectations concerning education;</para>
+                </list-item>
+                <list-item>
+                    <para>establish a relationship (by negotiating, collaborating and/or involving them);</para>
+                </list-item>
+                <list-item>
+                    <para>obtain support for school policies, strategy, decisions and practices; and</para>
+                </list-item>
+                <list-item>
+                    <para>be held accountable by them.</para>
+                </list-item>
+            </itemized-list>
+        </section>
+        <section>
+            <title>Looking beyond education: Does multiple accountability work?</title>
+            <para>Multiple accountability aims to increase legitimacy and trust from the local community through the processes of learning and feedback that it entails (Hooge and Helderman, 2008; De Vijlder and Westerhuis, 2002). An example from outside the field of education is demonstrated by research on 82 Dutch public agencies. This research showed that horizontal accountability processes work to foster richness of information and new insights in organisational learning. The reflective dialogues with stakeholders aim to improve rather than judge; judgement is not used as a means of control but rather for advising and giving operational lessons. Moreover, these judgments appear to be less driven by short‑term political considerations but, rather, are more concerned with the quality of service over time (Schillemans, 2007; 2008; for related research on multiple accountability in the Dutch housing sector see SEV, 2006). The Netherlands is not alone in moving towards multiple accountability: Poland (e.g. regarding forest management in environmental policy) and the United Kingdom have taken steps in introducing multiple accountability systems in the public services.</para>
+            <para>Within the field of corporate governance, some countries have also moved to systems of multiple accountability. In the United States and the United Kingdom for example, so called “Say-on-Pay” regulations have enabled shareholders to express their voice by voting on the pay policy of the company’s executive officers. This vote does not focus on pay itself, but rather on the balance between compensation and performance of the corporation. Proposals that pass the majority threshold are not necessarily binding for the executive board. However, they do exert pressure on the board members to reflect on executive pay and its efficacy to deliver performance. Recent research has shown that Say-on-Pay appears to lead to large increases in market value, profitability and long-term performance in large corporations (Cuñat, Gine and Guadalupe, 2012).</para>
+            <para>Multiple accountability is thus an intriguing option for governments interested in augmenting the scope and feedback loops of their accountability systems. Yet, as multiple accountability still is a fairly novel approach, the question remains: Does it really work? Initial reports are mixed: there is great appreciation for the process and a broader range of stakeholder voices. However, ministries report a reluctance to rely too heavily on information generated by multiple accountability mechanisms due to doubts about its reliability and the risk of information overload. On the basis of this, central government is advised to discuss the purposes and use of multiple accountability mechanisms with the institutions and to balance the opportunities (information to learn, improve, steer, and formulate policies) with the risks (<emphasis style="italic">e.g.</emphasis> information overload) (Dutch Court of Audit, 2011). If multiple accountability mechanisms are indeed perceived as complementary to vertical accountability mechanisms, central government has to clarify how and to what extent this is undertaken. It is also essential to manage the expectations of the organisations and individuals involved (Brandsen <emphasis style="italic">et al</emphasis>., 2011). Agreement about the nature and extent of extra information is needed as is more research on how multiple accountability works and its effects. The last chapter of this paper focuses on the practical side of multiple accountability and how it could work in schools.</para>
+            <para>
+                <emphasis style="bold">How to make multiple school accountability work in education</emphasis>
+            </para>
+            <para>Horizontal accountability is a worthwhile but difficult endeavour. At its best it is a process where, having gathered real insight into school’s strengths and weaknesses, a school meets with its accountees to conduct a fruitful dialogue about the school’s decisions and performance in relation to the perceptions, expectations and judgments of different stakeholders. For this to happen, the relevant stakeholders need to be identified, and in some cases motivated and/or trained. Schools themselves need to build capacity in terms of leadership for multiple school accountability processes, and also in terms of the ability to interpret and correctly use data from school performance accountability (<emphasis style="italic">e.g.</emphasis> assessment results). This chapter briefly describes the various processes involved in each of these activities and provides examples of activities in this domain. </para>
+        </section>
+        <section>
+            <title>Identifying stakeholders</title>
+            <para>Which organisations, groups or persons are important for the legitimation of the school’s strategy, decision making, and the quality of the service delivery? And which parties are in a position to evaluate and give valuable feedback in order to improve the quality of education? With respect to multiple accountability processes, (Hooge and Helderman, 2008) distinguish four different categories of stakeholders: primary, internal, vertical, and horizontal.</para>
+            <para>In education, parents and students are the primary stakeholders. Teachers and other educational and non-educational staff are internal stakeholders with a clear interest in the success of the school. At slightly more distance, governments and organisations formally operating on behalf of government (such as inspectorates or municipalities) operate as vertical stakeholders. Finally, all other organisations, groups, or persons in the school’s environment with some level of interest in the school are horizontal stakeholders.</para>
+            <table frame="all">
+                <tgroup cols="1">
+                    <colspec colname="col1" colnum="1" colwidth="162.49mm"/>
+                    <tbody>
+                        <row>
+                            <entry colname="col1" colsep="1" rowsep="1" valign="top">
+                                <para>Box 4.1. Parents </para>
+                                <para>Despite their importance, parents are not always identified as key players in multiple school accountability processes. Although parental complaints and requests are taken into account by school leaders and teachers, and surveys are used to measure their satisfaction, parents rarely play a role as direct evaluators (Isoré, 2009). However, a substantial amount of research indicates that parents’ engagement in schools matters for children’s achievement, motivation, and well-being at school (Oostdam and Hooge, 2012; Menheere and Hooge, 2010). </para>
+                                <para>Engaging parents in multiple accountability processes might thus help improve student performance. Greater parental engagement can be fostered by clarifying ways in which parents can contribute and participate, by ensuring that the purposes of parent engagement are explicit; by providing training for parents to play an advocacy role, by strong school leadership, and, most importantly, by instituting a decision-making framework that provides parents with real influence and voice in decision making. (Leithwood, 2009; Shatkin and Gershberg, 2007). </para>
+                            </entry>
+                        </row>
+                    </tbody>
+                </tgroup>
+                <tfoot/>
+            </table>
+        </section>
+        <section>
+            <title>Building stakeholders’ capacity</title>
+            <para>It does not always occur to many stakeholders to act as an accountee towards a school. If a school fails to pay attention to the knowledge, motivation or positions of stakeholders as potential accountees, then valuable but weaker stakeholders risk being excluded. This lessens the quality of multiple accountability processes.</para>
+            <para>Although multiple accountability processes are of a non-hierarchical character, this does not mean that the relationship between the school and horizontal accountees is equal in every respect. In some instances the stakeholder has the same level of organisation, knowledge, and involvement as the school, but in other situations the stakeholder will have less knowledge of and involvement than the school itself. This may mean that schools are sometimes better motivated and equipped to enter into the accountability processes with their stakeholders than vice versa. Schools need to approach stakeholders “in proper proportion”. Some stakeholders need help with acquiring knowledge and organising their involvement as an accountee. While it might be easy or tempting to “score” against certain of those stakeholders, this raises the question of whose interest this would ultimately serve. And, of course, the same applies in the reverse situation.</para>
+            <para>Potential pitfalls</para>
+            <para>The possession and use of either professional knowledge or experiential knowledge may be a wedge between schools and their stakeholders, as well as among schools’ stakeholders: The position of lay persons (citizens/clients) who merely have experiential knowledge may be weakened as the professionals (dispensing professional knowledge) bond together and strengthen their information exchange and mutual ties (Brandsen <emphasis style="italic">et al</emphasis>., 2011).</para>
+            <para>Unequal positions of power among the school, parents, and community members can enable more powerful stakeholders to dominate weaker ones. This process may take place on a number of levels, including unequal access to decision-making bodies, information and power asymmetries, and the narrowing of the agenda to suit the stronger stakeholders.</para>
+            <para>Being engaged in multiple accountability processes may demand too much from parents and involved members of the community. Often they lack the knowledge, time, patience, and wisdom that they are expected to dispense, or, to acquire in short order through training, or they may be unaware of the issue or too consumed with private life. Real frustration arises when parents and involved members of the community perceive that the rules of the game are dictated by the school and the communication is a “one-way street” rather than a truly free and open dialogue.<sup/><footnote xml:id="en420">
+                    <para/>
+                </footnote> In reaction to this, parents and community members may choose not to engage, which sometimes leads schools to incorrectly conclude that they are satisfied with schools’ delivery of services. This is a lost opportunity to both engage important stakeholders and improve service and achievement. </para>
+            <para>Consultation and participation fatigue may also be a pitfall of multiple accountability. (Brandsen <emphasis style="italic">et al</emphasis>., 2011) conclude that multiple accountability increases the accountability pressure since it complements traditional vertical accountability rather than substitutes for it. “Many of the organisations we examined indicated that they felt burdened by an increasing amount of paperwork […] the fatigue of staff members was mirrored by stakeholders, especially individual clients, who showed increasing disinterest in being consulted and involved” (p. 17).</para>
+        </section>
+        <section>
+            <title>Building schools’ capacity</title>
+            <para>The work of school leaders is crucial to building school capacity for multiple accountability because accountability processes are nested in beliefs, experiences, and practices in schools. It requires school leaders who are willing and able to empower staff, and in turn, to involve and share responsibility with parents and other interested members of the local community. It also requires school leaders who are willing to be held accountable by them (Leithwood, 2001). </para>
+            <para>Apart from leadership, the capacity to handle data is a key element of school capacity building with respect to accountability (Ozga, 2009; Fullan, 2000). Masses of data are available through assessment and monitoring systems, indicators of effectiveness, targets, inspection, and review programs. Methods for accessing information and, consequently, analysing and interpreting it, are not self-evident in schools. As early as the 1970s, many of the relevant data were not available for schools or at least not in a form which could be easily used (Levin, 1974). Apart from the lack of availability and feasibility of data, until recently there was often a gap between the interests expressed in data and the actual use of data. Schools need the capability to transform data into knowledge appropriate for multiple accountability purposes. This requires proper school self-evaluation: obtaining real insights into the quality and processes of schools that are relevant to the practice of accountability on multiple fronts. </para>
+            <para>Coping with data requires that educators themselves become experts in interpreting data and transforming it into knowledge. Earl and Katz (2002; 2006, cited in Geijsel <emphasis style="italic">et al.</emphasis>, 2010, p.62), point to three capacities that school leaders need in order to work in a data-rich world:</para>
+            <ordered-list numeration="arabic">
+                <list-item>
+                    <para>“<emphasis style="italic">Develop an inquiry habit of mind</emphasis>. Leaders need to reserve judgment and have a tolerance for ambiguity, to value deep understanding, take a range of perspectives, and systematically pose increasingly focused questions.</para>
+                </list-item>
+                <list-item>
+                    <para><emphasis style="italic">Become data literate. </emphasis>Leaders must to be aware of how different data are needed for different purposes; they need to be able to evaluate data, recognising sound and unsound data, to be knowledgeable about statistical and measurement concepts, to recognise other kinds of data (not only numbers, but also opinions, anecdotes, observations), to make interpretation paramount (instead of using data for quick fixes), and to pay attention to reporting to different audiences. </para>
+                </list-item>
+                <list-item>
+                    <para><emphasis style="italic">Create a culture of inquiry. </emphasis>Leaders need to involve others in interpreting and engaging with the data, to stimulate an internal sense of urgency (re-focusing the agenda), to make time for data interpretation and for coming to collective meaning and commitment, and to use critical friends.</para>
+                </list-item>
+            </ordered-list>
+        </section>
+        <section>
+            <title>Multiple school accountability in practice</title>
+            <para>The practice of multiple accountability has yet to come to fruition in education, and the amount of available research on this topic is modest. Based on theory and experience from other sectors however, some lessons can be learned to make multiple school accountability work:</para>
+            <ordered-list numeration="arabic">
+                <list-item>
+                    <para><emphasis style="italic">It is important to identify the right stakeholders</emphasis>. The process of stakeholder identification can be heavily influenced by “stakeholder salience”, that is, the ability of stakeholders to attract schools’ attention, depending on their power, legitimacy and urgency vis-à-vis the school (Mitchell, Agle and Wood, 1997). In order to ensure that the identification of stakeholders is not limited to those most salient, schools must make efforts to involve less powerful or inactive stakeholders. Being less powerful or inactive does not mean that these stakeholders are not relevant to the school. On the contrary, these are often the very stakeholders for whom the school aims to add value; therefore, schools need them. <emphasis style="italic"/></para>
+                </list-item>
+                <list-item>
+                    <para><emphasis style="italic">Build stakeholder capacity.</emphasis> This is particularly important while establishing accountability relationships with weaker stakeholders who might not have the requisite knowledge and language to play the role of an accountee and, therefore, may inadvertently be excluded in accountability processes. Avoiding apathy and “consultation fatigue” is key because they weaken the effectiveness of the process, and ultimately the strength of this approach is determined by its weakest accountees. Schools can involve and activate their stakeholders by being inviting, by structuring participation and accountability processes, and by motivating and empowering them. </para>
+                </list-item>
+                <list-item>
+                    <para><emphasis style="italic">Self-evaluation that provides real insight into schools’ quality and processes</emphasis> is needed to make multiple accountability work. Proper school self-evaluation requires “assessment literacy” (Fullan, 2007) from school leaders as well as from teachers and other professional staff. The work of school leaders is crucial here: they must empower staff to be involved and open to parents and members of the local community and to be held accountable by them, and they must create the effective environments by building bridges between teachers and educational staff and external accountability demands. Autonomy and a (governance) environment that provides support foster this work of school leaders. </para>
+                </list-item>
+            </ordered-list>
+            <para>A warning: multiple school accountability is not a panacea. It would be simplistic to rely solely on this one concept to solve local-level accountability issues because this might also lead to unintended or undesired effects. First, school leaders and teachers can use defensive reasoning and be wary of scrutiny and interference from the wide range of stakeholders involved in multiple accountability. They may wish to avoid accounting for their decisions, practices and outcomes, and consequently, give accountability relationships a symbolic or fake character. Second, since multiple school accountability relies heavily on the perceptions and experiences of school stakeholders, there also is a risk of only mapping stakeholders’ (dis)satisfaction, coloured by social desirability and/or “myths” concerning the image of the school. Third, the use of market mechanisms such as school competitiveness and parental choice in education can be disincentives for making multiple school accountability truly work because sometimes too much transparency concerning the weaknesses of a school may threaten a school’s image.</para>
+        </section>
+    </chapter>
+    <chapter>
+        <title>Conclusions<emphasis style="bold"/></title>
+        <para>This paper addresses the following question: How can schools and school boards be held accountable to the public for their decisions and performance? </para>
+        <para>In decentralised educational systems, it is no longer enough that autonomous schools/school boards are held accountable only for compliance with input factors, as required by law and regulation; they must also meet the required quality standards for service delivery. School performance accountability is a good tool for this as it enables central governments to steer schools and school governing boards on the basis of their performance. In this respect, school performance accountability is a cornerstone of accountability in decentralised educational systems. </para>
+        <para>However, school performance accountability does not allow for assessing such elements as socialisation, integration, and personal development. It also does not look at building local confidence and legitimacy. Recently, in some countries there has been a trend in the public services to move towards multiple school accountability. Multiple accountability takes into account different stakeholders’ varying perceptions of the quality, effectiveness and efficiency of schooling. It can complement school performance accountability by looking beyond the numbers and also defining schooling in professional and democratic terms. Last, but not least, it aims to foster transparency in the system by opening it up to public scrutiny. In practice, the government is advised to discuss the purposes and use of multiple accountability mechanisms and to balance the opportunities (information to learn from and to use to improve, steer and formulate policies) with the risks (information overload). If multiple accountability mechanisms are indeed perceived as complementary to vertical accountability mechanisms, central government has to agree with school organisations on how and to what extent multiple accountability mechanisms are to be introduced and used. </para>
+        <para>There have been numerous shifts in accountability practice and research over the last few decades. Accountability issues are a central priority for OECD countries and one of the hottest debates currently going. This paper has sought to argue that vertical measures of accountability, that is, regulatory and school performance accountability, can be usefully augmented by horizontal measures involving multiple stakeholders. This combination aims to build an efficient and effective accountability system that takes into account the nuanced nature and purposes of education. Combining various forms of accountability will help to improve the overall education system, policy for reform, and therefore ultimately improve the quality of education.</para>
+    </chapter>
+    <chapter>
+        <title>Notes</title>
+        <section>
+            <title>Definition</title>
+            <para>In very general terms, accountability can be defined as a process by which actors provide reasons for their actions against the backdrop of possible negative (or positive) consequences (Dunn, 1999, p. 35 quoted in Schillemans, 2008, p. 177). Pierre and Peters (2005, p. 5) define accountability as: ‘Holding those actors delivering governance to the society to be accountable for their actions’. It is worthwhile noting that accountability mainly is an Anglo‑Saxon term which has no direct translation in many languages (Bovens, 2005).</para>
+        </section>
+        <section>
+            <title>Phases</title>
+            <para>Accountability generally consists of three phases: 1) an information phase,2) a debating phase, and 3) a phase of consequences and sanctions (Schillemans, 2008).</para>
+            <para>In phase 1, the accountors provide reasons for their actions, explain themselves and pass information about their performance to the accountees; the accountees in turn pass judgment on the accountors’ performance. In phase 2, both parties debate the information at hand and move towards a final assessment, which then in phase 3 formulates positive or negative consequences for the accountors (praise and promotion, more freedom or naming and shaming, formal disapproval, tightened regulation, discharge of management, or ultimately, termination of organisation).</para>
+        </section>
+        <section>
+            <title>Consequences and sanctions</title>
+            <para>In view of consequences placed on the outcome, in education a distinction between high-stake and low-stake is common (Morris, 2011; Rosenkvist, 2010). High stake implies that substantial rewarding or punishing is coupled to the third phase, while with low-stake accountability such a coupling is absent. Here, the question of for whom the stakes are high is crucial for instance in the case of school performance accountability. Results of standardised student testing, used in the information phase (1), may have no impact on the students’ school career, but teachers and schools are or held accountable for their students’ results (Morris, 2011).</para>
+            <para>Stronger forms of sanctions are not necessarily more effective or influential than weaker forms (Schillemans, 2008). Depending on the nature and the goals of the accountors’ organisation, strong sanctions can have negative consequences for the accountee and invoke defensive and perverse effects, whereas weak sanctions can have sometimes have huge impact (Brandsen <emphasis style="italic">et al</emphasis>., 2011). </para>
+            <para>
+                <emphasis style="bold">RECENT OECD PUBLICATIONS OF RELEVANCE TO THIS WORKING PAPER</emphasis>
+            </para>
+            <para>
+                <emphasis style="bold"/>
+            </para>
+            <para>
+                <emphasis style="bold"/>
+            </para>
+            <para>
+                <emphasis style="bold"/>
+            </para>
+            <para>
+                <emphasis style="bold"/>
+            </para>
+            <para>
+                <emphasis style="bold"/>
+            </para>
+            <para>
+                <emphasis style="bold"/>
+            </para>
+            <para/>
+            <para/>
+            <itemized-list>
+                <list-item>
+                    <para/>
+                </list-item>
+                <list-item>
+                    <para/>
+                </list-item>
+                <list-item>
+                    <para/>
+                </list-item>
+            </itemized-list>
+            <para>
+                <emphasis style="italic"/>
+            </para>
+            <para>
+                <emphasis style="italic"/>
+            </para>
+            <para/>
+            <para/>
+            <itemized-list>
+                <list-item>
+                    <para/>
+                </list-item>
+                <list-item>
+                    <para/>
+                </list-item>
+                <list-item>
+                    <para/>
+                </list-item>
+                <list-item>
+                    <para/>
+                </list-item>
+                <list-item>
+                    <para/>
+                </list-item>
+            </itemized-list>
+            <para/>
+            <para/>
+            <para/>
+        </section>
+    </chapter>
+</document>

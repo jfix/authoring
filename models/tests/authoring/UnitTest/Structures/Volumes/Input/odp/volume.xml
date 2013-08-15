@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<publication xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:oecd:names:xmlns:authoring:document ../../../../../../../schemas/oecd.publication.xsd" xmlns="urn:oecd:names:xmlns:authoring:document" xmlns:xlink="http://www.w3.org/1999/xlink">
+	<metadata>
+		<metadata-item subject="kim:orgname" value="O.E.C.D."/>
+		<metadata-item property="kim:language" value="English"/>
+		<metadata-item property="kim:originalLanguage" value="English"/>
+	</metadata>
+	<title>Model Tax Convention on Income and on Capital</title>
+	<volume>
+		<metadata/>
+		<title>Volume I</title>
+		<introduction>
+			<title>Introduction</title>
+			<para>International juridical double taxation can be generally defined as the imposition of comparable taxes in two (or more) States on the same taxpayer in respect of the same subject matter and for identical periods. Its harmful effects on the exchange of goods and services and movements of capital, technology and persons are so well known that it is scarcely necessary to stress the importance of removing the obstacles that double taxation presents to the development of economic relations between countries. </para>
+			<para> It has long been recognised among the member countries of the Organisation for Economic Co-operation and Development that it is desirable to clarify, standardise, and confirm the fiscal situation of taxpayers who are engaged in commercial, industrial, financial, or any other activities in other countries through the application by all countries of common solutions to identical cases of double taxation. </para>
+			<para> This is the main purpose of the OECD Model Tax Convention on Income and on Capital, which provides a means of settling on a uniform basis the most common problems that arise in the field of international juridical double taxation. As recommended by the Council of the OECD,1 member countries, when concluding or revising bilateral conventions, should conform to this Model Convention as interpreted by the Commentaries thereon and having regard to the reservations contained therein and their tax authorities should follow these Commentaries, as modified from time to time and subject to their observations thereon, when applying and interpreting the provisions of their bilateral tax conventions that are based on the Model Convention. </para>
+		</introduction>
+		<chapter>
+			<title>Model Convention With Respect To Taxes On Income And On Capital</title>
+			<para/>
+		</chapter>
+	</volume>
+</publication>

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:oecd:names:xmlns:authoring:document ../../../../../../../schemas/oecd.author.xsd" xmlns="urn:oecd:names:xmlns:authoring:document" xmlns:xlink="http://www.w3.org/1999/xlink">
+	<metadata>
+		<metadata-item subject="kim:date" value="Thu, 18 Oct 2012 18:32:00 CEST"/>
+		<metadata subject="kim:revhistory">
+			<metadata subject="kim:revision">
+				<metadata-item subject="kim:revnumber" value="1"/>
+				<metadata-item subject="kim:date" value="May 2011"/>
+			</metadata>
+		</metadata>
+		<metadata-item subject="kim:orgname" value="O.E.C.D."/>
+		<metadata-item property="kim:cote" value="1211011e.pdf"/>
+		<metadata-item property="kim:language" value="English"/>
+		<metadata-item property="kim:originalLanguage" value="English"/>
+	</metadata>
+	<title>OECD Economic Outlook</title>
+	<chapter>
+		<title>GENERAL ASSESSMENT OF THE MACROECONOMIC SITUATION</title>
+
+		<annotation xml:id="ann-0001">
+			<para>The recovery has broadened…</para>
+		</annotation>
+		<para xml:id="para-0001" annotations="ann-0001">The recovery from the deepest recession in decades is becoming more broadly based. Global growth has picked up since the soft patch in the middle of last year and activity is driven increasingly by strengthening private final demand. However, progress remains uneven across economies. In the near term, the adverse supply-side shocks from high commodity prices and the earthquake in Japan and its aftermath are damping activity somewhat and pushing up headline inflation. Such effects should fade from the latter half of this year, provided commodity prices stabilise and inflation expectations do not become unanchored. Financial conditions continue to improve and monetary policy remains accommodative in the OECD economies, though increasingly less so in emerging market economies where spare capacity has been largely absorbed. This should allow the recovery to strengthen, despite increasingly widespread fiscal consolidation. Global output growth is expected to be close to 4¼ per cent this year and 4½ per cent in 2012 (Table 1.1). On this basis, labour market conditions would continue to improve slowly, though at 7% by the end of 2012, the OECD unemployment rate would still remain well above the pre-crisis level. Underlying inflation is expected to edge up slowly, as economic slack diminishes, to around 1¾ per cent by end-2012. Outside the OECD area, domestic demand is expected to remain robust, necessitating further policy measures to damp inflationary pressures. </para>
+		<annotation xml:id="ann-0002">
+			<para>… but risks remain elevated…</para>
+		</annotation>
+		<para xml:id="para-0002" annotations="ann-0002">The recovery from the deepest recession in decades is becoming more broadly based. Global growth has picked up since the soft patch in the middle of last year and activity is driven increasingly by strengthening private final demand. However, progress remains uneven across economies. In the near term, the adverse supply-side shocks from high commodity prices and the earthquake in Japan and its aftermath are damping activity somewhat and pushing up headline inflation. Such effects should fade from the latter half of this year, provided commodity prices stabilise and inflation expectations do not become unanchored. Financial conditions continue to improve and monetary policy remains accommodative in the OECD economies, though increasingly less so in emerging market economies where spare capacity has been largely absorbed. This should allow the recovery to strengthen, despite increasingly widespread fiscal consolidation. Global output growth is expected to be close to 4¼ per cent this year and 4½ per cent in 2012 (Table 1.1). On this basis, labour market conditions would continue to improve slowly, though at 7% by the end of 2012, the OECD unemployment rate would still remain well above the pre-crisis level. Underlying inflation is expected to edge up slowly, as economic slack diminishes, to around 1¾ per cent by end-2012. Outside the OECD area, domestic demand is expected to remain robust, necessitating further policy measures to damp inflationary pressures. </para>
+		<annotation xml:id="ann-0003">
+			<para>… on the upside…</para>
+		</annotation>
+		<para xml:id="para-0003" annotations="ann-0003">The key upside risk is that private sector final demand could gain more momentum than projected. Household and business confidence could strengthen further as the recovery progresses, amidst favourable financial conditions and improving labour market outcomes, giving rise to strong pent-up demand for durables and capital equipment. There is also a possibility that additional near-term impetus could arise from growth-friendly structural reforms, although relatively little progress has been made in this respect since the recovery began. </para>
+		<annotation xml:id="ann-0004">
+			<para>… and on the downside</para>
+		</annotation>
+		<para xml:id="para-0004" annotations="ann-0004">On the downside, important near-term risks to the pace of the recovery stem from the possibilities of renewed rises in oil prices as a result of political instability, a slow recovery in Japan from the effects of the earthquake and its aftermath, with associated disruptions in global supply chains, and a deeper than projected slowdown in China. Higher oil prices would add to inflationary pressures, damp income growth and widen global imbalances by raising further the already elevated external surpluses of the high-saving oil producing economies. Clear risks also remain from continuing concerns about public debt sustainability in some OECD countries and, to a lesser extent, ongoing weaknesses in property markets. If these were to strengthen, they could provoke significant financial market disruption with adverse effects on confidence. </para>
+	</chapter>
+</document>

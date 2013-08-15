@@ -1,0 +1,247 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<publication xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:oecd:names:xmlns:authoring:document ../../../../../../../schemas/oecd.publication.xsd" xmlns="urn:oecd:names:xmlns:authoring:document" xmlns:xlink="http://www.w3.org/1999/xlink">
+	<metadata xml:id="md-0001">
+		<metadata-item subject="kim:orgname" value="O.E.C.D."/>
+		<metadata-item property="kim:cote" value="TAD/5112061e"/>
+		<metadata-item property="kim:originalClassif" value="Unclassified"/>
+		<metadata-item property="kim:language" value="English"/>
+		<metadata-item property="kim:originalLanguage" value="English"/>
+	</metadata>
+
+	<title>OECD-FAO Agricultural Outlook 2012-2021</title>
+
+
+	<document xmlns="urn:oecd:names:xmlns:authoring:document" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xlink="http://www.w3.org/1999/xlink" xsi:schemaLocation="urn:oecd:names:xmlns:authoring:document ../models/schemas/oecd.author.xsd">
+		<metadata>
+			<metadata-item subject="kim:orgname" value="O.E.C.D."/>
+			<metadata-item property="kim:cote" value="TAD/5112061e"/>
+			<metadata-item property="kim:originalClassif" value="Unclassified"/>
+			<metadata-item property="kim:language" value="English"/>
+			<metadata-item property="kim:originalLanguage" value="English"/>
+		</metadata>
+		<title>Agricultural Policy Monitoring and Evaluation 2012</title>
+
+		<sub-title/>
+
+		<alternative-title/>
+
+		<foreword>
+			<title/>
+			<para/>
+		</foreword>
+
+		<acknowledgements>
+			<para/>
+		</acknowledgements>
+
+		<glossary>
+			<gloss-item>
+				<term/>
+				<definition>
+					<para>&quot; &amp; &apos; &gt; &lt; </para>
+				</definition>
+			</gloss-item>
+		</glossary>
+
+		<preface>
+			<title/>
+		</preface>
+
+		<executive-summary>
+			<title/>
+			<para/>
+		</executive-summary>
+
+		<introduction>
+			<title/>
+			<box>
+				<title/>
+				<section>
+					<title/>
+					<section>
+						<title/>
+					</section>
+				</section>
+				<notes>
+					<note>
+						<para/>
+					</note>
+				</notes>
+				<sources>
+					<source>
+						<citation>text</citation>
+					</source>
+				</sources>
+			</box>
+		</introduction>
+
+		<part>
+			<title/>
+			<introduction>
+				<title/>
+			</introduction>
+
+
+			<chapter>
+				<title/>
+
+				<abstract>
+					<para>
+						<citation/>
+					</para>
+				</abstract>
+				<introduction>
+					<title/>
+					<definition-list>
+						<list-item>
+							<term/>
+							<definition>
+								<para>text</para>
+							</definition>
+						</list-item>
+					</definition-list>
+				</introduction>
+
+				<section>
+					<title/>
+				</section>
+
+				<figure>
+					<title>text 1</title>
+					<sub-title>text</sub-title>
+					<alternative-title>text</alternative-title>
+
+					<graphic>
+						<title>text</title>
+						<sub-title>text</sub-title>
+						<alternative-title>text</alternative-title>
+						<caption>text</caption>
+						<external-graphic/>
+						<notes>
+							<note>
+								<para/>
+							</note>
+						</notes>
+					</graphic>
+					<notes>
+						<note>
+							<para/>
+						</note>
+					</notes>
+					<sources>
+						<source>
+							<citation/>
+						</source>
+					</sources>
+				</figure>
+
+
+				<graphic>
+					<title/>
+					<sub-title/>
+					<caption/>
+					<external-graphic/>
+				</graphic>
+
+				<table>
+					<titles>
+						<title>here is some text <footnote>
+								<para>text</para>
+							</footnote>
+							<abbrev metadata-refs="md-0001" definition="def"/>
+							<emphasis style="bold">text</emphasis>
+							<sub/>
+							<sup/>
+							<quote/>
+							<phrase/>
+							<footnote>
+								<para>text</para>
+							</footnote>
+							<citation/>
+							<index-term>
+								<primary>fff</primary>
+							</index-term></title>
+						<sub-title> </sub-title>
+					</titles>
+
+
+					<tgroup cols="2">
+						<tbody>
+							<row>
+								<entry>
+									<para>text<footnote>
+											<para>text</para>
+										</footnote></para>
+								</entry>
+							</row>
+						</tbody>
+					</tgroup>
+					<tfoot>
+
+						<notes>
+							<title>title</title>
+							<note>
+								<para/>
+							</note>
+						</notes>
+
+						<sources>
+							<title/>
+							<source>
+								<citation>text</citation>
+							</source>
+						</sources>
+					</tfoot>
+				</table>
+
+			</chapter>
+			<conclusion>
+				<title/>
+			</conclusion>
+		</part>
+
+		<conclusion>
+			<title/>
+		</conclusion>
+
+		<glossary>
+			<title/>
+			<gloss-item>
+				<term/>
+				<definition>
+					<para/>
+				</definition>
+			</gloss-item>
+		</glossary>
+
+		<bibliography>
+			<biblio-section>
+				<title/>
+				<mods xmlns="http://www.loc.gov/mods/v3">
+					<identifier>text</identifier>
+				</mods>
+				<biblio-section>
+					<title>text</title>
+					<mods xmlns="http://www.loc.gov/mods/v3">
+						<name/>
+					</mods>
+				</biblio-section>
+			</biblio-section>
+		</bibliography>
+
+		<annex>
+			<title/>
+		</annex>
+
+		<appendix>
+			<title/>
+		</appendix>
+
+		<annex>
+			<title/>
+		</annex>
+		<index/>
+	</document>
+
+
+</publication>
