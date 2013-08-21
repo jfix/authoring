@@ -12,7 +12,7 @@
                 <Objective>Markup of Annotations</Objective>
                 <ValidationTarget target="contentModelAE">
                     <InputFiles>
-                        <File fileName="1211011e.pdf"/>
+                        <File fileName="annotation.pdf"/>
                         <File fileName="annotation.xml"/>
                     </InputFiles>
                     <ValidationActions>
@@ -86,10 +86,11 @@
                         <!--
                             <File fileName="EDU-WKP(2012)22-ENG.pdf"/>
                         -->
-                        <File fileName="TAD-CA-APM-WP(2012)6-FINAL-ENG.pdf"/>
-                        <File fileName="5112061e.pdf"/>
+                        <!--<File fileName="TAD-CA-APM-WP(2012)6-FINAL-ENG.pdf"/>-->
+                        <!--                        <File fileName="5112061e.pdf"/>
+                        <File fileName="part.xml"/>-->
                         <File fileName="part.xml"/>
-                        <File fileName="parts.xml"/>
+                        <File fileName="parts.pdf"/>
                         <File fileName="part-structure.xml"/>
                         <!--<File fileName="JT03328357.xml"/>-->
 
@@ -97,7 +98,7 @@
                     <ValidationActions>
                         <P>Parts used for chapter grouping before publication is produced.</P>
                     </ValidationActions>
-                    <Status>tbd</Status>
+                    <Status>ready</Status>
                 </ValidationTarget>
 
             </Test>
@@ -106,13 +107,14 @@
                 <Objective>Markup of Parts</Objective>
                 <ValidationTarget target="contentModelAE">
                     <InputFiles>
-                        <File fileName="5112051e.pdf"/>
+                        <File fileName="publication.pdf"/>
+                        <File fileName="publication.xml"/>
                         <File fileName="publication-structure.xml"/>
                     </InputFiles>
                     <ValidationActions>
                         <P>Publications can be marked-up.</P>
                     </ValidationActions>
-                    <Status>tbd</Status>
+                    <Status>ready</Status>
                 </ValidationTarget>
             </Test>
             <Test folderName="Sections">
@@ -135,7 +137,8 @@
                 <Objective>Markup of Volumes</Objective>
                 <ValidationTarget target="contentModelAE">
                     <InputFiles>
-                        <File fileName="2310111e.pdf"/>
+                        <!--<File fileName="2310111e.pdf"/>-->
+                        <File fileName="volume.pdf"/>
                         <File fileName="volume.xml"/>
                         <File fileName="volume-structure.xml"/>
                     </InputFiles>
@@ -218,6 +221,24 @@
             </Section>
 
 
+            <Section folderName="Annexes">
+                <Purpose>Annex</Purpose>
+                <Test folderName="Annex">
+                    <Purpose>Annexes</Purpose>
+                    <Objective>Markup of Annexes</Objective>
+                    <ValidationTarget target="contentModelAE">
+                        <InputFiles>
+                            <File fileName="annex.pdf"/>
+                            <File fileName="annex.xml"/>
+                        </InputFiles>
+                        <ValidationActions>
+                            <P>Annexes can be marked-up in a document or publication.</P>
+                        </ValidationActions>
+                        <Status>ready</Status>
+                    </ValidationTarget>
+                </Test>
+            </Section>
+
             <Section folderName="Appendices">
                 <Purpose>Appendices</Purpose>
                 <Test folderName="Appendix">
@@ -231,7 +252,7 @@
                         <ValidationActions>
                             <P>Appendices can be marked-up in a document or publication.</P>
                         </ValidationActions>
-                        <Status>tbd</Status>
+                        <Status>ready</Status>
                     </ValidationTarget>
                 </Test>
             </Section>
@@ -244,13 +265,16 @@
                     <Objective>Markup of Bibliography</Objective>
                     <ValidationTarget target="contentModelAE">
                         <InputFiles>
-                            <File fileName="JT03299742_document biblio.pdf"/>
-                            <File fileName="template.xml"/>
+                            <!--<File fileName="JT03299742_document biblio.pdf"/>-->
+                            <File fileName="bibliography.pdf"/>
+                            <File fileName="bibliography.xml"/>
+                            <File fileName="bibliography-basic.xml"/>
                         </InputFiles>
                         <ValidationActions>
                             <P>A Bibliography can be marked-up in a document or publication.</P>
+                            <P>A Bibliography can be marked-up using simple mods or complex structures depending on implementaion.</P>
                         </ValidationActions>
-                        <Status>tbd</Status>
+                        <Status>ready</Status>
                     </ValidationTarget>
                 </Test>
 
@@ -259,8 +283,8 @@
                     <Objective>Markup of Bibliography Sections</Objective>
                     <ValidationTarget target="contentModelAE">
                         <InputFiles>
-                            <File fileName="template.xml"/>
-                            <File fileName="template.xml"/>
+                            <File fileName="bibliography-section.pdf"/>
+                            <File fileName="bibliography-section.xml"/>
                         </InputFiles>
                         <ValidationActions>
                             <P>Bibliography sections can be marked-up in a document or publication.</P>
@@ -274,8 +298,8 @@
                     <Objective>Markup of Further Reading</Objective>
                     <ValidationTarget target="contentModelAE">
                         <InputFiles>
-                            <File fileName="template.xml"/>
-                            <File fileName="template.xml"/>
+                            <File fileName="further-reading.pdf"/>
+                            <File fileName="further-reading.xml"/>
                         </InputFiles>
                         <ValidationActions>
                             <P>N/A</P>
@@ -292,13 +316,13 @@
                     <Objective>Markup of Conclusions</Objective>
                     <ValidationTarget target="contentModelAE">
                         <InputFiles>
-                            <File fileName="template.xml"/>
-                            <File fileName="template.xml"/>
+                            <File fileName="conclusion.xml"/>
+                            <File fileName="conclusion2.xml"/>
                         </InputFiles>
                         <ValidationActions>
                             <P>Conclusions can be marked-up in a document or publication.</P>
                         </ValidationActions>
-                        <Status>tbd</Status>
+                        <Status>ready</Status>
                     </ValidationTarget>
                 </Test>
             </Section>
