@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="15.0">
+    <meta>
+        <filters directoryPatterns="" filePatterns="" positiveFilePatterns="" showHiddenFiles="false"/>
+        <options/>
+    </meta>
+    <projectTree name="oecd.author-checklist.xpr">
+        <folder path="Intergration/"/>
+        <folder path="UnitTest/"/>
+        <file name="CheckList.xml"/>
+    </projectTree>
+</project>
