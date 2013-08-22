@@ -20,6 +20,12 @@
 						<author>JC</author>
 						<revremark>Made duplicate IDs unique in accordance with best practices and to resolve #5538.</revremark>
 					</revision>
+					<revision>
+						<revnumber>3</revnumber>
+						<date>2013-08-22</date>
+						<author>JC</author>
+						<revremark>Agenda sections must allow one or more sessions to resolve #6172.</revremark>
+					</revision>
 				</revhistory>
 			</section>
 		</xs:documentation>
@@ -61,6 +67,7 @@
 		<xs:sequence>
 			<xs:sequence>
 				<xs:group ref="oecdBlockGroup" minOccurs="0" maxOccurs="unbounded"/>
+
 			</xs:sequence>
 		</xs:sequence>
 
@@ -98,13 +105,27 @@
 				<section xmlns="http://docbook.org/ns/docbook">
 					<para>Content for agenda sections as a group for easy overrides and reuse.</para>
 				</section>
+				<section xmlns="http://docbook.org/ns/docbook">
+					<revhistory>
+						<title>Change Log</title>
+						<revision>
+							<revnumber>1</revnumber>
+							<date>2013-08-22</date>
+							<author>JC</author>
+							<revremark>Added agenda-session ref and changed the content model by adding a choice.</revremark>
+						</revision>
+					</revhistory>
+				</section>
 			</xs:documentation>
 		</xs:annotation>
 
 		<xs:sequence>
 			<xs:element ref="metadata" minOccurs="0"/>
 			<xs:group ref="oecdTitleGroup"/>
-			<xs:group ref="oecdAgendaSectionTypeBaseContent"/>
+			<xs:choice maxOccurs="unbounded">
+				<xs:group ref="oecdAgendaSectionTypeBaseContent"/>
+				<xs:element ref="agenda-session"/>
+			</xs:choice>
 		</xs:sequence>
 
 	</xs:group>
