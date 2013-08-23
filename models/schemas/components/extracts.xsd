@@ -38,7 +38,12 @@
                         <revremark>Modified oecdEmbeddedContentType to satisfy #4904.</revremark>
                         <revremark>Missed redmine hook.</revremark>
                     </revision>
-                </revhistory>
+                    <revision>
+                        <revnumber>5</revnumber>
+                        <date>2013-08-23</date>
+                        <authorinitials>JC</authorinitials>
+                        <revremark>Modified oecdEmbeddedContentType to satisfy #6176.</revremark>
+                    </revision> </revhistory>
             </section></xs:documentation>
     </xs:annotation>
 
@@ -211,15 +216,21 @@
                     <revremark>Modified the any element to allow elements from any namespace not specified by the schema.</revremark>
                     <revremark>Made processing of schemas less strict</revremark>
                 </revision>
+                <revision>
+                    <revnumber>2</revnumber>
+                    <date>2013-08-23</date>
+                    <authorinitials>JC</authorinitials>
+                    <revremark>Modified contant model to allow both metadata and elements from any namespace not specified by the schema.</revremark>
+                </revision>
                 <section xmlns="http://docbook.org/ns/docbook">
                     <para>embedded content content, grouped for easy overrides and reuse.</para>
                 </section>
             </xs:documentation>
         </xs:annotation>
-        <xs:choice>
-            <xs:element ref="metadata" minOccurs="0"/>
-            <xs:any namespace="##other" maxOccurs="unbounded" processContents="lax"/>
-        </xs:choice>
+        <xs:sequence>
+            <xs:element ref="metadata" minOccurs="0" maxOccurs="1"/>
+            <xs:any namespace="##other" minOccurs="0" maxOccurs="unbounded" processContents="lax"/>
+        </xs:sequence>
     </xs:group>
 
     <xs:complexType name="oecdEmbeddedContentType" id="oecdEmbeddedContentType">
