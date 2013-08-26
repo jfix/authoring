@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:oecd:names:xmlns:authoring:document ../../../../../../../schemas/oecd.author.xsd" xmlns="urn:oecd:names:xmlns:authoring:document" xmlns:xlink="http://www.w3.org/1999/xlink">
+	<metadata>
+		<metadata subject="kim:author">
+			<metadata subject="kim:personname">
+				<metadata-item subject="kim:firstname" value="Calder_J"/>
+			</metadata>
+		</metadata>
+		<metadata subject="kim:othercredit">
+			<metadata subject="kim:personname">
+				<metadata-item subject="kim:firstname" value="Crowther_1"/>
+			</metadata>
+		</metadata>
+		<metadata-item subject="kim:date" value="Thu, 18 Oct 2012 18:32:00 CEST"/>
+		<metadata subject="kim:revhistory">
+			<metadata subject="kim:revision">
+				<metadata-item subject="kim:revnumber" value="1"/>
+				<metadata-item subject="kim:date" value="Thu, 18 Oct 2012 18:32:00 CEST"/>
+			</metadata>
+		</metadata>
+		<metadata subject="kim:printhistory">
+			<metadata-item subject="kim:para" value="Last printed: Wed, 09 Nov 2011 18:58:00 CET"/>
+		</metadata>
+		<metadata-item subject="kim:orgname" value="O.E.C.D."/>
+		<metadata-item property="kim:cote" value="C(2011)135"/>
+		<metadata-item property="kim:originalClassif" value="For Official Use"/>
+		<metadata-item property="kim:language" value="English"/>
+		<metadata-item property="kim:originalLanguage" value="English"/>
+	</metadata>
+	<title>REPORT BY THE COMPETITION COMMITTEE ON THE IMPLEMENTATION OF THE RECOMMENDATION OF THE COUNCIL CONCERNING STRUCTURAL SEPARATION IN REGULATED INDUSTRIES [C(2001)78/FINAL] AND DRAFT REVISION OF THIS RECOMMENDATION </title>
+	<chapter>
+		<title>1. Introduction</title>
+		<para> This second report provides an update on experiences with structural separation in Member countries with respect to four industries: gas, electricity, telecommunications and rail. <footnote xml:id="fn1311">
+				<para>With respect to Member countries that have joined the OECD since the publication of the 2006 report, information of a more general nature is provided, not being limited to recent developments. </para>
+			</footnote> Ten years on from the adoption of the Recommendation, the conclusions remain broadly the same. Structural separation is a remedy of continued relevance, which can both advance the process of market liberalisation and address some of the difficulties inherent to behavioural remedies and more complex and intensive sector regulation. Nevertheless, structural separation may not be necessary or appropriate in all industries or markets. In particular, the impact of structural separation or the lack thereof on corporate incentives to invest in network industries has become a prominent issue. The choice of structural versus behavioural measures, in a given set of circumstances, therefore remains a matter that requires careful evaluation. </para>
+		<para> Structural solutions to competition problems differ from behavioural measures insofar as structural policies modify the incentives, whereas behavioural remedies try to redress specific conduct in a context where incentives remain essentially unchanged. <footnote xml:id="fn1313">
+				<para> The 2001 report describes the distinction between these two types of measures as "those that primarily address the incentives on the incumbent to restrict competition ("structural") approaches, and those that primarily control the ability of the incumbent to restrict competition ("behavioural" approaches)”, and emphasises that “[u]nder behavioural approaches, the regulator must struggle against the incentives of the incumbent to deny, delay or restrict access. Compared to the incumbent firm the regulator is usually at a disadvantage with respect to information and to the possible instruments of control. As a result, the level of competition under behavioural approaches is less than if the incumbent did not have the incentive to restrict competition. Certain tools, such as accounting separation, management separation or corporate separation, are not effective on their own, but may support other approaches, such as access regulation" ; <phrase xlink:href="http://www.oecd.org/dataoecd/6/60/19635977.pdf">Restructuring Public Utilities for Competition</phrase> (2001), at p.53. See also P. Hellström, F. Maier-Rigaud &amp; F. Wenzel Bulst, “Remedies in European Antitrust Law” (2009) 76 <emphasis style="italic">Antitrust law Journal</emphasis> 43 for further discussion of the incentive-based distinction between behavioural and structural remedies. Of course, structural remedies may not only change the incentives but may simply take away the ability of the firm to influence the network. </para>
+			</footnote> The Recommendation elaborates upon this distinction, noting that “ <emphasis style="italic">behavioural policies, unlike structural policies, do not eliminate the incentive of the regulated firm to restrict competition </emphasis> ” and that “ <emphasis style="italic">despite the best efforts of regulators, regulatory controls of a behavioural nature, which are intended to control the ability of an integrated regulated firm to restrict competition, may result in less competition than would be the case if the regulated firm did not have the incentive to restrict competition </emphasis> ”. It further emphasizes that “ <emphasis style="italic">certain forms of partial separation of a regulated firm (such as accounting separation or functional separation) may not eliminate the incentive of the regulated firm to restrict competition and therefore may be less effective in general at facilitating competition than structural policies </emphasis> ”. While structural remedies are frequently viewed as more intrusive upon property rights than behavioural remedies, <footnote xml:id="fn1315">
+				<para>Under EU competition law, for example, structural remedies can be imposed for breaches of the competition rules only where there are no equally effective behavioural remedies available, or where any equally effective behavioural remedy would be more burdensome than the structural remedy. </para>
+			</footnote> in the longer run the “clean break” offered by structural solutions may prove to be less intrusive than requiring a firm to adhere to detailed, prescriptive behavioural commitments that are unending in nature. </para>
+		<para> In regulated infrastructure industries, structural separation typically divides a formerly integrated company into competitive and non-competitive parts. The crux of separation is not merely a wholesale/retail divide; rather, the objective is to isolate only those assets that cannot be replicated. <footnote xml:id="fn1317">
+				<para> European Regulators Group, <emphasis style="italic">Opinion on Functional Separation</emphasis> (ERG (07) 44) 2007, p.8. </para>
+			</footnote> This separation can take a variety of forms ranging from behavioural to structural measures. Accounting separation constitutes the weakest form of separation available, and ownership separation the strongest. In between these poles, “ <emphasis style="italic">six degrees</emphasis> ” of functional (or operational) separation options have been identified: creation of a wholesale division; virtual separation; business separation; business separation with localised incentives; business separation with separate governance arrangements; and legal separation involving separate legal entities under the same ownership. <footnote xml:id="fn1319">
+				<para> M. Cave, “Six Degrees of Separation: Operation Separation as a Remedy in European Telecommunications Regulation” 64 <emphasis style="italic">Communications and Strategies</emphasis> (4 <sup>th</sup> quarter 2006), p.1-15. </para>
+			</footnote> While ownership separation clearly is a structural measure, separation measures falling short of ownership separation, such as for example the Independent Transmission Operator (ITO) concept in energy, are typically considered to be behavioural measures <footnote xml:id="fn1321">
+				<para>See the Recommendation, in particular the passages quoted above.</para>
+			</footnote> , with the exception of certain types of functional separation, that is, the separation of ownership and control that has sometimes been considered a hybrid form between the two, for example the Independent System Operator (ISO) in energy. <footnote xml:id="fn1323">
+				<para> See for example OECD, <phrase xlink:href="http://www.oecd.org/dataoecd/6/60/19635977.pdf">
+						<emphasis style="underline">
+							<emphasis style="italic">Restructuring Public Utilities for Competition</emphasis>
+						</emphasis>
+					</phrase> (2001), p. 14. In contrast to this, others such as the French telecommunications regulator, l’Autorité de Régulation des Communications Électroniques et des Postes (ARCEP), would expressly categorise legal separation falling short of full ownership separation as a form of structural separation; see ARCEP, <emphasis style="italic">La Lettre de l’Authorité</emphasis> , No.55 – March/April 2007, p.4. </para>
+			</footnote>
+		</para>
+	</chapter>
+</document>

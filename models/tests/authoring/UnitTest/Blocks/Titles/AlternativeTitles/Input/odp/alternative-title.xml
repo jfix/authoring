@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:oecd:names:xmlns:authoring:document ../../../../../../../../schemas/oecd.author.xsd" xmlns="urn:oecd:names:xmlns:authoring:document" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mods="http://www.loc.gov/mods/v3">
+	<metadata>
+		<metadata subject="kim:author">
+			<metadata subject="kim:personname">
+				<metadata-item subject="kim:firstname" value="humi_v"/>
+			</metadata>
+		</metadata>
+		<metadata subject="kim:othercredit">
+			<metadata subject="kim:personname">
+				<metadata-item subject="kim:firstname" value="Crowther_1"/>
+			</metadata>
+		</metadata>
+		<metadata-item subject="kim:date" value="Thu, 18 Oct 2012 19:09:00 CEST"/>
+		<metadata subject="kim:revhistory">
+			<metadata subject="kim:revision">
+				<metadata-item subject="kim:revnumber" value="1"/>
+				<metadata-item subject="kim:date" value="Thu, 18 Oct 2012 19:09:00 CEST"/>
+			</metadata>
+		</metadata>
+		<metadata subject="kim:printhistory">
+			<metadata-item subject="kim:para" value="Last printed: Tue, 17 Jul 2012 12:57:00 CEST"/>
+		</metadata>
+		<metadata-item subject="kim:orgname" value="OECD"/>
+	</metadata>
+	<title>OECD Economic Surveys: Denmark 2012</title>
+	<alternative-title>eco_surveys-dnk</alternative-title>
+	<chapter>
+		<title>OECD Economic Surveys: Denmark 2012</title>
+	</chapter>
+</document>

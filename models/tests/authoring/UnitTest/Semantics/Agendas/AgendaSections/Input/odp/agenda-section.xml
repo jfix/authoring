@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:oecd:names:xmlns:authoring:document ../../../../../../../../schemas/oecd.agenda.xsd" xmlns="urn:oecd:names:xmlns:authoring:document" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mods="http://www.loc.gov/mods/v3">
+
+	<document-metadata>
+		<metadata/>
+	</document-metadata>
+	<metadata>
+
+		<metadata-item subject="kim:orgname" value="O.E.C.D."/>
+		<metadata-item property="kim:cote" value="NEA/SEN/SIN/WGHOF/A(2009)1"/>
+		<metadata-item property="kim:originalClassif" value="Unclassified"/>
+		<metadata-item property="kim:language" value="English"/>
+		<metadata-item property="kim:originalLanguage" value="English"/>
+
+
+
+		<metadata property="oecd:forEvent">
+			<!-- To be held on 19-20 March 2009 at the NEA Headquarters, Issy-les-Moulineaux, France. -->
+			<metadata-item property="oecd:meetingName" value="Committee on the Safety of Nuclear Installations"/>
+			<metadata-item property="oecd:meetingNumber" value="1"/>
+			<metadata-item property="oecd:meetingStartDate" value="20090319"/>
+			<metadata-item property="oecd:meetingEndDate" value="20090320"/>
+			<metadata-item property="oecd:meetingPlace" value="NEA, Issy-les-Moulineaux"/>
+			<metadata-item property="oecd:meetingCountry" value="France"/>
+		</metadata>
+
+	</metadata>
+	<title>Committee on the Safety of Nuclear Installations Working Group on Human and Organisational Factors</title>
+
+	<agenda-section>
+		<title>INTRODUCTION</title>
+
+		<para>The sixth meeting of the CSNI Working Group on Human and Organisational Factors will be held on 19 -20 March 2009. The meeting will take place at NEA Headquarters, 12 Boulevard des Îles, 92130 Issy-les-Moulineaux, France.</para>
+		<para>The meeting will start at 9.00 a.m. on the first day, and is expected to finish by 4.00 p.m. on the second day.</para>
+		<para>The NEA Internet site www.nea.fr, Nuclear Safety section, under the heading WGHOF, has at the bottom of the page a portion accessible only to members of the WGHOF - “WGHOF working area”. This site is password-protected and will contain the agenda for the forthcoming meeting. The URL is http://www.nea.fr/download/wghof/welcome.html.</para>
+		<para>The various documents supporting the agenda items will be placed on the same Internet site as soon as they become available. Delegates wishing to present documents, proposals etc., should send these to the NEA Secretariat radomir.rehacek@oecd.org with a copy to elisabeth.mauny@oecd.org in electronic form at least two weeks in advance of the meeting. These will be placed on the same Internet site and associated with the relevant agenda item.</para>
+		<para>If you are presenting a short “hot potato” please use the attached standard form that was issued by the Group and is attached beneath.</para>
+		<para>On Wednesday 18 March, two meetings are planned at the same place starting at 9.30 a.m., one on “Identifying and Overcoming Barriers to Effective Consideration of Human and Organizational Factors in Event Analysis and Root Cause Analysis” and second on “Development of Research Program Topics on Human Performance in New Nuclear Plant Technology”. You all are kindly invited to participate in these preparatory meetings. The WGHOF chairs will meet in the same place in the afternoon.</para>
+		<para>Delegates participating are advised that the security arrangements in force at the OECD include the obligation to present an identity document bearing a photograph. This document may be requested at the time of issuing delegates cards for the meeting. It should also be presented subsequently together with the card every time OECD premises are entered from the outside. It is desirable that the delegates are aware of this requirement in order to avoid any difficulty in obtaining entry.</para>
+		<para>It would be helpful if the names and addresses of the participants of the meeting with the indication that they intend to attend also one of the planning meetings could be communicated to the NEA Secretariat as soon as possible, but not later than 2 March 2009.</para>
+
+		<agenda-session>
+
+			<title>Opening:</title>
+
+			<agenda-item xml:id="ai-001">
+				<title/>
+				<para>
+					<table>
+						<tgroup cols="2">
+							<tbody>
+								<row>
+									<entry>
+										<para>1. Opening of the Meeting. Presentation of new participants.</para>
+									</entry>
+									<entry>
+										<para/>
+									</entry>
+								</row>
+							</tbody>
+						</tgroup>
+					</table>
+				</para>
+			</agenda-item>
+			
+
+			
+
+			
+			<agenda-item xml:id="ai-002">
+
+				<title/>
+				<para>
+					<table>
+						<tgroup cols="2">
+							<tbody>
+								<row>
+									<entry>
+										<para>2. Adoption of the Agenda</para>
+									</entry>
+									<entry>
+										<para/>
+									</entry>
+								</row>
+								<row>
+									<entry>
+										<para>General assessment of the macroeconomic situation</para>
+									</entry>
+									<entry>
+										<para>
+											<phrase xlink:href="http://www2.oecd.org/oecdinfo/info.aspx?app=OLIScoteEN&amp;Ref=NEA/SEN/SIN/WGHOF/A(2009)1">[NEA/SEN/SIN/WGHOF/A(2009)1]</phrase>
+										</para>
+									</entry>
+								</row>
+							</tbody>
+						</tgroup>
+					</table>
+				</para>
+			</agenda-item>
+			
+			
+			
+			<agenda-item xml:id="ai-003">
+				
+				<title/>
+				<para>
+					<table>
+						<tgroup cols="2">
+							<tbody>
+								<row>
+									<entry>
+										<para>3. Approval of the Summary Record of the last Meeting</para>
+									</entry>
+									<entry>
+										<para/>
+									</entry>
+								</row>
+								<row>
+									<entry>
+										<para>General assessment of the macroeconomic situation</para>
+									</entry>
+									<entry>
+										<para>
+											<phrase xlink:href="http://www2.oecd.org/oecdinfo/info.aspx?app=OLIScoteEN&amp;Ref=NEA/SEN/SIN/WGHOF(2008)2"> [NEA/SEN/SIN/WGHOF(2008)2].</phrase>
+										</para>
+									</entry>
+								</row>
+							</tbody>
+						</tgroup>
+					</table>
+				</para>
+			</agenda-item>
+			
+
+		</agenda-session>
+		
+		<agenda-session>
+			<title></title>
+			<agenda-item>
+				<title>NEA activities and recent meetings including brief situation report with selected WGHOF tasks:</title>
+				<para>...</para>
+			</agenda-item>
+		</agenda-session>
+		
+	</agenda-section>
+
+	<agenda-section>
+		<title>ANNEX I</title>
+		<para>The Economic Outlook will be presented by the Secretary-General and the Chief Economist. The Outlook will describe the macroeconomic policy challenges associated with the recovery of the global economy, which is under way but uneven across countries and regions. High, persistent unemployment, in particular among the youth, and government indebtedness are key policy concerns in most of the advanced economies. Headline inflation has picked up, reflecting, among others, the firming in global commodity prices. The emerging-market and developing economies in general need to quell the inflationary pressures associated with supply constraints and high commodity and food prices. </para>
+	</agenda-section>
+
+</document>

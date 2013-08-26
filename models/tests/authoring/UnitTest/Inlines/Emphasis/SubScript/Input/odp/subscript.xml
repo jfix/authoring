@@ -1,0 +1,142 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<document xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:oecd:names:xmlns:authoring:document ../../../../../../../../schemas/oecd.author.xsd" xmlns="urn:oecd:names:xmlns:authoring:document" xmlns:xxx="www.foo.com" xmlns:tax="http://www.loc.gov/tax/v1" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mods="http://www.loc.gov/mods/v3">
+	<document-metadata>
+		<metadata/>
+	</document-metadata>
+	<metadata>
+		<metadata property="kim:title"/>
+	</metadata>
+
+	<title/>
+
+	<chapter>
+
+		<title/>
+
+		<section>
+
+			<title/>
+			<para/>
+
+			<figure>
+				<metadata>
+					<metadata property="kim:title">
+						<metadata-item property="kim:mainTitle" value="Reduction in CO2 emissions from the baseline scenario in the power sector in the ACT Map and BLUE Map scenarios in 2050, by technology area"/>
+					</metadata>
+					<metadata property="kim:authorOrganisation">
+						<metadata-item property="kim:name" value="International Energy Agency"/>
+						<metadata-item property="kim:acronym" value="IEA"/>
+						<metadata-item property="kim:order" value="1"/>
+					</metadata>
+					<metadata-item property="kim:subject" value="gas emissions"/>
+					<metadata-item property="kim:contentType" value="Figure"/>
+					<metadata-item property="kim:contentStatus" value="OECD Publication"/>
+					<metadata-item property="kim:contentStatusLastChangeDate" value="20081027"/>
+					<metadata-item property="kim:businessContext" value="Publication dissemination"/>
+					<metadata-item property="kim:provenance" value="IEA"/>
+					<metadata-item property="kim:natureOfInformation" value="Facts and figures"/>
+					<!--<!-\- THIS ELEMENT SHOULD BE USED BY THE BIBLIOGRAPHY BUILDER TO PRODUCE A BIBLIOGRAPHY AT THE END OF THE SECTION IF NEEDED *** AND *** TO PRODUCE A VISUAL CALL TO THE CITATION (IEA (2008b)) -\->
+					<metadata property="kim:SourceObj">
+						<citation xlink:href="BE1"/>
+					</metadata>-->
+					<!-- ALL OTHER METADATA CAN BE INHERITED FROM THE DOCUMENT METADATA -->
+				</metadata>
+
+				<title>Figure 1: Reduction in CO<emphasis style="bold"><sub>2</sub></emphasis> emissions from the baseline scenario in the power sector in the ACT Map and BLUE Map scenarios in 2050, by technology area</title>
+				<graphic>
+					<external-graphic xlink:href="images/JT03269711-3.jpg"/>
+				</graphic>
+				<!-- HERE WE'VE GOT A PROBLEM : THE SOURCE REFERS TO THE BIBLIOGRAPHY -->
+				<!-- SO WE SHOULD HAVE METADATA TO DESCRIBE THE GRAPHIC AS PART OF THE XML DOCUMENT  (SEMANTIC TAGGING) -->
+				<!-- *** AND *** METADATA TO ALLOW THE BUILDING OF BIBLIOGRAPHIES (BIBLIOGRAPHICAL TAGGING) -->
+				<!-- I PUT BOTH TYPES OF METADATA. TO BE DISCUSSED -->
+
+			</figure>
+			<para>In the post-combustion process, CO<sub>2</sub> is captured from flue gases that contain 4% to 8% of CO<sub>2</sub> by volume for natural gas-fired power plants, and 12% to 15% by volume for coal-fired power plants. The basic technology for separating the CO<sub>2</sub> from the flue gas uses a chemicdl absorption process (with amine-based solvents as MonoEthanolAmine (MEA)) and has been applied in industry on a commercial scale for decades. The challenge, however, is to recover the CO<sub>2</sub> from the solvent with a minimum energy penalty and at an acceptable cost. The heat requirement for the regeneration of the solvent varies between 4.4 MJ/kg CO<sub>2</sub> and 3.2 MJ/kg CO<sub>2</sub> for one the latest chemical absorption systems <citation xlink:href="BE2"/>. <!--- REPLACED (Feron, 2006; Peeters et al., 2007) BY ABOVE TAG -->
+			</para>
+			<figure>
+				<metadata>
+					<metadata property="kim:title">
+						<metadata-item property="kim:mainTitle" value="CO2 capture processes"/>
+					</metadata>
+					<metadata property="kim:authorOrganisation">
+						<metadata-item property="kim:name" value="International Energy Agency"/>
+						<metadata-item property="kim:acronym" value="IEA"/>
+						<metadata-item property="kim:order" value="1"/>
+					</metadata>
+					<metadata-item property="kim:contentType" value="Figure"/>
+					<metadata-item property="kim:contentStatus" value="OECD Publication"/>
+					<metadata-item property="kim:contentStatusLastChangeDate" value="20081027"/>
+					<metadata-item property="kim:businessContext" value="Publication dissemination"/>
+					<metadata-item property="kim:provenance" value="IEA"/>
+					<metadata-item property="kim:natureOfInformation" value="Facts and figures"/>
+					<metadata property="kim:SourceObj">
+						<!--<citation xlink:href="BE1">
+								<!-\- LINK TO BE1 *** BUT *** WITH A PRECISION NOTE. *** ARGHHHHHHHHH ****-\->
+								<mods:note>based on IPCC, 2005</mods:note>
+							</citation>-->
+					</metadata>
+					<!-- ALL OTHER METADATA CAN BE INHERITED FROM THE DOCUMENT METADATA -->
+				</metadata>
+				<title>Figure 2: CO<emphasis style="bold"><sub>2</sub></emphasis> capture processes </title>
+				<graphic>
+					<external-graphic xlink:href="images/JT03269711-4.emf"/>
+				</graphic>
+
+			</figure>
+			<para>The costs foc capturing CO<sub>2</sub> at a power plant compromise the investment costs for the additional equipment needed, the costs caused by the loss of electric efficiency requiring a larger gross capacity for the same net power output and the additional fuel costs caused also due to the lower overall efficiency. For an IGCC power plant with capture, the transport and storage costs can account for more than halve of the overall capture costs as illustrated in Figure 3. </para>
+			<figure>
+				<metadata>
+					<metadata property="kim:title">
+						<metadata-item subject="kim:mainTitle" value="Cost components of the capture costs for a coal and natural gas power plant"/>
+					</metadata>
+					<metadata property="kim:authorOrganisation">
+						<metadata-item property="kim:name" value="International Energy Agency"/>
+						<metadata-item property="kim:acronym" value="IEA"/>
+						<metadata-item property="kim:order" value="1"/>
+					</metadata>
+					<metadata-item property="kim:subject" value="coal"/>
+					<metadata-item property="kim:subject" value="gases"/>
+					<metadata-item property="kim:subject" value="power plants"/>
+					<metadata-item property="kim:contentType" value="Figure"/>
+					<metadata-item property="kim:contentStatus" value="OECD Publication"/>
+					<metadata-item property="kim:contentStatusLastChangeDate" value="20081027"/>
+					<metadata-item property="kim:businessContext" value="Publication dissemination"/>
+					<metadata-item property="kim:provenance" value="IEA"/>
+					<metadata-item property="kim:natureOfInformation" value="Facts and figures"/>
+					<!--	<metadata property="kim:SourceObj">
+							<citation xlink:href="BE1"/>
+						</metadata>-->
+					<!-- ALL OTHER METADATA CAN BE INHERITED FROM THE DOCUMENT METADATA -->
+				</metadata>
+				<title>Figure 3: Cost components of the capture costs for a coal and natural gas power plant</title>
+				<graphic>
+					<external-graphic xlink:href="images/JT03269711-5.emf"/>
+				</graphic>
+
+			</figure>
+
+
+			<para>The CO<sub>2</sub> avoidance costs in 2030 compared to the reference plant are for coal in the range of USD 60/t CO<sub>2</sub> to USD 85/t CO<sub>2</sub> and for gas between USD 70/t CO<sub>2</sub> and USD 120/t CO<sub>2</sub> (Figure 4). The larger range forCgas plants is caused by the higher gas price volatility compared to coal. One also has to note, that the avoidance costs are influenced by the chosen reference technology, which is supposed to be replaced by the power plant with capture, and its technical and economic characteristics. Assuming that a gas plant with CO<sub>2</sub> capture substitutes a coal power plant, instead of a gas plant without ca ture, the avoidance costs for gas plants decline to USD 60/t CO<sub>2</sub> to USD 90/t CO<sub>2</sub>. </para>
+			<figure>
+				<metadata>
+					<metadata property="kim:title">
+						<metadata-item property="kim:mainTitle" value="CO2 avoidance costs for different coal and gas power plants between 2010 and 2030"/>
+					</metadata>
+					<metadata-item property="kim:subject" value="coal"/>
+					<metadata-item property="kim:subject" value="gases"/>
+					<metadata-item property="kim:subject" value="power plants"/>
+					<metadata-item property="kim:contentType" value="Figure"/>
+					<!-- NO BIBLIOGRAPHICAL REFERENCE ; THIS FIGURE HAS NOT BEEN COPIED FROM OUTSIDE -->
+					<!-- ALL OTHER METADATA CAN BE INHERITED FROM THE DOCUMENT METADATA -->
+				</metadata>
+				<title>Figure 4: CO<emphasis style="bold"><sub>2</sub></emphasis> avoidance costs for different coal and gas power plants between 2010 and 2030</title>
+				<graphic>
+					<external-graphic xlink:href="images/JT03269711-6.emf"/>
+				</graphic>
+
+			</figure>
+		</section>
+	</chapter>
+
+</document>

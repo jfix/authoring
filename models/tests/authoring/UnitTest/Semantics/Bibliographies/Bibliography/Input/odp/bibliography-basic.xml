@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:oecd:names:xmlns:authoring:document ../../../../../../../../schemas/oecd.author.xsd" xmlns="urn:oecd:names:xmlns:authoring:document" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mods="http://www.loc.gov/mods/v3">
+	<metadata>
+		<metadata-item/>
+
+	</metadata>
+	<title/>
+	<chapter>
+		<title/>
+	</chapter>
+	<bibliography>
+		<title>Références</title>
+		<mods:mods>
+			<mods:identifier/>
+		</mods:mods>
+
+		<mods:mods>
+			<mods:identifier>Biscourp, P., X. Boutin et T. Vergé, 2008 : « The effects of retail regulations on prices : Evidence from the Loi Galland, » Document de travail INSEE-DESE G2008/02.</mods:identifier>
+		</mods:mods>
+
+		<mods:mods>
+			<mods:identifier>Bonnet, C. et P. Dubois, 2008 : « Inference on vertical contracts between manufacturers and retailers allowing for nonlinear pricing and resale price maintenance, » document de travail disponible à http://idei.fr/doc/wp/2008/inference.pdf</mods:identifier>
+		</mods:mods>
+		<mods:mods>
+			<mods:identifier>Deneakere, R., H. P. Marvel et J. Peck, 1997 : « Demand uncertainty and price maintenance: markdowns as destructive competition » The American Economic Review, Vol. 87, N°4.</mods:identifier>
+		</mods:mods>
+		<mods:mods>
+			<mods:identifier>Dobson, P. W. et M. Waterson, 2007 : « The competition effects of industry-wide vertical price fixing in a bilateral monopoly » International Journal of Industrial Organization, Vol. 25, N°5.</mods:identifier>
+		</mods:mods>
+		<mods:mods>
+			<mods:identifier>Hart, O. et J. Tirole, 1990 : « Vertical integration and rarket foreclosure,” Brookings Papers on Economic Activity: Microeconomics, pp. 205-286.</mods:identifier>
+		</mods:mods>
+		<mods:mods>
+			<mods:identifier>Jullien, B. et P. Rey, 2007 : « Resale price maintenance and collusion, » The Rand Journal of Economics, Vol. 38, n°4.</mods:identifier>
+		</mods:mods>
+		<mods:mods>
+			<mods:identifier>O’Brien, D. P. et G. Shaffer, 1992 : « Vertical control with bilateral contracts, » The Rand Journal of Economics, Vol.23, n°3.</mods:identifier>
+		</mods:mods>
+		<mods:mods>
+			<mods:identifier>Rey, P. et J. Stiglitz, 1995 : « The role of exclusive territories in producers’ competition, » The Rond Journal of Economics, Vol. 26, n°3.</mods:identifier>
+		</mods:mods>
+		<mods:mods>
+			<mods:identifier>Rey, P. et T. Vergé, 2004 : « Resale price maintenance and horizontal cartel, » document de travail CMPO N°02/047.</mods:identifier>
+		</mods:mods>
+
+	</bibliography>
+
+</document>

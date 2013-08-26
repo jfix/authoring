@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:oecd:names:xmlns:authoring:document ../../../../../../../schemas/oecd.author.xsd" xmlns="urn:oecd:names:xmlns:authoring:document" xmlns:xlink="http://www.w3.org/1999/xlink">
+	<metadata>
+		<metadata subject="kim:author">
+			<metadata subject="kim:personname">
+				<metadata-item subject="kim:firstname" value="Braathen_N"/>
+			</metadata>
+		</metadata>
+		<metadata subject="kim:othercredit">
+			<metadata subject="kim:personname">
+				<metadata-item subject="kim:firstname" value="Crowther_1"/>
+			</metadata>
+		</metadata>
+		<metadata-item subject="kim:date" value="Thu, 18 Oct 2012 17:19:00 CEST"/>
+		<metadata subject="kim:revhistory">
+			<metadata subject="kim:revision">
+				<metadata-item subject="kim:revnumber" value="1"/>
+				<metadata-item subject="kim:date" value="Thu, 18 Oct 2012 17:19:00 CEST"/>
+			</metadata>
+		</metadata>
+		<metadata subject="kim:printhistory">
+			<metadata-item subject="kim:para" value="Last printed: Mon, 15 Oct 2012 10:50:00 CEST"/>
+		</metadata>
+		<metadata-item subject="kim:orgname" value="O.E.C.D."/>
+		<metadata-item property="kim:cote" value="COM/ENV/EPOC/CTPA/CFA(2012)43"/>
+		<metadata-item property="kim:originalClassif" value="Unclassified"/>
+		<metadata-item property="kim:language" value="English"/>
+		<metadata-item property="kim:originalLanguage" value="English"/>
+	</metadata>
+	<title>Lessons from 15 years of experience with the Dutch Tax Allowance for Energy Investments for firms</title>
+	<chapter>
+		<title>Lessons from 15 years of experience with the Dutch Tax Allowance for Energy Investments for firms</title>
+		<para>The interest-rate-growth differential is essential to understanding long-run fiscal sustainability; higher interest rates imply higher interest payments to service government debt so adversely influencing debt dynamics, whereas higher nominal GDP growth will tend to lower the debt-to-GDP ratio by increasing the denominator. More formally, the importance of the nterest-rate-growth differential can be seen from the government budget identity, whereby the change in the net government debt-to-GDP ratio (d) is explained by the primary deficit ratio (-pb) plus net interest rates payments on the previous period’s debt, where it is the effective interest rate paid on net government debt, so that approximately:<inline-equation>
+				<math xmlns="http://www.w3.org/1998/Math/MathML">
+					<mrow>
+						<mi>x</mi>
+						<mo>=</mo>
+						<mfrac>
+							<mrow>
+								<mo>&#x2212;</mo>
+								<mi>b</mi>
+								<mo>&#xB1;</mo>
+								<msqrt>
+									<mrow>
+										<msup>
+											<mi>b</mi>
+											<mn>2</mn>
+										</msup>
+										<mo>&#x2212;</mo>
+										<mn>4</mn>
+										<mi>a</mi>
+										<mi>c</mi>
+									</mrow>
+								</msqrt>
+							</mrow>
+							<mrow>
+								<mn>2</mn>
+								<mi>a</mi>
+							</mrow>
+						</mfrac>
+					</mrow>
+				</math>
+			</inline-equation>where gt is the nominal GDP growth rate. Thus, for a given primary balance and initial net debt ratio, the rate of increase in the debt-to-GDP ratio is positively related to the interest-rate-growth differential. </para>
+
+
+
+
+	</chapter>
+
+</document>

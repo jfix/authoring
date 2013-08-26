@@ -1,0 +1,778 @@
+﻿<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg:svg id="idOECDGraph" class="clsOECDGraph" viewBox="0 0 603 274" width="603" height="274" version="1.1" xmlns:svg="http://www.w3.org/2000/svg">
+	<svg:svg id="idsvg01Chart1" class="cls01Chart1ChartObject" width="603" height="274">
+		<svg:g id="idsvg01Chart1g" class="cls01Chart1ChartObject" transform="translate(5.33333,5.33333)" width="596.33333" height="267.33333">
+			<svg:g id="idg01PlotArea" class="cls01PlotArea">
+				<svg:rect id="idrect01PlotArea" class="cls01PlotArea" x="22.91853" y="33.93984" width="573.414" height="220.3924" fill="rgb(234,234,234)" shape-rendering="crispEdges"/>
+			</svg:g>
+			<svg:g id="idg0121ValueMajorGridLines" class="cls0121ValueMajorGridLines">
+				<svg:g id="idg0121ValueMajorGridLines0" class="cls0121ValueMajorGridLines0">
+					<svg:line id="idline0121ValueMajorGridLines0" class="cls0121ValueMajorGridLines0" x1="23" y1="253" x2="596" y2="253" stroke="rgb(255,255,255)" stroke-width="1" shape-rendering="crispEdges" stroke-linejoin="round" stroke-linecap="round"/>
+				</svg:g>
+				<svg:g id="idg0121ValueMajorGridLines1" class="cls0121ValueMajorGridLines1">
+					<svg:line id="idline0121ValueMajorGridLines1" class="cls0121ValueMajorGridLines1" x1="23" y1="233" x2="596" y2="233" stroke="rgb(255,255,255)" stroke-width="1" shape-rendering="crispEdges" stroke-linejoin="round" stroke-linecap="round"/>
+				</svg:g>
+				<svg:g id="idg0121ValueMajorGridLines2" class="cls0121ValueMajorGridLines2">
+					<svg:line id="idline0121ValueMajorGridLines2" class="cls0121ValueMajorGridLines2" x1="23" y1="213" x2="596" y2="213" stroke="rgb(255,255,255)" stroke-width="1" shape-rendering="crispEdges" stroke-linejoin="round" stroke-linecap="round"/>
+				</svg:g>
+				<svg:g id="idg0121ValueMajorGridLines3" class="cls0121ValueMajorGridLines3">
+					<svg:line id="idline0121ValueMajorGridLines3" class="cls0121ValueMajorGridLines3" x1="23" y1="193" x2="596" y2="193" stroke="rgb(255,255,255)" stroke-width="1" shape-rendering="crispEdges" stroke-linejoin="round" stroke-linecap="round"/>
+				</svg:g>
+				<svg:g id="idg0121ValueMajorGridLines4" class="cls0121ValueMajorGridLines4">
+					<svg:line id="idline0121ValueMajorGridLines4" class="cls0121ValueMajorGridLines4" x1="23" y1="173" x2="596" y2="173" stroke="rgb(255,255,255)" stroke-width="1" shape-rendering="crispEdges" stroke-linejoin="round" stroke-linecap="round"/>
+				</svg:g>
+				<svg:g id="idg0121ValueMajorGridLines5" class="cls0121ValueMajorGridLines5">
+					<svg:line id="idline0121ValueMajorGridLines5" class="cls0121ValueMajorGridLines5" x1="23" y1="153" x2="596" y2="153" stroke="rgb(255,255,255)" stroke-width="1" shape-rendering="crispEdges" stroke-linejoin="round" stroke-linecap="round"/>
+				</svg:g>
+				<svg:g id="idg0121ValueMajorGridLines6" class="cls0121ValueMajorGridLines6">
+					<svg:line id="idline0121ValueMajorGridLines6" class="cls0121ValueMajorGridLines6" x1="23" y1="133" x2="596" y2="133" stroke="rgb(255,255,255)" stroke-width="1" shape-rendering="crispEdges" stroke-linejoin="round" stroke-linecap="round"/>
+				</svg:g>
+				<svg:g id="idg0121ValueMajorGridLines7" class="cls0121ValueMajorGridLines7">
+					<svg:line id="idline0121ValueMajorGridLines7" class="cls0121ValueMajorGridLines7" x1="23" y1="113" x2="596" y2="113" stroke="rgb(255,255,255)" stroke-width="1" shape-rendering="crispEdges" stroke-linejoin="round" stroke-linecap="round"/>
+				</svg:g>
+				<svg:g id="idg0121ValueMajorGridLines8" class="cls0121ValueMajorGridLines8">
+					<svg:line id="idline0121ValueMajorGridLines8" class="cls0121ValueMajorGridLines8" x1="23" y1="93" x2="596" y2="93" stroke="rgb(255,255,255)" stroke-width="1" shape-rendering="crispEdges" stroke-linejoin="round" stroke-linecap="round"/>
+				</svg:g>
+				<svg:g id="idg0121ValueMajorGridLines9" class="cls0121ValueMajorGridLines9">
+					<svg:line id="idline0121ValueMajorGridLines9" class="cls0121ValueMajorGridLines9" x1="23" y1="73" x2="596" y2="73" stroke="rgb(255,255,255)" stroke-width="1" shape-rendering="crispEdges" stroke-linejoin="round" stroke-linecap="round"/>
+				</svg:g>
+				<svg:g id="idg0121ValueMajorGridLines10" class="cls0121ValueMajorGridLines10">
+					<svg:line id="idline0121ValueMajorGridLines10" class="cls0121ValueMajorGridLines10" x1="23" y1="53" x2="596" y2="53" stroke="rgb(255,255,255)" stroke-width="1" shape-rendering="crispEdges" stroke-linejoin="round" stroke-linecap="round"/>
+				</svg:g>
+				<svg:g id="idg0121ValueMajorGridLines11" class="cls0121ValueMajorGridLines11">
+					<svg:line id="idline0121ValueMajorGridLines11" class="cls0121ValueMajorGridLines11" x1="23" y1="33" x2="596" y2="33" stroke="rgb(255,255,255)" stroke-width="1" shape-rendering="crispEdges" stroke-linejoin="round" stroke-linecap="round"/>
+				</svg:g>
+			</svg:g>
+			<svg:g id="idg0121ValueMajorTickMarks" class="cls0121ValueMajorTickMarks">
+				<svg:g id="idg0121ValueMajorTickMarks0" class="cls0121ValueMajorTickMarks0">
+					<svg:line id="idline0121ValueMajorTickMarks0" class="cls0121ValueMajorTickMarks0" x1="23" y1="253" x2="27" y2="253" stroke="rgb(0,0,0)" stroke-width="1" shape-rendering="crispEdges" stroke-linejoin="round" stroke-linecap="round"/>
+				</svg:g>
+				<svg:g id="idg0121ValueMajorTickMarks1" class="cls0121ValueMajorTickMarks1">
+					<svg:line id="idline0121ValueMajorTickMarks1" class="cls0121ValueMajorTickMarks1" x1="23" y1="233" x2="27" y2="233" stroke="rgb(0,0,0)" stroke-width="1" shape-rendering="crispEdges" stroke-linejoin="round" stroke-linecap="round"/>
+				</svg:g>
+				<svg:g id="idg0121ValueMajorTickMarks2" class="cls0121ValueMajorTickMarks2">
+					<svg:line id="idline0121ValueMajorTickMarks2" class="cls0121ValueMajorTickMarks2" x1="23" y1="213" x2="27" y2="213" stroke="rgb(0,0,0)" stroke-width="1" shape-rendering="crispEdges" stroke-linejoin="round" stroke-linecap="round"/>
+				</svg:g>
+				<svg:g id="idg0121ValueMajorTickMarks3" class="cls0121ValueMajorTickMarks3">
+					<svg:line id="idline0121ValueMajorTickMarks3" class="cls0121ValueMajorTickMarks3" x1="23" y1="193" x2="27" y2="193" stroke="rgb(0,0,0)" stroke-width="1" shape-rendering="crispEdges" stroke-linejoin="round" stroke-linecap="round"/>
+				</svg:g>
+				<svg:g id="idg0121ValueMajorTickMarks4" class="cls0121ValueMajorTickMarks4">
+					<svg:line id="idline0121ValueMajorTickMarks4" class="cls0121ValueMajorTickMarks4" x1="23" y1="173" x2="27" y2="173" stroke="rgb(0,0,0)" stroke-width="1" shape-rendering="crispEdges" stroke-linejoin="round" stroke-linecap="round"/>
+				</svg:g>
+				<svg:g id="idg0121ValueMajorTickMarks5" class="cls0121ValueMajorTickMarks5">
+					<svg:line id="idline0121ValueMajorTickMarks5" class="cls0121ValueMajorTickMarks5" x1="23" y1="153" x2="27" y2="153" stroke="rgb(0,0,0)" stroke-width="1" shape-rendering="crispEdges" stroke-linejoin="round" stroke-linecap="round"/>
+				</svg:g>
+				<svg:g id="idg0121ValueMajorTickMarks6" class="cls0121ValueMajorTickMarks6">
+					<svg:line id="idline0121ValueMajorTickMarks6" class="cls0121ValueMajorTickMarks6" x1="23" y1="133" x2="27" y2="133" stroke="rgb(0,0,0)" stroke-width="1" shape-rendering="crispEdges" stroke-linejoin="round" stroke-linecap="round"/>
+				</svg:g>
+				<svg:g id="idg0121ValueMajorTickMarks7" class="cls0121ValueMajorTickMarks7">
+					<svg:line id="idline0121ValueMajorTickMarks7" class="cls0121ValueMajorTickMarks7" x1="23" y1="113" x2="27" y2="113" stroke="rgb(0,0,0)" stroke-width="1" shape-rendering="crispEdges" stroke-linejoin="round" stroke-linecap="round"/>
+				</svg:g>
+				<svg:g id="idg0121ValueMajorTickMarks8" class="cls0121ValueMajorTickMarks8">
+					<svg:line id="idline0121ValueMajorTickMarks8" class="cls0121ValueMajorTickMarks8" x1="23" y1="93" x2="27" y2="93" stroke="rgb(0,0,0)" stroke-width="1" shape-rendering="crispEdges" stroke-linejoin="round" stroke-linecap="round"/>
+				</svg:g>
+				<svg:g id="idg0121ValueMajorTickMarks9" class="cls0121ValueMajorTickMarks9">
+					<svg:line id="idline0121ValueMajorTickMarks9" class="cls0121ValueMajorTickMarks9" x1="23" y1="73" x2="27" y2="73" stroke="rgb(0,0,0)" stroke-width="1" shape-rendering="crispEdges" stroke-linejoin="round" stroke-linecap="round"/>
+				</svg:g>
+				<svg:g id="idg0121ValueMajorTickMarks10" class="cls0121ValueMajorTickMarks10">
+					<svg:line id="idline0121ValueMajorTickMarks10" class="cls0121ValueMajorTickMarks10" x1="23" y1="53" x2="27" y2="53" stroke="rgb(0,0,0)" stroke-width="1" shape-rendering="crispEdges" stroke-linejoin="round" stroke-linecap="round"/>
+				</svg:g>
+				<svg:g id="idg0121ValueMajorTickMarks11" class="cls0121ValueMajorTickMarks11">
+					<svg:line id="idline0121ValueMajorTickMarks11" class="cls0121ValueMajorTickMarks11" x1="23" y1="33" x2="27" y2="33" stroke="rgb(0,0,0)" stroke-width="1" shape-rendering="crispEdges" stroke-linejoin="round" stroke-linecap="round"/>
+				</svg:g>
+			</svg:g>
+			<svg:g id="idg0121TickLabels" class="cls0121TickLabels">
+				<svg:g id="idg0121TickLabels0" class="cls0121TickLabels0">
+					<svg:text id="idtext0121TickLabels0" class="cls0121TickLabels0" x="15.66667" y="257.33333" text-anchor="end">
+						<svg:tspan id="idtspan0121TickLabels0" class="cls0121TickLabels0" font-family="Arial Narrow" font-size="9.3">0</svg:tspan>
+					</svg:text>
+				</svg:g>
+				<svg:g id="idg0121TickLabels10" class="cls0121TickLabels10">
+					<svg:text id="idtext0121TickLabels10" class="cls0121TickLabels10" x="15.66667" y="237.33333" text-anchor="end">
+						<svg:tspan id="idtspan0121TickLabels10" class="cls0121TickLabels10" font-family="Arial Narrow" font-size="9.3">10</svg:tspan>
+					</svg:text>
+				</svg:g>
+				<svg:g id="idg0121TickLabels20" class="cls0121TickLabels20">
+					<svg:text id="idtext0121TickLabels20" class="cls0121TickLabels20" x="15.66667" y="217.33333" text-anchor="end">
+						<svg:tspan id="idtspan0121TickLabels20" class="cls0121TickLabels20" font-family="Arial Narrow" font-size="9.3">20</svg:tspan>
+					</svg:text>
+				</svg:g>
+				<svg:g id="idg0121TickLabels30" class="cls0121TickLabels30">
+					<svg:text id="idtext0121TickLabels30" class="cls0121TickLabels30" x="15.66667" y="197.33333" text-anchor="end">
+						<svg:tspan id="idtspan0121TickLabels30" class="cls0121TickLabels30" font-family="Arial Narrow" font-size="9.3">30</svg:tspan>
+					</svg:text>
+				</svg:g>
+				<svg:g id="idg0121TickLabels40" class="cls0121TickLabels40">
+					<svg:text id="idtext0121TickLabels40" class="cls0121TickLabels40" x="15.66667" y="177.33333" text-anchor="end">
+						<svg:tspan id="idtspan0121TickLabels40" class="cls0121TickLabels40" font-family="Arial Narrow" font-size="9.3">40</svg:tspan>
+					</svg:text>
+				</svg:g>
+				<svg:g id="idg0121TickLabels50" class="cls0121TickLabels50">
+					<svg:text id="idtext0121TickLabels50" class="cls0121TickLabels50" x="15.66667" y="157.33333" text-anchor="end">
+						<svg:tspan id="idtspan0121TickLabels50" class="cls0121TickLabels50" font-family="Arial Narrow" font-size="9.3">50</svg:tspan>
+					</svg:text>
+				</svg:g>
+				<svg:g id="idg0121TickLabels60" class="cls0121TickLabels60">
+					<svg:text id="idtext0121TickLabels60" class="cls0121TickLabels60" x="15.66667" y="137.33333" text-anchor="end">
+						<svg:tspan id="idtspan0121TickLabels60" class="cls0121TickLabels60" font-family="Arial Narrow" font-size="9.3">60</svg:tspan>
+					</svg:text>
+				</svg:g>
+				<svg:g id="idg0121TickLabels70" class="cls0121TickLabels70">
+					<svg:text id="idtext0121TickLabels70" class="cls0121TickLabels70" x="15.66667" y="117.33333" text-anchor="end">
+						<svg:tspan id="idtspan0121TickLabels70" class="cls0121TickLabels70" font-family="Arial Narrow" font-size="9.3">70</svg:tspan>
+					</svg:text>
+				</svg:g>
+				<svg:g id="idg0121TickLabels80" class="cls0121TickLabels80">
+					<svg:text id="idtext0121TickLabels80" class="cls0121TickLabels80" x="15.66667" y="97.33333" text-anchor="end">
+						<svg:tspan id="idtspan0121TickLabels80" class="cls0121TickLabels80" font-family="Arial Narrow" font-size="9.3">80</svg:tspan>
+					</svg:text>
+				</svg:g>
+				<svg:g id="idg0121TickLabels90" class="cls0121TickLabels90">
+					<svg:text id="idtext0121TickLabels90" class="cls0121TickLabels90" x="15.66667" y="77.33333" text-anchor="end">
+						<svg:tspan id="idtspan0121TickLabels90" class="cls0121TickLabels90" font-family="Arial Narrow" font-size="9.3">90</svg:tspan>
+					</svg:text>
+				</svg:g>
+				<svg:g id="idg0121TickLabels100" class="cls0121TickLabels100">
+					<svg:text id="idtext0121TickLabels100" class="cls0121TickLabels100" x="15.66667" y="57.33333" text-anchor="end">
+						<svg:tspan id="idtspan0121TickLabels100" class="cls0121TickLabels100" font-family="Arial Narrow" font-size="9.3">100</svg:tspan>
+					</svg:text>
+				</svg:g>
+				<svg:g id="idg0121TickLabels110" class="cls0121TickLabels110">
+					<svg:text id="idtext0121TickLabels110" class="cls0121TickLabels110" x="15.66667" y="37.33333" text-anchor="end">
+						<svg:tspan id="idtspan0121TickLabels110" class="cls0121TickLabels110" font-family="Arial Narrow" font-size="9.3">110</svg:tspan>
+					</svg:text>
+				</svg:g>
+			</svg:g>
+			<svg:g id="idg0111CategoryMajorGridLines" class="cls0111CategoryMajorGridLines">
+				<svg:g id="idg0111CategoryMajorGridLines0" class="cls0111CategoryMajorGridLines0">
+					<svg:line id="idline0111CategoryMajorGridLines0" class="cls0111CategoryMajorGridLines0" x1="23" y1="255" x2="23" y2="34" stroke="rgb(255,255,255)" stroke-width="1" shape-rendering="crispEdges" stroke-linejoin="round" stroke-linecap="round"/>
+				</svg:g>
+				<svg:g id="idg0111CategoryMajorGridLines1" class="cls0111CategoryMajorGridLines1">
+					<svg:line id="idline0111CategoryMajorGridLines1" class="cls0111CategoryMajorGridLines1" x1="64" y1="255" x2="64" y2="34" stroke="rgb(255,255,255)" stroke-width="1" shape-rendering="crispEdges" stroke-linejoin="round" stroke-linecap="round"/>
+				</svg:g>
+				<svg:g id="idg0111CategoryMajorGridLines2" class="cls0111CategoryMajorGridLines2">
+					<svg:line id="idline0111CategoryMajorGridLines2" class="cls0111CategoryMajorGridLines2" x1="105" y1="255" x2="105" y2="34" stroke="rgb(255,255,255)" stroke-width="1" shape-rendering="crispEdges" stroke-linejoin="round" stroke-linecap="round"/>
+				</svg:g>
+				<svg:g id="idg0111CategoryMajorGridLines3" class="cls0111CategoryMajorGridLines3">
+					<svg:line id="idline0111CategoryMajorGridLines3" class="cls0111CategoryMajorGridLines3" x1="146" y1="255" x2="146" y2="34" stroke="rgb(255,255,255)" stroke-width="1" shape-rendering="crispEdges" stroke-linejoin="round" stroke-linecap="round"/>
+				</svg:g>
+				<svg:g id="idg0111CategoryMajorGridLines4" class="cls0111CategoryMajorGridLines4">
+					<svg:line id="idline0111CategoryMajorGridLines4" class="cls0111CategoryMajorGridLines4" x1="186" y1="255" x2="186" y2="34" stroke="rgb(255,255,255)" stroke-width="1" shape-rendering="crispEdges" stroke-linejoin="round" stroke-linecap="round"/>
+				</svg:g>
+				<svg:g id="idg0111CategoryMajorGridLines5" class="cls0111CategoryMajorGridLines5">
+					<svg:line id="idline0111CategoryMajorGridLines5" class="cls0111CategoryMajorGridLines5" x1="227" y1="255" x2="227" y2="34" stroke="rgb(255,255,255)" stroke-width="1" shape-rendering="crispEdges" stroke-linejoin="round" stroke-linecap="round"/>
+				</svg:g>
+				<svg:g id="idg0111CategoryMajorGridLines6" class="cls0111CategoryMajorGridLines6">
+					<svg:line id="idline0111CategoryMajorGridLines6" class="cls0111CategoryMajorGridLines6" x1="268" y1="255" x2="268" y2="34" stroke="rgb(255,255,255)" stroke-width="1" shape-rendering="crispEdges" stroke-linejoin="round" stroke-linecap="round"/>
+				</svg:g>
+				<svg:g id="idg0111CategoryMajorGridLines7" class="cls0111CategoryMajorGridLines7">
+					<svg:line id="idline0111CategoryMajorGridLines7" class="cls0111CategoryMajorGridLines7" x1="309" y1="255" x2="309" y2="34" stroke="rgb(255,255,255)" stroke-width="1" shape-rendering="crispEdges" stroke-linejoin="round" stroke-linecap="round"/>
+				</svg:g>
+				<svg:g id="idg0111CategoryMajorGridLines8" class="cls0111CategoryMajorGridLines8">
+					<svg:line id="idline0111CategoryMajorGridLines8" class="cls0111CategoryMajorGridLines8" x1="350" y1="255" x2="350" y2="34" stroke="rgb(255,255,255)" stroke-width="1" shape-rendering="crispEdges" stroke-linejoin="round" stroke-linecap="round"/>
+				</svg:g>
+				<svg:g id="idg0111CategoryMajorGridLines9" class="cls0111CategoryMajorGridLines9">
+					<svg:line id="idline0111CategoryMajorGridLines9" class="cls0111CategoryMajorGridLines9" x1="391" y1="255" x2="391" y2="34" stroke="rgb(255,255,255)" stroke-width="1" shape-rendering="crispEdges" stroke-linejoin="round" stroke-linecap="round"/>
+				</svg:g>
+				<svg:g id="idg0111CategoryMajorGridLines10" class="cls0111CategoryMajorGridLines10">
+					<svg:line id="idline0111CategoryMajorGridLines10" class="cls0111CategoryMajorGridLines10" x1="432" y1="255" x2="432" y2="34" stroke="rgb(255,255,255)" stroke-width="1" shape-rendering="crispEdges" stroke-linejoin="round" stroke-linecap="round"/>
+				</svg:g>
+				<svg:g id="idg0111CategoryMajorGridLines11" class="cls0111CategoryMajorGridLines11">
+					<svg:line id="idline0111CategoryMajorGridLines11" class="cls0111CategoryMajorGridLines11" x1="473" y1="255" x2="473" y2="34" stroke="rgb(255,255,255)" stroke-width="1" shape-rendering="crispEdges" stroke-linejoin="round" stroke-linecap="round"/>
+				</svg:g>
+				<svg:g id="idg0111CategoryMajorGridLines12" class="cls0111CategoryMajorGridLines12">
+					<svg:line id="idline0111CategoryMajorGridLines12" class="cls0111CategoryMajorGridLines12" x1="514" y1="255" x2="514" y2="34" stroke="rgb(255,255,255)" stroke-width="1" shape-rendering="crispEdges" stroke-linejoin="round" stroke-linecap="round"/>
+				</svg:g>
+				<svg:g id="idg0111CategoryMajorGridLines13" class="cls0111CategoryMajorGridLines13">
+					<svg:line id="idline0111CategoryMajorGridLines13" class="cls0111CategoryMajorGridLines13" x1="555" y1="255" x2="555" y2="34" stroke="rgb(255,255,255)" stroke-width="1" shape-rendering="crispEdges" stroke-linejoin="round" stroke-linecap="round"/>
+				</svg:g>
+				<svg:g id="idg0111CategoryMajorGridLines14" class="cls0111CategoryMajorGridLines14">
+					<svg:line id="idline0111CategoryMajorGridLines14" class="cls0111CategoryMajorGridLines14" x1="596" y1="255" x2="596" y2="34" stroke="rgb(255,255,255)" stroke-width="1" shape-rendering="crispEdges" stroke-linejoin="round" stroke-linecap="round"/>
+				</svg:g>
+				<svg:g id="idg0111CategoryMajorGridLines15" class="cls0111CategoryMajorGridLines15">
+					<svg:line id="idline0111CategoryMajorGridLines15" class="cls0111CategoryMajorGridLines15" x1="637" y1="255" x2="637" y2="34" stroke="rgb(255,255,255)" stroke-width="1" shape-rendering="crispEdges" stroke-linejoin="round" stroke-linecap="round"/>
+				</svg:g>
+			</svg:g>
+			<svg:g id="idg0111CategoryMajorTickMarks" class="cls0111CategoryMajorTickMarks">
+				<svg:g id="idg0111CategoryMajorTickMarks1" class="cls0111CategoryMajorTickMarks1">
+					<svg:line id="idline0111CategoryMajorTickMarks1" class="cls0111CategoryMajorTickMarks1" x1="23" y1="250" x2="23" y2="255" stroke="rgb(0,0,0)" stroke-width="1" shape-rendering="crispEdges" stroke-linejoin="round" stroke-linecap="round"/>
+				</svg:g>
+				<svg:g id="idg0111CategoryMajorTickMarks2" class="cls0111CategoryMajorTickMarks2">
+					<svg:line id="idline0111CategoryMajorTickMarks2" class="cls0111CategoryMajorTickMarks2" x1="64" y1="250" x2="64" y2="255" stroke="rgb(0,0,0)" stroke-width="1" shape-rendering="crispEdges" stroke-linejoin="round" stroke-linecap="round"/>
+				</svg:g>
+				<svg:g id="idg0111CategoryMajorTickMarks3" class="cls0111CategoryMajorTickMarks3">
+					<svg:line id="idline0111CategoryMajorTickMarks3" class="cls0111CategoryMajorTickMarks3" x1="105" y1="250" x2="105" y2="255" stroke="rgb(0,0,0)" stroke-width="1" shape-rendering="crispEdges" stroke-linejoin="round" stroke-linecap="round"/>
+				</svg:g>
+				<svg:g id="idg0111CategoryMajorTickMarks4" class="cls0111CategoryMajorTickMarks4">
+					<svg:line id="idline0111CategoryMajorTickMarks4" class="cls0111CategoryMajorTickMarks4" x1="146" y1="250" x2="146" y2="255" stroke="rgb(0,0,0)" stroke-width="1" shape-rendering="crispEdges" stroke-linejoin="round" stroke-linecap="round"/>
+				</svg:g>
+				<svg:g id="idg0111CategoryMajorTickMarks5" class="cls0111CategoryMajorTickMarks5">
+					<svg:line id="idline0111CategoryMajorTickMarks5" class="cls0111CategoryMajorTickMarks5" x1="186" y1="250" x2="186" y2="255" stroke="rgb(0,0,0)" stroke-width="1" shape-rendering="crispEdges" stroke-linejoin="round" stroke-linecap="round"/>
+				</svg:g>
+				<svg:g id="idg0111CategoryMajorTickMarks6" class="cls0111CategoryMajorTickMarks6">
+					<svg:line id="idline0111CategoryMajorTickMarks6" class="cls0111CategoryMajorTickMarks6" x1="227" y1="250" x2="227" y2="255" stroke="rgb(0,0,0)" stroke-width="1" shape-rendering="crispEdges" stroke-linejoin="round" stroke-linecap="round"/>
+				</svg:g>
+				<svg:g id="idg0111CategoryMajorTickMarks7" class="cls0111CategoryMajorTickMarks7">
+					<svg:line id="idline0111CategoryMajorTickMarks7" class="cls0111CategoryMajorTickMarks7" x1="268" y1="250" x2="268" y2="255" stroke="rgb(0,0,0)" stroke-width="1" shape-rendering="crispEdges" stroke-linejoin="round" stroke-linecap="round"/>
+				</svg:g>
+				<svg:g id="idg0111CategoryMajorTickMarks8" class="cls0111CategoryMajorTickMarks8">
+					<svg:line id="idline0111CategoryMajorTickMarks8" class="cls0111CategoryMajorTickMarks8" x1="309" y1="250" x2="309" y2="255" stroke="rgb(0,0,0)" stroke-width="1" shape-rendering="crispEdges" stroke-linejoin="round" stroke-linecap="round"/>
+				</svg:g>
+				<svg:g id="idg0111CategoryMajorTickMarks9" class="cls0111CategoryMajorTickMarks9">
+					<svg:line id="idline0111CategoryMajorTickMarks9" class="cls0111CategoryMajorTickMarks9" x1="350" y1="250" x2="350" y2="255" stroke="rgb(0,0,0)" stroke-width="1" shape-rendering="crispEdges" stroke-linejoin="round" stroke-linecap="round"/>
+				</svg:g>
+				<svg:g id="idg0111CategoryMajorTickMarks10" class="cls0111CategoryMajorTickMarks10">
+					<svg:line id="idline0111CategoryMajorTickMarks10" class="cls0111CategoryMajorTickMarks10" x1="391" y1="250" x2="391" y2="255" stroke="rgb(0,0,0)" stroke-width="1" shape-rendering="crispEdges" stroke-linejoin="round" stroke-linecap="round"/>
+				</svg:g>
+				<svg:g id="idg0111CategoryMajorTickMarks11" class="cls0111CategoryMajorTickMarks11">
+					<svg:line id="idline0111CategoryMajorTickMarks11" class="cls0111CategoryMajorTickMarks11" x1="432" y1="250" x2="432" y2="255" stroke="rgb(0,0,0)" stroke-width="1" shape-rendering="crispEdges" stroke-linejoin="round" stroke-linecap="round"/>
+				</svg:g>
+				<svg:g id="idg0111CategoryMajorTickMarks12" class="cls0111CategoryMajorTickMarks12">
+					<svg:line id="idline0111CategoryMajorTickMarks12" class="cls0111CategoryMajorTickMarks12" x1="473" y1="250" x2="473" y2="255" stroke="rgb(0,0,0)" stroke-width="1" shape-rendering="crispEdges" stroke-linejoin="round" stroke-linecap="round"/>
+				</svg:g>
+				<svg:g id="idg0111CategoryMajorTickMarks13" class="cls0111CategoryMajorTickMarks13">
+					<svg:line id="idline0111CategoryMajorTickMarks13" class="cls0111CategoryMajorTickMarks13" x1="514" y1="250" x2="514" y2="255" stroke="rgb(0,0,0)" stroke-width="1" shape-rendering="crispEdges" stroke-linejoin="round" stroke-linecap="round"/>
+				</svg:g>
+				<svg:g id="idg0111CategoryMajorTickMarks14" class="cls0111CategoryMajorTickMarks14">
+					<svg:line id="idline0111CategoryMajorTickMarks14" class="cls0111CategoryMajorTickMarks14" x1="555" y1="250" x2="555" y2="255" stroke="rgb(0,0,0)" stroke-width="1" shape-rendering="crispEdges" stroke-linejoin="round" stroke-linecap="round"/>
+				</svg:g>
+				<svg:g id="idg0111CategoryMajorTickMarks15" class="cls0111CategoryMajorTickMarks15">
+					<svg:line id="idline0111CategoryMajorTickMarks15" class="cls0111CategoryMajorTickMarks15" x1="596" y1="250" x2="596" y2="255" stroke="rgb(0,0,0)" stroke-width="1" shape-rendering="crispEdges" stroke-linejoin="round" stroke-linecap="round"/>
+				</svg:g>
+			</svg:g>
+			<svg:g id="idg0111TickLabels" class="cls0111TickLabels">
+				<svg:g id="idg0111TickLabels1995" class="cls0111TickLabels1995">
+					<svg:text id="idtext0111TickLabels1995" class="cls0111TickLabels1995" x="45.14285" y="264" text-anchor="middle">
+						<svg:tspan id="idtspan0111TickLabels1995" class="cls0111TickLabels1995" font-family="Arial Narrow" font-size="9.3">1995</svg:tspan>
+					</svg:text>
+				</svg:g>
+				<svg:g id="idg0111TickLabels1996" class="cls0111TickLabels1996">
+					<svg:text id="idtext0111TickLabels1996" class="cls0111TickLabels1996" x="86.09524" y="264" text-anchor="middle">
+						<svg:tspan id="idtspan0111TickLabels1996" class="cls0111TickLabels1996" font-family="Arial Narrow" font-size="9.3">1996</svg:tspan>
+					</svg:text>
+				</svg:g>
+				<svg:g id="idg0111TickLabels1997" class="cls0111TickLabels1997">
+					<svg:text id="idtext0111TickLabels1997" class="cls0111TickLabels1997" x="127.04761" y="264" text-anchor="middle">
+						<svg:tspan id="idtspan0111TickLabels1997" class="cls0111TickLabels1997" font-family="Arial Narrow" font-size="9.3">1997</svg:tspan>
+					</svg:text>
+				</svg:g>
+				<svg:g id="idg0111TickLabels1998" class="cls0111TickLabels1998">
+					<svg:text id="idtext0111TickLabels1998" class="cls0111TickLabels1998" x="168" y="264" text-anchor="middle">
+						<svg:tspan id="idtspan0111TickLabels1998" class="cls0111TickLabels1998" font-family="Arial Narrow" font-size="9.3">1998</svg:tspan>
+					</svg:text>
+				</svg:g>
+				<svg:g id="idg0111TickLabels1999" class="cls0111TickLabels1999">
+					<svg:text id="idtext0111TickLabels1999" class="cls0111TickLabels1999" x="208.9524" y="264" text-anchor="middle">
+						<svg:tspan id="idtspan0111TickLabels1999" class="cls0111TickLabels1999" font-family="Arial Narrow" font-size="9.3">1999</svg:tspan>
+					</svg:text>
+				</svg:g>
+				<svg:g id="idg0111TickLabels2000" class="cls0111TickLabels2000">
+					<svg:text id="idtext0111TickLabels2000" class="cls0111TickLabels2000" x="249.9048" y="264" text-anchor="middle">
+						<svg:tspan id="idtspan0111TickLabels2000" class="cls0111TickLabels2000" font-family="Arial Narrow" font-size="9.3">2000</svg:tspan>
+					</svg:text>
+				</svg:g>
+				<svg:g id="idg0111TickLabels2001" class="cls0111TickLabels2001">
+					<svg:text id="idtext0111TickLabels2001" class="cls0111TickLabels2001" x="290.8572" y="264" text-anchor="middle">
+						<svg:tspan id="idtspan0111TickLabels2001" class="cls0111TickLabels2001" font-family="Arial Narrow" font-size="9.3">2001</svg:tspan>
+					</svg:text>
+				</svg:g>
+				<svg:g id="idg0111TickLabels2002" class="cls0111TickLabels2002">
+					<svg:text id="idtext0111TickLabels2002" class="cls0111TickLabels2002" x="331.80947" y="264" text-anchor="middle">
+						<svg:tspan id="idtspan0111TickLabels2002" class="cls0111TickLabels2002" font-family="Arial Narrow" font-size="9.3">2002</svg:tspan>
+					</svg:text>
+				</svg:g>
+				<svg:g id="idg0111TickLabels2003" class="cls0111TickLabels2003">
+					<svg:text id="idtext0111TickLabels2003" class="cls0111TickLabels2003" x="372.76187" y="264" text-anchor="middle">
+						<svg:tspan id="idtspan0111TickLabels2003" class="cls0111TickLabels2003" font-family="Arial Narrow" font-size="9.3">2003</svg:tspan>
+					</svg:text>
+				</svg:g>
+				<svg:g id="idg0111TickLabels2004" class="cls0111TickLabels2004">
+					<svg:text id="idtext0111TickLabels2004" class="cls0111TickLabels2004" x="413.71427" y="264" text-anchor="middle">
+						<svg:tspan id="idtspan0111TickLabels2004" class="cls0111TickLabels2004" font-family="Arial Narrow" font-size="9.3">2004</svg:tspan>
+					</svg:text>
+				</svg:g>
+				<svg:g id="idg0111TickLabels2005" class="cls0111TickLabels2005">
+					<svg:text id="idtext0111TickLabels2005" class="cls0111TickLabels2005" x="454.66667" y="264" text-anchor="middle">
+						<svg:tspan id="idtspan0111TickLabels2005" class="cls0111TickLabels2005" font-family="Arial Narrow" font-size="9.3">2005</svg:tspan>
+					</svg:text>
+				</svg:g>
+				<svg:g id="idg0111TickLabels2006" class="cls0111TickLabels2006">
+					<svg:text id="idtext0111TickLabels2006" class="cls0111TickLabels2006" x="495.61907" y="264" text-anchor="middle">
+						<svg:tspan id="idtspan0111TickLabels2006" class="cls0111TickLabels2006" font-family="Arial Narrow" font-size="9.3">2006</svg:tspan>
+					</svg:text>
+				</svg:g>
+				<svg:g id="idg0111TickLabels2007" class="cls0111TickLabels2007">
+					<svg:text id="idtext0111TickLabels2007" class="cls0111TickLabels2007" x="536.57147" y="264" text-anchor="middle">
+						<svg:tspan id="idtspan0111TickLabels2007" class="cls0111TickLabels2007" font-family="Arial Narrow" font-size="9.3">2007</svg:tspan>
+					</svg:text>
+				</svg:g>
+				<svg:g id="idg0111TickLabels2008" class="cls0111TickLabels2008">
+					<svg:text id="idtext0111TickLabels2008" class="cls0111TickLabels2008" x="577.52387" y="264" text-anchor="middle">
+						<svg:tspan id="idtspan0111TickLabels2008" class="cls0111TickLabels2008" font-family="Arial Narrow" font-size="9.3">2008</svg:tspan>
+					</svg:text>
+				</svg:g>
+			</svg:g>
+			<svg:g id="idg01S01Point" class="cls01S01Point">
+				<svg:g id="idg01S01Point1" class="cls01S01Point1">
+					<svg:line id="idline01S01Point1" class="cls01S01Point1" x1="43" y1="154" x2="84" y2="153" stroke="rgb(153,153,255)" stroke-width="2.67" shape-rendering="crispEdges" stroke-linejoin="round" stroke-linecap="round">
+						<svg:title>100</svg:title>
+					</svg:line>
+				</svg:g>
+				<svg:g id="idg01S01Point2" class="cls01S01Point2">
+					<svg:line id="idline01S01Point2" class="cls01S01Point2" x1="84" y1="153" x2="125" y2="159" stroke="rgb(153,153,255)" stroke-width="2.67" shape-rendering="crispEdges" stroke-linejoin="round" stroke-linecap="round">
+						<svg:title>100.375074026656</svg:title>
+					</svg:line>
+				</svg:g>
+				<svg:g id="idg01S01Point3" class="cls01S01Point3">
+					<svg:line id="idline01S01Point3" class="cls01S01Point3" x1="125" y1="159" x2="166" y2="154" stroke="rgb(153,153,255)" stroke-width="2.67" shape-rendering="crispEdges" stroke-linejoin="round" stroke-linecap="round">
+						<svg:title>97.6570415814485</svg:title>
+					</svg:line>
+				</svg:g>
+				<svg:g id="idg01S01Point4" class="cls01S01Point4">
+					<svg:line id="idline01S01Point4" class="cls01S01Point4" x1="166" y1="154" x2="207" y2="156" stroke="rgb(153,153,255)" stroke-width="2.67" shape-rendering="crispEdges" stroke-linejoin="round" stroke-linecap="round">
+						<svg:title>100.036731692423</svg:title>
+					</svg:line>
+				</svg:g>
+				<svg:g id="idg01S01Point5" class="cls01S01Point5">
+					<svg:line id="idline01S01Point5" class="cls01S01Point5" x1="207" y1="156" x2="248" y2="163" stroke="rgb(153,153,255)" stroke-width="2.67" shape-rendering="crispEdges" stroke-linejoin="round" stroke-linecap="round">
+						<svg:title>99.3176941630503</svg:title>
+					</svg:line>
+				</svg:g>
+				<svg:g id="idg01S01Point6" class="cls01S01Point6">
+					<svg:line id="idline01S01Point6" class="cls01S01Point6" x1="248" y1="163" x2="289" y2="161" stroke="rgb(153,153,255)" stroke-width="2.67" shape-rendering="crispEdges" stroke-linejoin="round" stroke-linecap="round">
+						<svg:title>95.6947967523809</svg:title>
+					</svg:line>
+				</svg:g>
+				<svg:g id="idg01S01Point7" class="cls01S01Point7">
+					<svg:line id="idline01S01Point7" class="cls01S01Point7" x1="289" y1="161" x2="330" y2="158" stroke="rgb(153,153,255)" stroke-width="2.67" shape-rendering="crispEdges" stroke-linejoin="round" stroke-linecap="round">
+						<svg:title>96.5998684585297</svg:title>
+					</svg:line>
+				</svg:g>
+				<svg:g id="idg01S01Point8" class="cls01S01Point8">
+					<svg:line id="idline01S01Point8" class="cls01S01Point8" x1="330" y1="158" x2="371" y2="149" stroke="rgb(153,153,255)" stroke-width="2.67" shape-rendering="crispEdges" stroke-linejoin="round" stroke-linecap="round">
+						<svg:title>98.1208846774598</svg:title>
+					</svg:line>
+				</svg:g>
+				<svg:g id="idg01S01Point9" class="cls01S01Point9">
+					<svg:line id="idline01S01Point9" class="cls01S01Point9" x1="371" y1="149" x2="412" y2="146" stroke="rgb(153,153,255)" stroke-width="2.67" shape-rendering="crispEdges" stroke-linejoin="round" stroke-linecap="round">
+						<svg:title>102.768956616833</svg:title>
+					</svg:line>
+				</svg:g>
+				<svg:g id="idg01S01Point10" class="cls01S01Point10">
+					<svg:line id="idline01S01Point10" class="cls01S01Point10" x1="412" y1="146" x2="453" y2="147" stroke="rgb(153,153,255)" stroke-width="2.67" shape-rendering="crispEdges" stroke-linejoin="round" stroke-linecap="round">
+						<svg:title>104.275266075875</svg:title>
+					</svg:line>
+				</svg:g>
+				<svg:g id="idg01S01Point11" class="cls01S01Point11">
+					<svg:line id="idline01S01Point11" class="cls01S01Point11" x1="453" y1="147" x2="494" y2="146" stroke="rgb(153,153,255)" stroke-width="2.67" shape-rendering="crispEdges" stroke-linejoin="round" stroke-linecap="round">
+						<svg:title>103.769410091933</svg:title>
+					</svg:line>
+				</svg:g>
+				<svg:g id="idg01S01Point12" class="cls01S01Point12">
+					<svg:line id="idline01S01Point12" class="cls01S01Point12" x1="494" y1="146" x2="535" y2="144" stroke="rgb(153,153,255)" stroke-width="2.67" shape-rendering="crispEdges" stroke-linejoin="round" stroke-linecap="round">
+						<svg:title>103.861785712214</svg:title>
+					</svg:line>
+				</svg:g>
+				<svg:g id="idg01S01Point13" class="cls01S01Point13">
+					<svg:line id="idline01S01Point13" class="cls01S01Point13" x1="535" y1="144" x2="576" y2="140" stroke="rgb(153,153,255)" stroke-width="2.67" shape-rendering="crispEdges" stroke-linejoin="round" stroke-linecap="round">
+						<svg:title>105.165199771745</svg:title>
+					</svg:line>
+				</svg:g>
+			</svg:g>
+			<svg:g id="idg01S02Point" class="cls01S02Point">
+				<svg:g id="idg01S02Point1" class="cls01S02Point1">
+					<svg:line id="idline01S02Point1" class="cls01S02Point1" x1="43" y1="154" x2="84" y2="157" stroke="rgb(255,0,0)" stroke-width="2.67" shape-rendering="crispEdges" stroke-linejoin="round" stroke-linecap="round">
+						<svg:title>100</svg:title>
+					</svg:line>
+				</svg:g>
+				<svg:g id="idg01S02Point2" class="cls01S02Point2">
+					<svg:line id="idline01S02Point2" class="cls01S02Point2" x1="84" y1="157" x2="125" y2="164" stroke="rgb(255,0,0)" stroke-width="2.67" shape-rendering="crispEdges" stroke-linejoin="round" stroke-linecap="round">
+						<svg:title>98.5929320463662</svg:title>
+					</svg:line>
+				</svg:g>
+				<svg:g id="idg01S02Point3" class="cls01S02Point3">
+					<svg:line id="idline01S02Point3" class="cls01S02Point3" x1="125" y1="164" x2="166" y2="157" stroke="rgb(255,0,0)" stroke-width="2.67" shape-rendering="crispEdges" stroke-linejoin="round" stroke-linecap="round">
+						<svg:title>95.2377979157455</svg:title>
+					</svg:line>
+				</svg:g>
+				<svg:g id="idg01S02Point4" class="cls01S02Point4">
+					<svg:line id="idline01S02Point4" class="cls01S02Point4" x1="166" y1="157" x2="207" y2="157" stroke="rgb(255,0,0)" stroke-width="2.67" shape-rendering="crispEdges" stroke-linejoin="round" stroke-linecap="round">
+						<svg:title>98.685975106291</svg:title>
+					</svg:line>
+				</svg:g>
+				<svg:g id="idg01S02Point5" class="cls01S02Point5">
+					<svg:line id="idline01S02Point5" class="cls01S02Point5" x1="207" y1="157" x2="248" y2="165" stroke="rgb(255,0,0)" stroke-width="2.67" shape-rendering="crispEdges" stroke-linejoin="round" stroke-linecap="round">
+						<svg:title>98.6323297930592</svg:title>
+					</svg:line>
+				</svg:g>
+				<svg:g id="idg01S02Point6" class="cls01S02Point6">
+					<svg:line id="idline01S02Point6" class="cls01S02Point6" x1="248" y1="165" x2="289" y2="163" stroke="rgb(255,0,0)" stroke-width="2.67" shape-rendering="crispEdges" stroke-linejoin="round" stroke-linecap="round">
+						<svg:title>94.3752352270394</svg:title>
+					</svg:line>
+				</svg:g>
+				<svg:g id="idg01S02Point7" class="cls01S02Point7">
+					<svg:line id="idline01S02Point7" class="cls01S02Point7" x1="289" y1="163" x2="330" y2="160" stroke="rgb(255,0,0)" stroke-width="2.67" shape-rendering="crispEdges" stroke-linejoin="round" stroke-linecap="round">
+						<svg:title>95.5168991028092</svg:title>
+					</svg:line>
+				</svg:g>
+				<svg:g id="idg01S02Point8" class="cls01S02Point8">
+					<svg:line id="idline01S02Point8" class="cls01S02Point8" x1="330" y1="160" x2="371" y2="148" stroke="rgb(255,0,0)" stroke-width="2.67" shape-rendering="crispEdges" stroke-linejoin="round" stroke-linecap="round">
+						<svg:title>97.2640105149741</svg:title>
+					</svg:line>
+				</svg:g>
+				<svg:g id="idg01S02Point9" class="cls01S02Point9">
+					<svg:line id="idline01S02Point9" class="cls01S02Point9" x1="371" y1="148" x2="412" y2="144" stroke="rgb(255,0,0)" stroke-width="2.67" shape-rendering="crispEdges" stroke-linejoin="round" stroke-linecap="round">
+						<svg:title>103.250624975044</svg:title>
+					</svg:line>
+				</svg:g>
+				<svg:g id="idg01S02Point10" class="cls01S02Point10">
+					<svg:line id="idline01S02Point10" class="cls01S02Point10" x1="412" y1="144" x2="453" y2="146" stroke="rgb(255,0,0)" stroke-width="2.67" shape-rendering="crispEdges" stroke-linejoin="round" stroke-linecap="round">
+						<svg:title>105.286321862719</svg:title>
+					</svg:line>
+				</svg:g>
+				<svg:g id="idg01S02Point11" class="cls01S02Point11">
+					<svg:line id="idline01S02Point11" class="cls01S02Point11" x1="453" y1="146" x2="494" y2="146" stroke="rgb(255,0,0)" stroke-width="2.67" shape-rendering="crispEdges" stroke-linejoin="round" stroke-linecap="round">
+						<svg:title>104.126110192198</svg:title>
+					</svg:line>
+				</svg:g>
+				<svg:g id="idg01S02Point12" class="cls01S02Point12">
+					<svg:line id="idline01S02Point12" class="cls01S02Point12" x1="494" y1="146" x2="535" y2="143" stroke="rgb(255,0,0)" stroke-width="2.67" shape-rendering="crispEdges" stroke-linejoin="round" stroke-linecap="round">
+						<svg:title>104.116295930856</svg:title>
+					</svg:line>
+				</svg:g>
+				<svg:g id="idg01S02Point13" class="cls01S02Point13">
+					<svg:line id="idline01S02Point13" class="cls01S02Point13" x1="535" y1="143" x2="576" y2="140" stroke="rgb(255,0,0)" stroke-width="2.67" shape-rendering="crispEdges" stroke-linejoin="round" stroke-linecap="round">
+						<svg:title>105.546997960235</svg:title>
+					</svg:line>
+				</svg:g>
+			</svg:g>
+			<svg:g id="idg01S03Point" class="cls01S03Point">
+				<svg:g id="idg01S03Point1" class="cls01S03Point1">
+					<svg:line id="idline01S03Point1" class="cls01S03Point1" x1="43" y1="154" x2="84" y2="134" stroke="rgb(0,255,0)" stroke-width="2.67" shape-rendering="crispEdges" stroke-linejoin="round" stroke-linecap="round">
+						<svg:title>100</svg:title>
+					</svg:line>
+				</svg:g>
+				<svg:g id="idg01S03Point2" class="cls01S03Point2">
+					<svg:line id="idline01S03Point2" class="cls01S03Point2" x1="84" y1="134" x2="125" y2="131" stroke="rgb(0,255,0)" stroke-width="2.67" shape-rendering="crispEdges" stroke-linejoin="round" stroke-linecap="round">
+						<svg:title>110.044149923069</svg:title>
+					</svg:line>
+				</svg:g>
+				<svg:g id="idg01S03Point3" class="cls01S03Point3">
+					<svg:line id="idline01S03Point3" class="cls01S03Point3" x1="125" y1="131" x2="166" y2="126" stroke="rgb(0,255,0)" stroke-width="2.67" shape-rendering="crispEdges" stroke-linejoin="round" stroke-linecap="round">
+						<svg:title>111.525061645017</svg:title>
+					</svg:line>
+				</svg:g>
+				<svg:g id="idg01S03Point4" class="cls01S03Point4">
+					<svg:line id="idline01S03Point4" class="cls01S03Point4" x1="166" y1="126" x2="207" y2="127" stroke="rgb(0,255,0)" stroke-width="2.67" shape-rendering="crispEdges" stroke-linejoin="round" stroke-linecap="round">
+						<svg:title>113.914156214502</svg:title>
+					</svg:line>
+				</svg:g>
+				<svg:g id="idg01S03Point5" class="cls01S03Point5">
+					<svg:line id="idline01S03Point5" class="cls01S03Point5" x1="207" y1="127" x2="248" y2="135" stroke="rgb(0,255,0)" stroke-width="2.67" shape-rendering="crispEdges" stroke-linejoin="round" stroke-linecap="round">
+						<svg:title>113.637229512284</svg:title>
+					</svg:line>
+				</svg:g>
+				<svg:g id="idg01S03Point6" class="cls01S03Point6">
+					<svg:line id="idline01S03Point6" class="cls01S03Point6" x1="248" y1="135" x2="289" y2="132" stroke="rgb(0,255,0)" stroke-width="2.67" shape-rendering="crispEdges" stroke-linejoin="round" stroke-linecap="round">
+						<svg:title>109.522782437627</svg:title>
+					</svg:line>
+				</svg:g>
+				<svg:g id="idg01S03Point7" class="cls01S03Point7">
+					<svg:line id="idline01S03Point7" class="cls01S03Point7" x1="289" y1="132" x2="330" y2="128" stroke="rgb(0,255,0)" stroke-width="2.67" shape-rendering="crispEdges" stroke-linejoin="round" stroke-linecap="round">
+						<svg:title>110.938179155175</svg:title>
+					</svg:line>
+				</svg:g>
+				<svg:g id="idg01S03Point8" class="cls01S03Point8">
+					<svg:line id="idline01S03Point8" class="cls01S03Point8" x1="330" y1="128" x2="371" y2="117" stroke="rgb(0,255,0)" stroke-width="2.67" shape-rendering="crispEdges" stroke-linejoin="round" stroke-linecap="round">
+						<svg:title>113.035286466603</svg:title>
+					</svg:line>
+				</svg:g>
+				<svg:g id="idg01S03Point9" class="cls01S03Point9">
+					<svg:line id="idline01S03Point9" class="cls01S03Point9" x1="371" y1="117" x2="412" y2="113" stroke="rgb(0,255,0)" stroke-width="2.67" shape-rendering="crispEdges" stroke-linejoin="round" stroke-linecap="round">
+						<svg:title>118.653542225488</svg:title>
+					</svg:line>
+				</svg:g>
+				<svg:g id="idg01S03Point10" class="cls01S03Point10">
+					<svg:line id="idline01S03Point10" class="cls01S03Point10" x1="412" y1="113" x2="453" y2="115" stroke="rgb(0,255,0)" stroke-width="2.67" shape-rendering="crispEdges" stroke-linejoin="round" stroke-linecap="round">
+						<svg:title>120.557015770676</svg:title>
+					</svg:line>
+				</svg:g>
+				<svg:g id="idg01S03Point11" class="cls01S03Point11">
+					<svg:line id="idline01S03Point11" class="cls01S03Point11" x1="453" y1="115" x2="494" y2="115" stroke="rgb(0,255,0)" stroke-width="2.67" shape-rendering="crispEdges" stroke-linejoin="round" stroke-linecap="round">
+						<svg:title>119.627674796832</svg:title>
+					</svg:line>
+				</svg:g>
+				<svg:g id="idg01S03Point12" class="cls01S03Point12">
+					<svg:line id="idline01S03Point12" class="cls01S03Point12" x1="494" y1="115" x2="535" y2="112" stroke="rgb(0,255,0)" stroke-width="2.67" shape-rendering="crispEdges" stroke-linejoin="round" stroke-linecap="round">
+						<svg:title>119.712579976176</svg:title>
+					</svg:line>
+				</svg:g>
+				<svg:g id="idg01S03Point13" class="cls01S03Point13">
+					<svg:line id="idline01S03Point13" class="cls01S03Point13" x1="535" y1="112" x2="576" y2="108" stroke="rgb(0,255,0)" stroke-width="2.67" shape-rendering="crispEdges" stroke-linejoin="round" stroke-linecap="round">
+						<svg:title>121.202712899647</svg:title>
+					</svg:line>
+				</svg:g>
+			</svg:g>
+			<svg:g id="idg01S04Point" class="cls01S04Point">
+				<svg:g id="idg01S04Point1" class="cls01S04Point1">
+					<svg:line id="idline01S04Point1" class="cls01S04Point1" x1="43" y1="154" x2="84" y2="180" stroke="rgb(153,51,102)" stroke-width="2.67" shape-rendering="crispEdges" stroke-linejoin="round" stroke-linecap="round">
+						<svg:title>100</svg:title>
+					</svg:line>
+				</svg:g>
+				<svg:g id="idg01S04Point2" class="cls01S04Point2">
+					<svg:line id="idline01S04Point2" class="cls01S04Point2" x1="84" y1="180" x2="125" y2="188" stroke="rgb(153,51,102)" stroke-width="2.67" shape-rendering="crispEdges" stroke-linejoin="round" stroke-linecap="round">
+						<svg:title>87.1787416146148</svg:title>
+					</svg:line>
+				</svg:g>
+				<svg:g id="idg01S04Point3" class="cls01S04Point3">
+					<svg:line id="idline01S04Point3" class="cls01S04Point3" x1="125" y1="188" x2="166" y2="181" stroke="rgb(153,51,102)" stroke-width="2.67" shape-rendering="crispEdges" stroke-linejoin="round" stroke-linecap="round">
+						<svg:title>83.3445804174509</svg:title>
+					</svg:line>
+				</svg:g>
+				<svg:g id="idg01S04Point4" class="cls01S04Point4">
+					<svg:line id="idline01S04Point4" class="cls01S04Point4" x1="166" y1="181" x2="207" y2="155" stroke="rgb(153,51,102)" stroke-width="2.67" shape-rendering="crispEdges" stroke-linejoin="round" stroke-linecap="round">
+						<svg:title>86.5208880044941</svg:title>
+					</svg:line>
+				</svg:g>
+				<svg:g id="idg01S04Point5" class="cls01S04Point5">
+					<svg:line id="idline01S04Point5" class="cls01S04Point5" x1="207" y1="155" x2="248" y2="138" stroke="rgb(153,51,102)" stroke-width="2.67" shape-rendering="crispEdges" stroke-linejoin="round" stroke-linecap="round">
+						<svg:title>99.3964436317839</svg:title>
+					</svg:line>
+				</svg:g>
+				<svg:g id="idg01S04Point6" class="cls01S04Point6">
+					<svg:line id="idline01S04Point6" class="cls01S04Point6" x1="248" y1="138" x2="289" y2="155" stroke="rgb(153,51,102)" stroke-width="2.67" shape-rendering="crispEdges" stroke-linejoin="round" stroke-linecap="round">
+						<svg:title>108.149102337243</svg:title>
+					</svg:line>
+				</svg:g>
+				<svg:g id="idg01S04Point7" class="cls01S04Point7">
+					<svg:line id="idline01S04Point7" class="cls01S04Point7" x1="289" y1="155" x2="330" y2="163" stroke="rgb(153,51,102)" stroke-width="2.67" shape-rendering="crispEdges" stroke-linejoin="round" stroke-linecap="round">
+						<svg:title>99.7794780143191</svg:title>
+					</svg:line>
+				</svg:g>
+				<svg:g id="idg01S04Point8" class="cls01S04Point8">
+					<svg:line id="idline01S04Point8" class="cls01S04Point8" x1="330" y1="163" x2="371" y2="156" stroke="rgb(153,51,102)" stroke-width="2.67" shape-rendering="crispEdges" stroke-linejoin="round" stroke-linecap="round">
+						<svg:title>95.6358687160522</svg:title>
+					</svg:line>
+				</svg:g>
+				<svg:g id="idg01S04Point9" class="cls01S04Point9">
+					<svg:line id="idline01S04Point9" class="cls01S04Point9" x1="371" y1="156" x2="412" y2="148" stroke="rgb(153,51,102)" stroke-width="2.67" shape-rendering="crispEdges" stroke-linejoin="round" stroke-linecap="round">
+						<svg:title>98.9041272898548</svg:title>
+					</svg:line>
+				</svg:g>
+				<svg:g id="idg01S04Point10" class="cls01S04Point10">
+					<svg:line id="idline01S04Point10" class="cls01S04Point10" x1="412" y1="148" x2="453" y2="154" stroke="rgb(153,51,102)" stroke-width="2.67" shape-rendering="crispEdges" stroke-linejoin="round" stroke-linecap="round">
+						<svg:title>103.019632329344</svg:title>
+					</svg:line>
+				</svg:g>
+				<svg:g id="idg01S04Point11" class="cls01S04Point11">
+					<svg:line id="idline01S04Point11" class="cls01S04Point11" x1="453" y1="154" x2="494" y2="169" stroke="rgb(153,51,102)" stroke-width="2.67" shape-rendering="crispEdges" stroke-linejoin="round" stroke-linecap="round">
+						<svg:title>99.8911113473312</svg:title>
+					</svg:line>
+				</svg:g>
+				<svg:g id="idg01S04Point12" class="cls01S04Point12">
+					<svg:line id="idline01S04Point12" class="cls01S04Point12" x1="494" y1="169" x2="535" y2="180" stroke="rgb(153,51,102)" stroke-width="2.67" shape-rendering="crispEdges" stroke-linejoin="round" stroke-linecap="round">
+						<svg:title>92.3807167582524</svg:title>
+					</svg:line>
+				</svg:g>
+				<svg:g id="idg01S04Point13" class="cls01S04Point13">
+					<svg:line id="idline01S04Point13" class="cls01S04Point13" x1="535" y1="180" x2="576" y2="160" stroke="rgb(153,51,102)" stroke-width="2.67" shape-rendering="crispEdges" stroke-linejoin="round" stroke-linecap="round">
+						<svg:title>87.1086631333802</svg:title>
+					</svg:line>
+				</svg:g>
+			</svg:g>
+			<svg:g id="idg01S05Point" class="cls01S05Point">
+				<svg:g id="idg01S05Point1" class="cls01S05Point1">
+					<svg:line id="idline01S05Point1" class="cls01S05Point1" x1="43" y1="154" x2="84" y2="150" stroke="rgb(51,102,255)" stroke-width="2.67" shape-rendering="crispEdges" stroke-linejoin="round" stroke-linecap="round">
+						<svg:title>100</svg:title>
+					</svg:line>
+				</svg:g>
+				<svg:g id="idg01S05Point2" class="cls01S05Point2">
+					<svg:line id="idline01S05Point2" class="cls01S05Point2" x1="84" y1="150" x2="125" y2="116" stroke="rgb(51,102,255)" stroke-width="2.67" shape-rendering="crispEdges" stroke-linejoin="round" stroke-linecap="round">
+						<svg:title>102.268880506693</svg:title>
+					</svg:line>
+				</svg:g>
+				<svg:g id="idg01S05Point3" class="cls01S05Point3">
+					<svg:line id="idline01S05Point3" class="cls01S05Point3" x1="125" y1="116" x2="166" y2="100" stroke="rgb(51,102,255)" stroke-width="2.67" shape-rendering="crispEdges" stroke-linejoin="round" stroke-linecap="round">
+						<svg:title>119.186189786323</svg:title>
+					</svg:line>
+				</svg:g>
+				<svg:g id="idg01S05Point4" class="cls01S05Point4">
+					<svg:line id="idline01S05Point4" class="cls01S05Point4" x1="166" y1="100" x2="207" y2="99" stroke="rgb(51,102,255)" stroke-width="2.67" shape-rendering="crispEdges" stroke-linejoin="round" stroke-linecap="round">
+						<svg:title>126.953797948059</svg:title>
+					</svg:line>
+				</svg:g>
+				<svg:g id="idg01S05Point5" class="cls01S05Point5">
+					<svg:line id="idline01S05Point5" class="cls01S05Point5" x1="207" y1="99" x2="248" y2="92" stroke="rgb(51,102,255)" stroke-width="2.67" shape-rendering="crispEdges" stroke-linejoin="round" stroke-linecap="round">
+						<svg:title>127.470146299072</svg:title>
+					</svg:line>
+				</svg:g>
+				<svg:g id="idg01S05Point6" class="cls01S05Point6">
+					<svg:line id="idline01S05Point6" class="cls01S05Point6" x1="248" y1="92" x2="289" y2="95" stroke="rgb(51,102,255)" stroke-width="2.67" shape-rendering="crispEdges" stroke-linejoin="round" stroke-linecap="round">
+						<svg:title>130.888899853416</svg:title>
+					</svg:line>
+				</svg:g>
+				<svg:g id="idg01S05Point7" class="cls01S05Point7">
+					<svg:line id="idline01S05Point7" class="cls01S05Point7" x1="289" y1="95" x2="330" y2="92" stroke="rgb(51,102,255)" stroke-width="2.67" shape-rendering="crispEdges" stroke-linejoin="round" stroke-linecap="round">
+						<svg:title>129.568954103477</svg:title>
+					</svg:line>
+				</svg:g>
+				<svg:g id="idg01S05Point8" class="cls01S05Point8">
+					<svg:line id="idline01S05Point8" class="cls01S05Point8" x1="330" y1="92" x2="371" y2="102" stroke="rgb(51,102,255)" stroke-width="2.67" shape-rendering="crispEdges" stroke-linejoin="round" stroke-linecap="round">
+						<svg:title>131.092102273134</svg:title>
+					</svg:line>
+				</svg:g>
+				<svg:g id="idg01S05Point9" class="cls01S05Point9">
+					<svg:line id="idline01S05Point9" class="cls01S05Point9" x1="371" y1="102" x2="412" y2="90" stroke="rgb(51,102,255)" stroke-width="2.67" shape-rendering="crispEdges" stroke-linejoin="round" stroke-linecap="round">
+						<svg:title>126.110780103062</svg:title>
+					</svg:line>
+				</svg:g>
+				<svg:g id="idg01S05Point10" class="cls01S05Point10">
+					<svg:line id="idline01S05Point10" class="cls01S05Point10" x1="412" y1="90" x2="453" y2="94" stroke="rgb(51,102,255)" stroke-width="2.67" shape-rendering="crispEdges" stroke-linejoin="round" stroke-linecap="round">
+						<svg:title>131.953239849399</svg:title>
+					</svg:line>
+				</svg:g>
+				<svg:g id="idg01S05Point11" class="cls01S05Point11">
+					<svg:line id="idline01S05Point11" class="cls01S05Point11" x1="453" y1="94" x2="494" y2="93" stroke="rgb(51,102,255)" stroke-width="2.67" shape-rendering="crispEdges" stroke-linejoin="round" stroke-linecap="round">
+						<svg:title>130.034443088292</svg:title>
+					</svg:line>
+				</svg:g>
+				<svg:g id="idg01S05Point12" class="cls01S05Point12">
+					<svg:line id="idline01S05Point12" class="cls01S05Point12" x1="494" y1="93" x2="535" y2="89" stroke="rgb(51,102,255)" stroke-width="2.67" shape-rendering="crispEdges" stroke-linejoin="round" stroke-linecap="round">
+						<svg:title>130.616647721163</svg:title>
+					</svg:line>
+				</svg:g>
+				<svg:g id="idg01S05Point13" class="cls01S05Point13">
+					<svg:line id="idline01S05Point13" class="cls01S05Point13" x1="535" y1="89" x2="576" y2="122" stroke="rgb(51,102,255)" stroke-width="2.67" shape-rendering="crispEdges" stroke-linejoin="round" stroke-linecap="round">
+						<svg:title>132.735168242845</svg:title>
+					</svg:line>
+				</svg:g>
+			</svg:g>
+			<svg:g id="idg01S06Point" class="cls01S06Point">
+				<svg:g id="idg01S06Point1" class="cls01S06Point1">
+					<svg:line id="idline01S06Point1" class="cls01S06Point1" x1="43" y1="154" x2="84" y2="143" stroke="rgb(153,204,0)" stroke-width="2.67" shape-rendering="crispEdges" stroke-linejoin="round" stroke-linecap="round">
+						<svg:title>100</svg:title>
+					</svg:line>
+				</svg:g>
+				<svg:g id="idg01S06Point2" class="cls01S06Point2">
+					<svg:line id="idline01S06Point2" class="cls01S06Point2" x1="84" y1="143" x2="125" y2="128" stroke="rgb(153,204,0)" stroke-width="2.67" shape-rendering="crispEdges" stroke-linejoin="round" stroke-linecap="round">
+						<svg:title>105.572282441222</svg:title>
+					</svg:line>
+				</svg:g>
+				<svg:g id="idg01S06Point3" class="cls01S06Point3">
+					<svg:line id="idline01S06Point3" class="cls01S06Point3" x1="125" y1="128" x2="166" y2="104" stroke="rgb(153,204,0)" stroke-width="2.67" shape-rendering="crispEdges" stroke-linejoin="round" stroke-linecap="round">
+						<svg:title>113.083423585254</svg:title>
+					</svg:line>
+				</svg:g>
+				<svg:g id="idg01S06Point4" class="cls01S06Point4">
+					<svg:line id="idline01S06Point4" class="cls01S06Point4" x1="166" y1="104" x2="207" y2="105" stroke="rgb(153,204,0)" stroke-width="2.67" shape-rendering="crispEdges" stroke-linejoin="round" stroke-linecap="round">
+						<svg:title>124.818385554724</svg:title>
+					</svg:line>
+				</svg:g>
+				<svg:g id="idg01S06Point5" class="cls01S06Point5">
+					<svg:line id="idline01S06Point5" class="cls01S06Point5" x1="207" y1="105" x2="248" y2="99" stroke="rgb(153,204,0)" stroke-width="2.67" shape-rendering="crispEdges" stroke-linejoin="round" stroke-linecap="round">
+						<svg:title>124.318867659021</svg:title>
+					</svg:line>
+				</svg:g>
+				<svg:g id="idg01S06Point6" class="cls01S06Point6">
+					<svg:line id="idline01S06Point6" class="cls01S06Point6" x1="248" y1="99" x2="289" y2="86" stroke="rgb(153,204,0)" stroke-width="2.67" shape-rendering="crispEdges" stroke-linejoin="round" stroke-linecap="round">
+						<svg:title>127.378689731689</svg:title>
+					</svg:line>
+				</svg:g>
+				<svg:g id="idg01S06Point7" class="cls01S06Point7">
+					<svg:line id="idline01S06Point7" class="cls01S06Point7" x1="289" y1="86" x2="330" y2="85" stroke="rgb(153,204,0)" stroke-width="2.67" shape-rendering="crispEdges" stroke-linejoin="round" stroke-linecap="round">
+						<svg:title>134.180456943047</svg:title>
+					</svg:line>
+				</svg:g>
+				<svg:g id="idg01S06Point8" class="cls01S06Point8">
+					<svg:line id="idline01S06Point8" class="cls01S06Point8" x1="330" y1="85" x2="371" y2="100" stroke="rgb(153,204,0)" stroke-width="2.67" shape-rendering="crispEdges" stroke-linejoin="round" stroke-linecap="round">
+						<svg:title>134.748180879632</svg:title>
+					</svg:line>
+				</svg:g>
+				<svg:g id="idg01S06Point9" class="cls01S06Point9">
+					<svg:line id="idline01S06Point9" class="cls01S06Point9" x1="371" y1="100" x2="412" y2="112" stroke="rgb(153,204,0)" stroke-width="2.67" shape-rendering="crispEdges" stroke-linejoin="round" stroke-linecap="round">
+						<svg:title>126.866958705027</svg:title>
+					</svg:line>
+				</svg:g>
+				<svg:g id="idg01S06Point10" class="cls01S06Point10">
+					<svg:line id="idline01S06Point10" class="cls01S06Point10" x1="412" y1="112" x2="453" y2="118" stroke="rgb(153,204,0)" stroke-width="2.67" shape-rendering="crispEdges" stroke-linejoin="round" stroke-linecap="round">
+						<svg:title>121.142478735844</svg:title>
+					</svg:line>
+				</svg:g>
+				<svg:g id="idg01S06Point11" class="cls01S06Point11">
+					<svg:line id="idline01S06Point11" class="cls01S06Point11" x1="453" y1="118" x2="494" y2="122" stroke="rgb(153,204,0)" stroke-width="2.67" shape-rendering="crispEdges" stroke-linejoin="round" stroke-linecap="round">
+						<svg:title>117.995958073207</svg:title>
+					</svg:line>
+				</svg:g>
+				<svg:g id="idg01S06Point12" class="cls01S06Point12">
+					<svg:line id="idline01S06Point12" class="cls01S06Point12" x1="494" y1="122" x2="535" y2="132" stroke="rgb(153,204,0)" stroke-width="2.67" shape-rendering="crispEdges" stroke-linejoin="round" stroke-linecap="round">
+						<svg:title>115.944532610337</svg:title>
+					</svg:line>
+				</svg:g>
+				<svg:g id="idg01S06Point13" class="cls01S06Point13">
+					<svg:line id="idline01S06Point13" class="cls01S06Point13" x1="535" y1="132" x2="576" y2="139" stroke="rgb(153,204,0)" stroke-width="2.67" shape-rendering="crispEdges" stroke-linejoin="round" stroke-linecap="round">
+						<svg:title>110.842997359777</svg:title>
+					</svg:line>
+				</svg:g>
+			</svg:g>
+			<svg:g id="idg0121Axis" class="cls0121Axis">
+				<svg:line id="idline0121Axis" class="cls0121Axis" x1="23" y1="33" x2="23" y2="253" stroke="rgb(0,0,0)" stroke-width="1" shape-rendering="crispEdges" stroke-linejoin="round" stroke-linecap="round"/>
+			</svg:g>
+			<svg:g id="idg0111Axis" class="cls0111Axis">
+				<svg:line id="idline0111Axis" class="cls0111Axis" x1="23" y1="255" x2="596" y2="255" stroke="rgb(0,0,0)" stroke-width="1" shape-rendering="crispEdges" stroke-linejoin="round" stroke-linecap="round"/>
+			</svg:g>
+			<svg:g id="idg01LegendGroup" class="cls01LegendGroup">
+				<svg:g id="idg01Legend" class="cls01Legend">
+					<svg:rect id="idrect01Legend" class="cls01Legend" x="31.64913" y="-0.00094" width="564.68347" height="19.99653" fill="rgb(234,234,234)" shape-rendering="crispEdges"/>
+				</svg:g>
+				<svg:g id="idg01LegendLegendEntry1Marker" class="cls01LegendLegendEntry1Marker">
+					<svg:line id="idline01LegendLegendEntry1Marker" class="cls01LegendLegendEntry1Marker" x1="81" y1="10" x2="97" y2="10" stroke="rgb(153,153,255)" stroke-width="2.67" shape-rendering="crispEdges" stroke-linejoin="round" stroke-linecap="round"/>
+				</svg:g>
+				<svg:g id="idg01LegendLegendEntry1Text" class="cls01LegendLegendEntry1Text">
+					<svg:text id="idtext01LegendLegendEntry1Text" class="cls01LegendLegendEntry1Text" x="99.01019" y="11.90037">
+						<svg:tspan id="idtspan01LegendLegendEntry1Text" class="cls01LegendLegendEntry1Text" font-family="Arial Narrow" font-size="9.3">FRA</svg:tspan>
+					</svg:text>
+				</svg:g>
+				<svg:g id="idg01LegendLegendEntry2Marker" class="cls01LegendLegendEntry2Marker">
+					<svg:line id="idline01LegendLegendEntry2Marker" class="cls01LegendLegendEntry2Marker" x1="169" y1="10" x2="185" y2="10" stroke="rgb(255,0,0)" stroke-width="2.67" shape-rendering="crispEdges" stroke-linejoin="round" stroke-linecap="round"/>
+				</svg:g>
+				<svg:g id="idg01LegendLegendEntry2Text" class="cls01LegendLegendEntry2Text">
+					<svg:text id="idtext01LegendLegendEntry2Text" class="cls01LegendLegendEntry2Text" x="186.6772" y="11.90037">
+						<svg:tspan id="idtspan01LegendLegendEntry2Text" class="cls01LegendLegendEntry2Text" font-family="Arial Narrow" font-size="9.3">DEU</svg:tspan>
+					</svg:text>
+				</svg:g>
+				<svg:g id="idg01LegendLegendEntry3Marker" class="cls01LegendLegendEntry3Marker">
+					<svg:line id="idline01LegendLegendEntry3Marker" class="cls01LegendLegendEntry3Marker" x1="257" y1="10" x2="273" y2="10" stroke="rgb(0,255,0)" stroke-width="2.67" shape-rendering="crispEdges" stroke-linejoin="round" stroke-linecap="round"/>
+				</svg:g>
+				<svg:g id="idg01LegendLegendEntry3Text" class="cls01LegendLegendEntry3Text">
+					<svg:text id="idtext01LegendLegendEntry3Text" class="cls01LegendLegendEntry3Text" x="275.19773" y="11.90037">
+						<svg:tspan id="idtspan01LegendLegendEntry3Text" class="cls01LegendLegendEntry3Text" font-family="Arial Narrow" font-size="9.3">ITA</svg:tspan>
+					</svg:text>
+				</svg:g>
+				<svg:g id="idg01LegendLegendEntry4Marker" class="cls01LegendLegendEntry4Marker">
+					<svg:line id="idline01LegendLegendEntry4Marker" class="cls01LegendLegendEntry4Marker" x1="341" y1="10" x2="357" y2="10" stroke="rgb(153,51,102)" stroke-width="2.67" shape-rendering="crispEdges" stroke-linejoin="round" stroke-linecap="round"/>
+				</svg:g>
+				<svg:g id="idg01LegendLegendEntry4Text" class="cls01LegendLegendEntry4Text">
+					<svg:text id="idtext01LegendLegendEntry4Text" class="cls01LegendLegendEntry4Text" x="359.4648" y="11.90037">
+						<svg:tspan id="idtspan01LegendLegendEntry4Text" class="cls01LegendLegendEntry4Text" font-family="Arial Narrow" font-size="9.3">JPN</svg:tspan>
+					</svg:text>
+				</svg:g>
+				<svg:g id="idg01LegendLegendEntry5Marker" class="cls01LegendLegendEntry5Marker">
+					<svg:line id="idline01LegendLegendEntry5Marker" class="cls01LegendLegendEntry5Marker" x1="428" y1="10" x2="444" y2="10" stroke="rgb(51,102,255)" stroke-width="2.67" shape-rendering="crispEdges" stroke-linejoin="round" stroke-linecap="round"/>
+				</svg:g>
+				<svg:g id="idg01LegendLegendEntry5Text" class="cls01LegendLegendEntry5Text">
+					<svg:text id="idtext01LegendLegendEntry5Text" class="cls01LegendLegendEntry5Text" x="446.2852" y="11.90037">
+						<svg:tspan id="idtspan01LegendLegendEntry5Text" class="cls01LegendLegendEntry5Text" font-family="Arial Narrow" font-size="9.3">GBR</svg:tspan>
+					</svg:text>
+				</svg:g>
+				<svg:g id="idg01LegendLegendEntry6Marker" class="cls01LegendLegendEntry6Marker">
+					<svg:line id="idline01LegendLegendEntry6Marker" class="cls01LegendLegendEntry6Marker" x1="517" y1="10" x2="533" y2="10" stroke="rgb(153,204,0)" stroke-width="2.67" shape-rendering="crispEdges" stroke-linejoin="round" stroke-linecap="round"/>
+				</svg:g>
+				<svg:g id="idg01LegendLegendEntry6Text" class="cls01LegendLegendEntry6Text">
+					<svg:text id="idtext01LegendLegendEntry6Text" class="cls01LegendLegendEntry6Text" x="535.23227" y="11.90037">
+						<svg:tspan id="idtspan01LegendLegendEntry6Text" class="cls01LegendLegendEntry6Text" font-family="Arial Narrow" font-size="9.3">USA</svg:tspan>
+					</svg:text>
+				</svg:g>
+			</svg:g>
+		</svg:g>
+	</svg:svg>
+</svg:svg>

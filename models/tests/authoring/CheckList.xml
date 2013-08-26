@@ -335,13 +335,13 @@
                     <Objective>Markup of Embedded Content</Objective>
                     <ValidationTarget target="contentModelAE">
                         <InputFiles>
-                            <File fileName="template.xml"/>
-                            <File fileName="template.xml"/>
+                            <File fileName="embedded-content.pdf"/>
+                            <File fileName="embedded-content.xml"/>
                         </InputFiles>
                         <ValidationActions>
-                            <P>N/A</P>
+                            <P>Markup of an extract to piece of externl content using it's native namespace and embedded inline.</P>
                         </ValidationActions>
-                        <Status>tbd</Status>
+                        <Status>ready</Status>
                     </ValidationTarget>
                 </Test>
 
@@ -351,17 +351,17 @@
                     <Objective>Markup of External Content Reference</Objective>
                     <ValidationTarget target="contentModelAE">
                         <InputFiles>
-                            <File fileName="template.xml"/>
-                            <File fileName="template.xml"/>
+                            <File fileName="external-content-reference.xml"/>
                         </InputFiles>
                         <ValidationActions>
-                            <P>N/A</P>
+                            <P>Markup of an extract to a external piece of content.</P>
                         </ValidationActions>
-                        <Status>tbd</Status>
+                        <Status>ready</Status>
                     </ValidationTarget>
                 </Test>
 
-                <Test folderName="Extract">
+                <!--
+                    <Test folderName="Extract">
                     <Purpose>Extract</Purpose>
                     <Objective>Markup of ExtractS</Objective>
                     <ValidationTarget target="contentModelAE">
@@ -374,7 +374,7 @@
                         </ValidationActions>
                         <Status>tbd</Status>
                     </ValidationTarget>
-                </Test>
+                </Test>-->
 
             </Section>
 
@@ -385,13 +385,13 @@
                     <Objective>Markup of an Executive Summary</Objective>
                     <ValidationTarget target="contentModelAE">
                         <InputFiles>
-                            <File fileName="executive-summary.xml"/>
+                            <File fileName="executive-summary.pdf"/>
                             <File fileName="executive-summary.xml"/>
                         </InputFiles>
                         <ValidationActions>
-                            <P>N/A</P>
+                            <P>Executive Summaries can be marked-up in a document chapter or publication chapter.</P>
                         </ValidationActions>
-                        <Status>tbd</Status>
+                        <Status>ready</Status>
                     </ValidationTarget>
                 </Test>
             </Section>
@@ -403,13 +403,13 @@
                     <Objective>Markup of a Foreword</Objective>
                     <ValidationTarget target="contentModelAE">
                         <InputFiles>
-                            <File fileName="template.xml"/>
+                            <File fileName="foreword.pdf"/>
                             <File fileName="foreword.xml"/>
                         </InputFiles>
                         <ValidationActions>
-                            <P>N/A</P>
+                            <P>Forewords can be marked-up in a document chapter or publication chapter.</P>
                         </ValidationActions>
-                        <Status>tbd</Status>
+                        <Status>ready</Status>
                     </ValidationTarget>
                 </Test>
             </Section>
@@ -421,13 +421,15 @@
                     <Objective>Markup of Introductions</Objective>
                     <ValidationTarget target="contentModelAE">
                         <InputFiles>
-                            <File fileName="template.xml"/>
-                            <File fileName="introduction.xml"/>
+                            <File fileName="document-introduction.pdf"/>
+                            <File fileName="document-introduction.xml"/>
+                            <File fileName="chapter-introduction.pdf"/>
+                            <File fileName="chapter-introduction.xml"/>
                         </InputFiles>
                         <ValidationActions>
-                            <P>N/A</P>
+                            <P>Introduciotns can be marked-up in a document or publication or in document chapter or publication chapter.</P>
                         </ValidationActions>
-                        <Status>tbd</Status>
+                        <Status>ready</Status>
                     </ValidationTarget>
                 </Test>
             </Section>
@@ -439,13 +441,13 @@
                     <Objective>Markup of Prefaces</Objective>
                     <ValidationTarget target="contentModelAE">
                         <InputFiles>
-                            <File fileName="template.xml"/>
+                            <File fileName="preface.pdf"/>
                             <File fileName="preface.xml"/>
                         </InputFiles>
                         <ValidationActions>
-                            <P>N/A</P>
+                            <P>Prefaces can be marked-up in a document chapter or publication chapter.</P>
                         </ValidationActions>
-                        <Status>tbd</Status>
+                        <Status>ready</Status>
                     </ValidationTarget>
                 </Test>
             </Section>
@@ -457,13 +459,13 @@
                     <Objective>Markup of a Glossary</Objective>
                     <ValidationTarget target="contentModelAE">
                         <InputFiles>
-                            <File fileName="template.xml"/>
+                            <File fileName="glossary.pdf"/>
                             <File fileName="glossary.xml"/>
                         </InputFiles>
                         <ValidationActions>
                             <P>N/A</P>
                         </ValidationActions>
-                        <Status>tbd</Status>
+                        <Status>ready</Status>
                     </ValidationTarget>
                 </Test>
                 <Test folderName="GlossaryItems">
@@ -471,7 +473,7 @@
                     <Objective>Markup of a Glossary Items</Objective>
                     <ValidationTarget target="contentModelAE">
                         <InputFiles>
-                            <File fileName="template.xml"/>
+
                             <File fileName="glossary.xml"/>
                         </InputFiles>
                         <ValidationActions>
@@ -490,13 +492,12 @@
                     <Objective>Markup of Graphic Sources</Objective>
                     <ValidationTarget target="contentModelAE">
                         <InputFiles>
-                            <File fileName="template.xml"/>
-                            <File fileName="template.xml"/>
+                            <File fileName="graphic-source.xml"/>
                         </InputFiles>
                         <ValidationActions>
-                            <P>N/A</P>
+                            <P>Graphic souerces can be marked-up in a document chapter or publication chapter.</P>
                         </ValidationActions>
-                        <Status>tbd</Status>
+                        <Status>ready</Status>
                     </ValidationTarget>
                 </Test>
 
@@ -505,13 +506,13 @@
                     <Objective>Markup of Figure Sources</Objective>
                     <ValidationTarget target="contentModelAE">
                         <InputFiles>
-                            <File fileName="template.xml"/>
-                            <File fileName="template.xml"/>
+                            <File fileName="figure-source.pdf"/>
+                            <File fileName="figure-source.xml"/>
                         </InputFiles>
                         <ValidationActions>
-                            <P>N/A</P>
+                            <P>Figure sources can be marked-up in a document chapter or publication chapter.</P>
                         </ValidationActions>
-                        <Status>tbd</Status>
+                        <Status>ready</Status>
                     </ValidationTarget>
                 </Test>
 
@@ -520,13 +521,13 @@
                     <Objective>Markup of Table Sources</Objective>
                     <ValidationTarget target="contentModelAE">
                         <InputFiles>
-                            <File fileName="template.xml"/>
-                            <File fileName="template.xml"/>
+                            <File fileName="table-source.xml"/>
+
                         </InputFiles>
                         <ValidationActions>
-                            <P>N/A</P>
+                            <P>Table sources can be marked-up in a document chapter or publication chapter.</P>
                         </ValidationActions>
-                        <Status>tbd</Status>
+                        <Status>ready</Status>
                     </ValidationTarget>
                 </Test>
             </Section>
@@ -538,13 +539,13 @@
                     <Objective>Markup of Agenda Sections</Objective>
                     <ValidationTarget target="contentModelAE">
                         <InputFiles>
-                            <File fileName="template.xml"/>
-                            <File fileName="template.xml"/>
+                            <File fileName="agenda-section.pdf"/>
+                            <File fileName="agenda-section.xml"/>
                         </InputFiles>
                         <ValidationActions>
-                            <P>N/A</P>
+                            <P>Agenda sections containg sessions and items can be marked-up in an Agenda.</P>
                         </ValidationActions>
-                        <Status>tbd</Status>
+                        <Status>ready</Status>
                     </ValidationTarget>
                 </Test>
                 <Test folderName="AgendaSessions">
@@ -552,13 +553,13 @@
                     <Objective>Markup of Agenda Sessions</Objective>
                     <ValidationTarget target="contentModelAE">
                         <InputFiles>
-                            <File fileName="template.xml"/>
-                            <File fileName="template.xml"/>
+                            <File fileName="agenda-session.pdf"/>
+                            <File fileName="agenda-session.xml"/>
                         </InputFiles>
                         <ValidationActions>
-                            <P>N/A</P>
+                            <P>Agenda sessions and items can be marked-up in an Agenda.</P>
                         </ValidationActions>
-                        <Status>tbd</Status>
+                        <Status>ready</Status>
                     </ValidationTarget>
                 </Test>
             </Section>
@@ -653,11 +654,29 @@
                     <Objective>Markup of Block Quotes</Objective>
                     <ValidationTarget target="contentModelAE">
                         <InputFiles>
-                            <File fileName="1211011e.pdf"/>
+                            <File fileName="block-quote.pdf"/>
                             <File fileName="block-quote.xml"/>
                         </InputFiles>
                         <ValidationActions>
-                            <P>N/A</P>
+                            <P>Block quotes can be marked-up.</P>
+                        </ValidationActions>
+                        <Status>ready</Status>
+                    </ValidationTarget>
+                </Test>
+            </Section>
+
+
+            <Section folderName="Equations">
+                <Purpose>Equations</Purpose>
+                <Test folderName="Equation">
+                    <Purpose>Equations</Purpose>
+                    <Objective>Markup of Inline Equations</Objective>
+                    <ValidationTarget target="contentModelAE">
+                        <InputFiles>
+                            <File fileName="equation.xml"/>
+                        </InputFiles>
+                        <ValidationActions>
+                            <P>Markup of Inline Equations</P>
                         </ValidationActions>
                         <Status>ready</Status>
                     </ValidationTarget>
@@ -671,11 +690,11 @@
                     <Objective>Markup of External Graphics</Objective>
                     <ValidationTarget target="contentModelAE">
                         <InputFiles>
-                            <File fileName="template.xml"/>
-                            <File fileName="template.xml"/>
+                            <File fileName="complex-graphic.xml"/>
+                            <File fileName="external-graphic.xml"/>
                         </InputFiles>
                         <ValidationActions>
-                            <P>N/A</P>
+                            <P>Markup of external graphics</P>
                         </ValidationActions>
                         <Status>ready</Status>
                     </ValidationTarget>
@@ -686,11 +705,10 @@
                     <Objective>Markup of Figures</Objective>
                     <ValidationTarget target="contentModelAE">
                         <InputFiles>
-                            <File fileName="template.xml"/>
-                            <File fileName="template.xml"/>
+                            <File fileName="figure.xml"/>
                         </InputFiles>
                         <ValidationActions>
-                            <P>N/A</P>
+                            <P>Markup of a figure</P>
                         </ValidationActions>
                         <Status>ready</Status>
                     </ValidationTarget>
@@ -701,11 +719,10 @@
                     <Objective>Markup of Graphics</Objective>
                     <ValidationTarget target="contentModelAE">
                         <InputFiles>
-                            <File fileName="template.xml"/>
-                            <File fileName="template.xml"/>
+                            <File fileName="graphic.xml"/>
                         </InputFiles>
                         <ValidationActions>
-                            <P>N/A</P>
+                            <P>Markup of a graphic</P>
                         </ValidationActions>
                         <Status>ready</Status>
                     </ValidationTarget>
@@ -716,11 +733,13 @@
                     <Objective>Markup of SVG Graphics</Objective>
                     <ValidationTarget target="contentModelAE">
                         <InputFiles>
-                            <File fileName="template.xml"/>
-                            <File fileName="template.xml"/>
+                            <File fileName="svg.xml"/>
+                            <File fileName="Coloured Lines.svg"/>
+                            <File fileName="Columns.svg"/>
+                            <File fileName="Lines.svg"/>
                         </InputFiles>
                         <ValidationActions>
-                            <P>N/A</P>
+                            <P>Markup of SVG.</P>
                         </ValidationActions>
                         <Status>ready</Status>
                     </ValidationTarget>
@@ -735,11 +754,10 @@
                     <Objective>Markup of Definition Lists</Objective>
                     <ValidationTarget target="contentModelAE">
                         <InputFiles>
-                            <File fileName="template.xml"/>
-                            <File fileName="template.xml"/>
+                            <File fileName="definition-list.xml"/>
                         </InputFiles>
                         <ValidationActions>
-                            <P>N/A</P>
+                            <P>Markup of Definition Lists</P>
                         </ValidationActions>
                         <Status>ready</Status>
                     </ValidationTarget>
@@ -749,41 +767,25 @@
                     <Objective>Markup of Itemised Lists</Objective>
                     <ValidationTarget target="contentModelAE">
                         <InputFiles>
-                            <File fileName="template.xml"/>
-                            <File fileName="template.xml"/>
+                            <File fileName="itemized-list.xml"/>
                         </InputFiles>
                         <ValidationActions>
-                            <P>N/A</P>
+                            <P>Markup of Itemised Lists</P>
                         </ValidationActions>
                         <Status>ready</Status>
                     </ValidationTarget>
                 </Test>
 
-                <Test folderName="ListItems">
-                    <Purpose>List Itsms</Purpose>
-                    <Objective>Markup of List Items</Objective>
-                    <ValidationTarget target="contentModelAE">
-                        <InputFiles>
-                            <File fileName="template.xml"/>
-                            <File fileName="template.xml"/>
-                        </InputFiles>
-                        <ValidationActions>
-                            <P>N/A</P>
-                        </ValidationActions>
-                        <Status>ready</Status>
-                    </ValidationTarget>
-                </Test>
 
                 <Test folderName="OrderedLists">
                     <Purpose>Ordered Lists</Purpose>
                     <Objective>Markup of Ordered Lists</Objective>
                     <ValidationTarget target="contentModelAE">
                         <InputFiles>
-                            <File fileName="template.xml"/>
-                            <File fileName="template.xml"/>
+                            <File fileName="ordered-list.xml"/>
                         </InputFiles>
                         <ValidationActions>
-                            <P>N/A</P>
+                            <P>Markup of Ordered Lists</P>
                         </ValidationActions>
                         <Status>ready</Status>
                     </ValidationTarget>
@@ -791,7 +793,9 @@
 
 
             </Section>
-
+            <!--
+                ENDNOTES FOR PAC?
+                
             <Section folderName="Notes">
                 <Purpose>Notes</Purpose>
                 <Test folderName="Notes">
@@ -808,7 +812,7 @@
                         <Status>ready</Status>
                     </ValidationTarget>
                 </Test>
-            </Section>
+            </Section>-->
 
             <Section folderName="Paras">
                 <Purpose>Paras</Purpose>
@@ -817,25 +821,24 @@
                     <Objective>Markup of Paras</Objective>
                     <ValidationTarget target="contentModelAE">
                         <InputFiles>
-                            <File fileName="template.xml"/>
-                            <File fileName="template.xml"/>
+                            <File fileName="paras.xml"/>
                         </InputFiles>
                         <ValidationActions>
-                            <P>N/A</P>
+                            <P>Markup of Paras</P>
                         </ValidationActions>
                         <Status>ready</Status>
                     </ValidationTarget>
                 </Test>
+
                 <Test folderName="FormalParas">
                     <Purpose>Formal Paras</Purpose>
                     <Objective>Markup of Formal Paras</Objective>
                     <ValidationTarget target="contentModelAE">
                         <InputFiles>
-                            <File fileName="template.xml"/>
-                            <File fileName="template.xml"/>
+                            <File fileName="formal-para.xml"/>
                         </InputFiles>
                         <ValidationActions>
-                            <P>N/A</P>
+                            <P>Markup of Formal Paras</P>
                         </ValidationActions>
                         <Status>ready</Status>
                     </ValidationTarget>
@@ -845,11 +848,10 @@
                     <Objective>Markup of Paragraph Groups</Objective>
                     <ValidationTarget target="contentModelAE">
                         <InputFiles>
-                            <File fileName="template.xml"/>
-                            <File fileName="template.xml"/>
+                            <File fileName="paragraph-group.xml"/>
                         </InputFiles>
                         <ValidationActions>
-                            <P>N/A</P>
+                            <P>Markup of Paragraph Groups</P>
                         </ValidationActions>
                         <Status>ready</Status>
                     </ValidationTarget>
@@ -863,41 +865,25 @@
                     <Objective>Markup of Alternative Titles</Objective>
                     <ValidationTarget target="contentModelAE">
                         <InputFiles>
-                            <File fileName="template.xml"/>
-                            <File fileName="template.xml"/>
+                            <File fileName="alternative-titles.xml"/>
                         </InputFiles>
                         <ValidationActions>
-                            <P>N/A</P>
+                            <P>Markup of Alternative Titles</P>
                         </ValidationActions>
                         <Status>ready</Status>
                     </ValidationTarget>
                 </Test>
 
-                <Test folderName="Captions">
-                    <Purpose>Captions</Purpose>
-                    <Objective>Markup of Captions</Objective>
-                    <ValidationTarget target="contentModelAE">
-                        <InputFiles>
-                            <File fileName="template.xml"/>
-                            <File fileName="template.xml"/>
-                        </InputFiles>
-                        <ValidationActions>
-                            <P>N/A</P>
-                        </ValidationActions>
-                        <Status>ready</Status>
-                    </ValidationTarget>
-                </Test>
 
                 <Test folderName="SubTitles">
                     <Purpose>Sub Titles</Purpose>
                     <Objective>Markup of Sub Titles</Objective>
                     <ValidationTarget target="contentModelAE">
                         <InputFiles>
-                            <File fileName="template.xml"/>
-                            <File fileName="template.xml"/>
+                            <File fileName="sub-title.xml"/>
                         </InputFiles>
                         <ValidationActions>
-                            <P>N/A</P>
+                            <P>Markup of Sub Titles</P>
                         </ValidationActions>
                         <Status>ready</Status>
                     </ValidationTarget>
@@ -908,11 +894,10 @@
                     <Objective>Markup of Title</Objective>
                     <ValidationTarget target="contentModelAE">
                         <InputFiles>
-                            <File fileName="template.xml"/>
-                            <File fileName="template.xml"/>
+                            <File fileName="titles.xml"/>
                         </InputFiles>
                         <ValidationActions>
-                            <P>N/A</P>
+                            <P>Markup of Titles</P>
                         </ValidationActions>
                         <Status>ready</Status>
                     </ValidationTarget>
@@ -945,54 +930,17 @@
             <Test folderName="Tables">
                 <Purpose>Different Table Tests</Purpose>
                 <Objective>Check if different case of standard tables have an equivalent content model.</Objective>
-                <ValidationTarget target="upcast">
-                    <InputFiles>
-                        <File fileName="Tables.doc"/>
-                    </InputFiles>
-                    <ValidationActions>
-                        <P>Check the tables are well converted</P>
-                    </ValidationActions>
-                    <Status>ready</Status>
-                    <Results>
-                        <Result passed="true"/>
-                    </Results>
-                </ValidationTarget>
                 <ValidationTarget target="contentModelAE">
                     <InputFiles>
-                        <File fileName="Tables.xml"/>
+                        <File fileName="table.xml"/>
                     </InputFiles>
                     <ValidationActions>
-                        <P>Check the tables are well converted in all section (chapter, section level 1 or level 2 or level 3, annex) contexts.</P>
+                        <P>Check the tables are marked-up</P>
                     </ValidationActions>
                     <Status>ready</Status>
                 </ValidationTarget>
             </Test>
-            <Test folderName="TableFormatting">
-                <Purpose>Complex Table formatting</Purpose>
-                <Objective>Check if different case of complex tables have an equivalent content model (merged cells, indent in cells, alignment, sources, notes, hyperlinks).</Objective>
-                <ValidationTarget target="upcast">
-                    <InputFiles>
-                        <File fileName="TablesComplexes.doc"/>
-                    </InputFiles>
-                    <ValidationActions>
-                        <P>Check the tables are well converted</P>
-                    </ValidationActions>
-                    <Status>ready</Status>
-                    <Results>
-                        <Result passed="true"/>
-                    </Results>
-                </ValidationTarget>
-                <ValidationTarget target="contentModelAE">
-                    <InputFiles>
-                        <File fileName="TablesComplexes.xml"/>
-                    </InputFiles>
-                    <ValidationActions>
-                        <P>Check the tables are well converted</P>
-                    </ValidationActions>
-                    <Status>ready</Status>
-                </ValidationTarget>
-            </Test>
-            <Test folderName="Tables-in-box">
+          <!--  <Test folderName="Tables-in-box">
 
                 <Purpose>Test of tables in boxes</Purpose>
                 <Objective>Test if a table is allowed in a textbox, and has a content model equivalence.</Objective>
@@ -1017,7 +965,7 @@
                     </ValidationActions>
                     <Status>ready</Status>
                 </ValidationTarget>
-            </Test>
+            </Test>-->
         </Section>
 
         <Section folderName="Inlines">
@@ -1032,11 +980,10 @@
                 <Objective>Markup of Abbreviations</Objective>
                 <ValidationTarget target="contentModelAE">
                     <InputFiles>
-                        <File fileName="template.xml"/>
-                        <File fileName="template.xml"/>
+                        <File fileName="abbrev-inline.xml"/>
                     </InputFiles>
                     <ValidationActions>
-                        <P>N/A</P>
+                        <P>Markup of Abbreviations</P>
                     </ValidationActions>
                     <Status>ready</Status>
                 </ValidationTarget>
@@ -1052,7 +999,7 @@
                         <File fileName="template.xml"/>
                     </InputFiles>
                     <ValidationActions>
-                        <P>N/A</P>
+                        <P>Check that citations can be marked up.</P>
                     </ValidationActions>
                     <Status>ready</Status>
                 </ValidationTarget>
@@ -1061,14 +1008,15 @@
 
             <Test folderName="Quotes">
                 <Purpose>Quotes</Purpose>
-                <Objective>Markup of inline Quotes</Objective>
+                <Objective>Markup of inline Quotes using tags or punctuation</Objective>
                 <ValidationTarget target="contentModelAE">
                     <InputFiles>
-                        <File fileName="template.xml"/>
-                        <File fileName="template.xml"/>
+                        <File fileName="quote.pdf"/>
+                        <File fileName="quote-punctuation.xml"/>
+                        <File fileName="quote-markup.xml"/>
                     </InputFiles>
                     <ValidationActions>
-                        <P>N/A</P>
+                        <P>Check that quotes can be encoded using tags or punctuation.</P>
                     </ValidationActions>
                     <Status>ready</Status>
                 </ValidationTarget>
@@ -1098,11 +1046,11 @@
                 <Objective>Markup of Inline Equations</Objective>
                 <ValidationTarget target="contentModelAE">
                     <InputFiles>
-                        <File fileName="template.xml"/>
-                        <File fileName="template.xml"/>
+                        <File fileName="equation.xml"/>
+                        <File fileName="inline-equation.xml"/>
                     </InputFiles>
                     <ValidationActions>
-                        <P>N/A</P>
+                        <P>Markup of Inline Equations</P>
                     </ValidationActions>
                     <Status>ready</Status>
                 </ValidationTarget>
@@ -1124,7 +1072,7 @@
                         <ValidationActions>
                             <P>N/A</P>
                         </ValidationActions>
-                        <Status>ready</Status>
+                        <Status>tbd</Status>
                     </ValidationTarget>
                 </Test>
 
@@ -1139,7 +1087,7 @@
                         <ValidationActions>
                             <P>N/A</P>
                         </ValidationActions>
-                        <Status>ready</Status>
+                        <Status>tbd</Status>
                     </ValidationTarget>
                 </Test>
 
@@ -1147,6 +1095,7 @@
             <Section folderName="Indexes">
                 <Purpose>Indexes</Purpose>
             </Section>
+            
             <Section folderName="Langversion">
                 <Purpose>Langversion</Purpose>
             </Section>
@@ -1159,11 +1108,10 @@
                     <Objective>Markup of Inline Phrase</Objective>
                     <ValidationTarget target="contentModelAE">
                         <InputFiles>
-                            <File fileName="template.xml"/>
-                            <File fileName="template.xml"/>
+                            <File fileName="phrase.xml"/>
                         </InputFiles>
                         <ValidationActions>
-                            <P>N/A</P>
+                            <P>Markup of Inline Phrase</P>
                         </ValidationActions>
                         <Status>ready</Status>
                     </ValidationTarget>
@@ -1174,11 +1122,10 @@
                     <Objective>Markup of Inline Xrefs</Objective>
                     <ValidationTarget target="contentModelAE">
                         <InputFiles>
-                            <File fileName="template.xml"/>
-                            <File fileName="template.xml"/>
+                            <File fileName="xref.xml"/>
                         </InputFiles>
                         <ValidationActions>
-                            <P>N/A</P>
+                            <P>Markup of Inline Xrefs</P>
                         </ValidationActions>
                         <Status>ready</Status>
                     </ValidationTarget>
@@ -1189,8 +1136,7 @@
                     <Objective>Markup of Inline Hyperlink</Objective>
                     <ValidationTarget target="contentModelAE">
                         <InputFiles>
-                            <File fileName="template.xml"/>
-                            <File fileName="template.xml"/>
+                            <File fileName="hyperlink.xml"/>
                         </InputFiles>
                         <ValidationActions>
                             <P>N/A</P>
@@ -1202,33 +1148,32 @@
             </Section>
             <Section folderName="NotesReferences">
                 <Purpose>Notes and References</Purpose>
-                <Test folderName="Footnote">
-                    <Purpose>Footnote</Purpose>
+                <Test folderName="Footnotes">
+                    <Purpose>Footnotes</Purpose>
                     <Objective>Markup of Inline Footnotes</Objective>
                     <ValidationTarget target="contentModelAE">
                         <InputFiles>
-                            <File fileName="template.xml"/>
-                            <File fileName="template.xml"/>
+                            <File fileName="footnotes.pdf"/>
+                            <File fileName="footnotes.xml"/>
                         </InputFiles>
                         <ValidationActions>
-                            <P>N/A</P>
+                            <P>Markup of Table Footnotes</P>
                         </ValidationActions>
                         <Status>ready</Status>
                     </ValidationTarget>
                 </Test>
 
-                <Test folderName="Footnotes">
-                    <Purpose>Footnotes</Purpose>
-                    <Objective>Markup of Table Footnotes</Objective>
+                <Test folderName="Endnotes">
+                    <Purpose>Endnotes</Purpose>
+                    <Objective>Markup of Table Endnotes</Objective>
                     <ValidationTarget target="contentModelAE">
                         <InputFiles>
-                            <File fileName="template.xml"/>
-                            <File fileName="template.xml"/>
+                            <File fileName="endnotes.xml"/>
                         </InputFiles>
                         <ValidationActions>
-                            <P>N/A</P>
+                            <P>Markup of Table Endnotes</P>
                         </ValidationActions>
-                        <Status>ready</Status>
+                        <Status>tbd</Status>
                     </ValidationTarget>
                 </Test>
             </Section>
@@ -1306,11 +1251,10 @@
                     <Objective>Markup of Inline Emphasis Styles</Objective>
                     <ValidationTarget target="contentModelAE">
                         <InputFiles>
-                            <File fileName="template.xml"/>
-                            <File fileName="template.xml"/>
+                            <File fileName="emphasis.xml"/>
                         </InputFiles>
                         <ValidationActions>
-                            <P>N/A</P>
+                            <P>Markup of Inline Emphasis Styles</P>
                         </ValidationActions>
                         <Status>ready</Status>
                     </ValidationTarget>
@@ -1321,11 +1265,10 @@
                     <Objective>Markup of Inline Subscript</Objective>
                     <ValidationTarget target="contentModelAE">
                         <InputFiles>
-                            <File fileName="template.xml"/>
-                            <File fileName="template.xml"/>
+                            <File fileName="subscript.xml"/>
                         </InputFiles>
                         <ValidationActions>
-                            <P>N/A</P>
+                            <P>Markup of Inline Subscript</P>
                         </ValidationActions>
                         <Status>ready</Status>
                     </ValidationTarget>
@@ -1336,11 +1279,10 @@
                     <Objective>Markup of Inline Superscript</Objective>
                     <ValidationTarget target="contentModelAE">
                         <InputFiles>
-                            <File fileName="template.xml"/>
-                            <File fileName="template.xml"/>
+                            <File fileName="superscript.xml"/>
                         </InputFiles>
                         <ValidationActions>
-                            <P>N/A</P>
+                            <P>Markup of Inline Superscript</P>
                         </ValidationActions>
                         <Status>ready</Status>
                     </ValidationTarget>
@@ -1390,7 +1332,7 @@
                         <File fileName="revisions.xml"/>
                     </InputFiles>
                     <ValidationActions>
-                        <P/>
+                        <P>Revisions applied in markup.</P>
                     </ValidationActions>
                     <Status>ready</Status>
                 </ValidationTarget>
@@ -1401,11 +1343,11 @@
                 <Objective>Markup Comments</Objective>
                 <ValidationTarget target="contentModelAE">
                     <InputFiles>
-                        <File fileName="2310111e.pdf"/>
+                        <File fileName="comments.pdf"/>
                         <File fileName="comments.xml"/>
                     </InputFiles>
                     <ValidationActions>
-                        <P/>
+                        <P>Comments applied in markup.</P>
                     </ValidationActions>
                     <Status>ready</Status>
                 </ValidationTarget>

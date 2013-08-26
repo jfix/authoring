@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:oecd:names:xmlns:authoring:document ../../../../../../../schemas/oecd.author.xsd" xmlns="urn:oecd:names:xmlns:authoring:document" xmlns:xlink="http://www.w3.org/1999/xlink">
+	<metadata>
+		<metadata-item property="kim:cote" value="ENV/JM/HA/SIAM(2009)7"/>
+		<metadata-item property="kim:originalClassif" value="For official use"/>
+		<metadata-item property="kim:language" value="en"/>
+		<metadata-item property="kim:originalLanguage" value="en"/>
+	</metadata>
+	<title>PROVISIONAL GUIDANCE ON USE OF CHEMICAL CATEGORIES</title>
+	<chapter>
+		<title>Background and history</title>
+	</chapter>
+	<appendix>
+		<title>
+			<emphasis style="bold">Example of a targeted chemical category</emphasis>
+		</title>
+		<para>Below is a summary of an example of a targeted category. For illustrative purposes a very simple and restrictive example is chosen. This example does not constitute a proposal for agreement by member countries. The reporting format as outlined in the OECD Guidance on Grouping of Chemicals [see ENV/JM/MONO(2007)28] is used below. </para>
+		<section>
+			<title>
+				<emphasis style="bold">
+					<emphasis style="italic">Category definition</emphasis>
+				</emphasis>
+			</title>
+			<para>The chemical category is: saturated aliphatic C2-C8 (linear and branched) thiols</para>
+		</section>
+		<section>
+			<title>
+				<emphasis style="bold">
+					<emphasis style="italic">Targeted endpoints</emphasis>
+				</emphasis>
+			</title>
+			<para>The only endpoint covered is 96h LC50 for fish. Furthermore, reliable results for Log Kow have to be available for all chemicals assessed in this category. </para>
+		</section>
+		<section>
+			<title>
+				<emphasis style="bold">
+					<emphasis style="italic">Applicability domain of the category</emphasis>
+				</emphasis>
+			</title>
+			<para>The domain of the category is defined by structure only: only saturated linear and branched aliphatic thiols with chain lengths between C2 and C8 are members of the category. No other functional groups are allowed in the structure. Furthermore structures with more than one thiol moiety are excluded. </para>
+			<chemical-structure>
+				<external-graphic xlink:href="../testset/ENV/word/HA_SIAM(2009)7_targeted_categories-image1.png"/>
+			</chemical-structure>
+		</section>
+	</appendix>
+
+</document>

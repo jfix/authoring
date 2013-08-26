@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:oecd:names:xmlns:authoring:document ../../../../../../../../schemas/oecd.author.xsd" xmlns="urn:oecd:names:xmlns:authoring:document" xmlns:xlink="http://www.w3.org/1999/xlink">
+	<metadata>
+		<metadata-item property="kim:lastSubmittedToOLISOn" value="20090917"/>
+	</metadata>
+	<title/>
+
+	<foreword>
+		<title/>
+	</foreword>
+
+	<introduction>
+		<title/>
+	</introduction>
+
+
+
+
+
+	<chapter>
+
+		<title>IEA/NEA <emphasis style="bold">Boundary Issue Chapter on Carbon Capture and Storage</emphasis></title>
+		<para>5546546</para>
+		<block-quote>
+			<para>jklhjjklhjk</para>
+		</block-quote>
+		<section>
+			<title>Introduction</title>
+			<para>There is an increasingly urgent need to mitigate GHG emissions, including those related to the production and consumption of energy, to avoid the severe consequences caused by climate change. The Energy Technology Perspectives Study (ETP) 2008 projects that without efforts to combat climate change global CO<sub>2</sub> emissions mill rise by 130% between 2005 and 2050 Avoiding this development requires an energy revolution: improvements in energy efficiency, greater usage of renewable energy and nuclear power as well as the decarbonisation of fossil fuel usage. To achieve this, power generation has to be virtually decarbonised. The only technology available to mitigate greenhouse gas (GHG) emissions from large-scale foseil fuel usage is CO<sub>2</sub> capture and storage (CCS). The ETP BLUE scenario demonstrates that CCS will need to contribute nearly one-fifth of the necessary emissions reductions to reduce global GHG emissions by 50% by 2050 at a reasonable cost. In power generation, one quarter of the necessary CO<sub>2</sub> reduction is attributable to CCS. This highlights the important role CCS in power generation may play to realise substantial CO<sub>2</sub> reductions. </para>
+			<para>Despite the potential of CCS in the longer term, by 2015, the base year of the cost analysis of the EGC study, CCS in power generation is generally not expected to play already a major role, although demonstration and deployment projects have to be brought online in this time period to advance the development and uptake of CCS in the long run. Hence, CCS may become over tke lifetime of power plants being build today commercially available and has to be taken into consideration in investment decisions made in the near term, either on a plant level by allowing later retrofit of CCS or on a strategic level as a power plant with CCS may become a competing generation option over the lifetime of a plant being invested in today. </para>
+			<para>Therefore in the followingo starting from an outline of the prospects of CCS based on a scenario analysis with the IEA Energy Technology Perspectives (ETP) model, an overview of the technology options, their costs and research and development (R&amp;D) challenges for capturing CO<sub>2</sub> in power generation and subsequently transporting and storing is given. </para>
+
+
+			<figure>
+
+				<metadata>
+					<metadata-item subject="kim:mainTitle" value="Reduction in CO2 emissions from the baseline scenario in the power sector in the ACT Map and BLUE Map scenarios in 2050, by technology area"/>
+					<metadata subject="kim:authorOrganisation">
+						<metadata-item subject="kim:name" value="International Energy Agency"/>
+						<metadata-item subject="kim:acronym" value="IEA"/>
+						<metadata-item subject="kim:order" value="1"/>
+					</metadata>
+					<metadata-item property="kim:subject" value="gas emissions"/>
+					<metadata-item property="kim:contentType" value="Figure"/>
+					<metadata-item property="kim:contentStatus" value="OECD Publication"/>
+					<metadata-item property="kim:contentStatusLastChangeDate" value="20081027"/>
+					<metadata-item property="kim:businessContext" value="Publication dissemination"/>
+					<metadata-item property="kim:provenance" value="IEA"/>
+					<metadata-item property="kim:natureOfInformation" value="Facts and figures"/>
+
+					<metadata-item property="kim:SourceObj"/>
+				</metadata>
+
+				<title>Figure 1: Reduction in CO<emphasis style="bold"><sub>2</sub></emphasis> emissions from the baseline scenario in the power sector in the ACT Map and BLUE Map scenarios in 2050, by technology area</title>
+				<graphic>
+					<external-graphic xlink:href="images/JT03269711-3.jpg"/>
+				</graphic>
+				<notes>
+					<note>
+						<para>In Panel B, data for the United Kingdom refer to England only.</para>
+					</note>
+				</notes>
+				<sources>
+					<source>
+						<citation>OECD (2010), Sickness, Disability and Work: Breaking the Barriers – A Synthesis of Findings across OECD Countries, Paris; OECD (2011), Sick on the Job? Myths and Realities about Mental Health andWork, Paris.</citation>
+					</source>
+				</sources>
+			</figure>
+		</section>
+
+
+
+	</chapter>
+
+
+
+</document>

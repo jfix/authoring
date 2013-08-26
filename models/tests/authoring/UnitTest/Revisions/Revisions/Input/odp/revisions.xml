@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:oecd:names:xmlns:authoring:document ../../../../../../../schemas/oecd.author.xsd" xmlns="urn:oecd:names:xmlns:authoring:document" xmlns:xlink="http://www.w3.org/1999/xlink">
+	<document-metadata>
+		<metadata>
+			<metadata-item/>
+		</metadata>
+	</document-metadata>
+	<metadata/>
+	<title>Revisions Test</title>
+	<chapter>
+		<title>IEA/NEA <emphasis style="bold">Boundary Issue Chapter on Carbon Capture and Storage</emphasis></title>
+		<section>
+			<title>Introduction</title>
+
+			<para>Text, text, text.</para>
+
+			<para>Text, text, text.</para>
+
+			<para>Text, text, text.</para>
+
+			<para><revision-start revision-type="deletion" revision-time="2012-11-06T11:27:30" revision-end="rev001">
+					<metadata>
+						<!-- should have the correct property name -->
+						<metadata-item property="author" value="crowther_j"/>
+					</metadata>
+					<comment>
+						<metadata property="comment">
+							<metadata-item property="comment" value="This type represents author comments in text."/>
+						</metadata>
+					</comment>
+				</revision-start>There is an increasingly urgent need to mitigate GHG emissions, including those related to the production and consumption of energy, to avoid the severe consequences caused by climate change.<revision-end xml:id="rev001"/> The Energy Technology Perspectives Study (ETP) 2008 projects that without efforts to combat climate change global CO<sub>2</sub> emissions mill rise by 130% between 2005 and 2050 (IEA, 2008a). Avoiding this development requires an energy revolution: improvements in energy efficiency, greater usage of renewable energy and nuclear power as well as the decarbonisation of fossil fuel usage. To achieve this, power generation has to be virtually decarbonised. <revision-start revision-type="insertion" revision-time="2012-11-06T11:33:00" revision-end="rev002">
+					<metadata/>
+				</revision-start>The only technology available to mitigate greenhouse gas (GHG) emissions from large-scale foseil fuel usage is CO<sub>2</sub> capture and storage (CCS). <revision-end xml:id="rev002"/> The ETP BLUE scenario demonstrates that CCS will need to contribute nearly one-fifth of the necessary emissions reductions to reduce global GHG emissions by 50% by 2050 at a reasonable cost. In power generation, one quarter of the necessary CO<sub>2</sub> reduction is attributable to CCS. This highlights the important role CCS in power generation may play to realise substantial CO<sub>2</sub> reductions. </para>
+			<para>Text, text, text.</para>
+
+		</section>
+	</chapter>
+</document>

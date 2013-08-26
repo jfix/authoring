@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:oecd:names:xmlns:authoring:document ../../../../../../../schemas/oecd.author.xsd" xmlns="urn:oecd:names:xmlns:authoring:document" xmlns:xlink="http://www.w3.org/1999/xlink">
+	<metadata>
+		<metadata subject="kim:author">
+			<metadata subject="kim:personname">
+				<metadata-item subject="kim:firstname" value="moreddu_c"/>
+			</metadata>
+		</metadata>
+		<metadata subject="kim:othercredit">
+			<metadata subject="kim:personname">
+				<metadata-item subject="kim:firstname" value="Crowther_1"/>
+			</metadata>
+		</metadata>
+		<metadata-item subject="kim:date" value="Thu, 18 Oct 2012 20:44:00 CEST"/>
+		<metadata subject="kim:revhistory">
+			<metadata subject="kim:revision">
+				<metadata-item subject="kim:revnumber" value="1"/>
+				<metadata-item subject="kim:date" value="Thu, 18 Oct 2012 20:44:00 CEST"/>
+			</metadata>
+		</metadata>
+		<metadata subject="kim:printhistory">
+			<metadata-item subject="kim:para" value="Last printed: Tue, 05 Jun 2012 11:17:00 CEST"/>
+		</metadata>
+		<metadata-item subject="kim:orgname" value="O.E.C.D."/>
+		<metadata-item property="kim:cote" value="DELSA/ELSA/WD/SEM(2009)01"/>
+		<metadata-item property="kim:originalClassif" value="Unclassified"/>
+		<metadata-item property="kim:language" value="English"/>
+		<metadata-item property="kim:originalLanguage" value="English"/>
+	</metadata>
+	<title>Agricultural Policies: Monitoring and Evaluation 2012, OECD Countries</title>
+	<acknowledgements xml:id="IDbef4e77e-26a1-47fd-b071-df19950b0865">
+		<title>Acknowledgements</title>
+		<para>David Grubb and Peter Tergeist are economists in the Employment Analysis and Policies Division at the OECD Directorate for Employment, Labour and Social Affairs, and Shruti Singh is an economist on secondment to the OECD from the UK Department of Work and Pensions (DWP). They prepared this review under the supervision of the head of division, Stefano Scarpetta.</para>
+		<para>The authors met staff in a number of Irish institutions central to this study on a mission in November 2007. Comments on an earlier draft of the report were provided by the authorities in October 2008. The authors extend their thanks to many people particularly in FÁS who explained their work and provided information, to the DETE which supported this work and organised the mission visits, to the DSFA for advice given during meetings with the review team and subsequently and comments on the Summary and Recommendations, and to a number of others for their contributions to the content and preparation of the report.</para>
+	</acknowledgements>
+	<chapter>
+		<title/>
+	</chapter>
+</document>

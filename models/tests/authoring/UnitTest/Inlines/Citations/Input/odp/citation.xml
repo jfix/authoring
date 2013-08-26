@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:oecd:names:xmlns:authoring:document ../../../../../../../schemas/oecd.author.xsd" xmlns="urn:oecd:names:xmlns:authoring:document" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mods="http://www.loc.gov/mods/v3">
+	<metadata>
+		<metadata subject="kim:author">
+			<metadata subject="kim:personname">
+				<metadata-item subject="kim:firstname" value="ysé"/>
+			</metadata>
+		</metadata>
+		<metadata subject="kim:othercredit">
+			<metadata subject="kim:personname">
+				<metadata-item subject="kim:firstname" value="Crowther_1"/>
+			</metadata>
+		</metadata>
+		<metadata-item subject="kim:date" value="Thu, 18 Oct 2012 16:49:00 CEST"/>
+		<metadata subject="kim:revhistory">
+			<metadata subject="kim:revision">
+				<metadata-item subject="kim:revnumber" value="1"/>
+				<metadata-item subject="kim:date" value="Thu, 18 Oct 2012 16:49:00 CEST"/>
+			</metadata>
+		</metadata>
+		<metadata subject="kim:printhistory">
+			<metadata-item subject="kim:para" value="Last printed: Wed, 25 Jul 2012 16:44:00 CEST"/>
+		</metadata>
+		<metadata-item subject="kim:orgname" value="O.E.C.D."/>
+		<metadata-item property="kim:cote" value="COM/TAD/ENV/JWPTE(2011)45/FINAL"/>
+		<metadata-item property="kim:originalClassif" value="Unclassified"/>
+		<metadata-item property="kim:language" value="English"/>
+		<metadata-item property="kim:originalLanguage" value="English"/>
+	</metadata>
+	<title/>
+
+	<chapter>
+		<title>defining illegal trade in environmentally sensitive goods</title>
+		<para>Before analysing the main impacts of illegal trade in environmentally-sensitive goods and ways to tackle the issue, a better understanding of what is meant by illegal trade in environmentally sensitive goods is first needed. </para>
+		<para>Over the last three decades, the national and international framework for the protection of the natural environment has evolved rapidly. As legislation has expanded, however, so too have the incentives and opportunities for individuals and companies to evade restrictions on the exploitation or trade of environmental goods such as wildlife and timber. Deliberate evasion of environmental laws and regulations by individuals and companies in the pursuit of personal financial benefit, where the impacts are transboundary or global — often referred to as "international environmental crime" — is a serious problem. </para>
+		<para> Five areas are generally considered to be of major importance: illegal trade in wildlife; illegal logging and its associated timber trade; illegal, unreported, and unregulated (IUU) fishing; illegal trade in controlled chemicals (particularly in ozone-depleting substances); and illegal disposal of hazardous waste. There are of course no accurate figures on the extent of these activities, but best guesses put their combined global value at about USD 30–70 billion a year, equivalent to perhaps 10–20% of the value of the illegal trade in narcotics or 15–30 % of the value of the trade in counterfeit goods <citation biblio-ref="oecd-2009a">(OECD, 2009a)</citation> . This illegal trade in environmentally sensitive goods often leads to environmental damage. </para>
+		<para> There are other resources whose production and trade may involve environmental impacts, and which are traded illegally, including oil, diamonds and other gemstones, and minerals such as coltan. These topics have been much less well researched than the five listed above, and in general they seem to be less significant in terms of value. Havocscope, a website which collates information and data on black markets, includes only two other "environmental" subjects in its listing of 54 black-market products: oil smuggling (USD 12 billion a year) and diamond smuggling (USD 0.3 billion a year). <sup/>
+			<footnote xml:id="fn1715">
+				<para> http://www. havocscope.com/indexes/products/ </para>
+			</footnote> According to these figures, oil smuggling clearly is significant, but whether it leads to any more environmental damage than legitimate trade in oil products is not clear; it may be more frequently associated simply with tax avoidance. </para>
+		<para> A better picture of the scale of the problem can be given by data from specific studies, in particular comparisons of illegal with legal activities. For example, a recent study suggests that 8–10% of the world’s elephants are killed each year by poachers (Wasser <emphasis style="italic">et al.,</emphasis> 2010). Research in Tanzania found that the official timber harvest volumes in 2004 were just 4% of the actual volume being traded, and the revenue lost to the government amounted to USD 58 million (Milledge <emphasis style="italic">et al.</emphasis> , 2007). A study of hazardous-waste shipments undertaken in thirteen European countries found that over half of the waste shipments examined were illegal (IMPEL-TFS Seaport II, 2006). Research undertaken in 2006 in the Republic of Guinea found that IUU fishing was equivalent to 60% of the legal catch, representing an annual loss to the country of some USD 110 million. Although in general, environmental crime tends to receive less attention than other areas of criminal activity, specific attempts to assess it almost always reveal more than had been anticipated. <footnote xml:id="fn1717">
+				<para>For example, an intensive one-day operation carried out by 90 customs administrations across the globe on 15 January 2009 resulted in seizures of 4 630 specimens of endangered wildlife, both live species and products. About 10 000 customs officers participated, representing, on average, almost one specimen for every two officers ‘Global CITES operation nets over 4500 endangered species in one day’, WCO press release, 2 February 2009; available online at http://www.wcoomd.org/press/?v=1&amp;lid=1&amp;cid=6&amp;id=174</para>
+			</footnote>
+		</para>
+
+	</chapter>
+	<bibliography>
+		<biblio-section>
+			<title>References</title>
+			<mods:mods ID="oecd-2009a">
+				<mods:identifier>Davies, B. &amp; M. Doble (2004), "The development and implementation of a landfill tax in the UK", in Addressing the Economics of Waste , OECD, Paris.</mods:identifier>
+			</mods:mods>
+		</biblio-section>
+	</bibliography>
+</document>

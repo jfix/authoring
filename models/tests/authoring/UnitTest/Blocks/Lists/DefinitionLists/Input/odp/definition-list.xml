@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:oecd:names:xmlns:authoring:document ../../../../../../../../schemas/oecd.author.xsd" xmlns="urn:oecd:names:xmlns:authoring:document" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mods="http://www.loc.gov/mods/v3">
+	<document-metadata>
+		<metadata>
+			<metadata subject="kim:author">
+				<metadata subject="kim:personname">
+					<metadata-item subject="kim:firstname" value="walsh_t"/>
+				</metadata>
+			</metadata>
+			<metadata subject="kim:othercredit">
+				<metadata subject="kim:personname">
+					<metadata-item subject="kim:firstname" value="Crowther_1"/>
+				</metadata>
+			</metadata>
+			<metadata-item subject="kim:date" value="Thu, 18 Oct 2012 19:23:00 CEST"/>
+			<metadata subject="kim:revhistory">
+				<metadata subject="kim:revision">
+					<metadata-item subject="kim:revnumber" value="1"/>
+					<metadata-item subject="kim:date" value="Thu, 18 Oct 2012 19:23:00 CEST"/>
+				</metadata>
+			</metadata>
+			<metadata subject="kim:printhistory">
+				<metadata-item subject="kim:para" value="Last printed: Mon, 25 Jun 2012 12:59:00 CEST"/>
+			</metadata>
+			<metadata-item subject="kim:orgname" value="O.E.C.D."/>
+			<metadata-item property="kim:cote" value="EDU/WKP(2012)13"/>
+			<metadata-item property="kim:originalClassif" value="Unclassified"/>
+			<metadata-item property="kim:language" value="English"/>
+			<metadata-item property="kim:originalLanguage" value="English"/>
+		</metadata>
+
+
+	</document-metadata>
+	<metadata/>
+
+	<title>LOOKING BEYOND THE NUMBERS</title>
+
+	<chapter>
+		<title>ACCOUNTABILITY SHIFTS IN EDUCATION</title>
+		<section>
+			<title>Building schools’ capacity</title>
+			<para>The work of school leaders is crucial to building school capacity for multiple accountability because accountability processes are nested in beliefs, experiences, and practices in schools. It requires school leaders who are willing and able to empower staff, and in turn, to involve and share responsibility with parents and other interested members of the local community. It also requires school leaders who are willing to be held accountable by them (Leithwood, 2001).</para>
+			<para>Apart from leadership, the capacity to handle data is a key element of school capacity building with respect to accountability (Ozga, 2009; Fullan, 2000). Masses of data are available through assessment and monitoring systems, indicators of effectiveness, targets, inspection, and review programs. Methods for accessing information and, consequently, analysing and interpreting it, are not self-evident in schools. As early as the 1970s, many of the relevant data were not available for schools or at least not in a form which could be easily used (Levin, 1974). Apart from the lack of availability and feasibility of data, until recently there was often a gap between the interests expressed in data and the actual use of data. Schools need the capability to transform data into knowledge appropriate for multiple accountability purposes. This requires proper school self-evaluation: obtaining real insights into the quality and processes of schools that are relevant to the practice of accountability on multiple fronts.</para>
+			<para>Coping with data requires that educators themselves become experts in interpreting data and transforming it into knowledge. Earl and Katz (2002; 2006, cited in Geijsel et al., 2010, p.62), point to three capacities that school leaders need in order to work in a data-rich world: </para>
+			<definition-list>
+				<list-item>
+					<term>Develop an inquiry habit of mind. </term>
+					<definition>
+						<para>Leaders need to reserve judgment and have a tolerance for ambiguity, to value deep understanding, take a range of perspectives, and systematically pose increasingly focused questions.</para>
+					</definition>
+				</list-item>
+				<list-item>
+					<term>Become data literate.</term>
+					<definition>
+						<para>Leaders must to be aware of how different data are needed for different purposes; they need to be able to evaluate data, recognising sound and unsound data, to be knowledgeable about statistical and measurement concepts, to recognise other kinds of data (not only numbers, but also opinions, anecdotes, observations), to make interpretation paramount (instead of using data for quick fixes), and to pay attention to reporting to different audiences.</para>
+					</definition>
+				</list-item>
+			</definition-list>
+		</section>
+	</chapter>
+</document>

@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xsi:schemaLocation="urn:oecd:names:xmlns:authoring:document ../../../../../../../../schemas/oecd.author.xsd" xmlns="urn:oecd:names:xmlns:authoring:document" xmlns:xlink="http://www.w3.org/1999/xlink">
+
+
+
+
+	<document-metadata>
+		<metadata xml:id="oecd-styles-PDF" property="oecdProcessingMeta">
+			<metadata-item xml:id="oecd-style-0001" property="style" value="Heading1"/>
+			<metadata-item xml:id="oecd-style-0002" property="style" value="BodyTex"/>
+		</metadata>
+	</document-metadata>
+
+	<!-- each style needs a guid -->
+
+	<!-- nomenclature 
+	
+	oecdStyleMeta
+	
+	oecdStyle-0001
+	
+	-->
+
+	<metadata>
+		<metadata-item property="kim:lastSubmittedToOLISOn" value="20090917"/>
+	</metadata>
+
+	<title/>
+
+	<glossary>
+		<gloss-item>
+			<term/>
+			<definition>
+				<para/>
+			</definition>
+		</gloss-item>
+	</glossary>
+
+	<preface>
+		<title/>
+	</preface>
+
+	<preface>
+		<title/>
+	</preface>
+
+	<executive-summary>
+		<title metadata-ref="oecd-style-0001"/>
+		<para metadata-ref="oecd-style-0002"/>
+	</executive-summary>
+
+	<introduction>
+		<title xref="oecd-style-0001"/>
+		<para xref="oecd-style-0002"/>
+	</introduction>
+
+
+	<chapter>
+		<title/>
+		<box number="1.2">
+			<title/>
+		</box>
+		<para/>
+
+
+		<section>
+			<title xref="oecd-style-0001"/>
+			<para xref="oecd-style-0002"/>
+			<equation>
+				<math xmlns="http://www.w3.org/1998/Math/MathML">
+					<mrow>
+						<mi>x</mi>
+						<mo>=</mo>
+						<mfrac>
+							<mrow>
+								<mo>&#x2212;</mo>
+								<mi>b</mi>
+								<mo>&#xB1;</mo>
+								<msqrt>
+									<mrow>
+										<msup>
+											<mi>b</mi>
+											<mn>2</mn>
+										</msup>
+										<mo>&#x2212;</mo>
+										<mn>4</mn>
+										<mi>a</mi>
+										<mi>c</mi>
+									</mrow>
+								</msqrt>
+							</mrow>
+							<mrow>
+								<mn>2</mn>
+								<mi>a</mi>
+							</mrow>
+						</mfrac>
+					</mrow>
+				</math>
+			</equation>
+		</section>
+
+
+
+		<conclusion>
+			<title/>
+		</conclusion>
+
+		<glossary>
+			<gloss-item>
+				<term/>
+				<definition>
+					<para/>
+				</definition>
+			</gloss-item>
+		</glossary>
+
+
+		<bibliography/>
+
+		<annex>
+			<title/>
+		</annex>
+
+		<appendix>
+			<title/>
+
+		</appendix>
+
+
+	</chapter>
+
+	<conclusion>
+		<title/>
+	</conclusion>
+
+
+	<glossary>
+		<gloss-item>
+			<term/>
+			<definition>
+				<para/>
+			</definition>
+		</gloss-item>
+	</glossary>
+
+
+
+	<bibliography/>
+
+	<appendix>
+		<title/>
+	</appendix>
+
+	<annex>
+		<title/>
+	</annex>
+
+</document>

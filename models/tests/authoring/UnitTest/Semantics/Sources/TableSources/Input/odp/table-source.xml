@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:oecd:names:xmlns:authoring:document ../../../../../../../../schemas/oecd.author.xsd" xmlns="urn:oecd:names:xmlns:authoring:document" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <metadata>
+    <metadata-item subject="kim:title"/>
+  </metadata>
+  <title/>
+  <chapter>
+    <title/>
+
+
+    <table>
+      <titles>
+        <title/>
+      </titles>
+
+      <tgroup cols="6" align="left">
+        <colspec colname="C1" colnum="1" colwidth="30.78mm"/>
+        <colspec colname="C2" colnum="2" colwidth="27.29mm"/>
+        <colspec colname="C3" colnum="3" colwidth="23.25mm"/>
+        <colspec colname="C4" colnum="4" colwidth="27.92mm"/>
+        <colspec colname="C5" colnum="5" colwidth="27.3mm"/>
+        <colspec colname="C6" colnum="6" colwidth="27.29mm"/>
+        <thead>
+          <row>
+            <entry align="left" colname="C1" colsep="0" rowsep="0" valign="middle" morerows="0">
+              <para xml:id="ID140be1a8-5af5-4be4-987b-0beb000ed21d"/>
+            </entry>
+            <entry align="center" colname="C2" colsep="0" rowsep="0" valign="middle" morerows="0">
+              <para xml:id="ID9b3883a4-9fd2-4b3b-8b45-d189e1102420">Cell thead align=</para>
+            </entry>
+            <entry align="left" colname="C3" colsep="0" rowsep="0" valign="top" morerows="0">
+              <para xml:id="ID8fd8ba15-4b4d-46bb-ab15-85b9ae6f6a71">Cell thead align=Left valign=Top</para>
+            </entry>
+            <entry align="right" colname="C4" colsep="0" rowsep="0" valign="bottom" morerows="0">
+              <para xml:id="ID13b85f49-b6b8-4bd8-97e1-39042566e17b">Cell thead align=Right valign=Bottom</para>
+            </entry>
+            <entry align="justify" colname="C5" colsep="0" rowsep="0" valign="middle" morerows="0">
+              <para xml:id="ID48ae844e-972b-47fd-80f7-ecbbaccef8fa">Cell thead align=Justify valign=middle</para>
+            </entry>
+            <entry align="center" colname="C6" colsep="0" morerows="1" rowsep="0" valign="middle">
+              <para xml:id="ID270ab862-bd42-43af-8bea-dc2c1c9958bc">Cell thead align=center valign=middle</para>
+            </entry>
+          </row>
+          <row>
+            <entry align="center" colname="C1" colsep="0" nameend="C5" namest="C1" rowsep="0" valign="top" morerows="0">
+              <para xml:id="ID7cfc464e-0ee6-4356-95c4-a4a4fbcab922">Merge Cell in thead</para>
+            </entry>
+          </row>
+        </thead>
+        <tbody valign="top">
+          <row>
+
+            <!-- NO INDENTATION @char="1" -->
+            <entry align="left" colname="C1" colsep="0" rowsep="0" valign="top" morerows="0">
+              <para xml:id="ID19a2376f-5928-43a0-a84f-ed8c676f5f26">INDENT 0</para>
+            </entry>
+            <entry align="left" colname="C2" colsep="0" morerows="5" rowsep="0" valign="top">
+              <para xml:id="IDcd606e06-22c6-4f47-9246-0664c7bc736e">Merge row</para>
+            </entry>
+            <entry align="center" colname="C3" colsep="0" nameend="C6" namest="C3" rowsep="0" valign="middle" morerows="0">
+              <para xml:id="IDf3de84c4-e17a-4f82-babd-6915681db7a4">Merge column</para>
+            </entry>
+          </row>
+          <row>
+
+            <!-- FIRST INDENTATION @-->
+            <entry charoff="0" align="left" colname="C1" colsep="0" rowsep="0" valign="top" morerows="0">
+              <para xml:id="ID4acda14f-110d-4485-84cb-df0b022f6a6d">INDENT 1</para>
+            </entry>
+            <entry align="left" colname="C3" colsep="0" rowsep="0" valign="top" morerows="0">
+              <para xml:id="ID87fd7771-dd08-4347-9f8a-ccef416af06d">align=Left and valign=top"</para>
+            </entry>
+            <entry align="right" colname="C4" colsep="0" rowsep="0" valign="bottom" morerows="0">
+              <para xml:id="IDc66c3e62-6ed3-4b50-ba27-921f71b624c6">align=Right and valign=bottom"</para>
+            </entry>
+            <entry align="left" colname="C5" colsep="0" rowsep="0" valign="middle" morerows="0">
+              <para xml:id="IDb05488dd-dd21-4e7d-8804-e8519f65f16c">align=Left and valign=middle"</para>
+            </entry>
+            <entry align="justify" colname="C6" colsep="0" rowsep="0" valign="top" morerows="0">
+              <para xml:id="ID01136972-4050-4bbf-a23b-68fbf680c40c">align=Justify and valign=top"</para>
+            </entry>
+          </row>
+          <row>
+            <entry charoff="0" align="left" colname="C1" colsep="0" rowsep="0" valign="top" morerows="0">
+              <para xml:id="IDc8bc9013-840e-4e55-9810-18583252c547">INDENT 2</para>
+            </entry>
+            <entry align="center" colname="C3" colsep="0" morerows="3" nameend="C6" namest="C3" rowsep="0" valign="middle">
+              <para xml:id="ID0aecdc60-9e83-4558-bcb4-6e3af3bbb751">Merge row and column</para>
+            </entry>
+          </row>
+          <row>
+            <entry charoff="0" char="4" align="left" colname="C1" colsep="0" rowsep="0" valign="top" morerows="0">
+              <para xml:id="ID676abc6d-80bc-4040-89bb-bd9ea11181ab">INDENT 3</para>
+            </entry>
+          </row>
+          <row>
+            <entry charoff="0" char="5" align="left" colname="C1" colsep="0" rowsep="0" valign="top" morerows="0">
+              <para xml:id="ID3fcc798d-f194-4c72-aa8e-3007e2f35b71">INDENT 4</para>
+            </entry>
+          </row>
+          <row>
+            <entry charoff="0" char="6" align="left" colname="C1" colsep="0" rowsep="0" valign="top" morerows="0">
+              <para xml:id="IDc7259340-be36-4d37-98de-eba82d967e2c">INDENT 5</para>
+            </entry>
+          </row>
+          <row>
+            <entry align="left" colname="C1" colsep="0" rowsep="0" valign="top" morerows="0">
+              <para xml:id="IDf99b6a70-eb75-47bb-adeb-039e108d7650">Cell with note reference</para>
+            </entry>
+            <entry align="left" colname="C2" colsep="0" rowsep="0" valign="top" morerows="0">
+              <para xml:id="ID2853fa6e-dc6f-49c5-a0d2-20b9df5351ae">Cell with note reference</para>
+            </entry>
+            <entry align="left" colname="C3" colsep="0" nameend="C6" namest="C3" rowsep="0" valign="top" morerows="0">
+              <para xml:id="ID7281051c-da4c-455f-a13e-6a6254ac45ba">Cell with note reference</para>
+            </entry>
+          </row>
+        </tbody>
+      </tgroup>
+      <tfoot>
+        <notes>
+          <note xml:id="IDa6bbaaf2-45d8-4818-8706-7487bb8a878d">
+            <para xml:id="IDb9296267-bbcb-4c1f-9e0e-35461148e7f5">Table notes with prefix Notes:.</para>
+          </note>
+          <note xml:id="IDc6f4c982-6bdf-457f-9fc3-f8b999f2b577">
+            <para xml:id="ID0e14d65d-e694-4ac9-b00d-809425a67792">Table notes with prefix Note:.</para>
+          </note>
+          <note xml:id="ID767c9105-6ffa-4cb3-a540-a215bd56fb2f">
+            <para xml:id="ID5a518d6a-02ea-4d74-a474-ba33e7831a02">Table notes alpha.</para>
+          </note>
+          <note xml:id="IDc237dbda-b4c3-41bc-b357-7857c9d60b25">
+            <para xml:id="IDf50460fd-c3e0-4db7-9ee9-4211a12de8af">Table notes alpha.</para>
+          </note>
+          <note xml:id="IDe6159d3c-ba58-4d30-aab3-522c4f422fb8">
+            <para xml:id="ID8af198f6-5465-43f3-a30a-327a03969058">Table notes alpha.</para>
+            <para xml:id="IDd6e53c56-968e-421e-b438-a5bef73b25ee">Table notes without prefix.</para>
+          </note>
+
+
+        </notes>
+        <sources>
+          <source>
+            <citation>Table source with prefix Sources:</citation>
+          </source>
+        </sources>
+      </tfoot>
+
+    </table>
+
+
+
+
+
+
+  </chapter>
+</document>

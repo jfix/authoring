@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:oecd:names:xmlns:authoring:document ../../../../../../../../schemas/oecd.author.xsd" xmlns="urn:oecd:names:xmlns:authoring:document" xmlns:xlink="http://www.w3.org/1999/xlink">
+	<metadata>
+		<metadata subject="kim:author">
+			<metadata subject="kim:personname">
+				<metadata-item subject="kim:firstname" value="barnet_a"/>
+			</metadata>
+		</metadata>
+		<metadata subject="kim:othercredit">
+			<metadata subject="kim:personname">
+				<metadata-item subject="kim:firstname" value="Crowther_1"/>
+			</metadata>
+		</metadata>
+		<metadata-item subject="kim:date" value="Thu, 18 Oct 2012 17:37:00 CEST"/>
+		<metadata subject="kim:revhistory">
+			<metadata subject="kim:revision">
+				<metadata-item subject="kim:revnumber" value="1"/>
+				<metadata-item subject="kim:date" value="Thu, 18 Oct 2012 17:37:00 CEST"/>
+			</metadata>
+		</metadata>
+		<metadata subject="kim:printhistory">
+			<metadata-item subject="kim:para" value="Last printed: Wed, 10 Oct 2012 17:04:00 CEST"/>
+		</metadata>
+		<metadata-item subject="kim:orgname" value="O.E.C.D."/>
+		<metadata-item property="kim:cote" value="EDU/WKP(2012)22"/>
+		<metadata-item property="kim:jobticket" value="JT03328357"/>
+		<metadata-item property="kim:originalClassif" value="Unclassified"/>
+		<metadata-item property="kim:language" value="English"/>
+		<metadata-item property="kim:originalLanguage" value="English"/>
+	</metadata>
+
+	<title/>
+	<chapter>
+		<title/>
+	</chapter>
+
+	<conclusion>
+		<title>Conclusions</title>
+		<para>This paper addresses the following question: How can schools and school boards be held accountable to the public for their decisions and performance? </para>
+		<para>In decentralised educational systems, it is no longer enough that autonomous schools/school boards are held accountable only for compliance with input factors, as required by law and regulation; they must also meet the required quality standards for service delivery. School performance accountability is a good tool for this as it enables central governments to steer schools and school governing boards on the basis of their performance. In this respect, school performance accountability is a cornerstone of accountability in decentralised educational systems. </para>
+		<para>However, school performance accountability does not allow for assessing such elements as socialisation, integration, and personal development. It also does not look at building local confidence and legitimacy. Recently, in some countries there has been a trend in the public services to move towards multiple school accountability. Multiple accountability takes into account different stakeholders’ varying perceptions of the quality, effectiveness and efficiency of schooling. It can complement school performance accountability by looking beyond the numbers and also defining schooling in professional and democratic terms. Last, but not least, it aims to foster transparency in the system by opening it up to public scrutiny. In practice, the government is advised to discuss the purposes and use of multiple accountability mechanisms and to balance the opportunities (information to learn from and to use to improve, steer and formulate policies) with the risks (information overload). If multiple accountability mechanisms are indeed perceived as complementary to vertical accountability mechanisms, central government has to agree with school organisations on how and to what extent multiple accountability mechanisms are to be introduced and used. </para>
+		<para>There have been numerous shifts in accountability practice and research over the last few decades. Accountability issues are a central priority for OECD countries and one of the hottest debates currently going. This paper has sought to argue that vertical measures of accountability, that is, regulatory and school performance accountability, can be usefully augmented by horizontal measures involving multiple stakeholders. This combination aims to build an efficient and effective accountability system that takes into account the nuanced nature and purposes of education. Combining various forms of accountability will help to improve the overall education system, policy for reform, and therefore ultimately improve the quality of education.</para>
+	</conclusion>
+
+</document>

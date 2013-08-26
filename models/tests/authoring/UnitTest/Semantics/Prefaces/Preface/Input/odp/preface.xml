@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xsi:schemaLocation="urn:oecd:names:xmlns:authoring:document ../../../../../../../../schemas/oecd.author.xsd" xmlns="urn:oecd:names:xmlns:authoring:document" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mods="http://www.loc.gov/mods/v3">
+	<metadata>
+		<metadata property="kim:title">
+			<metadata-item xml:lang="en" property="kim:mainTitle" value="Competitiveness and Private Sector Development: Egypt 2010"/>
+			<metadata-item xml:lang="en" property="kim:subTitle" value="BUSINESS CLIMATE DEVELOPMENT STRATEGY"/>
+			<metadata-item xml:lang="en" property="kim:conciseTitle" value="Value of EC. From A to Z"/>
+			<metadata-item xml:lang="fr" property="kim:mainTitle" value="Valeur de la croissance économique"/>
+			<metadata-item xml:lang="fr" property="kim:subTitle" value="de la crise au renouveau"/>
+			<metadata-item xml:lang="fr" property="kim:conciseTitle" value="Valeur de la CE. De A à Z"/>
+		</metadata>
+		<metadata-item xml:lang="en" property="kim:description" value="Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec sollicitudin libero id elit. Sed euismod nonummy neque. Nam dignissim urna vel urna. Nunc aliquet. Nunc vel dui mattis magna varius condimentum. Etiam lacus enim, aliquam ultricies, luctus ut, placerat id, lectus. Vestibulum laoreet commodo tortor. Nunc eget urna. Suspendisse ac orci. Vivamus quis tortor facilisis velit interdum blandit. Mauris euismod convallis diam. Quisque turpis metus, aliquam sed, euismod sit amet, mollis a, ligula. Maecenas ultricies turpis vitae augue. Suspendisse potenti. Etiam hendrerit cursus eros."/>
+		<metadata-item xml:lang="fr" property="kim:description" value="Ut nibh nisi, cursus eget, aliquet eget, dapibus at, felis. Mauris mollis. Nullam dapibus tempus tortor. Vivamus adipiscing rutrum sapien. Nullam et tellus. Sed accumsan ultricies odio. Aliquam gravida elementum mauris. Quisque convallis orci eu ante. Sed viverra, ipsum malesuada euismod ultrices, nisl neque suscipit lectus, vel ultricies metus elit nec tellus. Aenean tristique risus ut eros. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Fusce augue. Curabitur placerat nunc quis justo. Sed ac pede in lorem laoreet semper. In hac habitasse platea dictumst. Ut interdum dictum dui. Vivamus luctus. Integer vitae arcu. Aliquam erat volutpat."/>
+		<metadata-item property="kim:originalClassif" value="Unclassified"/>
+		<metadata-item property="kim:language" value="eng"/>
+		<metadata-item property="kim:language" value="fre"/>
+		<metadata-item property="kim:originalLanguage" value="eng"/>
+		<metadata property="kim:author">
+			<metadata property="kim:authorPhysical">
+				<metadata-item property="kim:familyName" value="Hugo"/>
+				<metadata-item property="kim:otherGivenNamesName" value="Victor E."/>
+				<metadata-item property="kim:affiliation" value="OECD"/>
+				<metadata-item property="kim:affiliation" value="IMF"/>
+				<metadata-item property="kim:order" value="1"/>
+			</metadata>
+			<metadata property="kim:authorPhysical">
+				<metadata-item property="kim:familyName" value="Dupond"/>
+				<metadata-item property="kim:otherGivenNamesName" value="Jean"/>
+				<metadata-item property="kim:affiliation" value="World Bank"/>
+				<metadata-item property="kim:order" value="2"/>
+			</metadata>
+			<metadata property="kim:authorPhysical">
+				<metadata-item property="kim:familyName" value="Caesar"/>
+				<metadata-item property="kim:otherGivenNamesName" value="Caius Julius"/>
+				<metadata-item property="kim:affiliation" value="Roman Republic"/>
+				<metadata-item property="kim:order" value="3"/>
+			</metadata>
+			<metadata property="kim:authorCorporate">
+				<metadata property="kim:authorOrganisation">
+					<metadata-item property="kim:name" value="International Energy Agency"/>
+					<metadata-item property="kim:acronym" value="IEA"/>
+					<metadata-item property="kim:order" value="1"/>
+				</metadata>
+				<metadata property="kim:authorOrganisation">
+					<metadata-item property="kim:name" value="Nuclear Energy Agency"/>
+					<metadata-item property="kim:acronym" value="NEA"/>
+					<metadata-item property="kim:order" value="2"/>
+				</metadata>
+				<metadata property="kim:authorCommittee">
+					<metadata-item property="kim:name" value="Committee for French Language Preservation"/>
+					<metadata-item property="kim:acronym" value="CFLP"/>
+					<metadata-item property="kim:order" value="1"/>
+				</metadata>
+				<metadata property="kim:authorCommittee">
+					<metadata-item property="kim:name" value="Committee of Laughing Enhancement"/>
+					<metadata-item property="kim:acronym" value="CLE"/>
+					<metadata-item property="kim:order" value="2"/>
+				</metadata>
+				<metadata property="kim:authorWorkingParty">
+					<metadata-item property="kim:name" value="Working Party on Whales Proliferation"/>
+					<metadata-item property="kim:acronym" value="WP56"/>
+					<metadata-item property="kim:order" value="1"/>
+				</metadata>
+				<metadata property="kim:authorWorkingParty">
+					<metadata-item property="kim:name" value="Working Party for Children Education"/>
+					<metadata-item property="kim:acronym" value="WPCE"/>
+					<metadata-item property="kim:order" value="2"/>
+				</metadata>
+				<metadata property="kim:authorDirectorate">
+					<metadata-item property="kim:name" value="Operations Service"/>
+					<metadata-item property="kim:acronym" value="OPS"/>
+					<metadata-item property="kim:order" value="1"/>
+				</metadata>
+				<metadata property="kim:authorDirectorate">
+					<metadata-item property="kim:name" value="Education Directorate"/>
+					<metadata-item property="kim:acronym" value="EDU"/>
+					<metadata-item property="kim:order" value="2"/>
+				</metadata>
+			</metadata>
+		</metadata>
+		<metadata property="kim:contact">
+			<metadata-item property="kim:familyName" value="De Musset"/>
+			<metadata-item property="kim:otherGivenNames" value="Alfred"/>
+			<metadata-item property="kim:affiliation" value="OECD"/>
+			<metadata-item property="kim:email" value="Alfred.deMusset@oecd.org"/>
+			<metadata-item property="kim:phoneNumber" value="+33 1 45 24 99 99"/>
+			<metadata-item property="kim:order" value="1"/>
+		</metadata>
+		<metadata property="kim:contact">
+			<metadata-item property="kim:familyName" value="Garibaldi"/>
+			<metadata-item property="kim:otherGivenNames" value="Jeronimo"/>
+			<metadata-item property="kim:affiliation" value="IEA"/>
+			<metadata-item property="kim:email" value="jeronimo.garibaldi@iea.org"/>
+			<metadata-item property="kim:phoneNumber" value="+ 33 40 57  99 99"/>
+			<metadata-item property="kim:order" value="2"/>
+		</metadata>
+		<metadata property="kim:forEvent">
+			<metadata-item property="kim:meetingName" value="Meeting of Whales Proliferation Control"/>
+			<metadata-item property="kim:meetingNumber" value="7"/>
+			<metadata-item property="kim:meetingStartDate" value="20090928093000"/>
+			<metadata-item property="kim:meetingEndDate" value="20090929190000"/>
+			<metadata-item property="kim:meetingPlace" value="French Polynesia, Moorea Island"/>
+			<metadata-item property="kim:meetingCountry" value="France"/>
+		</metadata>
+		<metadata property="kim:subject">
+			<metadata-item property="kim:subject" value="biodiversity offsets"/>
+			<metadata-item property="kim:subject" value="nature conservation"/>
+			<metadata-item property="kim:keyword" value="I don't eat whales"/>
+			<metadata-item property="kim:keyword" value="AOC sign for Jim West"/>
+			<metadata property="kim:coverage">
+				<metadata-item property="kim:coverage" value="Atlantic Ocean"/>
+				<metadata-item property="kim:coverage" value="Antarctic Ocean"/>
+				<metadata-item property="kim:specificToArea" value="Pacific Ocean"/>
+			</metadata>
+			<metadata property="kim:specificToTopic">
+				<metadata-item property="kim:JELClassification" value="Q31"/>
+				<metadata-item property="kim:webTopic" value="Whales and marine animals"/>
+			</metadata>
+		</metadata>
+		<metadata property="kim:PWB">
+			<metadata-item property="kim:PWBBiennium" value="2013-2014"/>
+			<metadata-item property="kim:PWBStrategicObjective" value="SO-1"/>
+			<metadata-item property="kim:PWBOutputGroup" value="OG-45"/>
+			<metadata-item property="kim:PWBOutputResult" value="XXX"/>
+			<metadata-item property="kim:PWBIntermediateOutputResult" value="XX-1X"/>
+			<metadata-item property="kim:PWBProject" value="P4736"/>
+			<metadata-item property="kim:PWBSubProject" value="P4736-2"/>
+			<metadata-item property="kim:PWBPercentage" value="40"/>
+		</metadata>
+		<metadata property="kim:PWB">
+			<metadata-item property="kim:PWBBiennium" value="2013-2014"/>
+			<metadata-item property="kim:PWBStrategicObjective" value="SO-2"/>
+			<metadata-item property="kim:PWBOutputGroup" value="OG-6"/>
+			<metadata-item property="kim:PWBOutputResult" value="ZZZ"/>
+			<metadata-item property="kim:PWBIntermediateOutputResult" value="ZZ-2Z"/>
+			<metadata-item property="kim:PWBProject" value="P4637"/>
+			<metadata-item property="kim:PWBSubProject" value="P4637-A"/>
+			<metadata-item property="kim:PWBPercentage" value="60"/>
+		</metadata>
+		<metadata-item property="kim:contentType" value="Undefined content type"/>
+		<metadata-item property="kim:contentStatus" value="OECD publication"/>
+		<metadata-item property="kim:contentStatusLastChangeDate" value="20100327184406"/>
+		<metadata-item property="kim:businessContext" value="Projects and studies"/>
+		<metadata-item property="kim:provenance" value="IEA"/>
+		<metadata-item property="kim:natureOfInformation" value="Analytical"/>
+		<metadata-item property="kim:productType" value="Monograph"/>
+		<metadata-item property="kim:lastSubmittedToPACOn" value="20100128080000"/>
+		<metadata-item property="kim:lastRejectedByPACOn" value="20100126091433"/>
+		<metadata-item property="kim:embargoedUntil" value="20100228080000"/>
+		<metadata property="kim:derivedFrom">
+			<metadata-item property="kim:derivedFromOD" value="FAKE/FOO/BOF(2009)23|eng-fre|JT03269711|JT00208401"/>
+		</metadata>
+	</metadata>
+	<title/>
+
+	<preface xml:id="preface-0001">
+		<metadata subject="kim:author">
+			<metadata subject="kim:personname">
+				<metadata-item subject="kim:firstname" value="Mahmoud"/>
+				<metadata-item subject="kim:lastname" value="Mohieldin"/>
+				<metadata-item property="kim:affiliation" value="Minister of Investment"/>
+				<metadata-item property="kim:affiliation" value="The Arab Republic of Egypt"/>
+			</metadata>
+		</metadata>
+		<title>Preface by H.E. the Minister of Investment, Mahmoud Mohieldin, of the Arab Republic of Egypt</title>
+		<paragraph-group>
+			<para>The global economy has witnessed several crises during the past few years, ranging from a crisis in food prices, an energy crisis, and finally the financial crisis and its aftermath. These successive crises have posed challenges, yet created opportunities for developed and emerging economies. The world economy is now reshaping itself, and countries that work to create a balanced and stable investment environment for recovery and growth will be in a better position in the future.</para>
+			<para>During the various crisis situations in recent years Egypt has positively differentiated itself from its peers in the Middle East and North Africa, demonstrating its economic resilience and commitment to macroeconomic stability through relentless reform efforts. The government has implemented significant structural reforms in recent years. These include reforming the financial sector to enhance its soundness and stability, strengthening the supervisory and regulatory framework, modernising the institutional infrastructure, liberalising trade, strengthening the monetary policy framework, continuing fiscal consolidation, and a complete overhaul of the tax system. These reforms have led to a friendlier investment climate, enhancing private sector-led growth, and giving birth to a new trajectory of sustained and better diversified growth of the Egyptian economy. Egypt is one of the most open and dynamic economies among the emerging markets with real GDP growth increasing from an average of 3.5% during 2001–04 to around 7% between 2006 and 2008 – a national record compared to the previous twenty-five years. The Egyptian economy managed to maintain real economic growth of approximately 5% in 2009, despite the global crisis and, with a broad-based strong performance, growth is estimated to have reached more than 5% in the fiscal year which ended on 30 June.</para>
+			<para>This progress has been reflected in international and regional agencies’ confidence in the Egyptian economy’s performance. Egypt was, again, for the fourth consecutive year, ranked amongst the Top 10 Reformer in the IFC/World Bank Doing Business Report. According to the World Investment Report 2010, Egypt was ranked first in North Africa and second in Africa in terms of FDI inflows, ranking 31st on the global level. Despite the difficult global environment, FDI inflows to Egypt in 2008/09 far surpassed levels in 2005/06 and were more than double the levels achieved in 2004/05.</para>
+			<para>The key to ensure that growth benefits the whole population and trickles down to the less privileged will be to speed up reforms on the social front, especially with regard to health and education. Providing citizens with good-quality and sustainable education will enable them to exploit job opportunities and compete in a rapidly changing marketplace. This should be done in partnership with the private sector that is keen to develop the skills of their populations as part of their corporate social responsibility.</para>
+			<para>Throughout the years, the Egyptian government, and in particular the Ministry of Investment, have worked closely with the MENA-OECD Investment Programme, in order to develop the Business Climate Development Strategy (BCDS). In its first of three phases, the BCDS has carried out an in-depth analysis of the Egyptian investment climate and has assessed the efforts made by the Egyptian government to improve its Business Climate, in accordance with the OECD’s Policy Framework. The BCDS has also highlighted areas that need further development.</para>
+			<para> The speed and magnitude of reforms will help prepare for the eventual sustainable economic recovery. The path for high growth is paved by five fundamentals–openness and integration with the rest of the world; macroeconomic stability and controlled budget deficits; accumulation of savings allowing for infrastructure and human capital investments; encouraging efficient markets and regulating them effectively; and maintaining a strong state that protects citizens’ rights and ensures sustainable development. However, such efforts are not going to be sufficient without global cooperation, including within trade regimes, and they could be undermined by protectionism, resistance to the freedom of investments, and the risk of a global crowdingout effect from the large budget deficits of big developed economies that will need refinancing over the next couple of years. The small open economies of North Africa and the Middle East need more than ever before a benign global environment in order for them to sustain growth and development.</para>
+			<para> I would like to take this opportunity to thank the OECD for collaborating with the Ministry of Investment, through the MENA-OECD Investment Programme, over the past few years to assess and shed light on the efforts we as the Egyptian government have exerted to improve our business climate. It is an outstanding document on both the national and international fronts.</para>
+		</paragraph-group>
+	</preface>
+
+	<preface xml:id="preface-0002">
+		<metadata subject="kim:author">
+			<metadata subject="kim:personname">
+				<metadata-item subject="kim:firstname" value="Marc"/>
+				<metadata-item subject="kim:lastname" value="Franco"/>
+				<metadata-item property="kim:affiliation" value="Head of EU Delegation"/>
+				<metadata-item property="kim:affiliation" value="Cairo, Egypt"/>
+			</metadata>
+		</metadata>
+		<title>Preface by H.E. Ambassador Marc Franco, Head of the Delegation, European Union in Egypt</title>
+		<paragraph-group>
+			<para>In September 2009, it was announced that Egypt had just been selected for the fourth year in a row as a Top 10 Reformer by the World Bank Doing Business Report. During those same years Egypt had achieved record rates of GDP growth – in several cases of over 7%. This performance reflects the fact that Egypt is especially aware that it is crucial for government to push a reformist agenda during the good times, particularly when these reforms are aimed at easing the bureaucratic burden of doing business for companies and allowing market players a more level playing ground. All this helps a country to achieve its full economic potential.</para>
+			<para>This not only sends a key message to foreign investors and their much sought-after investments, but also to local business people, the true core of any country’s sustainable economic development. Investors in general are particularly eager for comparative business climate studies to be published by independent international organisations. They are fully aware that they accurately reflect which countries are serious about economic reform.</para>
+			<para>The importance of such reform shows in times of crises, in particular in the case of external shocks such as those we have been experiencing for the last two years. One of the clear messages that Egypt can take out of the crisis is that reform of the business climate – as well as strengthening the financial sector – pays off and that there should be no doubt about the beneficial impact of future reforms in this area.</para>
+			<para>The reforms achieved by Egypt in the reform of its business climate are commendable. This success should incentivise policy makers and stakeholders to press hard on the reform path and consolidate the results achieved. Economic growth in the long term is created by genuine reforms in all domains of the investment climate. The Business Climate Development Strategy – to which the Ministry of Investment, particularly His Excellency Minister Mohieldin, has lent such strong support and cooperation – is a crucial instrument for taking stock of achievements and helping policy makers set out the priorities for the path ahead.</para>
+			<para>I am confident that this report will provide more tools for the Government of Egypt to continue on its successful reform path, which should ultimately have the benefit of the Egyptian population and poverty reduction in mind.</para>
+		</paragraph-group>
+	</preface>
+
+	<chapter>
+		<title/>
+	</chapter>
+
+</document>

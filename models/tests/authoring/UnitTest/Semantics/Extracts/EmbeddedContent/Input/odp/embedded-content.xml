@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:oecd:names:xmlns:authoring:document ../../../../../../../../schemas/oecd.author.xsd" xmlns="urn:oecd:names:xmlns:authoring:document" xmlns:xlink="http://www.w3.org/1999/xlink">
+	<metadata>
+		<metadata-item subject="kim:mainTitle" value="GLOBALISATION IN THE FISHING AND AQUACULTURE INDUSTRY"/>
+		<metadata-item property="kim:cote" value="TAD/FI(2008)12/PART1/REV"/>
+		<metadata-item property="kim:originalClassif" value="For official use"/>
+		<metadata-item property="kim:language" value="en"/>
+		<metadata-item property="kim:originalLanguage" value="en"/>
+	</metadata>
+	<title>GLOBALISATION IN THE FISHING AND AQUACULTURE INDUSTRY</title>
+	<chapter>
+		<title>Introduction and Background</title>
+		<para>A number of papers were subsequently developed and discussed by the Committee. Furthermore, in April 2007 the Committee hosted (jointly with the FAO Secretariat) a Workshop on the Challenges and Opportunities of Fisheries Globalisation4. These elements constitute the substantive material on which this report has been developed.</para>
+		<section>
+			<title>Defining Globalisation</title>
+			<para>In a written submission to the United Kingdom House of Lords Select Committee on Economic Affairs inquiry into the global economy, the former Chief Economist of the OECD suggested that5: </para>
+			<embedded-content>
+				<metadata>
+					<metadata>
+						<metadata-item xml:lang="en" property="kim:description" value="Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec sollicitudin libero id elit. Sed euismod nonummy neque. Nam dignissim urna vel urna. Nunc aliquet. Nunc vel dui mattis magna varius condimentum. Etiam lacus enim, aliquam ultricies, luctus ut, placerat id, lectus. Vestibulum laoreet commodo tortor. Nunc eget urna. Suspendisse ac orci. Vivamus quis tortor facilisis velit interdum blandit. Mauris euismod convallis diam. Quisque turpis metus, aliquam sed, euismod sit amet, mollis a, ligula. Maecenas ultricies turpis vitae augue. Suspendisse potenti. Etiam hendrerit cursus eros."/>
+						<metadata-item property="kim:affiliation" value="United Kingdom House of Lords Select Committee on Economic Affairs"/>
+						<!--  valueURI="http://kim.oecd.org/Taxonomy/Organisations#HouseofLords" -->
+						<metadata-item property="kim:language" value="eng"/>
+					</metadata>
+				</metadata>
+				<legis xmlns="http://www.legislation.gov.uk/namespaces/legislation">
+					<asecondary>
+						<para>At the OECD, globalisation is interpreted as a process towards closer economic integration of markets. Viewed from this perspective, globalisation is not a new phenomenon, but an ongoing process that has been, by and large, accelerating over the past decades. More integrated markets offer potential benefits that improve our material well-being, but also imply adjustment costs and pose challenges for policy. Perfect integration would imply identical prices for identical goods and services. Defined in this way, the evidence suggests that we are still far from a globalised or fully integrated world economy. There are no compelling reasons, however, to suggest that, spurred by new information and communication technologies as well as by business strategies and public policies, the process will not continue to evolve.</para>
+					</asecondary>
+				</legis>
+			</embedded-content>			
+		</section>
+
+	</chapter>
+</document>

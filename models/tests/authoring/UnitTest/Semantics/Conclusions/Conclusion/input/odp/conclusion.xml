@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xsi:schemaLocation="urn:oecd:names:xmlns:authoring:document ../../../../../../../../schemas/oecd.author.xsd" xmlns="urn:oecd:names:xmlns:authoring:document" xmlns:xlink="http://www.w3.org/1999/xlink">
+	<metadata>
+		<metadata subject="kim:author">
+			<metadata subject="kim:personname">
+				<metadata-item subject="kim:firstname" value="Marianne"/>
+				<metadata-item subject="kim:surname" value="Aalto"/>
+			</metadata>
+		</metadata>
+		<metadata subject="kim:othercredit">
+			<metadata subject="kim:personname">
+				<metadata-item subject="kim:firstname" value="Crowther_1"/>
+			</metadata>
+		</metadata>
+		<metadata-item subject="kim:date" value="Thu, 18 Oct 2012 16:52:00 CEST"/>
+		<metadata subject="kim:revhistory">
+			<metadata subject="kim:revision">
+				<metadata-item subject="kim:revnumber" value="1"/>
+				<metadata-item subject="kim:date" value="Thu, 18 Oct 2012 16:52:00 CEST"/>
+			</metadata>
+		</metadata>
+		<metadata subject="kim:printhistory">
+			<metadata-item subject="kim:para" value="Last printed: Fri, 12 Oct 2012 13:51:00 CEST"/>
+		</metadata>
+		<metadata-item subject="kim:orgname" value="O.E.C.D."/>
+		<metadata-item property="kim:cote" value="DAF/COMP/WP3(2012)9"/>
+		<metadata-item property="kim:originalClassif" value="Unclassified"/>
+		<metadata-item property="kim:language" value="English"/>
+		<metadata-item property="kim:originalLanguage" value="English"/>
+	</metadata>
+	<title>LENIENCY FOR SUBSEQUENT APPLICANTS</title>
+	<chapter>
+		<title>Introduction</title>
+		<sub-title/>
+
+	</chapter>
+	<conclusion>
+		<title>Conclusion</title>
+		<para>Hard core cartels are one of the most serious violations of competition law, harming consumers and the economy as a whole. Discovering and prosecuting them, however, is complex because of the secrecy under which they operate. Traditional investigative means are not always sufficient to this purpose. Hence, competition authorities have introduced enforcement policies, such as leniency programmes to make discovery easier. Leniency programmes provide incentives for cartel members to break ranks, report the existence of the cartel and co-operate with the investigation. Such co-operation is rewarded by immunity from or reduction of sanctions that could otherwise be imposed to the co-operating company or individual. </para>
+		<para>Leniency programmes represent the most effective tool in the fight against cartels. However, their optimal design is crucial for their success. This paper addresses the importance of co-operation from subsequent applicants for investigating authorities and the different ways in which jurisdictions reward such co-operation. This can be done either in the leniency programme itself, buy offering a lenient treatment to the first in the door and to subsequent applicants; or by rewarding co-operation from subsequent applicants through other policies, e.g. early case termination policies or the fining policy itself. Careful balancing of these policies is therefore necessary to ensure an effective enforcement action, and to maintain the appropriate incentives for companies and individuals to access the leniency programme. </para>
+	</conclusion>
+
+</document>

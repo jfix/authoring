@@ -4,7 +4,7 @@
         <filters directoryPatterns="" filePatterns="" positiveFilePatterns="" showHiddenFiles="false"/>
         <options/>
     </meta>
-    <projectTree name="oecd.author-checklist.xpr">
+    <projectTree name="author-checklist.xpr">
         <folder path="Intergration/"/>
         <folder path="UnitTest/"/>
         <file name="CheckList.xml"/>

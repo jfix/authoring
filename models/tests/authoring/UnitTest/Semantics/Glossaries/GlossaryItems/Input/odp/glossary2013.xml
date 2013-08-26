@@ -1,0 +1,260 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xsi:schemaLocation="urn:oecd:names:xmlns:authoring:document ../../../../../../../../schemas/oecd.author.xsd"
+ xmlns="urn:oecd:names:xmlns:authoring:document"
+ xmlns:xlink="http://www.w3.org/1999/xlink">
+	<metadata>
+		<metadata subject="kim:author">
+			<metadata subject="kim:personname">
+				<metadata-item subject="kim:firstname" value="moreddu_c"/>
+			</metadata>
+		</metadata>
+		<metadata subject="kim:othercredit">
+			<metadata subject="kim:personname">
+				<metadata-item subject="kim:firstname" value="Crowther_1"/>
+			</metadata>
+		</metadata>
+		<metadata-item subject="kim:date" value="Thu, 18 Oct 2012 20:44:00 CEST"/>
+		<metadata subject="kim:revhistory">
+			<metadata subject="kim:revision">
+				<metadata-item subject="kim:revnumber" value="1"/>
+				<metadata-item subject="kim:date" value="Thu, 18 Oct 2012 20:44:00 CEST"/>
+			</metadata>
+		</metadata>
+		<metadata subject="kim:printhistory">
+			<metadata-item subject="kim:para" value="Last printed: Tue, 05 Jun 2012 11:17:00 CEST"/>
+		</metadata>
+		<metadata-item subject="kim:orgname" value="O.E.C.D."/>
+		<metadata-item property="kim:cote" value="TAD/CA/APM/WP(2012)6/FINAL"/>
+		<metadata-item property="kim:originalClassif" value="Unclassified"/>
+		<metadata-item property="kim:language" value="English"/>
+		<metadata-item property="kim:originalLanguage" value="English"/>
+	</metadata>
+	<title>Agricultural Policies: Monitoring and Evaluation 2012, OECD Countries</title>
+	<chapter>
+		<title>Agricultural policies: Monitoring and evaluation 2012, OECD countries</title>
+		
+		<para><abbrev metadataRefs="temp meneta" definition="222"></abbrev></para>
+		
+		<!-- tagged with some redundancy as per JC recommendation -->
+		<glossary>
+			<title>List of acronyms and abbreviations</title>
+			<gloss-item>
+				<term>AANZFTA</term>
+				<definition>
+					<para>Australia-New Zealand Free Trade Agreement</para>
+				</definition>
+			</gloss-item>
+			<gloss-item>
+				<term>ACHIPIA</term>
+				<definition>
+					<para>Agency for Quality and Food Safety (Chile)</para>
+				</definition>
+			</gloss-item>
+			<gloss-item>
+				<term>ACRE</term>
+				<definition>
+					<para>Average Crop Revenue Election (United States)</para>
+				</definition>
+			</gloss-item>
+			<gloss-item>
+				<term>AMS</term>
+				<definition>
+					<para>Aggregate Measurement of Support</para>
+				</definition>
+			</gloss-item>
+			<gloss-item>
+				<term>ASEAN</term>
+				<definition>
+					<para>Association of South East Asian Nations</para>
+				</definition>
+			</gloss-item>
+			<gloss-item>
+				<term>BAF</term>
+				<definition>
+					<para>Financial Coordination Subsidy (Bono de Articulación Financiera; Chile)</para>
+				</definition>
+			</gloss-item>
+			<gloss-item>
+				<term>BRK CU</term>
+				<definition>
+					<para>Belarus-Kazakhstan-Russia Customs Union</para>
+				</definition>
+			</gloss-item>
+			<gloss-item>
+				<term>BRM</term>
+				<definition>
+					<para>Business Risk Management</para>
+				</definition>
+			</gloss-item>
+			<gloss-item>
+				<term>CAP</term>
+				<definition>
+					<para>Common Agricultural Policy (of the European Union)</para>
+				</definition>
+			</gloss-item>
+			<gloss-item>
+				<term>CCP</term>
+				<definition>
+					<para>Counter-Cyclical Payments</para>
+				</definition>
+			</gloss-item>
+			<gloss-item>
+				<term>CEPEA</term>
+				<definition>
+					<para>Comprehensive Economic Partnership in East Asia</para>
+				</definition>
+			</gloss-item>
+			<gloss-item>
+				<term>CETA</term>
+				<definition>
+					<para>Comprehensive Economic and Trade Agreement (Canada – EU)</para>
+				</definition>
+			</gloss-item>
+			<gloss-item>
+				<term>CNDP</term>
+				<definition>
+					<para>Complementary National Direct Payments</para>
+				</definition>
+			</gloss-item>
+			<gloss-item>
+				<term>CONADI</term>
+				<definition>
+					<para>National Service for Indigenous Development (Corporación Nacional de Desarrollo Indígena) – MIDEPLAN, Chile </para>
+				</definition>
+			</gloss-item>
+			<gloss-item>
+				<term>CORFO</term>
+				<definition>
+					<para>Economic Development Agency (Corporación de Fomento a la Producción; Chile)</para>
+				</definition>
+			</gloss-item>
+			<gloss-item>
+				<term>COOL</term>
+				<definition>
+					<para>Country of Origin Labelling</para>
+				</definition>
+			</gloss-item>
+			<gloss-item>
+				<term>COTRISA</term>
+				<definition>
+					<para>Wheat marketing enterprise (Chile)</para>
+				</definition>
+			</gloss-item>
+			<gloss-item>
+				<term>CPI</term>
+				<definition>
+					<para>Consumer Price Index</para>
+				</definition>
+			</gloss-item>
+			<gloss-item>
+				<term>CWB</term>
+				<definition>
+					<para>Canadian Wheat Board</para>
+				</definition>
+			</gloss-item>
+			<gloss-item>
+				<term>DIRA</term>
+				<definition>
+					<para>Dairy Industry Restructuring Act (New Zealand)</para>
+				</definition>
+			</gloss-item>
+			<gloss-item>
+				<term>DP</term>
+				<definition>
+					<para>Direct Payments</para>
+				</definition>
+			</gloss-item>
+			<gloss-item>
+				<term>EAFRD</term>
+				<definition>
+					<para>European Agricultural Fund for Rural Development</para>
+				</definition>
+			</gloss-item>
+			<gloss-item>
+				<term>EAGF</term>
+				<definition>
+					<para>European Agricultural Guarantee Fund</para>
+				</definition>
+			</gloss-item>
+			<gloss-item>
+				<term>EEA</term>
+				<definition>
+					<para>European Economic Area</para>
+				</definition>
+			</gloss-item>
+			<gloss-item>
+				<term>EFP</term>
+				<definition>
+					<para>Environmental Farm Planning</para>
+				</definition>
+			</gloss-item>
+			<gloss-item>
+				<term>EFSA</term>
+				<definition>
+					<para>European Food Safety Authority (European Union)</para>
+				</definition>
+			</gloss-item>
+			<gloss-item>
+				<term>EFTA</term>
+				<definition>
+					<para>European Free Trade Association</para>
+				</definition>
+			</gloss-item>
+			<gloss-item>
+				<term>EPA</term>
+				<definition>
+					<para>Economic Partnership Agreements</para>
+				</definition>
+			</gloss-item>
+			<gloss-item>
+				<term>EQIP</term>
+				<definition>
+					<para>Environmental Quality Incentives Program</para>
+				</definition>
+			</gloss-item>
+			<gloss-item>
+				<term>ERA</term>
+				<definition>
+					<para>Environmental Risk Assessment (European Union)</para>
+				</definition>
+			</gloss-item>
+			<gloss-item>
+				<term>ETS</term>
+				<definition>
+					<para>Emissions trading scheme (New Zealand)</para>
+				</definition>
+			</gloss-item>
+			<gloss-item>
+				<term>EU</term>
+				<definition>
+					<para>European Union</para>
+				</definition>
+			</gloss-item>
+			<gloss-item>
+				<term>FAO</term>
+				<definition>
+					<para>Food and Agriculture Organization of the United Nations</para>
+				</definition>
+			</gloss-item>
+			<gloss-item>
+				<term>FDA</term>
+				<definition>
+					<para>Food and Drug Administration (United States)</para>
+				</definition>
+			</gloss-item>
+			<gloss-item>
+				<term>FDI</term>
+				<definition>
+					<para>Foreign Direct Investment</para>
+				</definition>
+			</gloss-item>
+			<gloss-item>
+				<term>FMD</term>
+				<definition>
+					<para>Farm management Deposits (Australia)</para>
+				</definition>
+			</gloss-item>
+		</glossary>
+	</chapter>
+</document>

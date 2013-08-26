@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<indexes xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:oecd:names:xmlns:authoring:product ../../../../../../../schemas/products/indexes.xsd" xmlns="urn:oecd:names:xmlns:authoring:product" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="toc-0001">
+
+    <title xml:id="title-0001">Indexes</title>
+
+    <index-sect>
+        <title>Main Index for the Document.</title>
+        <index-entry>
+            <primary>primary index entry</primary>
+            <secondary>secondary index entry</secondary>
+            <see>see entry in index</see>
+        </index-entry>
+        <index-entry>
+            <primary>primary index entry</primary>
+            <secondary>secondary index entry</secondary>
+            <see-also>see also index entry</see-also>
+        </index-entry>
+    </index-sect>
+
+
+    <index-sect type="subject">
+        <title>Name index</title>
+    </index-sect>
+
+    <index-sect type="name">
+        <title>Name index</title>
+    </index-sect>
+
+    <index-sect type="analytical">
+        <title>Name index</title>
+    </index-sect>
+
+    <index-sect type="sample">
+        <index-sect>
+            <title>E</title>
+            <index-entry pagenum="14 18 22-33">
+                <primary>Entering markup</primary>
+            </index-entry>
+            <index-entry pagenum="56 58-61">
+                <primary>eSATA</primary>
+                <see-also>Serial ATA</see-also>
+            </index-entry>
+            <index-entry pagenum="44">
+                <primary>evaluating expressions</primary>
+            </index-entry>
+        </index-sect>
+        <index-sect>
+            <title>U</title>
+            <index-entry pagenum="34 44 173-199">
+                <primary>Ubiquitous networking</primary>
+            </index-entry>
+            <index-entry pagenum="50-55">
+                <primary>Universal Serial Bus</primary>
+            </index-entry>
+            <index-entry pagenum="2 5 ">
+                <primary>Up time</primary>
+            </index-entry>
+            <index-entry>
+                <primary>USB</primary>
+
+                <see>Universal Serial Bus</see>
+            </index-entry>
+        </index-sect>
+    </index-sect>
+</indexes>

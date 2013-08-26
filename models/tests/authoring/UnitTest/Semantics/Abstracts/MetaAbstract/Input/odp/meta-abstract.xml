@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<document xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:oecd:names:xmlns:authoring:document ../../../../../../../schemas/oecd.author.xsd" xmlns="urn:oecd:names:xmlns:authoring:document" xmlns:xxx="www.foo.com" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mods="http://www.loc.gov/mods/v3">
+	<metadata>
+		<metadata property="kim:title">
+			<metadata-item xml:lang="en" property="kim:mainTitle" value="Working Party on National Environmental Policies"/>
+			<metadata-item xml:lang="en" property="kim:subTitle" value="Indicators of Innovation and Transfer in Environmentally Sound Technologies: Methodological Issues"/>
+		</metadata>
+		<metadata>
+			<metadata-item xml:lang="en" property="kim:description" value="This report is a contribution to the OECD Environment Directorate's work on environmental policy and technological innovation (www.oecd.org/environment/innovation). It summarises recent progress in the development of indicators of innovation and transfer in environmentally sound technologies (EST). A number of alternative measures are discussed, and the methodology for the development of indicators based on patent data is presented."/>
+			<metadata-item xml:lang="fr" property="kim:description" value="Ce rapport est une contribution au travail de la Direction de l'environnement de l'OCDE sur la politique environnementale et l'innovation technologique (www.oecd.org / environnement / innovation). Il récapitule les progrès récents dans le développement des indicateurs de l'innovation et le transfert de technologies écologiquement rationnelles (TER). Un certain nombre de mesures alternatives sont discutées, et la méthodologie pour l'élaboration d'indicateurs sur la base de données sur les brevets est présentée."/>
+		</metadata>
+	</metadata>
+	<title/>
+	<section>
+		<title/>
+	</section>
+</document>

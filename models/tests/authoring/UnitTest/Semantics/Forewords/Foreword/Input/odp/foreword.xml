@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<publication xmlns="urn:oecd:names:xmlns:authoring:document" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:oecd:names:xmlns:authoring:document ../../../../../../../../schemas/oecd.publication.xsd">
+	<document-metadata>
+		<metadata/>
+	</document-metadata>
+	<metadata>
+		<metadata-item/>
+	</metadata>
+
+	<title>OECD Environmental Performance Reviews</title>
+
+	<document xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:oecd:names:xmlns:authoring:document ../../../../../../../../schemas/oecd.author.xsd" xmlns="urn:oecd:names:xmlns:authoring:document" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mods="http://www.loc.gov/mods/v3">
+
+		<metadata/>
+
+
+		<title/>
+
+		<foreword>
+
+			<metadata subject="kim:author">
+				<metadata subject="kim:personname">
+					<metadata-item subject="kim:firstname" value="Mats"/>
+					<metadata-item subject="kim:lastname" value="Isaksson"/>
+					<metadata-item property="kim:affiliation" value="OECD"/>
+					<metadata-item property="kim:affiliation" value="Head of Corporate Affairs"/>
+				</metadata>
+			</metadata>
+			<title>Foreword</title>
+
+
+			<para>The principal aim of the OECD Environmental Performance Review programme is to help member and selected partner countries to improve their individual and collective performance in environmental management by:</para>
+			<ordered-list>
+
+
+				<list-item>
+					<para>Helping individual governments to assess progress in achieving their environmental goals.</para>
+				</list-item>
+				<list-item>
+					<para>Promoting continuous policy dialogue and peer learning.</para>
+				</list-item>
+				<list-item>
+					<para>Stimulating greater accountability from governments towards each other and public opinion.</para>
+				</list-item>
+			</ordered-list>
+			<para>This report is the first OECD review of Slovenia’s environmental performance since it joined the Organisation in 2010. Progress in achieving domestic objectives and international commitments provides the basis for assessing the country’s environmental performance. Such objectives and commitments may be broad aims, qualitative goals, or quantitative targets. A distinction is made between intentions, actions, and results. Assessment of environmental performance is also placed within the context of Slovenia’s historical environmental record, present state of the environment, physical endowment in natural resources, economic conditions, and demographic trends.</para>
+
+			<para>The OECD is indebted to the government of Slovenia for its co-operation in providing information for the organisation of the review mission to Ljubljana (6-12 March 2011), and for facilitating contacts both inside and outside governmental institutions. Thanks are also due to all those who helped in the course of this review, to the representatives of member countries participating in the OECD Working Party on Environmental Performance, and especially to the examining countries: Italy and the Slovak Republic.</para>
+			<para>The team that prepared this review comprised experts from reviewing countries: Ms. Jana Durkošova (Slovak Republic) and Mr. Antonio Massarutto (Italy); members of the OECD Secretariat: Mr. Brendan Gillespie, Mr. Eugene Mazur, Mr. Krzysztof Michalak, Mr. Tappei Tsutsumi and Mr. Žiga Žarnič; and Mr. Eduard Goldberg, Mr. Dominic Hogg and Ms. Sara Moarif (consultants). Ms. Carla Bertuzzi and Mr. Shayne MacLachlan (OECD Secretariat) and Mr. John Smith (consultant) provided statistical and editorial support during the preparation of the report. Preparation of this report also benefited from comments provided by several members of the OECD Secretariat. </para>
+
+			<para>The OECD Working Party on Environmental Performance discussed the draft OECD Environmental Performance Review of Slovenia at its meeting on 18 January 2012 in Paris, and approved the assessment and recommendations.</para>
+		</foreword>
+
+
+		<chapter>
+			<title/>
+		</chapter>
+
+	</document>
+</publication>

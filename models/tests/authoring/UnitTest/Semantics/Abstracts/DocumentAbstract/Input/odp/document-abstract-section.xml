@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:oecd:names:xmlns:authoring:document ../../../../../../../schemas/oecd.author.xsd" xmlns="urn:oecd:names:xmlns:authoring:document" xmlns:xlink="http://www.w3.org/1999/xlink">
+	<metadata>
+		<metadata subject="kim:author">
+			<metadata subject="kim:personname">
+				<metadata-item subject="kim:firstname" value="frank_m"/>
+			</metadata>
+		</metadata>
+		<metadata subject="kim:othercredit">
+			<metadata subject="kim:personname">
+				<metadata-item subject="kim:firstname" value="Crowther_1"/>
+			</metadata>
+		</metadata>
+		<metadata-item subject="kim:date" value="Thu, 18 Oct 2012 17:10:00 CEST"/>
+		<metadata subject="kim:revhistory">
+			<metadata subject="kim:revision">
+				<metadata-item subject="kim:revnumber" value="1"/>
+				<metadata-item subject="kim:date" value="Thu, 18 Oct 2012 17:10:00 CEST"/>
+			</metadata>
+		</metadata>
+		<metadata subject="kim:printhistory">
+			<metadata-item subject="kim:para" value="Last printed: Thu, 20 Sep 2012 18:01:00 CEST"/>
+		</metadata>
+		<metadata-item subject="kim:orgname" value="O.E.C.D."/>
+		<metadata-item property="kim:cote" value="DELSA/HEA/EP(2009)1"/>
+		<metadata-item property="kim:originalClassif" value="Unclassified"/>
+		<metadata-item property="kim:language" value="English"/>
+		<metadata-item property="kim:originalLanguage" value="English"/>
+	</metadata>
+	<title>Expert group - Economics of Prevention</title>
+
+
+	<section>
+		<title>Abstract</title>
+		
+		<para>In an attempt to contain rising trends in obesity and associated chronic diseases, many governments
+		have implemented a range of policies to promote healthy lifestyles. These efforts have been hindered by
+		the limited availability of evidence about the effectiveness of interventions in changing lifestyles and
+		reducing obesity. Evaluations of the cost-effectiveness and distributional impacts of such interventions are
+		even fewer and narrower in terms of numbers of options considered.</para>
+		
+	<para>	An economic analysis was developed as part of this project, with the aim of strengthening the existing
+		evidence-base on the efficiency of interventions to tackle unhealthy diets and sedentary lifestyles. The
+		analysis was undertaken in collaboration with the WHO, broadly based on the WHO-CHOICE (CHOosing
+		Interventions that are Cost-Effective) approach. The aim of the analysis is to assess the efficiency of a
+		range of policy options to tackle unhealthy lifestyles and related chronic diseases. Additionally, compared
+		to the traditional CHOICE framework, the analysis has assessed the distributional impacts of preventive
+		strategies on costs and health outcomes. Most of the preventive interventions evaluated as part of the
+		project have favourable cost-effectiveness ratios, relative to a scenario in which no systematic prevention is
+		undertaken and chronic diseases are treated once they emerge. However, none of the interventions assessed
+		in the analysis may significantly reduce the scale of the obesity problem, if implemented in isolation.</para>
+	<para>	
+		Although the most efficient interventions are found to be outside the health sector, health care systems can
+		make the largest impact on obesity and related chronic conditions by focusing on individuals at high risk.
+		Interventions targeting younger age groups are unlikely to have any significant health effects at the
+		population level for many years. The cost-effectiveness profiles of such interventions may be favourable in
+		the long-term, but remain very unfavourable for several decades at the start of the interventions.
+		Preventive interventions do not always generate reductions in health expenditure, even when the
+		analysis is limited to a set of diseases that are more directly affected by diet, physical activity and obesity.
+		Governments should determine what level of resources (budgets) they are willing and able to spend on
+		prevention, and they may use the findings of this economic analysis to assess what portfolio of
+		interventions would make the best use of such budgets.</para>
+		
+	</section>
+
+</document>

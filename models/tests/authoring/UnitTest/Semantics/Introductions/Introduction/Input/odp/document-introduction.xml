@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:oecd:names:xmlns:authoring:document ../../../../../../../../schemas/oecd.author.xsd" xmlns="urn:oecd:names:xmlns:authoring:document" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mods="http://www.loc.gov/mods/v3">
+	<metadata>
+		<metadata subject="kim:author">
+			<metadata subject="kim:personname">
+				<metadata-item subject="kim:firstname" value="ysé"/>
+			</metadata>
+		</metadata>
+		<metadata subject="kim:othercredit">
+			<metadata subject="kim:personname">
+				<metadata-item subject="kim:firstname" value="Crowther_1"/>
+			</metadata>
+		</metadata>
+		<metadata-item subject="kim:date" value="Thu, 18 Oct 2012 16:49:00 CEST"/>
+		<metadata subject="kim:revhistory">
+			<metadata subject="kim:revision">
+				<metadata-item subject="kim:revnumber" value="1"/>
+				<metadata-item subject="kim:date" value="Thu, 18 Oct 2012 16:49:00 CEST"/>
+			</metadata>
+		</metadata>
+		<metadata subject="kim:printhistory">
+			<metadata-item subject="kim:para" value="Last printed: Wed, 25 Jul 2012 16:44:00 CEST"/>
+		</metadata>
+		<metadata-item subject="kim:orgname" value="O.E.C.D."/>
+		<metadata-item property="kim:cote" value="ENV/EPOC/WGWPR(2008)1/REV1"/>
+		<metadata-item property="kim:originalClassif" value="Unclassified"/>
+		<metadata-item property="kim:language" value="English"/>
+		<metadata-item property="kim:originalLanguage" value="English"/>
+	</metadata>
+	<title>DRAFT REVISED REPORT TO THE OECD COUNCIL ON THE IMPLEMENTATION OF THE RECOMMENDATION ON ENVIRONMENTALLY SOUND MANAGEMENT OF WASTE [C(2004)100], AS AMENDED BY C(2007)97</title>
+
+
+
+	<chapter>
+		<title>Key drivers and main impacts</title>
+		<introduction>
+			<title>Introduction</title>
+			<para>Waste management facilities, including recovery facilities, should, within the framework of local laws, regulations and administrative practices, and in consideration of applicable international agreements, principles, objectives and standards, take due account of the need to protect the environment, public health and safety and generally conduct their activities in a manner contributing to the wider goals of sustainable development.</para>
+			<para>The principle of “Environmentally Sound Management (ESM) of Waste” is therefore one of the underlying principles of most OECD Council Acts related to transboundary movements of wastes, to UNEP’s Basel Convention on the Control of Transboundary Movements Hazardous Wastes and their Disposal, and to the EU Shipment Regulation. However, lack of a clear definition and common understanding of ESM has led to challenges for the practical implementation of ESM instruments. </para>
+
+			<para>Against this background, the OECD Member countries decided in 1999 to start working towards international ESM “guidelines” for waste recovery facilities. The broad objectives of that work were: <ordered-list>
+					<list-item>
+						<para>Sustainable use of natural resources, minimisation of waste and protection of human health and the environment from adverse effects that may result from waste; </para>
+					</list-item>
+					<list-item>
+						<para>Fair competition between enterprises throughout the OECD area, through the implementation of Core Performance Elements (CPEs)by waste management facilities, thus contributing to a level playing field of high environmental standards;</para>
+					</list-item>
+					<list-item>
+						<para>Diversion of waste streams to the extent possible from facilities operating with low-standards to facilities that manage waste in an environmentally sound and economically efficient manner, through incentives and other measures.”</para>
+					</list-item>
+				</ordered-list> As a result, the Recommendation of the Council on the Environmentally Sound Management (ESM) of Waste [C (2004)100], including its associated Core Performance Elements (CPEs), was adopted on 9 June 2004; later amended by[C(2007)97] (see Appendix 1). C(2004)100 recommends that Member countries elaborate and implement policies and/or programmes to ensure that waste is managed in an environmentally sound and economically efficient manner. It also recommends that they develop and implement practices and instruments that facilitate the efforts of competent authorities to monitor the implementation by waste management facilities of the Core Performance Elements.</para>
+			<para>The 2004 Recommendation also instructs the Environment Policy Committee to report to the Council, on the basis of the information received from Member countries, three (3) years after the adoption, on the implementation of the Recommendation. This report responds to that requirement. </para>
+			<para>The base information contained in this report was provided by twenty OECD countries, using a common template that had been agreed by the Working Group on Waste Prevention and Recycling (WGWPR). The countries which provided this information were: Australia, Austria, Belgium, Canada, Czech Republic, Finland, France, Germany, Hungary, Japan, Korea, Mexico, Netherlands, Poland, Slovak Republic, Spain, Sweden, Switzerland, United Kingdom, and United States<footnote>
+					<para>Not all countries provided this information at the same level of detail. This report therefore reflects the Secretariat’s judgement about what an appropriate level of detail would be for a report of this type.</para>
+				</footnote>.</para>
+
+		</introduction>
+		<section>
+			<title>OVERVIEW OF RECENT ESM DEVELOPMENTS IN OECD COUNTRIES</title>
+			<para>Differential costs between legal and illegal products are a key driver of illegal trade. The demand for scarce products for which legal substitutes are not available or accepted also drives it. The role of risk needs to be better understood as well. </para>
+			<section>
+				<title>A. Policies, Programmes and Regulatory Frameworks which are broadly relevant to ESM</title>
+				<section>
+					<title>Australia</title>
+
+					<para>Different levels of government play different roles in environmentally sound management of waste. The Australian Government plays a leadership role, where nationally consistent approaches are needed, and where it has responsibility for meeting international commitments. State, territory and local governments are primarily responsible for the day-to-day management of waste and recycling and have a range of policies, programmes and regulatory frameworks in place that are relevant to implementing ESM. For example, waste management facilities are generally required to be licensed under legislation by individual state and territory governments.</para>
+				</section>
+			</section>
+		</section>
+	</chapter>
+</document>

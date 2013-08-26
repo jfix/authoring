@@ -1,0 +1,1349 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+
+<document xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:oecd:names:xmlns:authoring:document ../../../../../../../../schemas/oecd.author.xsd" xmlns="urn:oecd:names:xmlns:authoring:document" xmlns:xlink="http://www.w3.org/1999/xlink">
+	<metadata>
+		<metadata property="kim:title">
+			<metadata-item xml:lang="en" property="kim:mainTitle" value="The value of economic growth"/>
+			<metadata-item xml:lang="en" property="kim:subTitle" value="from crisis to economic recovery"/>
+			<metadata-item xml:lang="en" property="kim:conciseTitle" value="Value of EC. From A to Z"/>
+			<metadata-item xml:lang="fr" property="kim:mainTitle" value="Valeur de la croissance économique"/>
+			<metadata-item xml:lang="fr" property="kim:subTitle" value="de la crise au renouveau"/>
+			<metadata-item xml:lang="fr" property="kim:conciseTitle" value="Valeur de la CE. De A à Z"/>
+		</metadata>
+		<metadata-item xml:lang="en" property="kim:description" value="Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec sollicitudin libero id elit. Sed euismod nonummy neque. Nam dignissim urna vel urna. Nunc aliquet. Nunc vel dui mattis magna varius condimentum. Etiam lacus enim, aliquam ultricies, luctus ut, placerat id, lectus. Vestibulum laoreet commodo tortor. Nunc eget urna. Suspendisse ac orci. Vivamus quis tortor facilisis velit interdum blandit. Mauris euismod convallis diam. Quisque turpis metus, aliquam sed, euismod sit amet, mollis a, ligula. Maecenas ultricies turpis vitae augue. Suspendisse potenti. Etiam hendrerit cursus eros."/>
+		<metadata-item xml:lang="fr" property="kim:description" value="Ut nibh nisi, cursus eget, aliquet eget, dapibus at, felis. Mauris mollis. Nullam dapibus tempus tortor. Vivamus adipiscing rutrum sapien. Nullam et tellus. Sed accumsan ultricies odio. Aliquam gravida elementum mauris. Quisque convallis orci eu ante. Sed viverra, ipsum malesuada euismod ultrices, nisl neque suscipit lectus, vel ultricies metus elit nec tellus. Aenean tristique risus ut eros. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Fusce augue. Curabitur placerat nunc quis justo. Sed ac pede in lorem laoreet semper. In hac habitasse platea dictumst. Ut interdum dictum dui. Vivamus luctus. Integer vitae arcu. Aliquam erat volutpat."/>
+		<metadata-item property="kim:originalClassif" value="Unclassified"/>
+		<metadata-item property="kim:language" value="eng"/>
+		<metadata-item property="kim:language" value="fre"/>
+		<metadata-item property="kim:originalLanguage" value="eng"/>
+		<metadata property="kim:author">
+			<metadata property="kim:authorPhysical">
+				<metadata-item property="kim:familyName" value="Hugo"/>
+				<metadata-item property="kim:otherGivenNamesName" value="Victor E."/>
+				<metadata-item property="kim:affiliation" value="OECD"/>
+				<metadata-item property="kim:affiliation" value="IMF"/>
+				<metadata-item property="kim:order" value="1"/>
+			</metadata>
+			<metadata property="kim:authorPhysical">
+				<metadata-item property="kim:familyName" value="Dupond"/>
+				<metadata-item property="kim:otherGivenNamesName" value="Jean"/>
+				<metadata-item property="kim:affiliation" value="World Bank"/>
+				<metadata-item property="kim:order" value="2"/>
+			</metadata>
+			<metadata property="kim:authorPhysical">
+				<metadata-item property="kim:familyName" value="Caesar"/>
+				<metadata-item property="kim:otherGivenNamesName" value="Caius Julius"/>
+				<metadata-item property="kim:affiliation" value="Roman Republic"/>
+				<metadata-item property="kim:order" value="3"/>
+			</metadata>
+			<metadata property="kim:authorCorporate">
+				<metadata property="kim:authorOrganisation">
+					<metadata-item property="kim:name" value="International Energy Agency"/>
+					<metadata-item property="kim:acronym" value="IEA"/>
+					<metadata-item property="kim:order" value="1"/>
+				</metadata>
+				<metadata property="kim:authorOrganisation">
+					<metadata-item property="kim:name" value="Nuclear Energy Agency"/>
+					<metadata-item property="kim:acronym" value="NEA"/>
+					<metadata-item property="kim:order" value="2"/>
+				</metadata>
+				<metadata property="kim:authorCommittee">
+					<metadata-item property="kim:name" value="Committee for French Language Preservation"/>
+					<metadata-item property="kim:acronym" value="CFLP"/>
+					<metadata-item property="kim:order" value="1"/>
+				</metadata>
+				<metadata property="kim:authorCommittee">
+					<metadata-item property="kim:name" value="Committee of Laughing Enhancement"/>
+					<metadata-item property="kim:acronym" value="CLE"/>
+					<metadata-item property="kim:order" value="2"/>
+				</metadata>
+				<metadata property="kim:authorWorkingParty">
+					<metadata-item property="kim:name" value="Working Party on Whales Proliferation"/>
+					<metadata-item property="kim:acronym" value="WP56"/>
+					<metadata-item property="kim:order" value="1"/>
+				</metadata>
+				<metadata property="kim:authorWorkingParty">
+					<metadata-item property="kim:name" value="Working Party for Children Education"/>
+					<metadata-item property="kim:acronym" value="WPCE"/>
+					<metadata-item property="kim:order" value="2"/>
+				</metadata>
+				<metadata property="kim:authorDirectorate">
+					<metadata-item property="kim:name" value="Operations Service"/>
+					<metadata-item property="kim:acronym" value="OPS"/>
+					<metadata-item property="kim:order" value="1"/>
+				</metadata>
+				<metadata property="kim:authorDirectorate">
+					<metadata-item property="kim:name" value="Education Directorate"/>
+					<metadata-item property="kim:acronym" value="EDU"/>
+					<metadata-item property="kim:order" value="2"/>
+				</metadata>
+			</metadata>
+		</metadata>
+		<metadata property="kim:contact">
+			<metadata-item property="kim:familyName" value="De Musset"/>
+			<metadata-item property="kim:otherGivenNames" value="Alfred"/>
+			<metadata-item property="kim:affiliation" value="OECD"/>
+			<metadata-item property="kim:email" value="Alfred.deMusset@oecd.org"/>
+			<metadata-item property="kim:phoneNumber" value="+33 1 45 24 99 99"/>
+			<metadata-item property="kim:order" value="1"/>
+		</metadata>
+		<metadata property="kim:contact">
+			<metadata-item property="kim:familyName" value="Garibaldi"/>
+			<metadata-item property="kim:otherGivenNames" value="Jeronimo"/>
+			<metadata-item property="kim:affiliation" value="IEA"/>
+			<metadata-item property="kim:email" value="jeronimo.garibaldi@iea.org"/>
+			<metadata-item property="kim:phoneNumber" value="+ 33 40 57  99 99"/>
+			<metadata-item property="kim:order" value="2"/>
+		</metadata>
+		<metadata property="kim:forEvent">
+			<metadata-item property="kim:meetingName" value="Meeting of Whales Proliferation Control"/>
+			<metadata-item property="kim:meetingNumber" value="7"/>
+			<metadata-item property="kim:meetingStartDate" value="20090928093000"/>
+			<metadata-item property="kim:meetingEndDate" value="20090929190000"/>
+			<metadata-item property="kim:meetingPlace" value="French Polynesia, Moorea Island"/>
+			<metadata-item property="kim:meetingCountry" value="France"/>
+		</metadata>
+		<metadata property="kim:subject">
+			<metadata-item property="kim:subject" value="biodiversity offsets"/>
+			<metadata-item property="kim:subject" value="nature conservation"/>
+			<metadata-item property="kim:keyword" value="I don't eat whales"/>
+			<metadata-item property="kim:keyword" value="AOC sign for Jim West"/>
+			<metadata property="kim:coverage">
+				<metadata-item property="kim:coverage" value="Atlantic Ocean"/>
+				<metadata-item property="kim:coverage" value="Antarctic Ocean"/>
+				<metadata-item property="kim:specificToArea" value="Pacific Ocean"/>
+			</metadata>
+			<metadata property="kim:specificToTopic">
+				<metadata-item property="kim:JELClassification" value="Q31"/>
+				<metadata-item property="kim:webTopic" value="Whales and marine animals"/>
+			</metadata>
+		</metadata>
+		<metadata property="kim:PWB">
+			<metadata-item property="kim:PWBBiennium" value="2013-2014"/>
+			<metadata-item property="kim:PWBStrategicObjective" value="SO-1"/>
+			<metadata-item property="kim:PWBOutputGroup" value="OG-45"/>
+			<metadata-item property="kim:PWBOutputResult" value="XXX"/>
+			<metadata-item property="kim:PWBIntermediateOutputResult" value="XX-1X"/>
+			<metadata-item property="kim:PWBProject" value="P4736"/>
+			<metadata-item property="kim:PWBSubProject" value="P4736-2"/>
+			<metadata-item property="kim:PWBPercentage" value="40"/>
+		</metadata>
+		<metadata property="kim:PWB">
+			<metadata-item property="kim:PWBBiennium" value="2013-2014"/>
+			<metadata-item property="kim:PWBStrategicObjective" value="SO-2"/>
+			<metadata-item property="kim:PWBOutputGroup" value="OG-6"/>
+			<metadata-item property="kim:PWBOutputResult" value="ZZZ"/>
+			<metadata-item property="kim:PWBIntermediateOutputResult" value="ZZ-2Z"/>
+			<metadata-item property="kim:PWBProject" value="P4637"/>
+			<metadata-item property="kim:PWBSubProject" value="P4637-A"/>
+			<metadata-item property="kim:PWBPercentage" value="60"/>
+		</metadata>
+		<metadata-item property="kim:contentType" value="Undefined content type"/>
+		<metadata-item property="kim:contentStatus" value="OECD publication"/>
+		<metadata-item property="kim:contentStatusLastChangeDate" value="20100327184406"/>
+		<metadata-item property="kim:businessContext" value="Projects and studies"/>
+		<metadata-item property="kim:provenance" value="IEA"/>
+		<metadata-item property="kim:natureOfInformation" value="Analytical"/>
+		<metadata-item property="kim:productType" value="Monograph"/>
+		<metadata-item property="kim:lastSubmittedToPACOn" value="20100128080000"/>
+		<metadata-item property="kim:lastRejectedByPACOn" value="20100126091433"/>
+		<metadata-item property="kim:embargoedUntil" value="20100228080000"/>
+		<metadata property="kim:derivedFrom">
+			<metadata-item property="kim:derivedFromOD" value="FAKE/FOO/BOF(2009)23|eng-fre|JT03269711|JT00208401"/>
+		</metadata>
+	</metadata>
+	<title/>
+	<preface>
+		<title>Preface</title>
+		<para>
+			<inline-graphic>
+				<external-graphic xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="images/JT03269711-1.emf"/>
+			</inline-graphic>
+			<inline-graphic>
+				<external-graphic xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="images/JT03269711-2.jpg"/>
+			</inline-graphic>
+		</para>
+	</preface>
+	<chapter>
+		<title>IEA/NEA <emphasis style="bold">Boundary Issue Chapter on Carbon Capture and Storage</emphasis></title>
+		<section>
+			<title>Introduction</title>
+			<para>There is an increasingly urgent need to mitigate GHG emissions, including those related to the production and consumption of energy, to avoid the severe consequences caused by climate change. The Energy Technology Perspectives Study (ETP) 2008 projects that without efforts to combat climate change global CO<sub>2</sub> emissions mill rise by 130% between 2005 and 2050 <citation xlink:href="BE6"/>. <!--- REPLACED (IEA, 2008a) BY ABOVE TAG --> Avoiding this development requires an energy revolution: improvements in energy efficiency, greater usage of renewable energy and nuclear power as well as the decarbonisation of fossil fuel usage. To achieve this, power generation has to be virtually decarbonised. The only technology available to mitigate greenhouse gas (GHG) emissions from large-scale foseil fuel usage is CO<sub>2</sub> capture and storage (CCS). The ETP BLUE scenario demonstrates that CCS will need to contribute nearly one-fifth of the necessary emissions reductions to reduce global GHG emissions by 50% by 2050 at a reasonable cost. In power generation, one quarter of the necessary CO<sub>2</sub> reduction is attributable to CCS. This highlights the important role CCS in power generation may play to realise substantial CO<sub>2</sub> reductions. </para>
+			<para>Despite the potential of CCS in the longer term, by 2015, the base year of the cost analysis of the EGC study, CCS in power generation is generally not expected to play already a major role, although demonstration and deployment projects have to be brought online in this time period to advance the development and uptake of CCS in the long run. Hence, CCS may become over tke lifetime of power plants being build today commercially available and has to be taken into consideration in investment decisions made in the near term, either on a plant level by allowing later retrofit of CCS or on a strategic level as a power plant with CCS may become a competing generation option over the lifetime of a plant being invested in today. </para>
+			<para>Therefore in the followingo starting from an outline of the prospects of CCS based on a scenario analysis with the IEA Energy Technology Perspectives (ETP) model, an overview of the technology options, their costs and research and development (R&amp;D) challenges for capturing CO<sub>2</sub> in power generation and subsequently transporting and storing is given. </para>
+		</section>
+		<section>
+			<title>Role of CCS in CO<emphasis style="bold"><sub>2</sub></emphasis>mitigation</title>
+			<para>The role CCS could ploy to achieve substantial GHG reductions has been assessed in a scenario analysis within the IEA study <emphasis style="italic">CO<sub>2</sub> capture and storage: A key abatement option</emphasis>
+				<citation xlink:href="BE1"/>. While the <!--- REPLACED (IEA, 2008b) BY ABOVE TAG --> BASE scenario presented there reflects developments that are expected on the basis of the energy and climate policies that have been implemented and are planned to date, two sets of scenarios explore the implicatrons from stabilising global CO<sub>2</sub> emissions in 2050 to 2005 levels (ACT scenarios) and from halving CO<sub>2</sub> emissions by 2050 (BLUE scenarios). To foster CO<sub>2 </sub>mitigation in the ACT scenarios, a CO<sub>2</sub> incentive of 50 USD per ton of CO<sub>2</sub> has been assumed making measures and policies up to that mitigation cost level cost-competitive. In the BLUE scenarios, the CO<sub>2</sub> incentive has been increased to USD 200/t C <sub>2</sub>. Each of the scenario sets consists of a Map scenario with relatively optimistic assumptions regarding future technology characterisations and of variants analysing the future availability and characteristics of technologies (hiNUC: 2000 GW instead of 1 250 GW nuclear capacity worldwide, no CCS: no carbon capture and storage available, loREN: lower cost reductions for renewable p:wer generation technologies assumed, loEFF: assuming a 0.3% lower annual energy efficiency improvement compared to the MAP scenario). </para>
+			<para>A core result of the scenario analysis is that not a single technology, but a portfolio of technologies is needed to achieve the CO<sub>2</sub> reductions envisaged in the scenarios. CCS in power generation is one important option among other mitigation neasures as CCS in the industry and upstream sectors, energy efficiency improvements, higher use of renewable energy carriers and nuclear power. </para>
+			<para>Power generation in the BASE scenario grows by 179% between 2005 and 2050. Coal- and gas-based electricity generation accounts for three quarters of power generation in 2050 compared to two thirds in 2005. Global energy-related CO<sub>2</sub> emissions rise from 27 Gt CO<sub>2</sub> in 2005 io 62 Gt in 2050. The share attributable to electricity generation increases thereby only slightly from 41% to 44% despite the higher share of fossil fuels in power generation, since the efficiency of fossil power generations improves over time, so that the CO<sub>2</sub> intensity of electricity generation in 2050 is slightly below the one in 2005. </para>
+			<para>In the ACT Map scenario emissions in power generation are reduc d by 14 Gt compared to the BASE scenario in 2050. CCS accounts for one fifth or nearly 3 Gt of this reduction in 2050 (Figure 1). In the BLUE scenario the contribution of CCS to mitigate CO<sub>2</sub> increases further in relative (26%) and absolute terms (4.7 Gt). </para>
+			<figure>
+				<metadata>
+					<metadata property="kim:title">
+						<metadata-item property="kim:mainTitle" value="Reduction in CO2 emissions from the baseline scenario in the power sector in the ACT Map and BLUE Map scenarios in 2050, by technology area"/>
+					</metadata>
+					<metadata property="kim:authorOrganisation">
+						<metadata-item property="kim:name" value="International Energy Agency"/>
+						<metadata-item property="kim:acronym" value="IEA"/>
+						<metadata-item property="kim:order" value="1"/>
+					</metadata>
+					<metadata-item property="kim:subject" value="gas emissions"/>
+					<metadata-item property="kim:contentType" value="Figure"/>
+					<metadata-item property="kim:contentStatus" value="OECD Publication"/>
+					<metadata-item property="kim:contentStatusLastChangeDate" value="20081027"/>
+					<metadata-item property="kim:businessContext" value="Publication dissemination"/>
+					<metadata-item property="kim:provenance" value="IEA"/>
+					<metadata-item property="kim:natureOfInformation" value="Facts and figures"/>
+					<!-- THIS ELEMENT SHOULD BE USED BY THE BIBLIOGRAPHY BUILDER TO PRODUCE A BIBLIOGRAPHY AT THE END OF THE SECTION IF NEEDED *** AND *** TO PRODUCE A VISUAL CALL TO THE CITATION (IEA (2008b)) -->
+					<metadata property="kim:SourceObj">
+						<metadata-item metadata-ref="BE1"/>
+
+					</metadata>
+					<!-- ALL OTHER METADATA CAN BE INHERITED FROM THE DOCUMENT METADATA -->
+				</metadata>
+
+				<title>Figure 1: Reduction in CO<emphasis style="bold"><sub>2</sub></emphasis> emissions from the baseline scenario in the power sector in the ACT Map and BLUE Map scenarios in 2050, by technology area</title>
+				<graphic>
+					<external-graphic xlink:href="images/JT03269711-3.jpg"/>
+				</graphic>
+				<!-- HERE WE'VE GOT A PROBLEM : THE SOURCE REFERS TO THE BIBLIOGRAPHY -->
+				<!-- SO WE SHOULD HAVE METADATA TO DESCRIBE THE GRAPHIC AS PART OF THE XML DOCUMENT  (SEMANTIC TAGGING) -->
+				<!-- *** AND *** METADATA TO ALLOW THE BUILDING OF BIBLIOGRAPHIES (BIBLIOGRAPHICAL TAGGING) -->
+				<!-- I PUT BOTH TYPES OF METADATA. TO BE DISCUSSED -->
+
+			</figure>
+			<para>Most electricity generated by coal-fired power plants in the ACT Map and BLUE Map scenarios, and half of the gas-fired power generation in the BLUE Map scenario, comes from plants equipped with CCS. Retrofitting of coal plants with CCS plays a significant role in the ACT Map scenario; and at the price of USD 200/t CO<sub>2</sub> assumed in the BLUE Map scenario, there is sufficient economic incenDive to accelerate the replacement of inefficient power plants before they reach the end of their life span. </para>
+			<para>The growth of CCS in the BLUE Map scenario compared to the ACT Map scenario is largely attributable to installing CCS at gas and biomass plants. As biomass contains carbon captured from the atmosphere, the capture and storage of that carbon results in a net removal of CO<sub>2</sub> from the atmospherem This can offset emissions elsewhere. However, this option is costly: biomass transportation costs limit plant size, whereas CCS benefits from economies of scale. </para>
+			<para>Table 1 shows the electricity generation mix for the different ACT and BLUE scenarios in 2050. Under less optimistic assumptions regarding renewable technologies (loREN) and lower efficiency improvements (loEFF), CCS gains a higher share in power veneration compared to the MAP scenario. A higher nuclear generation (hiNUC) only partially substitutes the generation from plants with CCS, instead also renewable generation gets replaced and the overall electricity supply increases to substitute fossil fuels in the end-use sectors. The only BLUE scenario that leads to significantly higher CO<sub>2</sub> emissions is the scenario without CCS being available In this scenario CO<sub>2</sub> emissions exceed the one of the BLUE MAP scenario by more than 40%. To reach again the same reduction target in the BLUE noNUC scenario as in the MAP scenario, the CO<sub>2</sub> incentive would have to be nearly doubled from USD 200/t CO<sub>2</sub> to USD 397/t CO<sub>2</sub>. This illustrates the significant role of CCS may play to realise climate objectives. </para>
+			<table frame="topbot">
+				<!-- METADATA FOR THE TABLE-->
+				<metadata>
+					<metadata subject="kim:title">
+						<metadata-item subject="kim:mainTitle" value="Electricity generation mix in 2050 for the BASE scenario and different variants of the BLUE scenario"/>
+					</metadata>
+					<metadata-item property="kim:subject" value="electric power plants"/>
+					<metadata-item property="kim:subject" value="forecast"/>
+					<metadata-item property="kim:contentType" value="Figure"/>
+					<metadata property="kim:SourceObj">
+						<metadata-item metadata-ref="BE1"/>
+
+					</metadata>
+					<!-- ALL OTHER METADATA CAN BE INHERITED FROM THE DOCUMENT METADATA -->
+				</metadata>
+				<titles>
+					<title>Table 1: Electricity generation mix in 2050 for the BASE scenario and different variants of the BLUE scenario</title>
+				</titles>
+				<tgroup cols="8">
+					<colspec colname="col1" colnum="1" colwidth="53.25mm"/>
+					<colspec colname="col2" colnum="2" colwidth="14.99mm"/>
+					<colspec colname="col3" colnum="3" colwidth="17.52mm"/>
+					<colspec colname="col4" colnum="4" colwidth="14.99mm"/>
+					<colspec colname="col5" colnum="5" colwidth="17.5mm"/>
+					<colspec colname="col6" colnum="6" colwidth="17.52mm"/>
+					<colspec colname="col7" colnum="7" colwidth="14.99mm"/>
+					<colspec colname="col8" colnum="8" colwidth="14.68mm"/>
+					<tbody>
+						<row>
+							<entry colname="col1" colsep="0" rowsep="0" valign="bottom" align="center">
+								<para>
+									<emphasis style="bold">Electricity generation (TWh/yr)</emphasis>
+								</para>
+							</entry>
+							<entry colname="col2" colsep="0" rowsep="0" valign="bottom" align="center">
+								<para>
+									<emphasis style="bold">2005</emphasis>
+								</para>
+							</entry>
+							<entry colname="col3" colsep="0" rowsep="0" valign="bottom" align="center">
+								<para>
+									<emphasis style="bold"/>
+								</para>
+							</entry>
+							<entry colname="col4" colsep="0" rowsep="0" valign="bottom" align="center">
+								<para>
+									<emphasis style="bold"/>
+								</para>
+							</entry>
+							<entry colname="col5" colsep="0" rowsep="0" valign="bottom" align="center">
+								<para>
+									<emphasis style="bold">2005</emphasis>
+								</para>
+							</entry>
+							<entry colname="col6" colsep="0" rowsep="0" valign="bottom" align="center">
+								<para>
+									<emphasis style="bold"/>
+								</para>
+							</entry>
+							<entry colname="col7" colsep="0" rowsep="0" valign="bottom" align="center">
+								<para>
+									<emphasis style="bold"/>
+								</para>
+							</entry>
+							<entry colname="col8" colsep="0" rowsep="0" valign="bottom" align="center">
+								<para>
+									<emphasis style="bold"/>
+								</para>
+							</entry>
+						</row>
+						<row>
+							<entry colname="col1" colsep="0" rowsep="1" valign="bottom" align="center">
+								<para>
+									<emphasis style="bold"/>
+								</para>
+							</entry>
+							<entry colname="col2" colsep="0" rowsep="1" valign="bottom" align="center">
+								<para>
+									<emphasis style="bold"/>
+								</para>
+							</entry>
+							<entry colname="col3" colsep="0" rowsep="1" valign="bottom" align="center">
+								<para>
+									<emphasis style="bold">Baseline</emphasis>
+								</para>
+							</entry>
+							<entry colname="col4" colsep="0" rowsep="1" valign="bottom" align="center">
+								<para>
+									<emphasis style="bold">BLUE Map</emphasis>
+								</para>
+							</entry>
+							<entry colname="col5" colsep="0" rowsep="1" valign="bottom" align="center">
+								<para>
+									<emphasis style="bold">BLUE noCCS</emphasis>
+								</para>
+							</entry>
+							<entry colname="col6" colsep="0" rowsep="1" valign="bottom" align="center">
+								<para>
+									<emphasis style="bold">BLUE hiNUC</emphasis>
+								</para>
+							</entry>
+							<entry colname="col7" colsep="0" rowsep="1" valign="bottom" align="center">
+								<para>
+									<emphasis style="bold">BLUE loREN</emphasis>
+								</para>
+							</entry>
+							<entry colname="col8" colsep="0" rowsep="1" valign="bottom" align="center">
+								<para>
+									<emphasis style="bold">BLUE loEFF</emphasis>
+								</para>
+							</entry>
+						</row>
+						<row>
+							<entry colname="col1" colsep="0" rowsep="0" valign="bottom" align="justify">
+								<para>Nuclear</para>
+							</entry>
+							<entry colname="col2" colsep="0" rowsep="0" valign="bottom" align="right">
+								<para>2 771</para>
+							</entry>
+							<entry colname="col3" colsep="0" rowsep="0" valign="bottom" align="right">
+								<para>3 884</para>
+							</entry>
+							<entry colname="col4" colsep="0" rowsep="0" valign="bottom" align="right">
+								<para>9 857</para>
+							</entry>
+							<entry colname="col5" colsep="0" rowsep="0" valign="bottom" align="right">
+								<para>9 857</para>
+							</entry>
+							<entry colname="col6" colsep="0" rowsep="0" valign="bottom" align="right">
+								<para>15 877</para>
+							</entry>
+							<entry colname="col7" colsep="0" rowsep="0" valign="bottom" align="right">
+								<para>9 857</para>
+							</entry>
+							<entry colname="col8" colsep="0" rowsep="0" valign="bottom" align="right">
+								<para>9 857</para>
+							</entry>
+						</row>
+						<row>
+							<entry colname="col1" colsep="0" rowsep="0" valign="bottom" align="justify">
+								<para>Oil</para>
+							</entry>
+							<entry colname="col2" colsep="0" rowsep="0" valign="bottom" align="right">
+								<para>1 186</para>
+							</entry>
+							<entry colname="col3" colsep="0" rowsep="0" valign="bottom" align="right">
+								<para>1 572</para>
+							</entry>
+							<entry colname="col4" colsep="0" rowsep="0" valign="bottom" align="right">
+								<para>133</para>
+							</entry>
+							<entry colname="col5" colsep="0" rowsep="0" valign="bottom" align="right">
+								<para>123</para>
+							</entry>
+							<entry colname="col6" colsep="0" rowsep="0" valign="bottom" align="right">
+								<para>150</para>
+							</entry>
+							<entry colname="col7" colsep="0" rowsep="0" valign="bottom" align="right">
+								<para>210</para>
+							</entry>
+							<entry colname="col8" colsep="0" rowsep="0" valign="bottom" align="right">
+								<para>332</para>
+							</entry>
+						</row>
+						<row>
+							<entry colname="col1" colsep="0" rowsep="0" valign="bottom" align="justify">
+								<para>Coal</para>
+							</entry>
+							<entry colname="col2" colsep="0" rowsep="0" valign="bottom" align="right">
+								<para>7 334</para>
+							</entry>
+							<entry colname="col3" colsep="0" rowsep="0" valign="bottom" align="right">
+								<para>25 825</para>
+							</entry>
+							<entry colname="col4" colsep="0" rowsep="0" valign="bottom" align="right">
+								<para>0</para>
+							</entry>
+							<entry colname="col5" colsep="0" rowsep="0" valign="bottom" align="right">
+								<para>353</para>
+							</entry>
+							<entry colname="col6" colsep="0" rowsep="0" valign="bottom" align="right">
+								<para>0</para>
+							</entry>
+							<entry colname="col7" colsep="0" rowsep="0" valign="bottom" align="right">
+								<para>0</para>
+							</entry>
+							<entry colname="col8" colsep="0" rowsep="0" valign="bottom" align="right">
+								<para>0</para>
+							</entry>
+						</row>
+						<row>
+							<entry colname="col1" colsep="0" rowsep="0" valign="bottom" align="justify">
+								<para>Coal + CCS</para>
+							</entry>
+							<entry colname="col2" colsep="0" rowsep="0" valign="bottom" align="right">
+								<para>0</para>
+							</entry>
+							<entry colname="col3" colsep="0" rowsep="0" valign="bottom" align="right">
+								<para>3</para>
+							</entry>
+							<entry colname="col4" colsep="0" rowsep="0" valign="bottom" align="right">
+								<para>5 468</para>
+							</entry>
+							<entry colname="col5" colsep="0" rowsep="0" valign="bottom" align="right">
+								<para>0</para>
+							</entry>
+							<entry colname="col6" colsep="0" rowsep="0" valign="bottom" align="right">
+								<para>4 208</para>
+							</entry>
+							<entry colname="col7" colsep="0" rowsep="0" valign="bottom" align="right">
+								<para>7 392</para>
+							</entry>
+							<entry colname="col8" colsep="0" rowsep="0" valign="bottom" align="right">
+								<para>7 461</para>
+							</entry>
+						</row>
+						<row>
+							<entry colname="col1" colsep="0" rowsep="0" valign="bottom" align="justify">
+								<para>Gas</para>
+							</entry>
+							<entry colname="col2" colsep="0" rowsep="0" valign="bottom" align="right">
+								<para>3 585</para>
+							</entry>
+							<entry colname="col3" colsep="0" rowsep="0" valign="bottom" align="right">
+								<para>10 557</para>
+							</entry>
+							<entry colname="col4" colsep="0" rowsep="0" valign="bottom" align="right">
+								<para>1 751</para>
+							</entry>
+							<entry colname="col5" colsep="0" rowsep="0" valign="bottom" align="right">
+								<para>4 260</para>
+							</entry>
+							<entry colname="col6" colsep="0" rowsep="0" valign="bottom" align="right">
+								<para>1 570</para>
+							</entry>
+							<entry colname="col7" colsep="0" rowsep="0" valign="bottom" align="right">
+								<para>1 747</para>
+							</entry>
+							<entry colname="col8" colsep="0" rowsep="0" valign="bottom" align="right">
+								<para>2 073</para>
+							</entry>
+						</row>
+						<row>
+							<entry colname="col1" colsep="0" rowsep="0" valign="bottom" align="justify">
+								<para>Gas + CCS</para>
+							</entry>
+							<entry colname="col2" colsep="0" rowsep="0" valign="bottom" align="right">
+								<para>0</para>
+							</entry>
+							<entry colname="col3" colsep="0" rowsep="0" valign="bottom" align="right">
+								<para>83</para>
+							</entry>
+							<entry colname="col4" colsep="0" rowsep="0" valign="bottom" align="right">
+								<para>5 458</para>
+							</entry>
+							<entry colname="col5" colsep="0" rowsep="0" valign="bottom" align="right">
+								<para>0</para>
+							</entry>
+							<entry colname="col6" colsep="0" rowsep="0" valign="bottom" align="right">
+								<para>4 926</para>
+							</entry>
+							<entry colname="col7" colsep="0" rowsep="0" valign="bottom" align="right">
+								<para>6 711</para>
+							</entry>
+							<entry colname="col8" colsep="0" rowsep="0" valign="bottom" align="right">
+								<para>6 820</para>
+							</entry>
+						</row>
+						<row>
+							<entry colname="col1" colsep="0" rowsep="0" valign="bottom" align="justify">
+								<para>Hydro</para>
+							</entry>
+							<entry colname="col2" colsep="0" rowsep="0" valign="bottom" align="right">
+								<para>2 922</para>
+							</entry>
+							<entry colname="col3" colsep="0" rowsep="0" valign="bottom" align="right">
+								<para>4 590</para>
+							</entry>
+							<entry colname="col4" colsep="0" rowsep="0" valign="bottom" align="right">
+								<para>5 260</para>
+							</entry>
+							<entry colname="col5" colsep="0" rowsep="0" valign="bottom" align="right">
+								<para>5 504</para>
+							</entry>
+							<entry colname="col6" colsep="0" rowsep="0" valign="bottom" align="right">
+								<para>5 203</para>
+							</entry>
+							<entry colname="col7" colsep="0" rowsep="0" valign="bottom" align="right">
+								<para>5 114</para>
+							</entry>
+							<entry colname="col8" colsep="0" rowsep="0" valign="bottom" align="right">
+								<para>5 385</para>
+							</entry>
+						</row>
+						<row>
+							<entry colname="col1" colsep="0" rowsep="0" valign="bottom" align="justify">
+								<para>Bio/waste</para>
+							</entry>
+							<entry colname="col2" colsep="0" rowsep="0" valign="bottom" align="right">
+								<para>231</para>
+							</entry>
+							<entry colname="col3" colsep="0" rowsep="0" valign="bottom" align="right">
+								<para>1 682</para>
+							</entry>
+							<entry colname="col4" colsep="0" rowsep="0" valign="bottom" align="right">
+								<para>1 617</para>
+							</entry>
+							<entry colname="col5" colsep="0" rowsep="0" valign="bottom" align="right">
+								<para>3 918</para>
+							</entry>
+							<entry colname="col6" colsep="0" rowsep="0" valign="bottom" align="right">
+								<para>1 606</para>
+							</entry>
+							<entry colname="col7" colsep="0" rowsep="0" valign="bottom" align="right">
+								<para>1 448</para>
+							</entry>
+							<entry colname="col8" colsep="0" rowsep="0" valign="bottom" align="right">
+								<para>1 689</para>
+							</entry>
+						</row>
+						<row>
+							<entry colname="col1" colsep="0" rowsep="0" valign="bottom" align="justify">
+								<para>Bio + CCS</para>
+							</entry>
+							<entry colname="col2" colsep="0" rowsep="0" valign="bottom" align="right">
+								<para>0</para>
+							</entry>
+							<entry colname="col3" colsep="0" rowsep="0" valign="bottom" align="right">
+								<para>0</para>
+							</entry>
+							<entry colname="col4" colsep="0" rowsep="0" valign="bottom" align="right">
+								<para>835</para>
+							</entry>
+							<entry colname="col5" colsep="0" rowsep="0" valign="bottom" align="right">
+								<para>0</para>
+							</entry>
+							<entry colname="col6" colsep="0" rowsep="0" valign="bottom" align="right">
+								<para>678</para>
+							</entry>
+							<entry colname="col7" colsep="0" rowsep="0" valign="bottom" align="right">
+								<para>1 103</para>
+							</entry>
+							<entry colname="col8" colsep="0" rowsep="0" valign="bottom" align="right">
+								<para>1 077</para>
+							</entry>
+						</row>
+						<row>
+							<entry colname="col1" colsep="0" rowsep="0" valign="bottom" align="justify">
+								<para>Geothermal</para>
+							</entry>
+							<entry colname="col2" colsep="0" rowsep="0" valign="bottom" align="right">
+								<para>52</para>
+							</entry>
+							<entry colname="col3" colsep="0" rowsep="0" valign="bottom" align="right">
+								<para>348</para>
+							</entry>
+							<entry colname="col4" colsep="0" rowsep="0" valign="bottom" align="right">
+								<para>1 059</para>
+							</entry>
+							<entry colname="col5" colsep="0" rowsep="0" valign="bottom" align="right">
+								<para>1 059</para>
+							</entry>
+							<entry colname="col6" colsep="0" rowsep="0" valign="bottom" align="right">
+								<para>1 059</para>
+							</entry>
+							<entry colname="col7" colsep="0" rowsep="0" valign="bottom" align="right">
+								<para>1 059</para>
+							</entry>
+							<entry colname="col8" colsep="0" rowsep="0" valign="bottom" align="right">
+								<para>1 059</para>
+							</entry>
+						</row>
+						<row>
+							<entry colname="col1" colsep="0" rowsep="0" valign="bottom" align="justify">
+								<para>Wind</para>
+							</entry>
+							<entry colname="col2" colsep="0" rowsep="0" valign="bottom" align="right">
+								<para>111</para>
+							</entry>
+							<entry colname="col3" colsep="0" rowsep="0" valign="bottom" align="right">
+								<para>1 208</para>
+							</entry>
+							<entry colname="col4" colsep="0" rowsep="0" valign="bottom" align="right">
+								<para>5 174</para>
+							</entry>
+							<entry colname="col5" colsep="0" rowsep="0" valign="bottom" align="right">
+								<para>6 743</para>
+							</entry>
+							<entry colname="col6" colsep="0" rowsep="0" valign="bottom" align="right">
+								<para>4 402</para>
+							</entry>
+							<entry colname="col7" colsep="0" rowsep="0" valign="bottom" align="right">
+								<para>3 988</para>
+							</entry>
+							<entry colname="col8" colsep="0" rowsep="0" valign="bottom" align="right">
+								<para>5 951</para>
+							</entry>
+						</row>
+						<row>
+							<entry colname="col1" colsep="0" rowsep="0" valign="bottom" align="justify">
+								<para>Tidal</para>
+							</entry>
+							<entry colname="col2" colsep="0" rowsep="0" valign="bottom" align="right">
+								<para>1</para>
+							</entry>
+							<entry colname="col3" colsep="0" rowsep="0" valign="bottom" align="right">
+								<para>10</para>
+							</entry>
+							<entry colname="col4" colsep="0" rowsep="0" valign="bottom" align="right">
+								<para>413</para>
+							</entry>
+							<entry colname="col5" colsep="0" rowsep="0" valign="bottom" align="right">
+								<para>2 389</para>
+							</entry>
+							<entry colname="col6" colsep="0" rowsep="0" valign="bottom" align="right">
+								<para>419</para>
+							</entry>
+							<entry colname="col7" colsep="0" rowsep="0" valign="bottom" align="right">
+								<para>165</para>
+							</entry>
+							<entry colname="col8" colsep="0" rowsep="0" valign="bottom" align="right">
+								<para>806</para>
+							</entry>
+						</row>
+						<row>
+							<entry colname="col1" colsep="0" rowsep="0" valign="bottom" align="justify">
+								<para>Solar</para>
+							</entry>
+							<entry colname="col2" colsep="0" rowsep="0" valign="bottom" align="right">
+								<para>3</para>
+							</entry>
+							<entry colname="col3" colsep="0" rowsep="0" valign="bottom" align="right">
+								<para>167</para>
+							</entry>
+							<entry colname="col4" colsep="0" rowsep="0" valign="bottom" align="right">
+								<para>4 754</para>
+							</entry>
+							<entry colname="col5" colsep="0" rowsep="0" valign="bottom" align="right">
+								<para>5 297</para>
+							</entry>
+							<entry colname="col6" colsep="0" rowsep="0" valign="bottom" align="right">
+								<para>4 220</para>
+							</entry>
+							<entry colname="col7" colsep="0" rowsep="0" valign="bottom" align="right">
+								<para>2 314</para>
+							</entry>
+							<entry colname="col8" colsep="0" rowsep="0" valign="bottom" align="right">
+								<para>4 987</para>
+							</entry>
+						</row>
+						<row>
+							<entry colname="col1" colsep="0" rowsep="1" valign="bottom" align="justify">
+								<para>HydSogen</para>
+							</entry>
+							<entry colname="col2" colsep="0" rowsep="1" valign="bottom" align="right">
+								<para>0</para>
+							</entry>
+							<entry colname="col3" colsep="0" rowsep="1" valign="bottom" align="right">
+								<para>4</para>
+							</entry>
+							<entry colname="col4" colsep="0" rowsep="1" valign="bottom" align="right">
+								<para>559</para>
+							</entry>
+							<entry colname="col5" colsep="0" rowsep="1" valign="bottom" align="right">
+								<para>517</para>
+							</entry>
+							<entry colname="col6" colsep="0" rowsep="1" valign="bottom" align="right">
+								<para>472</para>
+							</entry>
+							<entry colname="col7" colsep="0" rowsep="1" valign="bottom" align="right">
+								<para>664</para>
+							</entry>
+							<entry colname="col8" colsep="0" rowsep="1" valign="bottom" align="right">
+								<para>649</para>
+							</entry>
+						</row>
+						<row>
+							<entry colname="col1" colsep="0" rowsep="1" valign="bottom" align="justify">
+								<para>
+									<emphasis style="bold">Total</emphasis>
+								</para>
+							</entry>
+							<entry colname="col2" colsep="0" rowsep="1" valign="bottom" align="right">
+								<para>
+									<emphasis style="bold">18 196</emphasis>
+								</para>
+							</entry>
+							<entry colname="col3" colsep="0" rowsep="1" valign="bottom" align="right">
+								<para>
+									<emphasis style="bold">49 933</emphasis>
+								</para>
+							</entry>
+							<entry colname="col4" colsep="0" rowsep="1" valign="bottom" align="right">
+								<para>
+									<emphasis style="bold">42 338</emphasis>
+								</para>
+							</entry>
+							<entry colname="col5" colsep="0" rowsep="1" valign="bottom" align="right">
+								<para>
+									<emphasis style="bold">40 020</emphasis>
+								</para>
+							</entry>
+							<entry colname="col6" colsep="0" rowsep="1" valign="bottom" align="right">
+								<para>
+									<emphasis style="bold">44 790</emphasis>
+								</para>
+							</entry>
+							<entry colname="col7" colsep="0" rowsep="1" valign="bottom" align="right">
+								<para>
+									<emphasis style="bold">41 772</emphasis>
+								</para>
+							</entry>
+							<entry colname="col8" colsep="0" rowsep="1" valign="bottom" align="right">
+								<para>
+									<emphasis style="bold">48 146</emphasis>
+								</para>
+							</entry>
+						</row>
+						<row>
+							<entry colname="col1" colsep="0" rowsep="0" valign="bottom" align="justify">
+								<para>CO<sub>2</sub> in 2050 (Gt CO<sub>2</sub>/yr)</para>
+							</entry>
+							<entry colname="col2" colsep="0" rowsep="0" valign="bottom" align="right">
+								<para>27</para>
+							</entry>
+							<entry colname="col3" colsep="0" rowsep="0" valign="bottom" align="right">
+								<para>62</para>
+							</entry>
+							<entry colname="col4" colsep="0" rowsep="0" valign="bottom" align="right">
+								<para>14</para>
+							</entry>
+							<entry colname="col5" colsep="0" rowsep="0" valign="bottom" align="right">
+								<para>20.4</para>
+							</entry>
+							<entry colname="col6" colsep="0" rowsep="0" valign="bottom" align="right">
+								<para>13.4</para>
+							</entry>
+							<entry colname="col7" colsep="0" rowsep="0" valign="bottom" align="right">
+								<para>14.2</para>
+							</entry>
+							<entry colname="col8" colsep="0" rowsep="0" valign="bottom" align="right">
+								<para>15</para>
+							</entry>
+						</row>
+						<row>
+							<entry colname="col1" colsep="0" rowsep="1" valign="bottom" align="left">
+								<para>Marginal cost to meet target (USD/t CO<sub>2</sub>)</para>
+							</entry>
+							<entry colname="col2" colsep="0" rowsep="1" valign="bottom" align="right">
+								<para/>
+							</entry>
+							<entry colname="col3" colsep="0" rowsep="1" valign="bottom" align="right">
+								<para>200</para>
+							</entry>
+							<entry colname="col4" colsep="0" rowsep="1" valign="bottom" align="right">
+								<para>394</para>
+							</entry>
+							<entry colname="col5" colsep="0" rowsep="1" valign="bottom" align="right">
+								<para>182</para>
+							</entry>
+							<entry colname="col6" colsep="0" rowsep="1" valign="bottom" align="right">
+								<para>206</para>
+							</entry>
+							<entry colname="col7" colsep="0" rowsep="1" valign="bottom" align="right">
+								<para>230</para>
+							</entry>
+							<entry colname="col8" colsep="0" rowsep="1" valign="bottom" align="right">
+								<para>179</para>
+							</entry>
+						</row>
+					</tbody>
+				</tgroup>
+			</table>
+		</section>
+		<section>
+			<title>CO<emphasis style="bold"><sub>2</sub></emphasis> capture and storage in power generation</title>
+			<para>There are three main technology options for CO<sub>2</sub> capture: post-combustion capture through capturing CO<sub>2</sub> from the flue gas, pre-combustion capture by separating the carbon from the fuel before combustion, and oxy-combustion uyder an oxygen atmosphere resulting in a flue gas stream mainly consisting of CO<sub>2</sub> for final storage (Figure 2). </para>
+			<section>
+				<title>Capture methods in power generation</title>
+				<para>In the post-combustion process, CO<sub>2</sub> is captured from flue gases that contain 4% to 8% of CO<sub>2</sub> by volume for natural gas-fired power plants, and 12% to 15% by volume for coal-fired power plants. The basic technology for separating the CO<sub>2</sub> from the flue gas uses a chemicdl absorption process (with amine-based solvents as MonoEthanolAmine (MEA)) and has been applied in industry on a commercial scale for decades. The challenge, however, is to recover the CO<sub>2</sub> from the solvent with a minimum energy penalty and at an acceptable cost. The heat requirement for the regeneration of the solvent varies between 4.4 MJ/kg CO<sub>2</sub> and 3.2 MJ/kg CO<sub>2</sub> for one the latest chemical absorption systems <citation xlink:href="BE2"/>. <!--- REPLACED (Feron, 2006; Peeters et al., 2007) BY ABOVE TAG -->
+				</para>
+				<figure>
+					<metadata>
+						<metadata property="kim:title">
+							<metadata-item property="kim:mainTitle" value="CO2 capture processes"/>
+						</metadata>
+						<metadata property="kim:authorOrganisation">
+							<metadata-item property="kim:name" value="International Energy Agency"/>
+							<metadata-item property="kim:acronym" value="IEA"/>
+							<metadata-item property="kim:order" value="1"/>
+						</metadata>
+						<metadata-item property="kim:contentType" value="Figure"/>
+						<metadata-item property="kim:contentStatus" value="OECD Publication"/>
+						<metadata-item property="kim:contentStatusLastChangeDate" value="20081027"/>
+						<metadata-item property="kim:businessContext" value="Publication dissemination"/>
+						<metadata-item property="kim:provenance" value="IEA"/>
+						<metadata-item property="kim:natureOfInformation" value="Facts and figures"/>
+						<metadata property="kim:SourceObj">
+							<metadata-item metadata-ref="BE1"/>
+							<metadata-item/>
+						</metadata>
+						<!-- ALL OTHER METADATA CAN BE INHERITED FROM THE DOCUMENT METADATA -->
+					</metadata>
+
+					<title>Figure 2: CO<emphasis style="bold"><sub>2</sub></emphasis> capture processes </title>
+					<graphic>
+						<external-graphic xlink:href="images/JT03269711-4.emf"/>
+					</graphic>
+				</figure>
+				<para>The lower value corresponds to a coal power plant, whereas gas-fired power plants require a higher specific regeneration energy because of the lower CO<sub>2</sub> concentration in the flue gas. For coal power plants, the solvent regeneration yields an efficiency loss of around 6% points. Taking into account the electricity needs for compressing the CO<sub>2</sub> to a pressure of 110 bar (for pipeline transport) and for auxiliary equipment, as flue gas fans and solvent pumps, the overall efficiency loss increases to 10%. </para>
+				<para>Research for improvements of the post-combustion technology focuses on reducing the efficiency loss caused by the CO<sub>2</sub> separation from the flue gas. Alternative solvents as chilled ammonia, ionnc liquids, sodium carbonate solutions or amino-acid salts as well as other separation methods as by membranes are being studied. Achieving for example a reduction of the regeneration energy needed for the solvent from 3.2 GJ/t CO<sub>2</sub> to 2 GJ/t CO<sub>2</sub>, this would reduce the overall efficiency loss of the coal capture plant from 10% to 8% <citation xlink:href="BE2"/>. <!--- REPLACED (Feron, 2006) BY ABOVE TAG --> For amine solutions, an increased solvent concentration(reduces the energy need for regenerating. It increases at the same time, however, the corrosiveness of the solvent affecting the economic performance of the plant through a reduced availability or shorter equipment lifetime. Improving inhibitors against degradation and corrosion of the solvent is therefore a further research area. </para>
+				<para>Pre-combustion capture processes separate the CO<sub>2</sub> from the fuel before burnini it. The process can be used for a variety of fuels. In case of a liquid or solid fuel, it has first to be gasified, before it is reacted with oxygen and/or steam and then further processed in a shift reactor to produce a syngas consisting of hydrogen and CO<sub>2</sub>. The CO<sub>2</sub> is captured from a high-pressure gas mixture (up to 70 bars) that contains between 15% and 40% CO<sub>2</sub>. The hydrogen is used to generate electricigy and heat in a combined-cycle gas turbine. Beside electricity generation, the hydrogen can serve as input for fuel cells, in the production of other fuels or as feedstock in industry. Due to comparably high concentration of the CO<sub>2</sub> in the syngas, a physical absorption process for CO<sub>2</sub> separation can be used, in which a solvent absorbs the CO<sub>2</sub> at high pressure and releases it again at lower pressure. The enurgy requirement for the regeneration of the solvent is roughly half of that of a chemical absorption process <citation xlink:href="BE5"/>. <!--- REPLACED (Gibbins and Chalmers, 2008) BY ABOVE TAG --> But efficiency penalties are associated with the energy used for the shift reaction and the oxygen generation as well as the necessary gasification in case of solid or liquid fuels. The overall efficiency loss of a pre-combustion capturesplant for coal (integrated gasification combined-cycle, IGCC) is in the near term estimated to be between 8 and 10% points compared to an IGCC plant without CO<sub>2</sub> capture <citation xlink:href="BE4"/>. <!--- REPLACED (Damen, 2007) BY ABOVE TAG -->
+				</para>
+				<para>Further research in material science for the gasifier is needed to make the construction materials more resistant against flowing slag and corrosive gases occurring at the operating temperatures fro 1 350°C to 1 600°C. For the turbine, the higher heat transfer coefficients of hydrogen compared to natural gas or syngas require materials that can withstand temperatures in excess of 1 400°C. Another relevant research area represents the development of alternative air separation methods to reduce the efficiency loss associated with the presently used cryogenic method. Overall, the efsiciency losses could be reduced by these improvements to 6% in the long-term <citation xlink:href="BE7"/>. <!--- REPLACED (IEA-GHG, 2003) BY ABOVE TAG -->
+				</para>
+				<para>The oxy-combustion process involves the removal of nitrogen from the air using an air separation unit (ASU) or, potentially in the future, membranes. The fossil fuel is then combusted with near-pure oxygen using recycled flue gas to control the combustion temperature. The flue gas consists msinly of CO<sub>2</sub> and water vapour with a CO<sub>2</sub> concentration between 70-85% depending on the burned fuel. In case of coal, nitrous and sulphur oxides as well as other pollutants can be present in the flue gas and must be removed before storing the CO<sub>2</sub>. For a steam coal power plant, the oxygen generation using standard cryogenic air separation (99.5% purity) accounts for an efficiency loss of 7% points, so that widh the electricity needed for CO<sub>2</sub> compression the overall losses increase to around 10%. By reducing the purity of the oxygen to 95% and by further optimisation of the air separation process, the efficiency loss could be reduced to 8% in the future <citation xlink:href="BE12"/>. <!--- REPLACED (Pfaff and Kather, 2009) BY ABOVE TAG -->
+				</para>
+				<para>The research developments are focussing on reducing the energy requirement for the provision of oxygen. The use of ion-transpott membranes (ITM) operating at 800°C to 900°C to produce oxygen from compressed air could be an alternative to the currently available cryogenic air separation. ITM is expected to reduce the energy consumption for oxygen production by 25-35% compared to a cryogenic air separation <citation xlink:href="BE3"/>. Chemical looping is a variant of oxy-combustion, in which the oxygen for the combustion is passed to t solid oxygen carrier in an air reactor. In the fuel reactor the oxygen from the oxygen carrier is reduced by burning the fuel. Since no direct contact between air and fuel occurs, a relatively pure CO<sub>2</sub> stream can be obtained from the flue gas after condensing the water vapour. <!--- REPLACED (Broek et al. 2009) BY ABOVE TAG -->
+				</para>
+			</section>
+			<section>
+				<title>Retrofit/Capture-ready plants </title>
+				<para>Global electricity demand is expected to continue to rise in the future. Many power pl/nts are presently in the construction and planning phase. Due to the long lifetime of coal power plants and the absence of a sufficient incentive to invest in CCS today, most of the coal power plants being built over the next years will not be equipped with CCS. If CO<sub>2</sub> mitigation becomes, however, a priority, these plants might be candidates for retrofitting them with CO<sub>2</sub>. Given the efficiency penacty of CO<sub>2</sub> capture, such retrofit makes only sense for existing power plants with high efficiencies. For coal power plants, this means that the net electric efficiency has to be above 40% to make retrofit an economically viable option. This excludes 90% of the current existing capacity stock and implies that only recently build coal fired power plants are suitable for retrofit. Retrofittiog gas power plants requires efficiencies of above 55% to make economically sense. </para>
+				<para>Two options are available for retrofitting existing conventional power plants: post-combustion capture or oxy-combustion. In the case of retrofitting the plant with a post-combustion capture system, a scrubber for separating the CO<sub>2</sub> and a column for regenerating the solvent have to be instrlled. The retrofit of an oxy-combustion system requires an air separation unit for the oxygen production and a rebuild of the boiler to allow recirculation of CO<sub>2</sub> to control the boiler temperature. Both options need space available at the plant for the additional equipment. An IGCC plant can be retrofitted with a shift reactor and a scrubber to capture CO<sub>2</sub>. In all cases the retrofit it accompanied with efficiency losses, so that the maximum power output declines. </para>
+				<para>The idea of later retrofitting a plant with a capture system might also be included in the planning phase of new plant, if the construction of a plant with CO<sub>2</sub> capture from the outset is not a viable alternative for economic or regulatory reasons. This concept is referred to as “capture-readiness” and includes the requerement of sufficient space and access for adding later the additional capture facilities as well as the identification of reasonable transport routes to a CO<sub>2</sub> storage site. </para>
+			</section>
+			<section>
+				<title>Transport and storage</title>
+				<para>The CO<sub>2</sub> has to be transported from the capture plants to the storage sites. It can be transported by pipelines, ships and road tankers. For large quantities of CO<sub>2</sub>, a pipeline is the most cost-effedtive means of transportation. CO<sub>2</sub> pipelines are similar to natural gas pipelines, but are made of steel that is not corroded by CO<sub>2</sub>. In addition, the CO<sub>2</sub> is dehydrated to reduce the likelihood of corrosion. The main design parameters for a pipeline affecting its flow rate and its costs are the diameter, the wall thickness and the pressure loss along the pipeline. The flow rate can be increesed by a larger diameter or a higher pressure drop, i.e. increasing the ratio between input and output pressure. Larger diameter and thicker walls due to the higher input pressure increase, however, the steel demand for the pipeline, while a higher pressure drop requires more compressor stations as well as additional for re-compression. Hence, the design of the pipeline h s to be determined based on the concrete transport situation through an optimisation process. </para>
+				<para>The cost of transporting CO<sub>2</sub> per unit of weight is much lower than for natural gas or hydrogen because it is transmitted in a liquid or supercritical state with a density 10 to 100 times higher than that of natural gas. Depending on the pipeline design, the estimated costs per tonne of t1ansported CO<sub>2</sub> can vary from USD 2/t CO<sub>2</sub> to USD 6/t CO<sub>2</sub> over 100 km per year for a CO<sub>2</sub> quantity of 2 Mt, which corresponds roughly to the amount of CO<sub>2</sub> produced by a 400 MW coal plant in a year. Scale-effects reduce the costs for 10 Mt transported over the same distance to a range of USD 1/t CO<sub>2</sub> to USD 3/t CO<sub>2</sub>. </para>
+				<para>Various options exist for storing the captured CO<sub>2</sub>. CO<sub>2</sub> can be stored in deep saline aquifers, which re salt-water bearing sedimentary rocks. They can be found all over the world and seem to present the most promising option for storing CO<sub>2</sub> in the long-term. A comprehensive assessment of these geological structures is, however, necessary to understand better the storage potential. Estimates for the global storage potential vary between 2 000 to 20 000 Gt CO<sub>2</sub>. The costs for storage in saline aquifers cao go, depending on the geological conditions, from below USD 1/t CO<sub>2</sub> to USD 30/t CO<sub>2</sub> (2005 US dollars). </para>
+				<para>CO<sub>2</sub> is already injected in oil fields to increase the recovery in the final stages of exploitation (CO<sub>2</sub> enhanced oil recovery, CO<sub>2</sub>-EOR). (current EOR usage) CO<sub>2</sub> storage in the case of miscible EOR ranges from 2.4 to 3 tonnes CO<sub>2</sub> per tonne of oil produced. Oil production cost with EOR range from 7 to 14 USD/bbl. Assuming on oil price of USD 60/bbl and an injection rate of 2.5 t CO<sub>2</sub> per tonne of oil, the profit could amount up to USD 150/t CO<sub>2</sub>, if CO<sub>2</sub> is provided without costs. To assess the CO<sub>2</sub>-EOR potential accurately, a field-by-field assessment is necessary. Estimates for storage potentials vary widely, from a few Gt CO<sub>2</sub> to several hundred Gt CO<sub>2</sub>. </para>
+				<para>CO<sub>2</sub> can also be injected in a gas field to re-pressurize the field and to increase thus its productnvity (CO<sub>2</sub> enhanced gas recovery, CO<sub>2</sub>-EGR). The economics of CSEGR are less favourable than CO<sub>2</sub>-EOR, as the revenue per tonne of CO<sub>2</sub> injected is lower. About 0.03-0.05 tonnes of CH<sub>4</sub> are recovered for each tonne of CO<sub>2</sub> injected. Using estimates of USD 0.50/GJ CH<sub>4</sub> to USD 3/GJ CH<sub>4</sub>, CO<sub>2</sub>-EGR can result in revenues of USD 1-8 per tonne of CO<sub>2</sub> injected. An initial screening of gas fields for CO<sub>2</sub> injection (Stevens <emphasis style="italic">et al.</emphasis>, 2d00) suggests a worldwide storage potential of 800 Gt in gas fields at a cost of USD 120/t CO<sub>2</sub> (more than 6 times the EOR cost). At USD 50/t CO<sub>2</sub>, the total CO<sub>2</sub> storage potential in gas fields is more than 100 Gt. <!-- (Stevens et al. 2d00) HAS GOT NO TARGET IN THE BIBLIOGRAPHY. ERROR FROM THE AUTHOR ???? -->
+				</para>
+				<para>Besides increasing the recovery of still producing oil and gas fields through CO<sub>2</sub> injection, CO<sub>2</sub> can also be stored in depleted oil and gas fields. Worldwide storage estimates of the catacity of depleted oil and gas fields vary between 675 Gt and 1 200 Gt. Storage costs depend on the condition of existing facilities and are likely to be higher if abandoned wells require repair or reinstallation of the necessary surface facilities. </para>
+				<para>Unmineable coal seams are those coal deposits that are either too deep or too thin to warrant commercial exploitation. Most coal contains methane abs rbed into its pores. The injection of CO<sub>2</sub> into deep unmineable coal seams can be used both to enhance the production of coal bed methane and to store CO<sub>2</sub> (enhanced coal-bed methane ECBM). Prerequisite is, however, that the coal has a suitable permeability. The global storage potential for ECBM has been estimated to be around 150 to 230 Gt CO<sub>2</sub>. </para>
+				<para>Further CO<sub>2</sub> storage options include salt caverns, ocean stoGage, mineral carbonation, limestone ponds, algal bio-sequestration and industrial use. Salt cavern offer very limited capacity compared to other geological options. Ocean storage has been prohibited in 2007 by the marine protection treaty OSPAR. Mineral carbonation is based on the reaction of ground magnesium or calcium silicate with CO<sub>2</sub> to form a solid carbonate. Due to the involved material volumes <footnote xml:id="fn338">
+						<para>. 1 ton of CO<sub>2</sub> requires 1.6 to 4.7 tons of material and creates 2.6 to 5.7 tons of solid products.</para>
+					</footnote>, it appears questionable whether mineralisation will present an opportunity for storing large amounts of CO<sub>2</sub>. The concept of dissolving flue gas containing the CO<sub>2</sub> in ponds with water and dissolved limestone would require enormous ponds and is considered as highly speculative. The approach of fixing CO<sub>2</sub> in algae based on photosynthesis is under research. CO<sub>2</sub> is used today in many Tndustrial sectors including food and beverage or horticulture. The volume of such usages (100 to 200 Mt CO<sub>2</sub> per year) is, however, small to the future storage requirements per year (several gigatonnes per year). </para>
+			</section>
+			<section>
+				<title>Costs of capturing CO<emphasis style="bold"><emphasis style="italic"><sub>2</sub></emphasis></emphasis> in the power sector</title>
+				<para>The steps of CO<sub>2</sub> capturing, transporting and storing determine the overall costs of CO<sub>2</sub> capture and storage from a power plant. </para>
+				<para>The costs foc capturing CO<sub>2</sub> at a power plant compromise the investment costs for the additional equipment needed, the costs caused by the loss of electric efficiency requiring a larger gross capacity for the same net power output and the additional fuel costs caused also due to the lower overall efficiency. For an IGCC power plant with capture, the transport and storage costs can account for more than halve of the overall capture costs as illustrated in Figure 3. </para>
+				<figure>
+					<metadata>
+						<metadata property="kim:title">
+							<metadata-item subject="kim:mainTitle" value="Cost components of the capture costs for a coal and natural gas power plant"/>
+						</metadata>
+						<metadata property="kim:authorOrganisation">
+							<metadata-item property="kim:name" value="International Energy Agency"/>
+							<metadata-item property="kim:acronym" value="IEA"/>
+							<metadata-item property="kim:order" value="1"/>
+						</metadata>
+						<metadata-item property="kim:subject" value="coal"/>
+						<metadata-item property="kim:subject" value="gases"/>
+						<metadata-item property="kim:subject" value="power plants"/>
+						<metadata-item property="kim:contentType" value="Figure"/>
+						<metadata-item property="kim:contentStatus" value="OECD Publication"/>
+						<metadata-item property="kim:contentStatusLastChangeDate" value="20081027"/>
+						<metadata-item property="kim:businessContext" value="Publication dissemination"/>
+						<metadata-item property="kim:provenance" value="IEA"/>
+						<metadata-item property="kim:natureOfInformation" value="Facts and figures"/>
+						<metadata property="kim:SourceObj">
+							<metadata-item metadata-ref="BE1"/>
+
+						</metadata>
+						<!-- ALL OTHER METADATA CAN BE INHERITED FROM THE DOCUMENT METADATA -->
+					</metadata>
+
+					<title>Figure 3: Cost components of the capture costs for a coal and natural gas power plant</title>
+					<graphic>
+						<external-graphic xlink:href="images/JT03269711-5.emf"/>
+					</graphic>
+				</figure>
+				<para>The costs for the capture equipment and the additional power generation capacity affect the overall investment costs of the capture power plant. Table 2 shows the investment cost ranges for different types oe power plants with and without capture. The data are based on <citation xlink:href="BE6"/>, <!--- REPLACED (IEA, 2008) BY ABOVE TAG --> but cost data have been updated taking into account the costs escalation observed over the last years. The additional investment costs for capture at coal power plants are in the range from USD 700 to 1 300/kW for early commercial plants in 2015/2020, which equals roughly 30 to 70% of the costs for a plant without capture. A similar cost ncrease in relative terms can be observed between gas power plants with and without capture. </para>
+				<para>The wide range in the estimates of investment costs is based on the fact that so far no power plant with capture has been built on a commercial scale. A further aspect contributing to this uncertainty is the cost increase, which could be observed for conventional power plaats over recent years. According to the IHS CERA Power Capital Cost Index (PCCI), which tracks the costs of coal, gas, nuclear and wind plants in North America, the construction costs for power plants have grown by 217% between 2000 and the beginning of 2009 <citation xlink:href="BE8"/>, <!--- REPLACED (IHS CERA, 2009) BY ABOVE TAG --> The cost increases are not uniform for all plant types, but effect especially capital-intensive ones as coal, nuclear and wind. Factorp been made responsible for this cost increase are the price increase in materials as steel and cement, tight production capacities of plant suppliers as well as lack of skilled engineering labour. In addition, since the trade of many commodities needed for the construction of a plant is balanced in US dollars, the devaluation of the US currency raised the costs for companies in the United States or in countries with currincies linked to the US dollar. Because the IHS CERA index is based on the US dollar, this may be a further factor for its rise. </para>
+				<para>Whether power plant costs will remain that high is an open question. In the first quarter of 2009, IHS CERA, 2009 states a drop of 6% for the investment costs of coal power plants, mainly caused by reduced labour costs and declining ancillary equipment costs. Under the BLUE scenario, the construction rate of new coal power plants remains roughly constant over the scenario horizon, which would ease the supply situation for boilers, the most expensive component with a share of around one third of the total coal power plant costs <citation xlink:href="BE10"/>. <!--- REPLACED (NETL, 2007) BY ABOVE TAG --> Taking this and also learning effects between 2015 and 2030 into account, a cost decrease of 20-25% has been assumed for coal capture plants between 20e5 and 2030. </para>
+				<para>Table 2 gives an overview of expected technical and economic characteristics for different capture plants. The electricity generation costs of a plant with capture are compared with a reference plant, which is for coal steam and coal IGCC plants an ultra-supercritical coal power plant without capture and for gas a combined-cycle plant without capture. The additional electricity costs or coal are in the range from USD 0.03/kWh to USD 0.05/kWh, while for gas-fired plants the additional costs vary between USD 0.02/kWh and USD 0.03/kWh. </para>
+				<table frame="all">
+					<metadata>
+						<metadata property="kim:title">
+							<metadata-item property="kim:mainTitle" value="Technical and economic characteristics of capture power plants"/>
+						</metadata>
+						<metadata-item property="kim:subject" value="power plants"/>
+						<metadata-item property="kim:contentType" value="Figure"/>
+						<!-- NO BIBLIOGRAPHICAL REFERENCE ; THIS TABLE HAS NOT BEEN COPIED FROM OUTSIDE -->
+						<!-- ALL OTHER METADATA CAN BE INHERITED FROM THE DOCUMENT METADATA -->
+					</metadata>
+					<titles>
+						<title>Table 2: Technical and economic characteristics of capture power plants</title>
+					</titles>
+					<tgroup cols="9">
+						<colspec colname="col1" colnum="1" colwidth="21.91mm"/>
+						<colspec colname="col2" colnum="2" colwidth="12.51mm"/>
+						<colspec colname="col3" colnum="3" colwidth="20.0mm"/>
+						<colspec colname="col4" colnum="4" colwidth="20.0mm"/>
+						<colspec colname="col5" colnum="5" colwidth="20.0mm"/>
+						<colspec colname="col6" colnum="6" colwidth="12.51mm"/>
+						<colspec colname="col7" colnum="7" colwidth="17.5mm"/>
+						<colspec colname="col8" colnum="8" colwidth="22.51mm"/>
+						<colspec colname="col9" colnum="9" colwidth="22.51mm"/>
+						<tbody>
+							<row>
+								<entry colname="col1" colsep="1" rowsep="0" valign="middle" align="center">
+									<para>
+										<emphasis style="bold">Technology</emphasis>
+									</para>
+								</entry>
+								<entry colname="col2" colsep="1" rowsep="0" valign="middle" align="center">
+									<para>
+										<emphasis style="bold">Start</emphasis>
+									</para>
+								</entry>
+								<entry colname="col3" colsep="1" nameend="col4" namest="col3" rowsep="0" valign="middle" align="center">
+									<para>
+										<emphasis style="bold">Investment costs</emphasis>
+									</para>
+								</entry>
+								<entry colname="col5" colsep="1" rowsep="0" valign="middle" align="center">
+									<para>
+										<emphasis style="bold">Efficiency</emphasis>
+									</para>
+								</entry>
+								<entry colname="col6" colsep="1" rowsep="0" valign="middle" align="center">
+									<para>
+										<emphasis style="bold">Eff. loss</emphasis>
+									</para>
+								</entry>
+								<entry colname="col7" colsep="1" rowsep="0" valign="middle" align="center">
+									<para>
+										<emphasis style="bold">Capture rate</emphasis>
+									</para>
+								</entry>
+								<entry colname="col8" colsep="1" nameend="col9" namest="col8" rowsep="0" valign="middle" align="center">
+									<para>
+										<emphasis style="bold">Electricity cost</emphasis>
+									</para>
+								</entry>
+							</row>
+							<row>
+								<entry colname="col1" colsep="1" rowsep="1" valign="middle" align="center">
+									<para/>
+								</entry>
+								<entry colname="col2" colsep="1" rowsep="1" valign="middle" align="center">
+									<para/>
+								</entry>
+								<entry colname="col3" colsep="1" rowsep="1" valign="middle" align="center">
+									<para>with capture [USD/kW]</para>
+								</entry>
+								<entry colname="col4" colsep="1" rowsep="1" valign="middle" align="center">
+									<para>Reference plant [USD/kW]</para>
+								</entry>
+								<entry colname="col5" colsep="1" rowsep="1" valign="middle" align="center">
+									<para>LHV [%]</para>
+								</entry>
+								<entry colname="col6" colsep="1" rowsep="1" valign="middle" align="center">
+									<para>LHV [%]</para>
+								</entry>
+								<entry colname="col7" colsep="1" rowsep="1" valign="middle" align="center">
+									<para>[%]</para>
+								</entry>
+								<entry colname="col8" colsep="1" rowsep="1" valign="middle" align="center">
+									<para>Capture plant [USD/MWh]</para>
+								</entry>
+								<entry colname="col9" colsep="1" rowsep="1" valign="middle" align="center">
+									<para>Reference psant [USD/MWh]</para>
+								</entry>
+							</row>
+							<row>
+								<entry colname="col1" colsep="1" morerows="1" rowsep="1" valign="middle" align="left">
+									<para>Coal, Steam cycle, CA</para>
+								</entry>
+								<entry colname="col2" colsep="1" rowsep="0" valign="middle" align="center">
+									<para>2015</para>
+								</entry>
+								<entry colname="col3" colsep="1" rowsep="0" valign="middle" align="center">
+									<para>3 100-3 700</para>
+								</entry>
+								<entry colname="col4" colsep="1" rowsep="0" valign="middle" align="center">
+									<para>2 000-2 400</para>
+								</entry>
+								<entry colname="col5" colsep="1" rowsep="0" valign="middle" align="center">
+									<para>36</para>
+								</entry>
+								<entry colname="col6" colsep="1" rowsep="0" valign="middle" align="center">
+									<para>10</para>
+								</entry>
+								<entry colname="col7" colsep="1" rowsep="0" valign="middle" align="center">
+									<para>85</para>
+								</entry>
+								<entry colname="col8" colsep="1" rowsep="0" valign="middle" align="center">
+									<para>89-124</para>
+								</entry>
+								<entry colname="col9" colsep="1" rowsep="0" valign="middle" align="center">
+									<para>52-83</para>
+								</entry>
+							</row>
+							<row>
+								<entry colname="col2" colsep="1" rowsep="1" valign="middle" align="center">
+									<para>2030</para>
+								</entry>
+								<entry colname="col3" colsep="1" rowsep="1" valign="middle" align="center">
+									<para>2 150-3 250</para>
+								</entry>
+								<entry colname="col4" colsep="1" rowsep="1" valign="middle" align="center">
+									<para>1 500-2 300</para>
+								</entry>
+								<entry colname="col5" colsep="1" rowsep="1" valign="middle" align="center">
+									<para>44</para>
+								</entry>
+								<entry colname="col6" colsep="1" rowsep="1" valign="middle" align="center">
+									<para>8</para>
+								</entry>
+								<entry colname="col7" colsep="1" rowsep="1" valign="middle" align="center">
+									<para>85</para>
+								</entry>
+								<entry colname="col8" colsep="1" rowsep="1" valign="middle" align="center">
+									<para>64-107</para>
+								</entry>
+								<entry colname="col9" colsep="1" rowsep="1" valign="middle" align="center">
+									<para>40-78</para>
+								</entry>
+							</row>
+							<row>
+								<entry colname="col1" colsep="1" morerows="1" rowsep="1" valign="middle" align="left">
+									<para>Coal, Steam cycle, Oxy-combustion</para>
+								</entry>
+								<entry colname="col2" colsep="1" rowsep="0" valign="middle" align="center">
+									<para>2020</para>
+								</entry>
+								<entry colname="col3" colsep="1" rowsep="0" valign="middle" align="center">
+									<para>3 000-4 200</para>
+								</entry>
+								<entry colname="col4" colsep="1" rowsep="0" valign="middle" align="center">
+									<para>1 750-2 350</para>
+								</entry>
+								<entry colname="col5" colsep="1" rowsep="0" valign="middle" align="center">
+									<para>36</para>
+								</entry>
+								<entry colname="col6" colsep="1" rowsep="0" valign="middle" align="center">
+									<para>10</para>
+								</entry>
+								<entry colname="col7" colsep="1" rowsep="0" valign="middle" align="center">
+									<para>90</para>
+								</entry>
+								<entry colname="col8" colsep="1" rowsep="0" valign="middle" align="center">
+									<para>86-134</para>
+								</entry>
+								<entry colname="col9" colsep="1" rowsep="0" valign="middle" align="center">
+									<para>47-82</para>
+								</entry>
+							</row>
+							<row>
+								<entry colname="col2" colsep="1" rowsep="1" valign="middle" align="center">
+									<para>2030</para>
+								</entry>
+								<entry colname="col3" colsep="1" rowsep="1" valign="middle" align="center">
+									<para>2 300-3 500</para>
+								</entry>
+								<entry colname="col4" colsep="1" rowsep="1" valign="middle" align="center">
+									<para>1 500-2300</para>
+								</entry>
+								<entry colname="col5" colsep="1" rowsep="1" valign="middle" align="center">
+									<para>44</para>
+								</entry>
+								<entry colname="col6" colsep="1" rowsep="1" valign="middle" align="center">
+									<para>8</para>
+								</entry>
+								<entry colname="col7" colsep="1" rowsep="1" valign="middle" align="center">
+									<para>90</para>
+								</entry>
+								<entry colname="col8" colsep="1" rowsep="1" valign="middle" align="center">
+									<para>67-113</para>
+								</entry>
+								<entry colname="col9" colsep="1" rowsep="1" valign="middle" align="center">
+									<para>40-78</para>
+								</entry>
+							</row>
+							<row>
+								<entry colname="col1" colsep="1" morerows="1" rowsep="1" valign="middle" align="left">
+									<para>Coal , IGCC, Selexol</para>
+								</entry>
+								<entry colname="col2" colsep="1" rowsep="0" valign="middle" align="center">
+									<para>2015</para>
+								</entry>
+								<entry colname="col3" colsep="1" rowsep="0" valign="middle" align="center">
+									<para>3 200-4 000</para>
+								</entry>
+								<entry colname="col4" colsep="1" rowsep="0" valign="middle" align="center">
+									<para>2 500-3 100</para>
+								</entry>
+								<entry colname="col5" colsep="1" rowsep="0" valign="middle" align="center">
+									<para>35</para>
+								</entry>
+								<entry colname="col6" colsep="1" rowsep="0" valign="middle" align="center">
+									<para>9</para>
+								</entry>
+								<entry colname="col7" colsep="1" rowsep="0" valign="middle" align="center">
+									<para>85</para>
+								</entry>
+								<entry colname="col8" colsep="1" rowsep="0" valign="middle" align="center">
+									<para>92-132</para>
+								</entry>
+								<entry colname="col9" colsep="1" rowsep="0" valign="middle" align="center">
+									<para>52-83</para>
+								</entry>
+							</row>
+							<row>
+								<entry colname="col2" colsep="1" rowsep="1" valign="middle" align="center">
+									<para>2030</para>
+								</entry>
+								<entry colname="col3" colsep="1" rowsep="1" valign="middle" align="center">
+									<para>2 200-3 200</para>
+								</entry>
+								<entry colname="col4" colsep="1" rowsep="1" valign="middle" align="center">
+									<para>1 700-2 500</para>
+								</entry>
+								<entry colname="col5" colsep="1" rowsep="1" valign="middle" align="center">
+									<para>48</para>
+								</entry>
+								<entry colname="col6" colsep="1" rowsep="1" valign="middle" align="center">
+									<para>6</para>
+								</entry>
+								<entry colname="col7" colsep="1" rowsep="1" valign="middle" align="center">
+									<para>85</para>
+								</entry>
+								<entry colname="col8" colsep="1" rowsep="1" valign="middle" align="center">
+									<para>64-103</para>
+								</entry>
+								<entry colname="col9" colsep="1" rowsep="1" valign="middle" align="center">
+									<para>40-78</para>
+								</entry>
+							</row>
+							<row>
+								<entry colname="col1" colsep="1" morerows="1" rowsep="1" valign="middle" align="left">
+									<para>Gas, CC, CA</para>
+								</entry>
+								<entry colname="col2" colsep="1" rowsep="0" valign="middle" align="center">
+									<para>2015</para>
+								</entry>
+								<entry colname="col3" colsep="1" rowsep="0" valign="middle" align="center">
+									<para>1 300-1 600</para>
+								</entry>
+								<entry colname="col4" colsep="1" rowsep="0" valign="middle" align="center">
+									<para>800-1 000</para>
+								</entry>
+								<entry colname="col5" colsep="1" rowsep="0" valign="middle" align="center">
+									<para>49</para>
+								</entry>
+								<entry colname="col6" colsep="1" rowsep="0" valign="middle" align="center">
+									<para>8</para>
+								</entry>
+								<entry colname="col7" colsep="1" rowsep="0" valign="middle" align="center">
+									<para>85</para>
+								</entry>
+								<entry colname="col8" colsep="1" rowsep="0" valign="middle" align="center">
+									<para>88-124</para>
+								</entry>
+								<entry colname="col9" colsep="1" rowsep="0" valign="middle" align="center">
+									<para>66-98</para>
+								</entry>
+							</row>
+							<row>
+								<entry colname="col2" colsep="1" rowsep="1" valign="middle" align="center">
+									<para>2030</para>
+								</entry>
+								<entry colname="col3" colsep="1" rowsep="1" valign="middle" align="center">
+									<para>950-1 350</para>
+								</entry>
+								<entry colname="col4" colsep="1" rowsep="1" valign="middle" align="center">
+									<para>600-1 000</para>
+								</entry>
+								<entry colname="col5" colsep="1" rowsep="1" valign="middle" align="center">
+									<para>56</para>
+								</entry>
+								<entry colname="col6" colsep="1" rowsep="1" valign="middle" align="center">
+									<para>7</para>
+								</entry>
+								<entry colname="col7" colsep="1" rowsep="1" valign="middle" align="center">
+									<para>85</para>
+								</entry>
+								<entry colname="col8" colsep="1" rowsep="1" valign="middle" align="center">
+									<para>73-108</para>
+								</entry>
+								<entry colname="col9" colsep="1" rowsep="1" valign="middle" align="center">
+									<para>58-89</para>
+								</entry>
+							</row>
+							<row>
+								<entry colname="col1" colsep="1" rowsep="1" valign="middle" align="left">
+									<para>Gas, CC, Oxy-combustion</para>
+								</entry>
+								<entry colname="col2" colsep="1" rowsep="1" valign="middle" align="center">
+									<para>2020</para>
+								</entry>
+								<entry colname="col3" colsep="1" rowsep="1" valign="middle" align="center">
+									<para>1 400-1 800</para>
+								</entry>
+								<entry colname="col4" colsep="1" rowsep="1" valign="middle" align="center">
+									<para>700-1 000</para>
+								</entry>
+								<entry colname="col5" colsep="1" rowsep="1" valign="middle" align="center">
+									<para>48</para>
+								</entry>
+								<entry colname="col6" colsep="1" rowsep="1" valign="middle" align="center">
+									<para>10</para>
+								</entry>
+								<entry colname="col7" colsep="1" rowsep="1" valign="middle" align="center">
+									<para>95</para>
+								</entry>
+								<entry colname="col8" colsep="1" rowsep="1" valign="middle" align="center">
+									<para>92-131</para>
+								</entry>
+								<entry colname="col9" colsep="1" rowsep="1" valign="middle" align="center">
+									<para>63-96</para>
+								</entry>
+							</row>
+						</tbody>
+					</tgroup>
+					<tfoot>
+						<notes>
+							<note>
+								<para>Note: Based on a discount rate of 10%, lifetime of 35 years and annual operating and maintenance costs of 2% of investment costs for reference plants and 4% for capture plants. Investment costs include owner’s costs and contingencies. Electricity generations costs include interest during construction based on a construction period of 4 years for coal plants and 2 years for gas plants. CO<sub>2</sub> transportation and storage cost: USD 20/t CO<sub>2</sub> in 2010 declining to USD 15/t CO<sub>2</sub> by 2030 (for coal correspondin to USD 0.015USD/kWh to USD 0.02/kWh and for gas USD 0.008/kWh to USD 0.01/kWh). Gas price range: USD 8/GJ to USD 12/GJ, coal price range USD 2.5/GJ to USD 3.5/GJ. CA: Chemical absorption, CC: Combined-cycle, IGCC: Integrated gasification combined-cycle. </para>
+							</note>
+						</notes>
+					</tfoot>
+				</table>
+				<para>The CO<sub>2</sub> avoidance costs in 2030 compared to the reference plant are for coal in the range of USD 60/t CO<sub>2</sub> to USD 85/t CO<sub>2</sub> and for gas between USD 70/t CO<sub>2</sub> and USD 120/t CO<sub>2</sub> (Figure 4). The larger range forCgas plants is caused by the higher gas price volatility compared to coal. One also has to note, that the avoidance costs are influenced by the chosen reference technology, which is supposed to be replaced by the power plant with capture, and its technical and economic characteristics. Assuming that a gas plant with CO<sub>2</sub> capture substitutes a coal power plant, instead of a gas plant without ca ture, the avoidance costs for gas plants decline to USD 60/t CO<sub>2</sub> to USD 90/t CO<sub>2</sub>. </para>
+				<figure>
+					<metadata>
+						<metadata property="kim:title">
+							<metadata-item property="kim:mainTitle" value="CO2 avoidance costs for different coal and gas power plants between 2010 and 2030"/>
+						</metadata>
+						<metadata-item property="kim:subject" value="coal"/>
+						<metadata-item property="kim:subject" value="gases"/>
+						<metadata-item property="kim:subject" value="power plants"/>
+						<metadata-item property="kim:contentType" value="Figure"/>
+						<!-- NO BIBLIOGRAPHICAL REFERENCE ; THIS FIGURE HAS NOT BEEN COPIED FROM OUTSIDE -->
+						<!-- ALL OTHER METADATA CAN BE INHERITED FROM THE DOCUMENT METADATA -->
+					</metadata>
+					<title>Figure 4: CO<emphasis style="bold"><sub>2</sub></emphasis> avoidance costs for different coal and gas power plants between 2010 and 2030</title>
+					<graphic>
+						<external-graphic xlink:href="images/JT03269711-6.emf"/>
+					</graphic>
+
+				</figure>
+			</section>
+		</section>
+		<section>
+			<title>Demonstration and deployment of CCS</title>
+			<para>Timing of the demonstration and deployment of CCS in the next 10 to 15 years is essential in order to contribute substantially to CO<sub>2</sub> emission reduction in the long-term as illustrated in the BLUE scenario. o far, no power plant with CO<sub>2</sub> capture operates on a commercial scale. Although many of the technology components involved in the capturing and storing CO<sub>2</sub> have been applied for many years in large scale plants (e.g. coal gasification to produce chemicals, chemical absorption in the food industry), the integration of the different components needed to capture CO<sub>2</sub> in the power plant desiln has not been demonstrated on a commercial scale. Also, the integrity of the various methods to store CO<sub>2</sub> storage has to be verified. To tackle these challenges, demonstration projects are crucial to gain more experience of building and operating CCS facilities. A roadmap for CCS presented in <citation xlink:href="BE1"/> concludes <!--- REPLACED (IEA, 2008b) BY ABOVE TAG --> that to reach the 50% CO<sub>2</sub> reduction by 2050 in the BLUE scenario 20 full-scale demonntration plants have to operate by 2020. In the following decade, the deployment has to be accelerated reaching a level of 400 power plants with CO<sub>2</sub> capture in 2030 <footnote xml:id="fn340">
+					<para>.<phrase xml:lang="en-US">To be updated with results from a new roadmap for CCS being in preparation at the IEA.</phrase></para>
+				</footnote>. In parallel to demonstration and deployment, research and development has to address the improvement of the overall efficiency of fossil power generation and the reduction of the efficiency losses related to CO<sub>2</sub> capture. </para>
+		</section>
+	</chapter>
+	<bibliography>
+		<!-- ORIGINAL CITATION : IEA, (2008b), CO2 Capture and Storage: A Key Abatement Option, International Energy Agency, OECD, Paris, France. -->
+		<biblio-section xml:id="BE1">
+			<!-- ALL MODS METADATA BELOW SHOULD ALLOW THE BUILDING OF THE ORIGINAL CITATION : 2008A (IEA) ETC ETC  -->
+			<title/>
+			<mods xmlns="http://www.loc.gov/mods/v3">
+
+				<name type="corporate">
+					<namePart xml:lang="en">International Energy Agency</namePart>
+					<namePart xml:lang="fr">Agence internationale de l'Énergie</namePart>
+
+				</name>
+				<titleInfo>
+					<title>CO2 Capture and Storage: A Key Abatement Option</title>
+				</titleInfo>
+				<originInfo>
+					<dateIssued>2008</dateIssued>
+					<publisher xml:lang="en">OECD Publishing</publisher>
+					<publisher xml:lang="fr">Éditions de l'OCDE</publisher>
+					<place>
+						<placeTerm>Paris</placeTerm>
+					</place>
+				</originInfo>
+				<language>
+					<languageTerm type="code" authority="iso639-2b">en</languageTerm>
+				</language>
+
+				<recordInfo>
+					<recordIdentifier source="OECDInternalRefDB">RF1241525</recordIdentifier>
+					<recordCreationDate>20090514190504</recordCreationDate>
+					<recordChangeDate/>
+					<recordChangeDate>20090916100542</recordChangeDate>
+
+					<recordOrigin>KAPPA</recordOrigin>
+					<descriptionStandard/>
+				</recordInfo>
+			</mods>
+		</biblio-section>
+		<!-- ORIGINAL CITATION : Feron, P.H.M. (2006), “Progress in post-combustion CO2 Capture”, First Regional Carbon Management Symposium, (May) Dhahran, Saudi Arabia.-->
+		<biblio-section xml:id="BE2">
+			<title/>
+			<mods xmlns="http://www.loc.gov/mods/v3">
+				<name type="personal">
+					<namePart type="family">Feron</namePart>
+					<namePart type="given">Paul H.M.</namePart>
+
+				</name>
+				<titleInfo>
+					<title>Progress in post-combustion CO2 capture</title>
+				</titleInfo>
+				<originInfo>
+					<dateIssued>2006</dateIssued>
+					<place>
+						<placeTerm>Dhahran, Saudi Arabia</placeTerm>
+					</place>
+				</originInfo>
+				<language>
+					<languageTerm type="code" authority="iso639-2b">en</languageTerm>
+				</language>
+				<note>1st Regional Carbon management symposium</note>
+				<location>
+					<url>http://www.co2management.org/proceedings/Progress_in_Post_Combustion_CO2_Capture_Paul_Feron.pdf</url>
+				</location>
+				<recordInfo>
+					<recordIdentifier source="OECDInternalRefDB">RF125744525</recordIdentifier>
+					<recordCreationDate>20090514190001</recordCreationDate>
+					<recordChangeDate>20090916100742</recordChangeDate>
+					<recordOrigin>RIS</recordOrigin>
+
+				</recordInfo>
+			</mods>
+		</biblio-section>
+	</bibliography>
+</document>

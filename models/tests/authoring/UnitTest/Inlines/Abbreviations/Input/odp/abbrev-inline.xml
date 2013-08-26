@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:oecd:names:xmlns:authoring:document ../../../../../../../schemas/oecd.author.xsd" xmlns="urn:oecd:names:xmlns:authoring:document" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mods="http://www.loc.gov/mods/v3">
+
+    <metadata/>
+
+    <title>EMPLOYMENT AND MIGRATION </title>
+
+    <chapter>
+        <title>The Background to Active Labour Market Policies in Ireland</title>
+
+        <section>
+            <title>Government, partnership agreements and national planning</title>
+
+            <para>The National Economic and Social Council (<abbrev metadata-refs="gs-acr-001" definition="National Economic and Social Council">NESC</abbrev>) and the National Economic and Social Forum (NESF) play an important role in policy analysis and formulating proposals in Ireland. The NESC, created in 1973, provides a forum for discussion of economic and social principles; it has 31 members representing trade unions, employer organisations, NGOs, farmers’ organisations and key government departments. Its “strategy reports” have constituted the key input to the negotiation of the recurring national-level social partnership agreements. The NESF, created in 1993, has a remit to contribute to the formation of a wider national consensus on social and economic policy initiatives particularly in relation to unemployment, equality and social exclusion, again in the context of social partnership arrangements. Its activities include organising the Social Inclusion Forum (SIF) which is attended by many NGOs and generates a wide range of policy proposals. Its membership comprises members of Parliament, central and local government, trade unions and employers, and the voluntary and community sector. The two organisations have recently been combined under the roof of the National Economic and Social Development Office (NESDO).</para>
+        </section>
+
+
+        <section>
+            <title>Labour Market Training</title>
+            <para> The Irish training levy (0.7% of the wage bill) goes to the <abbrev definition="National Training Fund" metadata-refs="gs-acr-002">NFT</abbrev>, of which 95% is forwarded to FÁS. In 2005, total NTF expenditure amounted to EUR 312 million. The NTF contributed about EUR 100 million to the training of apprentices, another EUR 23 million to training of those in employment (including FÁS courses and sectoral training grants by the development agencies) and almost EUR 180 million to training of the unemployed (Forfás, 2007, p. 59). </para>
+        </section>
+
+        <glossary>
+            <title>Acronyms and Abbreviations</title>
+            <gloss-item>
+                <term>
+                    <abbrev definition="National Economic and Social Council" metadata-refs="gs-def-0001" xml:id="gs-acr-001">NESC</abbrev>
+                </term>
+                <definition xml:id="gs-def-0001">
+                    <para>National Economic and Social Council</para>
+                </definition>
+            </gloss-item>
+            <gloss-item>
+                <term>
+                    <abbrev definition="National Training Fund" metadata-refs="gs-def-002" xml:id="gs-acr-002">NFT</abbrev>
+                </term>
+                <definition xml:id="gs-def-002">
+                    <para>National Training Fund</para>
+                </definition>
+            </gloss-item>
+        </glossary>
+
+    </chapter>
+
+</document>

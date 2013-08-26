@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:oecd:names:xmlns:authoring:document ../../../../../../../schemas/oecd.author.xsd" xmlns="urn:oecd:names:xmlns:authoring:document" xmlns:xxx="www.foo.com" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mods="http://www.loc.gov/mods/v3">
+	<metadata> </metadata>
+	<title/>
+
+	<chapter>
+		<title>IEA/NEA <emphasis style="bold">Boundary Issue Chapter on Carbon Capture and Storage</emphasis></title>
+		<section>
+			<title>Introduction</title>
+			<para>Therefore in the followingo starting from an outline of the prospects of CCS based on a scenario analysis with the IEA Energy Technology Perspectives (ETP) model, an overview of the technology options, their costs and research and development (R&amp;D) challenges for captvalueURIng CO<sub>2</sub> in power generation and subsequently transporting and storing is given. </para>
+			<table frame="topbot">
+				<titles>
+					<title>Table 3. Parameters used in estimation</title>
+				</titles>
+				<tgroup cols="4">
+					<colspec colname="col1" colnum="1" colwidth="24.39mm"/>
+					<colspec colname="col2" colnum="2" colwidth="24.41mm"/>
+					<colspec colname="col3" colnum="3" colwidth="24.41mm"/>
+					<colspec colname="col4" colnum="4" colwidth="24.41mm"/>
+					<tbody>
+						<row>
+							<entry colname="col1" colsep="0" rowsep="1" valign="top" align="center">
+								<para>
+									<graphic>
+										<external-graphic xlink:href="images/JT03309601-38.jpg"/>
+									</graphic>
+								</para>
+							</entry>
+							<entry colname="col2" colsep="0" rowsep="1" valign="top" align="center">
+								<para>
+									<inline-graphic>
+										<external-graphic xlink:href="images/JT03309601-39.jpg"/>
+									</inline-graphic>
+								</para>
+							</entry>
+							<entry colname="col3" colsep="0" rowsep="1" valign="top" align="center">
+								<para>
+									<inline-graphic>
+										<external-graphic xlink:href="images/JT03309601-40.jpg"/>
+									</inline-graphic>
+								</para>
+							</entry>
+							<entry colname="col4" colsep="0" rowsep="1" valign="top" align="center">
+								<para>
+									<graphic>
+										<external-graphic xlink:href="images/JT03309601-41.jpg"/>
+									</graphic>
+								</para>
+							</entry>
+						</row>
+						<row>
+							<entry colname="col1" colsep="0" rowsep="1" valign="top" align="center">
+								<para>-0.5</para>
+							</entry>
+							<entry colname="col2" colsep="0" rowsep="1" valign="top" align="center">
+								<para>-0.5</para>
+							</entry>
+							<entry colname="col3" colsep="0" rowsep="1" valign="top" align="center">
+								<para>1</para>
+							</entry>
+							<entry colname="col4" colsep="0" rowsep="1" valign="top" align="center">
+								<para>1</para>
+							</entry>
+						</row>
+					</tbody>
+				</tgroup>
+				<tfoot>
+					<notes>
+						<note>
+							<para><emphasis style="italic">Note: </emphasis><inline-graphic>
+									<external-graphic xlink:href="images/JT03309601-42.jpg"/>
+								</inline-graphic>and <inline-graphic>
+									<external-graphic xlink:href="images/JT03309601-43.jpg"/>
+								</inline-graphic> are respectively the price elasticity of export and import volume. <inline-graphic>
+									<external-graphic xlink:href="images/JT03309601-44.jpg"/>
+								</inline-graphic>and <inline-graphic>
+									<external-graphic xlink:href="images/JT03309601-45.jpg"/>
+								</inline-graphic>the demand elasticity of export and import volumes.<emphasis style="italic"/></para>
+						</note>
+					</notes>
+				</tfoot>
+			</table>
+
+		</section>
+	</chapter>
+</document>

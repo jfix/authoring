@@ -1,0 +1,68 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<document xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:oecd:names:xmlns:authoring:document ../../../../../../../../schemas/oecd.author.xsd" xmlns="urn:oecd:names:xmlns:authoring:document" xmlns:xxx="www.foo.com" xmlns:tax="http://www.loc.gov/tax/v1" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mods="http://www.loc.gov/mods/v3">
+	<document-metadata>
+		<metadata/>
+	</document-metadata>
+	<metadata>
+		<metadata property="kim:title"/>
+	</metadata>
+
+	<title/>
+
+	<chapter>
+
+		<title/>
+
+		<section>
+
+			<title/>
+			<para/>
+
+			<figure>
+				<metadata>
+					<metadata property="kim:title">
+						<metadata-item property="kim:mainTitle" value="Reduction in CO2 emissions from the baseline scenario in the power sector in the ACT Map and BLUE Map scenarios in 2050, by technology area"/>
+					</metadata>
+					<metadata property="kim:authorOrganisation">
+						<metadata-item property="kim:name" value="International Energy Agency"/>
+						<metadata-item property="kim:acronym" value="IEA"/>
+						<metadata-item property="kim:order" value="1"/>
+					</metadata>
+
+					<metadata-item property="kim:subject" value="gas emissions"/>
+					<metadata-item property="kim:contentType" value="Figure"/>
+					<metadata-item property="kim:contentStatus" value="OECD Publication"/>
+					<metadata-item property="kim:contentStatusLastChangeDate" value="20081027"/>
+					<metadata-item property="kim:businessContext" value="Publication dissemination"/>
+					<metadata-item property="kim:provenance" value="IEA"/>
+					<metadata-item property="kim:natureOfInformation" value="Facts and figures"/>
+
+				</metadata>
+
+				<title label="Figure 1">Reduction in CO<emphasis style="bold"><sub>2</sub></emphasis> emissions from the baseline scenario in the power sector in the ACT Map and BLUE Map<footnote xml:id="fn-001">
+						<para>The larger range forCgas plants is caused by the higher gas price volatility compared to coal</para>
+					</footnote> scenarios in 2050, by technology area</title>
+
+				<sub-title>Post-combustion process</sub-title>
+
+				<graphic>
+					<svg-graphic>
+						<svg xmlns="http://www.w3.org/2000/svg" version="1.1">
+							<circle cx="100" cy="50" r="40" stroke="black" stroke-width="2" fill="red"/>
+						</svg>
+					</svg-graphic>
+					<external-graphic xlink:href="images/JT03269711-3.png"/>
+				</graphic>
+
+				<notes>
+					<note>
+						<para>Based on avoidance costs in 2030 compared to the reference cost from 2012</para>
+					</note>
+				</notes>
+
+			</figure>
+
+		</section>
+	</chapter>
+
+</document>

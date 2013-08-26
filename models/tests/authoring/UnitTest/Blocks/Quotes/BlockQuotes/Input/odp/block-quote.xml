@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:oecd:names:xmlns:authoring:document ../../../../../../../../schemas/oecd.author.xsd" xmlns="urn:oecd:names:xmlns:authoring:document" xmlns:xlink="http://www.w3.org/1999/xlink">
+	<metadata>
+		<metadata subject="kim:author">
+			<metadata subject="kim:personname">
+				<metadata-item subject="kim:firstname" value="Calder_J"/>
+			</metadata>
+		</metadata>
+		<metadata subject="kim:othercredit">
+			<metadata subject="kim:personname">
+				<metadata-item subject="kim:firstname" value="Crowther_1"/>
+			</metadata>
+		</metadata>
+		<metadata-item subject="kim:date" value="Thu, 18 Oct 2012 18:32:00 CEST"/>
+		<metadata subject="kim:revhistory">
+			<metadata subject="kim:revision">
+				<metadata-item subject="kim:revnumber" value="1"/>
+				<metadata-item subject="kim:date" value="Thu, 18 Oct 2012 18:32:00 CEST"/>
+			</metadata>
+		</metadata>
+		<metadata subject="kim:printhistory">
+			<metadata-item subject="kim:para" value="Last printed: Wed, 09 Nov 2011 18:58:00 CET"/>
+		</metadata>
+		<metadata-item subject="kim:orgname" value="O.E.C.D."/>
+		<metadata-item property="kim:cote" value="C(2011)135"/>
+		<metadata-item property="kim:originalClassif" value="For Official Use"/>
+		<metadata-item property="kim:language" value="English"/>
+		<metadata-item property="kim:originalLanguage" value="English"/>
+	</metadata>
+	<title>REPORT BY THE COMPETITION COMMITTEE ON THE IMPLEMENTATION OF THE RECOMMENDATION OF THE COUNCIL CONCERNING STRUCTURAL SEPARATION IN REGULATED INDUSTRIES [C(2001)78/FINAL] AND DRAFT REVISION OF THIS RECOMMENDATION </title>
+	<chapter>
+		<title>1. Introduction</title>
+		<para>The Recommendation was accompanied by a detailed report that considered the benefits and the costs associated with the adoption of structural separation policies.1 Both the Recommendation and the report advocated careful consideration of the potential pros and cons of structural separation versus the potential pros and cons of behavioural measures. Section I.1) of the Recommendation specifies:</para>
+		<block-quote>
+
+			<para>“When faced with a situation in which a regulated firm is or may in the future be operating simultaneously in a non-competitive activity and a potentially competitive complementary activity, Member countries should carefully balance the benefits and costs of structural measures against the benefits and costs of behavioural measures.</para>
+
+			<para>The benefits and costs to be balanced include the effects on competition, effects on the quality and cost of regulation, the transition costs of structural modifications and the economic and public benefits of vertical integration, based on the economic characteristics of the industry in the country under review.</para>
+
+			<para>The benefits and costs to be balanced should be those recognised by the relevant agency(ies) including the competition authority, based on principles defined by the member country. This balancing should occur especially in the context of privatisation, liberalisation or regulatory reform.”</para>
+
+		</block-quote>
+
+	</chapter>
+</document>

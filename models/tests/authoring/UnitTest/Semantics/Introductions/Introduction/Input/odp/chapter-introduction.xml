@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:oecd:names:xmlns:authoring:document ../../../../../../../../schemas/oecd.author.xsd" xmlns="urn:oecd:names:xmlns:authoring:document" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mods="http://www.loc.gov/mods/v3">
+	<metadata>
+		<metadata subject="kim:author">
+			<metadata subject="kim:personname">
+				<metadata-item subject="kim:firstname" value="ysé"/>
+			</metadata>
+		</metadata>
+		<metadata subject="kim:othercredit">
+			<metadata subject="kim:personname">
+				<metadata-item subject="kim:firstname" value="Crowther_1"/>
+			</metadata>
+		</metadata>
+		<metadata-item subject="kim:date" value="Thu, 18 Oct 2012 16:49:00 CEST"/>
+		<metadata subject="kim:revhistory">
+			<metadata subject="kim:revision">
+				<metadata-item subject="kim:revnumber" value="1"/>
+				<metadata-item subject="kim:date" value="Thu, 18 Oct 2012 16:49:00 CEST"/>
+			</metadata>
+		</metadata>
+		<metadata subject="kim:printhistory">
+			<metadata-item subject="kim:para" value="Last printed: Wed, 25 Jul 2012 16:44:00 CEST"/>
+		</metadata>
+		<metadata-item subject="kim:orgname" value="O.E.C.D."/>
+		<metadata-item property="kim:cote" value="COM/TAD/ENV/JWPTE(2011)45/FINAL"/>
+		<metadata-item property="kim:originalClassif" value="Unclassified"/>
+		<metadata-item property="kim:language" value="English"/>
+		<metadata-item property="kim:originalLanguage" value="English"/>
+	</metadata>
+	<title/>
+
+
+
+	<chapter>
+		<title>Key drivers and main impacts</title>
+		<introduction>
+			<title>Introduction</title>
+			<para>This chapter examines first the main drivers of illegal trade. An overview of the economic, environmental and social impacts of illegal trade is then provided for five categories of goods: wildlife, fish, timber, ozone-depleting substances (ODS) and hazardous waste. <footnote xml:id="fn1741">
+					<para>In this report, wildlife, fish and timber are collectively referred to as “natural resources”.</para>
+				</footnote> Table 2.1 summarises these impacts, together with examples. </para>
+			<para>The drivers of illegal trade and the environment within which it operates are diverse, varying among sectors, localities and over time. Clearly, it is important to understand what drives this trade, and the circumstances under which it thrives, in order to develop effective policies to counter it. These drivers and enabling conditions are considered in turn below. </para>
+		</introduction>
+		<section>
+			<title>What drives illegal trade?</title>
+			<para>Differential costs between legal and illegal products are a key driver of illegal trade. The demand for scarce products for which legal substitutes are not available or accepted also drives it. The role of risk needs to be better understood as well. </para>
+			<section>
+				<title>Differential costs</title>
+				<para>Self-evidently, illegal (or, indeed, legal) trade only occurs when an economic return can be made from it, either in terms of profits generated or costs avoided, for the participants in the exchange. Illegal trade is likely to develop when the expected returns are higher for illegal than for legal activity. This may occur in two main circumstances. </para>
+				<para>First, illegal trade can occur where compliance with regulations results in costs that may be avoided though illegal behaviour. For example, logging companies operating illegally are unlikely to comply with environmental and health-and-safety laws and so may reduce their operating costs. In addition, bribing corrupt officials may prove more cost-effective than meeting the costs of legal compliance. </para>
+				<para>During the phase-out process for ODS, the legal non-ozone-depleting alternatives often proved to be more expensive than the original substances, and sometimes additional costs were required for the conversion of equipment to use the substitutes (Hayman and Brack, 2002; Kozakiewicz, 2007). In China in 2007, for example, the price of CFC-12 was USD 4 per kilogramme, whereas that of the main substitute, HFC-134a, was USD 7; the cost of adapting a CFC air-conditioning unit so that it could use this alternative was USD 100–200 (Coppens, 2007). It was therefore cheaper to source illegal CFCs. In addition, in the United States, an escalating excise duty was applied to CFCs to encourage phase-out, thus also increasing the cost differential between legal and illegal substances. </para>
+				<para>Table 2.1. Types of impacts examined</para>
+				<para>...</para>
+			</section>
+		</section>
+	</chapter>
+</document>

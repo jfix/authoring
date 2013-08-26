@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:oecd:names:xmlns:authoring:document ../../../../../../../../schemas/oecd.agenda.xsd" xmlns="urn:oecd:names:xmlns:authoring:document" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mods="http://www.loc.gov/mods/v3">
+
+	<document-metadata>
+		<metadata/>
+	</document-metadata>
+	<metadata>
+		<metadata subject="kim:author">
+			<metadata subject="kim:personname">
+				<metadata-item subject="kim:firstname" value="ysé"/>
+			</metadata>
+		</metadata>
+		<metadata subject="kim:othercredit">
+			<metadata subject="kim:personname">
+				<metadata-item subject="kim:firstname" value="Crowther_1"/>
+			</metadata>
+		</metadata>
+		<metadata-item subject="kim:date" value="Thu, 18 Oct 2012 16:49:00 CEST"/>
+		<metadata subject="kim:revhistory">
+			<metadata subject="kim:revision">
+				<metadata-item subject="kim:revnumber" value="1"/>
+				<metadata-item subject="kim:date" value="Thu, 18 Oct 2012 16:49:00 CEST"/>
+			</metadata>
+		</metadata>
+		<metadata subject="kim:printhistory">
+			<metadata-item subject="kim:para" value="Last printed: Wed, 25 Jul 2012 16:44:00 CEST"/>
+		</metadata>
+		<metadata-item subject="kim:orgname" value="O.E.C.D."/>
+		<metadata-item property="kim:cote" value="ECO/CPE/A(2009)2"/>
+		<metadata-item property="kim:originalClassif" value="Unclassified"/>
+		<metadata-item property="kim:language" value="English"/>
+		<metadata-item property="kim:originalLanguage" value="English"/>
+
+
+
+		<metadata property="oecd:forEvent">
+
+			<!-- 
+			Monday 8 and Tuesday 9 June 2009 starting at 10:00 a.m. on the first day
+
+			ECO contact: Mr Sveinbjörn Blöndal, tel. (33-1) 45 24 87 17; e-mail: sveinbjorn.blondal@oecd.org
+
+			-->
+			<metadata-item property="oecd:meetingName" value="Econimic Policy Committee"/>
+			<metadata-item property="oecd:meetingNumber" value="1"/>
+			<metadata-item property="oecd:meetingStartDate" value="200906081000"/>
+			<metadata-item property="oecd:meetingEndDate" value="20090609"/>
+			<metadata-item property="oecd:meetingPlace" value="Paris"/>
+			<metadata-item property="oecd:meetingCountry" value="France"/>
+		</metadata>
+
+	</metadata>
+	<title>Economic Policy Committee Agenda<footnote>
+			<para>At the official lunch on the first day of the meeting, the topic for discussion will be the OECD report for the MCM session on the Road to Recovery. Delegates may wish to comment on the proposed MCM issues paper on this topic [C(2009)72] and the background report [C(2009)78 / C/MIN(2009)9].</para>
+		</footnote></title>
+	<sub-title>110th Meeting to be held in room CC12, Château de la Muette</sub-title>
+
+
+
+	<agenda-session>
+		<metadata>
+			<metadata property="type">
+				<metadata-item subject="kim:agenda-item" value="important"/>
+			</metadata>
+			<metadata property="meeting">
+				<!--
+				<metadata-item subject="kim:time" value="25 Jul 2012 15:00:00 GMT"/>
+				<metadata-item subject="kim:location" value="Paris"/>
+				-->
+				<metadata-item subject="kim:duration" value="02:00:00"/>
+			</metadata>
+		</metadata>
+
+		<title/>
+
+		<agenda-item xml:id="ai-001">
+			<metadata>
+				<metadata property="type">
+					<metadata-item subject="kim:agenda-item" value="important"/>
+				</metadata>
+				<metadata property="meeting">
+					<metadata-item subject="kim:time" value="25 Jul 2012 15:00:00 GMT"/>
+					<metadata-item subject="kim:location" value="Paris"/>
+					<metadata-item subject="kim:duration" value="02:00:00"/>
+				</metadata>
+			</metadata>
+			<title>ADOPTION OF THE AGENDA</title>
+			<para>
+				<table>
+					<tgroup cols="2">
+						<tbody>
+							<row>
+								<entry>
+									<para>Specific questions on the substantive issues below are set out in:</para>
+								</entry>
+								<entry>
+									<para/>
+								</entry>
+							</row>
+							<row>
+								<entry>
+									<para>Main Issues for Discussion</para>
+								</entry>
+								<entry>
+									<para><phrase xlink:href="http://www2.oecd.org/oecdinfo/info.aspx?app=OLIScoteEN&amp;Ref=ENV/JM/MONO(2011)6">ECO/CPE(2009)6</phrase></para>
+								</entry>
+							</row>
+						</tbody>
+					</tgroup>
+				</table>
+			</para>
+		</agenda-item>
+		
+		<agenda-item xml:id="ai-002">
+			<metadata>
+				<metadata property="type">
+					<metadata-item subject="kim:agenda-item" value="important"/>
+				</metadata>
+				<metadata property="meeting">
+					<metadata-item subject="kim:time" value="25 Jul 2012 15:00:00 GMT"/>
+					<metadata-item subject="kim:location" value="Paris"/>
+					<metadata-item subject="kim:duration" value="02:00:00"/>
+				</metadata>
+			</metadata>
+			<title>THE GLOBAL CONJUNCTURE: WHERE DO WE STAND?</title>
+			<para>
+				<table>
+					<tgroup cols="2">
+						<tbody>
+							<row>
+								<entry>
+									<para>As background for the discussion, see:</para>
+								</entry>
+								<entry>
+									<para/>
+								</entry>
+							</row>
+							<row>
+								<entry>
+									<para>General assessment of the macroeconomic situation</para>
+								</entry>
+								<entry>
+									<para><phrase xlink:href="http://www2.oecd.org/oecdinfo/info.aspx?app=OLIScoteEN&amp;Ref=ECO/CPE(2009)7">ECO/CPE(2009)7</phrase></para>
+								</entry>
+							</row>
+						</tbody>
+					</tgroup>
+				</table>
+			</para>
+		</agenda-item>
+		
+		
+		
+		<agenda-item xml:id="ai-003">
+			<metadata>
+				<metadata property="type">
+					<metadata-item subject="kim:agenda-item" value="important"/>
+				</metadata>
+				<metadata property="meeting">
+					<metadata-item subject="kim:time" value="25 Jul 2012 15:00:00 GMT"/>
+					<metadata-item subject="kim:location" value="Paris"/>
+					<metadata-item subject="kim:duration" value="02:00:00"/>
+				</metadata>
+			</metadata>
+			<title>THE GLOBAL CONJUNCTURE: WHERE DO WE STAND?</title>
+			<para>
+				<table>
+					<tgroup cols="2">
+						<tbody>
+							<row>
+								<entry>
+									<para>OTHER BUSINESS</para>
+								</entry>
+								<entry>
+									<para/>
+								</entry>
+							</row>
+							<row>
+								<entry>
+									<para>General assessment of the macroeconomic situation</para>
+								</entry>
+								<entry>
+									<para><phrase xlink:href="http://www2.oecd.org/oecdinfo/info.aspx?app=OLIScoteEN&amp;Ref=ECO/CPE(2009)7">ECO/CPE(2009)7</phrase></para>
+								</entry>
+							</row>
+						</tbody>
+					</tgroup>
+				</table>
+			</para>
+		</agenda-item>
+	</agenda-session>
+	
+</document>

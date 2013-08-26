@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xsi:schemaLocation="urn:oecd:names:xmlns:authoring:document ../../../../../../../../schemas/oecd.author.xsd" xmlns="urn:oecd:names:xmlns:authoring:document" xmlns:xlink="http://www.w3.org/1999/xlink">
+	<metadata>
+		<metadata subject="kim:author">
+			<metadata subject="kim:personname">
+				<metadata-item subject="kim:firstname" value="Braathen_N"/>
+			</metadata>
+		</metadata>
+		<metadata subject="kim:othercredit">
+			<metadata subject="kim:personname">
+				<metadata-item subject="kim:firstname" value="Crowther_1"/>
+			</metadata>
+		</metadata>
+		<metadata-item subject="kim:date" value="Thu, 18 Oct 2012 17:19:00 CEST"/>
+		<metadata subject="kim:revhistory">
+			<metadata subject="kim:revision">
+				<metadata-item subject="kim:revnumber" value="1"/>
+				<metadata-item subject="kim:date" value="Thu, 18 Oct 2012 17:19:00 CEST"/>
+			</metadata>
+		</metadata>
+		<metadata subject="kim:printhistory">
+			<metadata-item subject="kim:para" value="Last printed: Mon, 15 Oct 2012 10:50:00 CEST"/>
+		</metadata>
+		<metadata-item subject="kim:orgname" value="O.E.C.D."/>
+		<metadata-item property="kim:cote" value="COM/ENV/EPOC/CTPA/CFA(2012)43"/>
+		<metadata-item property="kim:originalClassif" value="Unclassified"/>
+		<metadata-item property="kim:language" value="English"/>
+		<metadata-item property="kim:originalLanguage" value="English"/>
+	</metadata>
+	<title>Lessons from 15 years of experience with the Dutch Tax Allowance for Energy Investments for firms</title>
+	<chapter>
+		<title>NOTE FROM THE SECRETARIAT</title>
+		<paragraph-group>
+
+			<para>This paper discusses 15 years of experience with the Dutch Tax Allowance for Energy Investments for firms. It was written by Arjan Ruijs (PBL Netherlands Environmental Assessment Agency) and Herman R.J. Vollebergh (PBL Netherlands Environmental Assessment Agency and CentER and Tilburg Sustainability Centre, Tilburg University), and was kindly offered as a voluntary contribution from Dutch authorities to two ongoing projects at the OECD: </para>
+			<para>The project on assessing environmentally motivated tax preferences under the auspices of the Joint Meetings of Tax and Environment Experts; and </para>
+			<para>The project on lessons on environmental policy reform, under the auspices of the Working Party on Integrating Environment and Economic Policies. </para>
+		</paragraph-group>
+	</chapter>
+</document>
