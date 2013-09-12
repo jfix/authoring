@@ -122,6 +122,13 @@
                     agreement 05/02/2013 that official document and publicaiton models should be
                     aligned.[#5336].</db:revremark>
             </db:revision>
+            <db:revision>
+                <db:revnumber>12</db:revnumber>
+                <db:date>2013-09-12</db:date>
+                <db:authorinitials>JC</db:authorinitials>
+                <db:revremark>Re-work agenda structures as per verbal instruction from V.D 22/08/2013 to
+                    follow Council Agenda structures.[#6236].</db:revremark>
+            </db:revision>
         </db:revhistory>
     </db:section>
 
@@ -1856,16 +1863,16 @@
         <name>Agenda Item</name>
         <category>semantic</category>
         <children>
-            <component-ref ref="grp-titles" cardinality="one"/>
-            <component-ref ref="simple-para" cardinality="zero-or-more"/>
+            <component-ref ref="time-period" cardinality="zero-or-one"/>
+            <component-ref ref="agenda-item-description" cardinality="one"/>
             <component-ref ref="document-list" cardinality="zero-or-one"/>
+            <component-ref ref="actions" cardinality="zero-or-one"/>
             <component-ref ref="agenda-annotation" cardinality="zero-or-one"/>
         </children>
 
         <metadata>
             <item name="start" type="datetime"/>
             <item type="duration" name="duration"/>
-
         </metadata>
 
         <db:section role="definition">
@@ -1876,6 +1883,116 @@
                 added to the item. </db:para>
         </db:section>
 
+        <db:section role="revisions">
+            <db:title>Revisions</db:title>
+            <db:revhistory>
+                <db:revision>
+                    <db:revnumber>1</db:revnumber>
+                    <db:date>2013-09-12</db:date>
+                    <db:authorinitials>JC</db:authorinitials>
+                    <db:revremark>
+                        <db:remark>Re-work agenda structures as per verbal instruction from V.D 22/08/2013 to
+                            follow Council Agenda structures.[#6236].</db:remark>
+                        <db:remark>added time-perion</db:remark>
+                        <db:remark>added agenda-item-description</db:remark>
+                        <db:remark>added actions</db:remark>
+                    </db:revremark>
+                </db:revision>
+            </db:revhistory>
+        </db:section>
+
+    </component>
+
+    <component xml:id="actions" role="production">
+        <name>Actions</name>
+        <category>semantic</category>
+
+        <db:section role="definition">
+            <db:title>Definition</db:title>
+            <db:para>An agenda action component allows an expected action to be specified in text. No
+                additional semantics of the action are represented, merely the indication that the text of
+                this component represents an action (or actions). For example: Discussion | Information |
+                Information and Discussion | Discussion and Guidance | Declassification Discussion and
+                Decision.</db:para>
+        </db:section>
+
+        <db:section role="revisions">
+            <db:title>Revisions</db:title>
+            <db:revhistory>
+                <db:revision>
+                    <db:revnumber>1</db:revnumber>
+                    <db:date>2013-09-12</db:date>
+                    <db:authorinitials>JC</db:authorinitials>
+                    <db:revremark>
+                        <db:remark>Re-work agenda structures as per verbal instruction from V.D 22/08/2013 to
+                            follow Council Agenda structures.[#6236].</db:remark>
+                        <db:remark>created actions</db:remark>
+                    </db:revremark>
+                </db:revision>
+            </db:revhistory>
+        </db:section>
+
+    </component>
+
+    <component xml:id="time-period" role="production">
+        <name>Time Period</name>
+        <category>semantic</category>
+
+        <db:section role="definition">
+            <db:title>Definition</db:title>
+            <db:para>A time-period component allows a time period to be indicated in text. None of the
+                semantics of a date are intended to represented, merely the indication that the text
+                represents a given period of time. for example: 14:30-16:00.</db:para>
+        </db:section>
+
+        <db:section role="revisions">
+            <db:title>Revisions</db:title>
+            <db:revhistory>
+                <db:revision>
+                    <db:revnumber>1</db:revnumber>
+                    <db:date>2013-09-12</db:date>
+                    <db:authorinitials>JC</db:authorinitials>
+                    <db:revremark>
+                        <db:remark>Re-work agenda structures as per verbal instruction from V.D 22/08/2013 to
+                            follow Council Agenda structures.[#6236].</db:remark>
+                        <db:remark>created time-perion</db:remark>
+                    </db:revremark>
+                </db:revision>
+            </db:revhistory>
+        </db:section>
+    </component>
+
+    <component xml:id="agenda-item-description">
+        <name>Agenda Item Description</name>
+        <category>semantic</category>
+        <children>
+            <component-ref ref="grp-titles" cardinality="one"/>
+            <component-ref ref="simple-para" cardinality="zero-or-more"/>
+        </children>
+
+        <db:section role="definition">
+            <db:title>Definition</db:title>
+            <db:para>An agenda item must have a description component representing the textual content of the
+                agenda item. The description must consist of a title and can have any of the simple para
+                components.</db:para>
+        </db:section>
+
+
+        <db:section role="revisions">
+            <db:title>Revisions</db:title>
+            <db:revhistory>
+                <db:revision>
+                    <db:revnumber>1</db:revnumber>
+                    <db:date>2013-09-12</db:date>
+                    <db:authorinitials>JC</db:authorinitials>
+                    <db:revremark>
+                        <db:remark>Re-work agenda structures as per verbal instruction from V.D 22/08/2013 to
+                            follow Council Agenda structures.[#6236].</db:remark>
+                        <db:remark>created agenda-item-description</db:remark>
+                    </db:revremark>
+                </db:revision>
+            </db:revhistory>
+        </db:section>
     </component>
 
     <component xml:id="agenda-annotation">

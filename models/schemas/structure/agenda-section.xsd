@@ -18,13 +18,22 @@
 						<revnumber>2</revnumber>
 						<date>2013-03-19</date>
 						<author>JC</author>
-						<revremark>Made duplicate IDs unique in accordance with best practices and to resolve #5538.</revremark>
+						<revremark>Made duplicate IDs unique in accordance with best practices and to resolve
+							#5538.</revremark>
 					</revision>
 					<revision>
 						<revnumber>3</revnumber>
 						<date>2013-08-22</date>
 						<author>JC</author>
-						<revremark>Agenda sections must allow one or more sessions to resolve #6172.</revremark>
+						<revremark>Agenda sections must allow one or more sessions to resolve
+							#6172.</revremark>
+					</revision>
+					<revision>
+						<revnumber>4</revnumber>
+						<date>2013-09-12</date>
+						<author>JC</author>
+						<revremark>Re-work agenda structures as per verbal instruction from V.D 22/08/2013 to
+							follow Council Agenda structures.[#6236].</revremark>
 					</revision>
 				</revhistory>
 			</section>
@@ -40,8 +49,8 @@
 	<!-- GLOBAL ELEMENTS -->
 	<xs:element name="agenda-section" type="oecdAgendaSectionType" id="agenda-section"/>
 	<xs:element name="agenda-session" type="oecdAgendaSessionType" id="agenda-session"/>
-	<!-- GLOBAL GROUPS -->
 
+	<!-- GLOBAL GROUPS -->
 	<xs:attributeGroup name="oecdAgendaSectionTypeAttributes" id="oecdAgendaSectionTypeAttributes">
 
 		<xs:annotation>
@@ -60,7 +69,8 @@
 	<xs:group name="oecdAgendaSectionTypeBaseContent" id="oecdAgendaSectionTypeBaseContent">
 		<xs:annotation>
 			<xs:documentation>
-				<para xmlns="http://docbook.org/ns/docbook">This group is used to define the content model of all agenda section content.</para>
+				<para xmlns="http://docbook.org/ns/docbook">This group is used to define the content model of
+					all agenda section content.</para>
 			</xs:documentation>
 		</xs:annotation>
 
@@ -76,25 +86,73 @@
 	<xs:group name="oecdAgendaItemTypeContent" id="oecdAgendaItemTypeContent">
 		<xs:sequence>
 			<xs:element ref="metadata" minOccurs="0"/>
-			<xs:group ref="oecdTitleGroup"/>
-			<xs:choice maxOccurs="unbounded">
-				<xs:element ref="para" maxOccurs="unbounded" minOccurs="0"/>
-				<xs:element ref="external-content-reference" maxOccurs="unbounded"/>
-				<xs:element ref="phrase" maxOccurs="unbounded"/>
-				<xs:element name="annotation" type="oecdAgendaAnnotationType" maxOccurs="unbounded" minOccurs="0"/>
-			</xs:choice>
+
+			<xs:sequence>
+				<xs:annotation>
+					<xs:documentation>
+						<para xmlns="http://docbook.org/ns/docbook">The content model for agenda items is
+							highly structured with semantic elements.</para>
+					</xs:documentation>
+				</xs:annotation>
+				<xs:element name="time-period" minOccurs="0" maxOccurs="1"
+					type="oecdAgendaTimePeriodTypeContent"/>
+				<xs:element name="description" type="oecdAgendaDescriptionType" minOccurs="1" maxOccurs="1"/>
+				<xs:element name="documents" type="oecdAgendaResourcesType" minOccurs="0" maxOccurs="1"/>
+				<xs:element name="actions" type="oecdAgendaActionsType" minOccurs="0" maxOccurs="1"/>
+				<xs:element name="annotation" type="oecdAgendaAnnotationType" minOccurs="0"
+					maxOccurs="unbounded"/>
+			</xs:sequence>
 		</xs:sequence>
 	</xs:group>
 
 	<xs:group name="oecdAgendaAnnotationTypeContent" id="oecdAgendaAnnotationTypeContent">
 		<xs:annotation>
 			<xs:documentation>
-				<para xmlns="http://docbook.org/ns/docbook">This group is used to define the content model of annotation elements. Annotation content is separately the main item.</para>
+				<para xmlns="http://docbook.org/ns/docbook">This group is used to define the content model of
+					annotation elements. Annotation content is separately the main item.</para>
 			</xs:documentation>
 		</xs:annotation>
 		<xs:sequence>
 			<xs:group ref="oecdTitleGroup"/>
 			<xs:group ref="oecdSimpleBlockGroup" minOccurs="0"/>
+		</xs:sequence>
+	</xs:group>
+
+	<xs:group name="oecdAgendaDocumentsTypeContent" id="oecdAgendaDocumentsTypeContent">
+		<xs:annotation>
+			<xs:documentation>
+				<para xmlns="http://docbook.org/ns/docbook">This group is used to define the content model of
+					annotation elements. Annotation content is separately the main item.</para>
+			</xs:documentation>
+		</xs:annotation>
+		<xs:choice>
+			<xs:element ref="external-content-reference" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element ref="phrase" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:choice>
+	</xs:group>
+
+	<xs:group name="oecdAgendaDescriptionTypeContent" id="oecdAgendaDescriptionTypeContent">
+		<xs:annotation>
+			<xs:documentation>
+				<para xmlns="http://docbook.org/ns/docbook">This group is used to define the content model of
+					annotation elements. Annotation content is separately the main item.</para>
+			</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:group ref="oecdTitleGroup"/>
+			<xs:element ref="para" maxOccurs="unbounded" minOccurs="0"/>
+		</xs:sequence>
+	</xs:group>
+
+	<xs:group name="oecdAgendaActionsTypeContent" id="oecdAgendaActionsTypeContent">
+		<xs:annotation>
+			<xs:documentation>
+				<para xmlns="http://docbook.org/ns/docbook">This group is used to define the content model of
+					annotation elements. Annotation content is separately the main item.</para>
+			</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element ref="para" maxOccurs="unbounded" minOccurs="0"/>
 		</xs:sequence>
 	</xs:group>
 
@@ -112,7 +170,8 @@
 							<revnumber>1</revnumber>
 							<date>2013-08-22</date>
 							<author>JC</author>
-							<revremark>Added agenda-session ref and changed the content model by adding a choice.</revremark>
+							<revremark>Added agenda-session ref and changed the content model by adding a
+								choice.</revremark>
 						</revision>
 					</revhistory>
 				</section>
@@ -148,6 +207,7 @@
 		</xs:sequence>
 
 	</xs:group>
+	<!-- GLOBAL GROUPS -->
 
 	<!-- COMPLEX TYPES -->
 	<xs:complexType name="oecdAgendaSectionType" id="oecdAgendaSectionType">
@@ -177,5 +237,45 @@
 		<xs:group ref="oecdAgendaAnnotationTypeContent"/>
 		<xs:attributeGroup ref="oecdAgendaSectionTypeAttributes"/>
 	</xs:complexType>
+
+	<xs:complexType name="oecdAgendaDescriptionType" id="oecdAgendaDescriptionType">
+		<xs:group ref="oecdAgendaDescriptionTypeContent"/>
+		<xs:attributeGroup ref="oecdAgendaSectionTypeAttributes"/>
+	</xs:complexType>
+
+	<xs:complexType name="oecdAgendaActionsType" id="oecdAgendaActionsType">
+		<xs:group ref="oecdAgendaActionsTypeContent"/>
+		<xs:attributeGroup ref="oecdAgendaSectionTypeAttributes"/>
+	</xs:complexType>
+
+	<xs:complexType name="oecdAgendaResourcesType" id="oecdAgendaResourcesType">
+		<xs:group ref="oecdAgendaDocumentsTypeContent" maxOccurs="unbounded"/>
+	</xs:complexType>
+	<!-- COMPLEX TYPES -->
+
+	<!-- SIMPLE TYPES -->
+	<xs:simpleType name="oecdAgendaTimePeriodTypeContent" id="oecdAgendaTimePeriodTypeContent">
+		<xs:annotation>
+			<xs:documentation>
+				<section xmlns="http://docbook.org/ns/docbook">
+					<para>The definition of time period.</para>
+					<para>time-period acts as a one-dimensional element that represents an identifiable extent
+						in time. The expected value is described by the time at which it begins and ends
+						(10:00 - 11:00) and is usually an indicative timing for a meeting. Alternatively it
+						may be used to describe a fixed limit of a time-period (60 minutes)</para>
+					<revision>
+						<revnumber>7</revnumber>
+						<date>2012-04-18</date>
+						<authorinitials>jc</authorinitials>
+						<revremark>Initial version</revremark>
+					</revision>
+				</section>
+			</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:minLength value="1"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<!-- SIMPLE TYPES -->
 
 </xs:schema>
