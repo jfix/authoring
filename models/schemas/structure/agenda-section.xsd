@@ -35,6 +35,13 @@
 						<revremark>Re-work agenda structures as per verbal instruction from V.D 22/08/2013 to
 							follow Council Agenda structures.[#6236].</revremark>
 					</revision>
+					<revision>
+						<revnumber>5</revnumber>
+						<date>2013-09-20</date>
+						<author>JC</author>
+						<revremark>Modified oecdAgendaAnnotationTypeContent by changing cardinality of
+							oecdSimpleBlockGroup to unbound to sasisfy [#6276].</revremark>
+					</revision>
 				</revhistory>
 			</section>
 		</xs:documentation>
@@ -108,13 +115,28 @@
 	<xs:group name="oecdAgendaAnnotationTypeContent" id="oecdAgendaAnnotationTypeContent">
 		<xs:annotation>
 			<xs:documentation>
-				<para xmlns="http://docbook.org/ns/docbook">This group is used to define the content model of
-					annotation elements. Annotation content is separately the main item.</para>
+				<section xmlns="http://docbook.org/ns/docbook">
+					<para>This group is used to define the content model of annotation elements. Annotation
+						content is separately the main item.</para>
+				</section>
+				<section xmlns="http://docbook.org/ns/docbook">
+					<revhistory>
+						<title>Change Log</title>
+						<revision>
+							<revnumber>1</revnumber>
+							<date>2013-09-20</date>
+							<author>JC</author>
+							<revremark>Changed the content model to allow multiple elements in the
+								sequence.</revremark>
+						</revision>
+					</revhistory>
+				</section>
 			</xs:documentation>
 		</xs:annotation>
+
 		<xs:sequence>
 			<xs:group ref="oecdTitleGroup"/>
-			<xs:group ref="oecdSimpleBlockGroup" minOccurs="0"/>
+			<xs:group ref="oecdSimpleBlockGroup" minOccurs="0" maxOccurs="unbounded"/>
 		</xs:sequence>
 	</xs:group>
 
