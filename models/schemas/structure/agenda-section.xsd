@@ -42,6 +42,13 @@
 						<revremark>Modified oecdAgendaAnnotationTypeContent by changing cardinality of
 							oecdSimpleBlockGroup to unbound to sasisfy [#6276].</revremark>
 					</revision>
+					<revision>
+						<revnumber>6</revnumber>
+						<date>2013-09-24</date>
+						<author>JC</author>
+						<revremark>Modified oecdAgendaAnnotationTypeContent to make title
+							optional.</revremark>
+					</revision>
 				</revhistory>
 			</section>
 		</xs:documentation>
@@ -130,12 +137,21 @@
 								sequence.</revremark>
 						</revision>
 					</revhistory>
+					<revhistory>
+						<title>Change Log</title>
+						<revision>
+							<revnumber>2</revnumber>
+							<date>2013-09-24</date>
+							<author>JC</author>
+							<revremark>Changed the content model, title is now optional.</revremark>
+						</revision>
+					</revhistory>
 				</section>
 			</xs:documentation>
 		</xs:annotation>
 
 		<xs:sequence>
-			<xs:group ref="oecdTitleGroup"/>
+			<xs:group ref="oecdTitleGroup" minOccurs="0"/>
 			<xs:group ref="oecdSimpleBlockGroup" minOccurs="0" maxOccurs="unbounded"/>
 		</xs:sequence>
 	</xs:group>
