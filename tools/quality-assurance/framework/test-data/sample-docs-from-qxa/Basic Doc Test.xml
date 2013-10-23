@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="UTF-8"?><?Xpress productLine="official-document" ?>
+<document xsi:schemaLocation="urn:oecd:names:xmlns:authoring:document oecd.author.xsd"
+	xml:id="id-09439b49-c9c2-4086-a669-26729fad66c8" xmlns="urn:oecd:names:xmlns:authoring:document"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<document-metadata xml:id="id-732473b5-bed6-4f80-8667-6ae4247f17b0">
+		<metadata>
+			<metadata-item property="oecd:originalClassif" value="For Official Use"> </metadata-item>
+			<metadata-item property="oecd:language" value="English"> </metadata-item>
+			<metadata-item property="oecd:cote" value=""> </metadata-item>
+		</metadata>
+	</document-metadata>
+	<metadata/>
+	<title class="title" xml:id="id-e2438c88-efc0-4ee0-868a-ae5dac1d135e">BASIC OFFICIAL DOCUMENT
+		TEST 1</title>
+	<chapter xml:id="id-d80764b1-c793-4b16-8732-b687473f3c6f">
+		<title class="title" xml:id="id-82ec5762-11a2-46f6-9fb1-53e3f909712c">THE FIRST
+			CHAPTER</title>
+		<para class="body" xml:id="id-ad24d32f-9d47-4806-86c0-4cbf88580cfe">This is normal text. I
+			would expect it to be referred to as a paragraph!</para>
+	</chapter>
+</document>

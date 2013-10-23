@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" targetNamespace="http://www.corbas.co.uk/ns/test" xmlns="http://www.corbas.co.uk/ns/test"> 
+
+	<xs:element name="root">
+		<xs:complexType>
+			<xs:sequence maxOccurs="3">
+				<xs:sequence>
+					<xs:element ref="child1" minOccurs="2" maxOccurs="4"/>
+					<xs:element ref="child2" minOccurs="0" maxOccurs="1"/>					
+				</xs:sequence>
+				<xs:choice>
+					<xs:element ref="child3"/>
+					<xs:element ref="child4"/>										
+				</xs:choice>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	
+	<xs:element name="child1">
+		<xs:simpleType>
+			<xs:restriction base="xs:string">
+				<xs:minLength value="10"></xs:minLength>
+			</xs:restriction>
+		</xs:simpleType>
+	</xs:element>
+	
+	<xs:element name="child2">
+		<xs:simpleType>
+			<xs:restriction base="xs:string">
+				<xs:minLength value="10"></xs:minLength>
+			</xs:restriction>
+		</xs:simpleType>
+	</xs:element>
+	
+	
+	<xs:element name="child3">
+		<xs:simpleType>
+			<xs:restriction base="xs:string">
+				<xs:minLength value="10"></xs:minLength>
+			</xs:restriction>
+		</xs:simpleType>
+	</xs:element>
+	
+	<xs:element name="child4">
+		<xs:simpleType>
+			<xs:restriction base="xs:string">
+				<xs:minLength value="2"></xs:minLength>
+			</xs:restriction>
+		</xs:simpleType>
+	</xs:element>
+
+</xs:schema>
