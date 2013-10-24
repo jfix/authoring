@@ -147,8 +147,6 @@
 	<!-- merge them -->
 	<oecd:merge-svrl name="merge-results"/>
 	
-	<p:store href="/tmp/merged.svrl"/>
-	
 	<!-- force the primary input to be the source document so we can get
 		the base uri for it -->
 	<p:identity name="set-source-as-primary">
@@ -175,8 +173,6 @@
 		<p:with-param name='report-title' select="concat('Report on: ', base-uri(/))"/>
 		
 	</p:xslt>
-	
-	<p:store href="/tmp/reporter.xsl"/>
 	
 	<!-- Apply the generated stylesheet to the original source
 				document to create the annotated report. -->
