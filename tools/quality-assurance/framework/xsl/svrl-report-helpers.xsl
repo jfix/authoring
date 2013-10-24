@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
-    xmlns:xd="http://www.oxygenxml.com/ns/doc/xsl" version="2.0">
+<xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:xd="http://www.oxygenxml.com/ns/doc/xsl" version="2.0" exclude-result-prefixes="xd">
 	
 	<!--	This program and accompanying files are copyright 2008, 2009, 20011, 2012, 2013 Corbas Consulting Ltd.
 	
@@ -44,7 +44,7 @@
         <xsl:param name="see"/>
         
         <!-- for the top two levels only stop down 1 level because otherwise we get too much output -->
-        <xsl:variable name="depth" select="if (count(ancestor-or-self::* lt 2)) then 1 else 3"/>
+        <xsl:variable name="depth" select="if (count(ancestor-or-self::*) lt 2) then 1 else 3"/>
 
         <div xmlns="http://www.w3.org/1999/xhtml">
             <xsl:call-template name="output-label">

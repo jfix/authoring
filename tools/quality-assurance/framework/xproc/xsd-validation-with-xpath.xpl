@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <p:library xmlns:p="http://www.w3.org/ns/xproc" xmlns:c="http://www.w3.org/ns/xproc-step"
-	xmlns:l="http://xproc.org/library" xmlns:oecd="http://www.oecd.org/ns/oecd"
+	xmlns:l="http://xproc.org/library" xmlns:oecd="urn:oecd:names:xmlns:xproc"
 	xmlns:ccproc="http://www.corbas.co.uk/ns/xproc/steps" version="1.0">
 	
 	<!-- NDW's libary step to simplify validation -->
@@ -10,7 +10,7 @@
 	<p:import href="http://xmlcalabash.com/extension/steps/library-1.0.xpl"/>
 	
 	<!-- Corbas utility library -->
-	<p:import href="../../../../../../xmltools/xproc/temp-dir.xpl"/>
+	<p:import href="temp-dir.xpl"/>
 	
 	<p:declare-step type="oecd:xsd-validation" name="xsd-validation">
 
@@ -32,7 +32,7 @@
 			<p:documentation xmlns="http://www.w3.org/1999/xhtml">
 				<p>The primary output an SVRL document listing any errors in the validation</p>
 			</p:documentation>			
-			<p:pipe port="result" step="insert-error-markers"/>
+			<p:pipe port="result" step="convert-to-svrl"/>
 		</p:output>
 
 		<p:documentation xmlns="http://www.w3.org/1999/xhtml">
@@ -138,7 +138,18 @@
 			<p:with-param name="xml-file" select="/c:result/text()"/>
 		</p:xslt>
 		
-		
+		<!-- now process the c:errors to turn to svrl -->
+		<p:xslt name="convert-to-svrl">
+			<p:input port="source">
+				<p:pipe port="result" step="insert-error-markers"/>
+			</p:input>
+			<p:input port="stylesheet">
+				<p:document href="../xsl/validation-errors-to-svrl.xsl"/>
+			</p:input>
+			<p:input port="parameters">
+				<p:empty/>
+			</p:input>
+		</p:xslt>
 
 	</p:declare-step>
 
