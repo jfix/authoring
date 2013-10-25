@@ -6,6 +6,10 @@
             <serialized version="15.0" xml:space="preserve">
                 <map>
                     <entry>
+                        <String>catalog.verbose.level</String>
+                        <Integer>1</Integer>
+                    </entry>
+                    <entry>
                         <String>catalogs.v5</String>
                         <String-array>
                             <String>/Users/nicg/Projects/OECD/authoring/models/catalog.xml</String>
@@ -15,10 +19,6 @@
                     </entry>
                     <entry>
                         <String>key.xml.catalog.option.pane</String>
-                        <Boolean>true</Boolean>
-                    </entry>
-                    <entry>
-                        <String>process.namespaces.through.uri.mapping.for.xml.schema</String>
                         <Boolean>true</Boolean>
                     </entry>
                 </map>
