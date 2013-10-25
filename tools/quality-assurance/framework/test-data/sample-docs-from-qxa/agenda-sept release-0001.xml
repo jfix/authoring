@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="UTF-8"?><?Xpress productLine="agenda" ?>
+<document xsi:schemaLocation="urn:oecd:names:xmlns:authoring:document OECD-xsd/oecd.publication.xsd"
+  xml:id="id-450a543a-191f-4d81-961f-2b7e564cb1cc" xmlns="urn:oecd:names:xmlns:authoring:document"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <document-metadata xml:id="id-74581fd2-fd12-4c15-be16-be9d9ba0b393">
+    <metadata>
+      <metadataItem subject="subject 1"/>
+    </metadata>
+  </document-metadata>
+  <metadata/>
+  <title class="title" xml:id="id-0180d5eb-e741-4d0d-a72d-ef14bbf13c92">This is the agenda document title in standard case</title>
+  <agenda-session class="order,,time-period,description,documents,actions">
+    <title class="title" xml:id="id-2a1fa02f-aac1-4630-8c89-e98983bf1071">Agenda session title in Mixed CASE.</title>
+    <agenda-item label="1.">
+      <time-period>10:40</time-period>
+      <description xml:id="id-badd1ad4-3729-4083-b621-a5dca82a0ab1">
+        
+        <title class="title" xml:id="id-37a9ab21-fff1-4639-a004-dbca9da5546c">Agenda Item Title</title>
+        
+        <sub-title class="title" xml:id="id-43b55a08-6a19-4bc0-af9d-1470c834ebd3">[Sub Title]</sub-title>
+        
+        <para xml:id="id-60a59428-2a3d-4cd4-8094-60e9b457c4cb" class="agenda-desc"> zxczc zxccxzcxz</para>
+        <para class="agenda-desc" xml:id="id-afb0617a-76d9-40a1-ba09-ead91de797f2">xzvxzzxvv</para>
+      </description>
+      <documents/>
+      <actions xml:id="id-d25d48fe-c012-4698-9d1a-683545430254"/>
+    </agenda-item>
+    <agenda-item label="2.">
+      <time-period/>
+      <description xml:id="id-1fbf3b4c-863e-4590-8047-db42e6cfcea8">
+        <para class="agenda-desc" xml:id="id-4dd93694-21d6-4b90-919a-e103ae577824"/>
+      </description>
+      <documents/>
+      <actions xml:id="id-368dddac-e7a4-45a8-85c4-7748f5c3df55"/>
+    </agenda-item>
+    <agenda-item label="3.">
+      <time-period/>
+      <description xml:id="id-ea8b2eb0-cd8b-4b4b-86f9-11eec4b18714">
+        <para class="agenda-desc" xml:id="id-f27cf129-57b4-4305-b0be-0825995e5b0f"/>
+      </description>
+      <documents/>
+      <actions xml:id="id-529e0e91-f533-41bb-a2ce-7422f511f2db"/>
+    </agenda-item>
+  </agenda-session>
+</document>

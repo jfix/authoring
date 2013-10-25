@@ -1,0 +1,88 @@
+﻿<?xml version="1.0" encoding="UTF-8"?><?Xpress productLine="agenda"  ?>
+<document xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xsi:schemaLocation="urn:oecd:names:xmlns:authoring:document ../../../../authoring/trunk/models/schemas/oecd.agenda.xsd"
+ xmlns="urn:oecd:names:xmlns:authoring:document" xml:id="id-718633f9-dfb4-409f-a42c-d8e24564f4ee">
+      <document-metadata xml:id="id-29ba89b6-d0ae-440f-995f-bd9dc939df45">
+            <metadata>
+                  <metadata-item subject="subject 1"/>
+                  <metadata-item property="oecd:mainTitle" value="kjhkjhkjhkjh"/>
+                  <metadata-item property="oecd:subtitle" value="kjhkjhk"/>
+                  <metadata-item property="oecd:authorPhysical" value="kjhkjh"/>
+                  <metadata-item property="oecd:publishedAuthorName" value="JWC"/>
+                  <metadata-item property="oecd:contact" value="kjhkjh"/>
+                  <metadata-item property="oecd:forEvent" value="14-Oct-2013"/>
+                  <metadata-item property="oecd:contributor" value="kjhkjh"/>
+                  <metadata-item property="oecd:keyword" value="gjhgkjg"/>
+                  <metadata-item property="oecd:description" value="kjgkjgkj"/>
+                  <metadata-item property="oecd:cote" value="EXD/ITN(2013)999"/>
+            </metadata>
+      </document-metadata>
+      <metadata/>
+      <title xml:id="id-aad89240-ab0f-4564-9efc-9b1c504dcd84" class="title">AGENDA</title>
+      <agenda-session class="order,,time-period,description,documents,actions">
+            <title xml:id="id-83ecb7f8-d390-4d85-a88c-321a6ca743da" class="title">AGANDA SESSION</title>
+            <agenda-item label="1.">
+                  <time-period>1000</time-period>
+                  <description xml:id="id-b2597007-7470-4242-8b69-b079ee4dc7f7">
+
+                        <para xml:id="id-afc8b8fd-a2ab-41da-9eea-43e704162ab9" class="agenda-desc"/>
+                  </description>
+                  <documents/>
+                  <actions xml:id="id-1aabf0b5-92b5-4840-a0d1-15dfe75a18b2"/>
+            </agenda-item>
+            <agenda-item label="1.">
+                  <time-period>1100</time-period>
+                  <description xml:id="id-eb7d9abc-b391-48ef-b2e4-1681171ef2a5">
+                        <para xml:id="id-e539d7f0-8adf-4778-a159-92d3b19a3a50" class="agenda-desc"/>
+                  </description>
+                  <documents/>
+                  <actions xml:id="id-5d483f07-aedb-4722-8b0b-9ffdf5e11e28"/>
+            </agenda-item>
+            <agenda-item label="1.">
+                  <time-period>1200</time-period>
+                  <description xml:id="id-979a3991-b19c-4ba5-9e6e-176ead34d566">
+                        <para xml:id="id-2d95dee9-6948-403a-adf9-842776efc622" class="agenda-desc"/>
+                  </description>
+                  <documents/>
+                  <actions xml:id="id-a79ac196-8a00-49ac-be5c-4f73893ed792"/>
+            </agenda-item>
+            <agenda-item label="1.">
+                  <time-period>1300</time-period>
+                  <description xml:id="id-ef71d708-1759-4f45-a31e-5783a9fc056e">
+                        <para xml:id="id-9778cfc3-4d70-44b8-95de-7f5115b34614" class="agenda-desc"/>
+                  </description>
+                  <documents/>
+                  <actions xml:id="id-34fcd4e5-340b-4c16-a45d-b6a2030b56b1"/>
+            </agenda-item>
+            <agenda-item label="1.">
+                  <time-period>1400</time-period>
+                  <description xml:id="id-f59b595e-e16f-4348-bf14-02b3467e9bea">
+                        <title class="title">Adoption of the Agenda</title>
+                        <para class="agenda-desc">Agenda description</para>
+                  </description>
+                  <documents>
+                        <phrase>C/WP6/A(2010)2</phrase>
+                  </documents>
+                  <actions xml:id="id-81298ed0-0b71-4f7d-9c84-c8ab75a49da8">
+                        <para>Adopt agenda</para>
+                  </actions>
+            </agenda-item>
+            
+            
+            <agenda-item label="2.">
+                  <description>
+                        <title class="title">Approval of the Summary Record of the 110th session</title>
+                        <para/>
+                  </description>
+                  <documents>
+                        <phrase>C/WP6/M(2010)1</phrase>
+                  </documents>
+                  
+                  <actions>
+                        <para>For approval</para>
+                  </actions>
+            </agenda-item>
+            
+            
+      </agenda-session>
+</document>

@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="UTF-8"?><?Xpress productLine="official-document" ?>
+<document xsi:schemaLocation="urn:oecd:names:xmlns:authoring:document oecd.author.xsd"
+      xml:id="id-7721e1db-f32a-45bc-9630-54487c17e2ee" xmlns="urn:oecd:names:xmlns:authoring:document"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <document-metadata xml:id="id-4f06df75-3bd0-4863-893e-817f19a6ad7c">
+            <metadata>
+                  <metadata-item property="oecd:originalClassif" value="For Official Use"> </metadata-item>
+                  <metadata-item property="oecd:language" value="English"> </metadata-item>
+                  <metadata-item property="oecd:cote" value=""> </metadata-item>
+            </metadata>
+      </document-metadata>
+      <metadata/>
+      <title class="title" xml:id="id-edeaa1de-ade4-4e5e-9e53-8ec81c98e39e">ENTER DOCUMENT TITLE</title>
+      <part xml:id="id-ca75d179-9101-4b60-815c-5069d72d9705">
+            <title class="title" xml:id="id-73e60621-8477-436b-b97d-0c7187f4323f">[PART TITLE]</title>
+            <chapter xml:id="id-a46fc1c4-7498-4b17-a779-645730e60d3a">
+                  <title class="title" xml:id="id-a944c4fd-5f38-43fe-8256-929319d82ca9">[CHAPTER
+                        TITLE]</title>
+                  <section xml:id="id-f3acd48e-7e69-492f-b32a-44ecac283373">
+                        <title class="title" xml:id="id-f9516631-91c9-4371-8667-e66d22aba020">SECTION HEADING
+                              1</title>
+                        <para class="body" xml:id="id-b252281b-dc33-4c1a-8235-0705b475cadf">Section 1
+                              paragraph text</para>
+                        <section xml:id="id-3474e04b-1a28-4821-9792-b360f58d5b92">
+                              <title class="title" xml:id="id-0371910c-ef31-418e-95d9-dea1fa707129">Section
+                                    [Heading 2]</title>
+                              <para class="num-doc" xml:id="id-414bae3c-0a31-4700-8ff2-190f6f348cc4">Section 2
+                                    paragraph text</para>
+                              <section xml:id="id-3484554c-b23e-44de-9e38-8c313923d7b2">
+                                    <title class="title" xml:id="id-d1e18974-1f64-4ea2-8b67-b2fd3b2d115e"
+                                          >Section [Heading 3]</title>
+                                    <para class="body" xml:id="id-e5f38711-8331-40b3-a310-a5f174d1190b"
+                                          >Section 3 paragraph text</para>
+                                    <section xml:id="id-07207f13-e48a-4ee9-8664-9e7c5ace5ae0">
+                                          <title class="title"
+                                                xml:id="id-a1ee5c30-d7c8-41fc-944d-a293d7122ae0">Section
+                                                [Heading 4]</title>
+                                          <para class="body" xml:id="id-63fac7e5-49e5-458e-8665-e2205c8812b6"
+                                                >Section 4 paragraph text</para>
+                                          <section xml:id="id-9398ada6-3439-4240-9447-d8ced1817521">
+                                                <title class="title"
+                                                      xml:id="id-88522028-87de-4b25-88e2-41881c0f80c4">Section
+                                                      [Heading 5]</title>
+                                                <para class="body"
+                                                      xml:id="id-e81d92b9-882e-431b-98ed-4d2bc4259883">Section
+                                                      5 paragraph text</para>
+                                          </section>
+                                    </section>
+                              </section>
+                        </section>
+                  </section>
+            </chapter>
+      </part>
+</document>

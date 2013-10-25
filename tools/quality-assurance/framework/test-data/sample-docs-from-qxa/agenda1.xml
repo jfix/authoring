@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="UTF-8"?><?Xpress productLine="agenda"  ?>
+<document xsi:schemaLocation="urn:oecd:names:xmlns:authoring:document OECD-xsd/oecd.publication.xsd"
+      xml:id="id-22b2a48c-51cc-4bdd-b990-b1c9c55e19e7" xmlns="urn:oecd:names:xmlns:authoring:document"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <document-metadata xml:id="id-f09394bd-e75f-44e2-a910-9bf3b9348b5d">
+            <metadata>
+                  <metadataItem subject="subject 1"/>
+            </metadata>
+      </document-metadata>
+      <metadata/>
+      <title xml:id="id-2fae22d1-2e53-4e23-9d58-9f336b4ba2f4" class="title">ENTER DOCUMENT TITLE</title>
+      <agenda-session class="order,,description">
+            <title xml:id="id-487f1f60-0dd1-4afe-9742-8e40f672eef8" class="title">AGENDA SESSION TITLE</title>
+            <agenda-item label="1.">
+                  <description xml:id="id-1f1edcaa-6108-4fb4-990f-087fe9852221">
+                        <para xml:id="id-454e900b-9df7-4bab-ba3d-11b8478aff8e" class="agenda-desc"> Here is
+                              the DESC</para>
+                        <para xml:id="id-c75b9088-5a90-4472-90bb-da017c278994" class="agenda-desc"/>
+                  </description>
+            </agenda-item>
+            <agenda-item label="2.">
+                  <description>
+                        <title>Approval of the Summary Record of the 110th session</title>
+                  </description>
+                  <documents>
+                        <phrase
+                              xlink:href="http://olisweb.oecd.org/vgn-ext-templating/views/DocList/genericDisplay.jsp?cote=C/WP6/M(2010)1&amp;lang=2"
+                              >C/WP6/M(2010)1</phrase>
+                  </documents>
+                  
+                  <actions>
+                        <para>For approval</para>
+                  </actions>
+            </agenda-item>
+      </agenda-session>
+</document>
