@@ -1,7 +1,9 @@
 <?xml version="1.0"?>
 <catalog xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog" prefer="public">
 
-	<system systemId="https://pacps01.oecd.org/svn/authoring/trunk/models/schemas/oecd.author.xsd" uri="schemas/oecd.author.xsd"/>
-	<uri name="urn:oecd:names:xmlns:authoring:document" uri="schemas/oecd.author.xsd"/>
+	
+	<uriSuffix uriSuffix="oecd.author.xsd" uri="schemas/oecd.author.xsd"/>
+	<uriSuffix uriSuffix="oecd.agenda.xsd" uri="schemas/oecd.agenda.xsd"/>
+	<uriSuffix uriSuffix="oecd.publication.xsd" uri="schemas/oecd.publication.xsd"/>
 	
 </catalog>
