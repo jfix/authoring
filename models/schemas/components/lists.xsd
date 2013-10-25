@@ -12,26 +12,31 @@
                         <revision>
                             <revnumber>1</revnumber>
                             <date>2012-01-08</date>
-                            <author><email>nicg@corbas.co.uk</email><personname>Nic Gibson</personname></author>
+                            <author><email>nicg@corbas.co.uk</email><personname>Nic
+                                Gibson</personname></author>
                             <revremark>Initial Version</revremark>
                         </revision>
                         <revision>
                             <revnumber>2</revnumber>
                             <date>2012-03-21</date>
-                            <author><email>nicg@corbas.co.uk</email><personname>Nic Gibson</personname></author>
+                            <author><email>nicg@corbas.co.uk</email><personname>Nic
+                                Gibson</personname></author>
                             <revremark>Added number attribute to ordered list items for overrides</revremark>
                         </revision>
                         <revision>
                             <revnumber>3</revnumber>
                             <date>2012-03-03</date>
-                            <author><email>nicg@corbas.co.uk</email><personname>Nic Gibson</personname></author>
+                            <author><email>nicg@corbas.co.uk</email><personname>Nic
+                                Gibson</personname></author>
                             <revremark>Replaced include of inlines.xsd with inline-group.xsd.</revremark>
                         </revision>
                         <revision>
                             <revnumber>4</revnumber>
                             <date>2012-04-16</date>
-                            <author><email>nicg@corbas.co.uk</email><personname>Nic Gibson</personname></author>
-                            <revremark>Added annotations attribute to lists and list items. Restructured definition list to make it useable for glossaries too.</revremark>
+                            <author><email>nicg@corbas.co.uk</email><personname>Nic
+                                Gibson</personname></author>
+                            <revremark>Added annotations attribute to lists and list items. Restructured
+                                definition list to make it useable for glossaries too.</revremark>
                         </revision>
                         <revision>
                             <revnumber>5</revnumber>
@@ -43,13 +48,15 @@
                             <revnumber>6</revnumber>
                             <date>2012-10-05</date>
                             <authorinitials>NG</authorinitials>
-                            <revremark>Wrapped global attributes in groups to avoid namespace prefix requirement.</revremark>
+                            <revremark>Wrapped global attributes in groups to avoid namespace prefix
+                                requirement.</revremark>
                         </revision>
                         <revision>
                             <revnumber>7</revnumber>
                             <date>2012-10-29</date>
                             <authorinitials>NG</authorinitials>
-                            <revremark>Modified content model for oecdDefinitionListTermType to allow mixed content.</revremark>
+                            <revremark>Modified content model for oecdDefinitionListTermType to allow mixed
+                                content.</revremark>
                         </revision>
                     </revhistory>
                     <revision>
@@ -57,6 +64,13 @@
                         <date>2011-11-06</date>
                         <author>JC</author>
                         <revremark>Modified oecdListContinuation.</revremark>
+                    </revision>
+                    <revision>
+                        <revnumber>9</revnumber>
+                        <date>2013-10-25</date>
+                        <author>JC</author>
+                        <revremark>Modified oecdItemizedListItemType to fix #6370.</revremark>
+                        <revremark>Modified oecdItemizedListTypeAttributes to fix #6370.</revremark>
                     </revision>
                     <para>This model defines lists of various types</para>
                 </section>
@@ -124,7 +138,9 @@
         <xs:annotation>
             <xs:documentation>
                 <section xmlns="http://docbook.org/ns/docbook">
-                    <para>List items are a shared type used by both itemized and ordered lists. This type is extended by list specific list items to add attributes appropriate to the list type.</para>
+                    <para>List items are a shared type used by both itemized and ordered lists. This type is
+                        extended by list specific list items to add attributes appropriate to the list
+                        type.</para>
                 </section>
             </xs:documentation>
         </xs:annotation>
@@ -137,7 +153,27 @@
     <xs:complexType name="oecdItemizedListItemType" id="oecdItemizedListItemType">
         <xs:complexContent>
             <xs:extension base="oecdListItemType">
-                <xs:attribute ref="marker" use="optional" default="auto"/>
+                <xs:attribute name="marker" type="oecdListMarker" default="auto" use="optional">
+                    <xs:annotation>
+                        <xs:documentation>
+                            <section xmlns="http://docbook.org/ns/docbook">
+                                <para>List marker for itemized lists. Used at both list and item
+                                    levels.</para>
+                            </section>
+                            <section xmlns="http://docbook.org/ns/docbook">
+                                <revhistory>
+                                    <title>Change Log</title>
+                                    <revision>
+                                        <revnumber>1</revnumber>
+                                        <date>2013-10-25</date>
+                                        <author>JC</author>
+                                        <revremark>changed from a @ref to name/type combo</revremark>
+                                    </revision>
+                                </revhistory>
+                            </section>
+                        </xs:documentation>
+                    </xs:annotation>
+                </xs:attribute>
             </xs:extension>
         </xs:complexContent>
     </xs:complexType>
@@ -152,7 +188,26 @@
         </xs:annotation>
         <xs:attributeGroup ref="oecdCommonAttributes"/>
         <xs:attributeGroup ref="oecdLinkingAttributes"/>
-        <xs:attribute ref="marker" use="optional" default="auto"/>
+        <xs:attribute name="marker" type="oecdListMarker" default="auto" use="optional">
+            <xs:annotation>
+                <xs:documentation>
+                    <section xmlns="http://docbook.org/ns/docbook">
+                        <para>List marker for itemized lists. Used at both list and item levels.</para>
+                    </section>
+                    <section xmlns="http://docbook.org/ns/docbook">
+                        <revhistory>
+                            <title>Change Log</title>
+                            <revision>
+                                <revnumber>1</revnumber>
+                                <date>2013-10-25</date>
+                                <author>JC</author>
+                                <revremark>changed from a @ref to name/type combo</revremark>
+                            </revision>
+                        </revhistory>
+                    </section>
+                </xs:documentation>
+            </xs:annotation>
+        </xs:attribute>
         <xs:attributeGroup ref="ANNOTATIONS-GROUP"/>
     </xs:attributeGroup>
 
@@ -176,7 +231,8 @@
         <xs:annotation>
             <xs:documentation>
                 <section xmlns="http://docbook.org/ns/docbook">
-                    <para>Standard itemized lists. These allow the user to choose a default marker at the level of the list and override it at the item level.</para>
+                    <para>Standard itemized lists. These allow the user to choose a default marker at the
+                        level of the list and override it at the item level.</para>
                 </section>
             </xs:documentation>
         </xs:annotation>
@@ -209,7 +265,8 @@
             </xs:annotation>
         </xs:attribute>
 
-        <xs:attribute name="continuation" type="oecdComponentContinuation" default="start" id="list-continuation">
+        <xs:attribute name="continuation" type="oecdComponentContinuation" default="start"
+            id="list-continuation">
             <xs:annotation>
                 <xs:documentation>
                     <section xmlns="http://docbook.org/ns/docbook">
@@ -247,7 +304,8 @@
                         </revhistory>
                     </section>
                     <section xmlns="http://docbook.org/ns/docbook">
-                        <para>Starting position for lists which have their continuation style set to 'start'.</para>
+                        <para>Starting position for lists which have their continuation style set to
+                            'start'.</para>
                     </section>
                 </xs:documentation>
             </xs:annotation>
@@ -270,7 +328,8 @@
                         </revhistory>
                     </section>
                     <section xmlns="http://docbook.org/ns/docbook">
-                        <para>Numbering override for list items where the author needs to override the list numbering completely.</para>
+                        <para>Numbering override for list items where the author needs to override the list
+                            numbering completely.</para>
                     </section>
                 </xs:documentation>
             </xs:annotation>
@@ -299,8 +358,10 @@
         <xs:annotation>
             <xs:documentation>
                 <section xmlns="http://docbook.org/ns/docbook">
-                    <para>Standard ordered lists. Lists can have several numeration types which are set at list level (as changing the numbering system part way through a single list is unusual).
-                        Numbering can continue based on the end of a previous list or start at a specific number.</para>
+                    <para>Standard ordered lists. Lists can have several numeration types which are set at
+                        list level (as changing the numbering system part way through a single list is
+                        unusual). Numbering can continue based on the end of a previous list or start at a
+                        specific number.</para>
                 </section>
             </xs:documentation>
         </xs:annotation>
@@ -359,7 +420,8 @@
         <xs:attributeGroup ref="oecdDefinitionListTermTypeAttributes"/>
     </xs:complexType>
 
-    <xs:attributeGroup name="oecdDefinitionListDefinitionTypeAttributes" id="oecdDefinitionListDefinitionTypeAttributes">
+    <xs:attributeGroup name="oecdDefinitionListDefinitionTypeAttributes"
+        id="oecdDefinitionListDefinitionTypeAttributes">
         <xs:annotation>
             <xs:documentation>
                 <section xmlns="http://docbook.org/ns/docbook">
@@ -471,26 +533,13 @@
         <xs:annotation>
             <xs:documentation>
                 <section xmlns="http://docbook.org/ns/docbook">
-                    <para>Definition lists consist of pairs of terms and definitions. The definitions are marked up using a term and a list item contained in a defintion list item.</para>
+                    <para>Definition lists consist of pairs of terms and definitions. The definitions are
+                        marked up using a term and a list item contained in a defintion list item.</para>
                 </section>
             </xs:documentation>
         </xs:annotation>
         <xs:group ref="oecdDefinitionListTypeContent"/>
         <xs:attributeGroup ref="oecdDefinitionListTypeAttributes"/>
     </xs:complexType>
-
-
-
-    <!-- ATTRIBUTES -->
-    <xs:attribute name="marker" type="oecdListMarker" default="auto" id="marker">
-        <xs:annotation>
-            <xs:documentation>
-                <section xmlns="http://docbook.org/ns/docbook">
-                    <para>List marker for itemized lists. Used at both list and item levels.</para>
-                </section>
-            </xs:documentation>
-        </xs:annotation>
-    </xs:attribute>
-
 
 </xs:schema>
