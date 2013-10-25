@@ -19,18 +19,12 @@
 		</xd:desc>
 	</xd:doc>
 	
-	<xsl:variable name="temp-ns-name" select="'/urn:oecd:names:xmlns:authoring:temp'"></xsl:variable>
-	
 	<xsl:param name="uuid-count" select="count(//*)"/>
 	
 	<xsl:template match="/">
 		
-		<xsl:variable name="temp-ns">
-			<xsl:apply-templates select="node()" mode="set-temp-ns"/>
-		</xsl:variable>
-				
 		<xsl:variable name="post-id">
-			<xsl:apply-templates select="$temp-ns" mode="add-id"/>
+			<xsl:apply-templates mode="add-id"/>
 		</xsl:variable>
 		
 		<xsl:apply-templates select="$post-id"/>
@@ -41,11 +35,6 @@
 		<xsl:copy/>
 	</xsl:template>
 	
-	<xsl:template match="*" mode="set-temp-ns">
-		<xsl:element name="{local-name()}" namespace="{$temp-ns-name}">
-			<xsl:apply-templates select="@*|node()"/>
-		</xsl:element>
-	</xsl:template>
 	
 	<xsl:template match="*" mode="add-id">
 		<xsl:variable name="seq-num">
