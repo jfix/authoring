@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="UTF-8"?><?Xpress productLine="official-document" ?>
+<document xsi:schemaLocation="urn:oecd:names:xmlns:authoring:document oecd.author.xsd"
+      xml:id="id-0320b881-8e86-4b78-b40f-95b57a9452ef"
+      xmlns="urn:oecd:names:xmlns:authoring:document"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <document-metadata xml:id="id-36921012-2428-420e-babb-cb85c7fb71df">
+            <metadata>
+                  <metadata-item property="oecd:originalClassif" value="For Official Use"> </metadata-item>
+                  <metadata-item property="oecd:language" value="English"> </metadata-item>
+                  <metadata-item property="oecd:cote" value=""> </metadata-item>
+            </metadata>
+      </document-metadata>
+      <metadata/>
+      <title class="title" xml:id="id-88594a83-6218-4e57-a4ec-db031975c266">ENTER DOCUMENT
+            TITLE</title>
+      <part xml:id="id-c6c49170-847c-48f0-97da-59af9161ecb2">
+            <title class="title" xml:id="id-ee87accc-297e-44ec-9061-e8f34028e7f3">[PART
+                  TITLE]</title>
+            <chapter xml:id="id-ce5629e1-55b3-4571-97c6-cd689f112d3a">
+                  <title class="title" xml:id="id-92bb63ec-23d1-4ca9-b2ca-e11b4e723f65">[CHAPTER
+                        TITLE]</title>
+                  <figure xml:id="id-f4bacf27-d7a0-4f45-9832-f07d35a85d74">
+                        <graphic xml:id="id-f8af261b-dcae-458c-9cde-b89d29120a13">
+                              <external-graphic
+                                    xlink:href="\\tsclient\nic-OECD-dev\authoring\tools\quality-assurance\icons\arrow-back-to-toc.jpg"
+                                    xml:id="id-90c4c5a8-d9c4-4289-bff5-34eaf7f7a085"
+                                    xmlns:xlink="http://www.w3.org/1999/xlink"/>
+                        </graphic>
+                  </figure>
+            </chapter>
+      </part>
+</document>
