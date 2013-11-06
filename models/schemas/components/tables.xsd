@@ -47,6 +47,12 @@
                         <authorinitials>JC</authorinitials>
                         <revremark>Modified table align notes and sources with those on figures and boxes.</revremark>
                     </revision>
+                    <revision>
+                        <revnumber>7</revnumber>
+                        <date>2013-11-06</date>
+                        <authorinitials>JC</authorinitials>
+                        <revremark>Modified Table.Entry content model to fix #6410.</revremark>
+                    </revision>
                 </revhistory>
             </section></xs:documentation>
     </xs:annotation>
@@ -76,7 +82,21 @@
         <xs:complexType name="Table.Entry">
             <xs:complexContent>
                 <xs:extension base="Table.Entry">
-                    <xs:choice>
+                    <xs:annotation>
+                        <xs:documentation>
+                            <section xmlns="http://docbook.org/ns/docbook">
+                                <revhistory>
+                                    <revision>
+                                        <revnumber>1</revnumber>
+                                        <date>2013-11-06</date>
+                                        <author>JC</author>
+                                        <revremark>Modified to allow any number of any of the elements.</revremark>
+                                    </revision>
+                                </revhistory>
+                            </section>
+                        </xs:documentation>
+                    </xs:annotation>
+                    <xs:choice maxOccurs="unbounded">
                         <xs:element ref="para" maxOccurs="unbounded"/>
                         <xs:element ref="itemized-list" maxOccurs="unbounded"/>
                         <xs:element ref="definition-list" maxOccurs="unbounded"/>
