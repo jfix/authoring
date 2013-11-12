@@ -21,6 +21,7 @@
 	
 	<xsl:param name="uuid-count" select="count(//*)"/>
 	
+	
 	<xsl:template match="/">
 		
 		<xsl:variable name="post-id">
@@ -41,13 +42,16 @@
 			<xsl:number count="*" level="any"/>
 		</xsl:variable>
 		<xsl:copy> 
-			<xsl:apply-templates select="." mode="insert-id">
+			<xsl:apply-templates select=".[not(@xml:id)]" mode="insert-id">
 				<xsl:with-param name="seq-num" select="$seq-num"/>
 			</xsl:apply-templates>
+			<xsl:apply-templates select=".[not(@class)]" mode="add-class"/>
 			<xsl:apply-templates select="@*|node()" mode="add-id"/>
 		</xsl:copy>
 	</xsl:template>
 	
+	
+	<!-- ID INSERTION -->
 	<xsl:template match="*" mode="insert-id">
 		<xsl:param name="seq-num"/>
 		<xsl:message><xsl:value-of select="$seq-num"/></xsl:message>
@@ -58,6 +62,25 @@
 	<xsl:template match="block-quote/para" mode="insert-id"/>
 	<xsl:template match="document-metadata|metadata" mode="insert-id"/>
 	
+	
+	<!-- ADD REQUIRED CLASS ATTRIBUTES -->
+	<xsl:template match="*"  mode="add-class"/>
+	
+	<xsl:template match="para" mode="add-class">
+		<xsl:attribute name="class" select="'body'"/>
+	</xsl:template>
+	
+	<xsl:template match="title" mode="add-class">
+		<xsl:attribute name="class" select="'title'"/>
+	</xsl:template>
+	
+	<xsl:template match="table" mode="add-class">
+		<xsl:attribute name="class" select="'table'"/>
+	</xsl:template>
+	
+	
+	<!-- GENERAL FIXUPS -->
+	
 	<xsl:template match="document/title[not(node())]">
 		<title>ENTER DOCUMENT TITLE</title>
 	</xsl:template>
@@ -66,8 +89,9 @@
 		<title>[CHAPTER TITLE]</title>
 	</xsl:template>
 	
-	<xsl:template match="/*">
-		
+	<xsl:template match="table/titles">
+		<xsl:apply-templates/>
 	</xsl:template>
 	
+
 </xsl:stylesheet>

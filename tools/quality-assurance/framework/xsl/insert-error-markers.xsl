@@ -41,7 +41,7 @@
 	<xsl:template match="c:errors">
 		<xsl:copy>
 			<xsl:copy-of select="@*"/>
-			<xsl:apply-templates/>
+			<xsl:apply-templates select="c:error[not(@type = 'warning')]"/>
 		</xsl:copy>
 	</xsl:template>
 	
@@ -56,7 +56,7 @@
 	<xsl:template match="c:error">
 		<xsl:param name="document-lines" select="$document-lines-initial"/>
 		<xsl:variable name="node" select="."/>
-		<xsl:analyze-string select="." regex="element\s+[&lt;'](\w+)[&gt;']" flags="i">
+		<xsl:analyze-string select="." regex="element\s+[&lt;']([\w.-]+)[&gt;']" flags="i">
 			<xsl:matching-substring>
 				<xsl:variable name="line-number" select="xs:integer($node/@line)"/>
 				<xsl:variable name="error-line" select="$document-lines[$line-number]"/>

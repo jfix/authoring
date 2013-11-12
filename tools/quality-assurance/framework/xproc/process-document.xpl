@@ -68,6 +68,8 @@
 		<!-- remove the child wrappers -->
 		<p:unwrap name="remove-children" match="svrl:schematron-output/svrl:schematron-output"/>
 		
+		<p:store href="/tmp/unwrapped.xml"/>
+		
 		<!-- shuffle the child elements -->
 		<p:xslt name="move-children" version="2.0">
 			<p:input port="source">

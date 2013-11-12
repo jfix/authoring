@@ -104,6 +104,10 @@
 			<axsl:import href="{resolve-uri('svrl-report-helpers.xsl', $where-am-i)}"/>
 			<axsl:import href="{resolve-uri('verbatim.xsl', $where-am-i)}"/>
 			<axsl:output media-type="xhtml"/>
+			
+			<!-- params for verbatim -->
+			<axsl:param name="max-depth" select="5"/>
+			<axsl:param name='indent-elements' select="true()"/>
 
 			<!-- copied from params for this stylesheet -->
 			<axsl:param name="role-as-style">

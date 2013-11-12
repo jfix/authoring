@@ -118,7 +118,7 @@
 
 		<!-- again, we have no interest in the primary output -->
 		<p:sink/>
-		
+				
 		<!-- force the stored file name to be in the primary port again -->
 		<p:identity>
 			<p:input port="source">
@@ -137,6 +137,8 @@
 			</p:input>
 			<p:with-param name="xml-file" select="/c:result/text()"/>
 		</p:xslt>
+		
+		<p:store href="/tmp/marked.xml"/>
 		
 		<!-- now process the c:errors to turn to svrl -->
 		<p:xslt name="convert-to-svrl">
