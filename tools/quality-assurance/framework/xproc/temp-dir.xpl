@@ -67,9 +67,7 @@
    				<p>Get the environment as a list of c:env elements. See <a href="http://exproc.org/proposed/steps/os.html#env">EXProc Proposed OS Utilities</a>.</p>
    			</p:documentation>
    		</pos:env>
-   	
-   		<p:store href="file:///c:/temp/env.xml"/>
-   	
+   	   	
 		<p:xslt name="filter-env">
 			<p:documentation xmlns="http://www.w3.org/1999/xhtml">
 				<p>Filter the results of the environment listing above
@@ -93,6 +91,7 @@
 							then concat('/',  replace($env, '\\', '/')) 
 							else $env)"/>
 						<xsl:template match="c:result">
+							<xsl:message>URL: <xsl:value-of select="$env-url"/></xsl:message>
 							<c:result><xsl:value-of select="$env-url"/></c:result>
 						</xsl:template>
 					</xsl:stylesheet>

@@ -24,10 +24,9 @@
 		</p:documentation>
 	</p:input>
 	
-	<p:input port="schematron" sequence="true">
+	<p:input port="schematron">
 		<p:documentation xmlns="http://www.w3.org/1999/xhtml">
-			<p>The schematron input port refers to the Schematron schema for the document. Multiple schematrons
-			may be provided on this port.</p>
+			<p>The schematron input port refers to the Schematron schema for the document. </p>
 		</p:documentation>
 	</p:input>
 	
@@ -38,6 +37,7 @@
 	</p:output>
 	
 	<p:import href="xsd-validation-with-xpath.xpl"/>
+	
 	
 	<p:declare-step name="merge-svrl" type="oecd:merge-svrl">
 		
@@ -63,17 +63,12 @@
 		</p:output>
 
 		<!-- wrap the sequence to create a single document -->
-		<p:wrap-sequence name="wrap-output" wrapper="svrl:schematron-output"/>
-		
-		<!-- remove the child wrappers -->
-		<p:unwrap name="remove-children" match="svrl:schematron-output/svrl:schematron-output"/>
-		
-		<p:store href="/tmp/unwrapped.xml"/>
+		<p:wrap-sequence name="wrap-output" wrapper="svrl:wrapped-output"/>
 		
 		<!-- shuffle the child elements -->
 		<p:xslt name="move-children" version="2.0">
 			<p:input port="source">
-				<p:pipe port="result" step="remove-children"/>
+				<p:pipe port="result" step="wrap-output"/>
 			</p:input>
 			<p:input port="parameters">
 				<p:empty/>
@@ -81,11 +76,10 @@
 			<p:input port="stylesheet">
 				<p:inline>
 					<xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="2.0">
-						<xsl:template match="svrl:schematron-output">
-							<xsl:copy>
-								<xsl:apply-templates select="@*"/>
-								<xsl:copy-of select="(svrl:ns-prefix-in-attribute-values, * except svrl:ns-prefix-in-attribute-values)"/>
-							</xsl:copy>
+						<xsl:template match="svrl:wrapped-output">
+							<svrl:schematron-output>
+								<xsl:copy-of select="(.//svrl:ns-prefix-in-attribute-values, svrl:schematron-output/* except .//svrl:ns-prefix-in-attribute-values)"/>
+							</svrl:schematron-output>
 						</xsl:template>
 					</xsl:stylesheet>
 				</p:inline>
@@ -107,47 +101,34 @@
 		</p:input>
 	</oecd:xsd-validation>
 	
-	<!-- set the primary input to be the schematrons -->
-	<p:identity name="set-primary">
+	<p:validate-with-schematron name="validate-against-schematron" assert-valid="false">
+		<p:input port="parameters">
+			<p:empty/>
+		</p:input>
 		<p:input port="source">
+			<p:pipe port="source" step="process-document"/>
+		</p:input>
+		<p:input port="schema">
 			<p:pipe port="schematron" step="process-document"/>
 		</p:input>
-	</p:identity>
+	</p:validate-with-schematron>
+		
+	<!-- not interested in the primary output of the validation (the input doc) -->
+	<p:sink/>
+		
 	
-	<!-- for each schema, get the report -->
-	<p:for-each name="validate-against-schematrons">
-		
-		<p:output port="result" primary="true" sequence="true">
-			<p:pipe port="report" step="do-schematron"/>
-		</p:output>
-		
-		<p:validate-with-schematron name="do-schematron">
-			<p:input port="parameters">
-				<p:empty/>
-			</p:input>
-			<p:input port="source">
-				<p:pipe port="source" step="process-document"/>
-			</p:input>
-			<p:input port="schema">
-				<p:pipe port="current" step="validate-against-schematrons"/>
-			</p:input>
-		</p:validate-with-schematron>
-		
-		<!-- not interested in the primary output of the validation (the input doc) -->
-		<p:sink/>
-		
-	</p:for-each>	
 	
 	<!-- put the schematrons together -->
 	<p:identity name="schematron-sequence">
 		<p:input port="source">
 			<p:pipe port="result" step="validate-against-xsd"/>
-			<p:pipe port="result" step="validate-against-schematrons"/>
+			<p:pipe port="report" step="validate-against-schematron"/>
 		</p:input>
 	</p:identity>
 		
 	<!-- merge them -->
 	<oecd:merge-svrl name="merge-results"/>
+	
 	
 	<!-- force the primary input to be the source document so we can get
 		the base uri for it -->

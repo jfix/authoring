@@ -138,8 +138,6 @@
 			<p:with-param name="xml-file" select="/c:result/text()"/>
 		</p:xslt>
 		
-		<p:store href="/tmp/marked.xml"/>
-		
 		<!-- now process the c:errors to turn to svrl -->
 		<p:xslt name="convert-to-svrl">
 			<p:input port="source">
@@ -186,7 +184,7 @@
 
 		<!-- get the name of temp file, ensuring we delete on script exit -->
 		<ccproc:temp-file name="temp-name" delete-on-exit="true" fail-on-error="true"/>
-
+		
 		<!-- need to make the preceding primary -->
 		<p:identity name="make-file-name-primary">
 			<p:input port="source">

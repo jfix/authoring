@@ -77,7 +77,7 @@
 		</xd:desc>
 	</xd:doc>
 	<xsl:template name="generate-rule">
-		<svrl:active-pattern id="{$rule-id}"/>
+		<svrl:fired-rule id="{$rule-id}" context="/"/>
 	</xsl:template>
 
 	<xd:doc>

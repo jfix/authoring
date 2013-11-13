@@ -142,10 +142,10 @@
 		<xsl:param name="element-name" as="xs:string"/>
 		
 		<!-- base regex to match element start: -->
-		<xsl:variable name="base-regex" select="concat('&lt;', $element-name, '\s+')"/>
+		<xsl:variable name="base-regex" select="concat('&lt;(', $element-name, ')(/|>|\s?)')"/>
 		
-		<!-- match last occurrence of the above. Remember that location we want will be the second matching substring: -->
-		<xsl:value-of select="concat('^(.*', $base-regex, ')(.*)$')"/>
+		<!-- match last occurrence of the above: -->
+		<xsl:value-of select="concat('^(.*&lt;', $element-name, ')(/|>|\s?)(.*)$')"/>
 		
 	</xsl:function>
 	
@@ -161,8 +161,8 @@
 		 
 		
 		<xsl:analyze-string select="$search-string" regex="{$regex}">
-			<xsl:matching-substring>
-				<xsl:value-of select="concat(regex-group(1), ' __validation_marker=&quot;1&quot; ' , regex-group(2))"/>
+			<xsl:matching-substring>				
+				<xsl:value-of select="concat(regex-group(1), ' __validation_marker=&quot;1&quot; ' , regex-group(2), regex-group(3))"/>
 			</xsl:matching-substring>
 		</xsl:analyze-string>
 		
