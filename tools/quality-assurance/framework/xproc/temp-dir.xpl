@@ -41,6 +41,9 @@
    			<p>Returns the first temporary directory name found
    			in the environment. Searches 'TMPDIR', 'TMP' and the
    			'TEMP' in that order. </p>
+   			<p>If backslashes are found in the path, we assume it's
+   			a windows path (we don't check for UNC paths because that
+   			makes little sense for a temp dir) and convert to a file URL.</p>
    		</p:documentation>
    	
    		<p:output primary="false" port="result">
@@ -65,6 +68,8 @@
    			</p:documentation>
    		</pos:env>
    	
+   		<p:store href="file:///c:/temp/env.xml"/>
+   	
 		<p:xslt name="filter-env">
 			<p:documentation xmlns="http://www.w3.org/1999/xhtml">
 				<p>Filter the results of the environment listing above
@@ -76,12 +81,19 @@
 			</p:input>
 			<p:input port="stylesheet">
 				<p:inline>
-					<xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="2.0">
+					<xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" 
+						xmlns:c="http://www.w3.org/ns/xproc-step"
+						xmlns:cfn="http://www.corbas.co.uk/ns/xsl/functions" version="2.0">
 						<xsl:param name="fallback-path"/>
 						<!-- take first matching node -->
-						<xsl:variable name="env" select="//c:env[@name=('TMPDIR', 'tmpdir', 'TMP', 'tmp', 'TEMP', 'temp')][1]"/>
+						<xsl:variable name="env" select="(//c:env[@name=('TMPDIR', 'tmpdir', 'TMP', 'tmp', 'TEMP', 'temp')]/@value, $fallback-path)[1]"/>
+						<xsl:variable name="env-url" select="concat(
+							'file://', 
+							if  (matches($env, '^[a-z]:\\', 'i')) 
+							then concat('/',  replace($env, '\\', '/')) 
+							else $env)"/>
 						<xsl:template match="c:result">
-							<c:result><xsl:value-of select="if (exists($env)) then $env/@value else $fallback-path"/></c:result>
+							<c:result><xsl:value-of select="$env-url"/></c:result>
 						</xsl:template>
 					</xsl:stylesheet>
 				</p:inline>
