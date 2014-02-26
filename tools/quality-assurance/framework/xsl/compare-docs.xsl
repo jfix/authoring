@@ -38,10 +38,15 @@
 	</xsl:template>
 	
 	
-	<xsl:template match="block-pair[not(lower-case(normalize-space(block[1])) = lower-case(normalize-space(block[2]))) or (@style and not(@style = $style-map(@style)))]">
+	<xsl:template match="block-pair[not(lower-case(normalize-space(block[1])) = lower-case(normalize-space(block[2]))) 
+		or (block[1]/@style and not(block[1]/@style= $style-map(block[1]/@style)))]">
+		<xsl:variable name="style" select='block[1]/@style'/>
 		<xsl:copy>
-			<xsl:attribute name="style-match" select="if (@style and not(@style = $style-map(@style))) then false() else true()"/>
-			<xsl:attribute name="text-match" select="if (lower-case(normalize-space(block[1])) = lower-case(normalize-space(block[2]))) then true() else false()"/>
+			<xsl:attribute name="style-match" select="if ($style and not($style = $style-map($style))) then 1 else 0"/>
+			<xsl:if test="@style and not($style = $style-map($style))">
+				<xsl:attribute name="other-style" select="$style-map($style)"/>
+			</xsl:if>
+			<xsl:attribute name="text-match" select="if (lower-case(normalize-space(block[1])) = lower-case(normalize-space(block[2]))) then 1 else 0"/>
 			<xsl:copy-of select="@*|node()"/>
 		</xsl:copy>
 	</xsl:template>

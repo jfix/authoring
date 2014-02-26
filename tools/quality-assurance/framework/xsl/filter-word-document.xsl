@@ -54,7 +54,7 @@
 		<xd:desc>Convert a run to a simpler form - losing the text elements and properties.</xd:desc>
 	</xd:doc>
 	<xsl:template match="w:r" mode="simplify">
-		<w:r><xsl:apply-templates select="w:t" mode="#current"/></w:r>
+		<w:r><xsl:apply-templates select="*" mode="#current"/></w:r>
 	</xsl:template>
 	
 	<xd:doc>
@@ -66,7 +66,11 @@
 		<xsl:value-of select="normalize-space(replace(., '&#xA0;', ' '))"/>
 	</xsl:template>
 	
-	<xsl:template match="w:t[@xml:space='preserve']" mode="simplify">
+	<xsl:template match="w:tab" mode="simplify">
+		<xsl:text>&#x20;</xsl:text>
+	</xsl:template>
+	
+	<xsl:template match="w:t[@xml:space='preserve']" mode="simplify" priority="2">
 		<xsl:variable name="prefix" select="if (matches(., '^[\s&#xA0;]')) then ' ' else ''"/>
 		<xsl:variable name="suffix" select="if (matches(., '[\s&#xA0;]$')) then ' ' else ''"/>
 		<xsl:variable name="content" select="normalize-space(.)"/>

@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<p:declare-step xmlns:p="http://www.w3.org/ns/xproc"  xmlns:oecd="urn:oecd:names:xmlns:xproc"
-	xmlns:svrl="http://purl.oclc.org/dsdl/svrl" name="process-document"
+<p:declare-step xmlns:p="http://www.w3.org/ns/xproc"  
+	xmlns:oecdstep="urn:oecd:names:xmlns:xproc:steps"
+	xmlns:svrl="http://purl.oclc.org/dsdl/svrl" name="process-document" type="oecdstep:process-document"
     xmlns:c="http://www.w3.org/ns/xproc-step" version="1.0">
  
  	<p:documentation xmlns="http://www.w3.org/1999/xhtml">
@@ -39,11 +40,11 @@
 	<p:import href="xsd-validation-with-xpath.xpl"/>
 	
 	
-	<p:declare-step name="merge-svrl" type="oecd:merge-svrl">
+	<p:declare-step name="merge-svrl" type="oecdstep:merge-svrl">
 		
 		<p:documentation xmlns="http://www.w3.org/1999/xhtml">
 			<p>Given a sequence of inputs, each of which represents
-				SVRL output, merge into a single SVRL document. The simplest
+			SVRL output, merge into a single SVRL document. The simplest
 			way to do this is to wrap the sequence in a new svrl:schematron-output
 			element and then unwrap the children. Then, all we need to do is
 			slightly shuffle the content to ensure that the namespace declaration
@@ -89,7 +90,7 @@
 	</p:declare-step>
 	
 	<!-- validate agains the XML schema -->
-	<oecd:xsd-validation name="validate-against-xsd">
+	<oecdstep:xsd-validation name="validate-against-xsd">
 		<p:documentation xmlns="http://www.w3.org/1999/xhtml">
 			<p>Process the input document with XSD, getting an SVRL document as the result.</p>
 		</p:documentation>
@@ -99,7 +100,7 @@
 		<p:input port="schema">
 			<p:pipe port="schema" step="process-document"/>
 		</p:input>
-	</oecd:xsd-validation>
+	</oecdstep:xsd-validation>
 	
 	<p:validate-with-schematron name="validate-against-schematron" assert-valid="false">
 		<p:input port="parameters">
@@ -127,7 +128,7 @@
 	</p:identity>
 		
 	<!-- merge them -->
-	<oecd:merge-svrl name="merge-results"/>
+	<oecdstep:merge-svrl name="merge-results"/>
 	
 	
 	<!-- force the primary input to be the source document so we can get
@@ -170,6 +171,9 @@
 			<p:pipe port="source" step="process-document"/>
 		</p:input>
 	</p:xslt>
+	
+	
+	
 	
  
 </p:declare-step>

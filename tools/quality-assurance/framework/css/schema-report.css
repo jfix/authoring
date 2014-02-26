@@ -1,0 +1,95 @@
+ body
+ {
+ 	font-family: Helvetica, Arial, sans-serif;
+ 	font-size:  medium;
+ }
+ 
+table
+{
+	width: 80%;
+	margin-left:10%;
+	margin-right: 10%;
+	margin-bottom: 1em;
+}
+ 
+table.element-summary
+{
+	border-width: 1px;
+	border-color: black;
+	border-style: dotted;
+	border-collapse: collapse;
+}
+
+table.element-summary td
+{
+	width: 15%;
+	font-size: small;
+	border-width: 1px;
+	border-color: black;
+	border-style: dotted;
+	border-collapse: collapse;
+	padding: 0.5em;
+	
+}
+
+table.element-summary td.numeric
+{
+	text-align: right;
+	width: 5%;
+}
+
+td.unused
+{
+	color: white;
+	background-color: red;
+}
+
+h1, h2, h3, h4, h5, h6, caption
+{
+	font-weight: normal;
+	margin-bottom: 1em;
+	font-size: medium;
+}
+
+h1
+{
+	font-size: x-large;
+	font-weight: bold;
+}
+
+h2
+{
+	font-size: large;
+	font-weight: bold;	
+}
+
+caption, h3
+{
+	margin-bottom: 1em;
+	text-align: center;
+	font-size: large;
+}
+
+section.document
+{
+	margin-bottom: 3em;
+	margin-left: 3em;
+}
+
+div.summary
+{
+	width: 50%;
+	background-color: rgb(220, 220, 220);
+
+}
+
+div.summary th
+{
+	font-weight: bold;
+	text-align: left;
+}
+
+div.summary td
+{
+	text-align: right;
+}

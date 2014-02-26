@@ -123,7 +123,7 @@
 					)"/>
 			</xsl:when>
 			<xsl:when test="$row-num gt 1">
-				<xsl:sequence select="cfn:insert-marker($row-num - 1, $col-num, $element-name, $error-message, $document-lines)"/>
+				<xsl:sequence select="cfn:insert-marker($row-num - 1, string-length($document-lines[$row-num -1]), $element-name, $error-message, $document-lines)"/>
 			</xsl:when>
 			<xsl:otherwise>
 				<xsl:message terminate="yes">Failed to find <xsl:value-of select="$matching-regex"/> in content.</xsl:message>
@@ -140,12 +140,9 @@
 	</xd:doc>
 	<xsl:function name="cfn:last-element-regex" as="xs:string">
 		<xsl:param name="element-name" as="xs:string"/>
-		
-		<!-- base regex to match element start: -->
-		<xsl:variable name="base-regex" select="concat('&lt;(', $element-name, ')(/|>|\s?)')"/>
-		
+
 		<!-- match last occurrence of the above: -->
-		<xsl:value-of select="concat('^(.*&lt;', $element-name, ')(/|>|\s?)(.*)$')"/>
+		<xsl:value-of select="concat('^(.*&lt;[\w:]*', $element-name, ')(/|>|\s+)(.*)$')"/>
 		
 	</xsl:function>
 	

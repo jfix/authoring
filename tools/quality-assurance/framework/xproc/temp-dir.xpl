@@ -91,7 +91,6 @@
 							then concat('/',  replace($env, '\\', '/')) 
 							else $env)"/>
 						<xsl:template match="c:result">
-							<xsl:message>URL: <xsl:value-of select="$env-url"/></xsl:message>
 							<c:result><xsl:value-of select="$env-url"/></c:result>
 						</xsl:template>
 					</xsl:stylesheet>

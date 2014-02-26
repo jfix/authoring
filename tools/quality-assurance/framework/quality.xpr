@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project version="15.1">
+<project version="15.2">
     <meta>
         <filters directoryPatterns="" filePatterns="" positiveFilePatterns="" showHiddenFiles="false"/>
         <options>
-            <serialized version="15.1" xml:space="preserve">
+            <serialized version="15.2" xml:space="preserve">
                 <map>
                     <entry>
                         <String>catalogs.v5</String>
@@ -22,7 +22,7 @@
                         <scenarioAssociation-array>
                             <scenarioAssociation>
                                 <field name="url">
-                                    <String>../../../../quality-framework-temp-files/uat-files/Tables%20with%20qxa%20extension.qxa</String>
+                                    <String>../../../../Testing/FolderforNIC/014_see-also.qxa</String>
                                 </field>
                                 <field name="scenarioIds">
                                     <list>
@@ -37,11 +37,521 @@
                             </scenarioAssociation>
                             <scenarioAssociation>
                                 <field name="url">
-                                    <String>../../../../quality-framework-temp-files/uat-files/%5BThis%20is%20Chapter%20Title%5D.xml</String>
+                                    <String>../../../../Testing/FolderforNIC/013_see.qxa</String>
+                                </field>
+                                <field name="scenarioIds">
+                                    <list>
+                                        <String>OECDAuthor XML Validation (Document)</String>
+                                    </list>
+                                </field>
+                                <field name="scenarioTypes">
+                                    <list>
+                                        <String>XPROC</String>
+                                    </list>
+                                </field>
+                            </scenarioAssociation>
+                            <scenarioAssociation>
+                                <field name="url">
+                                    <String>../../../../Testing/FolderforNIC/011_embedded_content.qxa</String>
+                                </field>
+                                <field name="scenarioIds">
+                                    <list>
+                                        <String>OECDAuthor XML Validation (Document)</String>
+                                    </list>
+                                </field>
+                                <field name="scenarioTypes">
+                                    <list>
+                                        <String>XPROC</String>
+                                    </list>
+                                </field>
+                            </scenarioAssociation>
+                            <scenarioAssociation>
+                                <field name="url">
+                                    <String>../../../../Testing/FolderforNIC/010_inline-equation.qxa</String>
+                                </field>
+                                <field name="scenarioIds">
+                                    <list>
+                                        <String>OECDAuthor XML Validation (Document)</String>
+                                    </list>
+                                </field>
+                                <field name="scenarioTypes">
+                                    <list>
+                                        <String>XPROC</String>
+                                    </list>
+                                </field>
+                            </scenarioAssociation>
+                            <scenarioAssociation>
+                                <field name="url">
+                                    <String>../../../../Testing/FolderforNIC/009_extract.qxa</String>
+                                </field>
+                                <field name="scenarioIds">
+                                    <list>
+                                        <String>OECDAuthor XML Validation (Document)</String>
+                                    </list>
+                                </field>
+                                <field name="scenarioTypes">
+                                    <list>
+                                        <String>XPROC</String>
+                                    </list>
+                                </field>
+                            </scenarioAssociation>
+                            <scenarioAssociation>
+                                <field name="url">
+                                    <String>../../../../Testing/FolderforNIC/008_chemical-structure.qxa</String>
+                                </field>
+                                <field name="scenarioIds">
+                                    <list>
+                                        <String>OECDAuthor XML Validation (Document)</String>
+                                    </list>
+                                </field>
+                                <field name="scenarioTypes">
+                                    <list>
+                                        <String>XPROC</String>
+                                    </list>
+                                </field>
+                            </scenarioAssociation>
+                            <scenarioAssociation>
+                                <field name="url">
+                                    <String>../../../../Testing/FolderforNIC/007_def-list.qxa</String>
+                                </field>
+                                <field name="scenarioIds">
+                                    <list>
+                                        <String>OECDAuthor XML Validation (Document)</String>
+                                    </list>
+                                </field>
+                                <field name="scenarioTypes">
+                                    <list>
+                                        <String>XPROC</String>
+                                    </list>
+                                </field>
+                            </scenarioAssociation>
+                            <scenarioAssociation>
+                                <field name="url">
+                                    <String>../../../../Testing/FolderforNIC/006_conclusion.qxa</String>
+                                </field>
+                                <field name="scenarioIds">
+                                    <list>
+                                        <String>OECDAuthor XML Validation (Document)</String>
+                                    </list>
+                                </field>
+                                <field name="scenarioTypes">
+                                    <list>
+                                        <String>XPROC</String>
+                                    </list>
+                                </field>
+                            </scenarioAssociation>
+                            <scenarioAssociation>
+                                <field name="url">
+                                    <String>../../../../Testing/FolderforNIC/005_chemical-structure.qxa</String>
+                                </field>
+                                <field name="scenarioIds">
+                                    <list>
+                                        <String>OECDAuthor XML Validation (Document)</String>
+                                    </list>
+                                </field>
+                                <field name="scenarioTypes">
+                                    <list>
+                                        <String>XPROC</String>
+                                    </list>
+                                </field>
+                            </scenarioAssociation>
+                            <scenarioAssociation>
+                                <field name="url">
+                                    <String>../../../../Testing/FolderforNIC/004_block-quote.qxa</String>
+                                </field>
+                                <field name="scenarioIds">
+                                    <list>
+                                        <String>OECDAuthor XML Validation (Document)</String>
+                                    </list>
+                                </field>
+                                <field name="scenarioTypes">
+                                    <list>
+                                        <String>XPROC</String>
+                                    </list>
+                                </field>
+                            </scenarioAssociation>
+                            <scenarioAssociation>
+                                <field name="url">
+                                    <String>../../../../Testing/FolderforNIC/015_in-line_graphic.qxa</String>
+                                </field>
+                                <field name="scenarioIds">
+                                    <list>
+                                        <String>OECDAuthor XML Validation (Document)</String>
+                                    </list>
+                                </field>
+                                <field name="scenarioTypes">
+                                    <list>
+                                        <String>XPROC</String>
+                                    </list>
+                                </field>
+                            </scenarioAssociation>
+                            <scenarioAssociation>
+                                <field name="url">
+                                    <String>../../../../Testing/FolderforNIC/016_quote.qxa</String>
+                                </field>
+                                <field name="scenarioIds">
+                                    <list>
+                                        <String>OECDAuthor XML Validation (Document)</String>
+                                    </list>
+                                </field>
+                                <field name="scenarioTypes">
+                                    <list>
+                                        <String>XPROC</String>
+                                    </list>
+                                </field>
+                            </scenarioAssociation>
+                            <scenarioAssociation>
+                                <field name="url">
+                                    <String>../../../../Testing/FolderforNIC/017_fulldocument.qxa</String>
+                                </field>
+                                <field name="scenarioIds">
+                                    <list>
+                                        <String>OECDAuthor XML Validation (Document)</String>
+                                    </list>
+                                </field>
+                                <field name="scenarioTypes">
+                                    <list>
+                                        <String>XPROC</String>
+                                    </list>
+                                </field>
+                            </scenarioAssociation>
+                            <scenarioAssociation>
+                                <field name="url">
+                                    <String>../../../../Testing/ContentforNicGIBSON/007Figure.xml</String>
+                                </field>
+                                <field name="scenarioIds">
+                                    <list>
+                                        <String>OECDAuthor XML Validation (Document)</String>
+                                    </list>
+                                </field>
+                                <field name="scenarioTypes">
+                                    <list>
+                                        <String>XPROC</String>
+                                    </list>
+                                </field>
+                            </scenarioAssociation>
+                            <scenarioAssociation>
+                                <field name="url">
+                                    <String>../../../../Testing/ContentforNicGIBSON/008Graph.xml</String>
+                                </field>
+                                <field name="scenarioIds">
+                                    <list>
+                                        <String>OECDAuthor XML Validation (Document)</String>
+                                    </list>
+                                </field>
+                                <field name="scenarioTypes">
+                                    <list>
+                                        <String>XPROC</String>
+                                    </list>
+                                </field>
+                            </scenarioAssociation>
+                            <scenarioAssociation>
+                                <field name="url">
+                                    <String>../../../../Testing/FolderforNIC/003_alternative_title.qxa</String>
+                                </field>
+                                <field name="scenarioIds">
+                                    <list>
+                                        <String>OECDAuthor XML Validation (Document)</String>
+                                    </list>
+                                </field>
+                                <field name="scenarioTypes">
+                                    <list>
+                                        <String>XPROC</String>
+                                    </list>
+                                </field>
+                            </scenarioAssociation>
+                            <scenarioAssociation>
+                                <field name="url">
+                                    <String>../../../../FolderforNIC/002_acknowledgements.qxa</String>
+                                </field>
+                                <field name="scenarioIds">
+                                    <list>
+                                        <String>OECDAuthor XML Validation (Document)</String>
+                                    </list>
+                                </field>
+                                <field name="scenarioTypes">
+                                    <list>
+                                        <String>XPROC</String>
+                                    </list>
+                                </field>
+                            </scenarioAssociation>
+                            <scenarioAssociation>
+                                <field name="url">
+                                    <String>../../../../../../Library/Caches/TemporaryItems/BetterZip%20Temporary%20Folder.pbwmrB/BetterZip%20Temporary%20Folder.aD3Y4h/FolderforNIC/tables.qxa</String>
+                                </field>
+                                <field name="scenarioIds">
+                                    <list>
+                                        <String>OECDAuthor XML Validation (Document)</String>
+                                    </list>
+                                </field>
+                                <field name="scenarioTypes">
+                                    <list>
+                                        <String>XPROC</String>
+                                    </list>
+                                </field>
+                            </scenarioAssociation>
+                            <scenarioAssociation>
+                                <field name="url">
+                                    <String>../../../../Testing/biblio.xml</String>
+                                </field>
+                                <field name="scenarioIds">
+                                    <list>
+                                        <String>OECDAuthor XML Validation (Document)</String>
+                                    </list>
+                                </field>
+                                <field name="scenarioTypes">
+                                    <list>
+                                        <String>XPROC</String>
+                                    </list>
+                                </field>
+                            </scenarioAssociation>
+                            <scenarioAssociation>
+                                <field name="url">
+                                    <String>../../../../../../Library/Caches/TemporaryItems/BetterZip%20Temporary%20Folder.A7Gdkt/BetterZip%20Temporary%20Folder.5wm73G/ContentforNicGIBSON/001oecdmetadata.xml</String>
+                                </field>
+                                <field name="scenarioIds">
+                                    <list>
+                                        <String>OECDAuthor XML Validation (Document)</String>
+                                    </list>
+                                </field>
+                                <field name="scenarioTypes">
+                                    <list>
+                                        <String>XPROC</String>
+                                    </list>
+                                </field>
+                            </scenarioAssociation>
+                            <scenarioAssociation>
+                                <field name="url">
+                                    <String>../../../../../../Library/Caches/TemporaryItems/BetterZip%20Temporary%20Folder.A7Gdkt/BetterZip%20Temporary%20Folder.FdTjsJ/ContentforNicGIBSON/001oecdmetadata_agenda.xml</String>
                                 </field>
                                 <field name="scenarioIds">
                                     <list>
                                         <String>OECDAuthor XML Validation (Agenda)</String>
+                                    </list>
+                                </field>
+                                <field name="scenarioTypes">
+                                    <list>
+                                        <String>XPROC</String>
+                                    </list>
+                                </field>
+                            </scenarioAssociation>
+                            <scenarioAssociation>
+                                <field name="url">
+                                    <String>../../../../../../Library/Caches/TemporaryItems/BetterZip%20Temporary%20Folder.A7Gdkt/BetterZip%20Temporary%20Folder.teIcvt/ContentforNicGIBSON/001oecdmetadata_publication.xml</String>
+                                </field>
+                                <field name="scenarioIds">
+                                    <list>
+                                        <String>OECDAuthor XML Validation (Document)</String>
+                                    </list>
+                                </field>
+                                <field name="scenarioTypes">
+                                    <list>
+                                        <String>XPROC</String>
+                                    </list>
+                                </field>
+                            </scenarioAssociation>
+                            <scenarioAssociation>
+                                <field name="url">
+                                    <String>../../../../../../Library/Caches/TemporaryItems/BetterZip%20Temporary%20Folder.A7Gdkt/BetterZip%20Temporary%20Folder.CFOcgA/ContentforNicGIBSON/002_no_metadata_OD.xml</String>
+                                </field>
+                                <field name="scenarioIds">
+                                    <list>
+                                        <String>OECDAuthor XML Validation (Document)</String>
+                                    </list>
+                                </field>
+                                <field name="scenarioTypes">
+                                    <list>
+                                        <String>XPROC</String>
+                                    </list>
+                                </field>
+                            </scenarioAssociation>
+                            <scenarioAssociation>
+                                <field name="url">
+                                    <String>../../../../../../Library/Caches/TemporaryItems/BetterZip%20Temporary%20Folder.A7Gdkt/BetterZip%20Temporary%20Folder.7HNsmj/ContentforNicGIBSON/003Bibliography.xml</String>
+                                </field>
+                                <field name="scenarioIds">
+                                    <list>
+                                        <String>OECDAuthor XML Validation (Document)</String>
+                                    </list>
+                                </field>
+                                <field name="scenarioTypes">
+                                    <list>
+                                        <String>XPROC</String>
+                                    </list>
+                                </field>
+                            </scenarioAssociation>
+                            <scenarioAssociation>
+                                <field name="url">
+                                    <String>../../../../../../Library/Caches/TemporaryItems/BetterZip%20Temporary%20Folder.A7Gdkt/BetterZip%20Temporary%20Folder.DsTDEB/ContentforNicGIBSON/004Footnote.xml</String>
+                                </field>
+                                <field name="scenarioIds">
+                                    <list>
+                                        <String>OECDAuthor XML Validation (Document)</String>
+                                    </list>
+                                </field>
+                                <field name="scenarioTypes">
+                                    <list>
+                                        <String>XPROC</String>
+                                    </list>
+                                </field>
+                            </scenarioAssociation>
+                            <scenarioAssociation>
+                                <field name="url">
+                                    <String>../../../../../../Library/Caches/TemporaryItems/BetterZip%20Temporary%20Folder.A7Gdkt/BetterZip%20Temporary%20Folder.zBdBuh/ContentforNicGIBSON/006Glossary.xml</String>
+                                </field>
+                                <field name="scenarioIds">
+                                    <list>
+                                        <String>OECDAuthor XML Validation (Document)</String>
+                                    </list>
+                                </field>
+                                <field name="scenarioTypes">
+                                    <list>
+                                        <String>XPROC</String>
+                                    </list>
+                                </field>
+                            </scenarioAssociation>
+                            <scenarioAssociation>
+                                <field name="url">
+                                    <String>../../../../../../Library/Caches/TemporaryItems/BetterZip%20Temporary%20Folder.A7Gdkt/BetterZip%20Temporary%20Folder.lphLQx/ContentforNicGIBSON/005Numberedlist.xml</String>
+                                </field>
+                                <field name="scenarioIds">
+                                    <list>
+                                        <String>OECDAuthor XML Validation (Document)</String>
+                                    </list>
+                                </field>
+                                <field name="scenarioTypes">
+                                    <list>
+                                        <String>XPROC</String>
+                                    </list>
+                                </field>
+                            </scenarioAssociation>
+                            <scenarioAssociation>
+                                <field name="url">
+                                    <String>../../../../../../Library/Caches/TemporaryItems/BetterZip%20Temporary%20Folder.A7Gdkt/BetterZip%20Temporary%20Folder.QxV7su/ContentforNicGIBSON/007Figure.xml</String>
+                                </field>
+                                <field name="scenarioIds">
+                                    <list>
+                                        <String>OECDAuthor XML Validation (Document)</String>
+                                    </list>
+                                </field>
+                                <field name="scenarioTypes">
+                                    <list>
+                                        <String>XPROC</String>
+                                    </list>
+                                </field>
+                            </scenarioAssociation>
+                            <scenarioAssociation>
+                                <field name="url">
+                                    <String>xproc/compare-xml-docx.xpl</String>
+                                </field>
+                                <field name="scenarioIds">
+                                    <list>
+                                        <String>OECDAuthor XML Validation (Document)</String>
+                                    </list>
+                                </field>
+                                <field name="scenarioTypes">
+                                    <list>
+                                        <String>XPROC</String>
+                                    </list>
+                                </field>
+                            </scenarioAssociation>
+                            <scenarioAssociation>
+                                <field name="url">
+                                    <String>../../../../../../Library/Caches/TemporaryItems/BetterZip%20Temporary%20Folder.A7Gdkt/BetterZip%20Temporary%20Folder.NPv5p2/ContentforNicGIBSON/008Graph.xml</String>
+                                </field>
+                                <field name="scenarioIds">
+                                    <list>
+                                        <String>OECDAuthor XML Validation (Document)</String>
+                                    </list>
+                                </field>
+                                <field name="scenarioTypes">
+                                    <list>
+                                        <String>XPROC</String>
+                                    </list>
+                                </field>
+                            </scenarioAssociation>
+                            <scenarioAssociation>
+                                <field name="url">
+                                    <String>../../../../Testing/Technical/Table%20performance%20test/Insert%20table%204%20pages%20width%201%20page%20lenght%20-%20Copy.xml</String>
+                                </field>
+                                <field name="scenarioIds">
+                                    <list>
+                                        <String>OECDAuthor XML Validation (Document)</String>
+                                    </list>
+                                </field>
+                                <field name="scenarioTypes">
+                                    <list>
+                                        <String>XPROC</String>
+                                    </list>
+                                </field>
+                            </scenarioAssociation>
+                            <scenarioAssociation>
+                                <field name="url">
+                                    <String>../../../../to-test/Technical/Jinbo/JK__PGC-GF-A(2012)1.qxa</String>
+                                </field>
+                                <field name="scenarioIds">
+                                    <list>
+                                        <String>OECDAuthor DOCX Verification (Document)</String>
+                                    </list>
+                                </field>
+                                <field name="scenarioTypes">
+                                    <list>
+                                        <String>XPROC</String>
+                                    </list>
+                                </field>
+                            </scenarioAssociation>
+                            <scenarioAssociation>
+                                <field name="url">
+                                    <String>../../../../JT03289510.qxa</String>
+                                </field>
+                                <field name="scenarioIds">
+                                    <list>
+                                        <String>OECDAuthor XML Validation (Agenda)</String>
+                                    </list>
+                                </field>
+                                <field name="scenarioTypes">
+                                    <list>
+                                        <String>XPROC</String>
+                                    </list>
+                                </field>
+                            </scenarioAssociation>
+                            <scenarioAssociation>
+                                <field name="url">
+                                    <String>../../../../quality-framework-temp-files/uat-files/jf_cutpastetest1.xml</String>
+                                </field>
+                                <field name="scenarioIds">
+                                    <list>
+                                        <String>OECDAuthor DOCX Verification (Document)</String>
+                                    </list>
+                                </field>
+                                <field name="scenarioTypes">
+                                    <list>
+                                        <String>XPROC</String>
+                                    </list>
+                                </field>
+                            </scenarioAssociation>
+                            <scenarioAssociation>
+                                <field name="url">
+                                    <String>../../../../quality-framework-temp-files/uat-files/%5BThis%20is%20Chapter%20Title%5D.xml</String>
+                                </field>
+                                <field name="scenarioIds">
+                                    <list>
+                                        <String>OECDAuthor XML Validation (Document)</String>
+                                    </list>
+                                </field>
+                                <field name="scenarioTypes">
+                                    <list>
+                                        <String>XPROC</String>
+                                    </list>
+                                </field>
+                            </scenarioAssociation>
+                            <scenarioAssociation>
+                                <field name="url">
+                                    <String>../../../../quality-framework-temp-files/uat-files/Tables%20with%20qxa%20extension.qxa</String>
+                                </field>
+                                <field name="scenarioIds">
+                                    <list>
+                                        <String>OECDAuthor XML Validation (Document)</String>
                                     </list>
                                 </field>
                                 <field name="scenarioTypes">
@@ -105,6 +615,163 @@
                                     <xprocInputPort-array>
                                         <xprocInputPort>
                                             <field name="portName">
+                                                <String>config</String>
+                                            </field>
+                                            <field name="urls">
+                                                <String-array>
+                                                    <String>${pdu}/configs/official-document-flat.xas</String>
+                                                </String-array>
+                                            </field>
+                                        </xprocInputPort>
+                                        <xprocInputPort>
+                                            <field name="portName">
+                                                <String>xml-document</String>
+                                            </field>
+                                            <field name="urls">
+                                                <String-array>
+                                                    <String>${currentFileURL}</String>
+                                                </String-array>
+                                            </field>
+                                        </xprocInputPort>
+                                    </xprocInputPort-array>
+                                </field>
+                                <field name="outputPorts">
+                                    <xprocOutputPort-array>
+                                        <xprocOutputPort>
+                                            <field name="portName">
+                                                <String>result</String>
+                                            </field>
+                                            <field name="url">
+                                                <String>${cfdu}/docx-report.html</String>
+                                            </field>
+                                            <field name="showInSequenceView">
+                                                <Boolean>true</Boolean>
+                                            </field>
+                                        </xprocOutputPort>
+                                    </xprocOutputPort-array>
+                                </field>
+                                <field name="xprocOptions">
+                                    <xprocOption-array>
+                                        <xprocOption>
+                                            <field name="namespaceURI">
+                                                <String></String>
+                                            </field>
+                                            <field name="localName">
+                                                <String>word-document</String>
+                                            </field>
+                                            <field name="value">
+                                                <String>${afu}</String>
+                                            </field>
+                                        </xprocOption>
+                                    </xprocOption-array>
+                                </field>
+                                <field name="xprocParameters">
+                                    <xprocParameterPort-array>
+                                        <xprocParameterPort>
+                                            <field name="portName">
+                                                <String>*</String>
+                                            </field>
+                                            <field name="parameters">
+                                                <xprocParameter-array/>
+                                            </field>
+                                        </xprocParameterPort>
+                                        <xprocParameterPort>
+                                            <field name="portName">
+                                                <String>parameters</String>
+                                            </field>
+                                            <field name="parameters">
+                                                <xprocParameter-array/>
+                                            </field>
+                                        </xprocParameterPort>
+                                    </xprocParameterPort-array>
+                                </field>
+                                <field name="advancedOptionsMap">
+                                    <null/>
+                                </field>
+                                <field name="name">
+                                    <String>OECDAuthor DOCX Verification (Document)</String>
+                                </field>
+                                <field name="baseURL">
+                                    <null/>
+                                </field>
+                                <field name="footerURL">
+                                    <null/>
+                                </field>
+                                <field name="fOPMethod">
+                                    <null/>
+                                </field>
+                                <field name="fOProcessorName">
+                                    <null/>
+                                </field>
+                                <field name="headerURL">
+                                    <null/>
+                                </field>
+                                <field name="inputXSLURL">
+                                    <String>${pdu}/xproc/compare-xml-docx.xpl</String>
+                                </field>
+                                <field name="inputXMLURL">
+                                    <String></String>
+                                </field>
+                                <field name="defaultScenario">
+                                    <Boolean>false</Boolean>
+                                </field>
+                                <field name="isFOPPerforming">
+                                    <Boolean>false</Boolean>
+                                </field>
+                                <field name="type">
+                                    <String>XPROC</String>
+                                </field>
+                                <field name="saveAs">
+                                    <Boolean>false</Boolean>
+                                </field>
+                                <field name="openInBrowser">
+                                    <Boolean>false</Boolean>
+                                </field>
+                                <field name="outputFile">
+                                    <null/>
+                                </field>
+                                <field name="openOtherLocationInBrowser">
+                                    <Boolean>true</Boolean>
+                                </field>
+                                <field name="locationToOpenInBrowserURL">
+                                    <String>${cfdu}/docx-report.html</String>
+                                </field>
+                                <field name="openInEditor">
+                                    <Boolean>false</Boolean>
+                                </field>
+                                <field name="showInHTMLPane">
+                                    <Boolean>false</Boolean>
+                                </field>
+                                <field name="showInXMLPane">
+                                    <Boolean>true</Boolean>
+                                </field>
+                                <field name="showInSVGPane">
+                                    <Boolean>false</Boolean>
+                                </field>
+                                <field name="showInResultSetPane">
+                                    <Boolean>false</Boolean>
+                                </field>
+                                <field name="useXSLTInput">
+                                    <Boolean>false</Boolean>
+                                </field>
+                                <field name="xsltParams">
+                                    <list/>
+                                </field>
+                                <field name="cascadingStylesheets">
+                                    <String-array/>
+                                </field>
+                                <field name="xslTransformer">
+                                    <String>Calabash XProc</String>
+                                </field>
+                                <field name="extensionURLs">
+                                    <String-array/>
+                                </field>
+                            </xprocScenario>
+                            <xprocScenario>
+                                <field name="inputPorts">
+                                    <xprocInputPort-array>
+                                        <xprocInputPort>
+                                            <field name="portName">
                                                 <String>source</String>
                                             </field>
                                             <field name="urls">
@@ -142,7 +809,7 @@
                                                 <String>result</String>
                                             </field>
                                             <field name="url">
-                                                <String>${cfdu}/${cfn}-report.html</String>
+                                                <String>${cfdu}/validation-report.html</String>
                                             </field>
                                             <field name="showInSequenceView">
                                                 <Boolean>false</Boolean>
@@ -289,7 +956,7 @@
                                                 <String>result</String>
                                             </field>
                                             <field name="url">
-                                                <String>${cfdu}/validation-report.html</String>
+                                                <String>${cfu}.validation.html</String>
                                             </field>
                                             <field name="showInSequenceView">
                                                 <Boolean>false</Boolean>
@@ -361,7 +1028,7 @@
                                     <Boolean>true</Boolean>
                                 </field>
                                 <field name="locationToOpenInBrowserURL">
-                                    <String>${cfdu}/validation-report.html</String>
+                                    <String>${cfu}.validation.html</String>
                                 </field>
                                 <field name="openInEditor">
                                     <Boolean>false</Boolean>
@@ -405,6 +1072,8 @@
         </options>
     </meta>
     <projectTree name="quality.xpr">
+        <folder path="../../../models/schemas/"/>
+        <folder path="configs/"/>
         <folder path="schematron/"/>
         <folder path="test-data/"/>
         <folder path="xproc/"/>

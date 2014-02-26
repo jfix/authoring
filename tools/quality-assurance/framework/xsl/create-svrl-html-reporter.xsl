@@ -32,7 +32,12 @@
 	<xsl:output method="xml" indent="yes" encoding="UTF-8"/>
 
 	<xsl:namespace-alias stylesheet-prefix="axsl" result-prefix="xsl"/>
-
+	
+	<xd:doc>
+		<xd:desc>Set to true to output schematron id</xd:desc>
+	</xd:doc>
+	<xsl:param name="output-schematron-id" select="'false'"/>
+	
 	<xd:doc>
 		<xd:desc> Set to true to use the role values as classes </xd:desc>
 	</xd:doc>
@@ -62,15 +67,12 @@
 		<xd:desc> Set this to 'insert' to load the stylesheet and any other value to reference
 			it.</xd:desc>
 	</xd:doc>
-	<xsl:param name="css-mode" select="'reference'"/>
+	<xsl:param name="css-mode" select="'insert'"/>
 
 	<xd:doc>
 		<xd:desc>Change this to the URL for the stylesheet.</xd:desc>
 	</xd:doc>
 	<xsl:param name="css-url" select="resolve-uri('../css/svrl-report.css', $where-am-i)"/>
-
-	<!-- set to false to stop the output of rule, etc ids where present -->
-	<xsl:param name="output-schematron-id" select="'true'"/>
 
 	<!-- set this to override the default title -->
 	<xsl:param name="report-title" select="'Schematron Processing Output Report'"/>

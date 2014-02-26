@@ -1,10 +1,10 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?><?Xpress productLine="agenda"      ?>
-<document
-   xsi:schemaLocation="urn:oecd:names:xmlns:authoring:document ../../../../authoring/trunk/models/schemas/oecd.agenda.xsd"
-   xml:id="id-bf4c36a1-00af-4e7f-b7e6-69fd3b30e018" xmlns="urn:oecd:names:xmlns:authoring:document"
-   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+<document xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xsi:schemaLocation="urn:oecd:names:xmlns:authoring:document ../../../../../models/schemas/oecd.agenda.xsd"
+ xmlns="urn:oecd:names:xmlns:authoring:document" xml:id="id-bf4c36a1-00af-4e7f-b7e6-69fd3b30e018">
    <document-metadata xml:id="id-41706685-54de-45cb-8233-6dd0955edf62">
       <metadata>
+      	
          <metadata-item subject="subject 1"/>
          <metadata-item property="oecd:mainTitle" value="Draft Agenda of the 111th Session"/>
          <!--<metadata-item property="oecd:subtitle" value="n/a"/>-->
@@ -25,6 +25,7 @@
          <metadata-item property="oecd:originalLanguage" value="eng"/>
          
       </metadata>
+
    </document-metadata>
    <metadata/>
    <title xml:id="id-00ec6cbd-f39c-47bd-8fa2-3361e8aa5297" class="title">COUNCIL WORKING PARTY ON SHIPBUILDING
@@ -32,8 +33,8 @@
    <sub-title xml:id="id-0cd7532f-d14b-42df-8746-b0a2c15c1b26" class="title">Paris, 2-3 November
       2010</sub-title>
    <agenda-session class="order,,description,documents,actions">
-      <sub-title xml:id="id-8e71cf49-74bc-4f85-9737-4ebd17c08907" class="title">PART A – RESTRICTED TO WP6
-         MEMBERS</sub-title>
+      <title xml:id="id-8e71cf49-74bc-4f85-9737-4ebd17c08907" class="title">PART A – RESTRICTED TO WP6
+         MEMBERS</title>
       <sub-title xml:id="id-00194e85-721b-4e4a-a850-5ccf665d4374" class="title">Commencing at 10h00 on 2
          November 2010</sub-title>
       <agenda-item label="1.">

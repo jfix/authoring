@@ -1,0 +1,5360 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema elementFormDefault="qualified" targetNamespace="urn:oecd:names:xmlns:authoring:document"
+	xmlns="urn:oecd:names:xmlns:authoring:document"
+	xmlns:db="http://www.oasis-open.org/docbook/xmlschema/4.1.2"
+	xmlns:mods="http://www.loc.gov/mods/v3" xmlns:sch="http://purl.oclc.org/dsdl/schematron"
+	xmlns:svg="http://www.w3.org/2000/svg" xmlns:xd="http://www.oecd.org/ns/schema/xdocs"
+	xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+	<xs:annotation>
+		<xs:appinfo>
+			<xd:name>official-agenda</xd:name>
+			<xd:root>document</xd:root>
+		</xs:appinfo>
+		<xs:documentation>
+			<section xmlns="http://docbook.org/ns/docbook">
+				<title>OECD Schemas</title>
+				<subtitle>Master Schema</subtitle>
+				<revhistory>
+					<title>Change Log</title>
+					<revision>
+						<revnumber>1</revnumber>
+						<date>2012-11-01</date>
+						<author>JC</author>
+						<revremark>Initial Version</revremark>
+					</revision>
+					<revision>
+						<revnumber>2</revnumber>
+						<date>2012-11-05</date>
+						<author>JC</author>
+						<revremark>Updated location to agenda.xsd</revremark>
+					</revision>
+				</revhistory>
+			</section>
+		</xs:documentation>
+	</xs:annotation>
+	<!-- IMPORTS AND INCLUDES -->
+	<xs:annotation>
+		<xs:documentation>
+			<section xmlns="http://docbook.org/ns/docbook">
+				<title>OECD Schemas</title>
+				<subtitle>Document Component</subtitle>
+				<revhistory>
+					<title>Change Log</title>
+					<revision>
+						<revnumber>1</revnumber>
+						<date>2012-10-26</date>
+						<author>JC</author>
+						<revremark>Initial version (placeholder)</revremark>
+					</revision>
+					<para>A document is the standard top-level structural element.</para>
+				</revhistory>
+			</section>
+		</xs:documentation>
+	</xs:annotation>
+	<!-- IMPORTS AND INCLUDES -->
+	<xs:annotation>
+		<xs:documentation>
+			<section xmlns="http://docbook.org/ns/docbook">
+				<title>OECD Schemas</title>
+				<subtitle>Agenda Meeting Model</subtitle>
+				<revhistory>
+					<title>Change Log</title>
+					<revision>
+						<revnumber>1</revnumber>
+						<date>2011-11-01</date>
+						<author>JC</author>
+						<revremark>Initial Version</revremark>
+					</revision>
+					<revision>
+						<revnumber>2</revnumber>
+						<date>2013-03-19</date>
+						<author>JC</author>
+						<revremark>Made duplicate IDs unique in accordance with best practices and
+							to resolve        #5538.</revremark>
+					</revision>
+					<revision>
+						<revnumber>3</revnumber>
+						<date>2013-08-22</date>
+						<author>JC</author>
+						<revremark>Agenda sections must allow one or more sessions to resolve
+							#6172.</revremark>
+					</revision>
+					<revision>
+						<revnumber>4</revnumber>
+						<date>2013-09-12</date>
+						<author>JC</author>
+						<revremark>Re-work agenda structures as per verbal instruction from V.D
+							22/08/2013 to        follow Council Agenda
+							structures.[#6236].</revremark>
+					</revision>
+					<revision>
+						<revnumber>5</revnumber>
+						<date>2013-09-20</date>
+						<author>JC</author>
+						<revremark>Modified oecdAgendaAnnotationTypeContent by changing cardinality
+							of        oecdSimpleBlockGroup to unbound to sasisfy
+							[#6276].</revremark>
+					</revision>
+					<revision>
+						<revnumber>6</revnumber>
+						<date>2013-09-24</date>
+						<author>JC</author>
+						<revremark>Modified oecdAgendaAnnotationTypeContent to make title
+							optional.</revremark>
+					</revision>
+				</revhistory>
+			</section>
+		</xs:documentation>
+	</xs:annotation>
+	<!-- IMPORTS AND INCLUDES -->
+	<xs:annotation>
+		<xs:documentation>
+			<section xmlns="http://docbook.org/ns/docbook">
+				<title>OECD Schemas</title>
+				<subtitle>Attribute Models</subtitle>
+				<revhistory>
+					<title>Change Log</title>
+					<revision>
+						<revnumber>1</revnumber>
+						<date>2011-12-02</date>
+						<author>
+							<email>nicg@corbas.co.uk</email>
+							<personname>Nic Gibson</personname>
+						</author>
+						<revremark>Initial Version</revremark>
+					</revision>
+					<revision>
+						<revnumber>2</revnumber>
+						<date>2012-03-29</date>
+						<authorinitials>NG</authorinitials>
+						<revremark>Added <link linkend="label">label</link> attribute, inserted it
+							into <link linkend="oecdCommonAttributes"
+							>commonAttributes</link></revremark>
+					</revision>
+					<revision>
+						<revnumber>3</revnumber>
+						<date>2012-04-13</date>
+						<authorinitials>NG</authorinitials>
+						<revremark>Added <link linkend="annotations">annotations</link>
+							attribute.</revremark>
+					</revision>
+					<revision>
+						<revnumber>4</revnumber>
+						<date>2012-10-05</date>
+						<authorinitials>NG</authorinitials>
+						<revremark>Wrapped global attributes in groups to avoid the need to
+							namespace prefix them on use.</revremark>
+					</revision>
+					<revision>
+						<revnumber>5</revnumber>
+						<date>2012-10-11</date>
+						<authorinitials>NG</authorinitials>
+						<revremark>Modified xlink:simpleLink to xlink:simpleAttrs to use the
+							standard XLink schema file.</revremark>
+					</revision>
+					<revision>
+						<revnumber>6</revnumber>
+						<date>2012-11-06</date>
+						<authorinitials>NG</authorinitials>
+						<revremark>Added the oecdIdRequiredXmlAttributes group to be used in types
+							where an id is required.</revremark>
+					</revision>
+					<revisoin>
+						<revnumber>7</revnumber>
+						<date>2013-10-25</date>
+						<authorinitials>NG</authorinitials>
+						<revremark>Added the @class attribute for Quark</revremark>
+					</revisoin>
+				</revhistory>
+			</section>
+		</xs:documentation>
+	</xs:annotation>
+	<!-- IMPORTS AND INCLUDES -->
+	<xs:import namespace="http://www.w3.org/XML/1998/namespace" schemaLocation="xml.xsd"/>
+	<xs:import namespace="http://www.w3.org/1999/xlink" schemaLocation="xlink.xsd"/>
+	<xs:annotation>
+		<xs:documentation>
+			<section xmlns="http://docbook.org/ns/docbook">
+				<section>
+					<title>OECD Schemas</title>
+					<subtitle>Low Level Data Types</subtitle>
+					<revhistory>
+						<title>Change Log</title>
+						<revision>
+							<revnumber>1</revnumber>
+							<date>2011-12-02</date>
+							<author>
+								<email>nicg@corbas.co.uk</email>
+								<personname>Nic Gibson</personname>
+							</author>
+							<revremark>Initial Version</revremark>
+						</revision>
+						<revision>
+							<revnumber>2</revnumber>
+							<date>2011-11-06</date>
+							<author>JC</author>
+							<revremark>Modified oecdListContinuation.</revremark>
+						</revision>
+					</revhistory>
+				</section>
+			</section>
+		</xs:documentation>
+	</xs:annotation>
+	<xs:import namespace="http://www.loc.gov/mods/v3" schemaLocation="mods.xsd"/>
+	<xs:simpleType id="oecdCharacterStyleType" name="oecdCharacterStyleType">
+		<xs:annotation>
+			<xs:documentation>
+				<section xmlns="http://docbook.org/ns/docbook">
+					<para>Simple enumeration of the inline character styles we might see. This is
+						more intended as a demonstration than a model requirement. </para>
+				</section>
+			</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="bold"/>
+			<xs:enumeration value="italic"/>
+			<xs:enumeration value="underline"/>
+			<xs:enumeration value="strikethrough"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType id="oecdCote" name="oecdCote">
+		<xs:annotation>
+			<xs:documentation>
+				<section xmlns="http://docbook.org/ns/docbook">
+					<para>Placeholder for Cotes.</para>
+				</section>
+			</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string"/>
+	</xs:simpleType>
+	<xs:simpleType id="oecdMediaType" name="oecdMediaType">
+		<xs:annotation>
+			<xs:documentation>
+				<section xmlns="http://docbook.org/ns/docbook">
+					<para>Placeholder for IETF MIME media types.</para>
+				</section>
+			</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string"/>
+	</xs:simpleType>
+	<xs:simpleType id="oecdListMarker" name="oecdListMarker">
+		<xs:annotation>
+			<xs:documentation>
+				<section xmlns="http://docbook.org/ns/docbook">
+					<para>Bulleted lists.</para>
+				</section>
+			</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="auto"/>
+			<xs:enumeration value="square"/>
+			<xs:enumeration value="solid-square"/>
+			<xs:enumeration value="circle"/>
+			<xs:enumeration value="solid-circle"/>
+			<xs:enumeration value="diamonad"/>
+			<xs:enumeration value="solid-diamonad"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType id="oecdListNumeration" name="oecdListNumeration">
+		<xs:annotation>
+			<xs:documentation>
+				<section xmlns="http://docbook.org/ns/docbook">
+					<para>This defines numeration styles for numbered lists.</para>
+				</section>
+			</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="arabic"/>
+			<xs:enumeration value="lower-roman"/>
+			<xs:enumeration value="upper-roman"/>
+			<xs:enumeration value="lower-alpha"/>
+			<xs:enumeration value="upper-alpha"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType id="oecdComponentContinuation" name="oecdComponentContinuation">
+		<xs:annotation>
+			<xs:documentation>
+				<section xmlns="http://docbook.org/ns/docbook">
+					<revhistory>
+						<title>Change Log</title>
+						<revision>
+							<revnumber>1</revnumber>
+							<date>2011-11-06</date>
+							<author>JC</author>
+							<revremark>Generisize simpleType</revremark>
+						</revision>
+					</revhistory>
+				</section>
+				<section xmlns="http://docbook.org/ns/docbook">
+					<para>Defines continuation options allowed on document components.</para>
+				</section>
+			</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="continue"/>
+			<xs:enumeration value="start"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:annotation>
+		<xs:documentation>
+			<section xmlns="http://docbook.org/ns/docbook">
+				<title>OECD Schemas</title>
+				<subtitle>Class Attribute</subtitle>
+				<para>Class attribute defined separately so that it can be isolated. Added to
+					simplify pre-release tasks for Quark.</para>
+				<revhistory>
+					<title>Change Log</title>
+					<revision>
+						<revnumber>1</revnumber>
+						<date>2013-10-25</date>
+						<author>
+							<email>nicg@corbas.co.uk</email>
+							<personname>Nic Gibson</personname>
+						</author>
+						<revremark>Initial Version</revremark>
+					</revision>
+				</revhistory>
+			</section>
+		</xs:documentation>
+	</xs:annotation>
+	<xs:attributeGroup name="CLASS-GROUP">
+		<xs:attribute id="class" name="class" type="xs:string">
+			<xs:annotation>
+				<xs:documentation>
+					<section xmlns="http://docbook.org/ns/docbook">
+						<revhistory>
+							<title>Change Log</title>
+							<revision>
+								<revnumber>1</revnumber>
+								<date>2013-10-25</date>
+								<author>
+									<email>nicg@corbas.co.uk</email>
+									<personname>Nic Gibson</personname>
+								</author>
+								<revremark>Initial Version</revremark>
+							</revision>
+						</revhistory>
+					</section>
+				</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+	</xs:attributeGroup>
+	<!-- Groups -->
+	<xs:attributeGroup id="oecdXmlAttributes" name="oecdXmlAttributes">
+		<xs:annotation>
+			<xs:documentation>
+				<section xmlns="http://docbook.org/ns/docbook">
+					<para>Attribute group to grandfather in the XML Special Attributes.</para>
+				</section>
+			</xs:documentation>
+		</xs:annotation>
+		<xs:attributeGroup ref="xml:specialAttrs"/>
+	</xs:attributeGroup>
+	<xs:attributeGroup id="oecdIdRequiredXmlAttributes" name="oecdIdRequiredXmlAttributes">
+		<xs:annotation>
+			<xs:documentation>
+				<section xmlns="http://docbook.org/ns/docbook">
+					<para>Attribute group to grandfather in the XML Special Attributes. This variant
+						differs in that the xml:id attribute is required.</para>
+				</section>
+			</xs:documentation>
+		</xs:annotation>
+		<xs:attribute ref="xml:base"/>
+		<xs:attribute ref="xml:lang"/>
+		<xs:attribute ref="xml:space"/>
+		<xs:attribute ref="xml:id" use="required"/>
+	</xs:attributeGroup>
+	<xs:attributeGroup id="oecdLinkingAttributes" name="oecdLinkingAttributes">
+		<xs:annotation>
+			<xs:documentation>
+				<section xmlns="http://docbook.org/ns/docbook">
+					<para>Attribute group to grandfather in the XLink Attribute Set.</para>
+				</section>
+			</xs:documentation>
+		</xs:annotation>
+		<xs:attributeGroup ref="xlink:simpleAttrs"/>
+		<xs:attributeGroup ref="XREF-GROUP"/>
+	</xs:attributeGroup>
+	<xs:attributeGroup id="oecdRequiredLinkingAttributes" name="oecdRequiredLinkingAttributes">
+		<xs:annotation>
+			<xs:documentation>
+				<section xmlns="http://docbook.org/ns/docbook">
+					<para>Attribute group to grandfather in the XLink Attribute Set with a required
+						external link.</para>
+				</section>
+			</xs:documentation>
+		</xs:annotation>
+		<xs:attribute ref="xlink:href" use="required"/>
+		<xs:attribute form="qualified" id="type" name="type" type="xs:string"/>
+		<xs:attribute ref="xlink:role"/>
+		<xs:attribute ref="xlink:arcrole"/>
+		<xs:attribute ref="xlink:title"/>
+		<xs:attribute ref="xlink:show"/>
+		<xs:attribute ref="xlink:actuate"/>
+	</xs:attributeGroup>
+	<xs:attributeGroup id="oecdCommonAttributes" name="oecdCommonAttributes">
+		<xs:annotation>
+			<xs:documentation>
+				<section xmlns="http://docbook.org/ns/docbook">
+					<revision>
+						<revnumber>2</revnumber>
+						<date>2011-12-29</date>
+						<author>
+							<email>nicg@corbas.co.uk</email>
+							<personname>Nic Gibson</personname>
+						</author>
+						<revremark>Added <link linkend="label">label</link> attribute.</revremark>
+					</revision>
+					<revision>
+						<revnumber>3</revnumber>
+						<date>2013-10-25</date>
+						<author>
+							<email>nicg@corbas.co.uk</email>
+							<personname>Nic Gibson</personname>
+						</author>
+						<revremark>Added <link linkend="class">class</link> attribute.</revremark>
+					</revision>
+					<para>Defines a set of attributes available to almost any element in the schema.
+					</para>
+				</section>
+			</xs:documentation>
+		</xs:annotation>
+		<xs:attributeGroup ref="oecdXmlAttributes"/>
+		<xs:attributeGroup ref="METADATAREF-GROUP"/>
+		<xs:attributeGroup ref="NOTEREF-GROUP"/>
+		<xs:attributeGroup ref="LABEL-GROUP"/>
+		<xs:attributeGroup ref="CLASS-GROUP"/>
+	</xs:attributeGroup>
+	<!-- attributes -->
+	<xs:attributeGroup name="METADATAREF-GROUP">
+		<xs:attribute id="metadataRef" name="metadata-ref" type="xs:IDREF">
+			<xs:annotation>
+				<xs:documentation>
+					<section xmlns="http://docbook.org/ns/docbook">
+						<para>Defines a metadata reference. Metadata may be embedded in the element
+							it describes or held separately in the document level, documentMeta
+							element. If held in the                             documentMeta element
+							it can be referenced via this attribute. More than one element may
+							reference the same metadata.</para>
+					</section>
+				</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+	</xs:attributeGroup>
+	<xs:attributeGroup name="NOTEREF-GROUP">
+		<xs:attribute id="noteRef" name="note-ref" type="xs:IDREF">
+			<xs:annotation>
+				<xs:documentation>
+					<section xmlns="http://docbook.org/ns/docbook">
+						<para>Defines a note reference. Notes may be included in the content model
+							of various block components (lists, tables, figures, boxes, etc). Note
+							references are available in                             the common
+							attribute set but are constrained via Schematron to only those elements
+							which can contain notes.</para>
+					</section>
+				</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+	</xs:attributeGroup>
+	<xs:attributeGroup name="HREF-GROUP">
+		<xs:attribute id="href" name="href" type="xs:anyURI">
+			<xs:annotation>
+				<xs:documentation>
+					<section xmlns="http://docbook.org/ns/docbook">
+						<para>Defines a reference to external content via a URI.</para>
+					</section>
+				</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+	</xs:attributeGroup>
+	<xs:attributeGroup name="MEDIATYPE-GROUP">
+		<xs:attribute id="mediaType" name="media-type" type="oecdMediaType">
+			<xs:annotation>
+				<xs:documentation>
+					<section xmlns="http://docbook.org/ns/docbook">
+						<para>Defines a reference to external content via a URI.</para>
+					</section>
+				</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+	</xs:attributeGroup>
+	<xs:attributeGroup name="USEWHEN-GROUP">
+		<xs:attribute id="useWhen" name="useWhen" type="xs:string">
+			<xs:annotation>
+				<xs:documentation>
+					<section xmlns="http://docbook.org/ns/docbook">
+						<para>Defines processing references for conditional output. NOT intended for
+							use with multilingual alternatives.</para>
+					</section>
+				</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+	</xs:attributeGroup>
+	<xs:attributeGroup name="XREF-GROUP">
+		<xs:attribute id="xref" name="xref" type="xs:IDREF">
+			<xs:annotation>
+				<xs:documentation>
+					<section xmlns="http://docbook.org/ns/docbook">
+						<para>Attribute used to reference content elsewhere in the same XML
+							document.</para>
+					</section>
+				</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+	</xs:attributeGroup>
+	<xs:attributeGroup name="LABEL-GROUP">
+		<xs:attribute id="label" name="label" type="xs:string">
+			<xs:annotation>
+				<xs:documentation>
+					<section xmlns="http://docbook.org/ns/docbook">
+						<revision>
+							<revnumber>2</revnumber>
+							<date>2011-12-29</date>
+							<author>
+								<email>nicg@corbas.co.uk</email>
+								<personname>Nic Gibson</personname>
+							</author>
+							<revremark>Initial Version</revremark>
+						</revision>
+						<para>Labelling attribute. This can be used to override the presentation of
+							reference to an element.</para>
+					</section>
+				</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+	</xs:attributeGroup>
+	<xs:attributeGroup name="ANNOTATIONS-GROUP">
+		<xs:attribute id="annotations" name="annotations" type="xs:IDREFS">
+			<xs:annotation>
+				<xs:documentation>
+					<section xmlns="http://docbook.org/ns/docbook">
+						<revision>
+							<revnumber>3</revnumber>
+							<date>2011-12-29</date>
+							<author>
+								<email>nicg@corbas.co.uk</email>
+								<personname>Nic Gibson</personname>
+							</author>
+							<revremark>Initial Version</revremark>
+						</revision>
+						<para>Annotations attribute. This contains a space separated list of the ids
+							of annotation elements which apply to the current element.</para>
+					</section>
+				</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+	</xs:attributeGroup>
+	<xs:annotation>
+		<xs:documentation>
+			<section xmlns="http://docbook.org/ns/docbook">
+				<title>OECD Schemas</title>
+				<subtitle>General block components</subtitle>
+				<revhistory>
+					<title>Change Log</title>
+					<revision>
+						<revnumber>1</revnumber>
+						<date>2012-02-10</date>
+						<author>
+							<email>nicg@corbas.co.uk</email>
+							<personname>Nic Gibson</personname>
+						</author>
+						<revremark>Initial Version</revremark>
+					</revision>
+					<revision>
+						<revnumber>2</revnumber>
+						<date>2012-03-14</date>
+						<author>
+							<email>nicg@corbas.co.uk</email>
+							<personname>Nic Gibson</personname>
+						</author>
+						<revremark>Broke down into sub-components.</revremark>
+					</revision>
+					<revision>
+						<revnumber>3</revnumber>
+						<date>2012-03-2</date>
+						<author>
+							<email>nicg@corbas.co.uk</email>
+							<personname>Nic Gibson</personname>
+						</author>
+						<revremark>Added equations, boxex and graphics</revremark>
+					</revision>
+					<revision>
+						<revnumber>4</revnumber>
+						<date>2012-03-29</date>
+						<author>
+							<email>nicg@corbas.co.uk</email>
+							<personname>Nic Gibson</personname>
+						</author>
+						<revremark>Added chemical structures</revremark>
+					</revision>
+					<revision>
+						<revnumber>5</revnumber>
+						<date>2012-03-30</date>
+						<author>
+							<email>nicg@corbas.co.uk</email>
+							<personname>Nic Gibson</personname>
+						</author>
+						<revremark>Added tables</revremark>
+					</revision>
+					<revision>
+						<revnumber>5</revnumber>
+						<date>2012-10-26</date>
+						<authorinitials>NG</authorinitials>
+						<revremark>Added the <link linkend="oecdEmbeddableBlockGroup"
+								>oecdEmbeddableBlockGroup to be referenced               from
+								paragraphs to allow for embedded content and to resolve problems
+								with issues </link>
+						</revremark>
+					</revision>
+				</revhistory>
+			</section>
+		</xs:documentation>
+	</xs:annotation>
+	<!-- IMPORTS AND INCLUDES -->
+	<xs:annotation>
+		<xs:documentation>
+			<section xmlns="http://docbook.org/ns/docbook">
+				<title>OECD Schemas</title>
+				<subtitle>Title type components</subtitle>
+				<revhistory>
+					<title>Change Log</title>
+					<revision>
+						<revnumber>1</revnumber>
+						<date>2012-02-10</date>
+						<author>
+							<email>nicg@corbas.co.uk</email>
+							<personname>Nic Gibson</personname>
+						</author>
+						<revremark>Initial Version</revremark>
+					</revision>
+					<revision>
+						<revnumber>2</revnumber>
+						<date>2012-03-14</date>
+						<author>
+							<email>nicg@corbas.co.uk</email>
+							<personname>Nic Gibson</personname>
+						</author>
+						<revremark>Rewrite to use the more structure group/attributeGroup approach
+							used in other components.</revremark>
+					</revision>
+					<revision>
+						<revnumber>3</revnumber>
+						<date>2012-03-03</date>
+						<author>
+							<email>nicg@corbas.co.uk</email>
+							<personname>Nic Gibson</personname>
+						</author>
+						<revremark>Replaced include of inlines.xsd with
+							inline-group.xsd.</revremark>
+					</revision>
+					<revision>
+						<revnumber>4</revnumber>
+						<date>2012-05-25</date>
+						<authorinitials>NG</authorinitials>
+						<revremark>Modified <link xlink:href="oecdTitleGroup">oecdTitleGroup</link>.
+							@minOccurs of 'shortTitle' accidentally set to                     1.
+							Changed to 0.</revremark>
+					</revision>
+					<revision>
+						<revnumber>5</revnumber>
+						<date>2012-11-09</date>
+						<authorinitials>JC</authorinitials>
+						<revremark>Modified shortTitle to take into account #4843, at the simplest
+							*</revremark>
+					</revision>
+				</revhistory>
+			</section>
+		</xs:documentation>
+	</xs:annotation>
+	<!-- IMPORTS AND INCLUDES -->
+	<xs:annotation>
+		<xs:documentation>
+			<section xmlns="http://docbook.org/ns/docbook">
+				<title>OECD Schemas</title>
+				<subtitle>Inline Model Group</subtitle>
+				<para>This module simply wraps several sources of inline material in a simple group
+					for ease of use. In most cases, this should be used instead of
+					inlines.xsd.</para>
+				<revhistory>
+					<title>Change Log</title>
+					<revision>
+						<revnumber>1</revnumber>
+						<date>2012-03-21</date>
+						<author>
+							<email>nicg@corbas.co.uk</email>
+							<personname>Nic Gibson</personname>
+						</author>
+						<revremark>Initial Version</revremark>
+					</revision>
+					<revision>
+						<revnumber>2</revnumber>
+						<date>2012-03-29</date>
+						<author>
+							<email>nicg@corbas.co.uk</email>
+							<personname>Nic Gibson</personname>
+						</author>
+						<revremark>Added chemical structures</revremark>
+					</revision>
+					<revision>
+						<revnumber>2</revnumber>
+						<date>2012-03-29</date>
+						<author>
+							<email>nicg@corbas.co.uk</email>
+							<personname>Nic Gibson</personname>
+						</author>
+						<revremark>Added index terms</revremark>
+					</revision>
+					<revision>
+						<revnumber>3</revnumber>
+						<date>2012-04-13</date>
+						<author>
+							<email>nicg@corbas.co.uk</email>
+							<personname>Nic Gibson</personname>
+						</author>
+						<revremark>Added citations (mods element)</revremark>
+					</revision>
+					<revision>
+						<revnumber>4</revnumber>
+						<date>2012-08-02</date>
+						<authorinitials>NG</authorinitials>
+						<revremark>Added the citation element. Note that rev 3 allowed for inline
+							bibliographic entries not citations.</revremark>
+					</revision>
+					<revision>
+						<revnumber>5</revnumber>
+						<date>2012-11-05</date>
+						<authorinitials>NG</authorinitials>
+						<revremark>Added the revision start and end markers.</revremark>
+					</revision>
+				</revhistory>
+			</section>
+		</xs:documentation>
+	</xs:annotation>
+	<!-- IMPORTS AND INCLUDES -->
+	<xs:annotation>
+		<xs:documentation>
+			<section xmlns="http://docbook.org/ns/docbook">
+				<title>OECD Schemas</title>
+				<subtitle>General inline models</subtitle>
+				<revhistory>
+					<title>Change Log</title>
+					<revision>
+						<revnumber>1</revnumber>
+						<date>2011-12-02</date>
+						<author>
+							<email>nicg@corbas.co.uk</email>
+							<personname>Nic Gibson</personname>
+						</author>
+						<revremark>Initial Version</revremark>
+					</revision>
+					<revision>
+						<revnumber>2</revnumber>
+						<date>2012-03-21</date>
+						<author>
+							<email>nicg@corbas.co.uk</email>
+							<personname>Nic Gibson</personname>
+						</author>
+						<revdescription>
+							<itemizedlist>
+								<listitem>
+									<para>Transferred other elements from older
+										files.</para>
+								</listitem>
+								<listitem>
+									<para>Upated base type to current standards.</para>
+								</listitem>
+							</itemizedlist>
+						</revdescription>
+					</revision>
+					<revision>
+						<revnumber>3</revnumber>
+						<date>2012-03-30</date>
+						<author>
+							<email>nicg@coras.co.uk</email>
+							<personname>Nic Gibson</personname>
+						</author>
+						<revremark>Added the oecdTexType and 'text' element. </revremark>
+					</revision>
+					<revision>
+						<revnumber>4</revnumber>
+						<date>2012-04-15</date>
+						<authorinitials>NG</authorinitials>
+						<revremark>Added sub, sup. phrase and quote and completed
+							footnote</revremark>
+					</revision>
+					<revision>
+						<revnumber>5</revnumber>
+						<date>2012-04-17</date>
+						<authorinitials>jc</authorinitials>
+						<revremark>Added phrase element definition.</revremark>
+					</revision>
+					<revision>
+						<revnumber>6</revnumber>
+						<date>2012-04-18</date>
+						<authorinitials>ng</authorinitials>
+						<revremark>Adding missing substitutionGroup attributes.</revremark>
+					</revision>
+					<revision>
+						<revnumber>7</revnumber>
+						<date>2012-04-18</date>
+						<authorinitials>jc</authorinitials>
+						<revremark>Added content model for abbrev.</revremark>
+					</revision>
+					<revision>
+						<revnumber>8</revnumber>
+						<date>2012-10-08</date>
+						<authorinitials>NG</authorinitials>
+						<revremark>Added standard attributes to footnote element.</revremark>
+					</revision>
+					<revision>
+						<revnumber>9</revnumber>
+						<date>2012-10-08</date>
+						<authorinitials>NG</authorinitials>
+						<revremark>Removed required metadataReference from phrase. Should be
+							optional.</revremark>
+					</revision>
+					<revision>
+						<revnumber>9</revnumber>
+						<date>2012-10-08</date>
+						<authorinitials>NG</authorinitials>
+						<revremark>Removed required metadataReference from phrase. Should be
+							optional.</revremark>
+					</revision>
+					<revision>
+						<revnumber>10</revnumber>
+						<date>2012-10-24</date>
+						<authorinitials>JC</authorinitials>
+						<revremark>Unexposed oecdInline element, this element cannot appear in the
+							document                             (because it is
+							abstract).</revremark>
+					</revision>
+					<revision>
+						<revnumber>11</revnumber>
+						<date>2013-04-30</date>
+						<authorinitials>JC</authorinitials>
+						<revremark>Applied lower-case convention [#4947] to
+							metadataRefs.</revremark>
+					</revision>
+				</revhistory>
+				<para>Note: the inline graphic component is defined in graphics.</para>
+			</section>
+		</xs:documentation>
+	</xs:annotation>
+	<!-- IMPORTS AND INCLUDES -->
+	<xs:annotation>
+		<xs:documentation>
+			<section xmlns="http://docbook.org/ns/docbook">
+				<revhistory>
+					<title>Change Log</title>
+					<revision>
+						<revnumber>1</revnumber>
+						<date/>
+						<authorinitials>NG</authorinitials>
+						<revremark>Initial version</revremark>
+					</revision>
+					<revision>
+						<revnumber>2</revnumber>
+						<date>2012-08-06</date>
+						<authorinitials>NG</authorinitials>
+						<revremark>Modified oecdMetadataItemType to have correct attributes for
+							desired content model. Modified oecdMetadatType to have subject
+							attribute.</revremark>
+					</revision>
+					<revision>
+						<revnumber>3</revnumber>
+						<date>2012-10-05</date>
+						<authorinitials>NG</authorinitials>
+						<revremark>Modified all groups to actually contain the element definitions -
+							they will never be used in isolation and they should not be global as
+							they should not be namespace prefixed.</revremark>
+					</revision>
+					<revision>
+						<revnumber>4</revnumber>
+						<date>2012-10-26</date>
+						<authorinitials>NG</authorinitials>
+						<revremark>Modified the <link linkend="oecdMetadataTypeAttributes"
+								>oecdMetadataTypeAttributes</link> group to include the property
+							attributes in order to satisfy <link
+								xlink:href="https://pacps01.oecd.org/redmine/issues/4872">issue
+								4872</link>.</revremark>
+					</revision>
+					<revision>
+						<revnumber>5</revnumber>
+						<date>2012-11-09</date>
+						<author>JC</author>
+						<revremark>Applied lower-case convention [#4947] to
+							biblioSection.</revremark>
+					</revision>
+				</revhistory>
+				<section>
+					<title>OECD Schemas</title>
+					<subtitle>Metadata</subtitle>
+					<para>This is a wrapper element for an arbitrary metadata model.</para>
+				</section>
+			</section>
+		</xs:documentation>
+	</xs:annotation>
+	<!-- GLOBAL ELEMENTS -->
+	<xs:element id="metadataItem" name="metadata-item" type="oecdMetadataItemType"/>
+	<xs:element id="metadata" name="metadata" type="oecdMetadataType"/>
+	<!-- GLOBAL ATTRIBUTE -->
+	<!-- N.B. The metadataRef attribute is defined in attributes.xsd -->
+	<!-- TYPES -->
+	<!-- metadata group type -->
+	<xs:attributeGroup id="oecdMetadataTypeAttributes" name="oecdMetadataTypeAttributes">
+		<xs:annotation>
+			<xs:documentation>
+				<section xmlns="http://docbook.org/ns/docbook">
+					<revhistory>
+						<title>Change Log</title>
+						<revision>
+							<revnumber>2</revnumber>
+							<date>2012-08-06</date>
+							<authorinitials>NG</authorinitials>
+							<revremark>Added new attributes - subject and subjectURI to flesh out
+								metadata model.</revremark>
+						</revision>
+						<revision>
+							<revnumber>3</revnumber>
+							<date>2012-10-05</date>
+							<authorinitials>NG</authorinitials>
+							<revremark>Moved element definitions into the group.</revremark>
+						</revision>
+						<revision>
+							<revnumber>4</revnumber>
+							<date>2012-10-26</date>
+							<authorinitials>NG</authorinitials>
+							<revremark>Modified to include the property attributes in order to
+								satisfy <link
+									xlink:href="https://pacps01.oecd.org/redmine/issues/4872">issue
+									4872</link>.</revremark>
+						</revision>
+					</revhistory>
+					<para>Attributes for metadata. Grouped to allow easy override.</para>
+				</section>
+			</xs:documentation>
+		</xs:annotation>
+		<xs:attributeGroup ref="oecdCommonAttributes"/>
+		<xs:attributeGroup ref="oecdMetaSubjectAttributes"/>
+		<xs:attributeGroup ref="oecdMetaPropertyAttributes"/>
+	</xs:attributeGroup>
+	<xs:group id="oecdMetadataTypeContent" name="oecdMetadataTypeContent">
+		<xs:annotation>
+			<xs:documentation>
+				<section xmlns="http://docbook.org/ns/docbook">
+					<revhistory>
+						<revision>
+							<revnumber>2</revnumber>
+							<date>2012-08-06</date>
+							<authorinitials>NG</authorinitials>
+							<revremark>Major rewrite. Rebuilt content model to require one or other
+								of metadataItem or metadata plus zero or more of either. We require
+								that grouped metadata follows individual items simply to make the
+								schema sane (and non-ambigous).</revremark>
+						</revision>
+						<revision>
+							<revnumber>2</revnumber>
+							<date>2012-11-08</date>
+							<author>JC</author>
+							<revremark>Modified element name for to use the lower-case convention
+								[#4947].</revremark>
+						</revision>
+					</revhistory>
+					<para>Content for metadata. Grouped to allow easy override.</para>
+				</section>
+			</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element maxOccurs="unbounded" minOccurs="0" ref="metadata-item"/>
+			<xs:element maxOccurs="unbounded" minOccurs="0" ref="metadata"/>
+		</xs:sequence>
+	</xs:group>
+	<xs:complexType id="oecdMetadataType" name="oecdMetadataType">
+		<xs:annotation>
+			<xs:documentation>
+				<section xmlns="http://docbook.org/ns/docbook">
+					<para>Metadata container element. Allowed as a child at almost any location in a
+						document.</para>
+				</section>
+			</xs:documentation>
+		</xs:annotation>
+		<xs:group maxOccurs="unbounded" ref="oecdMetadataTypeContent"/>
+		<xs:attributeGroup ref="oecdMetadataTypeAttributes"/>
+	</xs:complexType>
+	<!-- metdata item type. -->
+	<xs:attributeGroup id="oecdMetadataItemTypeAttributes" name="oecdMetadataItemTypeAttributes">
+		<xs:annotation>
+			<xs:documentation>
+				<section xmlns="http://docbook.org/ns/docbook">
+					<revhistory>
+						<title>Change Log</title>
+						<revision>
+							<revnumber>2</revnumber>
+							<date>2012-08-06</date>
+							<authorinitials>NG</authorinitials>
+							<revremark>Added new attributes - subject, property, value - and their
+								URI based alternatives to flesh out metadata model.</revremark>
+						</revision>
+					</revhistory>
+					<para>Attributes for metadata items. Grouped to allow easy override.</para>
+				</section>
+			</xs:documentation>
+		</xs:annotation>
+		<xs:attributeGroup ref="oecdCommonAttributes"/>
+		<xs:attributeGroup ref="oecdLinkingAttributes"/>
+		<xs:attributeGroup ref="oecdMetaSubjectAttributes"/>
+		<xs:attributeGroup ref="oecdMetaPropertyAttributes"/>
+		<xs:attributeGroup ref="oecdMetaValueAttributes"/>
+	</xs:attributeGroup>
+	<xs:group id="oecdMetadateItemTypeContent" name="oecdMetadateItemTypeContent">
+		<xs:annotation>
+			<xs:documentation>
+				<section xmlns="http://docbook.org/ns/docbook">
+					<para>Content for metadata items. Grouped to allow easy override.</para>
+					<para>The content model for metadata is currently defined as empty as all value
+						is carried on the attributes.</para>
+				</section>
+			</xs:documentation>
+		</xs:annotation>
+		<xs:sequence/>
+	</xs:group>
+	<xs:complexType id="oecdMetadataItemType" name="oecdMetadataItemType">
+		<xs:annotation>
+			<xs:documentation xmlns:html="http://www.w3.org/1999/xhtml">
+				<section xmlns="http://docbook.org/ns/docbook">
+					<para>The content model for metadata is currently defined as a single element
+						from any namespace. This is unlikely to be the final model and simply acts
+						as a placeholder.</para>
+				</section>
+			</xs:documentation>
+		</xs:annotation>
+		<xs:group ref="oecdMetadateItemTypeContent"/>
+		<xs:attributeGroup ref="oecdMetadataItemTypeAttributes"/>
+	</xs:complexType>
+	<!-- SIMPLE TYPES -->
+	<xs:simpleType name="oecdStringMetaType">
+		<xs:annotation>
+			<xs:documentation>
+				<section xmlns="http://docbook.org/ns/docbook">
+					<revhistory>
+						<revnumber>2</revnumber>
+						<date>2012-08-06</date>
+						<authorinitials>NG</authorinitials>
+						<revremark>Initial version</revremark>
+					</revhistory>
+					<para>The OECD string meta type is defined in order to allow a shared textual
+						data type for string based metadata so that all three attributes below have
+						a common type (non-empty string).</para>
+				</section>
+			</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:minLength value="1"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="oecdURIMetaType">
+		<xs:annotation>
+			<xs:documentation>
+				<section xmlns="http://docbook.org/ns/docbook">
+					<revhistory>
+						<revnumber>2</revnumber>
+						<date>2012-08-06</date>
+						<authorinitials>NG</authorinitials>
+						<revremark>Initial version</revremark>
+					</revhistory>
+					<para>The OECD URI meta type is defined in order to allow a shared data type for
+						URI based metadata so that all three attributes below have a common type
+						(non-blank anyURI).</para>
+				</section>
+			</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:anyURI">
+			<xs:minLength value="1"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<!-- ATTRIBUTES -->
+	<xs:attributeGroup id="oecdMetaSubjectAttributes" name="oecdMetaSubjectAttributes">
+		<xs:annotation>
+			<xs:documentation>
+				<para xmlns="http://docbook.org/ns/docbook">Wrap up metadata subject
+					attributes.</para>
+			</xs:documentation>
+		</xs:annotation>
+		<xs:attribute name="subject" type="oecdStringMetaType">
+			<xs:annotation>
+				<xs:documentation>
+					<section xmlns="http://docbook.org/ns/docbook">
+						<para>Attribute used to indicate the subject of a metadata statement. This
+							element can be omitted to indicate that it refers to the enclosing or
+							referring element or if it is part of a group of metadata items with a
+							specified subject.</para>
+					</section>
+				</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="subject-uri" type="oecdURIMetaType">
+			<xs:annotation>
+				<xs:documentation>
+					<section xmlns="http://docbook.org/ns/docbook">
+						<para>Attribute used to indicate the subject of a metadata statement.
+							Identical to subject above but requires a URI.</para>
+					</section>
+				</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+	</xs:attributeGroup>
+	<xs:attributeGroup id="oecdMetaPropertyAttributes" name="oecdMetaPropertyAttributes">
+		<xs:annotation>
+			<xs:documentation>
+				<para xmlns="http://docbook.org/ns/docbook">Wrap up metadata property
+					attributes.</para>
+			</xs:documentation>
+		</xs:annotation>
+		<xs:attribute name="property" type="oecdStringMetaType">
+			<xs:annotation>
+				<xs:documentation>
+					<section xmlns="http://docbook.org/ns/docbook">
+						<para>Attribute used to indicate the property of an entity in a metadata
+							statement.</para>
+					</section>
+				</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="property-uri" type="oecdURIMetaType">
+			<xs:annotation>
+				<xs:documentation>
+					<section xmlns="http://docbook.org/ns/docbook">
+						<para>Attribute used to indicate the property of an entity in a metadata
+							statement. Identical to property above but requires a URI.</para>
+					</section>
+				</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+	</xs:attributeGroup>
+	<xs:attributeGroup id="oecdMetaValueAttributes" name="oecdMetaValueAttributes">
+		<xs:annotation>
+			<xs:documentation>
+				<para xmlns="http://docbook.org/ns/docbook">Wrap up metadata value
+					attributes.</para>
+			</xs:documentation>
+		</xs:annotation>
+		<xs:attribute name="value" type="oecdStringMetaType">
+			<xs:annotation>
+				<xs:documentation>
+					<section xmlns="http://docbook.org/ns/docbook">
+						<para>Attribute used to indicate the value of an entity in a metadata
+							statement.</para>
+					</section>
+				</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="value-uri" type="oecdURIMetaType">
+			<xs:annotation>
+				<xs:documentation>
+					<section xmlns="http://docbook.org/ns/docbook">
+						<para>Attribute used to indicate the value of an entity in a metadata
+							statement. Identical to value above but requires a URI.</para>
+					</section>
+				</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+	</xs:attributeGroup>
+	<!-- GLOBAL ELEMENTS -->
+	<xs:element abstract="true" id="oecdInline" name="oecd-inline" type="oecdInlineType"/>
+	<!-- different name to all other elements as it is abstract -->
+	<xs:element id="emphasis" name="emphasis" substitutionGroup="oecd-inline"
+		type="oecdEmphasisType"/>
+	<xs:element id="footnote" name="footnote" type="oecdFootnoteType"/>
+	<xs:element id="text" name="text" type="oecdTextType"/>
+	<xs:element id="sub" name="sub" substitutionGroup="oecd-inline" type="oecdSubscriptType"/>
+	<xs:element id="sup" name="sup" substitutionGroup="oecd-inline" type="oecdSuperscriptType"/>
+	<xs:element id="quote" name="quote" substitutionGroup="oecd-inline" type="oecdQuoteType"/>
+	<xs:element id="phrase" name="phrase" substitutionGroup="oecd-inline" type="oecdPhraseType"/>
+	<xs:element id="abbrev" name="abbrev" substitutionGroup="oecd-inline" type="oecdAbbrevitionType"/>
+	<!-- COMPLEX TYPES -->
+	<!-- abstract inline elements -->
+	<xs:attributeGroup id="oecdInlineTypeAttributes" name="oecdInlineTypeAttributes">
+		<xs:annotation>
+			<xs:documentation>
+				<section xmlns="http://docbook.org/ns/docbook">
+					<para>Inline element base attributes grouped for easy override and reuse.</para>
+				</section>
+			</xs:documentation>
+		</xs:annotation>
+		<xs:attributeGroup ref="oecdCommonAttributes"/>
+		<xs:attributeGroup ref="oecdLinkingAttributes"/>
+	</xs:attributeGroup>
+	<xs:group id="oecdInlineTypeContent" name="oecdInlineTypeContent">
+		<xs:annotation>
+			<xs:documentation>
+				<section xmlns="http://docbook.org/ns/docbook">
+					<para>Inline element content grouped for easy override and reuse.</para>
+				</section>
+			</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element maxOccurs="unbounded" minOccurs="0" ref="oecd-inline"/>
+		</xs:sequence>
+	</xs:group>
+	<xs:complexType abstract="true" id="oecdInlineType" mixed="true" name="oecdInlineType">
+		<xs:annotation>
+			<xs:documentation>
+				<section xmlns="http://docbook.org/ns/docbook">
+					<para>The oecdInline type is the base class of almost all inline components. The
+						components may only contain text or other elements in general. The purpose
+						of the type                         is to ensure that all the inlines share
+						a type.</para>
+				</section>
+			</xs:documentation>
+		</xs:annotation>
+		<xs:group maxOccurs="unbounded" minOccurs="0" ref="oecdInlineTypeContent"/>
+		<xs:attributeGroup ref="oecdInlineTypeAttributes"/>
+	</xs:complexType>
+	<!-- emphasis -->
+	<xs:attributeGroup id="oecdEmphasisTypeAttributes" name="oecdEmphasisTypeAttributes">
+		<xs:annotation>
+			<xs:documentation>
+				<section xmlns="http://docbook.org/ns/docbook">
+					<para>Emphasis type attributes grouped for easy override and reuse.</para>
+				</section>
+			</xs:documentation>
+		</xs:annotation>
+		<xs:attribute id="style" name="style" type="oecdStyleAttributeType" use="required"/>
+	</xs:attributeGroup>
+	<xs:complexType id="oecdEmphasisType" mixed="true" name="oecdEmphasisType">
+		<xs:complexContent>
+			<xs:extension base="oecdInlineType">
+				<xs:attributeGroup ref="oecdEmphasisTypeAttributes"/>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<!-- superscript -->
+	<xs:attributeGroup id="oecdSuperScriptTypeAttributes" name="oecdSuperscriptTypeAttributes">
+		<xs:annotation>
+			<xs:documentation>
+				<section xmlns="http://docbook.org/ns/docbook">
+					<para>Superscript type attributes grouped for easy override and reuse.</para>
+				</section>
+			</xs:documentation>
+		</xs:annotation>
+	</xs:attributeGroup>
+	<xs:complexType id="oecdSuperscriptType" mixed="true" name="oecdSuperscriptType">
+		<xs:annotation>
+			<xs:documentation>
+				<div xmlns="http://docbook.org/ns/docbook">
+					<revision>
+						<revnumber>4</revnumber>
+						<date>2012-04-15</date>
+						<authorinitials>NG</authorinitials>
+						<revremark>Initial version</revremark>
+					</revision>
+					<para>Simple superscripted text type</para>
+				</div>
+			</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="oecdInlineType">
+				<xs:attributeGroup ref="oecdSuperscriptTypeAttributes"/>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<!-- subscript -->
+	<xs:attributeGroup id="oecdSubscriptTypeAttributes" name="oecdSubscriptTypeAttributes">
+		<xs:annotation>
+			<xs:documentation>
+				<section xmlns="http://docbook.org/ns/docbook">
+					<para>Subscript type attributes grouped for easy override and reuse.</para>
+				</section>
+			</xs:documentation>
+		</xs:annotation>
+	</xs:attributeGroup>
+	<xs:complexType id="oecdSubscriptType" mixed="true" name="oecdSubscriptType">
+		<xs:annotation>
+			<xs:documentation>
+				<div xmlns="http://docbook.org/ns/docbook">
+					<revision>
+						<revnumber>4</revnumber>
+						<date>2012-04-15</date>
+						<authorinitials>NG</authorinitials>
+						<revremark>Initial version</revremark>
+					</revision>
+					<para>Simple subscripted text type</para>
+				</div>
+			</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="oecdInlineType">
+				<xs:attributeGroup ref="oecdSubscriptTypeAttributes"/>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<!-- quote -->
+	<xs:attributeGroup id="oecdQuoteTypeAttributes" name="oecdQuoteTypeAttributes">
+		<xs:annotation>
+			<xs:documentation>
+				<section xmlns="http://docbook.org/ns/docbook">
+					<para>Quote type attributes grouped for easy override and reuse.</para>
+				</section>
+			</xs:documentation>
+		</xs:annotation>
+	</xs:attributeGroup>
+	<xs:complexType id="oecdQuoteType" mixed="true" name="oecdQuoteType">
+		<xs:annotation>
+			<xs:documentation>
+				<div xmlns="http://docbook.org/ns/docbook">
+					<revision>
+						<revnumber>4</revnumber>
+						<date>2012-04-15</date>
+						<authorinitials>NG</authorinitials>
+						<revremark>Initial version</revremark>
+					</revision>
+					<para>Simple quoted text type</para>
+				</div>
+			</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="oecdInlineType">
+				<xs:attributeGroup ref="oecdQuoteTypeAttributes"/>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<!-- footnotes -->
+	<xs:attributeGroup id="oecdFootNoteTypeAttributes" name="oecdFootNoteTypeAttributes">
+		<xs:annotation>
+			<xs:documentation>
+				<section xmlns="http://docbook.org/ns/docbook">
+					<para>Footnote type attributes grouped for easy override and reuse.</para>
+				</section>
+				<revhistory>
+					<title>Change Log</title>
+					<revision>
+						<revnumber>8</revnumber>
+						<date>2012-10-08</date>
+						<authorinitials>NG</authorinitials>
+						<revremark>Added standard attributes - omitted in previous
+							versions.</revremark>
+					</revision>
+				</revhistory>
+			</xs:documentation>
+		</xs:annotation>
+		<xs:attributeGroup ref="oecdCommonAttributes"/>
+		<xs:attributeGroup ref="oecdLinkingAttributes"/>
+	</xs:attributeGroup>
+	<xs:group id="oecdFootNoteTypeContent" name="oecdFootNoteTypeContent">
+		<xs:annotation>
+			<xs:documentation>
+				<section xmlns="http://docbook.org/ns/docbook">
+					<para>Footnote type content grouped for easy override and reuse.</para>
+				</section>
+			</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element minOccurs="0" ref="metadata"/>
+			<xs:group maxOccurs="unbounded" ref="oecdSimpleBlockGroup"/>
+		</xs:sequence>
+	</xs:group>
+	<xs:complexType id="oecdFootnoteType" name="oecdFootnoteType">
+		<xs:annotation>
+			<xs:documentation>
+				<section xmlns="http://docbook.org/ns/docbook">
+					<revision>
+						<revnumber>4</revnumber>
+						<date>2012-04-15</date>
+						<authorinitials>NG</authorinitials>
+						<revremark>Initial version</revremark>
+					</revision>
+					<para>Footnote element. This element acts as an inline but has block content.
+						Therefore,                         it is not derived from oecdInline.</para>
+				</section>
+			</xs:documentation>
+		</xs:annotation>
+		<xs:group ref="oecdFootNoteTypeContent"/>
+		<xs:attributeGroup ref="oecdFootNoteTypeAttributes"/>
+	</xs:complexType>
+	<!-- text -->
+	<xs:complexType id="oecdTextType" name="oecdTextType">
+		<xs:annotation>
+			<xs:documentation>
+				<revision>
+					<revnumber>0.3</revnumber>
+					<date>2012-12-30</date>
+					<author>
+						<email>nicg@corbas.co.uk</email>
+						<personname>Nic Gibson</personname>
+					</author>
+					<revremark>Initial Version</revremark>
+				</revision>
+				<section xmlns="http://docbook.org/ns/docbook">
+					<para>The text element type is used to force element content to be element or
+						text as this                         is currently impossible in XML
+						Schema.</para>
+				</section>
+			</xs:documentation>
+		</xs:annotation>
+		<xs:simpleContent>
+			<xs:extension base="xs:string">
+				<xs:attributeGroup ref="oecdCommonAttributes"/>
+				<xs:attributeGroup ref="oecdLinkingAttributes"/>
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+	<!-- phrase -->
+	<xs:attributeGroup id="oecdPhraseTypeAttributes" name="oecdPhraseTypeAttributes">
+		<xs:annotation>
+			<xs:documentation>
+				<section xmlns="http://docbook.org/ns/docbook">
+					<para>Phrase type attributes grouped for easy override and reuse.</para>
+				</section>
+				<revhistory>
+					<revision>
+						<revnumber>9</revnumber>
+						<date>2012-10-08</date>
+						<authorinitials>NG</authorinitials>
+						<revremark>Removed required metadataReference. Should be optional as phrases
+							can carry                             other meaning (e.g.
+							language).</revremark>
+					</revision>
+				</revhistory>
+			</xs:documentation>
+		</xs:annotation>
+		<xs:attribute id="phraseMetadataRefs" name="metadata-refs" type="xs:IDREFS">
+			<xs:annotation>
+				<xs:documentation>
+					<section xmlns="http://docbook.org/ns/docbook">
+						<para>Defines a metadata reference. Metadata must be referencd via the
+							documentMeta                             element in this element. The
+							phrase element allows for multiple metadata
+							references on a single piece of text. </para>
+						<para/>
+					</section>
+				</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+	</xs:attributeGroup>
+	<xs:complexType id="oecdPhraseType" mixed="true" name="oecdPhraseType">
+		<xs:annotation>
+			<xs:documentation>
+				<div xmlns="http://docbook.org/ns/docbook">
+					<revision>
+						<revnumber>4</revnumber>
+						<date>2012-04-15</date>
+						<authorinitials>NG</authorinitials>
+						<revremark>Initial version</revremark>
+					</revision>
+					<para>This element can be used for semantic tagging. It allows an arbitrary
+						number of                         metadata elements to be referenced. The
+						metadata referencing method is via attributes                         as the
+						model doesn't allow metadata elements at this point. </para>
+				</div>
+			</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="oecdInlineType">
+				<xs:attributeGroup ref="oecdPhraseTypeAttributes"/>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<!-- Abbreviation -->
+	<xs:complexType id="oecdAbbrevitionType" mixed="true" name="oecdAbbrevitionType">
+		<xs:annotation>
+			<xs:documentation>
+				<div xmlns="http://docbook.org/ns/docbook">
+					<revision>
+						<revnumber>7</revnumber>
+						<date>2012-04-18</date>
+						<authorinitials>jc</authorinitials>
+						<revremark>Initial version</revremark>
+					</revision>
+					<para>Captures an inline abbreviation or acronym. The full definition for the
+						abbreviation                         should be held within the 'definition'
+						attribute.</para>
+				</div>
+			</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="oecdInlineType">
+				<xs:attributeGroup ref="oecdAbbrevitionTypeAttributes"/>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:attributeGroup id="oecdAbbrevitionTypeAttributes" name="oecdAbbrevitionTypeAttributes">
+		<xs:annotation>
+			<xs:documentation>
+				<section xmlns="http://docbook.org/ns/docbook">
+					<para>abbreviation type attributes grouped for easy override and reuse.</para>
+					<revision>
+						<revnumber>1</revnumber>
+						<date>2012-04-18</date>
+						<authorinitials>jc</authorinitials>
+						<revremark>Initial version</revremark>
+					</revision>
+				</section>
+			</xs:documentation>
+		</xs:annotation>
+		<xs:attribute id="abbreviationMetadataRefs" name="metadata-refs" type="xs:IDREFS"
+			use="required">
+			<xs:annotation>
+				<xs:documentation>
+					<section xmlns="http://docbook.org/ns/docbook">
+						<para>Defines a metadata reference. Metadata must be referencd via the
+							documentMeta                             element in this element. The
+							phrase element allows for multiple metadata
+							references on a single piece of text. </para>
+					</section>
+					<section xmlns="http://docbook.org/ns/docbook">
+						<revision>
+							<revnumber>1</revnumber>
+							<date>2013-04-30</date>
+							<authorinitials>jc</authorinitials>
+							<revremark>updated attribute name</revremark>
+						</revision>
+					</section>
+				</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="definition" type="oecdAbbrevitionDefinitionType" use="required"/>
+	</xs:attributeGroup>
+	<xs:simpleType id="oecdAbbrevitionDefinitionType" name="oecdAbbrevitionDefinitionType">
+		<xs:annotation>
+			<xs:documentation>
+				<section xmlns="http://docbook.org/ns/docbook">
+					<para>The definition of the abbreviation.</para>
+					<revision>
+						<revnumber>7</revnumber>
+						<date>2012-04-18</date>
+						<authorinitials>jc</authorinitials>
+						<revremark>Initial version</revremark>
+					</revision>
+				</section>
+			</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:minLength value="1"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<!-- SIMPLE TYPES -->
+	<!-- emphasis style values -->
+	<xs:simpleType id="oecdStyleAttributeType" name="oecdStyleAttributeType">
+		<xs:annotation>
+			<xs:documentation>
+				<para xmlns="http://docbook.org/ns/docbook">Enumerated data type to hold the
+					possible values                     for emphasis elements' style attribute. This
+					is neither proscriptive nor                     exhaustive!</para>
+			</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="bold"/>
+			<xs:enumeration value="italic"/>
+			<xs:enumeration value="underline"/>
+			<xs:enumeration value="strikethrough"/>
+			<xs:enumeration value="double-strikethrough"/>
+			<xs:enumeration value="small-caps"/>
+			<xs:enumeration value="subscript"/>
+			<xs:enumeration value="supersript"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:annotation>
+		<xs:documentation>
+			<section xmlns="http://docbook.org/ns/docbook">
+				<title>OECD Schemas</title>
+				<subtitle>Graphic Models</subtitle>
+				<revhistory>
+					<title>Change Log</title>
+					<revision>
+						<revnumber>1</revnumber>
+						<date>2011-12-02</date>
+						<author>
+							<email>nicg@corbas.co.uk</email>
+							<personname>Nic Gibson</personname>
+						</author>
+						<revremark>Initial Version</revremark>
+					</revision>
+					<revision>
+						<revnumber>2</revnumber>
+						<date>2012-04-13</date>
+						<authorinitials>NG</authorinitials>
+						<revremark>Added annotations attribute</revremark>
+					</revision>
+					<revision>
+						<revnumber>3</revnumber>
+						<date>2012-08-02</date>
+						<authorinitials>NG</authorinitials>
+						<revremark>Modified oecdBlockGraphicType and oecdInlineGraphicType to allow
+							for multiple renditions.</revremark>
+					</revision>
+					<revision>
+						<revnumber>4</revnumber>
+						<date>2012-10-05</date>
+						<authorinitials>NG</authorinitials>
+						<revremark>Wrapped global attributes in groups to avoid namespace prefix
+							requirement.</revremark>
+					</revision>
+					<revision>
+						<revnumber>5</revnumber>
+						<date>2012-10-25</date>
+						<authorinitials>NG</authorinitials>
+						<revdescription>
+							<para>Replaced attribution with sources in the <link
+									linkend="oecdBlockGraphicTypeContent"
+									>oecdBlockGraphicTypeContent</link> group for consistency across
+								model.</para>
+							<para>Replaced attribution with sources in the <link
+									linkend="oecdInlineGraphicTypeContent"
+									>oecdInlineGraphicTypeContent</link> group for consistency
+								across model.</para>
+							<para>Added sources to <link linkend="oecdFigureTypeContent"
+									>oecdFigureTypeContent</link> and an schematron assertion to
+								ensure that the sources are not on the graphic element of a figure.
+							</para>
+						</revdescription>
+					</revision>
+					<revision>
+						<revnumber>6</revnumber>
+						<date>2013-01-29</date>
+						<authorinitials>JC</authorinitials>
+						<revremark>Modified figure to allow sources in the logical position aligned
+							with those for tables and boxes.</revremark>
+					</revision>
+				</revhistory>
+			</section>
+		</xs:documentation>
+	</xs:annotation>
+	<!-- INCLUDES AND IMPORTS -->
+	<xs:annotation>
+		<xs:documentation>
+			<section xmlns="http://docbook.org/ns/docbook">
+				<title>OECD Schemas</title>
+				<subtitle>Notes</subtitle>
+				<revhistory>
+					<title>Change Log</title>
+					<revision>
+						<revnumber>1</revnumber>
+						<date>2012-02-10</date>
+						<author>
+							<email>nicg@corbas.co.uk</email>
+							<personname>Nic Gibson</personname>
+						</author>
+						<revremark>Initial Version</revremark>
+					</revision>
+					<revision>
+						<revnumber>2</revnumber>
+						<date>2012-03-15</date>
+						<author>
+							<email/>
+							<personname>Nic Gibson</personname>
+						</author>
+						<revremark>Refactored for better practices in design.</revremark>
+					</revision>
+					<revision>
+						<revnumber>3</revnumber>
+						<date>2012-04-16</date>
+						<author>
+							<email/>
+							<personname>Nic Gibson</personname>
+						</author>
+						<revremark>Added annotations attributes.</revremark>
+					</revision>
+					<revision>
+						<revnumber>4</revnumber>
+						<date>2012-10-05</date>
+						<authorinitials>NG</authorinitials>
+						<revremark>Wrapped global attributes in groups to avoid namespace prefix
+							requirement.</revremark>
+					</revision>
+					<revision>
+						<revnumber>5</revnumber>
+						<date>2012-10-05</date>
+						<authorinitials>NG</authorinitials>
+						<revremark>Wrapped global attributes in groups to avoid namespace prefix
+							requirement.</revremark>
+					</revision>
+				</revhistory>
+			</section>
+		</xs:documentation>
+	</xs:annotation>
+	<!-- INCLUDES AND IMPORTS -->
+	<!-- GLOBAL ELEMENTS -->
+	<xs:element id="notes" name="notes" type="oecdNotesType"/>
+	<!-- GLOBAL GROUPS -->
+	<!-- GLOBAL TYPES -->
+	<!-- note -->
+	<xs:attributeGroup id="oecdNoteTypeAttributes" name="oecdNoteTypeAttributes">
+		<xs:annotation>
+			<xs:documentation>
+				<section xmlns="http://docbook.org/ns/docbook">
+					<para>Attributes for individual notes. Grouped for easy redefinition.</para>
+				</section>
+			</xs:documentation>
+		</xs:annotation>
+		<xs:attributeGroup ref="oecdCommonAttributes"/>
+		<xs:attributeGroup ref="oecdLinkingAttributes"/>
+		<xs:attributeGroup ref="ANNOTATIONS-GROUP"/>
+	</xs:attributeGroup>
+	<xs:group id="oecdNoteTypeContent" name="oecdNoteTypeContent">
+		<xs:annotation>
+			<xs:documentation>
+				<section xmlns="http://docbook.org/ns/docbook">
+					<para>Content for individual notes. Grouped for easy redefinition.</para>
+				</section>
+			</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element minOccurs="0" ref="metadata"/>
+			<xs:choice>
+				<xs:group maxOccurs="unbounded" ref="oecdBlockGroup"/>
+			</xs:choice>
+		</xs:sequence>
+	</xs:group>
+	<xs:complexType id="oecdNoteType" name="oecdNoteType">
+		<xs:annotation>
+			<xs:documentation>
+				<section xmlns="http://docbook.org/ns/docbook">
+					<para>Individual note. This is not a footnote. Notes are contained within
+						certain block types (lists, tables, figures) and explain aspects of the
+						content. Each note is a block in itself. </para>
+					<para>The existence of notes on a component does not preclude the existence
+						of footnotes.</para>
+				</section>
+			</xs:documentation>
+		</xs:annotation>
+		<xs:group ref="oecdNoteTypeContent"/>
+		<xs:attributeGroup ref="oecdNoteTypeAttributes"/>
+	</xs:complexType>
+	<!-- notes -->
+	<xs:attributeGroup id="oecdNotesTypeAttributes" name="oecdNotesTypeAttributes">
+		<xs:annotation>
+			<xs:documentation>
+				<section xmlns="http://docbook.org/ns/docbook">
+					<para>Attributes for set of notes. Grouped for easy redefinition.</para>
+				</section>
+			</xs:documentation>
+		</xs:annotation>
+		<xs:attributeGroup ref="oecdCommonAttributes"/>
+		<xs:attributeGroup ref="oecdLinkingAttributes"/>
+		<xs:attributeGroup ref="ANNOTATIONS-GROUP"/>
+	</xs:attributeGroup>
+	<xs:group id="oecdNotesTypeContent" name="oecdNotesTypeContent">
+		<xs:annotation>
+			<xs:documentation>
+				<section xmlns="http://docbook.org/ns/docbook">
+					<para>Content for set of notes. Grouped for easy redefinition.</para>
+				</section>
+			</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element minOccurs="0" ref="metadata"/>
+			<xs:group minOccurs="0" ref="oecdTitleGroup"/>
+			<xs:element form="qualified" maxOccurs="unbounded" name="note" type="oecdNoteType"/>
+		</xs:sequence>
+	</xs:group>
+	<xs:complexType id="oecdNotesType" name="oecdNotesType">
+		<xs:annotation>
+			<xs:documentation>
+				<section xmlns="http://docbook.org/ns/docbook">
+					<para>Set of notes. This is a wrapper for a set of notes relating to
+						a particular component.</para>
+				</section>
+			</xs:documentation>
+		</xs:annotation>
+		<xs:group ref="oecdNotesTypeContent"/>
+		<xs:attributeGroup ref="oecdNotesTypeAttributes"/>
+	</xs:complexType>
+	<!-- ATTRIBUTES -->
+	<xs:annotation>
+		<xs:documentation>
+			<section xmlns="http://docbook.org/ns/docbook">
+				<title>OECD Schemas</title>
+				<subtitle>Sources</subtitle>
+				<revhistory>
+					<title>Change Log</title>
+					<revision>
+						<revnumber>1</revnumber>
+						<date>2012-04-23</date>
+						<authorinitials>JC</authorinitials>
+						<revremark>Initial Version</revremark>
+					</revision>
+					<revision>
+						<revnumber>2</revnumber>
+						<date>2012-10-05</date>
+						<authorinitials>NG</authorinitials>
+						<revremark>Wrapped global attributes in groups to avoid namespace prefix
+							requirement.</revremark>
+					</revision>
+					<revision>
+						<revnumber>3</revnumber>
+						<date>2012-10-25</date>
+						<authorinitials>NG</authorinitials>
+						<revremark>Updated <link linkend="oecdSourceTypeContent"
+								>oecdSourceTypeContent</link> to use MODS and citations for source
+							information.</revremark>
+					</revision>
+				</revhistory>
+			</section>
+		</xs:documentation>
+	</xs:annotation>
+	<!-- INCLUDES AND IMPORTS -->
+	<!-- GLOBAL ELEMENTS -->
+	<xs:element id="sources" name="sources" type="oecdSourcesType"/>
+	<!-- GLOBAL GROUPS -->
+	<!-- GLOBAL TYPES -->
+	<!-- sources -->
+	<xs:attributeGroup id="oecdSourcesTypeAttributes" name="oecdSourcesTypeAttributes">
+		<xs:annotation>
+			<xs:documentation>
+				<section xmlns="http://docbook.org/ns/docbook">
+					<para>Attributes for individual sources. Grouped for easy redefinition.</para>
+				</section>
+			</xs:documentation>
+		</xs:annotation>
+		<xs:attributeGroup ref="oecdCommonAttributes"/>
+		<xs:attributeGroup ref="oecdLinkingAttributes"/>
+		<xs:attributeGroup ref="ANNOTATIONS-GROUP"/>
+	</xs:attributeGroup>
+	<xs:group id="oecdSourceTypeContent" name="oecdSourceTypeContent">
+		<xs:annotation>
+			<xs:documentation>
+				<revhistory>
+					<revision>
+						<revnumber>3</revnumber>
+						<date>2012-10-25</date>
+						<authorinitials>NG</authorinitials>
+						<revremark>Updated to use MODS and citations for source
+							information.</revremark>
+					</revision>
+				</revhistory>
+				<section xmlns="http://docbook.org/ns/docbook">
+					<para>Content for individual sources. Grouped for easy redefinition. A source
+						may be either a citation or a full bibliographic reference.</para>
+				</section>
+			</xs:documentation>
+		</xs:annotation>
+		<xs:choice>
+			<xs:element ref="citation"/>
+			<xs:element ref="mods:mods"/>
+		</xs:choice>
+	</xs:group>
+	<xs:complexType id="oecdSourceType" name="oecdSourceType">
+		<xs:annotation>
+			<xs:documentation>
+				<section xmlns="http://docbook.org/ns/docbook">
+					<para>Individual source. Sources are contained within certain block types
+						(lists, tables, figures) and explain                         aspects of the
+						content. Each source is a block in itself. </para>
+					<para>The existence of sources on a component does not preclude the existence of
+						additional metadata.</para>
+				</section>
+			</xs:documentation>
+		</xs:annotation>
+		<xs:group ref="oecdSourceTypeContent"/>
+		<xs:attributeGroup ref="oecdSourceTypeAttributes"/>
+	</xs:complexType>
+	<!-- sources -->
+	<xs:attributeGroup id="oecdSourceTypeAttributes" name="oecdSourceTypeAttributes">
+		<xs:annotation>
+			<xs:documentation>
+				<section xmlns="http://docbook.org/ns/docbook">
+					<para>Attributes for set of sources. Grouped for easy redefinition.</para>
+				</section>
+			</xs:documentation>
+		</xs:annotation>
+		<xs:attributeGroup ref="oecdCommonAttributes"/>
+		<xs:attributeGroup ref="oecdLinkingAttributes"/>
+		<xs:attributeGroup ref="ANNOTATIONS-GROUP"/>
+	</xs:attributeGroup>
+	<xs:group id="oecdSourcesTypeContent" name="oecdSourcesTypeContent">
+		<xs:annotation>
+			<xs:documentation>
+				<section xmlns="http://docbook.org/ns/docbook">
+					<para>Content for set of sources. Grouped for easy redefinition.</para>
+				</section>
+			</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element minOccurs="0" ref="metadata"/>
+			<xs:group minOccurs="0" ref="oecdTitleGroup"/>
+			<xs:element form="qualified" maxOccurs="unbounded" name="source" type="oecdSourceType"/>
+		</xs:sequence>
+	</xs:group>
+	<xs:complexType id="oecdSourcesType" name="oecdSourcesType">
+		<xs:annotation>
+			<xs:documentation>
+				<section xmlns="http://docbook.org/ns/docbook">
+					<para>Set of sources. This is a wrapper for a set of sources relating to a
+						particular component.</para>
+				</section>
+			</xs:documentation>
+		</xs:annotation>
+		<xs:group ref="oecdSourcesTypeContent"/>
+		<xs:attributeGroup ref="oecdSourcesTypeAttributes"/>
+	</xs:complexType>
+	<!-- ATTRIBUTES -->
+	<!-- GLOBAL ELEMENTS -->
+	<xs:element id="externalGraphic" name="external-graphic" type="oecdExternalGraphicType"/>
+	<xs:element id="svgGraphic" name="svg-graphic" type="oecdSvgGraphicType"/>
+	<xs:element id="inlineGraphic" name="inline-graphic" type="oecdInlineGraphicType"/>
+	<xs:element id="graphic" name="graphic" type="oecdBlockGraphicType"/>
+	<xs:element id="figure" name="figure" type="oecdFigureType"/>
+	<!-- GLOBAL GROUPS -->
+	<xs:group id="oecdGraphicsGroup" name="oecdGraphicsGroup">
+		<xs:choice>
+			<xs:element ref="external-graphic"/>
+			<xs:element ref="svg-graphic"/>
+		</xs:choice>
+	</xs:group>
+	<!-- Graphic Object -->
+	<xs:complexType id="oecdGraphicType" name="oecdGraphicType">
+		<xs:sequence>
+			<xs:element minOccurs="0" ref="metadata"/>
+		</xs:sequence>
+	</xs:complexType>
+	<!-- External Graphic References -->
+	<xs:attributeGroup id="oecdExternalGraphicTypeAttributes"
+		name="oecdExternalGraphicTypeAttributes">
+		<xs:annotation>
+			<xs:documentation>
+				<section xmlns="http://docbook.org/ns/docbook">
+					<revision>
+						<revnumber>2</revnumber>
+						<date>2012-04-13</date>
+						<authorinitials>NG</authorinitials>
+						<revremark>Added annotations attribute</revremark>
+					</revision>
+					<para>Attributes for external graphics. Grouped to allow easy override.</para>
+				</section>
+			</xs:documentation>
+			<xs:documentation>
+				<section xmlns="http://docbook.org/ns/docbook">
+					<title>TODO</title>
+					<para>Schematron required to ensure that at least one appropriate attribute is
+						set.</para>
+				</section>
+			</xs:documentation>
+		</xs:annotation>
+		<xs:attributeGroup ref="oecdCommonAttributes"/>
+		<xs:attributeGroup ref="oecdLinkingAttributes"/>
+		<xs:attributeGroup ref="MEDIATYPE-GROUP"/>
+		<xs:attributeGroup ref="ANNOTATIONS-GROUP"/>
+	</xs:attributeGroup>
+	<xs:group id="oecdExternalGraphicTypeContent" name="oecdExternalGraphicTypeContent">
+		<xs:annotation>
+			<xs:documentation>
+				<section xmlns="http://docbook.org/ns/docbook">
+					<para>Content for external graphics. Grouped to allow easy override.</para>
+				</section>
+			</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element minOccurs="0" ref="metadata"/>
+		</xs:sequence>
+	</xs:group>
+	<xs:complexType id="oecdExternalGraphicType" name="oecdExternalGraphicType">
+		<xs:annotation>
+			<xs:documentation>
+				<section xmlns="http://docbook.org/ns/docbook">
+					<revision>
+						<revnumber>2</revnumber>
+						<date>2012-04-13</date>
+						<authorinitials>NG</authorinitials>
+						<revremark>Added annotations attribute</revremark>
+					</revision>
+					<para>External graphic reference. The graphic reference is an attribute. Only
+						metadata content is allowed.</para>
+				</section>
+			</xs:documentation>
+		</xs:annotation>
+		<xs:group ref="oecdExternalGraphicTypeContent"/>
+		<xs:attributeGroup ref="oecdExternalGraphicTypeAttributes"/>
+	</xs:complexType>
+	<!-- svg graphic -->
+	<xs:attributeGroup id="oecdSvgGraphicTypeAttributes" name="oecdSvgGraphicTypeAttributes">
+		<xs:annotation>
+			<xs:documentation>
+				<section xmlns="http://docbook.org/ns/docbook">
+					<revision>
+						<revnumber>2</revnumber>
+						<date>2012-04-13</date>
+						<authorinitials>NG</authorinitials>
+						<revremark>Added annotations attribute</revremark>
+					</revision>
+					<para>Attributes for SVG graphics. Grouped to allow easy override.</para>
+				</section>
+			</xs:documentation>
+		</xs:annotation>
+		<xs:attributeGroup ref="oecdCommonAttributes"/>
+		<xs:attributeGroup ref="oecdLinkingAttributes"/>
+		<xs:attributeGroup ref="ANNOTATIONS-GROUP"/>
+	</xs:attributeGroup>
+	<xs:group id="oecdSvgGraphicTypeContent" name="oecdSvgGraphicTypeContent">
+		<xs:annotation>
+			<xs:documentation>
+				<section xmlns="http://docbook.org/ns/docbook">
+					<revhistory>
+						<title>Change Log</title>
+						<revision>
+							<revnumber>1</revnumber>
+							<date>2012-11-09</date>
+							<author/>
+							<revdescription>changed processing model to lax, until we can assure the
+								quality of the SVG content.</revdescription>
+						</revision>
+					</revhistory>
+				</section>
+				<section xmlns="http://docbook.org/ns/docbook">
+					<para>Content for SVG graphics. Grouped to allow easy override.</para>
+				</section>
+			</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:any namespace="http://www.w3.org/2000/svg" processContents="lax"/>
+		</xs:sequence>
+	</xs:group>
+	<xs:complexType id="oecdSvgGraphicType" name="oecdSvgGraphicType">
+		<xs:annotation>
+			<xs:documentation>
+				<section xmlns="http://docbook.org/ns/docbook">
+					<para>Wrapper for SVG graphics.</para>
+				</section>
+			</xs:documentation>
+		</xs:annotation>
+		<xs:group ref="oecdSvgGraphicTypeContent"/>
+		<xs:attributeGroup ref="oecdSvgGraphicTypeAttributes"/>
+	</xs:complexType>
+	<!-- block graphics -->
+	<xs:attributeGroup id="oecdBlockGraphicTypeAttributes" name="oecdBlockGraphicTypeAttributes">
+		<xs:annotation>
+			<xs:documentation>
+				<section xmlns="http://docbook.org/ns/docbook">
+					<para>Attributes for block graphics. Grouped to allow easy override.</para>
+				</section>
+			</xs:documentation>
+		</xs:annotation>
+		<xs:attributeGroup ref="oecdCommonAttributes"/>
+		<xs:attributeGroup ref="oecdLinkingAttributes"/>
+	</xs:attributeGroup>
+	<xs:group id="oecdBlockGraphicTypeContent" name="oecdBlockGraphicTypeContent">
+		<xs:annotation>
+			<xs:documentation>
+				<revhistory>
+					<title>Change Log</title>
+					<revision>
+						<revnumber>3</revnumber>
+						<date>2012-08-02</date>
+						<authorinitials>NG</authorinitials>
+						<revremark>Modified reference to oecdGraphicsGroup to make it unbounded
+							allowing for multiple renditions. The sequential order of renditions
+							should be taken as a preference order.</revremark>
+					</revision>
+					<revision>
+						<revnumber>5</revnumber>
+						<date>2012-10-25</date>
+						<authorinitials>NG</authorinitials>
+						<revremark> Replaced attribution with sources for consistency across
+							model.</revremark>
+					</revision>
+				</revhistory>
+				<section xmlns="http://docbook.org/ns/docbook">
+					<para>Content for block graphics. Grouped to allow easy override.</para>
+				</section>
+			</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element minOccurs="0" ref="metadata"/>
+			<xs:group minOccurs="0" ref="oecdTitleGroup"/>
+			<xs:element minOccurs="0" ref="caption"/>
+			<xs:element minOccurs="0" ref="sources"/>
+			<xs:group maxOccurs="unbounded" ref="oecdGraphicsGroup"/>
+			<xs:element minOccurs="0" ref="notes"/>
+		</xs:sequence>
+	</xs:group>
+	<xs:complexType id="oecdBlockGraphicType" name="oecdBlockGraphicType">
+		<xs:annotation>
+			<xs:documentation>
+				<section xmlns="http://docbook.org/ns/docbook">
+					<para>Block graphic type.</para>
+				</section>
+			</xs:documentation>
+		</xs:annotation>
+		<xs:group ref="oecdBlockGraphicTypeContent"/>
+		<xs:attributeGroup ref="oecdBlockGraphicTypeAttributes"/>
+	</xs:complexType>
+	<!-- inline graphics -->
+	<xs:attributeGroup id="oecdInlineGraphicTypeAttributes" name="oecdInlineGraphicTypeAttributes">
+		<xs:annotation>
+			<xs:documentation>
+				<section xmlns="http://docbook.org/ns/docbook">
+					<para>Attributes for inline graphics. Grouped to allow easy override.</para>
+				</section>
+			</xs:documentation>
+		</xs:annotation>
+		<xs:attributeGroup ref="oecdCommonAttributes"/>
+		<xs:attributeGroup ref="oecdLinkingAttributes"/>
+	</xs:attributeGroup>
+	<xs:group id="oecdInlineGraphicTypeContent" name="oecdInlineGraphicTypeContent">
+		<xs:annotation>
+			<xs:documentation>
+				<revhistory>
+					<title>Change Log</title>
+					<revision>
+						<revnumber>3</revnumber>
+						<date>2012-08-02</date>
+						<authorinitials>NG</authorinitials>
+						<revremark>Modified reference to oecdGraphicsGroup to make it unbounded
+							allowing for multiple renditions. The sequential order of renditions
+							should be taken as a preference order.</revremark>
+					</revision>
+					<revision>
+						<revnumber>5</revnumber>
+						<date>2012-10-25</date>
+						<authorinitials>NG</authorinitials>
+						<revremark> Replaced attribution with sources for consistency across
+							model.</revremark>
+					</revision>
+				</revhistory>
+				<section xmlns="http://docbook.org/ns/docbook">
+					<para>Content for inline graphics. Grouped to allow easy override.</para>
+				</section>
+			</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element minOccurs="0" ref="metadata"/>
+			<xs:element minOccurs="0" ref="sources"/>
+			<xs:group maxOccurs="unbounded" ref="oecdGraphicsGroup"/>
+		</xs:sequence>
+	</xs:group>
+	<xs:complexType id="oecdInlineGraphicType" name="oecdInlineGraphicType">
+		<xs:annotation>
+			<xs:documentation>
+				<section xmlns="http://docbook.org/ns/docbook">
+					<para>Block graphic type. This has a considerably more restricted model than a
+						block graphic.</para>
+				</section>
+			</xs:documentation>
+		</xs:annotation>
+		<xs:group ref="oecdInlineGraphicTypeContent"/>
+		<xs:attributeGroup ref="oecdInlineGraphicTypeAttributes"/>
+	</xs:complexType>
+	<!-- figures -->
+	<xs:attributeGroup id="oecdFigureTypeAttributes" name="oecdFigureTypeAttributes">
+		<xs:annotation>
+			<xs:documentation>
+				<section xmlns="http://docbook.org/ns/docbook">
+					<para>Attributes for figures. Grouped to allow easy override.</para>
+				</section>
+			</xs:documentation>
+		</xs:annotation>
+		<xs:attributeGroup ref="oecdCommonAttributes"/>
+		<xs:attributeGroup ref="oecdLinkingAttributes"/>
+	</xs:attributeGroup>
+	<xs:group id="oecdFigureTypeContent" name="oecdFigureTypeContent">
+		<xs:annotation>
+			<xs:documentation>
+				<section xmlns="http://docbook.org/ns/docbook">
+					<para>Content for figures. Grouped to allow easy override.</para>
+					<revhistory>
+						<revision>
+							<revnumber>5</revnumber>
+							<date>2012-10-25</date>
+							<authorinitials>NG</authorinitials>
+							<revremark> Added sources to figure element. Added schematron assertion
+								to require that the embedded graphic did not have
+								sources.</revremark>
+						</revision>
+						<revision>
+							<revnumber>2</revnumber>
+							<date>2013-01-29</date>
+							<author>JC</author>
+							<revremark>Changed sequence putting sources last.</revremark>
+						</revision>
+					</revhistory>
+				</section>
+			</xs:documentation>
+			<xs:appinfo>
+				<assert test="not(graphic/sources)" xmlns="http://purl.oclc.org/dsdl/schematron"
+					>Source information must not be present on graphics within figures. It should be
+					placed on the figure instead.</assert>
+			</xs:appinfo>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element minOccurs="0" ref="metadata"/>
+			<xs:group minOccurs="0" ref="oecdTitleGroup"/>
+			<xs:element ref="graphic"/>
+			<xs:element minOccurs="0" ref="notes"/>
+			<xs:element minOccurs="0" ref="sources"/>
+		</xs:sequence>
+	</xs:group>
+	<xs:complexType id="oecdFigureType" name="oecdFigureType">
+		<xs:annotation>
+			<xs:documentation>
+				<section xmlns="http://docbook.org/ns/docbook">
+					<para>Figure Type. Figures are essentially wrappers around block graphics
+						allowing titles and notes to be added.</para>
+				</section>
+			</xs:documentation>
+		</xs:annotation>
+		<xs:group ref="oecdFigureTypeContent"/>
+		<xs:attributeGroup ref="oecdFigureTypeAttributes"/>
+	</xs:complexType>
+	<xs:annotation>
+		<xs:documentation>
+			<section xmlns="http://docbook.org/ns/docbook">
+				<title>OECD Schemas</title>
+				<subtitle>Graphic Models</subtitle>
+				<revhistory>
+					<title>Change Log</title>
+					<revision>
+						<revnumber>1</revnumber>
+						<date>2011-12-02</date>
+						<author>
+							<email>nicg@corbas.co.uk</email>
+							<personname>Nic Gibson</personname>
+						</author>
+						<revremark>Initial Version</revremark>
+					</revision>
+					<revision>
+						<revnumber>2</revnumber>
+						<date>2012-03-21</date>
+						<author>
+							<email>nicg@corbas.co.uk</email>
+							<personname>Nic Gibson</personname>
+						</author>
+						<revdescription>
+							<itemizedlist>
+								<listitem>
+									<para>Updated to best practices guidelines</para>
+								</listitem>
+								<listitem>
+									<para>Modified oecdEquation type to allow any external graphic
+										type not just raster graphics.</para>
+								</listitem>
+							</itemizedlist>
+						</revdescription>
+					</revision>
+					<revision>
+						<revnumber>3</revnumber>
+						<date>2012-03-03</date>
+						<author>
+							<email>nicg@corbas.co.uk</email>
+							<personname>Nic Gibson</personname>
+						</author>
+						<revremark>Modified oecdEquationTypeContent to replace 'oecdInline' with
+							'text'.</revremark>
+					</revision>
+					<revision>
+						<revnumber>4</revnumber>
+						<date>2012-04-15</date>
+						<author>
+							<email>nicg@corbas.co.uk</email>
+							<personname>Nic Gibson</personname>
+						</author>
+						<revremark>Created oecdBlockEquationType derived from oecdEquationType in
+							order                         to add annotations as it only makes sense
+							to annotate blocks.</revremark>
+					</revision>
+					<revision>
+						<revnumber>5</revnumber>
+						<date>2012-08-02</date>
+						<authorinitials>NG</authorinitials>
+						<revremark>Modified oecdEquationType to allow for multiple
+							renditions.</revremark>
+					</revision>
+					<revision>
+						<revnumber>6</revnumber>
+						<date>2012-10-05</date>
+						<authorinitials>NG</authorinitials>
+						<revremark>Wrapped global attributes in groups to avoid namespace prefix
+							requirement.</revremark>
+					</revision>
+					<revision>
+						<revnumber>7</revnumber>
+						<date>2013-03-19</date>
+						<authorinitials>JC</authorinitials>
+						<revremark>Changed processing model for mathml to lax to ignore validation
+							for the time being, the assumption here is that the mathml has already
+							been processed and validated by MathType.</revremark>
+					</revision>
+				</revhistory>
+			</section>
+		</xs:documentation>
+	</xs:annotation>
+	<!-- IMPORTS AND INCLUDES -->
+	<!-- GLOBAL ELEMENTS -->
+	<xs:element id="inlineEquation" name="inline-equation" type="oecdEquationType"/>
+	<xs:element id="equation" name="equation" type="oecdBlockEquationType"/>
+	<!-- COMPLEX TYPES -->
+	<!-- equation types-->
+	<xs:attributeGroup id="oecdEquationTypeAttributes" name="oecdEquationTypeAttributes">
+		<xs:annotation>
+			<xs:documentation>
+				<section xmlns="http://docbook.org/ns/docbook">
+					<para>Attributes for equations. Grouped to allow easy override.</para>
+				</section>
+			</xs:documentation>
+		</xs:annotation>
+		<xs:attributeGroup ref="oecdCommonAttributes"/>
+	</xs:attributeGroup>
+	<xs:attributeGroup id="oecdBlockEquationTypeAttributes" name="oecdBlockEquationTypeAttributes">
+		<xs:annotation>
+			<xs:documentation>
+				<section xmlns="http://docbook.org/ns/docbook">
+					<para>Attributes for block equations. Grouped to allow easy override.</para>
+				</section>
+			</xs:documentation>
+		</xs:annotation>
+		<xs:attributeGroup ref="ANNOTATIONS-GROUP"/>
+	</xs:attributeGroup>
+	<xs:group id="oecdEquationTypeContent" name="oecdEquationTypeContent">
+		<xs:annotation>
+			<xs:documentation>
+				<revision>
+					<revnumber>0.3</revnumber>
+					<date>2012-03-03</date>
+					<author>
+						<email>nicg@corbas.co.uk</email>
+						<personname>Nic Gibson</personname>
+					</author>
+					<revremark>Modified to replace 'oecdInline' with 'text'.</revremark>
+				</revision>
+				<section xmlns="http://docbook.org/ns/docbook">
+					<para>Content for equations. Grouped to allow easy override.</para>
+				</section>
+			</xs:documentation>
+		</xs:annotation>
+		<xs:choice>
+			<xs:any namespace="http://www.w3.org/1998/Math/MathML" processContents="lax"/>
+			<xs:element ref="text"/>
+			<xs:group ref="oecdGraphicsGroup"/>
+		</xs:choice>
+	</xs:group>
+	<xs:complexType id="oecdEquationType" name="oecdEquationType">
+		<xs:annotation>
+			<xs:documentation>
+				<revhistory>
+					<title>Change Log</title>
+					<revision>
+						<revnumber>5</revnumber>
+						<date>2012-08-02</date>
+						<authorinitials>NG</authorinitials>
+						<revremark>Modified content model to allow multiple renditions of an an
+							equation. The sequential order of the renditions should be take as the
+							order                         of preference.</revremark>
+					</revision>
+				</revhistory>
+				<section xmlns="http://docbook.org/ns/docbook">
+					<para>The equation type is used as the base for both inline and block equations.
+						This model                         allows any one of inline text, MathML or
+						an external graphic.</para>
+				</section>
+			</xs:documentation>
+		</xs:annotation>
+		<xs:group maxOccurs="unbounded" ref="oecdEquationTypeContent"/>
+		<xs:attributeGroup ref="oecdEquationTypeAttributes"/>
+	</xs:complexType>
+	<xs:complexType id="oecdBlockEquationType" name="oecdBlockEquationType">
+		<xs:annotation>
+			<xs:documentation>
+				<section xmlns="http://docbook.org/ns/docbook">
+					<revision>
+						<revnumber>4</revnumber>
+						<date>2012-04-15</date>
+						<author>
+							<email>nicg@corbas.co.uk</email>
+							<personname>Nic Gibson</personname>
+						</author>
+						<revremark>Initial version.</revremark>
+					</revision>
+					<para>The block equation type extends the base equation type to add
+						annotation attribures.</para>
+				</section>
+			</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="oecdEquationType">
+				<xs:attributeGroup ref="oecdBlockEquationTypeAttributes"/>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:annotation>
+		<xs:documentation>
+			<section xmlns="http://docbook.org/ns/docbook">
+				<title>OECD Schemas</title>
+				<subtitle>Chemical Structure Components</subtitle>
+				<revhistory>
+					<title>Change Log</title>
+					<revision>
+						<revnumber>1</revnumber>
+						<date>2012-03-29</date>
+						<author>
+							<email>nicg@corbas.co.uk</email>
+							<personname>Nic Gibson</personname>
+						</author>
+						<revremark>Initial Version</revremark>
+					</revision>
+					<revision>
+						<revnumber>2</revnumber>
+						<date>2012-03-03</date>
+						<author>
+							<email>nicg@corbas.co.uk</email>
+							<personname>Nic Gibson</personname>
+						</author>
+						<revremark>Modified oecdChemicalStructureTypeContent to replace 'oecdInline'
+							with 'text'.</revremark>
+					</revision>
+					<revision>
+						<revnumber>3</revnumber>
+						<date>2012-04-15</date>
+						<author>
+							<email>nicg@corbas.co.uk</email>
+							<personname>Nic Gibson</personname>
+						</author>
+						<revremark>Created oecdBlockChemicalStructureType derived from
+							oecdChemicalStructureType in order to add annotations as it only makes
+							sense to annotate blocks.</revremark>
+					</revision>
+					<revision>
+						<revnumber>4</revnumber>
+						<date>2012-08-02</date>
+						<authorinitials>NG</authorinitials>
+						<revremark>Updated oecdChemicalStructureType to add multiple
+							renditions.</revremark>
+					</revision>
+					<revision>
+						<revnumber>5</revnumber>
+						<date>2012-10-05</date>
+						<authorinitials>NG</authorinitials>
+						<revremark>Wrapped global attributes in groups to avoid namespace prefix
+							requirement.</revremark>
+					</revision>
+				</revhistory>
+			</section>
+		</xs:documentation>
+	</xs:annotation>
+	<!-- IMPORTS AND INCLUDES -->
+	<!-- GLOBAL ELEMENTS -->
+	<xs:element id="inlineChemicalStructure" name="inline-chemical-structure"
+		type="oecdChemicalStructureType"/>
+	<xs:element id="chemicalStructure" name="chemical-structure"
+		type="oecdBlockChemicalStructureType"/>
+	<!-- COMPLEX TYPES -->
+	<!-- chemical structure types-->
+	<xs:attributeGroup id="oecdChemicalStructureTypeAttributes"
+		name="oecdChemicalStructureTypeAttributes">
+		<xs:annotation>
+			<xs:documentation>
+				<section xmlns="http://docbook.org/ns/docbook">
+					<para>Attributes for chemical structures. Grouped to allow easy override.</para>
+				</section>
+			</xs:documentation>
+		</xs:annotation>
+		<xs:attributeGroup ref="oecdCommonAttributes"/>
+	</xs:attributeGroup>
+	<xs:attributeGroup id="oecdBlockChemicalStructureTypeAttributes"
+		name="oecdBlockChemicalStructureTypeAttributes">
+		<xs:annotation>
+			<xs:documentation>
+				<section xmlns="http://docbook.org/ns/docbook">
+					<revision>
+						<revnumber>3</revnumber>
+						<date>2012-04-15</date>
+						<author>
+							<email>nicg@corbas.co.uk</email>
+							<personname>Nic Gibson</personname>
+						</author>
+						<revremark>Initial version.</revremark>
+					</revision>
+					<para>Attributes for block chemical structures. Grouped to allow easy
+						override.</para>
+				</section>
+			</xs:documentation>
+		</xs:annotation>
+		<xs:attributeGroup ref="ANNOTATIONS-GROUP"/>
+	</xs:attributeGroup>
+	<xs:group id="oecdChemicalStructureTypeContent" name="oecdChemicalStructureTypeContent">
+		<xs:annotation>
+			<xs:documentation>
+				<revision>
+					<revnumber>0.2</revnumber>
+					<date>2012-03-03</date>
+					<author>
+						<email>nicg@corbas.co.uk</email>
+						<personname>Nic Gibson</personname>
+					</author>
+					<revremark>Modified to replace 'oecdInline' with 'text'.</revremark>
+				</revision>
+				<section xmlns="http://docbook.org/ns/docbook">
+					<para>Content for chemical structures. Grouped to allow easy override.</para>
+				</section>
+			</xs:documentation>
+		</xs:annotation>
+		<xs:choice>
+			<xs:any namespace="http://www.xml-cml.org/schema"/>
+			<xs:element ref="text"/>
+			<xs:group ref="oecdGraphicsGroup"/>
+		</xs:choice>
+	</xs:group>
+	<xs:complexType id="oecdChemicalStructureType" name="oecdChemicalStructureType">
+		<xs:annotation>
+			<xs:documentation>
+				<revhistory>
+					<title>Change Log</title>
+					<revision>
+						<revnumber>4</revnumber>
+						<date>2012-08-02</date>
+						<authorinitials>NG</authorinitials>
+						<revremark>Changed reference to oecdChemicalStructureTypeContent to make
+							maxOccurs unbounded, allowing for multiple renditions.</revremark>
+					</revision>
+				</revhistory>
+				<section xmlns="http://docbook.org/ns/docbook">
+					<para>The chemical structure type is used as the base for both inline and block
+						structures. This model allows any one of inline text, CML or an external
+						graphic.</para>
+				</section>
+			</xs:documentation>
+		</xs:annotation>
+		<xs:group maxOccurs="unbounded" ref="oecdChemicalStructureTypeContent"/>
+		<xs:attributeGroup ref="oecdChemicalStructureTypeAttributes"/>
+	</xs:complexType>
+	<xs:complexType id="oecdBlockChemicalStructureType" name="oecdBlockChemicalStructureType">
+		<xs:annotation>
+			<xs:documentation>
+				<section xmlns="http://docbook.org/ns/docbook">
+					<revision>
+						<revnumber>3</revnumber>
+						<date>2012-04-15</date>
+						<author>
+							<email>nicg@corbas.co.uk</email>
+							<personname>Nic Gibson</personname>
+						</author>
+						<revremark>Initial version.</revremark>
+					</revision>
+					<para>Block checmical structures may have annotations unlike inlines.</para>
+				</section>
+			</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="oecdChemicalStructureType">
+				<xs:attributeGroup ref="oecdBlockChemicalStructureTypeAttributes"/>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:annotation>
+		<xs:documentation>
+			<section xmlns="http://docbook.org/ns/docbook">
+				<title>OECD Schemas</title>
+				<subtitle>Index Components</subtitle>
+				<revhistory>
+					<title>Change Log</title>
+					<revision>
+						<revnumber>1</revnumber>
+						<date>2012-03-29</date>
+						<author>
+							<email>nicg@corbas.co.uk</email>
+							<personname>Nic Gibson</personname>
+						</author>
+						<revremark>Initial Version</revremark>
+					</revision>
+					<revision>
+						<revnumber>2</revnumber>
+						<date>2012-03-30</date>
+						<author>
+							<email>nicg@corbas.co.uk</email>
+							<personname>Nic Gibson</personname>
+						</author>
+						<revremark>Deleted simple types left in from beta version by accident. Added
+							index element.</revremark>
+					</revision>
+				</revhistory>
+			</section>
+		</xs:documentation>
+	</xs:annotation>
+	<!-- INCLUDES AND IMPORTS -->
+	<!-- GLOBAL ELEMENTS -->
+	<xs:element id="indexTerm" name="index-term" type="oecdIndexTermType"/>
+	<xs:element id="index" name="index" type="oecdIndexType"/>
+	<!-- GLOBAL GROUPS -->
+	<!-- COMPLEX TYPES -->
+	<xs:attributeGroup id="oecdIndexTermLevelsTypeAttributes"
+		name="oecdIndexTermLevelsTypeAttributes">
+		<xs:annotation>
+			<xs:documentation>
+				<section xmlns="http://docbook.org/ns/docbook">
+					<para>Attributes for the children of the index term.</para>
+				</section>
+			</xs:documentation>
+		</xs:annotation>
+		<xs:attributeGroup ref="oecdCommonAttributes"/>
+		<xs:attributeGroup ref="oecdLinkingAttributes"/>
+	</xs:attributeGroup>
+	<xs:complexType id="oecdIndexTermLevelsType" name="oecdIndexTermLevelsType">
+		<xs:annotation>
+			<xs:documentation>
+				<section xmlns="http://docbook.org/ns/docbook">
+					<para>Shared model for all the children of an index term. They
+						are all text only with attributes.</para>
+				</section>
+			</xs:documentation>
+		</xs:annotation>
+		<xs:simpleContent>
+			<xs:extension base="xs:string">
+				<xs:attributeGroup ref="oecdIndexTermLevelsTypeAttributes"/>
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+	<xs:attributeGroup id="oecdIndexTermTypeAttributes" name="oecdIndexTermTypeAttributes">
+		<xs:annotation>
+			<xs:documentation>
+				<section xmlns="http://docbook.org/ns/docbook">
+					<para>Attributes for the index term type. Grouped for easy overrides.</para>
+				</section>
+			</xs:documentation>
+		</xs:annotation>
+		<xs:attributeGroup ref="oecdCommonAttributes"/>
+		<xs:attributeGroup ref="oecdLinkingAttributes"/>
+		<xs:attribute id="indexItemtype" name="type" type="xs:string">
+			<xs:annotation>
+				<xs:documentation>
+					<section xmlns="http://docbook.org/ns/docbook">
+						<para>Multiple indexes can be created by grouping index terms with
+							the type attribute. When an index is rendered it must render all
+							index terms with the same type as that on the index element
+							itself.</para>
+					</section>
+				</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+	</xs:attributeGroup>
+	<xs:group id="oecdIndexTermTypeContent" name="oecdIndexTermTypeContent">
+		<xs:annotation>
+			<xs:documentation>
+				<section xmlns="http://docbook.org/ns/docbook">
+					<para>Content for the index term type. Grouped for easy overrides.</para>
+				</section>
+			</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element form="qualified" name="primary" type="oecdIndexTermLevelsType"/>
+			<xs:choice minOccurs="0">
+				<xs:sequence>
+					<xs:element form="qualified" name="secondary" type="oecdIndexTermLevelsType"/>
+					<xs:choice minOccurs="0">
+						<xs:sequence>
+							<xs:element form="qualified" name="tertiary"
+								type="oecdIndexTermLevelsType"/>
+							<xs:choice minOccurs="0">
+								<xs:element form="qualified" name="see"
+									type="oecdIndexTermLevelsType"/>
+								<xs:element form="qualified" maxOccurs="unbounded" name="see-also"
+									type="oecdIndexTermLevelsType"/>
+							</xs:choice>
+						</xs:sequence>
+						<xs:element form="qualified" name="see" type="oecdIndexTermLevelsType"/>
+						<xs:element form="qualified" maxOccurs="unbounded" name="see-also"
+							type="oecdIndexTermLevelsType"/>
+					</xs:choice>
+				</xs:sequence>
+				<xs:element form="qualified" name="see" type="oecdIndexTermLevelsType"/>
+				<xs:element form="qualified" maxOccurs="unbounded" name="see-also"
+					type="oecdIndexTermLevelsType"/>
+			</xs:choice>
+		</xs:sequence>
+	</xs:group>
+	<xs:complexType id="oecdIndexTermType" name="oecdIndexTermType">
+		<xs:annotation>
+			<xs:documentation>
+				<section xmlns="http://docbook.org/ns/docbook">
+					<para>An indexterm is used to create one or more indexes (the type attribute
+						shared by the                     index element and one or more index terms
+						creates a distinct index). Each term consists                     of a
+						primary phrase followed by optional secondary and tertiary phrases.
+						'seeAlso' elements                     can be used to direct the reader to
+						additional index entries. Additional a 'see' element                     may
+						be used to direct the user to an alternative index entry.</para>
+				</section>
+			</xs:documentation>
+		</xs:annotation>
+		<xs:group ref="oecdIndexTermTypeContent"/>
+		<xs:attributeGroup ref="oecdIndexTermTypeAttributes"/>
+	</xs:complexType>
+	<!-- index -->
+	<xs:attributeGroup id="oecdIndexTypeAttributes" name="oecdIndexTypeAttributes">
+		<xs:annotation>
+			<xs:documentation>
+				<section xmlns="http://docbook.org/ns/docbook">
+					<para>Attributes for the index term type. Grouped for easy overrides.</para>
+				</section>
+			</xs:documentation>
+		</xs:annotation>
+		<xs:attributeGroup ref="oecdCommonAttributes"/>
+		<xs:attributeGroup ref="oecdLinkingAttributes"/>
+		<xs:attribute id="indexType" name="type" type="xs:string">
+			<xs:annotation>
+				<xs:documentation>
+					<section xmlns="http://docbook.org/ns/docbook">
+						<para>Multiple indexes can be created by grouping index terms with
+							the type attribute. When an index is rendered it must render all
+							index terms with the same type as that on the index element
+							itself.</para>
+					</section>
+				</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+	</xs:attributeGroup>
+	<xs:complexType id="oecdIndexType" name="oecdIndexType">
+		<xs:annotation>
+			<xs:documentation>
+				<revision>
+					<revnumber>0.2</revnumber>
+					<date>2012-03-30</date>
+					<author>
+						<email>nicg@corbas.co.uk</email>
+						<personname>Nic Gibson</personname>
+					</author>
+					<revremark>Initial version</revremark>
+				</revision>
+				<section xmlns="http://docbook.org/ns/docbook">
+					<para>Content for the index term type. Grouped for easy overrides. This an empty
+						type.</para>
+				</section>
+			</xs:documentation>
+		</xs:annotation>
+		<xs:attributeGroup ref="oecdIndexTypeAttributes"/>
+	</xs:complexType>
+	<xs:annotation>
+		<xs:documentation>
+			<section xmlns="http://docbook.org/ns/docbook">
+				<title>OECD Schemas</title>
+				<subtitle>Citation Model</subtitle>
+				<revhistory>
+					<title>Change Log</title>
+					<revision>
+						<revnumber>1</revnumber>
+						<date>2011-12-02</date>
+						<author>
+							<email>nicg@corbas.co.uk</email>
+							<personname>Nic Gibson</personname>
+						</author>
+						<revremark>Initial Version</revremark>
+					</revision>
+				</revhistory>
+				<para>A citation element references an existing bibliographic reference stored as a
+					mods element elsewhere in the document or in an external data store.</para>
+			</section>
+		</xs:documentation>
+	</xs:annotation>
+	<!-- IMPORTS AND INCLUDES -->
+	<!-- GLOBAL ELEMENTS -->
+	<xs:element name="citation" type="oecdCitationType"/>
+	<!-- COMPLEX TYPES -->
+	<xs:attributeGroup id="oecdCitationTypeAttributes" name="oecdCitationTypeAttributes">
+		<xs:annotation>
+			<xs:documentation>
+				<section xmlns="http://docbook.org/ns/docbook">
+					<para>Citation attributes for easy override</para>
+					<para>Citations either content an internal reference in the form of an id
+						reference or an external reference in the form of a URI. XML Schema does not
+						allow us to constrain an                         element to either one of
+						two attributes so we use a Schematron annotation to express this
+						requirement.</para>
+				</section>
+			</xs:documentation>
+			<xs:appinfo>
+				<assert test="@biblioRef or @xlink:href"
+					xmlns="http://purl.oclc.org/dsdl/schematron">Citations may only refer to one of
+					an internal or external bibliographic entry.</assert>
+			</xs:appinfo>
+		</xs:annotation>
+		<xs:attributeGroup ref="oecdCommonAttributes"/>
+		<xs:attributeGroup ref="oecdLinkingAttributes"/>
+		<xs:attributeGroup ref="BIBLIOREF-GROUP"/>
+	</xs:attributeGroup>
+	<xs:group id="oecdCitationTypeContent" name="oecdCitationTypeContent">
+		<xs:annotation>
+			<xs:documentation>
+				<section xmlns="http://docbook.org/ns/docbook">
+					<para>Citation contentfor easy override</para>
+					<para>Citations either content an internal reference in the form of an id
+						reference or an external reference in the form of a URI. We allow the
+						citation element to have inline                         content in order to
+						allow a mechanism for overriding the rendition of the cited content.</para>
+				</section>
+			</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element maxOccurs="unbounded" minOccurs="0" ref="metadata"/>
+			<xs:element maxOccurs="unbounded" minOccurs="0" ref="oecd-inline"/>
+		</xs:sequence>
+	</xs:group>
+	<xs:complexType id="oecdCitationType" mixed="true" name="oecdCitationType">
+		<xs:annotation>
+			<xs:documentation>
+				<section xmlns="http://docbook.org/ns/docbook">
+					<para>A citation element references an existing bibliographic reference stored
+						as a mods element elsewhere in the document or in an external data
+						store.</para>
+				</section>
+			</xs:documentation>
+		</xs:annotation>
+		<xs:group ref="oecdCitationTypeContent"/>
+		<xs:attributeGroup ref="oecdCitationTypeAttributes"/>
+	</xs:complexType>
+	<!-- ATTRIBUTES -->
+	<xs:attributeGroup name="BIBLIOREF-GROUP">
+		<xs:attribute id="biblioRef" name="biblio-ref" type="xs:IDREF">
+			<xs:annotation>
+				<xs:documentation>
+					<section xmlns="http://docbook.org/ns/docbook">
+						<para>The biblio-ref attribute refers to a bibliographic entry elsewhere in
+							the current document. A schematron assertion is used to ensure that it
+							points at something                             valid.</para>
+						<remark>The assertion needs to be made more intelligent - should be type
+							based.</remark>
+					</section>
+				</xs:documentation>
+				<xs:appinfo>
+					<assert test="local-name(id(@biblioRef) = 'mods'"
+						xmlns="http://purl.oclc.org/dsdl/schematron"/>
+				</xs:appinfo>
+			</xs:annotation>
+		</xs:attribute>
+	</xs:attributeGroup>
+	<xs:annotation>
+		<xs:documentation>
+			<section xmlns="http://docbook.org/ns/docbook">
+				<title>OECD Schemas</title>
+				<subtitle>General inline models</subtitle>
+				<revhistory>
+					<title>Change Log</title>
+					<revision>
+						<revnumber>1</revnumber>
+						<date>2011-12-02</date>
+						<author>
+							<email>nicg@corbas.co.uk</email>
+							<personname>Nic Gibson</personname>
+						</author>
+						<revremark>Initial Version</revremark>
+					</revision>
+				</revhistory>
+			</section>
+		</xs:documentation>
+	</xs:annotation>
+	<!-- IMPORTS AND INCLUDES -->
+	<!-- GLOBAL ELEMENTS -->
+	<xs:element name="comment" type="oecdCommentType"/>
+	<xs:element name="revision-start" type="oecdRevisionStartType">
+		<xs:annotation>
+			<xs:appinfo>
+				<assert test="following::revisionEnd[@xml:id = current()/@revisionEnd]"
+					xmlns="http://purl.oclc.org/dsdl/schematron">A matching revision end marker must
+					exist for each revision start and it must follow the start.</assert>
+			</xs:appinfo>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="revision-end" type="oecdRevisionEndType"/>
+	<!-- GLOBAL GROUPS -->
+	<xs:group name="oecdRevisionsGroup">
+		<xs:choice>
+			<xs:element ref="revision-start"/>
+			<xs:element ref="revision-end"/>
+		</xs:choice>
+	</xs:group>
+	<!-- COMPLEX TYPES -->
+	<xs:attributeGroup id="oecdCommentTypeAttributes" name="oecdCommentTypeAttributes">
+		<xs:annotation>
+			<xs:documentation>
+				<p xmlns="http://docbook.org/ns/docbook">Attributes for the oecdCommentType complex
+					type     grouped together for easy reuse and customisation.</p>
+			</xs:documentation>
+		</xs:annotation>
+		<xs:attributeGroup ref="oecdCommonAttributes"/>
+	</xs:attributeGroup>
+	<xs:group id="oecdCommentTypeContent" name="oecdCommentTypeContent">
+		<xs:annotation>
+			<xs:documentation>
+				<p xmlns="http://docbook.org/ns/docbook">Content for the oecdCommentType complex
+					type      grouped together for easy reuse and customisation.</p>
+				<p>Metadata checking required in schematron when user name and timestamp properties
+					are finalised.</p>
+			</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element ref="metadata"/>
+			<xs:group maxOccurs="unbounded" ref="oecdInlineGroup"/>
+		</xs:sequence>
+	</xs:group>
+	<xs:complexType id="oecdCommentType" mixed="true" name="oecdCommentType">
+		<xs:annotation>
+			<xs:documentation>
+				<p xmlns="http://docbook.org/ns/docbook">This type represents author comments     in
+					text.</p>
+			</xs:documentation>
+		</xs:annotation>
+		<xs:group maxOccurs="unbounded" ref="oecdCommentTypeContent"/>
+		<xs:attributeGroup ref="oecdCommentTypeAttributes"/>
+	</xs:complexType>
+	<xs:attributeGroup id="oecdRevisionStartTypeAttribs" name="oecdRevisionStartTypeAttribs">
+		<xs:annotation>
+			<xs:documentation>
+				<p xmlns="http://docbook.org/ns/docbook">Attributes for the oecdRevisionStartType
+					complex type      grouped together for easy reuse and customisation.</p>
+			</xs:documentation>
+		</xs:annotation>
+		<xs:attributeGroup ref="oecdCommonAttributes"/>
+		<xs:attributeGroup ref="REVISIONTYPE-GROUP"/>
+		<xs:attributeGroup ref="REVISIONTIME-GROUP"/>
+		<xs:attributeGroup ref="REVISIONEND-GROUP"/>
+	</xs:attributeGroup>
+	<xs:group id="oecdRevisionStartTypeContent" name="oecdRevisionStartTypeContent">
+		<xs:annotation>
+			<xs:documentation>
+				<p xmlns="http://docbook.org/ns/docbook">Content for the oecdRevisionStartType
+					complex type      grouped together for easy reuse and customisation.</p>
+			</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element ref="metadata"/>
+			<!-- required -->
+			<xs:element minOccurs="0" ref="comment"/>
+		</xs:sequence>
+	</xs:group>
+	<xs:complexType id="oecdRevisionStartType" name="oecdRevisionStartType">
+		<xs:annotation>
+			<xs:documentation>
+				<p xmlns="http://docbook.org/ns/docbook">The revision start type is used to
+					represent the start     of an insertion or deletion. It refers to a matching
+					revision end element (of type     oecdRevisionEnd).</p>
+				<p>Additional rules apply to this element - an insertion cannot be placed inside a
+					deletion.</p>
+			</xs:documentation>
+		</xs:annotation>
+		<xs:group ref="oecdRevisionStartTypeContent"/>
+		<xs:attributeGroup ref="oecdRevisionStartTypeAttribs"/>
+	</xs:complexType>
+	<xs:attributeGroup id="oecdRevisionEndTypeAttribs" name="oecdRevisionEndTypeAttribs">
+		<xs:annotation>
+			<xs:documentation>
+				<p xmlns="http://docbook.org/ns/docbook">Attributes for the oecdRevisionEndType
+					complex type      grouped together for easy reuse and customisation. The id
+					attribute of this element     is required as it it always referenced by the
+					start element.</p>
+			</xs:documentation>
+		</xs:annotation>
+		<xs:attributeGroup ref="oecdIdRequiredXmlAttributes"/>
+	</xs:attributeGroup>
+	<xs:complexType name="oecdRevisionEndType">
+		<xs:annotation>
+			<xs:documentation>
+				<p xmlns="http://docbook.org/ns/docbook">The revision end type is simply a marker
+					that     can be referred to by the start element. All information is carried on
+					the start.</p>
+			</xs:documentation>
+		</xs:annotation>
+		<xs:attributeGroup ref="oecdRevisionEndTypeAttribs"/>
+	</xs:complexType>
+	<!-- SIMPLE TYPES -->
+	<xs:attributeGroup name="REVISIONTYPE-GROUP">
+		<xs:attribute name="revision-type" use="required">
+			<xs:simpleType>
+				<xs:restriction base="xs:string">
+					<xs:enumeration value="deletion"/>
+					<xs:enumeration value="insertion"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+	</xs:attributeGroup>
+	<xs:attributeGroup name="REVISIONTIME-GROUP">
+		<xs:attribute name="revision-time" use="required">
+			<xs:simpleType>
+				<xs:restriction base="xs:dateTime"/>
+			</xs:simpleType>
+		</xs:attribute>
+	</xs:attributeGroup>
+	<xs:attributeGroup name="REVISIONEND-GROUP">
+		<xs:attribute name="revision-end" use="required">
+			<xs:simpleType>
+				<xs:restriction base="xs:IDREF"/>
+			</xs:simpleType>
+		</xs:attribute>
+	</xs:attributeGroup>
+	<!-- GLOBAL GROUPS -->
+	<xs:group id="oecdInlineGroup" name="oecdInlineGroup">
+		<xs:annotation>
+			<xs:documentation>
+				<section xmlns="http://docbook.org/ns/docbook">
+					<para>the oecdInlineGroup provides simple access to inlines defined in this
+						module whether or not they are derived from oecdInline </para>
+				</section>
+			</xs:documentation>
+		</xs:annotation>
+		<xs:choice>
+			<xs:element maxOccurs="unbounded" minOccurs="0" ref="oecd-inline"/>
+			<!-- base of a substitution group -->
+			<xs:element maxOccurs="unbounded" minOccurs="0" ref="inline-equation"/>
+			<xs:element maxOccurs="unbounded" minOccurs="0" ref="inline-chemical-structure"/>
+			<xs:element maxOccurs="unbounded" minOccurs="0" ref="inline-graphic"/>
+			<xs:element maxOccurs="unbounded" minOccurs="0" ref="footnote"/>
+			<xs:element maxOccurs="unbounded" minOccurs="0" ref="index-term"/>
+			<xs:element maxOccurs="unbounded" minOccurs="0" ref="mods:mods"/>
+			<xs:element maxOccurs="unbounded" minOccurs="0" ref="citation"/>
+			<xs:group maxOccurs="unbounded" minOccurs="0" ref="oecdRevisionsGroup"/>
+		</xs:choice>
+	</xs:group>
+	<!-- GLOBAL ELEMENTS -->
+	<!-- TODO: determine if these really all should be the same type -->
+	<xs:element id="title" name="title" type="oecdTitleType"/>
+	<xs:element id="subTitle" name="sub-title" type="oecdTitleType"/>
+	<xs:element id="shortTitle" name="alternative-title" type="oecdAlternativeTitleType"/>
+	<xs:element id="caption" name="caption" type="oecdTitleType"/>
+	<!-- GLOBAL GROUPS -->
+	<xs:group id="oecdTitleGroup" name="oecdTitleGroup">
+		<xs:annotation>
+			<xs:documentation>
+				<section xmlns="http://docbook.org/ns/docbook">
+					<title>Change Log</title>
+					<revhistory>
+						<revision>
+							<revnumber>4</revnumber>
+							<date>2012-05-25</date>
+							<authorinitials>NG</authorinitials>
+							<revremark>Modified -  @minOccurs of 'shortTitle' accidentally set to
+								1. Changed to 0.</revremark>
+						</revision>
+					</revhistory>
+				</section>
+			</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element ref="title"/>
+			<xs:element minOccurs="0" ref="sub-title"/>
+			<xs:element maxOccurs="unbounded" minOccurs="0" ref="alternative-title"/>
+		</xs:sequence>
+	</xs:group>
+	<!-- GLOBAL TYPES -->
+	<xs:attributeGroup id="oecdTitleTypeAttributes" name="oecdTitleTypeAttributes">
+		<xs:annotation>
+			<xs:documentation>
+				<section xmlns="http://docbook.org/ns/docbook">
+					<para>Attribute group for title type elements to allow easy overrides.</para>
+				</section>
+			</xs:documentation>
+		</xs:annotation>
+		<xs:attributeGroup ref="oecdCommonAttributes"/>
+		<xs:attributeGroup ref="oecdLinkingAttributes"/>
+	</xs:attributeGroup>
+	<xs:group id="oecdTitleTypeContent" name="oecdTitleTypeContent">
+		<xs:annotation>
+			<xs:documentation>
+				<section xmlns="http://docbook.org/ns/docbook">
+					<para>Content for title type elements to allow easy overrides.</para>
+				</section>
+			</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:group maxOccurs="unbounded" minOccurs="0" ref="oecdInlineGroup"/>
+		</xs:sequence>
+	</xs:group>
+	<xs:complexType id="oecdTitleType" mixed="true" name="oecdTitleType">
+		<xs:annotation>
+			<xs:documentation>
+				<section xmlns="http://docbook.org/ns/docbook">
+					<para>Title elements (and subtitles) share this type.</para>
+				</section>
+			</xs:documentation>
+		</xs:annotation>
+		<xs:group ref="oecdTitleTypeContent"/>
+		<xs:attributeGroup ref="oecdTitleTypeAttributes"/>
+	</xs:complexType>
+	<!-- abbreviated title -->
+	<xs:attributeGroup id="oecdShortTitleTypeAttributes" name="oecdShortTitleTypeAttributes">
+		<xs:annotation>
+			<xs:documentation>
+				<section xmlns="http://docbook.org/ns/docbook">
+					<para>Attribute group for short title type elements to allow easy
+						overrides.</para>
+				</section>
+			</xs:documentation>
+		</xs:annotation>
+		<xs:attributeGroup ref="oecdCommonAttributes"/>
+		<xs:attributeGroup ref="oecdLinkingAttributes"/>
+	</xs:attributeGroup>
+	<xs:complexType id="oecdShortTitleType" name="oecdAlternativeTitleType">
+		<xs:annotation>
+			<xs:documentation>
+				<section xmlns="http://docbook.org/ns/docbook">
+					<para>Short title type. This element holds a text only abbreviated title</para>
+				</section>
+			</xs:documentation>
+		</xs:annotation>
+		<xs:simpleContent>
+			<xs:extension base="xs:string">
+				<xs:attributeGroup ref="oecdShortTitleTypeAttributes"/>
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+	<!-- SIMPLE TYPES -->
+	<xs:annotation>
+		<xs:documentation>
+			<section xmlns="http://docbook.org/ns/docbook">
+				<section>
+					<title>OECD.Author</title>
+					<subtitle>Paragraph Schema</subtitle>
+					<revhistory>
+						<title>Change Log</title>
+						<revision>
+							<revnumber>1</revnumber>
+							<date>2011-12-02</date>
+							<author>
+								<email>nicg@corbas.co.uk</email>
+								<personname>Nic Gibson</personname>
+							</author>
+							<revremark>Initial Version</revremark>
+						</revision>
+						<revision>
+							<revnumber>2</revnumber>
+							<date>2012-04-13</date>
+							<authorinitials>NG</authorinitials>
+							<revremark>Added annotations attribute.</revremark>
+						</revision>
+						<revision>
+							<revnumber>3</revnumber>
+							<date>2012-10-05</date>
+							<authorinitials>NG</authorinitials>
+							<revremark>Wrapped global attributes in groups to avoid namespace prefix
+								requirement.</revremark>
+						</revision>
+						<revision>
+							<revnumber>4</revnumber>
+							<date>2012-11-05</date>
+							<authorinitials>NG</authorinitials>
+							<revremark>Included the embeddable blocks into paragraphs to resolve
+								issue .</revremark>
+						</revision>
+						<revision>
+							<revnumber>5</revnumber>
+							<date>2012-12-06</date>
+							<authorinitials>JC</authorinitials>
+							<revremark>Modified para attributes to align numebring model with
+								section.</revremark>
+						</revision>
+					</revhistory>
+					<para>This model defines paragraphs and other simple components with equivalent
+						hierarchical position.</para>
+				</section>
+			</section>
+		</xs:documentation>
+	</xs:annotation>
+	<!-- IMPORTS AND INCLUDES  -->
+	<!-- GLOBAL ELEMENTS -->
+	<xs:element id="para" name="para" type="oecdParagraphType">
+		<xs:annotation>
+			<xs:appinfo>
+				<rule context="para" xmlns="http://purl.oclc.org/dsdl/schematron">
+					<assert test="not(normalize-space(.) = '')"
+						xmlns="http://purl.oclc.org/dsdl/schematron">Paragraphs must not be
+						empty.</assert>
+				</rule>
+			</xs:appinfo>
+		</xs:annotation>
+	</xs:element>
+	<xs:element id="formalPara" name="formal-para" type="oecdFormalParagraphType"/>
+	<xs:element id="paragraphGroup" name="paragraph-group" type="oecdParagraphGroupType"/>
+	<!-- GLOBAL GROUPS -->
+	<xs:group id="oecdParagraphGroup" name="oecdParagraphGroup">
+		<xs:choice>
+			<xs:element ref="para"/>
+			<xs:element ref="formal-para"/>
+			<xs:element ref="paragraph-group"/>
+		</xs:choice>
+	</xs:group>
+	<!-- GLOBAL TYPES -->
+	<!-- basic paragraph -->
+	<xs:attributeGroup id="oecdParagraphTypeAttributes" name="oecdParagraphTypeAttributes">
+		<xs:annotation>
+			<xs:documentation>
+				<section xmlns="http://docbook.org/ns/docbook">
+					<revhistory>
+						<revision>
+							<revnumber>2</revnumber>
+							<date>2012-04-13</date>
+							<authorinitials>NG</authorinitials>
+							<revremark>Added annotations attribute.</revremark>
+						</revision>
+					</revhistory>
+					<para>Attribute group for paragraph elements to allow easy overrides.</para>
+				</section>
+			</xs:documentation>
+		</xs:annotation>
+		<xs:attribute id="para-continuation" name="continuation" type="oecdComponentContinuation">
+			<xs:annotation>
+				<xs:documentation>
+					<section xmlns="http://docbook.org/ns/docbook">
+						<revhistory>
+							<title>Change Log</title>
+							<revision>
+								<revnumber>1</revnumber>
+								<date>2012-12-06</date>
+								<author>JC</author>
+								<revremark>Applied generic type</revremark>
+								<revremark>Applied unique ID to continuation</revremark>
+							</revision>
+						</revhistory>
+					</section>
+					<section xmlns="http://docbook.org/ns/docbook">
+						<para>Numbering continuation flag for paras</para>
+					</section>
+				</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute id="para-start" name="start" type="xs:string">
+			<xs:annotation>
+				<xs:documentation>
+					<section xmlns="http://docbook.org/ns/docbook">
+						<revhistory>
+							<title>Change Log</title>
+							<revision>
+								<revnumber>1</revnumber>
+								<date>2012-12-06</date>
+								<author>JC</author>
+								<revremark>Changed type to string</revremark>
+								<revremark>Applied unique ID to start</revremark>
+							</revision>
+						</revhistory>
+					</section>
+					<section xmlns="http://docbook.org/ns/docbook">
+						<para>Starting count for paras which have their continuation style set to
+							'start'.</para>
+					</section>
+				</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute id="para-number" name="number" type="xs:string">
+			<xs:annotation>
+				<xs:documentation>
+					<section xmlns="http://docbook.org/ns/docbook">
+						<revhistory>
+							<title>Change Log</title>
+							<revision>
+								<revnumber>1</revnumber>
+								<date>2012-12-06</date>
+								<author>JC</author>
+								<revremark>Changed type to string</revremark>
+								<revremark>Applied unique ID to number</revremark>
+							</revision>
+						</revhistory>
+					</section>
+					<section xmlns="http://docbook.org/ns/docbook">
+						<para>Numbering override for paras where the author needs to override the
+							para numbering completely.</para>
+					</section>
+				</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attributeGroup ref="oecdCommonAttributes"/>
+		<xs:attributeGroup ref="oecdLinkingAttributes"/>
+		<xs:attributeGroup ref="ANNOTATIONS-GROUP"/>
+	</xs:attributeGroup>
+	<xs:group id="oecdParagraphTypeContent" name="oecdParagraphTypeContent">
+		<xs:annotation>
+			<xs:documentation>
+				<section xmlns="http://docbook.org/ns/docbook">
+					<para>Group for paragraph element content to allow easy overrides.</para>
+				</section>
+			</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element minOccurs="0" ref="metadata"/>
+			<xs:group maxOccurs="unbounded" minOccurs="0" ref="oecdInlineGroup"/>
+			<xs:group maxOccurs="unbounded" minOccurs="0" ref="oecdEmbeddableBlockGroup"/>
+		</xs:sequence>
+	</xs:group>
+	<xs:complexType id="oecdParagraphType" mixed="true" name="oecdParagraphType">
+		<xs:annotation>
+			<xs:documentation>
+				<section xmlns="http://docbook.org/ns/docbook">
+					<para>Base type for paragraph content.</para>
+				</section>
+			</xs:documentation>
+		</xs:annotation>
+		<xs:group ref="oecdParagraphTypeContent"/>
+		<xs:attributeGroup ref="oecdParagraphTypeAttributes"/>
+	</xs:complexType>
+	<!-- formal paragraphs -->
+	<xs:group id="oecdFormalParagraphTypeContent" name="oecdFormalParagraphTypeContent">
+		<xs:annotation>
+			<xs:documentation>
+				<section xmlns="http://docbook.org/ns/docbook">
+					<para>Group for paragraph element content to allow easy overrides.</para>
+				</section>
+			</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element minOccurs="0" ref="metadata"/>
+			<xs:element ref="title"/>
+			<xs:element ref="para"/>
+		</xs:sequence>
+	</xs:group>
+	<xs:complexType id="oecdFormalParagraphType" mixed="true" name="oecdFormalParagraphType">
+		<xs:annotation>
+			<xs:documentation>
+				<section xmlns="http://docbook.org/ns/docbook">
+					<para>Formal paragraphs - a paragraph with a title.</para>
+				</section>
+			</xs:documentation>
+		</xs:annotation>
+		<xs:group ref="oecdFormalParagraphTypeContent"/>
+		<xs:attributeGroup ref="oecdParagraphTypeAttributes"/>
+	</xs:complexType>
+	<!-- paragraph groups -->
+	<xs:attributeGroup id="oecdParagraphGroupTypeAttributes" name="oecdParagraphGroupTypeAttributes">
+		<xs:annotation>
+			<xs:documentation>
+				<section xmlns="http://docbook.org/ns/docbook">
+					<para>Group for paragraph group attributes to allow easy overrides.</para>
+				</section>
+			</xs:documentation>
+		</xs:annotation>
+		<xs:attributeGroup ref="oecdCommonAttributes"/>
+		<xs:attributeGroup ref="oecdLinkingAttributes"/>
+	</xs:attributeGroup>
+	<xs:group id="oecdParagraphGroupTypeContent" name="oecdParagraphGroupTypeContent">
+		<xs:annotation>
+			<xs:documentation>
+				<section xmlns="http://docbook.org/ns/docbook">
+					<para>Group for paragraph group content to allow easy overrides.</para>
+				</section>
+			</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element minOccurs="0" ref="metadata"/>
+			<xs:group minOccurs="0" ref="oecdTitleGroup"/>
+			<xs:choice maxOccurs="unbounded">
+				<xs:element ref="para"/>
+				<xs:element ref="formal-para"/>
+			</xs:choice>
+		</xs:sequence>
+	</xs:group>
+	<xs:complexType id="oecdParagraphGroupType" name="oecdParagraphGroupType">
+		<xs:annotation>
+			<xs:documentation>
+				<section xmlns="http://docbook.org/ns/docbook">
+					<para>A group of paragraphs. Functions like a section that cannot have any
+						substructure.</para>
+				</section>
+			</xs:documentation>
+		</xs:annotation>
+		<xs:group ref="oecdParagraphGroupTypeContent"/>
+		<xs:attributeGroup ref="oecdParagraphGroupTypeAttributes"/>
+	</xs:complexType>
+	<xs:annotation>
+		<xs:documentation>
+			<section xmlns="http://docbook.org/ns/docbook">
+				<section>
+					<title>OECD.Author</title>
+					<subtitle>Lists Schema</subtitle>
+					<revhistory>
+						<title>Change Log</title>
+						<revision>
+							<revnumber>1</revnumber>
+							<date>2012-01-08</date>
+							<author>
+								<email>nicg@corbas.co.uk</email>
+								<personname>Nic                                 Gibson</personname>
+							</author>
+							<revremark>Initial Version</revremark>
+						</revision>
+						<revision>
+							<revnumber>2</revnumber>
+							<date>2012-03-21</date>
+							<author>
+								<email>nicg@corbas.co.uk</email>
+								<personname>Nic                                 Gibson</personname>
+							</author>
+							<revremark>Added number attribute to ordered list items for
+								overrides</revremark>
+						</revision>
+						<revision>
+							<revnumber>3</revnumber>
+							<date>2012-03-03</date>
+							<author>
+								<email>nicg@corbas.co.uk</email>
+								<personname>Nic                                 Gibson</personname>
+							</author>
+							<revremark>Replaced include of inlines.xsd with
+								inline-group.xsd.</revremark>
+						</revision>
+						<revision>
+							<revnumber>4</revnumber>
+							<date>2012-04-16</date>
+							<author>
+								<email>nicg@corbas.co.uk</email>
+								<personname>Nic                                 Gibson</personname>
+							</author>
+							<revremark>Added annotations attribute to lists and list items.
+								Restructured                                 definition list to make
+								it useable for glossaries too.</revremark>
+						</revision>
+						<revision>
+							<revnumber>5</revnumber>
+							<date>2012-04-16</date>
+							<authorinitials>NG</authorinitials>
+							<revremark>Removed accidental mixed content models.</revremark>
+						</revision>
+						<revision>
+							<revnumber>6</revnumber>
+							<date>2012-10-05</date>
+							<authorinitials>NG</authorinitials>
+							<revremark>Wrapped global attributes in groups to avoid namespace prefix
+								requirement.</revremark>
+						</revision>
+						<revision>
+							<revnumber>7</revnumber>
+							<date>2012-10-29</date>
+							<authorinitials>NG</authorinitials>
+							<revremark>Modified content model for oecdDefinitionListTermType to
+								allow mixed                                 content.</revremark>
+						</revision>
+					</revhistory>
+					<revision>
+						<revnumber>8</revnumber>
+						<date>2011-11-06</date>
+						<author>JC</author>
+						<revremark>Modified oecdListContinuation.</revremark>
+					</revision>
+					<revision>
+						<revnumber>9</revnumber>
+						<date>2013-10-25</date>
+						<author>JC</author>
+						<revremark>Modified oecdItemizedListItemType to fix #6370.</revremark>
+						<revremark>Modified oecdItemizedListTypeAttributes to fix #6370.</revremark>
+					</revision>
+					<para>This model defines lists of various types</para>
+				</section>
+			</section>
+		</xs:documentation>
+	</xs:annotation>
+	<!-- IMPORTS AND INCLUDES  -->
+	<!-- NOTE - recursive inclusion -->
+	<!-- GLOBAL ELEMENTS -->
+	<xs:element id="itemizedList" name="itemized-list" type="oecdItemizedListType"/>
+	<xs:element id="orderedList" name="ordered-list" type="oecdOrderedListType"/>
+	<xs:element id="definitionList" name="definition-list" type="oecdDefinitionListType"/>
+	<!-- GLOBAL GROUPS -->
+	<xs:group id="oecdListGroup" name="oecdListGroup">
+		<xs:choice>
+			<xs:element ref="itemized-list"/>
+			<xs:element ref="ordered-list"/>
+			<xs:element ref="definition-list"/>
+		</xs:choice>
+	</xs:group>
+	<!-- GLOBAL TYPES -->
+	<!-- list items -->
+	<xs:attributeGroup id="oecdListItemTypeAttributes" name="oecdListItemTypeAttributes">
+		<xs:annotation>
+			<xs:documentation>
+				<section xmlns="http://docbook.org/ns/docbook">
+					<para>Attributes for list items.</para>
+				</section>
+			</xs:documentation>
+		</xs:annotation>
+		<xs:attributeGroup ref="oecdCommonAttributes"/>
+		<xs:attributeGroup ref="oecdLinkingAttributes"/>
+		<xs:attributeGroup ref="ANNOTATIONS-GROUP"/>
+	</xs:attributeGroup>
+	<xs:group id="oecdListItemTypeContent" name="oecdListItemTypeContent">
+		<xs:annotation>
+			<xs:documentation>
+				<section xmlns="http://docbook.org/ns/docbook">
+					<para>Content for list items.</para>
+				</section>
+			</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element minOccurs="0" ref="metadata"/>
+			<xs:choice maxOccurs="unbounded">
+				<xs:group ref="oecdBlockGroup"/>
+			</xs:choice>
+		</xs:sequence>
+	</xs:group>
+	<xs:complexType id="oecdListItemType" name="oecdListItemType">
+		<xs:annotation>
+			<xs:documentation>
+				<section xmlns="http://docbook.org/ns/docbook">
+					<para>List items are a shared type used by both itemized and ordered lists. This
+						type is                         extended by list specific list items to add
+						attributes appropriate to the list                         type.</para>
+				</section>
+			</xs:documentation>
+		</xs:annotation>
+		<xs:group maxOccurs="unbounded" ref="oecdListItemTypeContent"/>
+		<xs:attributeGroup ref="oecdListItemTypeAttributes"/>
+	</xs:complexType>
+	<!-- Bulleted lists. Bulleted list items extended the base list item by addding a bullet.-->
+	<xs:complexType id="oecdItemizedListItemType" name="oecdItemizedListItemType">
+		<xs:complexContent>
+			<xs:extension base="oecdListItemType">
+				<xs:attribute default="auto" name="marker" type="oecdListMarker" use="optional">
+					<xs:annotation>
+						<xs:documentation>
+							<section xmlns="http://docbook.org/ns/docbook">
+								<para>List marker for itemized lists. Used at both list and item
+									levels.</para>
+							</section>
+							<section xmlns="http://docbook.org/ns/docbook">
+								<revhistory>
+									<title>Change Log</title>
+									<revision>
+										<revnumber>1</revnumber>
+										<date>2013-10-25</date>
+										<author>JC</author>
+										<revremark>changed from a @ref to name/type
+											combo</revremark>
+									</revision>
+								</revhistory>
+							</section>
+						</xs:documentation>
+					</xs:annotation>
+				</xs:attribute>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:attributeGroup id="oecdItemizedListTypeAttributes" name="oecdItemizedListTypeAttributes">
+		<xs:annotation>
+			<xs:documentation>
+				<section xmlns="http://docbook.org/ns/docbook">
+					<para>Attributes for itemized lists.</para>
+				</section>
+			</xs:documentation>
+		</xs:annotation>
+		<xs:attributeGroup ref="oecdCommonAttributes"/>
+		<xs:attributeGroup ref="oecdLinkingAttributes"/>
+		<xs:attribute default="auto" name="marker" type="oecdListMarker" use="optional">
+			<xs:annotation>
+				<xs:documentation>
+					<section xmlns="http://docbook.org/ns/docbook">
+						<para>List marker for itemized lists. Used at both list and item
+							levels.</para>
+					</section>
+					<section xmlns="http://docbook.org/ns/docbook">
+						<revhistory>
+							<title>Change Log</title>
+							<revision>
+								<revnumber>1</revnumber>
+								<date>2013-10-25</date>
+								<author>JC</author>
+								<revremark>changed from a @ref to name/type combo</revremark>
+							</revision>
+						</revhistory>
+					</section>
+				</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attributeGroup ref="ANNOTATIONS-GROUP"/>
+	</xs:attributeGroup>
+	<xs:group id="oecdItemizedListTypeContent" name="oecdItemizedListTypeContent">
+		<xs:annotation>
+			<xs:documentation>
+				<section xmlns="http://docbook.org/ns/docbook">
+					<para>Content for itemized lists.</para>
+				</section>
+			</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element minOccurs="0" ref="metadata"/>
+			<xs:group minOccurs="0" ref="oecdTitleGroup"/>
+			<xs:element form="qualified" maxOccurs="unbounded" name="list-item"
+				type="oecdItemizedListItemType"/>
+			<xs:element minOccurs="0" ref="notes"/>
+		</xs:sequence>
+	</xs:group>
+	<xs:complexType id="oecdItemizedListType" name="oecdItemizedListType">
+		<xs:annotation>
+			<xs:documentation>
+				<section xmlns="http://docbook.org/ns/docbook">
+					<para>Standard itemized lists. These allow the user to choose a default marker
+						at the                         level of the list and override it at the item
+						level.</para>
+				</section>
+			</xs:documentation>
+		</xs:annotation>
+		<xs:group ref="oecdItemizedListTypeContent"/>
+		<xs:attributeGroup ref="oecdItemizedListTypeAttributes"/>
+	</xs:complexType>
+	<!-- ordered lists -->
+	<xs:attributeGroup id="oecdOrderedListTypeAttributes" name="oecdOrderedListTypeAttributes">
+		<xs:annotation>
+			<xs:documentation>
+				<section xmlns="http://docbook.org/ns/docbook">
+					<para>Attributes for itemized lists.</para>
+				</section>
+			</xs:documentation>
+		</xs:annotation>
+		<xs:attributeGroup ref="oecdCommonAttributes"/>
+		<xs:attributeGroup ref="oecdLinkingAttributes"/>
+		<xs:attributeGroup ref="ANNOTATIONS-GROUP"/>
+		<xs:attribute default="arabic" id="numeration" name="numeration" type="oecdListNumeration">
+			<xs:annotation>
+				<xs:documentation>
+					<section xmlns="http://docbook.org/ns/docbook">
+						<para>List numeration style for ordered lists.</para>
+					</section>
+				</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute default="start" id="list-continuation" name="continuation"
+			type="oecdComponentContinuation">
+			<xs:annotation>
+				<xs:documentation>
+					<section xmlns="http://docbook.org/ns/docbook">
+						<revhistory>
+							<title>Change Log</title>
+							<revision>
+								<revnumber>1</revnumber>
+								<date>2011-11-06</date>
+								<author>JC</author>
+								<revremark>Applied generic type</revremark>
+								<revremark>Applied unique ID</revremark>
+							</revision>
+						</revhistory>
+					</section>
+					<section xmlns="http://docbook.org/ns/docbook">
+						<para>List continuation style for ordered lists</para>
+					</section>
+				</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute id="list-start" name="start" type="xs:string">
+			<xs:annotation>
+				<xs:documentation>
+					<section xmlns="http://docbook.org/ns/docbook">
+						<revhistory>
+							<title>Change Log</title>
+							<revision>
+								<revnumber>1</revnumber>
+								<date>2011-11-06</date>
+								<author>JC</author>
+								<revremark>Changed type to string</revremark>
+								<revremark>Applied unique ID to start</revremark>
+							</revision>
+						</revhistory>
+					</section>
+					<section xmlns="http://docbook.org/ns/docbook">
+						<para>Starting position for lists which have their continuation style set to
+							'start'.</para>
+					</section>
+				</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute id="list-number" name="number" type="xs:string">
+			<xs:annotation>
+				<xs:documentation>
+					<section xmlns="http://docbook.org/ns/docbook">
+						<revhistory>
+							<title>Change Log</title>
+							<revision>
+								<revnumber>1</revnumber>
+								<date>2011-11-06</date>
+								<author>JC</author>
+								<revremark>Changed type to string</revremark>
+								<revremark>Applied unique ID to number</revremark>
+							</revision>
+						</revhistory>
+					</section>
+					<section xmlns="http://docbook.org/ns/docbook">
+						<para>Numbering override for list items where the author needs to override
+							the list                             numbering completely.</para>
+					</section>
+				</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+	</xs:attributeGroup>
+	<xs:group id="oecdOrderedListTypeContent" name="oecdOrderedListTypeContent">
+		<xs:annotation>
+			<xs:documentation>
+				<section xmlns="http://docbook.org/ns/docbook">
+					<para>Content for itemized lists.</para>
+				</section>
+			</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element minOccurs="0" ref="metadata"/>
+			<xs:group minOccurs="0" ref="oecdTitleGroup"/>
+			<xs:element form="qualified" maxOccurs="unbounded" name="list-item"
+				type="oecdListItemType"/>
+			<xs:element minOccurs="0" ref="notes"/>
+		</xs:sequence>
+	</xs:group>
+	<xs:complexType id="oecdOrderedListType" name="oecdOrderedListType">
+		<xs:annotation>
+			<xs:documentation>
+				<section xmlns="http://docbook.org/ns/docbook">
+					<para>Standard ordered lists. Lists can have several numeration types which are
+						set at                         list level (as changing the numbering system
+						part way through a single list is                         unusual).
+						Numbering can continue based on the end of a previous list or start at a
+						specific number.</para>
+				</section>
+			</xs:documentation>
+		</xs:annotation>
+		<xs:group ref="oecdOrderedListTypeContent"/>
+		<xs:attributeGroup ref="oecdOrderedListTypeAttributes"/>
+	</xs:complexType>
+	<!-- definition lists -->
+	<xs:attributeGroup id="oecdDefinitionListTermTypeAttributes"
+		name="oecdDefinitionListTermTypeAttributes">
+		<xs:annotation>
+			<xs:documentation>
+				<section xmlns="http://docbook.org/ns/docbook">
+					<para>Attributes for terms in definition lists.</para>
+				</section>
+			</xs:documentation>
+		</xs:annotation>
+		<xs:attributeGroup ref="oecdCommonAttributes"/>
+		<xs:attributeGroup ref="oecdLinkingAttributes"/>
+	</xs:attributeGroup>
+	<xs:group id="oecdDefinitionListTermTypeContent" name="oecdDefinitionListTermTypeContent">
+		<xs:annotation>
+			<xs:documentation>
+				<section xmlns="http://docbook.org/ns/docbook">
+					<para>Content for terms in definition lists.</para>
+				</section>
+			</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element minOccurs="0" ref="metadata"/>
+			<!-- this is inside a mixed element! -->
+			<xs:group maxOccurs="unbounded" minOccurs="0" ref="oecdInlineGroup"/>
+		</xs:sequence>
+	</xs:group>
+	<xs:complexType id="oecdDefinitionListTermType" mixed="true" name="oecdDefinitionListTermType">
+		<xs:annotation>
+			<xs:documentation>
+				<section xmlns="http://docbook.org/ns/docbook">
+					<revision>
+						<revnumber>1</revnumber>
+						<date>2012-10-29</date>
+						<authorinitials>JC</authorinitials>
+						<revremark>Changed to mixed.</revremark>
+					</revision>
+					<para>Extract attributes, grouped for easy overrides and reuse.</para>
+				</section>
+				<section xmlns="http://docbook.org/ns/docbook">
+					<para>The term to be defined in a definition list.</para>
+				</section>
+			</xs:documentation>
+		</xs:annotation>
+		<xs:group ref="oecdDefinitionListTermTypeContent"/>
+		<xs:attributeGroup ref="oecdDefinitionListTermTypeAttributes"/>
+	</xs:complexType>
+	<xs:attributeGroup id="oecdDefinitionListDefinitionTypeAttributes"
+		name="oecdDefinitionListDefinitionTypeAttributes">
+		<xs:annotation>
+			<xs:documentation>
+				<section xmlns="http://docbook.org/ns/docbook">
+					<para>Attributes for definitions in definition lists.</para>
+				</section>
+			</xs:documentation>
+		</xs:annotation>
+		<xs:attributeGroup ref="oecdCommonAttributes"/>
+		<xs:attributeGroup ref="oecdLinkingAttributes"/>
+		<xs:attributeGroup ref="ANNOTATIONS-GROUP"/>
+	</xs:attributeGroup>
+	<xs:group id="oecdDefinitionListDefinitionTypeContent"
+		name="oecdDefinitionListDefinitionTypeContent">
+		<xs:annotation>
+			<xs:documentation>
+				<section xmlns="http://docbook.org/ns/docbook">
+					<para>Content for definitions in definition lists.</para>
+				</section>
+			</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:group maxOccurs="unbounded" ref="oecdBlockGroup"/>
+		</xs:sequence>
+	</xs:group>
+	<xs:complexType id="oecdDefinitionListDefinitionType" name="oecdDefinitionListDefinitionType">
+		<xs:annotation>
+			<xs:documentation>
+				<section xmlns="http://docbook.org/ns/docbook">
+					<para>The definition in a definition list.</para>
+				</section>
+			</xs:documentation>
+		</xs:annotation>
+		<xs:group ref="oecdDefinitionListDefinitionTypeContent"/>
+		<xs:attributeGroup ref="oecdDefinitionListDefinitionTypeAttributes"/>
+	</xs:complexType>
+	<xs:attributeGroup id="oecdDefinitionListItemTypeAttributes"
+		name="oecdDefinitionListItemTypeAttributes">
+		<xs:annotation>
+			<xs:documentation>
+				<section xmlns="http://docbook.org/ns/docbook">
+					<para>Attributes for items in definition lists.</para>
+				</section>
+			</xs:documentation>
+		</xs:annotation>
+		<xs:attributeGroup ref="oecdCommonAttributes"/>
+		<xs:attributeGroup ref="oecdLinkingAttributes"/>
+		<xs:attributeGroup ref="ANNOTATIONS-GROUP"/>
+	</xs:attributeGroup>
+	<xs:group id="oecdDefinitionListItemTypeContent" name="oecdDefinitionListItemTypeContent">
+		<xs:annotation>
+			<xs:documentation>
+				<section xmlns="http://docbook.org/ns/docbook">
+					<para>Content for items in definition lists.</para>
+				</section>
+			</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element minOccurs="0" ref="metadata"/>
+			<xs:element form="qualified" name="term" type="oecdDefinitionListTermType"/>
+			<xs:element form="qualified" name="definition" type="oecdDefinitionListDefinitionType"/>
+		</xs:sequence>
+	</xs:group>
+	<xs:complexType id="oecdDefinitionListItemType" name="oecdDefinitionListItemType">
+		<xs:annotation>
+			<xs:documentation>
+				<section xmlns="http://docbook.org/ns/docbook">
+					<para>A term/definition pair in a definition list.</para>
+				</section>
+			</xs:documentation>
+		</xs:annotation>
+		<xs:group ref="oecdDefinitionListItemTypeContent"/>
+		<xs:attributeGroup ref="oecdDefinitionListItemTypeAttributes"/>
+	</xs:complexType>
+	<xs:attributeGroup id="oecdDefinitionListTypeAttributes" name="oecdDefinitionListTypeAttributes">
+		<xs:annotation>
+			<xs:documentation>
+				<section xmlns="http://docbook.org/ns/docbook">
+					<para>Attributes for definition lists.</para>
+				</section>
+			</xs:documentation>
+		</xs:annotation>
+		<xs:attributeGroup ref="oecdCommonAttributes"/>
+		<xs:attributeGroup ref="oecdLinkingAttributes"/>
+		<xs:attributeGroup ref="ANNOTATIONS-GROUP"/>
+	</xs:attributeGroup>
+	<xs:group id="oecdDefinitionListTypeContent" name="oecdDefinitionListTypeContent">
+		<xs:annotation>
+			<xs:documentation>
+				<section xmlns="http://docbook.org/ns/docbook">
+					<para>Content for definition lists.</para>
+				</section>
+			</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element minOccurs="0" ref="metadata"/>
+			<xs:group minOccurs="0" ref="oecdTitleGroup"/>
+			<xs:element form="qualified" maxOccurs="unbounded" name="list-item"
+				type="oecdDefinitionListItemType"/>
+			<xs:element minOccurs="0" ref="notes"/>
+		</xs:sequence>
+	</xs:group>
+	<xs:complexType id="oecdDefinitionListType" name="oecdDefinitionListType">
+		<xs:annotation>
+			<xs:documentation>
+				<section xmlns="http://docbook.org/ns/docbook">
+					<para>Definition lists consist of pairs of terms and definitions. The
+						definitions are                         marked up using a term and a list
+						item contained in a defintion list item.</para>
+				</section>
+			</xs:documentation>
+		</xs:annotation>
+		<xs:group ref="oecdDefinitionListTypeContent"/>
+		<xs:attributeGroup ref="oecdDefinitionListTypeAttributes"/>
+	</xs:complexType>
+	<xs:annotation>
+		<xs:documentation>
+			<section xmlns="http://docbook.org/ns/docbook">
+				<title>OECD Schemas</title>
+				<subtitle>Box Model</subtitle>
+				<revhistory>
+					<title>Change Log</title>
+					<revision>
+						<revnumber>1</revnumber>
+						<date>2012-03-21</date>
+						<author>
+							<email>nicg@corbas.co.uk</email>
+							<personname>Nic Gibson</personname>
+						</author>
+						<revremark>Initial version.</revremark>
+					</revision>
+					<revision>
+						<revnumber>2</revnumber>
+						<date>2012-04-16</date>
+						<author>
+							<email>nicg@corbas.co.uk</email>
+							<personname>Nic Gibson</personname>
+						</author>
+						<revremark>Added assertion to constrain boxes to not contain
+							boxes.</revremark>
+					</revision>
+					<revision>
+						<revnumber>3</revnumber>
+						<date>2013-01-29</date>
+						<authorinitials>JC</authorinitials>
+						<revremark>Modified box to align content model for notes, footnotes and
+							sources with that of tables and figures.</revremark>
+					</revision>
+				</revhistory>
+			</section>
+		</xs:documentation>
+	</xs:annotation>
+	<!-- IMPORTS AND INCLUDES -->
+	<xs:annotation>
+		<xs:documentation>
+			<section xmlns="http://docbook.org/ns/docbook">
+				<title>OECD Schemas</title>
+				<subtitle>Section Model</subtitle>
+				<revhistory>
+					<title>Change Log</title>
+					<revision>
+						<revnumber>1</revnumber>
+						<date>2011-12-02</date>
+						<author>
+							<email>nicg@corbas.co.uk</email>
+							<personname>Nic Gibson</personname>
+						</author>
+						<revremark>Initial Version</revremark>
+					</revision>
+					<revision>
+						<revnumber>2</revnumber>
+						<date>2012-03-21</date>
+						<author>
+							<email>nicg@corbas.co.uk</email>
+							<personname>Nic Gibson</personname>
+						</author>
+						<revremark>Updated to best practices guide.</revremark>
+					</revision>
+					<revision>
+						<revnumber>3</revnumber>
+						<date>2012-04-15</date>
+						<author>
+							<email>nicg@corbas.co.uk</email>
+							<personname>Nic Gibson</personname>
+						</author>
+						<revremark>Added annotations attribute and annotation element to content
+							model.</revremark>
+					</revision>
+					<revision>
+						<revnumber>4</revnumber>
+						<date>2012-05-25</date>
+						<author>
+							<email>nicg@corbas.co.uk</email>
+							<personname>Nic Gibson</personname>
+						</author>
+						<revremark>Modified <link linkend="oecdSectionTypeContent"
+								>oecdSectionTypeContent</link> to correct error in occurence count
+							for blocks</revremark>
+					</revision>
+					<revision>
+						<revnumber>5</revnumber>
+						<date>2012-10-06</date>
+						<authorinitials>NG</authorinitials>
+						<revremark>Split out the basic content from <link
+								linkend="oecdSectionTypeContent">oecdSectionTypeContent</link> into
+								<link linkend="oecdSectionTypeBaseContent"
+								>oecdSectionTypeBaseContent</link> because the previous version of
+							the schema forced multiple titles into chapters, prefaces and
+							appendices. This was not        correct.</revremark>
+					</revision>
+					<revision>
+						<revnumber>5</revnumber>
+						<date>2012-10-23</date>
+						<authorinitials>JC</authorinitials>
+						<revremark>Added common attribute group to
+							oecdSectionTypeAttributes.</revremark>
+					</revision>
+					<revision>
+						<revnumber>6</revnumber>
+						<date>2012-10-23</date>
+						<authorinitials>JC</authorinitials>
+						<revremark>Added attribute group to oecdLinkingAttributes.</revremark>
+					</revision>
+					<revision>
+						<revnumber>7</revnumber>
+						<date>2011-11-06</date>
+						<author>JC</author>
+						<revremark>Modified oecdListContinuation.</revremark>
+					</revision>
+				</revhistory>
+			</section>
+		</xs:documentation>
+	</xs:annotation>
+	<!-- IMPORTS AND INCLUDES -->
+	<xs:annotation>
+		<xs:documentation>
+			<section xmlns="http://docbook.org/ns/docbook">
+				<title>OECD Schemas</title>
+				<subtitle>Annotation Component</subtitle>
+				<revhistory>
+					<title>Change Log</title>
+					<revision>
+						<revnumber>1</revnumber>
+						<date>2012-04-13</date>
+						<author>
+							<email>nicg@corbas.co.uk</email>
+							<personname>Nic                         Gibson</personname>
+						</author>
+						<revremark>Initial Version</revremark>
+					</revision>
+				</revhistory>
+				<para>                 Annotations are block content associated with another block.
+				</para>
+			</section>
+		</xs:documentation>
+	</xs:annotation>
+	<!-- IMPORTS AND INCLUDES -->
+	<!-- GLOBAL ELEMENTS -->
+	<xs:element name="annotation" type="oecdAnnotationType"/>
+	<!-- GLOBAL GROUPS -->
+	<!-- COMPLEX TYPES -->
+	<xs:attributeGroup name="oecdAnnotationTypeAttributes">
+		<xs:annotation>
+			<xs:documentation>
+				<section xmlns="http://docbook.org/ns/docbook">
+					<para>Attributes for annotations, for easy override</para>
+				</section>
+			</xs:documentation>
+		</xs:annotation>
+		<xs:attributeGroup ref="oecdCommonAttributes"/>
+	</xs:attributeGroup>
+	<xs:group name="oecdAnnotationTypeContent">
+		<xs:annotation>
+			<xs:documentation>
+				<section xmlns="http://docbook.org/ns/docbook">
+					<para>Content for annotations, for easy override</para>
+				</section>
+			</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:group maxOccurs="unbounded" ref="oecdBlockGroup"/>
+		</xs:sequence>
+	</xs:group>
+	<xs:complexType name="oecdAnnotationType">
+		<xs:annotation>
+			<xs:documentation>
+				<section xmlns="http://docbook.org/ns/docbook">
+					<para>Annotations element. This element allows additional
+						text (often commentary) to be associated with an element.
+						See also the <tag class="attribute">annotations</tag> attribute.</para>
+				</section>
+			</xs:documentation>
+		</xs:annotation>
+		<xs:group ref="oecdAnnotationTypeContent"/>
+		<xs:attributeGroup ref="oecdAnnotationTypeAttributes"/>
+	</xs:complexType>
+	<!-- SIMPLE TYPES -->
+	<!-- GLOBAL ELEMENTS -->
+	<xs:element id="section" name="section" type="oecdSectionType"/>
+	<!-- GLOBAL GROUPS -->
+	<!-- COMPLEX TYPES -->
+	<!-- section -->
+	<xs:attributeGroup id="oecdSectionTypeAttributes" name="oecdSectionTypeAttributes">
+		<xs:annotation>
+			<xs:documentation>
+				<section xmlns="http://docbook.org/ns/docbook">
+					<para>Attributes for sections as a group for easy overrides and reuse.</para>
+					<revhistory>
+						<revision>
+							<revnumber>1</revnumber>
+							<date>2012-10-23</date>
+							<authorinitials>JC</authorinitials>
+							<revremark>Added attribute group oecdCommonAttributes to primarily allow
+								@id.</revremark>
+						</revision>
+						<revision>
+							<revnumber>2</revnumber>
+							<date>2012-10-23</date>
+							<authorinitials>JC</authorinitials>
+							<revremark>Added attribute group oecdLinkingAttributes to facilitate
+								component links.</revremark>
+						</revision>
+						<revision>
+							<revnumber>3</revnumber>
+							<date>2012-11-06</date>
+							<authorinitials>JC</authorinitials>
+							<revremark>Removed attribute numeration.</revremark>
+						</revision>
+					</revhistory>
+				</section>
+			</xs:documentation>
+		</xs:annotation>
+		<xs:attribute id="section-continuation" name="continuation" type="oecdComponentContinuation">
+			<xs:annotation>
+				<xs:documentation>
+					<section xmlns="http://docbook.org/ns/docbook">
+						<revhistory>
+							<title>Change Log</title>
+							<revision>
+								<revnumber>1</revnumber>
+								<date>2011-11-06</date>
+								<author>JC</author>
+								<revremark>Applied generic type</revremark>
+								<revremark>Applied unique ID to continuation</revremark>
+							</revision>
+						</revhistory>
+					</section>
+					<section xmlns="http://docbook.org/ns/docbook">
+						<para>Numbering continuation flag for sections</para>
+					</section>
+				</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute id="section-start" name="start" type="xs:string">
+			<xs:annotation>
+				<xs:documentation>
+					<section xmlns="http://docbook.org/ns/docbook">
+						<revhistory>
+							<title>Change Log</title>
+							<revision>
+								<revnumber>1</revnumber>
+								<date>2011-11-06</date>
+								<author>JC</author>
+								<revremark>Changed type to string</revremark>
+								<revremark>Applied unique ID to start</revremark>
+							</revision>
+						</revhistory>
+					</section>
+					<section xmlns="http://docbook.org/ns/docbook">
+						<para>Starting count for sections which have their continuation style set to
+							'start'.</para>
+					</section>
+				</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute id="section-number" name="number" type="xs:string">
+			<xs:annotation>
+				<xs:documentation>
+					<section xmlns="http://docbook.org/ns/docbook">
+						<revhistory>
+							<title>Change Log</title>
+							<revision>
+								<revnumber>1</revnumber>
+								<date>2011-11-06</date>
+								<author>JC</author>
+								<revremark>Changed type to string</revremark>
+								<revremark>Applied unique ID to number</revremark>
+							</revision>
+						</revhistory>
+					</section>
+					<section xmlns="http://docbook.org/ns/docbook">
+						<para>Numbering override for sections where the author needs to override the
+							section numbering completely.</para>
+					</section>
+				</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attributeGroup ref="ANNOTATIONS-GROUP"/>
+		<xs:attributeGroup ref="oecdCommonAttributes"/>
+		<xs:attributeGroup ref="oecdLinkingAttributes"/>
+	</xs:attributeGroup>
+	<xs:group id="oecdSectionTypeBaseContent" name="oecdSectionTypeBaseContent">
+		<xs:annotation>
+			<xs:documentation>
+				<para xmlns="http://docbook.org/ns/docbook">This group is used to define the content
+					model of all section-like elements. This allows 'body' content to be defined
+					separately from any      preliminary content. </para>
+				<para xmlns="http://docbook.org/ns/docbook">This model has been rewritten from
+					previous versions to maintain the same content model with a simplified schema to
+					avoid a unique particle      attribution constraint failure.</para>
+			</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:sequence>
+				<xs:group maxOccurs="unbounded" minOccurs="0" ref="oecdBlockGroup"/>
+				<xs:element maxOccurs="unbounded" minOccurs="0" ref="section"/>
+			</xs:sequence>
+			<xs:element maxOccurs="unbounded" minOccurs="0" ref="annotation"/>
+		</xs:sequence>
+	</xs:group>
+	<xs:group id="oecdSectionTypeContent" name="oecdSectionTypeContent">
+		<xs:annotation>
+			<xs:documentation>
+				<section xmlns="http://docbook.org/ns/docbook">
+					<para>Content for sections as a group for easy overrides and reuse.</para>
+					<revhistory>
+						<title>Change Log</title>
+						<revision>
+							<revnumber>4</revnumber>
+							<date>2012-05-25</date>
+							<author>
+								<email>nicg@corbas.co.uk</email>
+								<personname>Nic Gibson</personname>
+							</author>
+							<revremark>Modified to correct error in occurence count for blocks. Was
+								set to one and should be set to unbounded.</revremark>
+						</revision>
+						<revision>
+							<revnumber>5</revnumber>
+							<date>2012-10-06</date>
+							<author>NG</author>
+							<revremark>Moved the main body content out into a separate group where
+								it can be reused.</revremark>
+						</revision>
+					</revhistory>
+				</section>
+			</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element minOccurs="0" ref="metadata"/>
+			<xs:group ref="oecdTitleGroup"/>
+			<xs:group ref="oecdSectionTypeBaseContent"/>
+		</xs:sequence>
+	</xs:group>
+	<xs:complexType id="oecdSectionType" name="oecdSectionType">
+		<xs:annotation>
+			<xs:documentation>
+				<section xmlns="http://docbook.org/ns/docbook">
+					<para>Sections are the major recursive structural component of documents. Each
+						section consists of titles, optional introductory blocks and then optional
+						sections. Sections and       blocks cannot be interspersed.</para>
+				</section>
+			</xs:documentation>
+		</xs:annotation>
+		<xs:group ref="oecdSectionTypeContent"/>
+		<xs:attributeGroup ref="oecdSectionTypeAttributes"/>
+	</xs:complexType>
+	<!-- GLOBAL ELEMENTS -->
+	<xs:element id="box" name="box" type="oecdBoxType">
+		<xs:annotation>
+			<xs:documentation>
+				<section xmlns="http://docbook.org/ns/docbook">
+					<para>Main box element.</para>
+				</section>
+				<section xmlns="http://docbook.org/ns/docbook">
+					<revhistory>
+						<title>Change Log</title>
+						<revision>
+							<revnumber>1</revnumber>
+							<date>2013-01-29</date>
+							<author>JC</author>
+							<revremark>Changed type</revremark>
+						</revision>
+					</revhistory>
+				</section>
+			</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<!-- GLOBAL TYPES -->
+	<xs:complexType id="oecdBoxType" name="oecdBoxType">
+		<xs:annotation>
+			<xs:documentation>
+				<section xmlns="http://docbook.org/ns/docbook">
+					<para>An box occupies the same structural position as block content and is
+						treated as a block. However, the content model of a block is that of a
+						section with an optional notes element appended.</para>
+				</section>
+			</xs:documentation>
+			<xs:appinfo>
+				<sch:assert role="error" test="not(descendant::box)">Boxes must not contain
+					boxes.</sch:assert>
+			</xs:appinfo>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="oecdSectionType">
+				<xs:annotation>
+					<xs:documentation>
+						<section xmlns="http://docbook.org/ns/docbook">
+							<revhistory>
+								<title>Change Log</title>
+								<revision>
+									<revnumber>1</revnumber>
+									<date>2013-01-29</date>
+									<author>JC</author>
+									<revremark>Added sources to sequence.</revremark>
+								</revision>
+							</revhistory>
+						</section>
+					</xs:documentation>
+				</xs:annotation>
+				<xs:sequence>
+					<xs:element minOccurs="0" ref="notes"/>
+					<xs:element minOccurs="0" ref="sources"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:annotation>
+		<xs:documentation>
+			<section xmlns="http://docbook.org/ns/docbook">
+				<title>OECD Schemas</title>
+				<subtitle>Table Model</subtitle>
+				<para>Redefinition of CALS interchange model, written independently. The only
+					noticeable incompatiblity is the redefinition of titles                     to
+					allow subtitles.</para>
+				<revhistory>
+					<title>Change Log</title>
+					<revision>
+						<revnumber>1</revnumber>
+						<date>2012-02-10</date>
+						<author>
+							<email>nicg@corbas.co.uk</email>
+							<personname>Nic Gibson</personname>
+						</author>
+						<revremark>Initial Version</revremark>
+					</revision>
+					<revision>
+						<revnumber>2</revnumber>
+						<date>2012-03-30</date>
+						<author>
+							<email>nicg@corbas.co.uk</email>
+							<personname>Nic Gibson</personname>
+						</author>
+						<revremark>Converted to placeholder for right now.</revremark>
+					</revision>
+					<revision>
+						<revnumber>3</revnumber>
+						<date>2012-04-23</date>
+						<authorinitials>JC</authorinitials>
+						<revremark>Removed oecdTableType.</revremark>
+						<revremark>Redefined model using soextblx baseType.</revremark>
+					</revision>
+					<revision>
+						<revnumber>4</revnumber>
+						<date>2012-10-08</date>
+						<authorinitials>JC</authorinitials>
+						<revremark>Modified table model to make tfoot optional.</revremark>
+						<revremark>Modified the occurrence value for Table-Foot content
+							model.</revremark>
+					</revision>
+					<revision>
+						<revnumber>5</revnumber>
+						<date>2012-10-23</date>
+						<authorinitials>JC</authorinitials>
+						<revremark>Modified table redefine to provide component level attributes and
+							meta.</revremark>
+					</revision>
+					<revision>
+						<revnumber>6</revnumber>
+						<date>2013-01-29</date>
+						<authorinitials>JC</authorinitials>
+						<revremark>Modified table align notes and sources with those on figures and
+							boxes.</revremark>
+					</revision>
+					<revision>
+						<revnumber>7</revnumber>
+						<date>2013-11-06</date>
+						<authorinitials>JC</authorinitials>
+						<revremark>Modified Table.Entry content model to fix #6410.</revremark>
+					</revision>
+				</revhistory>
+			</section>
+		</xs:documentation>
+	</xs:annotation>
+	<xs:complexType name="Table">
+		<xs:complexContent>
+			<xs:extension base="Table_Redefined0">
+				<xs:sequence>
+					<xs:element form="qualified" maxOccurs="1" minOccurs="0" name="tfoot"
+						type="Table-Foot"/>
+				</xs:sequence>
+				<xs:attribute name="orientation" type="xs:string"/>
+				<xs:attributeGroup ref="oecdTableTypeAttributes"/>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="Table_Redefined0">
+		<xs:annotation>
+			<xs:documentation>
+				<section xmlns="http://docbook.org/ns/docbook">
+					<revision>
+						<revnumber>1</revnumber>
+						<date>2011-10-25</date>
+						<author>JC</author>
+						<revremark>Added metadata to the table sequence of complexType
+							Table.</revremark>
+					</revision>
+				</section>
+			</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element minOccurs="0" ref="metadata"/>
+			<xs:element form="qualified" minOccurs="0" name="titles" type="Table.Title"/>
+			<xs:element form="qualified" maxOccurs="unbounded" name="tgroup" type="Table.Tgroup"/>
+		</xs:sequence>
+		<xs:attribute form="unqualified" name="colsep" type="Table.Colsep"/>
+		<xs:attribute form="unqualified" name="rowsep" type="Table.Rowsep"/>
+		<xs:attribute form="unqualified" name="frame" type="Table.Frame"/>
+		<xs:attribute form="unqualified" name="pgwide" type="Table.Pgwide"/>
+	</xs:complexType>
+	<xs:annotation>
+		<xs:documentation>
+			<section xmlns="http://docbook.org/ns/docbook">
+				<title>OECD Schemas</title>
+				<subtitle>OASIS Open Exchange Table Model</subtitle>
+				<info>An up-to-date implementation by the OECD</info>
+				<revhistory>
+					<title>Change Log</title>
+					<revision>
+						<revnumber>1</revnumber>
+						<date>2012-04-23</date>
+						<authorinitials>JC</authorinitials>
+						<revremark>Initial Version.</revremark>
+					</revision>
+					<revision>
+						<revnumber>2</revnumber>
+						<date>2012-04-23</date>
+						<authorinitials>JC</authorinitials>
+						<remark>
+							<remark>removed @bodyatt as no need for for backward compatibility with
+								the SGML model</remark>
+							<remark>removed tbl.tgroup.att</remark>
+							<remark>removed tbl.colspec.att</remark>
+							<remark>removed tbl.head.att</remark>
+							<remark>removed tbl.tbody.att</remark>
+							<remark>removed tbl.row.att</remark>
+							<remark>added attribute heading to entry</remark>
+							<remark>Table.Title removed min 0</remark>
+							<remark>Table.Title changed from choice to seq</remark>
+							<remark>Table.Title removed mixed content model</remark>
+							<remark>renamed title element titles to allow extension</remark>
+						</remark>
+					</revision>
+					<revision>
+						<revnumber>3</revnumber>
+						<date>2012-10-25</date>
+						<authorinitials>JC</authorinitials>
+						<remark>
+							<remark>Included meta.xsd and added reference to GLOBAL metadata
+								element.</remark>
+						</remark>
+					</revision>
+				</revhistory>
+			</section>
+		</xs:documentation>
+	</xs:annotation>
+	<xs:complexType name="Table.Title">
+		<xs:sequence/>
+	</xs:complexType>
+	<xs:complexType name="Table.Tgroup">
+		<xs:sequence>
+			<xs:element form="qualified" maxOccurs="unbounded" minOccurs="0" name="colspec"
+				type="Table.Colspec"/>
+			<xs:element form="qualified" minOccurs="0" name="thead" type="Table.Thead"/>
+			<xs:element form="qualified" name="tbody" type="Table.Tbody"/>
+		</xs:sequence>
+		<xs:attribute form="unqualified" name="cols" type="Table.Cols" use="required"/>
+		<xs:attribute form="unqualified" name="colsep" type="Table.Colsep"/>
+		<xs:attribute form="unqualified" name="rowsep" type="Table.Rowsep"/>
+		<xs:attribute form="unqualified" name="align" type="Table.Align"/>
+	</xs:complexType>
+	<xs:complexType name="Table.Colspec">
+		<xs:attribute form="unqualified" name="colnum" type="Table.Colnum"/>
+		<xs:attribute form="unqualified" name="colname" type="Table.Colname"/>
+		<xs:attribute form="unqualified" name="colwidth" type="Table.Colwidth"/>
+		<xs:attribute form="unqualified" name="colsep" type="Table.Colsep"/>
+		<xs:attribute form="unqualified" name="rowsep" type="Table.Rowsep"/>
+		<xs:attribute form="unqualified" name="align" type="Table.Align"/>
+		<xs:attribute form="unqualified" name="char" type="Table.Char"/>
+		<xs:attribute form="unqualified" name="charoff" type="Table.Charoff"/>
+	</xs:complexType>
+	<xs:complexType name="Table.Thead">
+		<xs:sequence>
+			<xs:element form="qualified" maxOccurs="unbounded" name="row" type="Table.Row"/>
+		</xs:sequence>
+		<xs:attribute form="unqualified" name="valign" type="Table.Valign"/>
+	</xs:complexType>
+	<xs:complexType name="Table.Tbody">
+		<xs:sequence>
+			<xs:element form="qualified" maxOccurs="unbounded" name="row" type="Table.Row"/>
+		</xs:sequence>
+		<xs:attribute form="unqualified" name="valign" type="Table.Valign"/>
+	</xs:complexType>
+	<xs:complexType name="Table.Row">
+		<xs:sequence>
+			<xs:element form="qualified" maxOccurs="unbounded" name="entry" type="Table.Entry"/>
+		</xs:sequence>
+		<xs:attribute form="unqualified" name="rowsep" type="Table.Rowsep"/>
+		<xs:attribute form="unqualified" name="valign" type="Table.Valign"/>
+	</xs:complexType>
+	<xs:complexType name="Table.Entry">
+		<xs:choice/>
+		<xs:attribute form="unqualified" name="colname" type="Table.Colname"/>
+		<xs:attribute form="unqualified" name="namest" type="Table.Namest"/>
+		<xs:attribute form="unqualified" name="nameend" type="Table.Nameend"/>
+		<xs:attribute form="unqualified" name="morerows" type="Table.Morerows"/>
+		<xs:attribute form="unqualified" name="colsep" type="Table.Colsep"/>
+		<xs:attribute form="unqualified" name="rowsep" type="Table.Rowsep"/>
+		<xs:attribute form="unqualified" name="align" type="Table.Align"/>
+		<xs:attribute form="unqualified" name="char" type="Table.Char"/>
+		<xs:attribute form="unqualified" name="charoff" type="Table.Charoff"/>
+		<xs:attribute form="unqualified" name="valign" type="Table.Valign"/>
+		<xs:attribute form="unqualified" name="heading" type="Table.Heading"/>
+	</xs:complexType>
+	<xs:simpleType name="Table.Colnum">
+		<xs:restriction base="xs:NMTOKEN"/>
+	</xs:simpleType>
+	<xs:simpleType name="Table.Colname">
+		<xs:restriction base="xs:NMTOKEN"/>
+	</xs:simpleType>
+	<xs:simpleType name="Table.Colwidth">
+		<xs:restriction base="xs:string"/>
+	</xs:simpleType>
+	<xs:simpleType name="Table.Colsep">
+		<xs:restriction base="xs:NMTOKEN"/>
+	</xs:simpleType>
+	<xs:simpleType name="Table.Rowsep">
+		<xs:restriction base="xs:NMTOKEN"/>
+	</xs:simpleType>
+	<xs:simpleType name="Table.Align">
+		<xs:restriction base="xs:NMTOKEN">
+			<xs:enumeration value="left"/>
+			<xs:enumeration value="right"/>
+			<xs:enumeration value="center"/>
+			<xs:enumeration value="justify"/>
+			<xs:enumeration value="char"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="Table.Char">
+		<xs:restriction base="xs:NMTOKEN"/>
+	</xs:simpleType>
+	<xs:simpleType name="Table.Charoff">
+		<xs:restriction base="xs:NMTOKEN"/>
+	</xs:simpleType>
+	<xs:simpleType name="Table.Namest">
+		<xs:restriction base="xs:NMTOKEN"/>
+	</xs:simpleType>
+	<xs:simpleType name="Table.Nameend">
+		<xs:restriction base="xs:NMTOKEN"/>
+	</xs:simpleType>
+	<xs:simpleType name="Table.Morerows">
+		<xs:restriction base="xs:NMTOKEN"/>
+	</xs:simpleType>
+	<xs:simpleType name="Table.Valign">
+		<xs:restriction base="xs:NMTOKEN">
+			<xs:enumeration value="top"/>
+			<xs:enumeration value="middle"/>
+			<xs:enumeration value="bottom"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="Table.Frame">
+		<xs:restriction base="xs:NMTOKEN">
+			<xs:enumeration value="top"/>
+			<xs:enumeration value="bottom"/>
+			<xs:enumeration value="topbot"/>
+			<xs:enumeration value="all"/>
+			<xs:enumeration value="sides"/>
+			<xs:enumeration value="none"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="Table.Pgwide">
+		<xs:restriction base="xs:NMTOKEN"/>
+	</xs:simpleType>
+	<xs:simpleType name="Table.Cols">
+		<xs:restriction base="xs:NMTOKEN"/>
+	</xs:simpleType>
+	<xs:simpleType name="Table.Heading">
+		<xs:restriction base="xs:boolean"/>
+	</xs:simpleType>
+	<xs:complexType name="Table-Foot">
+		<xs:annotation>
+			<xs:documentation>
+				<section xmlns="http://docbook.org/ns/docbook">
+					<para>A Table-Foot contains the Notes and Sources of the Table.</para>
+					<revhistory>
+						<revision>
+							<revnumber>2</revnumber>
+							<date>2013-01-29</date>
+							<author>JC</author>
+							<revremark>Removed footnotes element and associated Table-Footnotes
+								complexType.</revremark>
+						</revision>
+					</revhistory>
+				</section>
+			</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<!--The table footer contains notes and sources. [maximum 1 per table] -->
+			<xs:element maxOccurs="1" minOccurs="0" ref="notes"/>
+			<!-- A note to a table, appearing at the foot. -->
+			<xs:element maxOccurs="1" minOccurs="0" ref="sources"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element id="table" name="table" type="Table"/>
+	<xs:attributeGroup id="oecdTableTypeAttributes" name="oecdTableTypeAttributes">
+		<xs:annotation>
+			<xs:documentation>
+				<section xmlns="http://docbook.org/ns/docbook">
+					<revhistory>
+						<revision>
+							<revnumber>1</revnumber>
+							<date>2012-10-23</date>
+							<authorinitials>JC</authorinitials>
+							<revremark>Added group.</revremark>
+						</revision>
+					</revhistory>
+					<para>Attribute group for table elements to allow easy overrides.</para>
+				</section>
+			</xs:documentation>
+		</xs:annotation>
+		<xs:attributeGroup ref="oecdCommonAttributes"/>
+		<xs:attributeGroup ref="oecdLinkingAttributes"/>
+		<xs:attributeGroup ref="ANNOTATIONS-GROUP"/>
+	</xs:attributeGroup>
+	<xs:annotation>
+		<xs:documentation>
+			<section xmlns="http://docbook.org/ns/docbook">
+				<title>OECD Schemas</title>
+				<subtitle>Extract Models</subtitle>
+				<revhistory>
+					<title>Change Log</title>
+					<revision>
+						<revnumber>1</revnumber>
+						<date>2012-01-08</date>
+						<author>
+							<email>nicg@corbas.co.uk</email>
+							<personname>Nic Gibson</personname>
+						</author>
+						<revremark>Initial Version</revremark>
+					</revision>
+					<revision>
+						<revnumber>2</revnumber>
+						<date>2012-04-13</date>
+						<authorinitials>NG</authorinitials>
+						<revremark>Added annotations attribute and reworked to use extract element
+							as top level</revremark>
+					</revision>
+					<revision>
+						<revnumber>3</revnumber>
+						<date>2012-10-05</date>
+						<authorinitials>NG</authorinitials>
+						<revremark>Wrapped global attributes in groups to avoid namespace prefix
+							requirement.</revremark>
+					</revision>
+					<revision>
+						<revnumber>4</revnumber>
+						<date>2012-10-25</date>
+						<authorinitials>NG</authorinitials>
+						<revremark>Replaced attribution with sources in the <link
+								linkend="oecdBlockQuoteTypeContent">oecdBlockQuoteTypeContent</link>
+							group for consistency across model.</revremark>
+					</revision>
+					<revision>
+						<revnumber>5</revnumber>
+						<date>2012-10-31</date>
+						<authorinitials>JC</authorinitials>
+						<revremark>Modified oecdEmbeddedContentType to satisfy #4904.</revremark>
+						<revremark>Missed redmine hook.</revremark>
+					</revision>
+					<revision>
+						<revnumber>5</revnumber>
+						<date>2013-08-23</date>
+						<authorinitials>JC</authorinitials>
+						<revremark>Modified oecdEmbeddedContentType to satisfy #6176.</revremark>
+					</revision>
+				</revhistory>
+			</section>
+		</xs:documentation>
+	</xs:annotation>
+	<!-- INCLUDES AND IMPORTS -->
+	<!--    <xs:redefine schemaLocation="attributes.xsd">
+        <xs:attributeGroup name="oecdRequiredLinkingAttributes">
+            <xs:attribute ref="xlink:href" use="required"/>
+        </xs:attributeGroup>
+    </xs:redefine>-->
+	<!-- GLOBAL ELEMENTS -->
+	<xs:element id="blockQuote" name="block-quote" type="oecdBlockQuoteType"/>
+	<xs:element id="externalContentReference" name="external-content-reference"
+		type="oecdExternalContentReferenceType"/>
+	<xs:element id="embeddedContent" name="embedded-content" type="oecdEmbeddedContentType"/>
+	<xs:element id="extract" name="extract" type="oecdExtractType"/>
+	<!-- GLOBAL GROUPS -->
+	<xs:group id="oecdExtractsGroup" name="oecdExtractsGroup">
+		<xs:choice>
+			<xs:element ref="block-quote"/>
+			<xs:element ref="embedded-content"/>
+			<xs:element ref="external-content-reference"/>
+		</xs:choice>
+	</xs:group>
+	<!-- GLOBAL TYPES -->
+	<!-- block quotes -->
+	<xs:attributeGroup id="oecdBlockQuoteTypeAttributes" name="oecdBlockQuoteTypeAttributes">
+		<xs:annotation>
+			<xs:documentation>
+				<revision>
+					<revnumber>2</revnumber>
+					<date>2012-04-13</date>
+					<authorinitials>NG</authorinitials>
+					<revremark>Added annotations attribute</revremark>
+				</revision>
+				<section xmlns="http://docbook.org/ns/docbook">
+					<para>Blockquote attributes, grouped for easy overrides and reuse.</para>
+				</section>
+			</xs:documentation>
+		</xs:annotation>
+		<xs:attributeGroup ref="oecdCommonAttributes"/>
+		<xs:attributeGroup ref="oecdLinkingAttributes"/>
+		<xs:attributeGroup ref="ANNOTATIONS-GROUP"/>
+	</xs:attributeGroup>
+	<xs:group id="oecdBlockQuoteTypeContent" name="oecdBlockQuoteTypeContent">
+		<xs:annotation>
+			<xs:documentation>
+				<section xmlns="http://docbook.org/ns/docbook">
+					<para>Blockquote content, grouped for easy overrides and reuse.</para>
+				</section>
+				<revision>
+					<revnumber>4</revnumber>
+					<date>2012-10-25</date>
+					<authorinitials>NG</authorinitials>
+					<revremark>Replaced attribution with sources for consistency across
+						model.</revremark>
+				</revision>
+			</xs:documentation>
+		</xs:annotation>
+		<xs:choice>
+			<xs:element minOccurs="0" ref="metadata"/>
+			<xs:group maxOccurs="unbounded" ref="oecdBlockGroup"/>
+		</xs:choice>
+	</xs:group>
+	<xs:complexType id="oecdBlockQuoteType" name="oecdBlockQuoteType">
+		<xs:annotation>
+			<xs:documentation>
+				<section xmlns="http://docbook.org/ns/docbook">
+					<para>Blockquote elements are intended for transcribed text from external
+						sources. A blockquote has essential metadata stored in the sources
+						element.</para>
+				</section>
+			</xs:documentation>
+		</xs:annotation>
+		<xs:group ref="oecdBlockQuoteTypeContent"/>
+		<xs:attributeGroup ref="oecdBlockQuoteTypeAttributes"/>
+	</xs:complexType>
+	<!-- external references -->
+	<xs:attributeGroup id="oecdExternalContentReferenceTypeAttributes"
+		name="oecdExternalContentReferenceTypeAttributes">
+		<xs:annotation>
+			<xs:documentation>
+				<section xmlns="http://docbook.org/ns/docbook">
+					<revision>
+						<revnumber>2</revnumber>
+						<date>2012-04-13</date>
+						<authorinitials>NG</authorinitials>
+						<revremark>Added annotations attribute</revremark>
+					</revision>
+					<para>External content reference attributes, grouped for easy overrides and
+						reuse.</para>
+				</section>
+			</xs:documentation>
+		</xs:annotation>
+		<xs:attributeGroup ref="oecdCommonAttributes"/>
+		<xs:attributeGroup ref="oecdRequiredLinkingAttributes"/>
+		<xs:attributeGroup ref="ANNOTATIONS-GROUP"/>
+	</xs:attributeGroup>
+	<xs:group id="oecdExternalContentReferenceTypeContent"
+		name="oecdExternalContentReferenceTypeContent">
+		<xs:annotation>
+			<xs:documentation>
+				<section xmlns="http://docbook.org/ns/docbook">
+					<para>External content reference content, grouped for easy overrides and
+						reuse.</para>
+				</section>
+			</xs:documentation>
+		</xs:annotation>
+		<xs:choice>
+			<xs:element minOccurs="0" ref="metadata"/>
+		</xs:choice>
+	</xs:group>
+	<xs:complexType id="oecdExternalContentReferenceType" name="oecdExternalContentReferenceType">
+		<xs:annotation>
+			<xs:documentation>
+				<section xmlns="http://docbook.org/ns/docbook">
+					<para>External Content references allow content to be referenced from a document
+						without the content being present. The content must be referenceable using a
+						URI.</para>
+				</section>
+			</xs:documentation>
+		</xs:annotation>
+		<xs:group ref="oecdExternalContentReferenceTypeContent"/>
+		<xs:attributeGroup ref="oecdExternalContentReferenceTypeAttributes"/>
+	</xs:complexType>
+	<!-- embedded xml references -->
+	<xs:attributeGroup id="oecdEmbeddedContentTypeAttributes"
+		name="oecdEmbeddedContentTypeAttributes">
+		<xs:annotation>
+			<xs:documentation>
+				<revision>
+					<revnumber>1</revnumber>
+					<date>2012-04-13</date>
+					<authorinitials>NG</authorinitials>
+					<revremark>Added annotations attribute</revremark>
+				</revision>
+				<revision>
+					<revnumber>2</revnumber>
+					<date>2012-10-31</date>
+					<authorinitials>JC</authorinitials>
+					<revremark>Removed linking as this is not pertinent on an embeded extract, the
+						metadata can retain the trace if required</revremark>
+				</revision>
+				<section xmlns="http://docbook.org/ns/docbook">
+					<para>Embedded attributes, grouped for easy overrides and reuse.</para>
+				</section>
+			</xs:documentation>
+		</xs:annotation>
+		<xs:attributeGroup ref="oecdCommonAttributes"/>
+		<xs:attributeGroup ref="ANNOTATIONS-GROUP"/>
+	</xs:attributeGroup>
+	<xs:group id="oecdEmbeddedContentTypeContent" name="oecdEmbeddedContentTypeContent">
+		<xs:annotation>
+			<xs:documentation>
+				<revision>
+					<revnumber>1</revnumber>
+					<date>2012-10-31</date>
+					<authorinitials>JC</authorinitials>
+					<revremark>Modified the any element to allow elements from any namespace not
+						specified by the schema.</revremark>
+					<revremark>Made processing of schemas less strict</revremark>
+				</revision>
+				<revision>
+					<revnumber>2</revnumber>
+					<date>2013-08-23</date>
+					<authorinitials>JC</authorinitials>
+					<revremark>Modified contant model to allow both metadata and elements from any
+						namespace not specified by the schema.</revremark>
+				</revision>
+				<section xmlns="http://docbook.org/ns/docbook">
+					<para>embedded content content, grouped for easy overrides and reuse.</para>
+				</section>
+			</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element maxOccurs="1" minOccurs="0" ref="metadata"/>
+			<xs:any maxOccurs="unbounded" minOccurs="0" namespace="##other" processContents="lax"/>
+		</xs:sequence>
+	</xs:group>
+	<xs:complexType id="oecdEmbeddedContentType" name="oecdEmbeddedContentType">
+		<xs:annotation>
+			<xs:documentation>
+				<section xmlns="http://docbook.org/ns/docbook">
+					<para>Embedded Content. This elements allows external content to be referenced
+						within the XML.</para>
+				</section>
+			</xs:documentation>
+		</xs:annotation>
+		<xs:group ref="oecdEmbeddedContentTypeContent"/>
+		<xs:attributeGroup ref="oecdEmbeddedContentTypeAttributes"/>
+	</xs:complexType>
+	<!-- extracts -->
+	<xs:attributeGroup id="oecdExtractTypeAttributes" name="oecdExtractTypeAttributes">
+		<xs:annotation>
+			<xs:documentation>
+				<section xmlns="http://docbook.org/ns/docbook">
+					<revision>
+						<revnumber>2</revnumber>
+						<date>2012-04-13</date>
+						<authorinitials>NG</authorinitials>
+						<revremark>Added annotations attribute</revremark>
+					</revision>
+					<para>Extract attributes, grouped for easy overrides and reuse.</para>
+				</section>
+			</xs:documentation>
+		</xs:annotation>
+		<xs:attributeGroup ref="oecdCommonAttributes"/>
+		<xs:attributeGroup ref="oecdLinkingAttributes"/>
+		<xs:attributeGroup ref="ANNOTATIONS-GROUP"/>
+	</xs:attributeGroup>
+	<xs:group id="oecdExtractTypeContent" name="oecdExtractTypeContent">
+		<xs:annotation>
+			<xs:documentation>
+				<section xmlns="http://docbook.org/ns/docbook">
+					<para>Extract content, grouped for easy overrides and reuse.</para>
+				</section>
+			</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element minOccurs="0" ref="metadata"/>
+			<xs:group minOccurs="0" ref="oecdTitleGroup"/>
+			<xs:element ref="sources"/>
+			<xs:choice>
+				<xs:element ref="block-quote"/>
+				<xs:element ref="embedded-content"/>
+				<xs:element ref="external-content-reference"/>
+				<xs:element ref="external-graphic"/>
+			</xs:choice>
+		</xs:sequence>
+	</xs:group>
+	<xs:complexType id="oecdExtractType" name="oecdExtractType">
+		<xs:annotation>
+			<xs:documentation>
+				<section xmlns="http://docbook.org/ns/docbook">
+					<para>Extracts are a way to include content from other sources. An extract many
+						consist of content in one of four forms:</para>
+					<itemizedlist>
+						<listitem>
+							<para>referenced content - via a URI</para>
+						</listitem>
+						<listitem>
+							<para>embedded XML content</para>
+						</listitem>
+						<listitem>
+							<para>transcribed quotes</para>
+						</listitem>
+						<listitem>
+							<para>scanned images</para>
+						</listitem>
+					</itemizedlist>
+				</section>
+			</xs:documentation>
+		</xs:annotation>
+		<xs:group ref="oecdExtractTypeContent"/>
+		<xs:attributeGroup ref="oecdExtractTypeAttributes"/>
+	</xs:complexType>
+	<!-- ATTRIBUTES -->
+	<!-- GLOBAL GROUPS -->
+	<xs:group id="oecdBlockGroup" name="oecdBlockGroup">
+		<xs:annotation>
+			<xs:documentation>
+				<section xmlns="http://docbook.org/ns/docbook">
+					<para>The oecdBlockGroup group allows other models to simply reuse all the
+						available block components.</para>
+				</section>
+			</xs:documentation>
+		</xs:annotation>
+		<xs:choice>
+			<xs:group ref="oecdSimpleBlockGroup"/>
+			<xs:element ref="box"/>
+		</xs:choice>
+	</xs:group>
+	<xs:group id="oecdSimpleBlockGroup" name="oecdSimpleBlockGroup">
+		<xs:annotation>
+			<xs:documentation>
+				<section xmlns="http://docbook.org/ns/docbook">
+					<para>The oecdSimpleBlockGroup group allows other models to simply reuse all the
+						available bar those with rarely                         used content models
+						such as boxes.</para>
+				</section>
+			</xs:documentation>
+		</xs:annotation>
+		<xs:choice>
+			<xs:group ref="oecdParagraphGroup"/>
+			<xs:group ref="oecdListGroup"/>
+			<xs:element ref="equation"/>
+			<xs:element ref="chemical-structure"/>
+			<xs:element ref="graphic"/>
+			<xs:element ref="figure"/>
+			<xs:element ref="table"/>
+			<xs:group ref="oecdExtractsGroup"/>
+		</xs:choice>
+	</xs:group>
+	<xs:group id="oecdEmbeddableBlockGroup" name="oecdEmbeddableBlockGroup">
+		<xs:annotation>
+			<xs:documentation>
+				<section xmlns="http://docbook.org/ns/docbook">
+					<para>The oecdEmbeddableBlockGroup enumerates thos blocks which many be inserted
+						into paragraphs.Authors have      indicated that some block rendered
+						components are considered as part of paragraphs. This group represents
+						those components.</para>
+					<para>Schematron rules are probably necessary to avoid recursion issues here. It
+						may make more sense to place      the rules on the components
+						themselves.</para>
+				</section>
+			</xs:documentation>
+		</xs:annotation>
+		<xs:choice>
+			<xs:element ref="itemized-list"/>
+			<xs:element ref="ordered-list"/>
+			<xs:element ref="equation"/>
+			<xs:element ref="chemical-structure"/>
+			<xs:element ref="graphic"/>
+			<xs:element ref="figure"/>
+			<xs:element ref="table"/>
+		</xs:choice>
+	</xs:group>
+	<!-- groups of blocks. Used a base for other types -->
+	<xs:attributeGroup id="oecdBlockGroupTypeAttributes" name="oecdBlockGroupTypeAttributes">
+		<xs:annotation>
+			<xs:documentation>
+				<section xmlns="http://docbook.org/ns/docbook">
+					<para>Block group attributes grouped for easier reuse and customisation</para>
+				</section>
+			</xs:documentation>
+		</xs:annotation>
+		<xs:attributeGroup ref="oecdCommonAttributes"/>
+		<xs:attributeGroup ref="oecdLinkingAttributes"/>
+	</xs:attributeGroup>
+	<xs:group id="oecdBlockGroupTypeContent" name="oecdBlockGroupTypeContent">
+		<xs:annotation>
+			<xs:documentation>
+				<section xmlns="http://docbook.org/ns/docbook">
+					<para>Block group content grouped for easier reuse and customisation</para>
+				</section>
+			</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element minOccurs="0" ref="metadata"/>
+			<xs:group ref="oecdTitleGroup"/>
+			<xs:group maxOccurs="unbounded" ref="oecdBlockGroup"/>
+		</xs:sequence>
+	</xs:group>
+	<xs:complexType id="oecdBlockGroupType" name="oecdBlockGroupType">
+		<xs:annotation>
+			<xs:documentation>
+				<section xmlns="http://docbook.org/ns/docbook">
+					<para>Some semantic models consist of a group of blocks with no
+						further structure. This is intended to be used as the type
+						for those models.</para>
+				</section>
+			</xs:documentation>
+		</xs:annotation>
+		<xs:group ref="oecdBlockGroupTypeContent"/>
+		<xs:attributeGroup ref="oecdBlockGroupTypeAttributes"/>
+	</xs:complexType>
+	<!-- GLOBAL ELEMENTS -->
+	<xs:element id="agenda-section" name="agenda-section" type="oecdAgendaSectionType"/>
+	<xs:element id="agenda-session" name="agenda-session" type="oecdAgendaSessionType"/>
+	<!-- GLOBAL GROUPS -->
+	<xs:attributeGroup id="oecdAgendaSectionTypeAttributes" name="oecdAgendaSectionTypeAttributes">
+		<xs:annotation>
+			<xs:documentation>
+				<section xmlns="http://docbook.org/ns/docbook">
+					<para>Attributes for agenda sections as a group for easy overrides and
+						reuse.</para>
+				</section>
+			</xs:documentation>
+		</xs:annotation>
+		<xs:attributeGroup ref="ANNOTATIONS-GROUP"/>
+		<xs:attributeGroup ref="oecdCommonAttributes"/>
+		<xs:attributeGroup ref="oecdLinkingAttributes"/>
+	</xs:attributeGroup>
+	<xs:group id="oecdAgendaSectionTypeBaseContent" name="oecdAgendaSectionTypeBaseContent">
+		<xs:annotation>
+			<xs:documentation>
+				<para xmlns="http://docbook.org/ns/docbook">This group is used to define the content
+					model of      all agenda section content.</para>
+			</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:sequence>
+				<xs:group maxOccurs="unbounded" minOccurs="0" ref="oecdBlockGroup"/>
+			</xs:sequence>
+		</xs:sequence>
+	</xs:group>
+	<xs:group id="oecdAgendaItemTypeContent" name="oecdAgendaItemTypeContent">
+		<xs:sequence>
+			<xs:element minOccurs="0" ref="metadata"/>
+			<xs:sequence>
+				<xs:annotation>
+					<xs:documentation>
+						<para xmlns="http://docbook.org/ns/docbook">The content model for agenda
+							items is        highly structured with semantic elements.</para>
+					</xs:documentation>
+				</xs:annotation>
+				<xs:element form="qualified" maxOccurs="1" minOccurs="0" name="time-period"
+					type="oecdAgendaTimePeriodTypeContent"/>
+				<xs:element form="qualified" maxOccurs="1" minOccurs="1" name="description"
+					type="oecdAgendaDescriptionType"/>
+				<xs:element form="qualified" maxOccurs="1" minOccurs="0" name="documents"
+					type="oecdAgendaResourcesType"/>
+				<xs:element form="qualified" maxOccurs="1" minOccurs="0" name="actions"
+					type="oecdAgendaActionsType"/>
+				<xs:element form="qualified" maxOccurs="unbounded" minOccurs="0" name="annotation"
+					type="oecdAgendaAnnotationType"/>
+			</xs:sequence>
+		</xs:sequence>
+	</xs:group>
+	<xs:group id="oecdAgendaAnnotationTypeContent" name="oecdAgendaAnnotationTypeContent">
+		<xs:annotation>
+			<xs:documentation>
+				<section xmlns="http://docbook.org/ns/docbook">
+					<para>This group is used to define the content model of annotation elements.
+						Annotation       content is separately the main item.</para>
+				</section>
+				<section xmlns="http://docbook.org/ns/docbook">
+					<revhistory>
+						<title>Change Log</title>
+						<revision>
+							<revnumber>1</revnumber>
+							<date>2013-09-20</date>
+							<author>JC</author>
+							<revremark>Changed the content model to allow multiple elements in the
+								sequence.</revremark>
+						</revision>
+					</revhistory>
+					<revhistory>
+						<title>Change Log</title>
+						<revision>
+							<revnumber>2</revnumber>
+							<date>2013-09-24</date>
+							<author>JC</author>
+							<revremark>Changed the content model, title is now optional.</revremark>
+						</revision>
+					</revhistory>
+				</section>
+			</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:group minOccurs="0" ref="oecdTitleGroup"/>
+			<xs:group maxOccurs="unbounded" minOccurs="0" ref="oecdSimpleBlockGroup"/>
+		</xs:sequence>
+	</xs:group>
+	<xs:group id="oecdAgendaDocumentsTypeContent" name="oecdAgendaDocumentsTypeContent">
+		<xs:annotation>
+			<xs:documentation>
+				<para xmlns="http://docbook.org/ns/docbook">This group is used to define the content
+					model of      annotation elements. Annotation content is separately the main
+					item.</para>
+			</xs:documentation>
+		</xs:annotation>
+		<xs:choice>
+			<xs:element maxOccurs="unbounded" minOccurs="0" ref="external-content-reference"/>
+			<xs:element maxOccurs="unbounded" minOccurs="0" ref="phrase"/>
+		</xs:choice>
+	</xs:group>
+	<xs:group id="oecdAgendaDescriptionTypeContent" name="oecdAgendaDescriptionTypeContent">
+		<xs:annotation>
+			<xs:documentation>
+				<para xmlns="http://docbook.org/ns/docbook">This group is used to define the content
+					model of      annotation elements. Annotation content is separately the main
+					item.</para>
+			</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:group ref="oecdTitleGroup"/>
+			<xs:element maxOccurs="unbounded" minOccurs="0" ref="para"/>
+		</xs:sequence>
+	</xs:group>
+	<xs:group id="oecdAgendaActionsTypeContent" name="oecdAgendaActionsTypeContent">
+		<xs:annotation>
+			<xs:documentation>
+				<para xmlns="http://docbook.org/ns/docbook">This group is used to define the content
+					model of      annotation elements. Annotation content is separately the main
+					item.</para>
+			</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element maxOccurs="unbounded" minOccurs="0" ref="para"/>
+		</xs:sequence>
+	</xs:group>
+	<xs:group id="oecdAgendaSectionTypeContent" name="oecdAgendaSectionTypeContent">
+		<xs:annotation>
+			<xs:documentation>
+				<section xmlns="http://docbook.org/ns/docbook">
+					<para>Content for agenda sections as a group for easy overrides and
+						reuse.</para>
+				</section>
+				<section xmlns="http://docbook.org/ns/docbook">
+					<revhistory>
+						<title>Change Log</title>
+						<revision>
+							<revnumber>1</revnumber>
+							<date>2013-08-22</date>
+							<author>JC</author>
+							<revremark>Added agenda-session ref and changed the content model by
+								adding a         choice.</revremark>
+						</revision>
+					</revhistory>
+				</section>
+			</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element minOccurs="0" ref="metadata"/>
+			<xs:group ref="oecdTitleGroup"/>
+			<xs:choice maxOccurs="unbounded">
+				<xs:group ref="oecdAgendaSectionTypeBaseContent"/>
+				<xs:element ref="agenda-session"/>
+			</xs:choice>
+		</xs:sequence>
+	</xs:group>
+	<xs:group id="oecdAgendaSessionTypeContent" name="oecdAgendaSessionTypeContent">
+		<xs:annotation>
+			<xs:documentation>
+				<section xmlns="http://docbook.org/ns/docbook">
+					<para>Content for sessions as a group for easy overrides and reuse.</para>
+				</section>
+			</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element minOccurs="0" ref="metadata"/>
+			<xs:group ref="oecdTitleGroup"/>
+			<xs:group minOccurs="0" ref="oecdSimpleBlockGroup"/>
+			<xs:element form="qualified" maxOccurs="unbounded" minOccurs="1" name="agenda-item"
+				type="oecdAgendaItemType"/>
+		</xs:sequence>
+	</xs:group>
+	<!-- GLOBAL GROUPS -->
+	<!-- COMPLEX TYPES -->
+	<xs:complexType id="oecdAgendaSectionType" name="oecdAgendaSectionType">
+		<xs:group ref="oecdAgendaSectionTypeContent"/>
+		<xs:attributeGroup ref="oecdAgendaSectionTypeAttributes"/>
+	</xs:complexType>
+	<xs:complexType id="oecdAgendaSessionType" name="oecdAgendaSessionType">
+		<xs:group ref="oecdAgendaSessionTypeContent"/>
+		<xs:attributeGroup ref="oecdAgendaSectionTypeAttributes"/>
+	</xs:complexType>
+	<xs:complexType id="oecdAgendaItemType" name="oecdAgendaItemType">
+		<xs:annotation>
+			<xs:documentation>
+				<section xmlns="http://docbook.org/ns/docbook">
+					<para>Items are the major recursive structural components of a Session.</para>
+				</section>
+			</xs:documentation>
+		</xs:annotation>
+		<xs:group ref="oecdAgendaItemTypeContent"/>
+		<xs:attributeGroup ref="oecdAgendaSectionTypeAttributes"/>
+	</xs:complexType>
+	<xs:complexType id="oecdAgendaAnnotationType" name="oecdAgendaAnnotationType">
+		<xs:group ref="oecdAgendaAnnotationTypeContent"/>
+		<xs:attributeGroup ref="oecdAgendaSectionTypeAttributes"/>
+	</xs:complexType>
+	<xs:complexType id="oecdAgendaDescriptionType" name="oecdAgendaDescriptionType">
+		<xs:group ref="oecdAgendaDescriptionTypeContent"/>
+		<xs:attributeGroup ref="oecdAgendaSectionTypeAttributes"/>
+	</xs:complexType>
+	<xs:complexType id="oecdAgendaActionsType" name="oecdAgendaActionsType">
+		<xs:group ref="oecdAgendaActionsTypeContent"/>
+		<xs:attributeGroup ref="oecdAgendaSectionTypeAttributes"/>
+	</xs:complexType>
+	<xs:complexType id="oecdAgendaResourcesType" name="oecdAgendaResourcesType">
+		<xs:group maxOccurs="unbounded" ref="oecdAgendaDocumentsTypeContent"/>
+	</xs:complexType>
+	<!-- COMPLEX TYPES -->
+	<!-- SIMPLE TYPES -->
+	<xs:simpleType id="oecdAgendaTimePeriodTypeContent" name="oecdAgendaTimePeriodTypeContent">
+		<xs:annotation>
+			<xs:documentation>
+				<section xmlns="http://docbook.org/ns/docbook">
+					<para>The definition of time period.</para>
+					<para>time-period acts as a one-dimensional element that represents an
+						identifiable extent       in time. The expected value is described by the
+						time at which it begins and ends       (10:00 - 11:00) and is usually an
+						indicative timing for a meeting. Alternatively it       may be used to
+						describe a fixed limit of a time-period (60 minutes)</para>
+					<revision>
+						<revnumber>7</revnumber>
+						<date>2012-04-18</date>
+						<authorinitials>jc</authorinitials>
+						<revremark>Initial version</revremark>
+					</revision>
+				</section>
+			</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:minLength value="1"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<!-- SIMPLE TYPES -->
+	<xs:annotation>
+		<xs:documentation>
+			<section xmlns="http://docbook.org/ns/docbook">
+				<title>OECD Schemas</title>
+				<subtitle>Document Metadata Component</subtitle>
+				<revhistory>
+					<title>Change Log</title>
+					<revision>
+						<revnumber>1</revnumber>
+						<date>2012-03-30</date>
+						<author>
+							<email>nicg@corbas.co.uk</email>
+							<personname>Nic Gibson</personname>
+						</author>
+						<revremark>Initial Version</revremark>
+					</revision>
+					<para>Document metadata is used as a store for metadata content that is
+						referenced from elsewhere in a document.</para>
+				</revhistory>
+			</section>
+		</xs:documentation>
+	</xs:annotation>
+	<!-- IMPORTS AND INCLUDES -->
+	<!-- GLOBAL ELEMENTS -->
+	<xs:element id="documentMetadata" name="document-metadata" type="oecdDocumentMetadataType"/>
+	<!-- GLOBAL GROUPS -->
+	<!-- COMPLEX TYPES -->
+	<!-- document metadata store -->
+	<xs:attributeGroup id="oecdDocumentMetadataTypeAttributes"
+		name="oecdDocumentMetadataTypeAttributes">
+		<xs:annotation>
+			<xs:documentation>
+				<section xmlns="http://docbook.org/ns/docbook">
+					<para>Attributes for document metadata type.</para>
+				</section>
+			</xs:documentation>
+		</xs:annotation>
+		<xs:attributeGroup ref="oecdCommonAttributes"/>
+		<xs:attributeGroup ref="oecdLinkingAttributes"/>
+	</xs:attributeGroup>
+	<xs:group id="oecdDocumentMetadataTypeContent" name="oecdDocumentMetadataTypeContent">
+		<xs:annotation>
+			<xs:documentation>
+				<section xmlns="http://docbook.org/ns/docbook">
+					<para>Content for document metadata type.</para>
+				</section>
+			</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element maxOccurs="unbounded" ref="metadata"/>
+		</xs:sequence>
+	</xs:group>
+	<xs:complexType id="oecdDocumentMetadataType" name="oecdDocumentMetadataType">
+		<xs:annotation>
+			<xs:documentation>
+				<section xmlns="http://docbook.org/ns/docbook">
+					<para>Document metadata is simply a storage location where metadata elements can
+						be placed and referenced from elsewhere in the document via the metadataRef
+						attribute on most                         elements.</para>
+				</section>
+			</xs:documentation>
+		</xs:annotation>
+		<xs:group ref="oecdDocumentMetadataTypeContent"/>
+		<xs:attributeGroup ref="oecdDocumentMetadataTypeAttributes"/>
+	</xs:complexType>
+	<!-- SIMPLE TYPES -->
+	<!-- GLOBAL GROUPS -->
+	<!-- COMPLEX TYPES -->
+	<!-- document base -->
+	<xs:attributeGroup id="oecdBaseDocumentTypeAttributes" name="oecdBaseAgendaTypeAttributes">
+		<xs:annotation>
+			<xs:documentation>
+				<section xmlns="http://docbook.org/ns/docbook">
+					<para>Attributes for agenda base type.</para>
+				</section>
+			</xs:documentation>
+		</xs:annotation>
+		<xs:attributeGroup ref="oecdCommonAttributes"/>
+		<xs:attributeGroup ref="oecdLinkingAttributes"/>
+	</xs:attributeGroup>
+	<xs:group id="oecdBaseAgendaTypeContent" name="oecdBaseAgendaTypeContent">
+		<xs:annotation>
+			<xs:documentation>
+				<section xmlns="http://docbook.org/ns/docbook">
+					<para>Content for agenda base type.</para>
+				</section>
+			</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element form="qualified" minOccurs="0" name="document-metadata"
+				type="oecdDocumentMetadataType"/>
+			<xs:element ref="metadata"/>
+			<xs:group ref="oecdTitleGroup"/>
+			<xs:element form="qualified" id="abstract" minOccurs="0" name="abstract"
+				type="oecdParagraphGroupType"/>
+			<xs:choice>
+				<xs:sequence>
+					<xs:group maxOccurs="unbounded" minOccurs="0" ref="oecdBlockGroup"/>
+					<xs:choice maxOccurs="unbounded">
+						<xs:element ref="agenda-section"/>
+						<xs:element ref="agenda-session"/>
+					</xs:choice>
+				</xs:sequence>
+			</xs:choice>
+		</xs:sequence>
+	</xs:group>
+	<xs:complexType id="oecdBaseAgendaType" name="oecdBaseAgendaType">
+		<xs:annotation>
+			<xs:documentation>
+				<section xmlns="http://docbook.org/ns/docbook">
+					<para>The base agenda type describes a standard agenda with sessions
+						or an article type with sections.</para>
+				</section>
+			</xs:documentation>
+		</xs:annotation>
+		<xs:group ref="oecdBaseAgendaTypeContent"/>
+		<xs:attributeGroup ref="oecdBaseAgendaTypeAttributes"/>
+	</xs:complexType>
+	<xs:annotation>
+		<xs:documentation>
+			<section xmlns="http://docbook.org/ns/docbook">
+				<para>This model is used to create OECD Agendas.</para>
+			</section>
+		</xs:documentation>
+	</xs:annotation>
+	<!-- GLOBAL ELEMENTS -->
+	<xs:element name="document" type="oecdBaseAgendaType"/>
+</xs:schema>

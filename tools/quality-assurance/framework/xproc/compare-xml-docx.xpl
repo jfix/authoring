@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <p:declare-step xmlns:p="http://www.w3.org/ns/xproc"
 	xmlns:ccproc="http://www.corbas.co.uk/ns/xproc/steps"
-	xmlns:temp="urn:oecd:names:xmlns:transform:temp"
-    xmlns:c="http://www.w3.org/ns/xproc-step" version="1.0" name="compare-xml-docx">
+	xmlns:temp="urn:oecd:names:xmlns:transform:temp" xmlns:oecdstep="urn:oecd:names:xmlns:xproc:steps"
+    xmlns:c="http://www.w3.org/ns/xproc-step" version="1.0" name="compare-xml-docx" type="oecdstep:compare-xml-docx">
 	
 	<p:documentation xmlns="http://www.w3.org/1999/xhtml">
 		<p>Generate a stripped down version of the word document with style names and paragraphs only, compare
@@ -46,9 +46,6 @@
  		<p:with-option name="package-url" select="$word-document"/>
 	</ccproc:docx2xml>
 	
-	<p:store href="/tmp/extracted.xml"/>
-	
-	
 	<!-- Filter the word document down to a set of blocks of text
 	with their styles as attributes. -->
 	<p:xslt version="2.0" name="filter-word-doc">
@@ -59,6 +56,8 @@
 			<p:pipe port="result" step="extract-doc"/>
 		</p:input>		
 	</p:xslt>
+	
+	<p:store href="/tmp/word.xml"/>
 	
 	
 	<!-- Filter the XML document down to a set of blocks of text

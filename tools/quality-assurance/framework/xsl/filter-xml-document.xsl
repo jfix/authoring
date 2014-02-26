@@ -42,6 +42,10 @@
 		<xsl:apply-templates select="temp:block" mode="strip-excess"/>
 	</xsl:template>
 
+	<xsl:template match="temp:block[temp:block][matches(string-join(text(), ''), '^\s*$')]" mode="strip-excess">
+		<xsl:apply-templates select="temp:block" mode="strip-excess"/>
+	</xsl:template>
+	
 	<xsl:template match="metadata|footnote" priority="1"/>
 
 	<xd:doc>
@@ -60,10 +64,8 @@
 		</block>
 	</xsl:template>
 
-	<xd:doc>
-		<xd:desc>Suppress blocks inside paras - they will be handled by the main select
-			anyway</xd:desc>
-	</xd:doc>
+	<!-- This is here to work around Quark's external graphic oddities -->
+	<xsl:template match="external-graphic" priority="2"/>
 
 	<xd:doc>
 		<xd:desc>Just return the text of nodes which are descendants of nodes with text!</xd:desc>

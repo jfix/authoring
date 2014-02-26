@@ -73,7 +73,7 @@
                         <xsl:with-param name="caption">Role</xsl:with-param>
                         <xsl:with-param name="value" select="$role"/>
                     </xsl:call-template>
-                    <xsl:if test="$output-schematron-id">
+                    <xsl:if test="$output-schematron-id = 'true'">
                         <xsl:call-template name="header-line">
                             <xsl:with-param name="caption">ID</xsl:with-param>
                             <xsl:with-param name="value" select="$schematron-id"/>

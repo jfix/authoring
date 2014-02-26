@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <p:library xmlns:p="http://www.w3.org/ns/xproc" xmlns:c="http://www.w3.org/ns/xproc-step"
-	xmlns:l="http://xproc.org/library" xmlns:oecd="urn:oecd:names:xmlns:xproc"
+	xmlns:l="http://xproc.org/library" 
+	xmlns:oecdstep="urn:oecd:names:xmlns:xproc:steps"
 	xmlns:ccproc="http://www.corbas.co.uk/ns/xproc/steps" version="1.0">
 	
 	<!-- NDW's libary step to simplify validation -->
@@ -12,7 +13,7 @@
 	<!-- Corbas utility library -->
 	<p:import href="temp-dir.xpl"/>
 	
-	<p:declare-step type="oecd:xsd-validation" name="xsd-validation">
+	<p:declare-step type="oecdstep:xsd-validation" name="xsd-validation">
 
 		<p:input port="source" primary="true">
 			<p:documentation xmlns="http://www.w3.org/1999/xhtml">
@@ -30,7 +31,7 @@
 
 		<p:output port="result" primary="true">
 			<p:documentation xmlns="http://www.w3.org/1999/xhtml">
-				<p>The primary output an SVRL document listing any errors in the validation</p>
+				<p>The primary output is an SVRL document listing any errors in the validation</p>
 			</p:documentation>			
 			<p:pipe port="result" step="convert-to-svrl"/>
 		</p:output>
@@ -64,6 +65,8 @@
 				<p>Create a tidied version of the XML with no XML declaration or comments with
 					indenting on. This makes it easier to generate useful locations and XPaths for
 					errors</p>
+				<p>An issue with empty metadata nodes is also resolved here - whitespace only
+				text is stripped to avoid confusing the schema validation.</p>
 			</p:documentation>
 			<p:input port="source">
 				<p:pipe port="source" step="xsd-validation"/>
@@ -74,6 +77,12 @@
 						<xsl:template match="@*|node()">
 							<xsl:copy>
 								<xsl:apply-templates select="@*|node()"/>
+							</xsl:copy>
+						</xsl:template>
+						
+						<xsl:template match="*:metadata-item[normalize-space(.) = '']">
+							<xsl:copy>
+								<xsl:apply-templates select="@*"/>
 							</xsl:copy>
 						</xsl:template>
 
@@ -88,11 +97,12 @@
 
 		<!-- write the file temp. URL of stored file on secondary output (href)
 			of store-to-temp -->
-		<oecd:store-to-temp name="store-stripped"/>
+		<oecdstep:store-to-temp name="store-stripped"/>
 
 		<!-- ignore primary output -->
 		<p:sink/>
 		
+	
 		<!-- make secondary primary so we can get the name in the load below-->
 		<p:identity>
 			<p:input port="source">
@@ -105,6 +115,13 @@
 		<p:load name="load-stripped">
 			<p:with-option name="href" select="/c:result/text()"/>
 		</p:load>
+		
+		<p:store  href="/tmp/stripped.xml">
+			<p:input port="source">
+				<p:pipe port="result" step="load-stripped"/>
+			</p:input>
+		</p:store>
+	
 
 		<!-- validate the stripped down doc -->
 		<l:xml-schema-report name="validate">
@@ -118,6 +135,12 @@
 
 		<!-- again, we have no interest in the primary output -->
 		<p:sink/>
+		
+		<p:store href="/tmp/validation.xml">
+			<p:input port="source">
+				<p:pipe port="report" step="validate"/>
+			</p:input>
+		</p:store>
 				
 		<!-- force the stored file name to be in the primary port again -->
 		<p:identity>
@@ -138,6 +161,7 @@
 			<p:with-param name="xml-file" select="/c:result/text()"/>
 		</p:xslt>
 		
+		
 		<!-- now process the c:errors to turn to svrl -->
 		<p:xslt name="convert-to-svrl">
 			<p:input port="source">
@@ -154,7 +178,7 @@
 	</p:declare-step>
 
 
-	<p:declare-step name="store-to-temp" type="oecd:store-to-temp">
+	<p:declare-step name="store-to-temp" type="oecdstep:store-to-temp">
 
 		<p:documentation xmlns="http://www.w3.org/1999/xhtml">
 			<p><code>ccproc:store-temp</code> wraps <code>p:store</code> to save a document to a
@@ -193,7 +217,7 @@
 		</p:identity>
 
 		<!-- specify UTF-8 here because we are writing a file which 
-	will have no declaration. indent for ease of handling the validation messages -->
+		will have no declaration. indent for ease of handling the validation messages -->
 		<p:store omit-xml-declaration="true" encoding="utf-8" indent="true">
 			<p:input port="source">
 				<p:pipe port="source" step="store-to-temp"/>
