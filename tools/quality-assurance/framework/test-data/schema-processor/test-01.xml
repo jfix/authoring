@@ -1,6 +1,0 @@
-<root id="foo" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.corbas.co.uk/ns/test" xsi:schemaLocation="http://www.corbas.co.uk/ns/test test1.xsd">
-	<child1>Child 1 - instance 1</child1>
-	<child1>Child 1 - instance 2</child1>
-	<child3>Child 3 - instance 1</child3>
-	<child1>Child 1 - invalid instance</child1>
-</root>
