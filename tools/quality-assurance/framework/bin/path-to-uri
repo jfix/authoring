@@ -1,0 +1,19 @@
+#!/usr/bin/perl
+
+use strict;
+use warnings;
+use URI;
+use URI::file;
+use URI::Escape;
+use Cwd qw/abs_path/;
+
+my ($path, $escape) = ('', '');
+
+$path = shift;
+
+
+my $abs = abs_path($path);
+my $uri = URI::file->new($abs);
+my $uri_path = $uri->path;
+
+print "$uri\n";
