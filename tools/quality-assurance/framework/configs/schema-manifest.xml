@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <manifest xmlns="urn:oecd:names:xmlns:transform:manifest">
-	<item type="Official Document" quark-schema="../official-document-flat.xas" schema="../schemas/oecd.author.xsd" 
+	
+	<item type="Official Document" quark-schema="../official-document.xas" schema="../schemas/oecd.author.xsd" 
 		schematron="../schematron/document.sch" elements="./document-schema-elements.xml"/>
-	<item type="Agenda" quark-schema="./agenda-flat.xas" schema="../schemas/oecd.agenda.xsd" 
+
+	<item type="Agenda" quark-schema="./agenda.xas" schema="../schemas/oecd.agenda.xsd" 
 		schematron="../schematron/agenda.sch" elements="./agenda-schema-elements.xml"/>
-	<item type="Publication" quark-schema="./publication-flat.xas" schema="../schemas/oecd.publication.xsd" 
+
+	<item type="Publication" quark-schema="./publication.xas" schema="../schemas/oecd.publication.xsd" 
 		schematron="../schematron/publication.sch" elements="./publication-schema-elements.xml"/>
-	
-	
-	
+		
 </manifest>
