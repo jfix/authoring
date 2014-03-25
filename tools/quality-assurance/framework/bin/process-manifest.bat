@@ -1,14 +1,17 @@
-REM java locations
-SET JAVA_HOME=%CommonProgramFiles%\Java\jre7
-SET JAVA=%JAVA_HOME%\bin\java.exe
-SET SAXON_LICENSE=%CommonProgramFiles%\Saxonica\SaxonEE9.4N\bin
-SET CLASSPATH=%FRAMEWORK%\bin\saxonee9.jar;%FRAMEWORK%\bin\calabash.jar;%SAXON_LICENSE%
+@ECHO OFF
 
 REM path to all OECD scripts
 set OECDROOT=C:\_DEV
 
 REM path to the QC framework files.
 set FRAMEWORK=%OECDROOT%\authoring\tools\quality-assurance\framework
+
+REM java locations
+SET JAVA_HOME=%CommonProgramFiles%\Java\jre7
+SET JAVA=%JAVA_HOME%\bin\java.exe
+SET SAXON_LICENSE=%CommonProgramFiles%\Saxonica\SaxonEE9.4N\bin
+SET CLASSPATH=%FRAMEWORK%\bin\saxonee9.jar;%FRAMEWORK%\bin\calabash.jar;%SAXON_LICENSE%
+
 
 REM path to the list of schemas
 set SCHEMA_MANIFEST=%FRAMEWORK%\configs\schema-manifest.xml
