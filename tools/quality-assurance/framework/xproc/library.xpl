@@ -34,11 +34,17 @@
 			
 		<p:option name="output-root" required="true">
 			<p:documentation xmlns="http://www.w3.org/1999/xhtml">
-				<p></p>
+				<p>The base URI for output files.</p>
 			</p:documentation>
 		</p:option>
 		
-		<p:option name="suffix" select="'.validation.html'"/>
+		<p:option name="attrib" select="'href'">
+			<p:documentation xmlns="http://www.w3.org/1999/xhtml">
+				<p>Name of the attribute to base the file name on.</p>
+			</p:documentation>
+		</p:option>
+		
+		<p:option name="suffix" select="'.report.html'"/>
 		
 		<p:xslt>
 			<p:input port="stylesheet">
@@ -46,66 +52,26 @@
 					<xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="2.0">
 						<xsl:param name="output-root"/>
 						<xsl:param name="suffix"/>
+						<xsl:param name="attrib"/>
+						<xsl:variable name="rel" select="/manifest:item/@*[local-name() eq $attrib]"/>
+						<xsl:variable name="cleaned" select="string-join(
+							for $part in tokenize($rel, '/') return replace($part, '[^\w]', '_'),
+							'/')"></xsl:variable>
 						<xsl:template match="manifest:item">
-							<c:result href="{resolve-uri(concat(@href, $suffix), if (ends-with($output-root, '/')) then $output-root else concat($output-root, '/'))}"/>
+							<c:result href="{resolve-uri(concat($cleaned, $suffix), if (ends-with($output-root, '/')) then $output-root else concat($output-root, '/'))}"/>
 						</xsl:template>
 					</xsl:stylesheet>
 				</p:inline>
 			</p:input>
 			<p:with-param name="output-root" select="$output-root"/>
 			<p:with-param name="suffix" select="$suffix"/>
+			<p:with-param name="attrib" select="$attrib"/>
 		</p:xslt>
 		
 		
 	</p:declare-step>
 	
 	
-	<p:declare-step name="docx-report-uri" type="oecdstep:docx-report-uri">
-		<p:documentation xmlns="http://www.w3.org/1999/xhtml">
-			<p>Given the <code>item</code> element for a document in the input sequence, 
-				create the URI for the output document from the output path and the input name.</p>
-		</p:documentation>
-		
-		<p:input port="source" primary="true">
-			<p:documentation xmlns="http://www.w3.org/1999/xhtml">
-				<p>The <code>item</code> element for a document in the input sequence.</p>
-			</p:documentation>
-		</p:input>
-		
-		<p:output port="result" primary="true">
-			<p:documentation xmlns="http://www.w3.org/1999/xhtml">
-				<p>A c:result containing the output URI on the href attribute.</p>
-			</p:documentation>
-		</p:output>
-		
-		
-		<p:option name="output-root" required="true">
-			<p:documentation xmlns="http://www.w3.org/1999/xhtml">
-				
-			</p:documentation>
-		</p:option>
-		
-		<p:option name="suffix" select="'.comparison.html'"/>
-		
-		<p:xslt>
-			<p:input port="stylesheet">
-				<p:inline>
-					<xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="2.0">
-						<xsl:param name="output-root"/>
-						<xsl:param name="suffix"/>
-						<xsl:template match="manifest:item">
-							<c:result href="{resolve-uri(concat(@href, $suffix), if (ends-with($output-root, '/')) then $output-root else concat($output-root, '/'))}"/>
-						</xsl:template>
-					</xsl:stylesheet>
-				</p:inline>
-			</p:input>
-			<p:with-param name="output-root" select="$output-root"/>
-			<p:with-param name="suffix" select="$suffix"/>
-		</p:xslt>
-		
-		
-	</p:declare-step>
-
 	
 	
 	<p:declare-step name="find-doc-type" type="oecdstep:find-doc-type">

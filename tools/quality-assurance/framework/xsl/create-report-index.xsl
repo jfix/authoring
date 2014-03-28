@@ -38,8 +38,7 @@
 	<xsl:variable name="where-am-i" select="base-uri(document(''))"/>
 	
 	<xsl:param name="output-root"/>
-	<xsl:param name="suffix" select="'.validation.html'"/>
-	<xsl:param name="docx-suffix" select="'.comparison.html'"/>
+	<xsl:param name="suffix" select="'.report.html'"/>
 	
 	<xsl:template match="manifest">
 		<html>
@@ -69,7 +68,7 @@
 	<xsl:template match="item">
 		<div class="report-item">
 			<xsl:apply-templates select="@href" mode="caption"/>
-			<ul><xsl:apply-templates select="@href|@docx-href"/></ul>
+			<ul><xsl:apply-templates select="@*"/></ul>
 		</div>
 	</xsl:template>
 	
@@ -78,11 +77,28 @@
 	</xsl:template>
 	
 	<xsl:template match="@href">
-		<li><a href="{concat(., $suffix)}">Validation Report</a></li>
+		<li><a>
+			<xsl:apply-templates select="." mode="generate-href"/>
+			Validation Report</a></li>
 	</xsl:template>
 	
 	<xsl:template match="@docx-href">
-		<li><a href="{concat(., $docx-suffix)}">Word Comparison Report</a></li>
+		<li><a>
+			<xsl:apply-templates select="." mode="generate-href"/>
+			Word Comparison Report</a></li>
+	</xsl:template>
+	
+	<xsl:template match="@submitted-href">
+		<li><a>
+			<xsl:apply-templates select="." mode="generate-href"/>
+			Submitted File Validation Report</a></li>
+	</xsl:template>
+	
+	<xsl:template match="@*" mode="generate-href">
+		<xsl:variable name="cleaned" select="string-join(
+			for $part in tokenize(., '/') return replace($part, '[^\w]', '_'),
+			'/')"></xsl:variable>
+		<xsl:attribute name="href" select="concat($cleaned, $suffix)"/>
 	</xsl:template>
 	
 </xsl:stylesheet>

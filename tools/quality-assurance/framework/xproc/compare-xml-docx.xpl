@@ -56,10 +56,7 @@
 			<p:pipe port="result" step="extract-doc"/>
 		</p:input>		
 	</p:xslt>
-	
-	<p:store href="/tmp/word.xml"/>
-	
-	
+
 	<!-- Filter the XML document down to a set of blocks of text
 	with their styles as above. There are a couple of complexities
 	to this documented in the stylesheet -->
@@ -144,7 +141,5 @@
 			<p:pipe port="result" step="docs-wrapped"/>
 		</p:input>
 	</p:xslt>
-	
-	
 
 </p:declare-step>

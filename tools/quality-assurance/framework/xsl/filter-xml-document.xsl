@@ -3,8 +3,8 @@
 	xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xd="http://www.oxygenxml.com/ns/doc/xsl"
 	xmlns:oecd="urn:oecd:names:xmlns:authoring:document"
 	xpath-default-namespace="urn:oecd:names:xmlns:authoring:document"
-	xmlns:temp="urn:oecd:names:xmlns:transform:temp"
-	xmlns="urn:oecd:names:xmlns:transform:temp" exclude-result-prefixes="xs xd oecd temp" version="2.0">
+	xmlns:temp="urn:oecd:names:xmlns:transform:temp" xmlns="urn:oecd:names:xmlns:transform:temp"
+	exclude-result-prefixes="xs xd oecd temp" version="2.0">
 	<xd:doc scope="stylesheet">
 		<xd:desc>
 			<xd:p><xd:b>Created on:</xd:b> Oct 29, 2013</xd:p>
@@ -21,11 +21,11 @@
 	<xsl:output indent="yes"/>
 
 	<xsl:template match="/">
-		<document>		
-		<xsl:variable name="phase1">
-			<xsl:apply-templates/>
-		</xsl:variable>
-		<xsl:apply-templates select="$phase1" mode="strip-excess"/>
+		<document>
+			<xsl:variable name="phase1">
+				<xsl:apply-templates/>
+			</xsl:variable>
+			<xsl:apply-templates select="$phase1" mode="strip-excess"/>
 		</document>
 	</xsl:template>
 
@@ -42,10 +42,11 @@
 		<xsl:apply-templates select="temp:block" mode="strip-excess"/>
 	</xsl:template>
 
-	<xsl:template match="temp:block[temp:block][matches(string-join(text(), ''), '^\s*$')]" mode="strip-excess">
+	<xsl:template match="temp:block[temp:block][matches(string-join(text(), ''), '^\s*$')]"
+		mode="strip-excess">
 		<xsl:apply-templates select="temp:block" mode="strip-excess"/>
 	</xsl:template>
-	
+
 	<xsl:template match="metadata|footnote" priority="1"/>
 
 	<xd:doc>

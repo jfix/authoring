@@ -1,0 +1,13 @@
+#!/bin/sh
+
+JLIB=/usr/local/share/java
+CALABASH=$JLIB/calabash.jar
+SAXON=$JLIB/saxon9ee.jar
+AH=$JLIB/Alternate_XfoJavaCtl.jar
+HTML=$JLIB/tagsoup-1.2.1.jar
+
+CONFIG=/Users/nicg/bin/calabash.config.xml
+CP=$SAXON:$CALABASH:$AH:$HTML
+
+java -Xmx4096M -classpath $CP com.xmlcalabash.drivers.Main --config=$CONFIG --saxon-processor=ee $*
+

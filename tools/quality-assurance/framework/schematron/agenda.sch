@@ -5,5 +5,7 @@
 	
 	<ns uri="urn:oecd:names:xmlns:authoring:document" prefix="doc"/>
 	<include href="metadata.sch"/>
+	<include href="submitted-metadata.sch"/>
+	<include href="submitted-content.sch"/>
 	
 </schema>

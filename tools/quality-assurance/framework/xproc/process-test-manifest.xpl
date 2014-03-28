@@ -50,6 +50,15 @@
 		<p:pipe port="manifest" step="pipeline"/>
 	</p:variable>
 
+	<cx:message name="message-1">
+		<p:input port="source">
+			<p:pipe port="manifest" step="pipeline"/>
+		</p:input>
+		<p:with-option name="message" select="concat('Base URI… ', $input-base-uri)"/>
+	</cx:message>
+	
+	<p:sink/>
+
 	<!-- load the manifest and process one file at a time. -->
 	<p:for-each name="loop-items">
 
@@ -57,13 +66,9 @@
 
 		<p:iteration-source select="//manifest:item">
 			<p:pipe port="manifest" step="pipeline"/>
-		</p:iteration-source>
+		</p:iteration-source>			
 
 		<p:variable name="document-uri" select="resolve-uri(//manifest:item/@href, $input-base-uri)"/>
-
-		<cx:message>
-			<p:with-option name="message" select="concat('Processing… ', $document-uri)"/>
-		</cx:message>
 
 		<!-- get the report URI -->
 		<oecdstep:report-uri name="report-uri">
@@ -71,7 +76,18 @@
 				<p:pipe port="current" step="loop-items"/>
 			</p:input>
 			<p:with-option name="output-root" select="$output-base-uri"/>
+			<p:with-option name="attrib" select="'href'"/>
 		</oecdstep:report-uri>
+		
+		<cx:message>
+			<p:input port="source">
+				<p:pipe port="result" step="report-uri"/>
+			</p:input>
+			<p:with-option name="message" select="concat('Processing… ', $document-uri, ' to ', /c:result/@href)"/>
+			
+		</cx:message>
+
+
 
 		<!-- load the document -->
 		<p:load name="load-test-document">
@@ -133,7 +149,78 @@
 				<p:pipe port="result" step="report-uri"/>
 			</p:with-option>
 		</p:store>
+		
+		<!-- process the submitted qxa if available -->
+		<p:choose>
+			
+			<p:xpath-context>
+				<p:pipe port="current" step="loop-items"/>
+			</p:xpath-context>
+			
+			<p:when test="/manifest:item/@submitted-href">			
+				
+				<p:variable name="submit-uri" select="resolve-uri(/manifest:item/@submitted-href, $input-base-uri)">
+					<p:pipe port="current" step="loop-items"/>
+				</p:variable>
 
+				<!-- get the report URI -->
+				<oecdstep:report-uri name="submit-report-uri">
+					<p:input port="source">
+						<p:pipe port="current" step="loop-items"/>
+					</p:input>
+					<p:with-option name="output-root" select="$output-base-uri"/>
+					<p:with-option name="attrib" select="'submitted-href'"/>
+				</oecdstep:report-uri>
+				
+				<!-- load the document -->
+				<p:load name="load-submit-test-document">
+					<p:with-option name="href" select="$submit-uri"/>
+				</p:load>
+				
+				<oecdstep:process-document name="process-submitted-document">
+					<p:input port="source">
+						<p:pipe port="result" step="load-submit-test-document"/>
+					</p:input>
+					<p:input port="schema">
+						<p:pipe port="result" step="load-schema"/>
+					</p:input>
+					<p:input port="schematron">
+						<p:pipe port="result" step="load-schematron"/>
+					</p:input>
+				</oecdstep:process-document>
+				
+				<p:store>
+					<p:input port="source">
+						<p:pipe port="result" step="process-submitted-document"/>
+					</p:input>
+					<p:with-option name="href" select="//c:result/@href">
+						<p:pipe port="result" step="submit-report-uri"/>
+					</p:with-option>
+				</p:store>
+				
+				<p:identity name="submit-identity">
+					<p:input port="source">
+						<p:pipe port="result" step="load-test-document"/>
+					</p:input>
+				</p:identity>
+				
+			</p:when>
+			
+			<p:otherwise>
+				
+				<p:identity name="submit-identity">
+					<p:input port="source">
+						<p:pipe port="result" step="load-test-document"/>
+					</p:input>
+				</p:identity>
+				
+			</p:otherwise>
+				
+		</p:choose>
+		
+		<p:sink/>
+	
+		<!-- process the docx conversion if available -->
 		<p:choose>
 
 			<p:xpath-context>
@@ -141,6 +228,18 @@
 			</p:xpath-context>
 
 			<p:when test="/manifest:item/@docx-href">
+				
+				<p:xslt version="2.0" name="strip-quark-nodes-for-word">
+					<p:input port="parameters">
+						<p:empty/>
+					</p:input>
+					<p:input port="stylesheet">
+						<p:document href="../xsl/strip-quark-nodes.xsl"/>
+					</p:input>
+					<p:input port="source">
+						<p:pipe port="result" step="load-test-document"/>
+					</p:input>		
+				</p:xslt>
 
 				<!-- get the qxa schema -->
 				<p:load name="load-quark-schema">
@@ -151,12 +250,13 @@
 				</p:load>
 
 				<!-- get the report URI -->
-				<oecdstep:docx-report-uri name="docx-report-uri">
+				<oecdstep:report-uri name="docx-report-uri">
 					<p:input port="source">
 						<p:pipe port="current" step="loop-items"/>
 					</p:input>
 					<p:with-option name="output-root" select="$output-base-uri"/>
-				</oecdstep:docx-report-uri>
+					<p:with-option name="attrib" select="'docx-href'"/>
+				</oecdstep:report-uri>
 
 				<!-- do comparison -->
 				<oecdstep:compare-xml-docx name="docx-comparison">
@@ -164,12 +264,22 @@
 						<p:pipe step="load-quark-schema" port="result"/>
 					</p:input>
 					<p:input port="xml-document">
-						<p:pipe port="result" step="load-test-document"/>
+						<p:pipe port="result" step="strip-quark-nodes-for-word"/>
 					</p:input>
-					<p:with-option name="word-document" select="/manifest:item/@docx-href">
+					<p:with-option name="word-document" select="resolve-uri(/manifest:item/@docx-href, $input-base-uri)">
 						<p:pipe port="current" step="loop-items"/>
 					</p:with-option>
 				</oecdstep:compare-xml-docx>
+				
+				<!-- render to HTML -->
+				<p:xslt name="render-docx-comparison">
+					<p:input port="stylesheet">
+						<p:document href="../xsl/render-docx-comparison.xsl"/>
+					</p:input>
+					<p:input port="source">
+						<p:pipe port="result" step="docx-comparison"></p:pipe>
+					</p:input>
+				</p:xslt>
 
 				<!-- write report -->
 				<p:store name="store-docx-report">

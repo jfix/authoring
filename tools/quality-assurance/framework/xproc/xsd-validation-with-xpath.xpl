@@ -136,11 +136,11 @@
 		<!-- again, we have no interest in the primary output -->
 		<p:sink/>
 		
-		<p:store href="/tmp/validation.xml">
+<!--		<p:store href="/tmp/validation.xml">
 			<p:input port="source">
 				<p:pipe port="report" step="validate"/>
 			</p:input>
-		</p:store>
+		</p:store>-->
 				
 		<!-- force the stored file name to be in the primary port again -->
 		<p:identity>

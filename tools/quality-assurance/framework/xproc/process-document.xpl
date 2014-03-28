@@ -89,13 +89,28 @@
 		
 	</p:declare-step>
 	
+	<!-- Run the Quark node stripper to remove any nodes that we don't actually want to validate -->
+	<p:xslt version="2.0" name="strip-quark-nodes">
+		<p:input port="parameters">
+			<p:empty/>
+		</p:input>
+		<p:input port="stylesheet">
+			<p:document href="../xsl/strip-quark-nodes.xsl"/>
+		</p:input>
+		<p:input port="source">
+			<p:pipe port="source" step="process-document"/>
+		</p:input>		
+	</p:xslt>
+	
+
+	
 	<!-- validate agains the XML schema -->
 	<oecdstep:xsd-validation name="validate-against-xsd">
 		<p:documentation xmlns="http://www.w3.org/1999/xhtml">
 			<p>Process the input document with XSD, getting an SVRL document as the result.</p>
 		</p:documentation>
 		<p:input port="source">
-			<p:pipe port="source" step="process-document"/>
+			<p:pipe port="result" step="strip-quark-nodes"/>
 		</p:input>
 		<p:input port="schema">
 			<p:pipe port="schema" step="process-document"/>
@@ -107,7 +122,7 @@
 			<p:empty/>
 		</p:input>
 		<p:input port="source">
-			<p:pipe port="source" step="process-document"/>
+			<p:pipe port="result" step="strip-quark-nodes"/>
 		</p:input>
 		<p:input port="schema">
 			<p:pipe port="schematron" step="process-document"/>
@@ -168,7 +183,7 @@
 			<p:pipe port="result" step="create-reporter-stylesheet"/>
 		</p:input>
 		<p:input port="source">
-			<p:pipe port="source" step="process-document"/>
+			<p:pipe port="result" step="strip-quark-nodes"/>
 		</p:input>
 	</p:xslt>
 	

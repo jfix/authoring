@@ -296,7 +296,7 @@
 			<p:pipe port="result" step="get-footnotes"/> 
 			<p:pipe port="result" step="get-endnotes"/>
 			<p:pipe port="result" step="get-app-properties"/>
-			 <p:pipe port="result" step="get-core-properties"/>
+			<p:pipe port="result" step="get-core-properties"/>
 			<p:pipe port="result" step="get-relationships"/>
 			<p:pipe port="result" step="get-footnote-relationships"/>
 			<p:pipe port="result" step="get-endnote-relationships"/>

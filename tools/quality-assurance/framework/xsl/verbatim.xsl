@@ -553,7 +553,7 @@
 		<xsl:sequence 
 			select="if (exists($prefixes)) 
 				then (for $ns in $prefixes 
-				return if (namespace-uri-for-prefix($ns, $node) = $uri) then ($ns) else ())[1] else ''"/>
+				return if (namespace-uri-for-prefix($ns, $node) = $uri) then ($ns) else '')[1] else ''"/>
 
 	</xsl:function>
 
