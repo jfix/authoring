@@ -252,7 +252,7 @@
 		<xd:desc><xd:p>Output the namespace prefix for an element that
 		actually has one.</xd:p></xd:desc>
 	</xd:doc>
-	<xsl:template match="*[not(cfn:namespace-prefix(.) = '')]" mode="verbatim-ns-prefix">
+	<xsl:template match="*[not(local-name() = name())]" mode="verbatim-ns-prefix">
 		<xsl:variable name="ns" select="cfn:namespace-prefix(.)"/>
 		<span class="verbatim-element-nsprefix">
 			<xsl:value-of select="cfn:namespace-prefix(.)"/>
@@ -260,6 +260,7 @@
 		<xsl:text>:</xsl:text>
 	</xsl:template>
 
+	
 	<xd:doc>
 		<xd:desc><xd:p>Suppress processing of namespace prefix for elements in the
 		default (or no) namespace.</xd:p></xd:desc>
@@ -300,8 +301,17 @@
 				</span>
 			</xsl:if>
 		</xsl:for-each>
+		
 	</xsl:template>
-
+	
+	<xd:doc>
+		<xd:desc>Generate a namespace declaration for those elements where the parent
+		is in a namespace but the current node isn't</xd:desc>
+	</xd:doc>
+	<xsl:template match="*[not(namespace-uri())][namespace-uri(parent::*)]" mode="verbatim-ns-declarations">
+		<span class="verbatim-ns-name"><xsl:text> xmlns=""</xsl:text></span>
+	</xsl:template>
+	
 	<xd:doc>
 		<xd:desc><xd:p>Process the content of elements. If depth has been exceeded,
 		this template will replace the content of the current element with
@@ -424,7 +434,7 @@
 			</xsl:call-template>
 		</span>
 		<xsl:text>--&gt;</xsl:text>
-		<xsl:if test="not(parent::*)">
+		<xsl:if test="parent::*">
 			<br/>
 			<xsl:text>&#xA;</xsl:text>
 		</xsl:if>
@@ -452,8 +462,7 @@
 	</xsl:template>
 
 	<xd:doc>
-		<xd:desc><xd:p>This template replaces all spaces with the indent character
-			(by default a non breaking space) with the tab indent (defined
+		<xd:desc><xd:p>This template replaces all tabs with the tab indent (defined
 		as $tab-width indent characters). </xd:p></xd:desc>
 	</xd:doc>
 	<!-- preformatted output: space as &nbsp;, tab as 8 &nbsp;
@@ -461,7 +470,7 @@
 	<xsl:template name="preformatted-output">
 		<xsl:param name="text"/>
 		<xsl:call-template name="output-nl">
-			<xsl:with-param name="text" select="replace(replace($text, $tab, $tab-out), ' ', $indent-char)"
+			<xsl:with-param name="text" select="replace($text, $tab, $tab-out)"
 			/>
 		</xsl:call-template>
 	</xsl:template>
@@ -539,21 +548,21 @@
 
 	<xd:doc>
 		<xd:desc>
-			<xd:p>Return the namespace prefix for a node if known.</xd:p>
+			<xd:p>Return the namespace prefix for a node if known and it has one.</xd:p>
 		</xd:desc>
 	</xd:doc>
 	<xsl:function name="cfn:namespace-prefix" as="xs:string">
 
 		<xsl:param name="node" as="element()"/>
 		<xsl:variable name="uri" select="namespace-uri($node)" as="xs:anyURI"/>
-		<xsl:variable name="prefixes" select="in-scope-prefixes($node)" as="xs:string*"/>
+		<xsl:variable name="prefixes" select="in-scope-prefixes($node)" as="xs:string*"/>		
+		<xsl:variable name="prefixes" select="if (exists($uri) ) 
+			then for $ns in $prefixes 
+				 return 
+					(if (namespace-uri-for-prefix($ns, $node) = $uri) then $ns else ())
+			else ()"/>
 		
-		<!-- if we have any prefixes loop over them and find which matches the namespace for
-			this node. If we get any where return the prefix string. -->
-		<xsl:sequence 
-			select="if (exists($prefixes)) 
-				then (for $ns in $prefixes 
-				return if (namespace-uri-for-prefix($ns, $node) = $uri) then ($ns) else '')[1] else ''"/>
+		<xsl:sequence select="$prefixes[1]"/>
 
 	</xsl:function>
 
@@ -568,6 +577,7 @@
 	</xd:doc>
 	<xsl:function name="cfn:newly-declared-namespaces" as="xs:string*">
 		<xsl:param name="node" as="element()"/>
+		<xsl:variable name="parent-node" select="$node/parent::*"/>
 
 		<!-- in scope namespace uris for this node -->
 		<xsl:variable name="our-namespaces"
@@ -575,7 +585,7 @@
 
 		<!-- in scope namespace uris for the parent node -->
 		<xsl:variable name="parent-namespaces"
-			select="if ($node/parent::*) then for $ns in in-scope-prefixes($node/parent::*) return namespace-uri-for-prefix($ns, $node/parent::*) else ()"/>
+			select="if ($parent-node) then for $ns in in-scope-prefixes($parent-node) return namespace-uri-for-prefix($ns, $parent-node) else ()"/>
 
 		<!-- the URIs that have just become in scope -->
 		<xsl:variable name="new-namespace-uris"

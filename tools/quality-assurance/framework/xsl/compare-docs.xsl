@@ -4,7 +4,7 @@
 	 xpath-default-namespace="urn:oecd:names:xmlns:transform:temp"
 	 xmlns:map="http://www.w3.org/2005/xpath-functions/map"
 	 xmlns:ofn="urn:oecd:names:xmlns:transform:functions"
-	xmlns:temp="urn:oecd:names:xmlns:transform:temp" exclude-result-prefixes="xs xd" version="3.0">
+	xmlns:temp="urn:oecd:names:xmlns:transform:temp" exclude-result-prefixes="xs xd" version="2.0">
 	<xd:doc scope="stylesheet">
 		<xd:desc>
 			<xd:p><xd:b>Created on:</xd:b> Oct 31, 2013</xd:p>
@@ -14,20 +14,8 @@
 			showing if styles match and if text matches.</xd:p>
 		</xd:desc>
 	</xd:doc>
-
-
-	<xsl:variable name="style-map" select="map:new(
-		for-each(
-		/*/mapping/element-def, 
-		function
-			(
-				$element-def as element(temp:element-def))
-				as map(*) 
-				{ map:entry($element-def/@name, distinct-values($element-def/style)) }
-			)
-		)"
-		as="map(*)"
-	/>
+	
+	<xsl:key name="style-map-key" match="/*/mapping/element-def/style" use="parent::*/@name"/>
 
 	<xsl:template match="mapping"/>
 	
@@ -39,12 +27,13 @@
 	
 	
 	<xsl:template match="block-pair[not(lower-case(normalize-space(block[1])) = lower-case(normalize-space(block[2]))) 
-		or (block[1]/@style and not(block[1]/@style= $style-map(block[1]/@style)))]">
+		or (block[1]/@style and not(block[1]/@style= key('style-map-key', block[1]/@style)))]">
 		<xsl:variable name="style" select='block[1]/@style'/>
 		<xsl:copy>
-			<xsl:attribute name="style-match" select="if ($style and not($style = $style-map($style))) then 1 else 0"/>
-			<xsl:if test="@style and not($style = $style-map($style))">
-				<xsl:attribute name="other-style" select="$style-map($style)"/>
+			<xsl:attribute name="style-match" select="if ($style and not($style = key('style-map-key', $style))) then 1 else 0"/>
+			<xsl:if test="@style and not($style = key('style-map-key', $style))
+				">
+				<xsl:attribute name="other-style" select="string-join(key('style-map-key', $style), ' ')"/>
 			</xsl:if>
 			<xsl:attribute name="text-match" select="if (lower-case(normalize-space(block[1])) = lower-case(normalize-space(block[2]))) then 1 else 0"/>
 			<xsl:copy-of select="@*|node()"/>

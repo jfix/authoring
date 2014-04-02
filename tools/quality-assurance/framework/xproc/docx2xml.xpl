@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <p:declare-step xmlns:p="http://www.w3.org/ns/xproc" xmlns:c="http://www.w3.org/ns/xproc-step"
-	name="docx2xml"
-	xmlns:pxp="http://exproc.org/proposed/steps"
+	xmlns:pxp="http://exproc.org/proposed/steps" name="docx2xml"
 	xmlns:w="http://schemas.openxmlformats.org/wordprocessingml/2006/main"
 	xmlns:cp="http://schemas.openxmlformats.org/package/2006/metadata/core-properties"
 	xmlns:prop="http://schemas.openxmlformats.org/officeDocument/2006/extended-properties"
 	xmlns:rels="http://schemas.openxmlformats.org/package/2006/relationships" version="1.0"
 	type="ccproc:docx2xml" xmlns:ccproc="http://www.corbas.co.uk/ns/xproc/steps"
+	xmlns:cx="http://xmlcalabash.com/ns/extensions"
 	xmlns:cword="http://www.corbas.co.uk/ns/cword">
 	
 	<p:documentation>
@@ -88,6 +88,18 @@
 						<date>2012-10-11</date>
 						<revremark>Added footnotes.xml.rels and endnotes.xml.rels</revremark>
 					</revision>
+					<revision>
+						<revnumber>9</revnumber>
+						<date>2014-01-15</date>
+						<revremark>Update to read .rels files to locate content rather
+						than using try/catch and fallbacks.</revremark>
+					</revision>
+					<revision>
+						<revnumber>9</revnumber>
+						<date>2014-04-1</date>
+						<revremark>Improve the approach to identify the URLs to files to be
+						loaded from the rels files.</revremark>
+					</revision>
 				</revhistory>
 			</info>
 			<para>XProc script to unzip a word docx document, extract metadata and convert to
@@ -116,194 +128,125 @@
 
 	<p:import href="http://xmlcalabash.com/extension/steps/library-1.0.xpl"/>
 
-
-
-	<p:declare-step name="get-doc-from-archive" type="ccproc:get-doc-from-archive">
-
-		<p:documentation>
-			<section xmlns="http://docbook.org/ns/docbook">
-				<title>corbas:get-doc-from-archive</title>
-				<para>Step to extract a file from an archive and fall back to a default if not
-					found.</para>
-			</section>
-		</p:documentation>
-
-		<p:input port="fallback" primary="false"/>
-		<p:output port="result" primary="true">
-			<p:pipe port="result" step="extract-doc"/>
-		</p:output>
-		<p:option name="archive" required="true"/>
-		<p:option name="doc" required="true"/>
+	<p:declare-step name="find-docs-in-archive" type="ccproc:find-docs-in-archive">
 		
-		<pxp:unzip name="get-zip-listing">
+		
+		<p:documentation xmlns="http://www.w3.org/1999/xhtml">
+			<p>Load the rels documents and return a sequence of file
+				names to be extracted.</p>
+		</p:documentation>
+		
+		
+		<p:output port="result" primary="true"/>
+		<p:option name="archive" required="true"/>
+		
+		<p:import href="http://xmlcalabash.com/extension/steps/library-1.0.xpl"/>
+		
+		<!-- get the zip contents -->
+		<pxp:unzip name="list-zip">
 			<p:with-option name="href" select="$archive"/>
 		</pxp:unzip>
 		
-		<p:identity name="primary-zip-listing">
-			<p:input port="source">
-				<p:pipe port="result" step="get-zip-listing"/>
-			</p:input>
-		</p:identity>
+		<!-- find the rels files and process them -->
+		<p:for-each name="extract-rels">
+			
+			<p:output port="result" primary="true">
+				<p:pipe port="result" step="transform-rels"/>
+			</p:output>
+			
+			<!-- get the file name from the list step -->
+			<p:iteration-source select="//c:file[ends-with(@name, '.rels')]">
+				<p:pipe port="result" step="list-zip"/>
+			</p:iteration-source>
+			
+			<!-- load the file -->
+			<pxp:unzip name="get-rels-file">
+				<p:with-option name="href" select="$archive"/>
+				<p:with-option name="file" select="/c:file/@name"/>
+			</pxp:unzip>	
+
+
+			<!-- make these relative to the root not the rels file -->
+			<p:xslt name="transform-rels">
+				<p:input port="source">
+					<p:pipe port="result" step="get-rels-file"/>
+				</p:input>
+				<p:input port="parameters">
+					<p:empty/>
+				</p:input>
+				<p:input port="stylesheet">
+					<p:document href="../xslt/misc/fixup-rels.xsl"/>
+				</p:input>
+				<p:with-param name="base-uri" select="concat('/', /c:file/@name)">
+					<p:pipe port="current" step="extract-rels"/>
+				</p:with-param>
+			</p:xslt>	
+			
+		</p:for-each>
 		
-		<p:choose name="extract-doc">
-
-			<p:when test="//c:file[@name = $doc]">
-				<p:output port="result" primary="true">
-					<p:pipe port="result" step="get-zip-file"/>
-				</p:output>
-				<pxp:unzip name="get-zip-file">
-					<p:with-option name="href" select="$archive"/>
-					<p:with-option name="file" select="$doc"/>
-				</pxp:unzip>
-			</p:when>
-			<p:otherwise>
-				<p:output port="result" primary="true">
-					<p:pipe port="result" step="use-fallback"/>
-				</p:output>
-				<p:identity name="use-fallback">
-					<p:input port="source">
-						<p:pipe port="fallback" step="get-doc-from-archive"/>
-					</p:input>
-				</p:identity>
-			</p:otherwise>
-		</p:choose>
-
+		<p:wrap-sequence wrapper="rels" wrapper-namespace="http://www.corbas.co.uk/ns/cword" name="wrap-rels">
+			<p:input port="source">
+				<p:pipe port="result" step="extract-rels"/>
+			</p:input>
+		</p:wrap-sequence>		
+		
+			
+		
 	</p:declare-step>
 
 
 
-	<ccproc:get-doc-from-archive name="get-styles">
-		<p:input port="fallback">
-			<p:inline>
-				<w:styles/>
-			</p:inline>
-		</p:input>
-		<p:with-option name="archive" select="$package-url"/>
-		<p:with-option name="doc" select="'word/styles.xml'"/>
-	</ccproc:get-doc-from-archive>
-
-	<ccproc:get-doc-from-archive name="get-endnotes">
-		<p:input port="fallback">
-			<p:inline>
-				<w:endnotes/>
-			</p:inline>
-		</p:input>
-		<p:with-option name="archive" select="$package-url"/>
-		<p:with-option name="doc" select="'word/endnotes.xml'"/>
-	</ccproc:get-doc-from-archive> 
- 
-	<ccproc:get-doc-from-archive name="get-numbering">
-		<p:input port="fallback">
-			<p:inline>
-				<w:numbering/>
-			</p:inline>
-		</p:input>
-		<p:with-option name="archive" select="$package-url"/>
-		<p:with-option name="doc" select="'word/numbering.xml'"/>
-	</ccproc:get-doc-from-archive>
-
-	<ccproc:get-doc-from-archive name="get-footnotes">
-		<p:input port="fallback">
-			<p:inline>
-				<w:footnotes/>
-			</p:inline>
-		</p:input>
-		<p:with-option name="archive" select="$package-url"/>
-		<p:with-option name="doc" select="'word/footnotes.xml'"/>
-	</ccproc:get-doc-from-archive>
-
-	<ccproc:get-doc-from-archive name="get-doc">
-		<p:input port="fallback">
-			<p:inline>
-				<w:document/>
-			</p:inline>
-		</p:input>
-		<p:with-option name="archive" select="$package-url"/>
-		<p:with-option name="doc" select="'word/document.xml'"/>
-	</ccproc:get-doc-from-archive>
-
-	<ccproc:get-doc-from-archive name="get-core-properties">
-		<p:input port="fallback">
-			<p:inline>
-				<cp:coreProperties/>
-			</p:inline>
-		</p:input>
-		<p:with-option name="archive" select="$package-url"/>
-		<p:with-option name="doc" select="'docProps/core.xml'"/>
-	</ccproc:get-doc-from-archive>
+	<p:declare-step name="load-docs-from-archive" type="ccproc:load-docs-from-archive">
+		<p:documentation xmlns="http://www.w3.org/1999/xhtml">
+			<p>Calls find-docs-in-archive and the extracts each file marked as xml
+			from the archive. </p>
+		</p:documentation>
+		
+		<p:output port="result" primary="true"  sequence="true">
+			<p:documentation xmlns="http://www.w3.org/1999/xhtml">
+				<p>Returns a sequence of documents read from the archive</p>
+			</p:documentation>
+		</p:output>
+		
+		<p:option name="archive" required="true">
+			<p:documentation xmlns="http://www.w3.org/1999/xhtml">
+				<p>URI for the archive file</p>
+			</p:documentation>
+		</p:option>
+		
+		<ccproc:find-docs-in-archive>
+			<p:with-option name="archive" select="$archive"/>
+		</ccproc:find-docs-in-archive>
+		
+		<p:for-each name="load-files">
+			
+			<p:output port="result" primary="true">
+				<p:pipe port="result" step="file-to-primary"/>
+			</p:output>
+			
+			<p:iteration-source select="//c:file[@type='xml']"/>
+			
+			<pxp:unzip name="get-zipped-file" >
+				<p:with-option name="href" select="$archive"/>
+				<p:with-option name="file" select="/c:file/@href"/>
+			</pxp:unzip>
+			
+			<p:identity name="file-to-primary">
+				<p:input port="source">
+					<p:pipe port="result" step="get-zipped-file"/>
+				</p:input>
+			</p:identity>	
+			
+		</p:for-each>
+		
+		
+	</p:declare-step>
 
 
-	<ccproc:get-doc-from-archive name="get-app-properties">
-		<p:input port="fallback">
-			<p:inline>
-				<prop:Properties/>
-			</p:inline>
-		</p:input>
+	<ccproc:load-docs-from-archive name="load-docs">
 		<p:with-option name="archive" select="$package-url"/>
-		<p:with-option name="doc" select="'docProps/app.xml'"/>
-	</ccproc:get-doc-from-archive>
-
-
-	<ccproc:get-doc-from-archive name="get-relationships">
-		<p:input port="fallback">
-			<p:inline>
-				<Relationships xmlns="http://schemas.openxmlformats.org/package/2006/relationships"
-				/>
-			</p:inline>
-		</p:input>
-		<p:with-option name="archive" select="$package-url"/>
-		<p:with-option name="doc" select="'word/_rels/document.xml.rels'"/>
-	</ccproc:get-doc-from-archive>
+	</ccproc:load-docs-from-archive>
 	
-	<ccproc:get-doc-from-archive name="get-footnote-relationships">
-		<p:input port="fallback">
-			<p:inline>
-				<Relationships xmlns="http://schemas.openxmlformats.org/package/2006/relationships"
-				/>
-			</p:inline>
-		</p:input>
-		<p:with-option name="archive" select="$package-url"/>
-		<p:with-option name="doc" select="'word/_rels/footnotes.xml.rels'"/>
-	</ccproc:get-doc-from-archive>
-
-	<ccproc:get-doc-from-archive name="get-endnote-relationships">
-		<p:input port="fallback">
-			<p:inline>
-				<Relationships xmlns="http://schemas.openxmlformats.org/package/2006/relationships"
-				/>
-			</p:inline>
-		</p:input>
-		<p:with-option name="archive" select="$package-url"/>
-		<p:with-option name="doc" select="'word/_rels/endnotes.xml.rels'"/>
-	</ccproc:get-doc-from-archive>
-
-
-	<ccproc:get-doc-from-archive name="get-comments">
-		<p:input port="fallback">
-			<p:inline>
-				<comments xmlns="http://schemas.openxmlformats.org/wordprocessingml/2006/main"/>
-			</p:inline>
-		</p:input>
-		<p:with-option name="archive" select="$package-url"/>
-		<p:with-option name="doc" select="'word/comments.xml'"/>
-	</ccproc:get-doc-from-archive>
-
-	<p:identity name="create-sequence">
-		<p:input port="source">
-			<p:pipe port="result" step="get-doc"/>
-			<p:pipe port="result" step="get-styles"/>
-			<p:pipe port="result" step="get-numbering"/>
-			<p:pipe port="result" step="get-footnotes"/> 
-			<p:pipe port="result" step="get-endnotes"/>
-			<p:pipe port="result" step="get-app-properties"/>
-			<p:pipe port="result" step="get-core-properties"/>
-			<p:pipe port="result" step="get-relationships"/>
-			<p:pipe port="result" step="get-footnote-relationships"/>
-			<p:pipe port="result" step="get-endnote-relationships"/>
-			<p:pipe port="result" step="get-comments"/>
-		</p:input>
-	</p:identity>
-
 	<p:wrap-sequence name="wrap-up" wrapper="word-doc"
 		wrapper-namespace="http://www.corbas.co.uk/ns/word"/>
 
