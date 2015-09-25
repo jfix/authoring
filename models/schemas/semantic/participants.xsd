@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+  <xs:element name="document">
+    <xs:complexType>
+      <xs:choice>
+        <xs:element maxOccurs="unbounded" ref="country"/>
+        <xs:element maxOccurs="unbounded" ref="organisation"/>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="country">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="name"/>
+        <xs:element ref="participants"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="organisation">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="name"/>
+        <xs:element ref="participants"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="name">
+    <xs:complexType mixed="true">
+      <xs:attribute name="ref" type="xs:anyURI"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="participants">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element maxOccurs="unbounded" ref="participant"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="participant">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="name"/>
+        <xs:element ref="job"/>
+        <xs:element ref="institution"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="job" type="xs:NCName"/>
+  <xs:element name="institution" type="xs:NCName"/>
+</xs:schema>
