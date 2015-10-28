@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+    <xs:annotation>
+        <xs:documentation>
+            <section xmlns="http://docbook.org/ns/docbook">
+                <title>OECD Schemas</title>
+                <subtitle>Annex</subtitle>
+                <para>An annex contains numbered or not numbered paragraphs, ordered lists, itmized lists, tables</para>
+                <revhistory>
+                    <title>Change Log</title>
+                    <revision>
+                        <revnumber>1</revnumber>
+                        <date>2015-10-23</date>
+                        <author>HM</author>
+                        <revremark>Initial Version</revremark>
+                    </revision>
+                </revhistory>
+            </section>
+        </xs:documentation>
+    </xs:annotation>
+    
+    <!-- IMPORTS AND INCLUDES -->    
+    <xs:include schemaLocation="../components/meta.xsd"/>
+    <xs:include schemaLocation="../components/blocks.xsd"/>
+    
+    <xs:element name="annex" type="oecdAnnexType" id="annex"/>
+    
+    <xs:complexType name="oecdAnnexType" mixed="false" id="oecdAnnexType">        
+        <xs:annotation>
+            <xs:documentation>
+                <section xmlns="http://docbook.org/ns/docbook">
+                    <para>Base type for annex content.</para>
+                </section>
+            </xs:documentation>
+        </xs:annotation>         
+        <xs:group ref="oecdAnnexTypeContent"/>
+        <xs:attributeGroup ref="oecdAnnexTypeAttributes"/>        
+    </xs:complexType>
+    
+    <xs:group name="oecdAnnexTypeContent" id="oecdAnnexTypeContent">
+        <xs:annotation>
+            <xs:documentation>
+                <section xmlns="http://docbook.org/ns/docbook">
+                    <para>Group for annex element content to allow easy overrides.</para>
+                </section>
+            </xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+            <xs:element ref="metadata" minOccurs="0"/>
+            <xs:group ref="oecdTitleGroup"/>
+            <xs:group ref="oecdBlockGroup" minOccurs="0" maxOccurs="unbounded"/>                    
+        </xs:sequence>
+    </xs:group>
+    
+    <xs:attributeGroup name="oecdAnnexTypeAttributes" id="oecdAnnexTypeAttributes">        
+        <xs:annotation>
+            <xs:documentation>
+                <section xmlns="http://docbook.org/ns/docbook">
+                    <para>Attributes for annex as a group for easy overrides and reuse.</para>
+                    <revhistory>
+                        <revision>
+                            <revnumber>1</revnumber>
+                            <date>2015-10-23</date>
+                            <authorinitials>HM</authorinitials>
+                            <revremark>Initial Version.</revremark>
+                        </revision>
+                    </revhistory>
+                </section>
+            </xs:documentation>
+        </xs:annotation>        
+        <xs:attributeGroup ref="oecdCommonAttributes"/>
+        <xs:attributeGroup ref="oecdLinkingAttributes"/>        
+    </xs:attributeGroup>
+</xs:schema>

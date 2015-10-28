@@ -49,6 +49,12 @@
 						<revremark>Modified oecdAgendaAnnotationTypeContent to make title
 							optional.</revremark>
 					</revision>
+					<revision>
+						<revnumber>7</revnumber>
+						<date>2015-10-21</date>
+						<author>HM</author>
+						<revremark>updating to latest status: removing sections.</revremark>
+					</revision>
 				</revhistory>
 			</section>
 		</xs:documentation>
@@ -61,7 +67,6 @@
 	<xs:include schemaLocation="../components/annotation.xsd"/>
 
 	<!-- GLOBAL ELEMENTS -->
-	<xs:element name="agenda-section" type="oecdAgendaSectionType" id="agenda-section"/>
 	<xs:element name="agenda-session" type="oecdAgendaSessionType" id="agenda-session"/>
 
 	<!-- GLOBAL GROUPS -->
@@ -80,22 +85,7 @@
 		<xs:attributeGroup ref="oecdLinkingAttributes"/>
 	</xs:attributeGroup>
 
-	<xs:group name="oecdAgendaSectionTypeBaseContent" id="oecdAgendaSectionTypeBaseContent">
-		<xs:annotation>
-			<xs:documentation>
-				<para xmlns="http://docbook.org/ns/docbook">This group is used to define the content model of
-					all agenda section content.</para>
-			</xs:documentation>
-		</xs:annotation>
-
-		<xs:sequence>
-			<xs:sequence>
-				<xs:group ref="oecdBlockGroup" minOccurs="0" maxOccurs="unbounded"/>
-
-			</xs:sequence>
-		</xs:sequence>
-
-	</xs:group>
+	
 
 	<xs:group name="oecdAgendaItemTypeContent" id="oecdAgendaItemTypeContent">
 		<xs:sequence>
@@ -194,39 +184,6 @@
 		</xs:sequence>
 	</xs:group>
 
-	<xs:group name="oecdAgendaSectionTypeContent" id="oecdAgendaSectionTypeContent">
-
-		<xs:annotation>
-			<xs:documentation>
-				<section xmlns="http://docbook.org/ns/docbook">
-					<para>Content for agenda sections as a group for easy overrides and reuse.</para>
-				</section>
-				<section xmlns="http://docbook.org/ns/docbook">
-					<revhistory>
-						<title>Change Log</title>
-						<revision>
-							<revnumber>1</revnumber>
-							<date>2013-08-22</date>
-							<author>JC</author>
-							<revremark>Added agenda-session ref and changed the content model by adding a
-								choice.</revremark>
-						</revision>
-					</revhistory>
-				</section>
-			</xs:documentation>
-		</xs:annotation>
-
-		<xs:sequence>
-			<xs:element ref="metadata" minOccurs="0"/>
-			<xs:group ref="oecdTitleGroup"/>
-			<xs:choice maxOccurs="unbounded">
-				<xs:group ref="oecdAgendaSectionTypeBaseContent"/>
-				<xs:element ref="agenda-session"/>
-			</xs:choice>
-		</xs:sequence>
-
-	</xs:group>
-
 	<xs:group name="oecdAgendaSessionTypeContent" id="oecdAgendaSessionTypeContent">
 
 		<xs:annotation>
@@ -248,10 +205,6 @@
 	<!-- GLOBAL GROUPS -->
 
 	<!-- COMPLEX TYPES -->
-	<xs:complexType name="oecdAgendaSectionType" id="oecdAgendaSectionType">
-		<xs:group ref="oecdAgendaSectionTypeContent"/>
-		<xs:attributeGroup ref="oecdAgendaSectionTypeAttributes"/>
-	</xs:complexType>
 
 	<xs:complexType name="oecdAgendaSessionType" id="oecdAgendaSessionType">
 		<xs:group ref="oecdAgendaSessionTypeContent"/>

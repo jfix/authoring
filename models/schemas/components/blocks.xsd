@@ -47,6 +47,13 @@
             		<revremark>Added the <link linkend="oecdEmbeddableBlockGroup">oecdEmbeddableBlockGroup to be referenced
             		from paragraphs to allow for embedded content and to resolve problems with issues </link> </revremark>
             	</revision>
+                
+                <revision>
+                    <revnumber>6</revnumber>
+                    <date>2015-10-23</date>
+                    <authorinitials>HM</authorinitials>
+                    <revremark>Added actions and conclusions</revremark>
+                </revision>
             </revhistory>
             
         </section></xs:documentation>
@@ -63,6 +70,8 @@
     <xs:include schemaLocation="chemicals.xsd"/>
     <xs:include schemaLocation="tables.xsd"/>
     <xs:include schemaLocation="extracts.xsd"/>
+    <xs:include schemaLocation="action.xsd"/>
+    <xs:include schemaLocation="conclusion.xsd"/>
     
     <!-- GLOBAL GROUPS -->
     <xs:group name="oecdBlockGroup" id="oecdBlockGroup">
@@ -96,6 +105,8 @@
             <xs:element ref="graphic"/>
             <xs:element ref="figure"/>
             <xs:element ref="table"/>
+            <xs:element ref="action"/>
+            <xs:element ref="conclusion"/>
             <xs:group ref="oecdExtractsGroup"/>
         </xs:choice>        
     </xs:group>

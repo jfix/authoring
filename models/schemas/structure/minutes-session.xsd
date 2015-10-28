@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+    <xs:annotation>
+        <xs:documentation>
+            <section xmlns="http://docbook.org/ns/docbook">
+                <title>OECD Schemas</title>
+                <subtitle>Agenda Meeting Model</subtitle>
+                <revhistory>
+                    <title>Change Log</title>
+                    <revision>
+                        <revnumber>1</revnumber>
+                        <date>2015-10-26</date>
+                        <author>HM</author>
+                        <revremark>Initial Version</revremark>
+                    </revision>
+                </revhistory>
+            </section>
+        </xs:documentation>
+    </xs:annotation>
+    
+    <!-- IMPORTS AND INCLUDES -->
+    <xs:include schemaLocation="../components/attributes.xsd"/>
+    <xs:include schemaLocation="../components/blocks.xsd"/>
+    <xs:include schemaLocation="../components/titles.xsd"/>
+    <xs:include schemaLocation="../components/annotation.xsd"/>
+    
+    <!-- GLOBAL ELEMENTS -->
+    <xs:element name="minutes-session" type="oecdMinutesSessionType" id="minutes-session"/>
+    
+    <!-- GLOBAL GROUPS -->
+    <xs:group name="oecdMinutesSessionTypeContent" id="oecdMinutesSessionTypeContent">        
+        <xs:annotation>
+            <xs:documentation>
+                <section xmlns="http://docbook.org/ns/docbook">
+                    <para>Content for sessions as a group for easy overrides and reuse.</para>
+                </section>
+            </xs:documentation>
+        </xs:annotation>        
+        <xs:sequence>
+            <xs:element ref="metadata" minOccurs="0"/>
+            <xs:group ref="oecdTitleGroup"/>
+            <xs:choice>
+                <xs:sequence minOccurs="1" maxOccurs="unbounded">
+                    <xs:element name="minutes-item" type="oecdMinutesItemType" minOccurs="1" maxOccurs="unbounded"/>
+                    <xs:element name="minutes-group-heading" type="oecdMinutesGroupHeadingType" minOccurs="0" maxOccurs="unbounded"/>
+                </xs:sequence>
+            </xs:choice>
+        </xs:sequence>        
+    </xs:group>    
+    
+    <xs:attributeGroup name="oecdMinutesSessionTypeAttributes" id="oecdMinutesSessionTypeAttributes">        
+        <xs:annotation>
+            <xs:documentation>
+                <section xmlns="http://docbook.org/ns/docbook">
+                    <para>Attributes for minutes sessopm as a group for easy overrides and reuse.</para>
+                </section>
+            </xs:documentation>
+        </xs:annotation>        
+        <xs:attributeGroup ref="oecdCommonAttributes"/>
+        <xs:attributeGroup ref="oecdLinkingAttributes"/>
+    </xs:attributeGroup>
+    
+    <xs:group name="oecdMinutesGroupHeadingTypeContent" id="oecdMinutesGroupHeadingTypeContent">
+        <xs:sequence>
+            <xs:element ref="metadata" minOccurs="0"/>            
+            <xs:sequence>
+                <xs:annotation>
+                    <xs:documentation>
+                        <para xmlns="http://docbook.org/ns/docbook">The content model for minutes Group Heading is
+                            highly structured with semantic elements.</para>
+                    </xs:documentation>
+                </xs:annotation>
+                <xs:group ref="oecdTitleGroup"/>
+                <xs:group ref="oecdBlockGroup" minOccurs="0" maxOccurs="unbounded"/>
+            </xs:sequence>
+        </xs:sequence>
+    </xs:group>
+    
+    <xs:group name="oecdMinutesItemTypeContent" id="oecdMinutesItemTypeContent">
+        <xs:sequence>
+            <xs:element ref="metadata" minOccurs="0"/>            
+            <xs:sequence>
+                <xs:annotation>
+                    <xs:documentation>
+                        <para xmlns="http://docbook.org/ns/docbook">The content model for minutes items is
+                            highly structured with semantic elements.</para>
+                    </xs:documentation>
+                </xs:annotation>
+                <xs:group ref="oecdTitleGroup"/>
+                <xs:group ref="oecdBlockGroup" minOccurs="1" maxOccurs="unbounded"/>
+                <xs:element name="minutes-subitem" type="oecdMinutesSubItemType" minOccurs="0" maxOccurs="unbounded"/>
+            </xs:sequence>
+        </xs:sequence>
+    </xs:group>
+    
+    <xs:group name="oecdMinutesSubItemTypeContent" id="oecdMinutesSubItemTypeContent">
+        <xs:sequence>
+            <xs:element ref="metadata" minOccurs="0"/>            
+            <xs:sequence>
+                <xs:annotation>
+                    <xs:documentation>
+                        <para xmlns="http://docbook.org/ns/docbook">The content model for minutes sub-items is
+                            highly structured with semantic elements.</para>
+                    </xs:documentation>
+                </xs:annotation>
+                <xs:group ref="oecdTitleGroup"/>
+                <xs:group ref="oecdBlockGroup" minOccurs="1" maxOccurs="unbounded"/>
+            </xs:sequence>
+        </xs:sequence>
+    </xs:group>    
+    
+    <!-- COMPLEX TYPES -->    
+    <xs:complexType name="oecdMinutesSessionType" id="oecdMinutesSessionType">
+        <xs:group ref="oecdMinutesSessionTypeContent"/>
+        <xs:attributeGroup ref="oecdMinutesSessionTypeAttributes"/>
+    </xs:complexType>
+    
+    <xs:complexType name="oecdMinutesGroupHeadingType" id="oecdMinutesGroupHeadingType">
+        <xs:annotation>
+            <xs:documentation>
+                <section xmlns="http://docbook.org/ns/docbook">
+                    <para>Group Headings are the major recursive structural components of a Session.</para>
+                </section>
+            </xs:documentation>
+        </xs:annotation>        
+        <xs:group ref="oecdMinutesGroupHeadingTypeContent"/>
+        <xs:attributeGroup ref="oecdMinutesSessionTypeAttributes"/>
+    </xs:complexType>
+    
+    <xs:complexType name="oecdMinutesItemType" id="oecdMinutesItemType">
+        <xs:annotation>
+            <xs:documentation>
+                <section xmlns="http://docbook.org/ns/docbook">
+                    <para>Items are the major recursive structural components of a Session.</para>
+                </section>
+            </xs:documentation>
+        </xs:annotation>        
+        <xs:group ref="oecdMinutesItemTypeContent"/>
+        <xs:attributeGroup ref="oecdMinutesSessionTypeAttributes"/>
+    </xs:complexType>
+    
+    <xs:complexType name="oecdMinutesSubItemType" id="oecdMinutesSubItemType">
+        <xs:annotation>
+            <xs:documentation>
+                <section xmlns="http://docbook.org/ns/docbook">
+                    <para>Sub-items are the optional recursive structural components of a Item.</para>
+                </section>
+            </xs:documentation>
+        </xs:annotation>        
+        <xs:group ref="oecdMinutesSubItemTypeContent"/>
+        <xs:attributeGroup ref="oecdMinutesSessionTypeAttributes"/>
+    </xs:complexType>
+        
+</xs:schema>
