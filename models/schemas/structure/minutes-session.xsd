@@ -13,6 +13,12 @@
                         <author>HM</author>
                         <revremark>Initial Version</revremark>
                     </revision>
+                    <revision>
+                        <revnumber>2</revnumber>
+                        <date>2015-11-10</date>
+                        <author>JWC</author>
+                        <revremark>1st update: added choice to oecdMinutesItemTypeContent to allow mixed content model of sub-item and para/list</revremark>
+                    </revision>
                 </revhistory>
             </section>
         </xs:documentation>
@@ -87,8 +93,12 @@
                     </xs:documentation>
                 </xs:annotation>
                 <xs:group ref="oecdTitleGroup"/>
-                <xs:group ref="oecdBlockGroup" minOccurs="1" maxOccurs="unbounded"/>
-                <xs:element name="minutes-subitem" type="oecdMinutesSubItemType" minOccurs="0" maxOccurs="unbounded"/>
+
+                <xs:choice minOccurs="0" maxOccurs="unbounded">
+                    <xs:group ref="oecdBlockGroup" minOccurs="1" maxOccurs="unbounded"/>
+                    <xs:element name="minutes-subitem" type="oecdMinutesSubItemType" minOccurs="0" maxOccurs="unbounded"/>
+                </xs:choice>
+
             </xs:sequence>
         </xs:sequence>
     </xs:group>

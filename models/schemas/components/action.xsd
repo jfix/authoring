@@ -13,6 +13,12 @@
                         <author>HM</author>
                         <revremark>Initial Version</revremark>
                     </revision>
+                    <revision>
+                        <revnumber>2</revnumber>
+                        <date>2015-11-10</date>
+                        <author>JWC</author>
+                        <revremark>1st update: changed oecdActionType content model to choice</revremark>
+                    </revision>
                 </revhistory>
             </section>
         </xs:documentation>
@@ -35,10 +41,10 @@
     <!-- Complex Types -->
     <xs:complexType name="oecdActionType">
         <xs:choice>
-            <xs:sequence minOccurs="0" maxOccurs="unbounded">
+            <xs:choice minOccurs="0" maxOccurs="unbounded">
                 <xs:group ref="oecdParagraphGroup"/>
                 <xs:group ref="oecdListGroup"/>
-            </xs:sequence>
+            </xs:choice>
         </xs:choice>
     </xs:complexType>
 </xs:schema>

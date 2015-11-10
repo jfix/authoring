@@ -12,6 +12,12 @@
                     <author>HM</author>
                     <revremark>Initial version (placeholder)</revremark>
                 </revision>
+                <revision>
+                    <revnumber>2</revnumber>
+                    <date>2015-11-10</date>
+                    <author>JWC</author>
+                    <revremark>1st update: added annex to oecdBaseMinutesTypeContent.</revremark>
+                </revision>
                 <para>A document is the standard top-level structural element.</para>
             </revhistory>
         </section>
@@ -22,7 +28,8 @@
     <xs:include schemaLocation="../components/document-meta.xsd"/>
     <xs:include schemaLocation="../components/meta.xsd"/>
     <xs:include schemaLocation="../components/blocks.xsd"/>
-    <xs:include schemaLocation="../structure/minutes-session.xsd"/> 
+    <xs:include schemaLocation="../structure/minutes-session.xsd"/>
+    <xs:include schemaLocation="../semantic/annex.xsd"/> 
     
     <!-- document base -->
     <xs:attributeGroup name="oecdBaseMinutesTypeAttributes" id="oecdBaseDocumentTypeAttributes">
@@ -56,6 +63,7 @@
                     <xs:choice maxOccurs="unbounded">
                         <xs:element ref="minutes-session"/>
                     </xs:choice>
+                    <xs:element name="annex" type="oecdAnnexType" id="annex" minOccurs="0" maxOccurs="unbounded"/>
                 </xs:sequence>
             </xs:choice>
         </xs:sequence>
