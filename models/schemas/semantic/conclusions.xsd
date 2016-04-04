@@ -20,13 +20,19 @@
                         <authorinitials>jc</authorinitials>
                         <revremark>renamed abstract to conclusion.</revremark>
                     </revision>
+                    <revision>
+                        <revnumber>3</revnumber>
+                        <date>2016-04-04</date>
+                        <authorinitials>JWC</authorinitials>
+                        <revremark>refined bad conclusion implementaiton [#11327].</revremark>
+                    </revision>
                 </revhistory>
             </section></xs:documentation>
     </xs:annotation>
 
     <xs:include schemaLocation="../structure/section.xsd"/>
 
-    <xs:element name="conclusion" type="oecdSectionType" id="conclusion"/>
+    <xs:element name="conclusions" type="oecdSectionType" id="conclusions"/>
 
 
 </xs:schema>

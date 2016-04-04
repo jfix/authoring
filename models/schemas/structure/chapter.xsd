@@ -80,6 +80,12 @@
                             agreement 05/02/2013 that official document and publicaiton models should
                             be aligned.[#5336].</revremark>
                     </revision>
+                    <revision>
+                        <revnumber>9</revnumber>
+                        <date>2016-04-04</date>
+                        <authorinitials>JWC</authorinitials>
+                        <revremark>refined bad conclusion implementaiton [#11327].</revremark>
+                    </revision>
                 </revhistory> <para>A chapter is a high level structural element. It has been
                     modelled as a separate component to a section as it does not have quite the same
                     structure (a chapter has additional content). The content model for a chapter
@@ -93,7 +99,7 @@
     <xs:include schemaLocation="section.xsd"/>
     <xs:include schemaLocation="../semantic/abstract.xsd"/>
     <xs:include schemaLocation="../semantic/biblio.xsd"/>
-    <xs:include schemaLocation="../semantic/conclusion.xsd"/>
+    <xs:include schemaLocation="../semantic/conclusions.xsd"/>
     <xs:include schemaLocation="../semantic/glossary.xsd"/>
     <xs:include schemaLocation="../components/notes.xsd"/>
     <xs:include schemaLocation="../semantic/acknowledgements.xsd"/>
@@ -188,7 +194,7 @@
 
             <!-- note - forcing sequence here is not ideal but there is no sensible way to model it in XSD -->
 
-            <xs:element ref="conclusion" minOccurs="0" maxOccurs="unbounded"/>
+            <xs:element ref="conclusions" minOccurs="0" maxOccurs="unbounded"/>
             <xs:element ref="glossary" minOccurs="0" maxOccurs="unbounded"/>
             <xs:element ref="bibliography" minOccurs="0" maxOccurs="unbounded"/>
             <xs:element ref="notes" minOccurs="0" maxOccurs="unbounded"/>
