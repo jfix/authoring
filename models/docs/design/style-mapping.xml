@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<book xmlns="http://docbook.org/ns/docbook" xmlns:rnd="http://docbook.org/ns/docbook/roundtrip"
+    xmlns:xlink="http://www.w3.org/1999/xlink" version="5">
+    <info>
+        <title>OECD Styles</title>
+    </info>
+    <chapter>
+        <info>
+            <title>PART 1: Word Styles for Official Documents in Quark</title>
+        </info>
+        <sect1 xml:id="d1e17">
+            <info>
+                <title>title</title>
+            </info>
+            <programlisting>
+                        <productname role="schema">title</productname>
+                </programlisting>
+            <para>standard word</para>
+        </sect1>
+    </chapter>
+
+    <chapter>
+        <info>
+            <title>PART 2: Word Styles for Publications in Quark</title>
+        </info>
+        <sect1 xml:id="d1e17s">
+            <info>
+                <title>title</title>
+            </info>
+            <programlisting>
+                        <productname role="schema">title</productname>
+                
+                <!-- can we do somethin g here for the context? -->
+                </programlisting>
+            <para>standard word same as AE</para>
+        </sect1>
+
+    </chapter>
+
+    <chapter>
+        <info>
+            <title>PART 3: Word Styles for Official Documents in PDF</title>
+        </info>
+        <sect1 xml:id="d1e17b">
+            <info>
+                <title>title</title>
+            </info>
+            <programlisting>
+                        <productname role="schema">title</productname>
+                </programlisting>
+            <para>normal black</para>
+        </sect1>
+
+    </chapter>
+
+    <chapter>
+        <info>
+            <title>PART 4: Word Styles for Publications in PDF</title>
+        </info>
+        <sect1 xml:id="d1e17a">
+            <info>
+                <title>title</title>
+            </info>
+            <programlisting>
+                        <productname role="schema">title</productname>
+                </programlisting>
+            <para>CRC Blue</para>
+        </sect1>
+
+    </chapter>
+</book>
